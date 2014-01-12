@@ -4,6 +4,10 @@ maArbeit
 ## TODO:
 * Alles
 
+## Das Verzeichnis `output`
+In diesem Verzeichnis sollen sich die (hofffentlich aktuellen) **PDF**s
+befinden.
+
 Über den Code
 -------------
 
