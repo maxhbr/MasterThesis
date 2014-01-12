@@ -1,6 +1,12 @@
 maArbeit
 ========
 
+## TODO:
+* Alles
+
+Über den Code
+-------------
+
 möchte mit lualatex compiliert werden, dazu ist das folgende in meiner 
 .aliasrc:
 ```bash
@@ -9,7 +15,7 @@ mylualatexmk(){
     xargs latexmk -pdflatex=lualatex -pdf -outdir=".lualatexmk_files" -pvc
 }
 ```
-Zum drucken als A4-Broschüre:
+Zum drucken als A5-Broschüre:
 ```bash
 lprBook() {
   mystartcups
