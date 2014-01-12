@@ -1,0 +1,40 @@
+\chapter{Meromorphe Zusammenhänge}
+%
+\ccite[Def 2.1]{boalch}
+Sei $D=k_1(a_1)+\dots+k_m(a_m)$ ein effektiver Divisor auf $\P^1$ und sei
+$V\to\P^1$ ein Rang $n$ Vektorbündel.
+\begin{defn}[Meromorpher Zusammenhang]
+Ein meromorpher Zusammenhang $\nabla$ auf $V$ mit Polen auf $D$ ist eine
+Abbildung
+\[
+  \nabla: V\to V\otimes K(D)
+\]
+so dass die Leibnitzregel
+\begin{equation}
+  \nabla(fv)=(df)\otimes v + f\nabla v
+\end{equation}
+erfüllt ist. Hierbei ist $v$ ein lokaler Schnitt von $V$, $f$ eine lokale
+holomorphe Funktion und $K$ die Garbe der holomorphen Eins-Formen.
+\comm{ Sabbah schreibt $\Omega_{\P^1}^1$ für $K$ }
+\end{defn}
+%
+\begin{comment}
+\begin{prop}
+Die Differenz zweier meromorphen Zusammenhänge ist $???$-linear.
+\end{prop}
+\begin{proof}
+Denn für zwei meromorphe Zusammenhänge $\nabla_1$ und $\nabla_2$ gilt:
+\begin{align*}
+(\nabla_1 - \nabla_2)(fv) &= \nabla_1(fv) - \nabla_2(fv)
+\\&=(df)\otimes v + f\nabla_1 v -(df)\otimes v - f\nabla_2 v
+\\&=f\nabla_1 v - f\nabla_2 v
+\\&=f(\nabla_1 - \nabla_2) v
+\end{align*}
+und da ??? gilt reicht dies um die Aussage zu zeigen
+\end{proof}
+\end{comment}
+%
+\begin{prop}[Proposition 2.1]
+\end{prop}
+
+% vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:

@@ -1,0 +1,95 @@
+\xdef\myDevelopVariable{1}
+
+\documentclass[ngerman
+  ,fontsize=11pt % TODO
+  ,numbers=noenddot % obsolete
+  %,headsepline
+  ,parskip=half*
+  ,openany
+  ,DIV=10
+  ,fleqn % mv align to left
+  ,oneside
+  %,titelpage % unused
+  %,biblography=totoc  % unused
+  %,landscape,twocolumn
+]{./myClass}
+
+\bibliography{main.bib}
+
+\input{commands.sty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\Gl}{GL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\diag}{diag}
+
+\let\tilde\widetilde
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  testing                                                    %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\symplquot}[2]{{%
+  \raisebox{.2em}{$#1$}\Big/\!\!\!\Big/\raisebox{-.2em}{$#2$}}}
+
+\begin{document}
+
+\ifnum\myDevelopVariable=0
+  \frontmatter
+  \input{titel.tex}
+  \newpage \thispagestyle{empty} \mbox{}
+\else
+  \mainmatter
+\fi
+
+\tableofcontents{}
+
+%\ifnum\myDevelopVariable=0
+  %\input{einleitung.tex}
+%\if
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ifnum\myDevelopVariable=0
+  \mainmatter
+\fi
+
+\input{grundlagen.tex}
+\input{sympl.tex}
+\input{lie.tex}
+
+\input{meromZsh.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\addcontentsline{toc}{chapter}{Schluss}
+%\input{schluss.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\appendix
+\addcontentsline{toc}{chapter}{Anhang}
+
+\input{aufgaben.tex}
+
+%\input{anhang1.tex}
+
+%\nocite{*}
+%\bibliographystyle{geralpha}
+%\def\btxandlong{und}
+%\bibliography{main}
+
+\addcontentsline{toc}{chapter}{Literatur}
+\printbibliography[keyword={prim},title={Literatur}]
+\printbibliography[notkeyword={prim},title={Weitere Literatur}]
+
+\end{document}
+% vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:

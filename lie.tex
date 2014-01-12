@@ -1,0 +1,130 @@
+\chapter{Lie Gruppen und Lie Algebren}
+Siehe \cite[Kapittel 3]{warnerLie}.
+\begin{comment}
+Weitere
+\begin{itemize}
+\item MakeMS.dvi
+\item lie.pdf
+\end{itemize}
+\end{comment}
+
+\section{Lie Gruppen}
+\begin{defn}[Lie Gruppe]
+Eine \emph{Lie Gruppe} ist eine differenzierbare Mannigfaltigkeit welche auch
+eine Gruppenstruktur trägt, bei der die Abbildung
+\begin{align*}
+G\times G \to G, & (\sigma,\tau)\mapsto \sigma\tau
+\end{align*}
+$\cC^\infty$ ist.
+\end{defn}
+\begin{exmp}
+Die Mannigfaltigkeit $\Gl(n,\R)$ aller $n\times n$ Matritzen, welche nicht
+singulär sind, ist durch die Matrixmultiplikation eine Lie Gruppe.
+\end{exmp}
+
+\section{Lie Algebren}
+\begin{defn}
+Eine \emph{Lie Algebra} $\mathfrak g$ über $\R$ ist ein realer Vektor Raum
+$\mathfrak g$ zusammen mit einem bilinearen Operator 
+$[~,~]: \mathfrak g\times\mathfrak g\to\mathfrak g$, welche die \emph{Klammer}
+(engl.  \emph{bracket}) genannt wird, die die folgenden Eigenschaften für alle
+$x,y,z\in \mathfrak g$ erfüllt:
+\begin{enumerate}
+\item $[x,y]=-[y,x]$                    \hfill (anti-kommutativität)
+\item $[[x,y],z]+[[y,z],x]+[[z,x],y]=0$ \hfill (Jacobi identität)
+\end{enumerate}
+\end{defn}
+\begin{defn} \comm{(aus \protect{\cite[3.6 Definition]{warnerLie}})}
+\begin{itemize}
+\item 
+\emph{Links Translation $l_\sigma:\tau \mapsto \sigma\tau$}
+und 
+\emph{Rechts Translation $l_\sigma:\tau \mapsto \tau\sigma$}.
+\item 
+Ein Vektorfeld $X$ auf $G$ heißt \emph{links-invariant}, falls es für jedes
+$\sigma\in G$ die Bedingung
+\[
+dl_\sigma \circ X = X\circ l_\sigma
+\]
+\comm{oder alternativ $l_\sigma'(X(\tau))=X(\sigma\tau)$ für alle $\tau$} gilt.
+\end{itemize}
+\end{defn}
+\begin{defn} \comm{(aus \protect{\cite[3.8 Definition]{warnerLie}})}
+Die \emph{Lie Algebra zu einer Lie Gruppe $G$} ist die Lie Algebra $\mathfrak
+g$ der links-invarianten Vektor Felder auf $G$. Alternativ\comm{, und besser},
+können wir die Lie Algebra von $G$ auch als den tangentlialen Vektor Raum $G_e$
+an der Identität mit der Lie Struktur...
+\end{defn}
+\begin{exmp}\comm{(aus \protect\cite[Example 3.10 (d)]{warnerLie})}
+Sei $\mathfrak{gl}(n,\C)$ die Menge aller complexen $n\times n$ Matritzen und
+sei $\Gl(n,\C)\subset\mathfrak{gl}(n,\C)$ die Teilmenge der nicht-singulären.
+$\mathfrak{gl}(n,\C)$ ist ein $2n^2$-dimensionaler reeler Vektor Raum, dessen
+Basis aus den Matritzen $\delta_{ij}$ sowie den $\sqrt{-1}\delta_{ij}$
+($i,j=1,\dots,n$), wobei $\delta_{ij}$ die Matrix ist, die als einzigen Eintrag
+eine $1$ im an der $ij$-ten Stelle hat.
+$\mathfrak{gl}(n,\C)$ formt eine Lie Algebra, falls wir $[A,B]=AB-BA$ setzen.
+$\Gl(n,\C)$ beinhaltet eine mannigfaltigkeits Struktur ...
+\comm{(weiter wie in \protect\cite[Example 3.10 (b)]{warnerLie})}
+\end{exmp}
+
+\subsection{Koadjungierte Orbiten}
+\begin{comment}
+\begin{itemize}
+\item 
+siehe \cite{bryant} auf Seite 86ff
+\begin{itemize}
+\item 
+vor allem \cite[Proposition 3]{bryant} auf Seite 86.
+\end{itemize}
+\item 
+siehe \cite{warnerLie} auf Seite 112ff
+\end{itemize}
+\end{comment}
+\begin{defn}
+Für eine Lie Gruppe $G$ ist die \emph{adjungierte Abbildung} 
+$\Ad: G \to \End(\mathfrak g)$ 
+\comm{, wobei $\End(\mathfrak g)\cong \mathfrak g \otimes \mathfrak g^*$ ist,}
+ist gegeben durch
+\[
+\Ad(\sigma)=\left(L_\sigma\circ (R_\sigma)^{-1}\right)'(e):G_e\to G_e \,.
+\]
+\end{defn}
+\begin{comment}
+\begin{defn} \comm{(siehe Seite 16 \protect\cite{bryant})}
+ ...die \emph{adjungierte Repräsentation von $G$}...
+\end{defn}
+\end{comment}
+\begin{defn}
+Sei $\Ad^*:G\to\Gl(\mathfrak g^*)$ die \emph{koadjungierte Repräsentation}
+von $G$.
+\comm{This is the so-called "contragredient" representation to the adjoint
+representation.}
+So dass, für jedes $a\in G$ und $\xi \in \mathfrak g^*$, das Element
+$\Ad^*(a)(\xi)\in \mathfrak g^*$ durch die Regel
+\[
+\Ad^*(a)(\xi)(x)=\xi(\Ad(a^{-1})(x)) \qquad \text{ für alle } x\in \mathfrak g
+\]
+gegeben ist.
+\end{defn}
+\begin{bem} \comm{(von \protect\cite[P. 86]{bryant})}
+Es ist der entsprechende Lie Algebren Homomorphismus $\ad^*:\mathfrak g \to
+\mathfrak{gl(g^*)}$ gegeben durch
+\[
+\ad^*(\sigma)(\chi)(\tau)=-\chi([x,y]) \,.
+\]
+\end{bem}
+\begin{defn}[Koadjungierte Orbiten] \comm{(von \protect\cite[P. 86]{bryant})}
+Die Orbiten $G\cdot \xi$ in $\mathfrak g^*$ sind die
+\emph{koadjungierten Orbiten}.
+\end{defn}
+Jeder koadjungierter Orbit trägt in natürlicher weise eine Symplektische
+Struktur, welche gegeben ist, durch...
+\begin{comment}
+\begin{ex} \comm{(von \protect\cite[p. 96]{bryant})}
+\textbf{10.} For any Lie group $G$ and any $\xi\in\mathfrak g^∗$, show that the
+symplectic structures $\Omega_\xi$ and $\Omega_{\sigma\cdot\xi}$ on
+$G\cdot\xi$ are the same for any $\sigma\in G$.
+\end{ex}
+\end{comment}
+
+% vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:

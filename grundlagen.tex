@@ -1,0 +1,155 @@
+\chapter{Grundlagen}
+\section{Mannigfaltigkeiten}
+\begin{comment}
+Hier sollen einige Grundlagen über differenzierbare Mannigfaltigkeiten
+wiederholt werden. Siehe dazu \cite[1.22ff]{warnerLie}.
+\end{comment}
+\begin{comment}
+\begin{defn} \ccite[Defn 1.22]{warnerLie}
+Sei $\psi :M\overset{\cC^\infty}\to N$ eine Abbildung und sei $m\in M$. Das
+\emph{Differenzial} von $\psi$ an $m$ ist die lineare Abbildung
+$d\psi:M_m\to N_{\psi(m)}$, welche wie folgt definiert ist. ...
+\end{defn}
+\end{comment}
+\begin{comment}
+\begin{defn}
+... der \emph{Tangentialraum $G_e$ am Element $e$} ist definiert als...
+\end{defn}
+\end{comment}
+
+\begin{defn}
+\begin{itemize}
+\item 
+\ccite[2.5 Definition]{warnerLie}
+$\Lambda_k(V):=V_{k,0}/I_k(V)$ für $k\geq2$ und $\Lambda_0(V)=\C$ sowie
+$\Lambda_1(V)=V$. Wobei
+\begin{itemize}
+\item $I(V)$ das zweiseitige Ideal\comm{ in $C(V)$}, welches von Elementen der
+Form $v\otimes v$ für alle $v\in V$ erzeugt wird
+\item $I_k(V):=I(V)\cap V_{k,0}$
+\item $V_{k,0}$ der Tensorraum von Typ $(k,0)$, assoziiert zu $V$ 
+\ccite[2.3 Definition]{warnerLie}
+\end{itemize}
+\item 
+\ccite[2.14 Definition]{warnerLie}
+$\Lambda_k^*(M):=\underset{m\in M}\bigcup\Lambda_k^*(M_m)$ das \emph{äußere $k$
+Bündel von $M$}
+\item 
+\ccite[2.15 Definition]{warnerLie}
+Eine \emph{$k$-Form} ist eine $\cC^\infty$-Abbildung von $M$ nach
+$\Lambda_k^*(M)$ welche, verknüpft mit der kanonischen Projektion, die
+Identität ergibt
+\end{itemize}
+\end{defn}
+
+\section{\boldmath$\Proj$-Konstruktion für Projektive Schemata}
+\begin{comment}
+siehe dazu
+\begin{itemize}
+\item 
+\cite[Section 2.3.3]{liu2002algebraic}
+\item 
+\cite[Section 4.5]{ravil} 
+\end{itemize}
+\end{comment}
+\begin{defn} \ccite[Section 2.3.3]{liu2002algebraic}
+Sei $A$ ein Ring und $S=\bigoplus_{d\geq0}S_d$ eine graduierte $A$-Algebra. 
+\begin{itemize}
+\item
+Ein Ideal $I$ in $S$ wird \emph{homogen} genannt, falls es von homogenen
+Elementen erzeugt wird. \comm{$\Leftrightarrow$ $I=\bigoplus_{d\geq0}(I\cap
+S_d)$}
+\item
+$S_+:=\bigoplus_{d>0}S_d \vartriangleleft S$
+\item
+$\Proj S:=\{\mathfrak p \in\Spec S \text{ homogen} \mid
+  S_+\notin\mathfrak p\}$
+\item
+$V_+(I):=...$
+\item
+Sei $f$ ein Homogenes Element aus $S$.
+\begin{align*}
+D_+(f)&:=\Proj S \ V_+(fS)
+\\&=\left\{\mathfrak p \in\Proj S\mid f\notin \mathfrak p \right\}
+  \overset{\text{offen}}\subset S
+\end{align*}
+\end{itemize}
+\end{defn}
+
+Es ist $(\Proj \C[T_0,T_1],\cO_{\Proj \C[T_0,T_1]})$ ein lokal geringter Raum.
+
+\section{(Lokal) freie Modulgarben / Vektorbündel}
+\begin{defn}
+Ein $\cO_X$ Modul $\cM$ heißt
+\begin{itemize}
+\item 
+\emph{frei}, wenn es eine Menge $I$ und einen $\cO_X$ Modul-Isomorphismus 
+\[ \cO_X^{(I)} := \bigoplus_{i\in I} \cO_X \overset{\cong} \to \cM\]
+gibt,
+\item 
+\emph{lokal frei} oder \emph{Vektorbündel von Rang $r$}, wenn es zu jedem $x\in
+X$ eine Teilmenge $x \in U\overset{\text{offen}}\subset X$ und einen
+$\cO_U$-Modul-Isomorphismus
+\[ \cO_U^r \overset{\cong}\to \cM|_U\]
+gibt.
+\end{itemize}
+\end{defn}
+\begin{comment}
+Sei ein Vektorbündel $V\overset{\pi}\to \P^1$ vom Rang $n$ gegeben. Dann setze 
+\[ 
+\cV : U \mapsto \cV(U) := \{\sigma: U \to \pi^{-1}(U) \subseteq V \mid
+  \sigma\text{ stetig, } \pi \circ \sigma = \id_U\}.
+\]
+Dies ist eine lokal freie $\cO_{\Proj \C[T_0,T_1]}$-Modulgarbe vom Rang $n$.
+
+\begin{defn}
+Eine \emph{lokale Trivialisierung} ist ein isomorphismus
+\[
+\cV|_U\overset{\cong}\to \cO_{\P^1}|_U^n=\cO_U^n
+\]
+\end{defn}
+
+\begin{defn}[Holomorphes Vektorbündel vom Rang $n$ auf $V$]
+\end{defn}
+\end{comment}
+
+\section{(Weil-)Divisoren}
+\begin{comment}
+Aus dem Schematheorie Skript:
+\begin{defn}
+Sei $X$ noethersch.
+\begin{enumerate}
+\item
+Ein \emph{Primzykel in $X$} ist eine irreduzible, abgeschlossene
+Teilmenge.
+\item
+Ein \emph{Zykel in $X$} ist ein Element der abelschen Gruppe
+\[\Z^{(X)} := \{Z = \sum_{x\in X} n_x \bar{\{x\}} \mid
+    n_x \in \Z,\ n_x = 0\text{ für fast alle }x\}.\]
+\item
+Für $Z = \sum n_x \bar{\{x\}}$ heißt
+\[ \supp Z := \bigcup_{x\in X\atop n_x\neq 0}\]
+der \emph{Träger von $Z$}.
+\item
+Ein Zykel $Z$ heißt von \emph{Kodimension 1}, wenn alle $x$ mit
+$n_x \neq 0$ von Kodimension 1 sind, d.h. 
+$\codim_X \bar{\{x\}} = 1$. Äquivalent dazu ist zu fordern, dass
+$\dim \O_{X,x} = 1$.\\
+$Z^1(X) \subseteq \Z^{(X)}$ bezeichne die Untergruppe dieser.
+\end{enumerate}
+\end{defn}
+
+\begin{defn}[Weil-Divisoren]
+    Sei $X$ noethersch und integer, so heißt $Z^1(X)$ die Gruppe der
+    \emph{Weil-Divisoren}.
+\end{defn}
+%
+\begin{defn}[(Effectiver) Divisor]
+Ein \emph{(effektiver) Divisor} ist...
+\end{defn}
+%
+
+\end{comment}
+
+%
+% vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:

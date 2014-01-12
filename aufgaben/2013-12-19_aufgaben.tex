@@ -1,0 +1,453 @@
+\section*{vom 19.12.2013}
+
+\begin{ex}
+Formal sauber: Wähle Trivialisierungen
+\end{ex}
+Sei $i\in\{1,\dots,m\}$ fix.
+Hier wollen wir das wählen einer lokalen Trivialisierung beziehungsweise
+zunächst das wählen einer lokalen Koordinate auf $\P^1$ formal sauber machen,
+dazu verwenden wir die $\Proj$-Konstruktion.\\
+Das Wählen einer lokalen Koordinate entspricht der Wahl eines homogenen
+$f\in\C[T_0,T_1]_+$ so dass
+\[
+\A_z^1=\Spec\C[z]=D_+(f)
+\overset{\tau}\hookrightarrow
+\Proj\C[T_0,T_1]=\P^1 \,.
+\]
+Dies soll so gewählt werden, dass \textbf{\boldmath die lokale Koordinate $z$
+auf $a_i$ verschwindet,} also dass $\tau(0)=a_i$ gilt.
+\TODO
+
+Aus dieser lokalen Koordinate erhält man\comm{, in einer Umgebung $U$ von
+$a_i$,} eine lokale Trivialisierung des Vektor Bündels $V$ auf $\P^1$.
+Bezogen auf diese lokale Trivialisierung von $V$ hat $\nabla$ die Form
+$\nabla=d-A$ wobei
+\[
+A=\underset{\text{Hauptteil}}{\underbrace{
+    A_{k_1}\frac{dz}{z^{k_i}} +\dots+ A_{1}\frac{dz}{z}
+  }} +
+  \underset{\text{Nebenteil}}{\underbrace{A_0dz +\dots}}
+\]
+eine Matrix meromorpher $1$-Formen und $A_j\in\End(\C^n)$.
+\begin{comment}
+\begin{defn}
+Eine meromorphe $1$-Form ist ein Element $\omega\in\Omega^1(V;\C)$ welche sich
+als $\omega=udz$ mit meromorphen $u$ schreiben lässt.
+\end{defn}
+\end{comment}
+
+\begin{ex}
+\begin{enumerate}
+\item
+\comm{(von Def 2.7)} Definition von Erweitertem Orbit $\tilde O_i$ als top.
+Raum
+\item
+\comm{(von Lemma 2.2)} $\tilde O\cong T^*O_u\times O_B$
+\end{enumerate}
+\end{ex}
+Es sei $n\in\N$ fix (Rang des Vektorbündels).
+Es sei $\GL_n(R)$ die Gruppe der $n\times n$ Matrizen mit Einträgen in $R$
+deren Determinanten eine Einheit in $R$ sind.
+Es sei
+\begin{align*}
+G_k&:=\GL_n\left(\C[\xi]/\xi^k\right)
+\\&=\left\{A\in\left( \C[\xi]/\xi^k \right)^{n\times n}\mid
+    \det(A)\in \left(\C[\xi]/\xi^k\right)^\times \right\}
+\\&\overset{\text{\color{red}?}}=
+    \left\{A\in\left( \C[\xi]/\xi^k \right)^{n\times n}\mid
+    \det(A)\in \C^\times \right\}
+\\&=\left(\left( \C[\xi]/\xi^k \right)^{n\times n}\right)^\times
+\end{align*}
+die Gruppe der $(k-1)$-Jets von Bündel Automorphismen und
+\begin{align*}
+B_k&=\left\{ A \in G_k \mid A(0)=1\in \C^{n\times n} \right\}
+\\&=\left\{ \sum_{i=1}^{k-1}A_i\xi^i + 1 \in G_k \right\}
+\end{align*}
+die Untergruppe aller Elemente mit konstantem Term $1$.
+Weiter sei $G:=\Gl_n(\C)=G_1$. Damit haben wir die kurze exakte Sequenz
+\[
+\begin{tikzcd}[row sep=0]
+1 \rar & B_k \arrow[hook]{r} & G_k \rar & G \arrow[hook,bend right=40]{l}
+  \rar & 1\\
+& & A \arrow[|->]{r}& A(0)
+\end{tikzcd}
+\]
+Diese Sequenz splitet\comm{(Quelle?)}, da $G$ in $G_k$ als die Untergruppe der
+konstanten Matritzen enthalten ist und die entsprechende Verknüpfung der
+Morphismen der Identität $\Id_G$ entspricht.
+Es folgt\comm{(Quelle?)}, dass $G_k$ das semi-direkte Produkt $G\ltimes B_k$
+ist, wobei $G$ auf $B_k$ durch Konjungation wirkt.
+\begin{comment}
+Es gilt $B_k\vartriangleleft G_k$, $G_k=B_kG$ und $G\cap B_k=\{1\}$,
+deshalb ist $G_k=B_k\rtimes G$ bzw. $G_k=G\ltimes B_k$, wie es hier geschrieben
+wird.
+\begin{cor}
+Aus $G_k=G\ltimes B_k$ folgt, dass $G_k\slash B_k\cong G$.
+\end{cor}
+\begin{lem}
+Falls $G_k=G\ltimes B_k$ und $G_k=G\rtimes B_k$ so folgt, dass $G_k=G\times
+B_k$
+\end{lem}
+\end{comment}
+
+\begin{comment}
+\begin{lem}
+Wenn $G = TH$ semidirektes Produkt zweier Untergruppen mit normalem $T$ ist und
+$\alpha:H\to \Aut(T)$ durch $\alpha_h(t) = hth^{−1}$ definiert wird, dann ist
+die Abbildung $T \rtimes_\alpha H \to G, (t,h)\to th$ ein Gruppenisomorphismus.
+\end{lem}
+\begin{align*}
+G\ltimes B_k &=\Gl_n(\C)\ltimes
+    \left\{ \sum_{i=1}^{k-1}A_i\xi^i + 1 \in G_k \right\}\\
+  &\overset{\text{\color{red}?}}=
+    \left\{ g\left(\sum_{i=1}^{k-1}\cdot A_i\xi^i + 1\right)g^{-1}
+    \overset{\text{\color{red}?}}\in G_k
+    \mid g\in\Gl_n(\C) \right\}\\
+  &\overset{\text{\color{red}?}}=
+    \left\{ \sum_{i=1}^{k-1}\left(g\cdot A_i\cdot g^{-1}\right)\xi^i + gg^{-1}
+    \in G_k \mid  g\in\Gl_n(\C) \right\}\\
+  &\overset{\text{\color{red}?}}= G_k \,.
+\end{align*}
+Sei $n=3$ und $k=2$.
+Nun suche $g\in G$ und $A_1\xi + 1\in B_2$ so dass
+\begin{align*}
+g\left(A_1\xi + 1\right)g^{-1}
+  &\overset{!}= \begin{pmatrix}2 & 0 & \xi\\
+    \xi & 2 & 0\\
+    0 & \xi & 2
+    \end{pmatrix}\overset{\text{\boldmath$(\star)$}}\in G_{2}
+&\text{ bzw. }&&
+\underset{\in\xi\C^{n\times n}}{\underbrace{
+  \underset{\in\C^{n\times n}}{\underbrace{\left(gA_1g^{-1}\right)}}\xi
+}}
+  &\overset{!}= \begin{pmatrix}1 & 0 & \xi\\
+    \xi & 1 & 0\\
+    0 & \xi & 1
+    \end{pmatrix}
+ \notin\xi\C^{n\times n}
+\end{align*}
+\textbf{\boldmath$(\star)$}
+da nach \cite[Chapter 2, Section 1]{thboalch}
+gilt, dass ein Element $\sum_{i=0}^{k-1}A_i\xi^i$ in $G_k$ ist, genau dann,
+wenn $\det(A_0)\neq 0$ ist. Hier ist $\det(A_0)=8$.
+\end{comment}
+
+Ein Element $G$ aus $G_k$ hat die Form $A=A_0+A_1\xi+\dots+A_{k-1}\xi^{k-1}$,
+wobei die $A_i$ aus $\End(\C^n)$ sind. Anderstherum ist ein solches Element
+$A_0+A_1\xi+\dots+A_{k-1}\xi^{k-1}$ in $G_k$ genau dann, wenn $\det(A_0)\neq0$.
+Denn $\det(\sum^{k-1}_{i=0}A_{i}\xi^{i})=\overset{\text{\color{red}?}}\dots
+=\det(A_0)$.\\
+Die Lie Algebra $\mathfrak g_k=\Lie(G_k)$ zu $G_k$ besteht aus den Elementen
+\[
+X=X_0+X_1\xi+\dots+X_{k-1}\xi^{k-1}
+\]
+mit $X_i\in\End(\C^n)$ beliebig.\\
+Die Elemente aus $\mathfrak g_k^*$, dem Vektorraum Dual von $\mathfrak g_k$
+werden als
+\[
+A=\left(\frac{A_{k}}{\xi^{k}}+\dots+\frac{A_{1}}{\xi}\right)d\xi
+\]
+geschrieben, wobei die $A_i$ wieder aus $\End(\C)$ beliebig sind. \comm{abusing
+notation. Die Elemente aus $G_k$ sollten wohl besser $g$ genannt werden, wie in
+der Diss}
+\begin{comment}
+\ccite[p. 22]{thboalch}
+Die Paarung zwischen $\mathfrak g_k^*$ und $\mathfrak g_k$ ist gegeben durch
+\[
+<A,X>=\Res_0(\Tr(AX))=\sum^{k}_{i=1}\Tr(A_iX_{i-1})
+\]
+Wobei $\Res_0$ die Residuen Abbildung ist, welche den Koeffizient vor
+$d\xi/\xi$ ausgibt.
+\textbf{Observe that the product $AX$ is a well defined element of $\mathfrak
+g_k^∗$, where $A\in\mathfrak g_k^*$ and $X\in\mathfrak g_k$.}
+Ähnlich ist das Produkt $XA$ wohldefiniert in $\mathfrak g_k^∗$. Damit ist
+$\mathfrak g_k^*$ ein Bimodul über $\mathfrak g_k$.
+\end{comment}
+
+\paragraph{Koadjunggierte Orbiten} (\cite[pp.23-26]{thboalch})
+\begin{defn}
+\begin{itemize}
+\item
+Der \emph{$G_k$ koadjungierte Orbit durch $A\in\mathfrak g_k^*$} ist
+\[
+O(A):=\{gAg^{-1}\mid g\in G_k\}\subset\mathfrak g_k^*
+\]
+\item
+Die \emph{schönen} $G_k$ koadjungierte Orbiten sind die Elemente, wessen
+führender Koeffizient
+\begin{enumerate}
+\item
+diagonalisierbar mit unterschiedlichen Eigenwerten ist, falls $k\geq2$, oder
+\item
+diagonalisierbar mit modulo $\Z$ unterschiedlichen Eigenwerten, falls $k=1$.
+\end{enumerate}
+\end{itemize}
+\end{defn}
+Diese koadjunggierten Orbiten sind homogene Räume für $G_k$ und deshalb sind
+diese glatte komplexe Mannigfaltigkeiten.
+Nach symplektischer Geometrie haben koadjungierte Orbiten eine natürliche
+(konstante Kirillov) symplektische Struktur.
+\comm{they are the symplectic leaves of the (Lie) Poisson bracket on the dual
+of the Lie algebra. Since everything is complex here, $O(A)$ is naturally a
+complex symplectic manifold.}
+
+\TODO
+
+\begin{comment}
+\begin{defn}
+\dots \emph{schöne koadjungierte Orbiten} \dots
+\end{defn}
+Sei $X$ ein Element der Lie Algebra $\mathfrak g_k$ und setze das
+charakteristische Polynom
+\[
+P_X(\lambda):=\det(\lambda1-X)\in\C[\lambda,\xi]/(\xi^k)
+\]
+von $X$ über dem Ring $\C[\xi]/(\xi)$.
+Dieses Polynom hat $\lambda$-Grad $n$ mit Koeffizienten in $\C[\xi]/(\xi^k)$.
+\begin{lem}
+\ccite[Lemma 2.5]{thboalch}
+Sei $X\in\mathfrak g_k$ ein Element, bei dem der Konstante Term
+unterschiedliche Eigenwerten hat.
+\begin{enumerate}
+\item
+Falls $g\in G_k$ dann ist $P_{gXg^{-1}}=P_X$
+\item
+Falls $Y\in\mathfrak g_k$ und $P_Y=P_X$ dann ist $Y=gXg^{-1}$ für ein $g\in
+G_k$.
+\end{enumerate}
+\end{lem}
+Und damit erhalten wir das folgende Korollar.
+\begin{cor}
+\ccite[Corollary 2.6]{thboalch}
+Die schönen Orbiten sind affine algebraische Varietäten.
+\end{cor}
+\begin{cor}\ccite[Corollary 2.7]{thboalch}
+Wir nehmen an, dass dar führende Koeffizient von $A\in\mathfrak g_k^*$
+unterschiedliche Eigenwerte habe und das für diese bereits eine Anordnung
+$e_1,\dots,e_n$ gewählt wurde.
+Dann setzt sich die Wahl der Diagonalisierung $\diag(e_1,\dots,e_n)$ des
+führenden Koeffizienten von $A$ eindeutig zu einer Diagonalisierung von $A$
+fort.
+Das bedeutet, dass es eindeutige Elemente $f_i,\dots,f_n\in\C[\xi]/(\xi^k)$
+gibt, so dass
+\begin{itemize}
+\item
+$f_i(0)=e_i$ für alle $i$ gilt und \item das entsprechende diagonale Elemente
+von $\mathfrak g_k^*$ ist in dem glechem Orbit wie $A$:
+\[
+\diag(f_i,\dots,f_n)d\xi/\xi^k\in O(A)
+\]
+\end{itemize}
+\end{cor}
+\end{comment}
+
+\TODO
+\paragraph{Erwieterte Orbiten} (\cite[pp.26-36]{thboalch})
+Sei nun $k$ mindestens $2$ und wähle ein diagonales Element
+\[
+A^0:=\left(\frac{A_{k}^0}{\xi^{k}}+\dots+\frac{A_{2}^0}{\xi^2}\right)d\xi
+\in \mathfrak b_k^*
+\]
+so dass der führende Koeffizient $A_k^0$ unterschiedliche Diagonaleinträge hat.
+Sei $O_B=O_B(A^0)$ der $B_k$ coadjungierte Orbit durch $A^0$.
+\begin{defn}
+Die \emph{Erweiterung} oder der \emph{erwieterte Orbit} assoziiert zu dam $B_k$
+coadjungierten Orbit $O_B$ ist die Menge:
+\[
+\tilde O = \tilde O(A^0) :=
+\{ (g_0,A)\in\Gl_n(\C)\times\mathfrak g_k^*\mid \pi(g_0Ag_0^-1)\in O_B \}
+\]
+wobei $\pi:\mathfrak g_k^*\to\mathfrak b_k^*$ die natürliche Projektion ist,
+welche das Residuum entfernt.
+\end{defn}
+\TODO[Lemma 2.13 aus thboalch]
+
+\begin{comment}
+bis hier neu
+\end{comment}
+\begin{beh}
+$\dim(\tilde O)=\dim(O)+2n$
+\end{beh}
+\begin{comment}
+\ccite[Lemma 2.13]{thboalch}
+\end{comment}
+\begin{comment}
+\ccite[p27]{thboalch}
+\[
+\Theta :=\left\{ A\in\mathfrak g_k^*\mid (g_0,A)\in\tilde O
+  \text{ für ein passendes } g_0\in\GL_n(\C) \right\}
+\]
+ist der Kern der Projektion
+\[
+\tilde O\to\mathfrak g_k^*;\qquad (g_0,A)\mapsto A
+\]
+\begin{cor}
+\ccite[Corollary 2.15]{thboalch}
+The extended orbit $\tilde O$ is a principal $T$ bundle over $\theta$.
+\end{cor}
+\end{comment}
+\begin{lem}[Lemma 2.2 aus \protect\cite{boalch}]
+Der erweiterte Orbit $\tilde O$ ist kanonisch isomorph zu dem symplektischem
+quotienten $\symplquot{T^*G_k\times O_B}{B_k}$ wobei das kotangentialbündel
+$T^*G_k$ und der koadjungierte Orbit $O_B$ ihre natürliche symplektische
+Struktur tragen.
+\begin{comment}
+Entspricht
+\cite[Proposition 2.19]{thboalch}
+zusammen mit
+\cite[Remark 2.20]{thboalch}
+\end{comment}
+\end{lem}
+\begin{proof}
+Die Momenten Abbildung der $B_k$-Wirkung auf $O_B$ ist nur die Inklusion
+$O_B\to\mathfrak b_k^*$ und die Momenten Abbildung für die $B_k$-Wirkung auf
+$T^*G_k$ ist die Komposition der Momenten Abbildung der links-$G_k$-Wirkung mit
+der Projektion $\pi_{irr}:\mathfrak g_k^*\to\mathfrak b_k^*$. \comm{in thboalch
+ist $\pi_{irr}$ das $\pi$}
+Damit ist die Momenten Abbildung der $B_k$-Wirkung auf dem Produkt die Summe
+dieser beiden Wirkungen:
+\begin{equation}\label{eq:pfOf2.2-1}
+\mu:T^*G_k\times O_B\to \mathfrak b_k*;\qquad (g,A,B)\mapsto
+  -\pi_{irr}\left(\Ad_g^*(A)\right)+B
+\end{equation}
+Damit ist das Urbild von $0\in\mathfrak b_k^*$ unter $\mu$:
+\[
+\mu^{-1}(0)=\left\{(g,A,B)\mid\pi_{irr}(gAg^{-1})=B\right\} \,.
+\]
+\begin{comment}
+Sei $(g,A,B)\in T^*G_k\times O_B$ im Kern, also
+\begin{align*}
+0=\mu((g,A,B))&=-\pi_{irr}\left(\Ad_g^*(A)\right)+B
+\\&=-\pi_{irr}\left(gAg^{-1}\right)+B \qquad \text{also} \qquad
+    \pi_{irr}\left(gAg^{-1}\right)=B
+\end{align*}
+\end{comment}
+Um den symplektischen Quotienten
+$\symplquot{T^*G_k\times O_B}{B_k}:=\mu^{-1}(0)/B_k$
+mit $\tilde O$ zu identifizieren, betrachten wir die Abbildung:
+\[
+\chi:\mu^{-1}(0)\to\tilde O;\qquad(g,A,B)\mapsto(g(0),A)\,.
+\]
+Diese Abbildung ist wohldefiniert da die Bedingung $\pi_{irr}(gAg^{-1})=B$ aus
+(\ref{eq:pfOf2.2-1}) impliziert, dass
+\[
+\pi_{irr}(g(0)Ag(0)^{-1})=g(0)g^{-1}Bgg(0)^{-1}
+\]
+\begin{comment}
+\begin{align*}
+\pi_{irr}(g(0)Ag(0)^{-1})
+  &=g(0)\pi_{irr}(A)g(0)^{-1}
+\\&=g(0)\pi_{irr}(g^{-1}gAg^{-1}g)g(0)^{-1}
+\\&=g(0)g^{-1}\pi_{irr}(gAg^{-1})gg(0)^{-1}
+\\&=g(0)g^{-1}Bgg(0)^{-1}
+\end{align*}
+\end{comment}
+und dieses Element ist in dem Gleichem $B_k$ koadjunggierten Orbit wie $B$, da
+$g(0)g^{-1}\in B_k$.
+\begin{comment}
+\begin{align*}
+g(0)g^{-1}
+  &=g(0)\left(g(0)+g_i\xi^1+\dots+g_k\xi^k\right)^{-1}
+\\&\overset{\text{\color{red}?}}=
+    g(0)\left(g(0)^{-1}+(g_i)^{-1}\xi^1+\dots+(g_k)^{-1}\xi^k\right)
+\\&=g(0)g(0)^{-1}+g(0)(g_i)^{-1}\xi^1+\dots+g(0)(g_k)^{-1}\xi^k
+\\&=1+g(0)(g_i)^{-1}\xi^1+\dots+g(0)(g_k)^{-1}\xi^k \in B_k
+\end{align*}
+\end{comment}
+\begin{beh}
+$\chi$ ist surjektiv und hat genau die $B_k$ Orbiten in $\mu^{-1}(0)$ als
+Fasern.
+\end{beh}
+Surjektivität ist klar, da wir einen Schnitt von $\chi$ angeben können:
+\[
+s:(g_0,A)\mapsto (g_0,A,\pi_{irr}(g_0Ag_0^{-1}))\in\mu^{-1}(0)
+\]
+wobei $(g_0,A)\in\tilde O$.
+\begin{comment}
+\[
+\chi\circ s=\left((g_0,A)\overset s\mapsto(g_0,A,\pi_{irr}(g_0Ag_0^{-1}))
+  \overset\chi\mapsto(\underset{=g_0}{\underbrace{g_0(0)}},A)\right)
+  =\id_{\mu^{-1}(0)}
+\]
+\end{comment}
+Nun wollen wir die Fasern betrachten, sei dazu $\chi(g,A,B)=\chi(g',A',B')$.
+Also ist $A=A'$, $g(0)=g'(0)$ und damit $g'=\beta g$ wobei $\beta:=g'g^{-1}$ in
+$B_k$ ist.
+Dann, erneut nach der Bedingung in (\ref{eq:pfOf2.2-1}), gilt:
+\[
+B'=\pi_{irr}(g'A'g'^{-1})=\pi_{irr}(\beta gAg^{-1}\beta^{-1})=\beta B\beta^{-1}
+\]
+\begin{comment}
+\begin{align*}
+B'&\!\!\overset{(\ref{eq:pfOf2.2-1})} =\!\!
+  \pi_{irr}(g'A'g'^{-1})  \overset{A'=A}{=}
+    \pi_{irr}\left(g'\left(g^{-1}g\right)A\left(g^{-1}g\right)g'^{-1}\right)
+    =\pi_{irr}(\beta gAg^{-1}\beta^{-1})
+\\& =\beta \pi_{irr}(gAg^{-1}) \beta^{-1}
+    \overset{(\ref{eq:pfOf2.2-1})}=\beta B\beta^{-1}
+\end{align*}
+\end{comment}
+Damit gilt, dass $(g',A',B')=\beta(g,A,B)$ und damit ist jede Faser von $\chi$
+in einem $B_k$ Oribt enthalten.
+\begin{comment}
+Also(?):
+\begin{align*}
+\beta(g,A,B) 
+  &\overset{!}=(\beta g,A,\beta B\beta^{-1})
+\\&=(g',A',B')
+\end{align*}
+\end{comment}
+Anderstherum ist klar dass $B_k$ innerhalb der Fasern von $\chi$ wirkt.
+\begin{comment}
+Wie sieht die $B_k$-Wirkung auf $\mu^{-1}(0)$ aus?
+Sei $\beta\in B_k$ und $(g,A,B)\in\mu^{-1}(0)$ so...
+\end{comment}
+Dies identifiziert den Quotienten $\mu^{-1}(0)/B_k$ mid $\tilde O$ als
+Mannigfaltigkeit.
+\begin{comment}
+???
+\end{comment}
+
+\TODO
+\end{proof}
+
+\begin{ex}
+Proof (2.1)
+\end{ex}
+\begin{prop}\ccite[Prop 2.1]{boalch}
+\begin{itemize}
+\item
+\ccite[Theorem 2.35]{thboalch}
+$\mathcal M(\textbf a)$ ist isomorph zu dem komplexen symplektischem Quotienten
+\[
+\mathcal M(\textbf a)\cong\symplquot{O_1\times\dots\times O_m}{G} \,.
+\]
+\item
+\ccite[Theorem 2.43]{thboalch}
+Analog gibt es komplexe symplektische Mannigfaltigkeiten (erweiterte Orbiten)
+$\tilde O_i$ mit $\dim(\tilde O_i)=\dim(O_i)+2n$ und freie Hamiltonische
+$G$-Wirkungen, so dass
+\[
+\widetilde{\mathcal M}(\textbf a)\cong
+\symplquot{\tilde O_1\times\dots\times\tilde O_m}{G} \,.
+\]
+\item \TODO[Unterpunkt 3]
+\end{itemize}
+\end{prop}
+\begin{proof}
+Wir wählen eine Koordinate $z$ und identifizieren $\P^1$ mit
+$\C\cup\{\infty\}$, so dass jedes $a_i$ endlich ist.
+Definiere $z_i:=z-a_i$.
+Die gewählten Keime $d-{}^iA^0$ des meromorphen Zusammenhangs bestimmen
+$G_{k_i}$ koadjunggierte Orbiten $O_i$ und setzen sich zu erweiterten Orbiten
+$\tilde O_i$ fort.
+\begin{comment}
+Setze $O_i$ als den koadjunggierten Orbit durch den Punkt von $\mathfrak
+g_k^*$, welcher durch den Hauptteil von ${}^iA^0$ \comm{ in (5) } gegeben ist.
+Analog bestimmt der irreguläre Teil von ${}^iA^0$ einen Punkt in $\mathfrak
+b_{k_i}^*$ und $\tilde O_i$ ist der erwieterte Orbit assoziiert zu dem
+$B_{k_i}$ koadjunggierten Orbit durch den Punkt
+\end{comment}
+\end{proof}
+
+% vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:

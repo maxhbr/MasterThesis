@@ -1,0 +1,151 @@
+%TODO: replace def --> newcommand
+\def\bme{\boldsymbol{e}}
+
+% {{{ bb
+\def\A{\ensuremath \mathbb{A}}
+%\def\B{\ensuremath \mathbb{B}}
+\def\C{\ensuremath \mathbb{C}}
+%\def\D{\ensuremath \mathbb{D}}
+%\def\E{\ensuremath \mathbb{E}}
+%\def\F{\ensuremath \mathbb{F}}
+%\def\G{\ensuremath \mathbb{G}}
+%\def\H{\ensuremath \mathbb{H}}
+\def\I{\ensuremath \mathbb{I}}
+%\def\J{\ensuremath \mathbb{J}}
+%\def\K{\ensuremath \mathbb{K}}
+%\def\L{\ensuremath \mathbb{L}}
+%\def\M{\ensuremath \mathbb{M}}
+\def\N{\ensuremath \mathbb{N}}
+%\def\O{\ensuremath \mathbb{O}}
+\def\P{\ensuremath \mathbb{P}}
+\def\Q{\ensuremath \mathbb{Q}}
+\def\R{\ensuremath \mathbb{R}}
+%\def\S{\ensuremath \mathbb{S}}
+%\def\T{\ensuremath \mathbb{T}}
+%\def\U{\ensuremath \mathbb{U}}
+%\def\V{\ensuremath \mathbb{V}}
+%\def\W{\ensuremath \mathbb{W}}
+%\def\X{\ensuremath \mathbb{X}}
+%\def\Y{\ensuremath \mathbb{Y}}
+\def\Z{\ensuremath \mathbb{Z}}
+% }}}
+
+% {{{ cal
+%\def\cA{\ensuremath \mathcal{A}}
+%\def\cB{\ensuremath \mathcal{B}}
+\def\cC{\ensuremath \mathcal{C}}
+\def\cD{\ensuremath \mathcal{D}}
+\def\cE{\ensuremath \mathcal{E}}
+\def\cF{\ensuremath \mathcal{F}}
+\def\cG{\ensuremath \mathcal{G}}
+%\def\cH{\ensuremath \mathcal{H}}
+%\def\cI{\ensuremath \mathcal{I}}
+%\def\cJ{\ensuremath \mathcal{J}}
+%\def\cK{\ensuremath \mathcal{K}}
+\def\cL{\ensuremath \mathcal{L}}
+\def\cM{\ensuremath \mathcal{M}}
+\def\cN{\ensuremath \mathcal{N}}
+\def\cO{\ensuremath \mathcal{O}}
+\def\cP{\ensuremath \mathcal{P}}
+%\def\cQ{\ensuremath \mathcal{Q}}
+\def\cR{\ensuremath \mathcal{R}}
+%\def\cS{\ensuremath \mathcal{S}}
+%\def\cT{\ensuremath \mathcal{T}}
+%\def\cU{\ensuremath \mathcal{U}}
+\def\cV{\ensuremath \mathcal{V}}
+%\def\cW{\ensuremath \mathcal{W}}
+%\def\cX{\ensuremath \mathcal{X}}
+%\def\cY{\ensuremath \mathcal{Y}}
+%\def\cZ{\ensuremath \mathcal{Z}}
+% }}}
+
+% {{{ scr
+%\def\sA{\ensuremath \mathscr{A}}
+%\def\sB{\ensuremath \mathscr{B}}
+%\def\sC{\ensuremath \mathscr{C}}
+%\def\sD{\ensuremath \mathscr{D}}
+\def\sE{\ensuremath \mathscr{E}}
+%\def\sF{\ensuremath \mathscr{F}}
+%\def\sG{\ensuremath \mathscr{G}}
+%\def\sH{\ensuremath \mathscr{H}}
+%\def\sI{\ensuremath \mathscr{I}}
+%\def\sJ{\ensuremath \mathscr{J}}
+%\def\sK{\ensuremath \mathscr{K}}
+%\def\sL{\ensuremath \mathscr{L}}
+%\def\sM{\ensuremath \mathscr{M}}
+%\def\sN{\ensuremath \mathscr{N}}
+\def\sO{\ensuremath \mathscr{O}}
+%\def\sP{\ensuremath \mathscr{P}}
+%\def\sQ{\ensuremath \mathscr{Q}}
+%\def\sR{\ensuremath \mathscr{R}}
+%\def\sS{\ensuremath \mathscr{S}}
+%\def\sT{\ensuremath \mathscr{T}}
+%\def\sU{\ensuremath \mathscr{U}}
+%\def\sV{\ensuremath \mathscr{V}}
+%\def\sW{\ensuremath \mathscr{W}}
+%\def\sX{\ensuremath \mathscr{X}}
+%\def\sY{\ensuremath \mathscr{Y}}
+%\def\sZ{\ensuremath \mathscr{Z}}
+% }}}
+
+%\renewcommand{\headrulewidth}{0.2pt}
+
+\newcommand{\myhr}{\rule{0.3\textwidth}{1pt}}
+
+\let\epsilon\varepsilon
+\let\phi\varphi
+\let\hat\widehat
+
+% {{{
+%\DeclareMathOperator{\defn}{def}
+\DeclareMathOperator{\modulo}{mod}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\Cof}{Cof}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\dist}{dist}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\co}{co}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\graph}{graph}
+\DeclareMathOperator{\slopes}{slopes}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\Car}{Car}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\ord}{ord}
+% }}}
+
+%\def\cP{\text{slopes}}
+
+% {{{
+\newcommand{\Cfx}{{\mathbb C\llbracket x\rrbracket}}
+\newcommand{\Cft}{{\mathbb C\llbracket t\rrbracket}}
+\newcommand{\Cfu}{{\mathbb C\llbracket u\rrbracket}}
+\newcommand{\Cfxl}{{\mathbb C (\!(x)\!)}}
+\newcommand{\Cftl}{{\mathbb C (\!(t)\!)}}
+\newcommand{\Cful}{{\mathbb C (\!(u)\!)}}
+\newcommand{\Cfzl}{{\mathbb C (\!(z)\!)}}
+\newcommand{\Ckx}{{\mathbb C \{x\}}}
+\newcommand{\Ckt}{{\mathbb C \{t\}}}
+\newcommand{\Cku}{{\mathbb C \{u\}}}
+\newcommand{\Ckxl}{{\mathbb C (\!\{x\}\!)}}
+\newcommand{\Cktl}{{\mathbb C (\!\{t\}\!)}}
+\newcommand{\Ckul}{{\mathbb C (\!\{u\}\!)}}
+
+\newcommand{\bydef}{\overset{\mbox{\tiny def}}{=}}
+
+\newcommand{\anfzeichen}[1]{\glqq{#1}\grqq}     % Anf\"uhrungszeichen
+
+\providecommand*{\Floor}[1]{\left\lfloor #1 \right\rfloor}         % gro\ss{}es ganzes Abrunden
+\providecommand*{\Ceil}[1]{\left\lceil #1 \right\rceil} % gro\ss{}es ganzes
+
+\makeatother
+
+\newcommand{\overbox}[2]{\ensuremath\begin{array}[b]{c}%
+\makebox[0pt]{\fbox{\scriptsize#2}}\\[-2pt]\text{\small$\downarrow$}\\[-3pt]%
+{\displaystyle#1}\end{array}}
+
+% vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:
