@@ -7,8 +7,8 @@ maArbeit
 Über den Code
 -------------
 
-möchte mit lualatex compiliert werden, dazu ist das folgende in meiner 
-.aliasrc:
+möchte mit **lualatex** compiliert werden, dazu ist das folgende in meiner 
+`.aliasrc`:
 ```bash
 mylualatexmk(){
   grep -l '\\documentclass' *tex | \
