@@ -18,7 +18,6 @@ mylualatexmk(){
 Zum drucken als A5-Broschüre:
 ```bash
 lprBook() {
-  mystartcups
   [[ -f $1 ]] && {
     pdftops -paperw 420 -paperh 595 $1 - \
       | psbook -q \
