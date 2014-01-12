@@ -26,4 +26,4 @@ lprBook() {
   } || { echo "file not found"; }
 }
 ```
-
+für mehr, siehe [myconfig](https://github.com/maximilianhuber/myconfig)
