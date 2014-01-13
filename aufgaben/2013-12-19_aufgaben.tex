@@ -72,11 +72,16 @@ Weiter sei $G:=\Gl_n(\C)=G_1$. Damit haben wir die kurze exakte Sequenz
 & & A \arrow[|->]{r}& A(0)
 \end{tikzcd}
 \]
-Diese Sequenz splitet\comm{(Quelle?)}, da $G$ in $G_k$ als die Untergruppe der
-konstanten Matritzen enthalten ist und die entsprechende Verknüpfung der
-Morphismen der Identität $\Id_G$ entspricht.
-Es folgt\comm{(Quelle?)}, dass $G_k$ das semi-direkte Produkt $G\ltimes B_k$
+Diese Sequenz splitet, da $G$ in $G_k$ als die Untergruppe der konstanten
+Matritzen enthalten ist und die entsprechende Verknüpfung der Morphismen der
+Identität $\Id_G$ entspricht.
+Es folgt, dass $G_k$ das semi-direkte Produkt $G\ltimes B_k$
 ist, wobei $G$ auf $B_k$ durch Konjungation wirkt.
+\begin{comment}
+Die Kategorie der Gruppen ist nicht Abelsch, deshalb folgt nur der Zerfall in
+ein semidirektes Produkt.\\
+Siehe \cite[p.148]{hatcher2002algebraic}
+\end{comment}
 \begin{comment}
 Es gilt $B_k\vartriangleleft G_k$, $G_k=B_kG$ und $G\cap B_k=\{1\}$,
 deshalb ist $G_k=B_k\rtimes G$ bzw. $G_k=G\ltimes B_k$, wie es hier geschrieben
@@ -132,11 +137,15 @@ gilt, dass ein Element $\sum_{i=0}^{k-1}A_i\xi^i$ in $G_k$ ist, genau dann,
 wenn $\det(A_0)\neq 0$ ist. Hier ist $\det(A_0)=8$.
 \end{comment}
 
-Ein Element $G$ aus $G_k$ hat die Form $A=A_0+A_1\xi+\dots+A_{k-1}\xi^{k-1}$,
+Ein Element $A$ aus $G_k$ hat die Form $A=A_0+A_1\xi+\dots+A_{k-1}\xi^{k-1}$,
 wobei die $A_i$ aus $\End(\C^n)$ sind. Anderstherum ist ein solches Element
 $A_0+A_1\xi+\dots+A_{k-1}\xi^{k-1}$ in $G_k$ genau dann, wenn $\det(A_0)\neq0$.
-Denn $\det(\sum^{k-1}_{i=0}A_{i}\xi^{i})=\overset{\text{\color{red}?}}\dots
-=\det(A_0)$.\\
+\begin{comment}
+Zu Zeigen: $\det(\sum^{k-1}_{i=0}A_{i}\xi^{i})\neq 0$ $\Leftrightarrow$
+$\det(A_0)\neq0$.\\
+\textbf{Denn} $\det(\sum^{k-1}_{i=0}A_{i}\xi^{i})=\overset{\text{\color{red}?}}\dots
+=\det(A_0)$.
+\end{comment}
 Die Lie Algebra $\mathfrak g_k=\Lie(G_k)$ zu $G_k$ besteht aus den Elementen
 \[
 X=X_0+X_1\xi+\dots+X_{k-1}\xi^{k-1}
@@ -194,9 +203,6 @@ complex symplectic manifold.}
 \TODO
 
 \begin{comment}
-\begin{defn}
-\dots \emph{schöne koadjungierte Orbiten} \dots
-\end{defn}
 Sei $X$ ein Element der Lie Algebra $\mathfrak g_k$ und setze das
 charakteristische Polynom
 \[
@@ -255,11 +261,14 @@ Die \emph{Erweiterung} oder der \emph{erwieterte Orbit} assoziiert zu dam $B_k$
 coadjungierten Orbit $O_B$ ist die Menge:
 \[
 \tilde O = \tilde O(A^0) :=
-\{ (g_0,A)\in\Gl_n(\C)\times\mathfrak g_k^*\mid \pi(g_0Ag_0^-1)\in O_B \}
+\{ (g_0,A)\in\Gl_n(\C)\times\mathfrak g_k^*\mid \pi(g_0Ag_0^{-1})\in O_B \}
 \]
 wobei $\pi:\mathfrak g_k^*\to\mathfrak b_k^*$ die natürliche Projektion ist,
 welche das Residuum entfernt.
 \end{defn}
+\begin{comment}
+Warum denn \textbf{"erwieterte"} (extended) Orbiten
+\end{comment}
 \TODO[Lemma 2.13 aus thboalch]
 
 \begin{comment}
@@ -379,7 +388,7 @@ B'=\pi_{irr}(g'A'g'^{-1})=\pi_{irr}(\beta gAg^{-1}\beta^{-1})=\beta B\beta^{-1}
 \]
 \begin{comment}
 \begin{align*}
-B'&\!\!\overset{(\ref{eq:pfOf2.2-1})} =\!\!
+B'&\overset{(\ref{eq:pfOf2.2-1})}=
   \pi_{irr}(g'A'g'^{-1})  \overset{A'=A}{=}
     \pi_{irr}\left(g'\left(g^{-1}g\right)A\left(g^{-1}g\right)g'^{-1}\right)
     =\pi_{irr}(\beta gAg^{-1}\beta^{-1})
@@ -402,7 +411,10 @@ Anderstherum ist klar dass $B_k$ innerhalb der Fasern von $\chi$ wirkt.
 Wie sieht die $B_k$-Wirkung auf $\mu^{-1}(0)$ aus?
 Sei $\beta\in B_k$ und $(g,A,B)\in\mu^{-1}(0)$ so...
 \end{comment}
-Dies identifiziert den Quotienten $\mu^{-1}(0)/B_k$ mid $\tilde O$ als
+Dies entspricht der anderen Inclusion und damit ist die Behauptung gezeigt.
+{\hfill \textbf{Beh.} \ensuremath{\qed}}
+
+Dies identifiziert den Quotienten $\mu^{-1}(0)/B_k$ mit $\tilde O$ als
 Mannigfaltigkeit.
 \begin{comment}
 ???

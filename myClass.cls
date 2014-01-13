@@ -101,6 +101,7 @@
 
 \newtheorem{ex}{Aufgabe}[chapter]
 \newtheorem*{beh}{Behauptung}
+\newtheorem*{dazu}{Dazu}
 
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition}
