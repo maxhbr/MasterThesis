@@ -260,20 +260,57 @@ Sei $O_B=O_B(A^0)$ der $B_k$ coadjungierte Orbit durch $A^0$.
 Die \emph{Erweiterung} oder der \emph{erwieterte Orbit} assoziiert zu dam $B_k$
 coadjungierten Orbit $O_B$ ist die Menge:
 \[
-\tilde O = \tilde O(A^0) :=
-\{ (g_0,A)\in\Gl_n(\C)\times\mathfrak g_k^*\mid \pi(g_0Ag_0^{-1})\in O_B \}
+\tilde O = \tilde O(A^0) :=\{ (g_0,A)\in\Gl_n(\C)\times\mathfrak g_k^*
+  \mid \pi_{irr}(g_0Ag_0^{-1})\in O_B \}
 \]
-wobei $\pi:\mathfrak g_k^*\to\mathfrak b_k^*$ die natürliche Projektion ist,
-welche das Residuum entfernt.
+wobei $\pi_{irr}:\mathfrak g_k^*\to\mathfrak b_k^*$ die natürliche Projektion
+ist, welche das Residuum entfernt.
 \end{defn}
 \begin{comment}
 Warum denn \textbf{"erwieterte"} (extended) Orbiten
 \end{comment}
 \TODO[Lemma 2.13 aus thboalch]
-
+\begin{lem} \comm{(Decoupling)} \ccite[Lemma 2.13]{thboalch}
+Die folgende Abbildung ist ein complex analytischer Isomorphismus:
+\[
+\tilde O\cong T^*\Gl_n(\C)\times O_B;\qquad 
+  (g_0,A)\mapsto ((g_0,\pi_{res}(A)),\pi_{irr}(g_0Ag_0^{-1}))
+\]
+wobei $T^*\Gl_n(\C)\cong \Gl_n(\C)\times\mathfrak{gl}_n(\C)^*$ via der links
+Trivialisierung und $\pi_{irr}$, $\pi_{res}$ die Projektionen von $\mathfrak
+g_k^*$ nach $\mathfrak b_k^*$, $\mathfrak{gl}_n(\C)^*$ passend.
+\end{lem}
+\begin{proof}
+Die Abbildung ist wohldefiniert.
 \begin{comment}
-bis hier neu
+denn???
 \end{comment}
+\textbf{Behauptung:} Die Abbildung:
+\[
+((g_0,S),B)\overset\psi\mapsto(g_0,g_0^{-1}Bg_0+S)\in\tilde O \,,
+\]
+mit $((g_0,S),B)\in T^*\Gl_n(\C)\times O_B$, ist ein Inverses zu der oben
+definierten Abbildung.\\
+Sei $\phi$ die oben definierte Abbildung, dann
+\begin{align*}
+((g_0,S),B)&\overset\psi\mapsto(g_0,g_0^{-1}Bg_0+S)
+\\&\overset\phi\mapsto((g_0,\pi_{res}(g_0^{-1}Bg_0+S)),
+    \pi_{irr}(g_0(g_0^{-1}Bg_0+S)g_0^{-1}))
+\\&=((g_0,\pi_{res}(g_0^{-1}Bg_0)+\pi_{res}(S)),
+    \pi_{irr}(g_0g_0^{-1}Bg_0g_0^{-1}+g_0Sg_0^{-1}))
+\\&=((g_0,S), \pi_{irr}(B)+ \pi_{irr}(g_0Sg_0^{-1}))
+\\&=((g_0,S), B)
+\end{align*}
+In der Anderen Richtung gilt:
+\begin{align*}
+(g_0,A)&\overset\phi\mapsto ((g_0,\pi_{res}(A)),\pi_{irr}(g_0Ag_0^{-1}))
+\\&\overset\psi\mapsto (g_0,g_0^{-1}(\pi_{irr}(g_0Ag_0^{-1}))g_0+\pi_{res}(A))
+\\&= (g_0,g_0^{-1}g_0(A - \pi_{res}(A))g_0^{-1}g_0+\pi_{res}(A))
+\\&= (g_0,A)
+\end{align*}
+Damit folgt die Behauptung.
+\end{proof}
+
 \begin{beh}
 $\dim(\tilde O)=\dim(O)+2n$
 \end{beh}
@@ -307,6 +344,9 @@ zusammen mit
 \cite[Remark 2.20]{thboalch}
 \end{comment}
 \end{lem}
+\begin{comment}
+Wie sieht denn die $B_k$ Wirkung auf $T^*G_k\times O_B$ aus?
+\end{comment}
 \begin{proof}
 Die Momenten Abbildung der $B_k$-Wirkung auf $O_B$ ist nur die Inklusion
 $O_B\to\mathfrak b_k^*$ und die Momenten Abbildung für die $B_k$-Wirkung auf
