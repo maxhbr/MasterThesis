@@ -98,7 +98,7 @@ B_k$
 \begin{comment}
 \begin{lem}
 Wenn $G = TH$ semidirektes Produkt zweier Untergruppen mit normalem $T$ ist und
-$\alpha:H\to \Aut(T)$ durch $\alpha_h(t) = hth^{−1}$ definiert wird, dann ist
+$\alpha:H\to \Aut(T)$ durch $\alpha_h(t) = hth^{-1}$ definiert wird, dann ist
 die Abbildung $T \rtimes_\alpha H \to G, (t,h)\to th$ ein Gruppenisomorphismus.
 \end{lem}
 \begin{align*}
@@ -195,7 +195,7 @@ diagonalisierbar mit modulo $\Z$ unterschiedlichen Eigenwerten, falls $k=1$.
 Diese koadjunggierten Orbiten sind homogene Räume für $G_k$ und deshalb sind
 diese glatte komplexe Mannigfaltigkeiten.
 Nach symplektischer Geometrie haben koadjungierte Orbiten eine natürliche
-(konstante Kirillov) symplektische Struktur.
+(Kostant-Kirillov) symplektische Struktur.
 \comm{they are the symplectic leaves of the (Lie) Poisson bracket on the dual
 of the Lie algebra. Since everything is complex here, $O(A)$ is naturally a
 complex symplectic manifold.}
@@ -283,7 +283,7 @@ g_k^*$ nach $\mathfrak b_k^*$, $\mathfrak{gl}_n(\C)^*$ passend.
 \begin{proof}
 Die Abbildung ist wohldefiniert.
 \begin{comment}
-denn???
+denn??
 \end{comment}
 \textbf{Behauptung:} Die Abbildung:
 \[
@@ -297,7 +297,7 @@ Sei $\phi$ die oben definierte Abbildung, dann
 \\&\overset\phi\mapsto((g_0,\pi_{res}(g_0^{-1}Bg_0+S)),
     \pi_{irr}(g_0(g_0^{-1}Bg_0+S)g_0^{-1}))
 \\&=((g_0,\pi_{res}(g_0^{-1}Bg_0)+\pi_{res}(S)),
-    \pi_{irr}(g_0g_0^{-1}Bg_0g_0^{-1}+g_0Sg_0^{-1}))
+    \pi_{irr}( g_0g_0^{-1}Bg_0g_0^{-1})+\pi_{irr}(g_0Sg_0^{-1}))
 \\&=((g_0,S), \pi_{irr}(B)+ \pi_{irr}(g_0Sg_0^{-1}))
 \\&=((g_0,S), B)
 \end{align*}
@@ -311,11 +311,10 @@ In der Anderen Richtung gilt:
 Damit folgt die Behauptung.
 \end{proof}
 
+\begin{comment}
 \begin{beh}
 $\dim(\tilde O)=\dim(O)+2n$
 \end{beh}
-\begin{comment}
-\ccite[Lemma 2.13]{thboalch}
 \end{comment}
 \begin{comment}
 \ccite[p27]{thboalch}
@@ -332,6 +331,27 @@ ist der Kern der Projektion
 The extended orbit $\tilde O$ is a principal $T$ bundle over $\theta$.
 \end{cor}
 \end{comment}
+\begin{comment}
+Wie sieht denn die $B_k$ Wirkung auf $T^*G_k\times O_B$ aus?\\
+Siehe: \cite[Definition 1.47]{thboalch}
+\begin{defn} \ccite[Definition 1.47]{thboalch}
+Die \emph{links Wirkung} von $G$ auf $T^*G$ ist \comm{(in terms of left
+trivialisation)}:
+\[
+h(g,A)=(hg,A)\,.
+\]
+Die \emph{rechts Wirkung} ...
+\end{defn}
+\begin{lem} \ccite[Lemma 1.48]{thboalch}
+Die links Wirkung von $G$ auf $T^*G$ ist Hamiltonisch mit einer
+equivarianten momenten Abbildung gegeben \comm{(in terms of left
+trivialisation)} durch
+\[
+\mu_L:G\times\mathfrak g^* \to \mathfrak g^*; \qquad (g,A)\mapsto -\Ad_g^*(A)
+\]
+Die rechts Wirkung ...
+\end{lem}
+\end{comment}
 \begin{lem}[Lemma 2.2 aus \protect\cite{boalch}]
 Der erweiterte Orbit $\tilde O$ ist kanonisch isomorph zu dem symplektischem
 quotienten $\symplquot{T^*G_k\times O_B}{B_k}$ wobei das kotangentialbündel
@@ -344,9 +364,6 @@ zusammen mit
 \cite[Remark 2.20]{thboalch}
 \end{comment}
 \end{lem}
-\begin{comment}
-Wie sieht denn die $B_k$ Wirkung auf $T^*G_k\times O_B$ aus?
-\end{comment}
 \begin{proof}
 Die Momenten Abbildung der $B_k$-Wirkung auf $O_B$ ist nur die Inklusion
 $O_B\to\mathfrak b_k^*$ und die Momenten Abbildung für die $B_k$-Wirkung auf
@@ -399,9 +416,14 @@ g(0)g^{-1}
   &=g(0)\left(g(0)+g_i\xi^1+\dots+g_k\xi^k\right)^{-1}
 \\&\overset{\text{\color{red}?}}=
     g(0)\left(g(0)^{-1}+(g_i)^{-1}\xi^1+\dots+(g_k)^{-1}\xi^k\right)
+  & \text{\color{red}so ist das falsch?!?}
 \\&=g(0)g(0)^{-1}+g(0)(g_i)^{-1}\xi^1+\dots+g(0)(g_k)^{-1}\xi^k
 \\&=1+g(0)(g_i)^{-1}\xi^1+\dots+g(0)(g_k)^{-1}\xi^k \in B_k
 \end{align*}
+bzw.
+\[
+(g(0))^{-1} \overset{\text{\color{red}?}}= g^{-1}(0)
+\]
 \end{comment}
 \begin{beh}
 $\chi$ ist surjektiv und hat genau die $B_k$ Orbiten in $\mu^{-1}(0)$ als
@@ -414,8 +436,8 @@ s:(g_0,A)\mapsto (g_0,A,\pi_{irr}(g_0Ag_0^{-1}))\in\mu^{-1}(0)
 wobei $(g_0,A)\in\tilde O$.
 \begin{comment}
 \[
-\chi\circ s=\left((g_0,A)\overset s\mapsto(g_0,A,\pi_{irr}(g_0Ag_0^{-1}))
-  \overset\chi\mapsto(\underset{=g_0}{\underbrace{g_0(0)}},A)\right)
+\chi\circ s=\Big((g_0,A)\overset s\mapsto(g_0,A,\pi_{irr}(g_0Ag_0^{-1}))
+  \overset\chi\mapsto(\underset{=g_0}{\underbrace{g_0(0)}},A)\Big)
   =\id_{\mu^{-1}(0)}
 \]
 \end{comment}
