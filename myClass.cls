@@ -246,7 +246,8 @@
   \renewcommand{\comment}{\color{commentTextColor}%
     \def\FrameCommand{\fcolorbox{CommentFrameColor}{commentShadeColor}}%
     \MakeFramed {\FrameRestore}%
-    \textbf{\tiny Kommentar: } }
+    %\textbf{\tiny Kommentar: } 
+    }
   \renewcommand{\endcomment}{\endMakeFramed}
 
   \iftrue

@@ -254,11 +254,15 @@ Sei nun $k$ mindestens $2$ und wähle ein diagonales Element
 A^0:=\left(\frac{A_{k}^0}{\xi^{k}}+\dots+\frac{A_{2}^0}{\xi^2}\right)d\xi
 \in \mathfrak b_k^*
 \]
+\begin{comment}
+Ein diagonales Element ist ein Element, dessen Vorfaktoren alle diagonale
+Matritzen sind?
+\end{comment}
 so dass der führende Koeffizient $A_k^0$ unterschiedliche Diagonaleinträge hat.
 Sei $O_B=O_B(A^0)$ der $B_k$ coadjungierte Orbit durch $A^0$.
 \begin{defn}
-Die \emph{Erweiterung} oder der \emph{erwieterte Orbit} assoziiert zu dam $B_k$
-coadjungierten Orbit $O_B$ ist die Menge:
+Die \emph{Erweiterung} oder der \emph{erwieterte Orbit} assoziiert zu dem $B_k$
+koadjungierten Orbit $O_B$ ist die Menge:
 \[
 \tilde O = \tilde O(A^0) :=\{ (g_0,A)\in\Gl_n(\C)\times\mathfrak g_k^*
   \mid \pi_{irr}(g_0Ag_0^{-1})\in O_B \}
@@ -267,7 +271,13 @@ wobei $\pi_{irr}:\mathfrak g_k^*\to\mathfrak b_k^*$ die natürliche Projektion
 ist, welche das Residuum entfernt.
 \end{defn}
 \begin{comment}
-Warum denn \textbf{"erwieterte"} (extended) Orbiten
+Warum denn \textbf{"erwieterte"} (extended) Orbiten, Fragen:
+\begin{itemize}
+\item ist für jedes Element von $\tilde O$ auch dessen $G_k$ Orbit komplett in
+$\tilde O$ enthalten? Dazu:\\
+Sei $A\in \tilde O$, sei $g\in G_k$ dann ist $gAg^{-1}\in O(A)$.
+Es ist auch $gAg^{-1}$ in $\tilde O$, denn...
+\end{itemize}
 \end{comment}
 \TODO[Lemma 2.13 aus thboalch]
 \begin{lem} \comm{(Decoupling)} \ccite[Lemma 2.13]{thboalch}
@@ -338,7 +348,7 @@ Siehe: \cite[Definition 1.47]{thboalch}
 Die \emph{links Wirkung} von $G$ auf $T^*G$ ist \comm{(in terms of left
 trivialisation)}:
 \[
-h(g,A)=(hg,A)\,.
+\beta(g,A)=(\beta g,A)\,.
 \]
 Die \emph{rechts Wirkung} ...
 \end{defn}
@@ -351,6 +361,11 @@ trivialisation)} durch
 \]
 Die rechts Wirkung ...
 \end{lem}
+Und $B_k$ wirkt auf $O_B$ durch Konjungation.\\
+Damit ergibt sich zusammen die $B_k$ Wirkung auf $T^*G_k\times O_B$ durch 
+\[
+\beta(g,A,B)=(\beta g,A,\beta B\beta^{-1})
+\]
 \end{comment}
 \begin{lem}[Lemma 2.2 aus \protect\cite{boalch}]
 Der erweiterte Orbit $\tilde O$ ist kanonisch isomorph zu dem symplektischem
@@ -478,9 +493,6 @@ Dies entspricht der anderen Inclusion und damit ist die Behauptung gezeigt.
 
 Dies identifiziert den Quotienten $\mu^{-1}(0)/B_k$ mit $\tilde O$ als
 Mannigfaltigkeit.
-\begin{comment}
-???
-\end{comment}
 
 \TODO
 \end{proof}
