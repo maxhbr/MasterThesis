@@ -15,11 +15,18 @@ $f\in\C[T_0,T_1]_+$ so dass
 \Proj\C[T_0,T_1]=\P^1 \,.
 \]
 Dies soll so gewählt werden, dass \textbf{\boldmath die lokale Koordinate $z$
-auf $a_i$ verschwindet,} also dass $\tau(0)=a_i$ gilt.
-\TODO
+auf $a_i$ verschwindet,} also dass $\tau(0)=a_i=(a_{i,0}:a_{i,1})$ gilt.
 
-Aus dieser lokalen Koordinate erhält man\comm{, in einer Umgebung $U$ von
-$a_i$,} eine lokale Trivialisierung des Vektor Bündels $V$ auf $\P^1$.
+\textbf{IDEE:} $D_+\left(a_{i,0}T_0 + a_{i,1}T_1\right)\hookrightarrow \P^1$.
+Dazu: \TODO
+\begin{comment}
+\textbf{Fall:} $a=(1:0)$ dann ist $\A^1\cong D_+(T_1)\hookrightarrow \P^1$
+durch $x \mapsto (1,z)$
+\end{comment}
+
+Aus dieser lokalen Koordinate erhält man (in einer Umgebung $U$ von $a_i$) eine
+lokale Trivialisierung des Vektor Bündels $V$ auf $\P^1$.
+
 Bezogen auf diese lokale Trivialisierung von $V$ hat $\nabla$ die Form
 $\nabla=d-A$ wobei
 \[
@@ -35,6 +42,7 @@ Eine meromorphe $1$-Form ist ein Element $\omega\in\Omega^1(V;\C)$ welche sich
 als $\omega=udz$ mit meromorphen $u$ schreiben lässt.
 \end{defn}
 \end{comment}
+\TODO
 
 \begin{ex}
 \begin{enumerate}
@@ -150,7 +158,10 @@ Die Lie Algebra $\mathfrak g_k=\Lie(G_k)$ zu $G_k$ besteht aus den Elementen
 \[
 X=X_0+X_1\xi+\dots+X_{k-1}\xi^{k-1}
 \]
-mit $X_i\in\End(\C^n)$ beliebig.\\
+mit $X_i\in\End(\C^n)$ beliebig.
+\begin{comment}
+Dazu: \TODO
+\end{comment}
 Die Elemente aus $\mathfrak g_k^*$, dem Vektorraum Dual von $\mathfrak g_k$
 werden als
 \[
@@ -182,7 +193,8 @@ Der \emph{$G_k$ koadjungierte Orbit durch $A\in\mathfrak g_k^*$} ist
 O(A):=\{gAg^{-1}\mid g\in G_k\}\subset\mathfrak g_k^*
 \]
 \item
-Die \emph{schönen} $G_k$ koadjungierte Orbiten sind die Elemente, wessen
+Die \emph{schönen} $G_k$ koadjungierte Orbiten sind die Orbiten, die einen
+Erzeuger haben, dessen
 führender Koeffizient
 \begin{enumerate}
 \item
@@ -276,10 +288,48 @@ Warum denn \textbf{"erwieterte"} (extended) Orbiten, Fragen:
 \item ist für jedes Element von $\tilde O$ auch dessen $G_k$ Orbit komplett in
 $\tilde O$ enthalten? Dazu:\\
 Sei $A\in \tilde O$, sei $g\in G_k$ dann ist $gAg^{-1}\in O(A)$.
-Es ist auch $gAg^{-1}$ in $\tilde O$, denn...
+Dann ist $(g^{-1},gAg^{-1})$ in $\tilde O$.\\
+$\tilde O \to \mathfrak g_k^*$
 \end{itemize}
 \end{comment}
-\TODO[Lemma 2.13 aus thboalch]
+\begin{comment}
+\textbf{Symplectic aspects of the group cotangent bundles.}
+\ccite[p. 19]{thboalch}
+Let $G$ be a Lie group.
+The \textbf{left multiplication} $L_g:G\to G; h\mapsto gh$ gives an isomrphism
+\[
+(dL_g)_i:\mathfrak g=T_1G\to T_gG
+\]
+and induces a trivialisation:
+\[
+G\times\mathfrak g\cong TG; \qquad (g,X)\mapsto (g,(dL_g)_1X)
+\]
+which will be referred to as the \emph{left trivialisation} of $TG$.
+
+By taking the duals the left trivialisation of the cotangent bundle is also
+obtained:
+\[
+G\times \mathfrak g^* \cong T^*G;\qquad(g,A)\mapsto(g,(dL_{g^{-1}})_1^\vee A)
+\]
+where $(dL_{g^{-1}})_1^\vee$ denotes the inverse of the dual linear map to
+$(dV_g)_1$.
+
+Now we can write down the natural symplectic structure on $T^∗G$ explicitly:
+\begin{lem}
+\ccite[Lemma 1.45]{thboalch}
+\end{lem}
+\begin{proof}
+\TODO
+\end{proof}
+If the right trivialisations are used instead, the formula looks the same upto
+one sign:
+\begin{lem}
+\ccite[Lemma 1.46]{thboalch}
+\end{lem}
+\begin{proof}
+\TODO
+\end{proof}
+\end{comment}
 \begin{lem} \comm{(Decoupling)} \ccite[Lemma 2.13]{thboalch}
 Die folgende Abbildung ist ein complex analytischer Isomorphismus:
 \[
@@ -419,7 +469,7 @@ Diese Abbildung ist wohldefiniert da die Bedingung $\pi_{irr}(gAg^{-1})=B$ aus
 \pi_{irr}(g(0)Ag(0)^{-1})
   &=g(0)\pi_{irr}(A)g(0)^{-1}
 \\&=g(0)\pi_{irr}(g^{-1}gAg^{-1}g)g(0)^{-1}
-\\&=g(0)g^{-1}\pi_{irr}(gAg^{-1})gg(0)^{-1}
+\\&\overset{\text{\color{red}?}}=g(0)g^{-1}\pi_{irr}(gAg^{-1})gg(0)^{-1}
 \\&=g(0)g^{-1}Bgg(0)^{-1}
 \end{align*}
 \end{comment}
@@ -435,7 +485,7 @@ g(0)g^{-1}
 \\&=g(0)g(0)^{-1}+g(0)(g_i)^{-1}\xi^1+\dots+g(0)(g_k)^{-1}\xi^k
 \\&=1+g(0)(g_i)^{-1}\xi^1+\dots+g(0)(g_k)^{-1}\xi^k \in B_k
 \end{align*}
-bzw.
+ODER.
 \[
 (g(0))^{-1} \overset{\text{\color{red}?}}= g^{-1}(0)
 \]
@@ -491,8 +541,8 @@ Sei $\beta\in B_k$ und $(g,A,B)\in\mu^{-1}(0)$ so...
 Dies entspricht der anderen Inclusion und damit ist die Behauptung gezeigt.
 {\hfill \textbf{Beh.} \ensuremath{\qed}}
 
-Dies identifiziert den Quotienten $\mu^{-1}(0)/B_k$ mit $\tilde O$ als
-Mannigfaltigkeit.
+Dies identifiziert den Quotienten $\mu^{-1}(0)/B_k$ mit $\tilde O$ \textbf{als
+Mannigfaltigkeit.}
 
 \TODO
 \end{proof}
