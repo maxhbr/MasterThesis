@@ -18,15 +18,27 @@ Dies soll so gewählt werden, dass \textbf{\boldmath die lokale Koordinate $z$
 auf $a_i$ verschwindet,} also dass $\tau(0)=a_i=(a_{i,0}:a_{i,1})$ gilt.
 
 \textbf{IDEE:} $D_+\left(a_{i,0}T_0 + a_{i,1}T_1\right)\hookrightarrow \P^1$.
-Dazu: \TODO
+Dazu: 
+\begin{align*}
+D_+\left(a_{i,0}T_0 + a_{i,1}T_1\right)
+  &=\Proj \C[T_0,T_1]\Big\backslash 
+    V_+\Big(\left(a_{i,0}T_0 + a_{i,1}T_1\right)\Big)
+\\&\hookrightarrow\P^1
+    \qquad \text{ durch } \qquad a\mapsto a
+\end{align*}
 \begin{comment}
 \textbf{Fall:} $a=(1:0)$ dann ist $\A^1\cong D_+(T_1)\hookrightarrow \P^1$
 durch $x \mapsto (1,z)$
 \end{comment}
+\textbf{Weitere IDEE:}
+Verwende eine Standart Inclusion und verkette diese mit mit einer
+Transformation, welche s.B. $(1:0)$ auf $a_i$ verschiebt.
 
 Aus dieser lokalen Koordinate erhält man (in einer Umgebung $U$ von $a_i$) eine
 lokale Trivialisierung des Vektor Bündels $V$ auf $\P^1$.
-
+\begin{comment}
+Wähle an einem Punkt und setze von dort aus fort?!?
+\end{comment}
 Bezogen auf diese lokale Trivialisierung von $V$ hat $\nabla$ die Form
 $\nabla=d-A$ wobei
 \[
