@@ -37,6 +37,9 @@ D_+\left(a_{i,0}T_0 + a_{i,1}T_1\right)
 \textbf{Fall:} $a=[1:0]$ dann ist $\A^1\cong D_+(T_1)\hookrightarrow \P^1$
 durch $x \mapsto (1,z)$
 \end{comment}
+
+\begin{center} \rule{0.7\textwidth}{0.4pt} \end{center}
+
 \textbf{Weitere IDEE:}
 Verwende eine standard Inclusion und verkette diese mit mit einer
 Transformation, welche z.B. $[1:0]$ auf $a_i$ verschiebt.
@@ -47,8 +50,55 @@ z \arrow[|->]{r}& {[1:z]} \rar[|->] & {[a_{i,0},a_{i,1}+z]}\\
   & {[1:0]} \arrow[|->]{r}& a_i
 \end{tikzcd} \]
 Wobei der zweite Isomorphismus durch eine invertierbare Matrix repräsentiert
-wird. Beispielsweise $\footnotesize\begin{pmatrix}a_{i,0} & 0\\ a_{i,1} & 1 \end{pmatrix}$,
-diese schickt $[1:0]$ auf $a_i$.
+wird. Beispielsweise $\footnotesize\begin{pmatrix}a_{i,0} & 0\\ a_{i,1} & 1
+\end{pmatrix}$, diese schickt $[1:0]$ auf $a_i$.
+
+\begin{center} \rule{0.7\textwidth}{0.4pt} \end{center}
+
+\textbf{Neuer Start:}
+\begin{comment}
+Frage: Welche Automorphismen hat man auf $D_+(T_0)$ oder $\A_z^1$?\\
+Antwort: \TODO
+\end{comment}
+
+Betrachte das Diagram:
+\[
+\begin{tikzcd}
+\C[T_0,T_1]_{(T_0)} \dar[dashed]{?}
+& \C[z] \lar \arrow[dashed]{ld}{?}
+\\
+\C[T_0,T_1]_{(\alpha T_0+\beta T_1)}
+\end{tikzcd}
+\qquad\overset{\Spec}{\text{\Huge$\rightsquigarrow$}}\qquad
+\begin{tikzcd}
+D_+(T_0) \rar
+& \A_z^1
+\\
+D_+(\alpha T_0+\beta T_1) \uar{\cong} \arrow{ur}
+\end{tikzcd}
+\]
+
+Weiteres Diagram:
+\[
+\begin{tikzcd}[row sep=0,column sep=1.5em]
+\Spec \C[z] \rar{\Psi}
+    %\arrow[out=340,in=180]{rrdd} \arrow[bend right=40]{rrrr}{?}
+  & D_+(\alpha T_0+\beta T_1) \rar[hook]
+  & \P^1 
+  & D_+(T_0) \lar[hook]
+  & \Spec \C[t] \lar{\Phi}
+    %\arrow[out=200,in=0]{lldd}
+\\ && \cup
+\\ 
+&& D_+(\alpha T_0+\beta T_1) \cap D_+(T_0)
+\\
+\Psi^{-1}(\cap) \ar[hook]{uuu} \ar{rru}{\Psi} \ar[bend right=10,dashed]{rrrr}{?}
+& & & &
+\Phi^{-1}(\cap) \ar[hook]{uuu} \ar{llu}{\Phi}
+\end{tikzcd}
+\]
+
+\begin{center} \rule{0.7\textwidth}{0.4pt} \end{center}
 
 Aus dieser lokalen Koordinate erhält man (in einer Umgebung $U$ von $a_i$) eine
 lokale Trivialisierung des Vektor Bündels $V$ auf $\P^1$.
