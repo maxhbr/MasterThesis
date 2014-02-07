@@ -239,7 +239,8 @@
   \usepackage{color}
   \usepackage{framed}
 
-  \definecolor{commentShadeColor}{rgb}{1.0,.9,.6}% {.6,.6,.6}
+  \definecolor{commentShadeColor}{rgb}{1.0,.9,.6}
+  %\definecolor{commentShadeColor}{rgb}{.6,.6,.6}
   \definecolor{commentTextColor}{rgb}{.2,.2,.2}
   \definecolor{CommentFrameColor}{rgb}{.3,.3,.3}%
 

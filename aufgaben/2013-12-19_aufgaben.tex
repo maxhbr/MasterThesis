@@ -16,14 +16,14 @@ $f\in\C[T_0,T_1]_+$ so dass
 \Proj\C[T_0,T_1]=\P^1 \,.
 \]
 Dies soll so gewählt werden, dass \textbf{\boldmath die lokale Koordinate $z$
-auf $a_i=(a_{i,0}:a_{i,1})$ verschwindet,} also dass $\tau_2\circ\tau_1(0)=a_i$
+auf $a_i=[a_{i,0}:a_{i,1}]$ verschwindet,} also dass $\tau_2\circ\tau_1(0)=a_i$
 gilt.
 
-\textbf{IDEE:} 
+\textbf{IDEE:}
 \[ \begin{tikzcd}[row sep=0]
-\A_z^1 \rar{\cong}& D_+\left(a_{i,0}T_0 + a_{i,1}T_1\right) \rar[hook]& \P^1\\
-0 \arrow[|->]{r}& a_i\\
-& a \arrow[|->]{r}& a
+\A_z^1 \rar{\cong}& D_+\left(a_{i,0}T_0 + a_{i,1}T_1\right) \rar[hook]{\iota}
+  & \P^1\\
+0 \arrow[|->]{r}& a_i
 \end{tikzcd} \]
 Dazu:
 \begin{comment}
@@ -34,17 +34,30 @@ D_+\left(a_{i,0}T_0 + a_{i,1}T_1\right)
 \\&\hookrightarrow\P^1
     \qquad \text{~durch~} \qquad a\mapsto a
 \end{align*}
-\textbf{Fall:} $a=(1:0)$ dann ist $\A^1\cong D_+(T_1)\hookrightarrow \P^1$
+\textbf{Fall:} $a=[1:0]$ dann ist $\A^1\cong D_+(T_1)\hookrightarrow \P^1$
 durch $x \mapsto (1,z)$
 \end{comment}
 \textbf{Weitere IDEE:}
-Verwende eine Standart Inclusion und verkette diese mit mit einer
-Transformation, welche s.B. $(1:0)$ auf $a_i$ verschiebt.
+Verwende eine standard Inclusion und verkette diese mit mit einer
+Transformation, welche z.B. $[1:0]$ auf $a_i$ verschiebt.
+\[ \begin{tikzcd}[row sep=0]
+\A_z^1 \rar{\cong}& D_+\left(T_0\right) \rar{\cong}
+  &{\text{\huge???}} \rar[hook]{\iota} & \P^1\\
+z \arrow[|->]{r}& {[1:z]} \rar[|->] & {[a_{i,0},a_{i,1}+z]}\\
+  & {[1:0]} \arrow[|->]{r}& a_i
+\end{tikzcd} \]
+Wobei der zweite Isomorphismus durch eine invertierbare Matrix repräsentiert
+wird. Beispielsweise $\footnotesize\begin{pmatrix}a_{i,0} & 0\\ a_{i,1} & 1 \end{pmatrix}$,
+diese schickt $[1:0]$ auf $a_i$.
 
 Aus dieser lokalen Koordinate erhält man (in einer Umgebung $U$ von $a_i$) eine
 lokale Trivialisierung des Vektor Bündels $V$ auf $\P^1$.
 \begin{defn}
-Eine \emph{lokale Trivialisierung} eines Vektorbündels $V\to\Sigma$ ist \dots
+Eine \emph{lokale Trivialisierung} eines Vektorbündels $\pi:V\to\Sigma$ ist:
+\begin{itemize}
+\item eine Teilmenge $U$ von $\Sigma$ und dazu
+\item ein Isomorphismus $\pi^{-1}(U)\to U\times\C^r$ wenn $r$ der Rang ist.
+\end{itemize}
 \end{defn}
 \begin{comment}
 Wähle an einem Punkt und setze von dort aus fort?!?
@@ -53,7 +66,7 @@ Bezogen auf diese lokale Trivialisierung von $V$ hat $\nabla$ die Form
 $\nabla=d-A$ wobei
 \[
 A=\underset{\text{Hauptteil}}{\underbrace{%
-    A_{k_1}\frac{dz}{z^{k_i}} +\dots+ A_{1}\frac{dz}{z}
+    A_{k_1}\frac{dz}{z^{k_i}} +\cdots+ A_{1}\frac{dz}{z}
   }} +
   \underset{\text{Nebenteil}}{\underbrace{A_0dz +\dots}}
 \]
@@ -64,7 +77,7 @@ Eine meromorphe $1$-Form ist ein Element $\omega\in\Omega^1(V;\C)$ welche sich
 als $\omega=udz$ mit meromorphen $u$ schreiben lässt.
 \end{defn}
 \end{comment}
-\TODO
+\TODO{}
 
 \begin{ex}
 \begin{enumerate}
@@ -95,13 +108,11 @@ B_k&=\left\{ A \in G_k \mid A(0)=1\in \C^{n\times n} \right\}
 \end{align*}
 die Untergruppe aller Elemente mit konstantem Term $1$.
 Weiter sei $G:=\Gl_n(\C)=G_1$. Damit haben wir die kurze exakte Sequenz
-\[
-\begin{tikzcd}[row sep=0]
+\[ \begin{tikzcd}[row sep=0]
 1 \rar & B_k \arrow[hook]{r} & G_k \rar & G \arrow[hook,bend right=40]{l}
   \rar & 1\\
 & & A \arrow[|->]{r}& A(0)
-\end{tikzcd}
-\]
+\end{tikzcd} \]
 Diese Sequenz splitet, da $G$ in $G_k$ als die Untergruppe der konstanten
 Matritzen enthalten ist und die entsprechende Verknüpfung der Morphismen der
 Identität $\Id_G$ entspricht.
@@ -137,7 +148,8 @@ G\ltimes B_k &=\Gl_n(\C)\ltimes
   &\overset{\text{\color{red}?}}=
     \left\{ g\left(\sum_{i=1}^{k-1}\cdot A_i\xi^i + 1\right)g^{-1}
     \overset{\text{\color{red}?}}\in G_k
-    \mid g\in\Gl_n(\C) \right\}\\
+    \mid g\in\Gl_n(\C) \right\}
+  &\text{\color{red}FALSCH!} \\
   &\overset{\text{\color{red}?}}=
     \left\{ \sum_{i=1}^{k-1}\left(g\cdot A_i\cdot g^{-1}\right)\xi^i + gg^{-1}
     \in G_k \mid  g\in\Gl_n(\C) \right\}\\
@@ -167,18 +179,18 @@ gilt, dass ein Element $\sum_{i=0}^{k-1}A_i\xi^i$ in $G_k$ ist, genau dann,
 wenn $\det(A_0)\neq 0$ ist. Hier ist $\det(A_0)=8$.
 \end{comment}
 
-Ein Element $A$ aus $G_k$ hat die Form $A=A_0+A_1\xi+\dots+A_{k-1}\xi^{k-1}$,
+Ein Element $A$ aus $G_k$ hat die Form $A=A_0+A_1\xi+\cdots+A_{k-1}\xi^{k-1}$,
 wobei die $A_i$ aus $\End(\C^n)$ sind. Anderstherum ist ein solches Element
-$A_0+A_1\xi+\dots+A_{k-1}\xi^{k-1}$ in $G_k$ genau dann, wenn $\det(A_0)\neq0$.
+$A_0+A_1\xi+\cdots+A_{k-1}\xi^{k-1}$ in $G_k$ genau dann, wenn $\det(A_0)\neq0$.
 \begin{comment}
 Zu Zeigen: $\det(\sum^{k-1}_{i=0}A_{i}\xi^{i})\neq 0$ $\Leftrightarrow$
 $\det(A_0)\neq0$.\\
-\textbf{Denn} $\det(\sum^{k-1}_{i=0}A_{i}\xi^{i})=\overset{\text{\color{red}?}}\dots
-=\det(A_0)$.
+\textbf{Denn} $\det(\sum^{k-1}_{i=0}A_{i}\xi^{i})
+=\overset{\text{\color{red}?}}\dots=\det(A_0)$.
 \end{comment}
 Die Lie Algebra $\mathfrak g_k=\Lie(G_k)$ zu $G_k$ besteht aus den Elementen
 \[
-X=X_0+X_1\xi+\dots+X_{k-1}\xi^{k-1}
+X=X_0+X_1\xi+\cdots+X_{k-1}\xi^{k-1}
 \]
 mit $X_i\in\End(\C^n)$ beliebig.
 \begin{comment}
@@ -187,7 +199,7 @@ Dazu: \TODO
 Die Elemente aus $\mathfrak g_k^*$, dem Vektorraum Dual von $\mathfrak g_k$
 werden als
 \[
-A=\left(\frac{A_{k}}{\xi^{k}}+\dots+\frac{A_{1}}{\xi}\right)d\xi
+A=\left(\frac{A_{k}}{\xi^{k}}+\cdots+\frac{A_{1}}{\xi}\right)d\xi
 \]
 geschrieben, wobei die $A_i$ wieder aus $\End(\C)$ beliebig sind. \comm{abusing
 notation. Die Elemente aus $G_k$ sollten wohl besser $g$ genannt werden, wie in
@@ -305,14 +317,23 @@ wobei $\pi_{irr}:\mathfrak g_k^*\to\mathfrak b_k^*$ die natürliche Projektion
 ist, welche das Residuum entfernt.
 \end{defn}
 \begin{comment}
-Warum denn \textbf{"erwieterte"} (extended) Orbiten, Fragen:
-\begin{itemize}
-\item ist für jedes Element von $\tilde O$ auch dessen $G_k$ Orbit komplett in
-$\tilde O$ enthalten? Dazu:\\
-Sei $A\in \tilde O$, sei $g\in G_k$ dann ist $gAg^{-1}\in O(A)$.
-Dann ist $(g^{-1},gAg^{-1})$ in $\tilde O$.\\
-$\tilde O \to \mathfrak g_k^*$
-\end{itemize}
+Warum denn \textbf{"erwieterte"} (extended) Orbiten?
+Sei $A\in O_B$, sei $g\in \Gl_n(\C)$ dann ist $(\id,A)$ und $(g^{-1},gAg^{-1})$
+in $\tilde O$.\\
+Es sind für alle $g$
+\[
+O_B \hookrightarrow \tilde O; \qquad A \mapsto (\id,A)
+\qquad\text{sowie}\qquad
+O_B \hookrightarrow \tilde O; \qquad A \mapsto ((g^{-1},gAg^{-1}))
+\]
+Homöomorphismen auf ihr Bild. \comm{Klar? Nachweis?}\\
+Es ist für jedes $A$ auch
+\[
+\Gl_n(\C) \hookrightarrow \tilde O; \qquad g \mapsto ((g,g^{-1}Ag))
+\qquad\text{bzw.}\qquad
+\Gl_n(\C) \hookrightarrow \tilde O; \qquad g \mapsto ((g^{-1},gAg^{-1}))
+\]
+ein Homöomorphismus auf sein Bild.
 \end{comment}
 \begin{comment}
 \textbf{Symplectic aspects of the group cotangent bundles.}
@@ -441,7 +462,7 @@ Damit ergibt sich zusammen die $B_k$ Wirkung auf $T^*G_k\times O_B$ durch
 \end{comment}
 \begin{lem}[Lemma 2.2 aus \protect\cite{boalch}]
 Der erweiterte Orbit $\tilde O$ ist kanonisch isomorph zu dem symplektischem
-quotienten $\symplquot{T^*G_k\times O_B}{B_k}$ wobei das kotangentialbündel
+quotienten $\symplquot{T^*G_k\times O_B}{B_k}$ wobei das Kotangentialbündel
 $T^*G_k$ und der koadjungierte Orbit $O_B$ ihre natürliche symplektische
 Struktur tragen.
 \begin{comment}
@@ -547,24 +568,15 @@ B'&\overset{(\ref{eq:pfOf2.2-1})}=
 \end{comment}
 Damit gilt, dass $(g',A',B')=\beta(g,A,B)$ und damit ist jede Faser von $\chi$
 in einem $B_k$ Oribt enthalten.
-\begin{comment}
-Also(?):
-\begin{align*}
-\beta(g,A,B)
-  &\overset{!}=(\beta g,A,\beta B\beta^{-1})
-\\&=(g',A',B')
-\end{align*}
-\end{comment}
 Anderstherum ist klar dass $B_k$ innerhalb der Fasern von $\chi$ wirkt.
-\begin{comment}
-Wie sieht die $B_k$-Wirkung auf $\mu^{-1}(0)$ aus?
-Sei $\beta\in B_k$ und $(g,A,B)\in\mu^{-1}(0)$ so \dots
-\end{comment}
-Dies entspricht der anderen Inclusion und damit ist die Behauptung gezeigt.
+\\Dies entspricht der anderen Inclusion und damit ist die Behauptung gezeigt.
 {\hfill \textbf{Beh.} \ensuremath{\qed}}
 
 Dies identifiziert den Quotienten $\mu^{-1}(0)/B_k$ mit $\tilde O$ \textbf{als
 Mannigfaltigkeit.}
+
+Nun wollen wir noch die symplektische Struktur identifizieren. Dazu
+identifizieren wir zunächst $\tilde O$ mit $T^*\Gl_n\times O_B$
 
 \TODO
 \end{proof}
@@ -578,7 +590,7 @@ Proof (2.1)
 \ccite[Theorem 2.35]{thboalch}
 $\mathcal M(\textbf a)$ ist isomorph zu dem komplexen symplektischem Quotienten
 \[
-\mathcal M(\textbf a)\cong\symplquot{O_1\times\dots\times O_m}{G} \,.
+\mathcal M(\textbf a)\cong\symplquot{O_1\times\cdots\times O_m}{G} \,.
 \]
 \item
 \ccite[Theorem 2.43]{thboalch}
@@ -587,7 +599,7 @@ $\tilde O_i$ mit $\dim(\tilde O_i)=\dim(O_i)+2n$ und freie Hamiltonische
 $G$-Wirkungen, so dass
 \[
 \widetilde{\mathcal M}(\textbf a)\cong
-\symplquot{\tilde O_1\times\dots\times\tilde O_m}{G} \,.
+\symplquot{\tilde O_1\times\cdots\times\tilde O_m}{G} \,.
 \]
 \item \TODO[Unterpunkt 3]
 \end{itemize}
@@ -596,7 +608,7 @@ $G$-Wirkungen, so dass
 Wir wählen eine Koordinate $z$ und identifizieren $\P^1$ mit
 $\C\cup\{\infty\}$, so dass jedes $a_i$ endlich ist.
 Definiere $z_i:=z-a_i$.
-Die gewählten Keime $d-{}^iA^0$ des meromorphen Zusammenhangs bestimmen
+Die gewählten Keime $d-{{}^i}A^0$ des meromorphen Zusammenhangs bestimmen
 $G_{k_i}$ koadjunggierte Orbiten $O_i$ und setzen sich zu erweiterten Orbiten
 $\tilde O_i$ fort.
 \begin{comment}
