@@ -1,5 +1,3 @@
-\section*{vom 19.12.2013}
-
 \begin{ex}
 Formal sauber: Wähle Trivialisierungen, also
 \begin{itemize}
@@ -12,26 +10,89 @@ Sei $i\in\{1,\dots,m\}$ fix.
 Hier wollen wir das wählen einer lokalen Trivialisierung beziehungsweise
 zunächst das wählen einer lokalen Koordinate auf $\P^1$ formal sauber machen,
 dazu verwenden wir die $\Proj$-Konstruktion.\\
+
+\begin{comment}
+\[ \begin{tikzcd}[row sep=1em,column sep=.5em]
+{}&{}&\P^1
+\\
+\left[ \frac{\alpha + a_0}{a_1}:1 \right]
+  &D_+(T_0) \ar[hook]{ur}
+  & & D_+(T_1) \ar[hook]{ul}
+  &\left[ 1:\frac{a_1}{\alpha + a_0} \right]
+\\
+\\
+\\
+{}&{}&\A_z^1 \ar[dashed]{uuul}{\cong} \ar[dashed]{uuur}{\cong}
+\\
+{}&{}&(z-\alpha) \ar[|->,dashed]{uuuull} \ar[|->,dashed]{uuuurr}
+\end{tikzcd} \]
+\end{comment}
+
+\begin{comment}
+\[ \begin{tikzcd}[row sep=1em,column sep=0]
+  {}& {}& D_+(T_0) \cong \Spec \C{[T_0,T_1]}_{(T_0)}
+    \ar[hook,in=90,out=0]{ddr}
+\\
+  {}& {}& D_+(T_1) \cong \Spec \C{[T_0,T_1]}_{(T_1)}
+    \ar[hook,in=90,out=0]{dr}
+\\
+0 \in\ar[|->,bend right=40]{rrrr}{?}
+  &\A_z^1\bydef\Spec\C[z]
+    \ar[in=180,out=90]{ur}{\cong} \ar[in=180,out=270]{dr}{\cong}
+    \ar[in=180,out=90]{uur}{\cong}
+  & \cap
+    \ar[bend right=20,dashed]{u}
+    \ar[bend right=20,dashed]{d}
+  & \P^1 \bydef \Proj\C[T_0,T_1]
+  & \ni a
+\\
+  {}&{}& D_+(f) \cong \Spec \C{[T_1,T_2]}_{(f)}
+    \ar[hook,in=270,out=0]{ur}
+\\
+\end{tikzcd} \]
+\end{comment}
+
+\begin{comment}
+Versuch 1
+\end{comment}
+Wir wollen lokale Koordinaten, so dass $0\in\A_z^1$ auf $a\in\P^1$ abgebildet
+wird. Sei $a=[a_0:a_1]$ mit oBdA $a_1\neq0$.
+\[ \begin{tikzcd}
+\A_z^1\bydef\Spec\C[z] \rar{\overset{\tau_1}\cong} 
+  &D_+(T_1) \cong \Spec \C{[T_1,T_2]}_{(T_1)} \rar[hook]
+  & \P^1 \bydef \Proj\C[T_0,T_1] \,.
+\end{tikzcd} \]
+
+\begin{comment}
+Versuch 2
+\end{comment}
 Das Wählen einer lokalen Koordinate entspricht der Wahl eines homogenen
 $f=f_0T_0+f_1T_1\in\C{[T_0,T_1]}_+$ vom Grad $1$ sowie eines Isomorphismus
 $\tau_1$ und einer Inclusion $\tau_2$ so dass
 \[ \begin{tikzcd}
 \A_z^1\bydef\Spec\C[z] \rar{\overset{\tau_1}\cong} 
-  &D_+(f) \bydef \Spec \C[T_1,T_2]_{(f)} \rar[hook]{\tau_2}
+  &D_+(f) \overset{(\star)}\cong \Spec \C{[T_1,T_2]}_{(f)} \rar[hook]{\tau_2}
   & \P^1 \bydef \Proj\C[T_0,T_1] \,.
 \end{tikzcd} \]
 Dies soll so gewählt werden, dass \textbf{\boldmath{}die lokale Koordinate $z$
 auf $a=[a_{0}:a_{1}]\in\P^1$ verschwindet,} also dass $\tau_2\circ\tau_1(0)=a$
 gilt.
 
-Um $\tau_1$ zu finden, suche einen Isomorphismus $t_1:\C[z]\to
-\C{[T_0,T_1]}_{(f)}$, so dass dieser nach anwenden von $\Spec$ den gesuchten
-Isomorphismus ergibt.
+\textbf{\boldmath{}Wähle $f$} als $f=a_{0}T_0+a_{1}T_1$. Dieses erfüllt
+$f(a)\neq0$.
+
+\textbf{\boldmath{}Um $\tau_1$ zu finden,} suche einen Isomorphismus
+$t_1:\C[z]\to \C{[T_0,T_1]}_{(f)}$, so dass dieser nach anwenden von $\Spec$
+den gesuchten Isomorphismus ergibt.
 Wir suchen also ein homogenes Element, auf welches wir $z$ abbilden.
 Ein allgemeines solches Element ist gegeben durch $\frac{\alpha T_0+\beta
 T_1}{f}$ mit $[\alpha:\beta]\in\P^1$.
+\begin{comment}
+Hier ist $\alpha=a_1$ und $\beta=-a_0$ möglich und damit wird $a$ zu einer
+Nullstelle.
+\end{comment}
 
-Wie sieht $\tau_2$ aus?
+\textbf{\boldmath{}Wie sieht $\tau_2$ aus?}
 
 \begin{comment}
 BIS HIER HIN NEU!!

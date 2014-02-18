@@ -6,7 +6,7 @@ echo "\\chapter{Aufgaben und Fragen}" >> ../aufgaben.tex
 
 for f in ./*.tex
 do
-  echo "\\input{aufgaben/${f##*/}}\\pagebreak" >> ../aufgaben.tex
+  echo "\\input{aufgaben/${f##*/}}" >> ../aufgaben.tex
 done
 
 cat ../aufgaben.tex
