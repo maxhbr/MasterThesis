@@ -1,29 +1,45 @@
 \section{Meromorphe Zusammenhänge vs. Systeme}
 Sei $\Sigma$ eine Riemann Fläche, $D=k_1(a_1)+\dots+k_m(a_m)$ ein effektiver
 Divisor darauf.
+Wähle eine Trivialisierung $z$ auf $\Sigma$ welche an $a_i$ verschwindet.
 \begin{paracol}{2}
-\begin{defn}[Meromorpher Zusammenhang]
-Ein meromorpher Zusammenhang $\nabla$ auf $V$ mit Polen auf $D$ ist eine
-Abbildung
-\[
-  \nabla: V\to V\otimes K(D)
-\]
-so dass die Leibnitzregel
-\begin{equation}
-  \nabla(fv)=(df)\otimes v + f\nabla v
-\end{equation}
-erfüllt ist. Hierbei ist $v$ ein lokaler Schnitt von $V$, $f$ eine lokale
-holomorphe Funktion und $K$ die Garbe der holomorphen Eins-Formen.
+In der lokalen Trivialisierung hat $\nabla$ die form:
+\end{paracol}
+\begin{paracol}{2}
+\begin{center}
+$ \nabla=d-{}^iA $
+\end{center}
+where ${}^iA=\left(\sum^{0}_{j=k_i}{}^iA_j\frac{dz}{z^{j}}\right)+A_0dz+\dots$
+\switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Dies ist ein \emph{System}, über das wir im folgendem reden wollen.
+
+\begin{itemize}
+\item $\Syst_k$ sind alle System bis zum Grad $k$
+\item auf den Systemen wirkt $G\{z\}\ni F$ durch
+\[F[A]=(dF)F^{-1}+FAF^{-1}\]
+\item damit ist die Analytische Äquivalenz definiert
+\item Formale Äquivalenz durch $\hat G$
+\item $\Syst(A)$ ist Menge der zu A formal äquivalenten.
+\end{itemize}
+Definiere damit:
+\[ {}^0C(A):=\Syst(A)/G\{z\} \]
+\end{paracol}
+
+\begin{paracol}{2}
+\begin{defn}[nice meromorphic connection]
 \end{defn}
 \switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{defn}
-Ein \emph{System} ist \dots
+\begin{defn}[nice formal normal form]
 \end{defn}
-Dieses wird erhalten durch lokale Trivialisierung.
 \end{paracol}
 
 \begin{paracol}{2}
 \begin{defn}[compatible framing]
+A \textbf{compatible framing} at $a_i$ of a vector bundle $V$ with nice
+connection $\nabla$ is a choice of isomorphism $g$ between the fibre
+$V_{a_i}$ and $\C^n$ which is compatible with $\nabla$ in the sense that the
+leading term ${}^iA_{k_i}$ of $\nabla$ is diagonal in any local
+trivialisation of $V$ extending this isomorphism.
 \end{defn}
 \switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{defn}[marked pair]

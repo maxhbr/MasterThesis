@@ -21,7 +21,7 @@ so dass die Leibnitzregel
 \end{equation}
 erfüllt ist. Hierbei ist $v$ ein lokaler Schnitt von $V$, $f$ eine lokale
 holomorphe Funktion und $K$ die Garbe der holomorphen Eins-Formen.
-\comm{ Sabbah schreibt $\Omega_{\P^1}^1$ für $K$ }
+\comm{Sabbah schreibt $\Omega_{\P^1}^1$ für $K$ }
 \end{defn}
 %
 \begin{comment}
@@ -36,11 +36,68 @@ Denn für zwei meromorphe Zusammenhänge $\nabla_1$ und $\nabla_2$ gilt:
 \\&=f\nabla_1 v - f\nabla_2 v
 \\&=f(\nabla_1 - \nabla_2) v
 \end{align*}
-und da ??? gilt reicht dies um die Aussage zu zeigen
+und da ??? gilt, reicht dies um die Aussage zu zeigen
 \end{proof}
 \end{comment}
-%
-\begin{prop}[Proposition 2.1]
-\end{prop}
+
+\begin{paracol}{2}
+Wählt man eine lokale Koordinate $z$ auf $\P^1$ welche bei $a_i$
+verschwindet. Dann hat, in terms of local trivialization of $V$, $\nabla$ die
+form:
+\[
+\nabla = d-{}^iA
+\]
+wobei
+\[
+{}^iA=\left(\sum^{0}_{j=k_i}{}^iA_j\frac{dz}{z^{j}}\right)+A_0dz+\dots
+\]
+\switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{defn}
+\cite[Def 1.5]{thboalch}.
+A \emph{germ of a meromorphic linear differential system} (of rank $n$), or
+just \emph{system} from now on, is a germ of a meromorphic connection on the
+trivial vector bundle with fibre $E$.
+\end{defn}
+Dieses $\nabla = d-{}^iA$ definiert ein \emph{System}. Der Buchstabe $k$ wird
+die Ordnung des Pols bezeichnen und $\Syst_k$ den Vektorraum aller Systeme mit
+Polordnung von höchstens $k$.
+
+Sind Zwei Systeme $A$ und $B$ gegeben, so definiert $dX=BX-XA$ ein System auf
+$\End(E)$ welches wir mit $\Hom(A,B)$ bezeichnen wollen.
+\end{paracol}
+
+\begin{paracol}{2}
+\switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{defn}
+A \emph{nice formal normal form} $A^0$ is a nice diagonal system with no
+holomorphic part. Such $A^0$ can be uniquely written as
+\[
+A^0:= dQ + \Lambda \frac{dz}{z},
+\qquad
+Q := \diag(q1,\dots ,qn)
+\]
+where $q_1,\dots ,q_n\in z^{−1}C[z^{−1}]$ are diagonal polynomials of degree
+$k-1$ in $z^{−1}$ with no
+constant term and $\Lambda = Res_0(A_0)$ is a constant diagonal matrix.
+\end{defn}
+\end{paracol}
+
+
+\begin{paracol}{2}
+\begin{defn}[compatible framing]
+A \textbf{compatible framing} at $a_i$ of a vector bundle $V$ with nice
+connection $\nabla$ is a choice of isomorphism $g$ between the fibre
+$V_{a_i}$ and $\C^n$ which is compatible with $\nabla$ in the sense that the
+leading term ${}^iA_{k_i}$ of $\nabla$ is diagonal in any local
+trivialisation of $V$ extending this isomorphism.
+\end{defn}
+\switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{defn}[marked pair]
+A marked pair is a pair $(A, \hat F)$ consisting of a nice system $A$ and a choice of formal
+isomorphism
+$\hat F \in \hat G$
+between $A$ and some formal normal form $A^0(A = \hat F[A0])$
+\end{defn}
+\end{paracol}
 
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:
