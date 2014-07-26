@@ -1,0 +1,54 @@
+\xdef\myDevelopVariable{1}
+
+\documentclass[ngerman
+  ,fontsize=11pt % TODO
+  ,numbers=noenddot % obsolete
+  %,headsepline
+  ,parskip=half*
+  ,openany
+  ,DIV=10
+  ,fleqn % mv align to left
+  ,oneside
+  %,titelpage % unused
+  %,biblography=totoc  % unused
+  %,landscape,twocolumn
+]{./myBeamerClass}
+
+\bibliography{../literatur.bib}
+
+\input{../commands.sty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\Gl}{GL}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Sect}{Sect}
+\DeclareMathOperator{\Roots}{Roots}
+\DeclareMathOperator{\Mult}{Mult}
+
+\let\tilde\widetilde
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  testing                                                    %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\symplquot}[2]{{%
+  \raisebox{.3em}{$#1$\!}\Big/\!\!\!\Big/\raisebox{-.3em}{\!$#2$}}}
+
+\usepackage{paracol}
+
+\begin{document}
+
+\input{Stokes}
+
+\end{document}
+% vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:
