@@ -1,17 +1,7 @@
 \xdef\myDevelopVariable{1}
 
 \documentclass[ngerman
-  ,fontsize=11pt % TODO
   ,numbers=noenddot % obsolete
-  %,headsepline
-  ,parskip=half*
-  ,openany
-  ,DIV=10
-  ,fleqn % mv align to left
-  ,oneside
-  %,titelpage % unused
-  %,biblography=totoc  % unused
-  %,landscape,twocolumn
 ]{./myBeamerClass}
 
 \bibliography{../literatur.bib}
@@ -48,7 +38,16 @@
 
 \begin{document}
 
+\section{Stokes directions}
+\frame{\insertsection}
 \input{Stokes}
+
+\section{Asymptotic expansions}
+\frame{\insertsection}
+\input{Asymptotic}
+
+\printbibliography[keyword={prim},title={Literatur}]
+\printbibliography[notkeyword={prim},title={Weitere Literatur}]
 
 \end{document}
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:

@@ -1,0 +1,102 @@
+\begin{frame}
+  Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
+  \begin{itemize}
+    \item $\Delta_r^*(U):=
+      \{z\in\Delta_r\mid z=\rho e^{i\theta},0<\rho<r,\theta\in U\}$%
+\footnote{$\Delta_r:=\Delta_r^*(S^1)$}
+  \end{itemize}
+  \begin{center}
+    \begin{tikzpicture}[scale=3]
+      \node (zero) at (0,0) {};
+      \node[below left] at (zero) {$0$};
+      \draw[blue,dashed] (zero) circle (1cm);
+
+      \filldraw[fill=green!20!white,draw=green!60!black,thick] (0,0) 
+        -- ({cos( -30 )*.7},{sin( -30 )*.7}) arc (-30:70:.7) -- cycle;
+      \node[green!40!black] at (.4,.3) {$\Delta_r^*(U)$};
+      \node[green!40!black] at (.3,-.25) {$r$};
+
+      \draw[thick,red!60!black] ({cos( -30 )},{sin( -30 )}) arc (-30:70:1);
+
+      \node[red!60!black,right] at (1,0) {$U$};
+
+      \fill (zero) circle (1pt);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Asymptotic expansion}
+Let $\hat\phi=\sum_{n\geq n_0}a_nx^n$ with $a_n\in\C$ is a asymptotic
+expansion of $f$ at $0$ if for all $m\in\N$ one has
+\[
+  \lim_{x\to 0,x\in\triangle_r^*(U)}
+  \left|x^{-m}\right|\left|x^{n_{0}}f(x)-\sum_{0\leq n\leq m}a_{n}x^{n}\right|
+  =0
+\]
+\begin{itemize}
+  \item $\bar\cA(U,r)\subset\cO(\Delta_r^*(U))$ the set of functions which
+    admits an asymptotic power series
+  \item $\cA(U,r)=\bigcap_{V}\bar\cA(V,r)$ 
+    \begin{itemize}
+      \item where $V$ is a relatively compact open subset of $U$
+    \end{itemize}
+  \item $\cA(U)=\bigcup_r\cA(U,r)$%
+    \begin{itemize}
+      \item $U\mapsto\cA(U)$ defines a sheaf on $S^1$
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Some elementary properties}
+  \begin{enumerate}
+    \item If $\hat\phi$ is an Asymptotic expansion for $f$ then one has
+      \[
+        a_0=\lim_{x\to 0,x\in\Delta_r^*(U)}x^{n_0}f(x)
+      \]
+      and for $m>0$,
+      \[
+        a_m=\lim_{x\to 0,x\in\Delta_r^*(U)}x^{-m}
+          \left[x^{n_0}f(x)-\sum_{0\leq n\leq m-1}a_nx^n\right]
+      \]
+      In particular this asymptotic expansion is unique
+    \item
+      Define $\cA(U)\to \hat K$ denoted by $f\mapsto \hat{f}$.
+      \begin{itemize}
+        \item $\cA(U)$ is a subring of $\cO(\Delta_r^*(U))$
+        \item this mapping is a morphism of rings
+      \end{itemize}
+    \item Denote by $\cA^{<0}(U)$ the kernel of this morphism
+      \begin{itemize}
+        \item $x\mapsto e^{-\frac{1}{x}}$ has zero asymptotic expansion
+      \end{itemize}
+    \item $\cA(U)$ is stable under derivation.
+    \item $\cA(U)$ contains $K$ as a subfield.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Borel-Ritt lemma}
+\begin{lemma}
+If $U$ is a proper open interval of the unit circle the mapping
+\[
+\cA(U)\to\hat{K}
+\]
+is onto\footnote{Long proof at \cite{sabbah_cimpa90}[p63]}.
+\end{lemma}
+
+It follows from this lemma that one has an exact sequence
+\[
+0 \to \cA^{<0}(U) \to \cA(U) \to \hat{K} \to 0
+\]
+\end{frame}
+
+\begin{frame}{Main result}
+Let $\cM_K$ be a meromorphic connection. There exists an integer $q\geq 1$
+such that, after the ramification $x=t^q$, one has, for all $\theta\in S^1$
+and each sufficiently small interval $V$ centered at $\theta$
+\[
+\cA_L(V)\otimes_L\cM_L \cong \cA_L(V)\otimes_L\left(\cF_L^R\otimes\cG_L\right)
+\]
+\end{frame}
+
+\begin{frame}
+\end{frame}

@@ -50,7 +50,7 @@ $z$ on the ray specified by $d$.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Anti-Stokes directions}
+\begin{frame}{Anti-Stokes directions(2)}
   \begin{center}
     \begin{tikzpicture}[scale=3]
       \node[] (zero) at (0,0) {};
@@ -105,7 +105,7 @@ $z$ on the ray specified by $d$.
     \item The group of \emph{Stokes factors} associated to $d$ is the group
     \[
       \mathbb{S}to_d(A^0) := \{K \in G \mid (K)_{ij}
-        =\delta_{ij} \text{ unless } (ij) \text{ is a root of } $d$\}.
+        =\delta_{ij} \text{ unless } (ij) \text{ is a root of } d\}.
     \]
     \begin{itemize}
       \item $i=j$ \Rightarrow $(ij)$ is not a root of $d$. There are $1$nes on
@@ -251,7 +251,7 @@ where
       framed connection germs with both irregular and formal type $A^0$.
     \item $\widehat\Syst_{mp}(A^0):=\{(A,\hat{F})\mid A\in\Syst(A^0)
       ,\hat{F}\in G\llbracket z\rrbracket
-      ,A=\hat{F}[A^0]\}$ 
+      ,A=\hat{F}[A^0]\}$
       the set of \emph{marked pairs}.
   \end{itemize}
   There is a canonical isomorphism
@@ -262,7 +262,7 @@ where
   \[
     \mathcal{H}(A^0):=\widehat\Syst(A^0)/G\{z\}
   \]
-  Moreover the actions of $T$ and $G\{z\}$ on $\Syst(A^0)$ commute so 
+  Moreover the actions of $T$ and $G\{z\}$ on $\Syst(A^0)$ commute so
   \[
     \Syst(A^0)/G\{z\}\cong\mathcal{H}(A^0)/T
   \]
@@ -297,7 +297,7 @@ where
   $d_1$ and label the subsequent rays $d_2,\dots,d_r$ in turn.
 \end{frame}
 
-\begin{frame}{Labeling convention (2)}
+\begin{frame}{Labeling convention (2): Sectors}
   \begin{center}
     \begin{tikzpicture}[scale=3]
       \node[] (zero) at (0,0) {};
@@ -333,12 +333,12 @@ where
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Labeling convention (3)}
+\begin{frame}{Labeling convention (3): Supersectors}
   \begin{itemize}
     \item $\widehat{\Sect}_i:=
       \Sect(d_i-\frac{\pi}{2k-2},d_{1+1}+\frac{\pi}{2k-2})$ the ‘ith supersector’
       \begin{itemize}
-        \item The rays bounding these supersectors are usually refered as 
+        \item The rays bounding these supersectors are usually refered as
           \textcolor{red!40!black}{‘Stokes rays’}.
       \end{itemize}
   \end{itemize}
@@ -350,6 +350,15 @@ where
       \fill[fill=green!20!white] (0,0) -- ({cos( 15 )},{sin( 15 )}) arc
         (15:85:1) -- cycle;
       \node[green!40!black] at (.9,.9) {$\widehat\Sect_1$};
+
+      \node[] (lft) at ({cos( 85 )},{sin( 85 )}) {};
+      \node[] (rgt) at ({cos( 15 )},{sin( 15 )}) {};
+
+      \draw[->,red!40!black] ({cos( 45 )},{sin( 45 )})
+        to [out=35, in=25] (rgt);
+
+      \draw[->,red!40!black] ({cos( 55 )},{sin( 55 )})
+        to [out=65, in=75] (lft);
 
       \draw[thick,red!40!black] (0,0) -- +({cos( 85 )},{sin( 85 )});
       \draw[thick,red!40!black] (0,0) -- +({cos( 15 )},{sin( 15 )});
@@ -369,6 +378,51 @@ where
       \fill[yellow!60!black] (0.6,0.4) circle (1pt);
       \node[yellow!60!black,right] at (0.6,0.4) {$p$};
 
+      \fill[fill=red!20!white] (0,0) -- ({cos( 15 )*0.2},{sin( 15 )*0.2}) arc
+        (15:45:0.2) -- cycle;
+
+      \fill[fill=red!20!white] (0,0) -- ({cos( 55 )*0.2},{sin( 55 )*0.2}) arc
+        (55:85:0.2) -- cycle;
+
+      \fill (zero) circle (1pt);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+\begin{frame}{Labeling convention (4)}
+  All \textcolor{red!40!black}{‘Stokes rays’}:
+  \begin{center}
+    \begin{tikzpicture}[scale=3]
+      \node[] (zero) at (0,0) {};
+      \draw[blue] (zero) circle (1cm);
+
+      \foreach \w/\str in {10/,
+                           20/,
+                           45/,
+                           55/}
+      {\draw[dotted] (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+       \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
+
+       \foreach \sep in {0,60,120,180,240,300}
+       {\node[] (src) at ({cos( \w + \sep )},{sin( \w + \sep)}) {};
+        \node[] (lft) at ({cos( \w + \sep + 30 )},{sin( \w + \sep + 30 )}) {};
+        \node[] (rgt) at ({cos( \w + \sep - 30 )},{sin( \w + \sep - 30 )}) {};
+        \draw[thick,red!40!black] (0,0)
+          -- +({cos( \w + \sep + 30 )},{sin( \w + \sep + 30 )});
+        %\draw[thick,red!40!black] (0,0)
+          %-- +({cos( \w + \sep - 30 )},{sin( \w + \sep - 30 )});
+
+        \draw[->,red!30!white] (src)
+          to [out={\w + \sep - 10}, in={\w + \sep - 30 + 10}] (rgt);
+
+        \draw[->,red!60!white,dashed] (src)
+          to [out={\w + \sep + 10}, in={\w + \sep + 30 - 10}] (lft);
+       }
+       \foreach \sep in {60,120,180,240,300}
+       {\draw[dotted] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+        \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
+       }
+      };
+
       \fill (zero) circle (1pt);
     \end{tikzpicture}
   \end{center}
@@ -387,7 +441,7 @@ where
     \item $\Sigma_i(\hat F)$ can be analytically continued to the supersector
       $\widehat\Sect_i$ and then $\Sigma_i(\hat F)$ is asymptotic to $\hat F$
       at $0$ within $\widehat\Sect_i$
-    \item If $g\in G\{z\}$ and $t\in T$ then 
+    \item If $g\in G\{z\}$ and $t\in T$ then
       $\Sigma_i(g\circ\hat F \circ t^{-1})=g\circ\Sigma_i(\hat F)\circ t^{-1}$.
   \end{enumerate}
   The point is that on a narrow sector there are generally many holomorphic

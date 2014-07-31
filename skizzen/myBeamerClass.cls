@@ -23,6 +23,37 @@
 
 \usepackage{stmaryrd}
 
-\renewcommand*{\thefootnote}{[\arabic{footnote}]}
+%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[style=authoryear,natbib=true,backend=biber]{biblatex}
+\usepackage{fontspec}
+\usepackage[babel]{csquotes}
+%\usepackage{filecontents}
+
+\renewcommand*{\thefootnote}{\tiny[\arabic{footnote}]}
+
+\usepackage[framemethod=TikZ]{mdframed}
+\surroundwithmdframed[
+  linewidth=2pt,
+  linecolor=gray,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  leftmargin=\parindent,
+  skipabove=\medskipamount,
+  skipbelow=\medskipamount
+]{lem}
+
+
+%A4
+%\setlength{\paperwidth}{29.7cm}
+%\setlength{\paperheight}{21.0cm}
+%\setlength{\textwidth}{28.7cm}
+%\setlength{\textheight}{20.0cm}
+%custom
+\setlength{\paperwidth}{15cm}
+\setlength{\paperheight}{15cm}
+\setlength{\textwidth}{13cm}
+\setlength{\textheight}{13cm}
+\beamertemplatenavigationsymbolsempty
 
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:
