@@ -1,20 +1,31 @@
 \begin{frame}
+  \insertsection{}
+  \begin{itemize}
+    \item \cite{boalch}
+  \end{itemize}
+\end{frame}
+\begin{frame}
+Let
 \begin{itemize}
   \item $d-A^0$ a diagonal generic meromorphic connection
     \begin{itemize}
+      \item $A^0=dQ+\Lambda^0\frac{dz}{z}$ where
+        \begin{itemize}
+          \item $\Lambda^0$ is constant diagonal
+          \item $Q=diag(q_1,\dots,q_n)$ diagonal matrix of meromorphic functions
+        \end{itemize}
       \item abelian case is $n=1$
     \end{itemize}
-  \item $A^0=dQ+\Lambda^0\frac{dz}{z}$ where
-    \begin{itemize}
-      \item $\Lambda^0$ is constant diagonal
-      \item $Q=diag(q_1,\dots,q_n)$ diagonal matrix of meromorphic functions
-    \end{itemize}
-  \item $q_{ij}(z)=\text{leading Term of }q_i-q_j = \frac{a}{z^{k-1}}$ where
-    \begin{itemize}
-      \item $q_i-q_j = \frac{a}{z^{k-1}} + \frac{b}{z^{k-2}}+\dots$
-      \item $\#\{q_{ij}\mid i \neq j\}=n^2-n$
-      \item simple pole case is $k=1$
-    \end{itemize}
+  \end{itemize}
+  Define $q_{ij}(z):=\text{leading Term of }q_i-q_j = \frac{a}{z^{k-1}}$ where
+  \begin{itemize}
+    \item $q_i-q_j = \frac{a}{z^{k-1}} + \frac{b}{z^{k-2}}+\dots$
+    \item $a$ should not vanish?
+  \end{itemize}
+  Then
+  \begin{itemize}
+    \item $\#\{q_{ij}\mid i \neq j\}=n^2-n=\text{all}-\text{diagonal}$
+    \item simple pole case is $k=1$
   \end{itemize}
 \end{frame}
 
@@ -151,7 +162,7 @@ $z$ on the ray specified by $d$.
 
 \begin{frame}
   $(ij)$ is a root of some $d\in\textbf{d}$ \Leftrightarrow
-  $\frac{e^{q_i}}{e^{q_j}}\overset{z\to0}{\longrightarrow}0$ as along the ray
+  $\frac{e^{q_i}}{e^{q_j}}\overset{z\to0}{\longrightarrow}0$ along the ray
   $\textcolor{yellow!60!black}{\theta(\textbf{d})}\in S^1$ bisecting
   $\Sect(d_1,d_l)$
   \begin{center}
@@ -184,7 +195,7 @@ $z$ on the ray specified by $d$.
   \textcolor{red}{Should that be $\Sect(d_i,d_j)$?}
 \end{frame}
 
-\begin{frame}{Ordering on a half-period}
+\begin{frame}{Lemma 3.2}
   \[
     q_i\underset{\textbf{d}}{<}q_j \qquad :\Leftrightarrow
       \qquad (ij) \text{ is a root of some } d\in\textbf{d}
@@ -197,29 +208,28 @@ $z$ on the ray specified by $d$.
       q_i\underset{\textbf{d}}{<}q_j \qquad \Leftrightarrow \qquad \pi(i)<\pi(j)
     \]
   \end{itemize}
-\end{frame}
-
-\begin{frame}{Lemma 3.2}
-  \begin{enumerate}
-    \item The product of the corresponding groups of Stokes factors is
-    isomorphic as a variety, via the product map, to the subgroup of $G$
-    conjugate to $U_+$ via $P$:
-    \[
-    \prod_{d\in\textbf{d}}\mathbb{S}to_d(A^0)\cong PU_+P^{-1} ;
-    (K_1,\dots,K_l)\mapsto K_l\dots K_2K_1\in G
-    \]
-    \item Label the rest of $\A$ uniquely as $d_{l+1},\dots,d_r$ (in order)
-    then the following map from the product of all the groups of Stokes
-    factors, is an isomorphism of varieties:
-    \[
-    \prod_{d\in\A}\mathbb{S}to_d(A^0)\cong (U_+\times U_-)^{k-1} ;
-    (K_1,\dots,K_r)\mapsto (S_1,\dots,K_{2k-2})
-    \]
-    \begin{itemize}
-      \item where $S_i:=P^{-1}K_{il}\dots K_{(i-1)l+1}P\in U_{+/-}$ if $i$ is
-      odd / even
-    \end{itemize}
-  \end{enumerate}
+  \begin{lem}
+    \begin{enumerate}
+      \item The product of the corresponding groups of Stokes factors is
+      isomorphic as a variety, via the product map, to the subgroup of $G$
+      conjugate to $U_+$ via $P$:
+      \[
+      \prod_{d\in\textbf{d}}\mathbb{S}to_d(A^0)\cong PU_+P^{-1} ;
+      (K_1,\dots,K_l)\mapsto K_l\dots K_2K_1\in G
+      \]
+      \item Label the rest of $\A$ uniquely as $d_{l+1},\dots,d_r$ (in order)
+      then the following map from the product of all the groups of Stokes
+      factors, is an isomorphism of varieties:
+      \[
+      \prod_{d\in\A}\mathbb{S}to_d(A^0)\cong (U_+\times U_-)^{k-1} ;
+      (K_1,\dots,K_r)\mapsto (S_1,\dots,K_{2k-2})
+      \]
+      \begin{itemize}
+        \item where $S_i:=P^{-1}K_{il}\dots K_{(i-1)l+1}P\in U_{+/-}$ if $i$ is
+        odd / even
+      \end{itemize}
+    \end{enumerate}
+  \end{lem}
 \end{frame}
 
 \begin{frame}{Now we move on to the local moduli of meromorphic connections}
@@ -236,7 +246,7 @@ where
         \item does not act on $\Syst(A^0)$
       \end{itemize}
   \end{itemize}
-  The group $G\{z\}:=\GL_n(\C\{z\}$ acts on $\Syst(A^0)$,  study
+  The group $G\{z\}:=\GL_n(\C\{z\})$ acts on $\Syst(A^0)$,  study
   \begin{center}
     $\Syst(A^0)/G\{z\}$\footnote{The set of isomorphism classes of germs of
     meromorphic connections formally equivalent to $A^0$. Note that any generic

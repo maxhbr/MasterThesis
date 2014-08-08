@@ -1,4 +1,11 @@
 \begin{frame}
+  \insertsection{}
+  \begin{itemize}
+    \item \cite{sabbah_cimpa90} §2.2.2 Asymptotic expansions
+    \item \cite{van2003galois} Chap. 7 Exact Asymptotics
+  \end{itemize}
+\end{frame}
+\begin{frame}
   Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
   \begin{itemize}
     \item $\Delta_r^*(U):=
@@ -36,18 +43,25 @@ expansion of $f$ at $0$ if for all $m\in\N$ one has
 \begin{itemize}
   \item $\bar\cA(U,r)\subset\cO(\Delta_r^*(U))$ the set of functions which
     admits an asymptotic power series
-  \item $\cA(U,r)=\bigcap_{V}\bar\cA(V,r)$ 
+  \item $\cA(U,r):=\bigcap_{V}\bar\cA(V,r)$ where $V$ are relatively
+    compact open subsets of $U$
     \begin{itemize}
-      \item where $V$ is a relatively compact open subset of $U$
+      \item $\cA(U,r)=\{\phi\in \bar\cA(U,r)
+        \mid \phi\in \bar\cA(V,r) 
+        \forall V\text{ rel.\  cp.\  op.\  subset of }U\}$
     \end{itemize}
-  \item $\cA(U)=\bigcup_r\cA(U,r)$%
+  \item $\cA(U):=\bigcup_r\cA(U,r)$%
     \begin{itemize}
-      \item $U\mapsto\cA(U)$ defines a sheaf on $S^1$
+      \item $\cA(U)=\{\phi\mid\exists r\text{: } \phi\in\cA(U,r)\}
+        =\{\phi\mid\exists r\text{: }
+          \forall V\subset U\text{ rel.cp.op.}\text{: }
+          \phi\in\bar\cA(V,r)\}$
     \end{itemize}
 \end{itemize}
+The mapping $U\mapsto\cA(U)$ defines a sheaf on $S^1$
 \end{frame}
 
-\begin{frame}{Some elementary properties}
+\begin{frame}{Some elementary properties (2.2.4)}
   \begin{enumerate}
     \item If $\hat\phi$ is an Asymptotic expansion for $f$ then one has
       \[
@@ -59,6 +73,13 @@ expansion of $f$ at $0$ if for all $m\in\N$ one has
           \left[x^{n_0}f(x)-\sum_{0\leq n\leq m-1}a_nx^n\right]
       \]
       In particular this asymptotic expansion is unique
+      \begin{itemize}
+        \item $f$ admits a zero asymptotic expansion iff for all $p\in\Z$
+          one has
+          \[
+            \lim_{x\to 0,x\in\Delta_r^*(U)}x^pf(x)=0
+          \]
+      \end{itemize}
     \item
       Define $\cA(U)\to \hat K$ denoted by $f\mapsto \hat{f}$.
       \begin{itemize}
@@ -67,36 +88,38 @@ expansion of $f$ at $0$ if for all $m\in\N$ one has
       \end{itemize}
     \item Denote by $\cA^{<0}(U)$ the kernel of this morphism
       \begin{itemize}
-        \item $x\mapsto e^{-\frac{1}{x}}$ has zero asymptotic expansion
+        \item $x\mapsto e^{-\frac{1}{x}}$ has zero asymptotic expansion in
+          some sector around $\theta=0$
       \end{itemize}
-    \item $\cA(U)$ is stable under derivation.
+    \item $\cA(U)$ is stable under derivation\footnote{Proof in
+      \cite{sabbah_cimpa90}}.
     \item $\cA(U)$ contains $K$ as a subfield.
   \end{enumerate}
 \end{frame}
 
 \begin{frame}{Borel-Ritt lemma}
-\begin{lemma}
-If $U$ is a proper open interval of the unit circle the mapping
-\[
-\cA(U)\to\hat{K}
-\]
-is onto\footnote{Long proof at \cite{sabbah_cimpa90}[p63]}.
-\end{lemma}
+  \begin{lem}[2.2.5]
+  If $U$ is a proper open interval of the unit circle the mapping
+  \[
+  \cA(U)\to\hat{K}
+  \]
+  is onto\footnote{1p proof at \cite{sabbah_cimpa90}[p63]}.
+  \end{lem}
 
-It follows from this lemma that one has an exact sequence
-\[
-0 \to \cA^{<0}(U) \to \cA(U) \to \hat{K} \to 0
-\]
+  It follows from this lemma that one has an exact sequence
+  \[
+    0 \to \cA^{<0}(U) \to \cA(U) \to \hat{K} \to 0 \,.
+  \]
 \end{frame}
 
 \begin{frame}{Main result}
-Let $\cM_K$ be a meromorphic connection. There exists an integer $q\geq 1$
-such that, after the ramification $x=t^q$, one has, for all $\theta\in S^1$
-and each sufficiently small interval $V$ centered at $\theta$
-\[
-\cA_L(V)\otimes_L\cM_L \cong \cA_L(V)\otimes_L\left(\cF_L^R\otimes\cG_L\right)
-\]
-\end{frame}
-
-\begin{frame}
+  \begin{thm}[2.3.1]
+    Let $\cM_K$ be a meromorphic connection. There exists an integer $q\geq 1$
+    such that, after the ramification $x=t^q$, one has, for all $\theta\in S^1$
+    and each sufficiently small interval $V$ centered at $\theta$
+    \[
+      \cA_L(V)\otimes_L\cM_L \cong
+        \cA_L(V)\otimes_L\left(\cF_L^R\otimes\cG_L\right)
+    \]
+  \end{thm}
 \end{frame}
