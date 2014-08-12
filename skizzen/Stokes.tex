@@ -439,29 +439,52 @@ where
 \end{frame}
 
 \begin{frame}{Theorem 3.1}
-  Suppose $\hat{F}\in G\llbracket z\rrbracket$ is a formal transformation such
-  that $A:=F[A0]$ has convergent entries. Set the radius of the sectors
-  $\Sect_i$, $\widehat\Sect_i$ to be less than the radius of convergence of
-  $A$.
-  Then the following hold:
-  \begin{enumerate}
-    \item On each sector $\Sect_i$ there is a canonical way to choose an
-      invertible $n\in n$ matrix of holomorphic functions $\Sigma_i(\hat F)$
-      such that $\Sigma_i(\hat F)[A^0]=A$
-    \item $\Sigma_i(\hat F)$ can be analytically continued to the supersector
-      $\widehat\Sect_i$ and then $\Sigma_i(\hat F)$ is asymptotic to $\hat F$
-      at $0$ within $\widehat\Sect_i$
-    \item If $g\in G\{z\}$ and $t\in T$ then
-      $\Sigma_i(g\circ\hat F \circ t^{-1})=g\circ\Sigma_i(\hat F)\circ t^{-1}$.
-  \end{enumerate}
-  The point is that on a narrow sector there are generally many holomorphic
-  iso-morphisms between $A_0$ and $A$ which are asymptotic to $\hat F$ and one
-  is being chosen in a canonical way; $\Sigma_i(\hat F)$ is in fact uniquely
-  characterised by property 2.
+  \begin{thm}
+    Let $\hat{F}\in G\llbracket z\rrbracket$1 such that $A:=F[A0]$ has
+    convergent entries.
+    Set the radius of the sectors $\Sect_i$, $\widehat\Sect_i$ to be less than
+    the radius of convergence of $A$.
+    Then:
+    \begin{enumerate}
+      \item On each sector $\Sect_i$ there is a canonical way to choose an
+        invertible $n\times n$ matrix of holomorphic Functions
+        $\Sigma_i(\hat F)$ such that $\Sigma_i(\hat F)[A^0]=A$
+      \item $\Sigma_i(\hat F)$ can be analytically continued to the supersector
+        $\widehat\Sect_i$ and then $\Sigma_i(\hat F)$ is asymptotic to $\hat F$
+        at $0$ within $\widehat\Sect_i$
+      \item If $g\in G\{z\}$ and $t\in T$ then
+        $\Sigma_i(g\circ\hat F \circ t^{-1})=g\circ\Sigma_i(\hat F)\circ t^{-1}$.
+    \end{enumerate}
+  \end{thm}
+  \begin{itemize}
+    \item The point is that on a narrow sector there are generally many
+      holomorphic isomorphisms between $A_0$ and $A$ which are asymptotic to
+      $\hat F$ and one is being chosen in a canonical way
+    \item $\Sigma_i(\hat F)$ is in fact uniquely characterised by property 2.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Functions on the quotient $\mathcal{H}(A^0)$}
+  Let
+  \begin{itemize}
+    \item $(A,g_0)\in\widehat\Syst(A^0)$ be a compatibly framed connection germ
+    \item $\hat F\in G\llbracket z\rrbracket$ be the associated  formal
+      isomorphism
+  \end{itemize}
+  The sums of $\hat F$ on the two sectors andjacent to some anti-Stokes ray
+  $d_i$ may be analytically continued across $d_i$ and they generally be
+  different on the overlap.
+  Thus for each anti-Stokes ray $d_i$ there is a matrix of holomorphic
+  functions
+  \[
+    \kappa_i:=\Sigma_i(\hat F)^{-1}\circ\Sigma_{i-1}(\hat F)
+  \]
+  asymptotic to $i$ on a sectorial neighbourhood of $d_i$.
 
+  Moreover \textcolor{red!60!black}{clearly} $\kappa_i[A^0]=A^0$.
+
+  A concrete description of $\kappa_i$ is obtained by choosing a basis of
+  solution of $A^0$, which is made via a choice of branch of $\log(z)$.
 \end{frame}
 
 \begin{frame}

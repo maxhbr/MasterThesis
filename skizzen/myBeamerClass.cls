@@ -81,6 +81,16 @@
   skipabove=\medskipamount,
   skipbelow=\medskipamount
 ]{thm}
+\surroundwithmdframed[
+  linewidth=2pt,
+  linecolor=gray,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  leftmargin=\parindent,
+  skipabove=\medskipamount,
+  skipbelow=\medskipamount
+]{defn}
 
 
 %A4
