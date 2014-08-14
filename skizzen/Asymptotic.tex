@@ -40,7 +40,7 @@
 \end{frame}
 
 \begin{frame}{Asymptotic expansion}
-Let $\hat\phi=\sum_{n\geq -n_0}a_nx^n$ with $a_n\in\C$ is as asymptotic
+Let $\hat\phi=\sum_{n\geq-n_0}a_nx^n$ with $a_n\in\C$ is as asymptotic
 expansion of $f$ at $0$ if for all $m\in\N$ one has
 \begin{equation} \label{eq:asymptoticExpansion}
   \lim_{x\to 0,x\in\triangle_r^*(U)}
@@ -67,42 +67,6 @@ Define
     \end{itemize}
 \end{itemize}
 The mapping $U\mapsto\cA(U)$ defines a sheaf on $S^1$
-\end{frame}
-
-\begin{frame}
-  The equation (\ref{eq:asymptoticExpansion}) says:
-  \newcommand{\myto}{\textcolor{gray!60!black}{\overset{x\to0}{\xrightarrow{x\in\triangle_r^*(U)}}}}
-  \begin{align*}
-    m&=0&
-    \left|a_{0}-x^{n_{0}}f(x)\right| &\myto 0
-  \\ m&=1&
-    \left|a_{0}\frac{1}{\left|x\right|}+a_{1}\frac{x}{\left|x\right|}
-    -\frac{x^{n_{0}}f(x)}{\left|x\right|} \right|&\myto 0
-  \\ m&=2&
-    \left|a_{0}\frac{1}{\left|x^{2}\right|}+a_{1}\frac{x}{\left|x^2\right|}
-    +a_{2}\frac{x^2}{\left|x^2\right|}
-    -\frac{x^{n_{0}}f(x)}{\left|x^{2}\right|}\right| &\myto 0
-  \\ m&=3&
-    \left|a_{0}\frac{1}{\left|x^{3}\right|}
-    +a_{1}\frac{x}{\left|x^{3}\right|}
-    +a_{2}\frac{x^2}{\left|x^3\right|}
-    +a_{3}\frac{x^3}{\left|x^3\right|}
-    -\frac{x^{n_{0}}f(x)}{\left|x^{3}\right|} \right|&\myto 0
-  \\&&&\qquad\vdots
-  \\ &&
-    \left|a_{0}\frac{1}{\left|x^{m}\right|}
-    +a_{1}\frac{x}{\left|x^{m}\right|}+\dots
-    +a_{m-1}\frac{x^{m-1}}{\left|x^m\right|}
-    +a_{m}\frac{x^{m}}{\left|x^m\right|}
-    -\frac{x^{n_{0}}f(x)}{\left|x^{m}\right|} \right|&\myto 0
-  \\&&&\qquad\vdots
-  \end{align*}
-  \begin{exmp}
-    \begin{enumerate}
-      \item $f=\frac{1}{x}$ \Rightarrow{} $\hat f=x$
-        \textcolor{red}{\lightning}
-    \end{enumerate}
-  \end{exmp}
 \end{frame}
 
 \begin{frame}{Other deffinitions}
