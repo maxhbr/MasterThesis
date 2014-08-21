@@ -33,15 +33,15 @@
 
 \usepackage{amsmath,amsthm,amssymb}
 \theoremstyle{plain}% default
-\newtheorem{thm}{Satz}[section]
+\newtheorem{thm}{Theoreme}[section]
 %\newtheorem{thm}[satz]{Satz}
 %\newtheorem{lemma}[thm]{Lemma}
 \newtheorem{lem}[thm]{Lemma}
 \newtheorem{lemdef}[thm]{Lemma/Definition}
 \newtheorem{lemcor}[thm]{Lemma/Korollar}
 \newtheorem{defcor}[thm]{Definition/Korollar}
-\newtheorem{cor}[thm]{Korollar}
-\newtheorem{kor}[thm]{Korollar}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{kor}[thm]{Corollary}
 \newtheorem{prop}[thm]{Proposition}
 
 \newtheorem{ex}{Aufgabe}[section]
@@ -51,14 +51,15 @@
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition}
 \newtheorem{conj}[thm]{Conjecture}
-\newtheorem{exmp}[thm]{Beispiel}
-\newtheorem{bsp}[thm]{Beispiel}
+\newtheorem{exmp}[thm]{Example}
+\newtheorem{bsp}[thm]{Example}
 
 \theoremstyle{remark}
-\newtheorem{rem}[thm]{Bemerkung}
-\newtheorem{bem}[thm]{Bemerkung}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{bem}[thm]{Remark}
 \newtheorem{beo}[thm]{Beobachtung}
 %\newtheorem{note}[thm]{Notiz}
+\newtheorem{probl}[thm]{Problem}
 
 \usepackage[framemethod=TikZ]{mdframed}
 \surroundwithmdframed[
@@ -91,6 +92,26 @@
   skipabove=\medskipamount,
   skipbelow=\medskipamount
 ]{defn}
+\surroundwithmdframed[
+  linewidth=2pt,
+  linecolor=gray,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  leftmargin=\parindent,
+  skipabove=\medskipamount,
+  skipbelow=\medskipamount
+]{cor}
+\surroundwithmdframed[
+  linewidth=2pt,
+  linecolor=red!40!white,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  leftmargin=\parindent,
+  skipabove=\medskipamount,
+  skipbelow=\medskipamount
+]{probl}
 
 
 %A4
