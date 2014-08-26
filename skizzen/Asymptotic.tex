@@ -1,5 +1,5 @@
 \begin{frame}
-  \insertsection{}
+  {\Huge\insertsection{}}
   \begin{itemize}
     \item \cite{sabbah_cimpa90} §2.2.2 Asymptotic expansions
     \item \cite{van2003galois} Chap. 7 Exact Asymptotics
@@ -34,7 +34,8 @@
 
       \node[red!60!black,right] at (1,0) {$U$};
 
-      \fill (zero) circle (1pt);
+      \fill[white] (zero) circle (1.5pt);
+      \fill (zero) circle (.7pt);
     \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -95,106 +96,105 @@ Thus
 $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 \end{frame}
 
-\begin{frame}{Other deffinitions}
-  \begin{itemize}
-    \item \cite[2]{majima1984asymptotic} says:
-      $f\in\cA(U)$ iff for every \textbf{closed} subsector and for every
-      $N\in\N$
-      \[
-        \sup_{x\in\bar\cA(V,\tilde r)}
-          \left|x^{-N}\left(f(x)-\sum_{i=0}^{N-1}a_ix^i\right)\right|
-        <+\infty
-      \]
-    \item \cite{zbMATH00060600} defines:
-      \textbf{asymptotic expansion of Grevrey order $s$}
-    \item \cite{wasow2002asymptotic} defines:
-      Let the function $f(x)$ be defined in a point-set $S$ of the complex
-      $x$-plane having $x=0$ as an accumulation point. The power series
-      $\sum_{r=0}^\infty a_rx^r$ is said to represent $f(x)$ asymptotically, as
-      $x\to0$ is $S$, if
-      \[
-        x^{-m}\left[f(x)-\sum_{r=0}^ma_rx^r\right]
-      \]
-      tends to zero, for all $m\geq0$, as $x$ tends to zero in $S$.
-  \end{itemize}
-\end{frame}
+{\setbeamercolor{background canvas}{bg=gray!40!white}
+  \begin{frame}{Other definitions}
+    \begin{itemize}
+      \item \cite[2]{majima1984asymptotic} says:
+        $f\in\cA(U)$ iff for every \textbf{closed} subsector and for every
+        $N\in\N$
+        \[
+          \sup_{x\in\bar\cA(V,\tilde r)}
+            \left|x^{-N}\left(f(x)-\sum_{i=0}^{N-1}a_ix^i\right)\right|
+          <+\infty
+        \]
+      \item \cite{wasow2002asymptotic} defines:
+        Let the function $f(x)$ be defined in a point-set $S$ of the complex
+        $x$-plane having $x=0$ as an accumulation point. The power series
+        $\sum_{r=0}^\infty a_rx^r$ is said to represent $f(x)$ asymptotically,
+        as $x\to0$ is $S$, if
+        \[
+          x^{-m}\left[f(x)-\sum_{r=0}^ma_rx^r\right]
+        \]
+        tends to zero, for all $m\geq0$, as $x$ tends to zero in $S$.
+      \item \cite{zbMATH00060600} defines:
+        \textbf{asymptotic expansion of Grevrey order $s$}
+        \begin{itemize}
+          \item see: the following slides
+        \end{itemize}
+    \end{itemize}
+  \end{frame}
 
-\begin{frame}{Definition from \cite{zbMATH00060600}}
-\begin{defn}
-  $f=\sum_ma_mx^m$ is of Grevrey order $s$ (nonegative) :\Leftrightarrow
-  \begin{itemize}
-    \item there exist $C$ and $A$ nonegative such that
-    \[
-      |a_m|< C(m!)^sA^m \qquad \text{ for } m=0,1,2,\dots
-    \]
-  \end{itemize}
-  We denote by $\C\llbracket z\rrbracket_s$ the set of all power series of
-  Grevrey order $s$.
-\end{defn}
-\begin{defn}
-$\phi$ is said to admit an asymptotic expansion of Grevrey order $s$ as $z\to0$
-on
-\[
-  \mathcal{D}(R_0,a,b):=\{z \mid a < \arg z < b , 0 < |z| < R_0\}
-\]
-if
-\begin{itemize}
-  \item $\phi$ is holomorphic on $\mathcal{D}(R_0,a,b)$
-  \item there exists a formal power series
-  $f=\sum_{m\geq0}a_mz^m \in \C\llbracket z\rrbracket_s$ such that
-  \[
-    \left|\phi(z)-\sum_{N-1\geq m\geq 0}a_mz^m\right|
-    \leq K_{R,\alpha,\beta}(N!)^s(B_{R,\alpha,\beta})^N|z|^N
-  \]
-  on $\mathcal{D}(R,\alpha,\beta)$ for $N=1,2,\dots$ and every
-  $(R,\alpha,\beta)$ satisfying
-  \[
-    0 < R < R_0 \qquad \text{ and } \qquad a < \alpha < \beta < b,
-  \]
-  where $K_{R,\alpha,\beta}$ and $B_{R,\alpha,\beta}$ are some nonegative
-  numbers depending on $(R,\alpha,\beta)$.
-\end{itemize}
-\end{defn}
-\end{frame}
-
-\begin{frame}{Definition from \cite{zbMATH00060600} (2)}
-  \begin{itemize}
-    \item We denote by $\mathcal{A}_s(R_0,a,b)$ the set of all functions
-    admitting asymptotic expansions of Grevrey $s$ as $z\to 0$ on the sectorial
-    domain $\mathcal{D}(R_0,a,b)$.
-    \item We set $J(\phi)=f$. Then the mapping
-    \[
-    J: \mathcal{A}_s(R_0,a,b) \to \C\llbracket z\rrbracket_s
-    \]
-    is a homomorphism of commutative differential algebras over $\C$.
-    \item Set
-    \[
-    \mathcal{A}_{s,0}(R_0,a,b):=
-    \ker\left(J: \mathcal{A}_s(R_0,a,b) \to \C\llbracket z\rrbracket_s\right)
-    \]
-  \end{itemize}
-  \begin{lem}[1.3]
-    A function $\phi(z)$ belongs to $\mathcal{A}_{s,0}(R_0,a,b)$ iff \dots
-  \end{lem}
-  \begin{cor}[1.4]
-    $J$ is injective iff \dots
-  \end{cor}
-  \begin{defn}[1.5]
-    Let $k$ be a positive number. A formal power series $f\in\C\llbracket
-    z\rrbracket$ is \emph{k-summable in a direction} $\arg z=d$\dots 
+  \begin{frame}{Definition from \cite{zbMATH00060600}}
+  \begin{defn}
+    $f=\sum_ma_mx^m$ is of Grevrey order $s$ (nonegative) :\Leftrightarrow
+    \begin{itemize}
+      \item there exist $C$ and $A$ nonegative such that
+      \[
+        |a_m|< C(m!)^sA^m \qquad \text{ for } m=0,1,2,\dots
+      \]
+    \end{itemize}
+    We denote by $\C\llbracket z\rrbracket_s$ the set of all power series of
+    Grevrey order $s$.
   \end{defn}
+  \begin{defn}
+  $\phi$ is said to admit an asymptotic expansion of Grevrey order $s$ as
+  $z\to0$ on
+  \[
+    \mathcal{D}(R_0,a,b):=\{z \mid a < \arg z < b , 0 < |z| < R_0\}
+  \]
+  if
+  \begin{itemize}
+    \item $\phi$ is holomorphic on $\mathcal{D}(R_0,a,b)$
+    \item there exists a formal power series
+    $f=\sum_{m\geq0}a_mz^m \in \C\llbracket z\rrbracket_s$ such that
+    \[
+      \left|\phi(z)-\sum_{N-1\geq m\geq 0}a_mz^m\right|
+      \leq K_{R,\alpha,\beta}(N!)^s(B_{R,\alpha,\beta})^N|z|^N
+    \]
+    on $\mathcal{D}(R,\alpha,\beta)$ for $N=1,2,\dots$ and every
+    $(R,\alpha,\beta)$ satisfying
+    \[
+      0 < R < R_0 \qquad \text{ and } \qquad a < \alpha < \beta < b,
+    \]
+    where $K_{R,\alpha,\beta}$ and $B_{R,\alpha,\beta}$ are some nonegative
+    numbers depending on $(R,\alpha,\beta)$.
+  \end{itemize}
+  \end{defn}
+  \end{frame}
 
-  \dots
+  \begin{frame}{Definition from \cite{zbMATH00060600} (2)}
+    \begin{itemize}
+      \item We denote by $\mathcal{A}_s(R_0,a,b)$ the set of all functions
+      admitting asymptotic expansions of Grevrey $s$ as $z\to 0$ on the
+      sectorial domain $\mathcal{D}(R_0,a,b)$.
+      \item We set $J(\phi)=f$. Then the mapping
+      \[
+      J: \mathcal{A}_s(R_0,a,b) \to \C\llbracket z\rrbracket_s
+      \]
+      is a homomorphism of commutative differential algebras over $\C$.
+      \item Set
+      \[
+      \mathcal{A}_{s,0}(R_0,a,b):=
+      \ker\left(J: \mathcal{A}_s(R_0,a,b) \to \C\llbracket z\rrbracket_s\right)
+      \]
+    \end{itemize}
+    \begin{lem}[1.3]
+      A function $\phi(z)$ belongs to $\mathcal{A}_{s,0}(R_0,a,b)$ iff \dots
+    \end{lem}
+    \begin{cor}[1.4]
+      $J$ is injective iff \dots
+    \end{cor}
+    \begin{defn}[1.5]
+      Let $k$ be a positive number. A formal power series $f\in\C\llbracket
+      z\rrbracket$ is \emph{k-summable in a direction} $\arg z=d$\dots 
+    \end{defn}
 
-  \textbf{2. Grevrey properties of formal solutions:} We can define the Newton
-  polygon\dots 
-\end{frame}
+    \dots
 
-\begin{frame}{Compare definitions}
-  %\[
-    %\cD(R_0,a,b)=\Delta_{R_0}([a,b])_
-  %\]
-\end{frame}
+    \textbf{2. Grevrey properties of formal solutions:} We can define the
+    Newton polygon\dots 
+  \end{frame}
+}
 
 \begin{frame}{Some elementary properties (2.2.4)}
   \begin{enumerate}

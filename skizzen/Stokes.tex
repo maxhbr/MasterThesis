@@ -1,10 +1,8 @@
 \begin{frame}
-  \insertsection{}
+  {\Huge\insertsection{}}
   \begin{itemize}
     \item \cite{boalch}
   \end{itemize}
-\end{frame}
-\begin{frame}
 Let
 \begin{itemize}
   \item $d-A^0$ a diagonal generic meromorphic connection
@@ -20,11 +18,11 @@ Let
   Define $q_{ij}(z):=\text{leading Term of }q_i-q_j = \frac{a}{z^{k-1}}$ where
   \begin{itemize}
     \item $q_i-q_j = \frac{a}{z^{k-1}} + \frac{b}{z^{k-2}}+\dots$
-    \item $a$ should not vanish?
+    \item $a$ should \textcolor{red!60!black}{not vanish?}
   \end{itemize}
   Then
   \begin{itemize}
-    \item $\#\{q_{ij}\mid i \neq j\}=n^2-n=\text{all}-\text{diagonal}$
+    \item $\#\{q_{ij}\mid i \neq j\}=n^2-n=\text{"all"}-\text{"diagonal"}$
     \item simple pole case is $k=1$
   \end{itemize}
 \end{frame}
@@ -190,6 +188,8 @@ $z$ on the ray specified by $d$.
         node[right] {$\theta(\textbf{d})$};
       \fill[yellow!60!black] ({cos( 32.5 )},{sin( 32.5 )}) circle (1pt);
 
+      \fill (zero) circle (1pt);
+
     \end{tikzpicture}
   \end{center}
   \textcolor{red}{Should that be $\Sect(d_i,d_j)$?}
@@ -293,7 +293,8 @@ where
        \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
        \foreach \sep in {60,120,180,240,300}
        {\draw (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-        \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
+        \fill[blue!20!white]
+          ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
        }
       };
 
@@ -325,7 +326,8 @@ where
        \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
        \foreach \sep in {60,120,180,240,300}
        {\draw (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-        \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
+        \fill[blue!20!white]
+          ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
        }
       };
 
@@ -359,6 +361,15 @@ where
 
       \fill[fill=green!20!white] (0,0) -- ({cos( 15 )},{sin( 15 )}) arc
         (15:85:1) -- cycle;
+
+      \fill[fill=red!60!black] (0,0) -- ({cos( 15 )*0.5},{sin( 15 )*0.5}) arc
+        (15:45:0.5) -- cycle;
+      \fill[fill=red!60!black] (0,0) -- ({cos( 55 )*0.5},{sin( 55 )*0.5}) arc
+        (55:85:0.5) -- cycle;
+
+      \fill[fill=green!20!white] (0,0) -- ({cos( 15 )*0.4},{sin( 15 )*0.4}) arc
+        (15:85:0.4) -- cycle;
+
       \node[green!40!black] at (.9,.9) {$\widehat\Sect_1$};
 
       \node[] (lft) at ({cos( 85 )},{sin( 85 )}) {};
@@ -372,27 +383,24 @@ where
 
       \draw[thick,red!40!black] (0,0) -- +({cos( 85 )},{sin( 85 )});
       \draw[thick,red!40!black] (0,0) -- +({cos( 15 )},{sin( 15 )});
+      \fill[red!40!black] ({cos( 85 )},{sin( 85 )}) circle (1pt);
+      \fill[red!40!black] ({cos( 15 )},{sin( 15 )}) circle (1pt);
 
       \foreach \w/\str in {10/$d_{r-1}$,
                            20/$d_r$,
                            45/$d_1$,
                            55/$d_2$}
       {\draw (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
-       \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
+       \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (.7pt);
        \foreach \sep in {60,120,180,240,300}
        {\draw (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-        \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
+        \fill[blue!20!white]
+          ({cos( \w + \sep )},{sin( \w + \sep )}) circle (.7pt);
        }
       };
 
       \fill[yellow!60!black] (0.6,0.4) circle (1pt);
       \node[yellow!60!black,right] at (0.6,0.4) {$p$};
-
-      \fill[fill=red!20!white] (0,0) -- ({cos( 15 )*0.2},{sin( 15 )*0.2}) arc
-        (15:45:0.2) -- cycle;
-
-      \fill[fill=red!20!white] (0,0) -- ({cos( 55 )*0.2},{sin( 55 )*0.2}) arc
-        (55:85:0.2) -- cycle;
 
       \fill (zero) circle (1pt);
     \end{tikzpicture}
@@ -409,8 +417,8 @@ where
                            20/,
                            45/,
                            55/}
-      {\draw[dotted] (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
-       \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
+      {\draw (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+       \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (.7pt);
 
        \foreach \sep in {0,60,120,180,240,300}
        {\node[] (src) at ({cos( \w + \sep )},{sin( \w + \sep)}) {};
@@ -423,13 +431,15 @@ where
 
         \draw[->,red!30!white] (src)
           to [out={\w + \sep - 10}, in={\w + \sep - 30 + 10}] (rgt);
+        \fill[red!40!black] (rgt) circle (1pt);
 
         \draw[->,red!60!white,dashed] (src)
           to [out={\w + \sep + 10}, in={\w + \sep + 30 - 10}] (lft);
        }
        \foreach \sep in {60,120,180,240,300}
-       {\draw[dotted] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-        \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
+       {\draw (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+        \fill[blue!20!white]
+          ({cos( \w + \sep )},{sin( \w + \sep )}) circle (.7pt);
        }
       };
 
@@ -485,7 +495,4 @@ where
 
   A concrete description of $\kappa_i$ is obtained by choosing a basis of
   solution of $A^0$, which is made via a choice of branch of $\log(z)$.
-\end{frame}
-
-\begin{frame}
 \end{frame}
