@@ -19,7 +19,7 @@
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usetikzlibrary{matrix,arrows, calc, decorations.pathmorphing,%
-  decorations.pathreplacing }
+  decorations.pathreplacing, fadings }
 
 \usepackage{stmaryrd}
 
@@ -102,6 +102,16 @@
   skipabove=\medskipamount,
   skipbelow=\medskipamount
 ]{cor}
+\surroundwithmdframed[
+  linewidth=2pt,
+  linecolor=gray,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  leftmargin=\parindent,
+  skipabove=\medskipamount,
+  skipbelow=\medskipamount
+]{prop}
 \surroundwithmdframed[
   linewidth=2pt,
   linecolor=red!40!white,

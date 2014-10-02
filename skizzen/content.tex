@@ -1,10 +1,120 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  All contents  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iffalse{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Some Symplectic Geometry}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{{{
+\begin{frame}[t]
+  {\Huge\insertsection{}}
+  \begin{itemize}
+    \item~\cite{thboalch}
+  \end{itemize}
+  and~\cite{thboalch} recommends
+  \begin{itemize}
+    \item 6: Arxiv:hep-th/9303038
+    \item 41: Symplectic techniques in physics
+    \item 66: Symplectic geometry and analytical mechanics
+    \item 81: Introduction to symplectic topology
+    \item start of 28: \cite{citeulike:4402830}
+  \end{itemize}
+  and for symplectic fibrations
+  \begin{itemize}
+    \item 40
+    \item 81
+  \end{itemize}
+  and
+  \begin{itemize}
+    \item \cite{berndt2001introduction}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Fundamental Vector Fields}
+
+\end{frame}
+
+\begin{frame}[t]{Hamiltonian Vector Fields}
+  Suppose $(M,\omega)$ is a complex symplectic manifold, thus
+  \begin{itemize}
+    \item $M$ is a complex manifold
+    \item $\omega$ is a complex form, this means, it is a 2-form, which is
+      \begin{itemize}
+        \item closed,
+        \item nondegenerate and
+        \item holomorphic
+      \end{itemize}
+      In particular $\omega$ gives an isomorphism between the holomorphic
+      tangent bundle and the holomorphic contangent bundle.
+  \end{itemize}
+  Given a holomorphic function $f:M\to\C$ on $M$ we cad differentiate it to
+  obtain a holomorphic one-form, and then use $\omega$ to convert it into a
+  holomorphic vector field:
+  \begin{defn}
+    The \emph{Hamiltonian vector field} $V_H(f)$ on $M$ associated to $f$ is
+    the vector field on $M$ such that the following equality of one-forms
+    holds:
+    \[
+      df=-i_{V_H(f)}\omega=\omega(\cdot,V_H(f)) \,.
+    \]
+  \end{defn}
+  \begin{itemize}
+    \item The flows of Hamiltonian vector fields preserve the symplectic
+      structure $\omega$.
+    \item if we give the set $\cO_M$ of functions on $M$ the natural Lie
+      algebra structure coming from the Paisson bracket defined by $\omega$:
+      \[
+        \{f,g\}:=\omega(V_H(f),V_H(g))
+      \]
+      then the sing in the above definition is chosen such that the map
+      \[
+        V_H(\cdot):\cO_M\to\Vect_M
+      \]
+      is a Lie algebra homomorphism.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Moment maps}
+  \begin{defn}
+    A \emph{moment map} for the action $\Phi$ of a Lie group $G$ on a
+    symplectic manifold $(M,\omega)$ is the map
+    \[
+      \mu:M\to\mathfrak{g}^*
+    \]
+    such that:
+    \begin{enumerate}
+      \item For any $X\in\mathfrak{g}$:
+        \[
+          d\left\langle X,\mu \right\rangle=-i_{V_F(X)}\omega
+        \]
+      \item $\mu$ is equivariant:
+        \begin{itemize}
+          \item it interwines the action of $G$ on $M$ and the coadjoint
+            action of $G$ on $\mathfrak{g}^*$.
+        \end{itemize}
+    \end{enumerate}
+  \end{defn}
+  Let $G$ be a group which acts on a symplectic manifold $(M.\omega)$ with
+  moment map $\mu$.
+  The \textbf{symplectic quotient} is
+  \[
+    \symplquot{M}{G}:=\mu^{-1}(0)/G \,.
+  \]
+  it is a symplectic manifold with the symplectic structure $\tilde\omega$
+  defined by the requiring
+  \[
+    i^*(\omega)=p^*(\bar\omega)
+  \]
+  where
+  \begin{itemize}
+    \item $p:\mu^{-1}(0)\to\symplquot{M}{G}$ is the projections and
+    \item $i:\mu^{-1}(0)\hookrightarrow M$ is the inclusion.
+  \end{itemize}
+\end{frame}
+%}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Meromorphic Connections on Trivial Bundles}%%%%%%%%%%%%%%%%%%%%%%%%{{{
-\begin{frame}
+\begin{frame}[t]
   {\Huge\insertsection{}}
   \begin{itemize}
     \item \cite{boalch}
@@ -33,14 +143,14 @@ and let $V\to\P^1$ be a rank $n$ vector bundle.
       where
       \begin{itemize}
         \item $v$ is a local section of $V$,
-        \item $f$ is al loca holomorphic function and
+        \item $f$ is a local holomorphic function and
         \item $K$ is the sheaf or holomorphic one-forms on $\P^1$
       \end{itemize}
   \end{itemize}
 \end{defn}
 If we choose a local coordinate $z$ on $\P^1$ vanishing at $a_i$ then in terms
 of local trivialization of $V$, $\nabla$ has the form
-$\nabla=d-A=d-{}^iA$ \footnote{the presuperscript is used to signify local
+$\nabla=d-A=d-{}^iA$\footnote{the presuperscript is used to signify local
 information} where
 \[
   A=\left(\sum^{0}_{j=k_i}A_j\frac{dz}{z^{j}}\right)+A_0dz+\dots
@@ -154,7 +264,7 @@ is a matrix of meromorphic one-forms and $A_j\in\End(\C^n)$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Lie}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{{{
-\begin{frame}
+\begin{frame}[t]
   {\Huge\insertsection{}}
   \begin{itemize}
     \item \cite{boalch}
@@ -165,7 +275,7 @@ is a matrix of meromorphic one-forms and $A_j\in\End(\C^n)$.
 \begin{frame}{Lie groups / algebras}
   \begin{itemize}
     \item TODO: defs
-    \item Let $R$ be a ring. $\GL_n(R)$ is definde as the matrices
+    \item Let $R$ be a ring. $\GL_n(R)$ is define as the matrices
       over $R$ of dimension $n$ whose determinant is a unit in $R$
   \end{itemize}
 \end{frame}
@@ -179,7 +289,7 @@ is a matrix of meromorphic one-forms and $A_j\in\End(\C^n)$.
           \[
             F[A]:=(dF)F^{-1}+FAF^{-1}
           \]
-        \item The orbits of $G\{z\}$ givt tha analytical classification of
+        \item The orbits of $G\{z\}$ give the analytical classification of
           systems
           \begin{itemize}
             \item Isomorphic connections give rise to analytically equivalent
@@ -193,7 +303,7 @@ is a matrix of meromorphic one-forms and $A_j\in\End(\C^n)$.
           is a formal gauge transformation $\hat F\in\hat G$ such that
           $B=\hat F[A]$.
           \begin{itemize}
-            \item Note $\hat G$ does not act on the set of systems
+            \item Note: $\hat G$ does not act on the set of systems
             \item Analytically equivalent \Rightarrow formally equivalent
           \end{itemize}
       \end{itemize}
@@ -235,9 +345,12 @@ is a matrix of meromorphic one-forms and $A_j\in\End(\C^n)$.
   together with te projections
   \begin{itemize}
     \item $\textcolor{blue!80!black}{\pi_{res}}:
-      \mathfrak{g}_k^*\to\mathfrak{g}^*; A \mapsto A_1\frac{d\zeta}{\zeta}$
+      \mathfrak{g}_k^*\to\mathfrak{g}^*;
+      A=\left(\frac{A_k}{\zeta^k}+\dots+\frac{A_1}{\zeta}\right)d\zeta \mapsto
+        A_1\frac{d\zeta}{\zeta}$
     \item $\textcolor{green!80!black}{\pi_{irr}}:
-      \mathfrak{g}_k^*\to\mathfrak{b}_k^*; A\mapsto A-\pi_{res}(A)$
+      \mathfrak{g}_k^*\to\mathfrak{b}_k^*; A\mapsto A-\pi_{res}(A)=
+        \left(\frac{A_k}{\zeta^k}+\dots+\frac{A_2}{\zeta^2}\right)d\zeta$
   \end{itemize}
   The bimodule structure of $\mathfrak{g}_k^*$ can be used to give a explicit
   description of the coadjoint actions:
@@ -252,7 +365,7 @@ is a matrix of meromorphic one-forms and $A_j\in\End(\C^n)$.
   \end{lem}
 \end{frame}
 
-\begin{frame}{Coadjoint orbits}
+\begin{frame}[t]{Coadjoint orbits}
   \begin{defn}
     \begin{itemize}
       \item The coadjoint orbit through $A\in\mathfrak{g}_k^*$ is
@@ -271,6 +384,7 @@ is a matrix of meromorphic one-forms and $A_j\in\End(\C^n)$.
     \begin{itemize}
       \item They are symplectic leaves of the (Lie) Poisson bracket on the dual
       of the Lie algebra.
+    \item see \cite{citeulike:4402830} Examples 2.1
     \end{itemize}
     \item They are naturally a complex symplectic manifold\footnote{since
     everything is complex here}
@@ -292,34 +406,60 @@ is a matrix of meromorphic one-forms and $A_j\in\End(\C^n)$.
 \end{frame}
 
 \begin{frame}[fragile]{Extended orbits ($k\geq2$ case)}
-  \dots
-  \begin{defn}
-    The \emph{extended orbit} $\tilde O\subset G\times \mathfrak{g}_k^*$
-    associated to $O_B$ is
-    \[
-      \tilde O:=\left\{(g_0,A)\in G\times\mathfrak{g}_k^*
-      \mid\textcolor{green!80!black}{\pi_{irr}}(g_0Ag_0^{-1})\in O_B\right\}
-    \]
-  \end{defn}
+  The \textbf{extended orbit} $\tilde O\subset G\times \mathfrak{g}_k^*$
+  associated to $O_B$ is
+  \[
+    \tilde O:=\left\{(g_0,A)\in G\times\mathfrak{g}_k^*
+    \mid\textcolor{green!80!black}{\pi_{irr}}(g_0Ag_0^{-1})\in O_B\right\}
+  \]
   \begin{itemize}
     \item \textbf{Lemma 2.2:} They are canonically isomorphic to the symplectic
       quotient
       \[
         \symplquot{T^*G_k\times O_B}{B_k}
       \]
-    \begin{itemize}
-      \item this gives $\tilde O$ the structure of a complex symplectic
-        manifold.
-    \end{itemize}
-    \item \textbf{Lemma 2.3:}\dots
+      \begin{itemize}
+        \item this gives $\tilde O$ the structure of a complex symplectic
+          manifold.
+      \end{itemize}
+    \item \textbf{Lemma 2.3:}
+      \begin{enumerate}
+        \item There is a well-defined map
+          \[
+            \mu_T: \tilde O \to t^*; (g_0,A)\mapsto
+            -\Lambda\frac{d\zeta}{\zeta}
+          \]
+          which is a moment map for the free action of $T\cong(\C^*)^n$ on
+          $\tilde O$ defined by $t(g_0,A)=(fg_0,A)$ where $t\in T$
+        \item The symplectic quotient at the value $-R$ of $\mu_T$ is the
+          $G_k$ coadjoint orbit through the element $A^0-R$ of
+          $\mathfrak{h}_k^*$
+        \item Any tangents $v_1,v_2$ to $\tilde O\subset G\times
+          \mathfrak{g}_k^*$ at $(g_0,A)$ are of the form\dots
+
+          \dots and the symplectic structure on $\tilde O$ is then
+          \textbf{given explicitly} by the formula:
+         \[
+           \omega_{\tilde O}(v_1,v_2)=\dots
+         \]
+      \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Extended orbits ($k\geq2$ case) (2)}
+  \begin{itemize}
     \item \textbf{Lemma 2.4:} The following map is a symplectic isomorphism
       \[
         \tilde O\cong T^*G\times O_B;
-        \qquad (g_0,A)\mapsto(g_0,\pi_{res}(A),\pi_{irr}(g_0Ag_0^{-1}))
+        \qquad (g_0,A)\mapsto((g_0,\pi_{res}(A)),\pi_{irr}(g_0Ag_0^{-1}))
       \]
       \begin{itemize}
         \item where $T^*G\cong G\times\mathfrak{g}^*$ via the left
           trivialization
+        \item Explicit inverse:
+          \[
+            ((g_0,S),B) \mapsto (g_0,g_0^{-1}Bg_0+S)
+          \]
       \end{itemize}
     \item \textbf{Corollary 2.5:} The free $G$ action
       $h(g_0,A):=(g_0h^{−1},hAh^{−1})$ on $\tilde O$ is Hamiltonian with moment
@@ -335,7 +475,7 @@ is a matrix of meromorphic one-forms and $A_j\in\End(\C^n)$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Generalised monodromy}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{{{
-\begin{frame}
+\begin{frame}[t]
   {\Huge\insertsection{}}
   \begin{itemize}
     \item \cite{boalch}
@@ -391,8 +531,8 @@ is a matrix of meromorphic one-forms and $A_j\in\End(\C^n)$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Stokes directions}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{{{
-\begin{frame}
+\section{(Anti-) Stokes directions and sectors}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{{{
+\begin{frame}[t]
   {\Huge\insertsection{}}
   \begin{itemize}
     \item \cite{boalch}
@@ -421,22 +561,22 @@ Let
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Anti-Stokes directions}
+\begin{frame}{Anti Stokes directions}
 Definition 3.2. The \emph{anti-Stokes} directions $\A\subset S^1$ are the
 directions $d\in S^1$ such that for some $i \neq j$: $q_{ij}(z)\in\R_{<0}$ for
 $z$ on the ray specified by $d$.
   \begin{center}
     \begin{tikzpicture}[scale=2]
       \node[label=below left:$0$] (zero) at (0,0) {};
-      \fill (zero) circle (1pt);
       \draw[blue] (zero) circle (1cm);
-      \draw[thick] (0,0) -- +({cos( 33 )},{sin( 33 )}) node[right] {d};
-      \draw[thick] ({cos( 33 )},{sin( 33 )}) -- +({cos( 33 )},{sin( 33 )});
+      \draw[red!60!black,thick,path fading=east] (0,0) -- +({cos( 33 )*2},{sin( 33 )*2});
       \fill[blue!20!white] ({cos( 33 )},{sin( 33 )}) circle (1pt);
 
       \node[blue] at (-0.9,0.6) {$S^1$};
       \node at (-1.3,-0.7) {$\C$};
-      \node at (2.2,.9) {ray specified by $d$};
+      \node[blue!60!black,right] at ({cos( 33 )},{sin( 33 )}) {$d$};
+      \node[red!60!black] at (2.2,.9) {ray specified by $d$};
+      \fill (zero) circle (1pt);
     \end{tikzpicture}
   \end{center}
   \begin{itemize}
@@ -453,7 +593,7 @@ $z$ on the ray specified by $d$.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Anti-Stokes directions(2)}
+\begin{frame}{Anti Stokes directions (2)}
   \begin{center}
     \begin{tikzpicture}[scale=3]
       \node[] (zero) at (0,0) {};
@@ -464,11 +604,12 @@ $z$ on the ray specified by $d$.
                            20/$d_2$,
                            45/$d_3$,
                            55/$d_l$}
-      {\draw[thick] (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+      {\draw[thick,purple!\w!blue,path fading=west]
+          (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
        \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
        \foreach \sep in {60,120,180,240,300}
        {\draw[green!20!white,thick] (zero) -- +({cos( \sep )},{sin( \sep )});
-        \draw[gray] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+        \draw[purple!\w!blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
         \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
        }
       };
@@ -533,7 +674,7 @@ $z$ on the ray specified by $d$.
                            20/$d_2$,
                            45/$d_3$,
                            55/$d_l$}
-      {\draw[thick] (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+      {\draw[thick,path fading=west] (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
        \foreach \sep in {60,120,180,240,300}
        {\draw[gray] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}
       };
@@ -569,7 +710,7 @@ $z$ on the ray specified by $d$.
                            20/,
                            45/,
                            55/$d_l$}
-      {\draw[thick] (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+      {\draw[thick,path fading=west] (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
        \foreach \sep in {60,120,180,240,300}
        {\draw[gray] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}
       };
@@ -602,7 +743,7 @@ $z$ on the ray specified by $d$.
       q_i\underset{\textbf{d}}{<}q_j \qquad \Leftrightarrow \qquad \pi(i)<\pi(j)
     \]
   \end{itemize}
-  \begin{lem}
+  \begin{lem}[3.2]
     \begin{enumerate}
       \item The product of the corresponding groups of Stokes factors is
       isomorphic as a variety, via the product map, to the subgroup of $G$
@@ -626,54 +767,9 @@ $z$ on the ray specified by $d$.
   \end{lem}
 \end{frame}
 
-\begin{frame}{Now we move on to the local moduli of meromorphic connections}
-$\Syst(A^0):=\{d-A \mid A=\hat{F}[A^0] \text{ for some } \hat{F}\in
-  G\llbracket z\rrbracket\}$\footnote{the set of germs at $0\in\C$ of
-  meromorphic connections on the trivial rank $n$ vector bundle, that are
-  formally equivalent to $d-A^0$.}
-where
-  \begin{itemize}
-    \item $A$ is a matrix of germs of meromorphic one-forms
-    \item $\hat{F}[A^0]=(d\hat{F})\hat{F}^{-1}+\hat{F}A^0\hat{F}^{-1}$
-    \item $G\llbracket z\rrbracket:=\GL_n(\C\llbracket z\rrbracket)$
-      \begin{itemize}
-        \item does not act on $\Syst(A^0)$
-      \end{itemize}
-  \end{itemize}
-  The group $G\{z\}:=\GL_n(\C\{z\})$ acts on $\Syst(A^0)$,  study
-  \begin{center}
-    $\Syst(A^0)/G\{z\}$\footnote{The set of isomorphism classes of germs of
-    meromorphic connections formally equivalent to $A^0$. Note that any generic
-    connection is formally equivalent to some such $A^0$.}
-  \end{center}
-  In the abelian and the simple pole case this is only a point.
-\end{frame}
-
-\begin{frame}{It is useful to consider spaces slightly larger than $\Syst(A^0)$}
-  \begin{itemize}
-    \item $\widehat\Syst_{cf}(A^0)$ :\Leftrightarrow the set of compatibly
-      framed connection germs with both irregular and formal type $A^0$.
-    \item $\widehat\Syst_{mp}(A^0):=\{(A,\hat{F})\mid A\in\Syst(A^0)
-      ,\hat{F}\in G\llbracket z\rrbracket
-      ,A=\hat{F}[A^0]\}$
-      the set of \emph{marked pairs}.
-  \end{itemize}
-  There is a canonical isomorphism
-  $\widehat\Syst_{cf}(A^0)\cong\widehat\Syst_{mp}(A^0)$\footnote{Let
-  $\Syst(A^0)$ denote either of these two sets.}.
-
-  $G\{z\}$ action on marked pairs: $g(A,\hat{F})=(g[A],g\circ\hat{F})$
-  \[
-    \mathcal{H}(A^0):=\widehat\Syst(A^0)/G\{z\}
-  \]
-  Moreover the actions of $T$ and $G\{z\}$ on $\Syst(A^0)$ commute so
-  \[
-    \Syst(A^0)/G\{z\}\cong\mathcal{H}(A^0)/T
-  \]
-\end{frame}
-
 \begin{frame}{Labeling convention}
-  Choose a point \textcolor{yellow!60!black}{$p$}
+  Choose a point \textcolor{yellow!60!black}{$p$}\footnote{In~\cite{thboalch} a
+  sector is chosen, which does not contain any anti Stokes direction}
   \begin{center}
     \begin{tikzpicture}[scale=3]
       \node[] (zero) at (0,0) {};
@@ -775,8 +871,8 @@ where
       \draw[->,red!40!black] ({cos( 55 )},{sin( 55 )})
         to [out=65, in=75] (lft);
 
-      \draw[thick,red!40!black] (0,0) -- +({cos( 85 )},{sin( 85 )});
-      \draw[thick,red!40!black] (0,0) -- +({cos( 15 )},{sin( 15 )});
+      \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 85 )},{sin( 85 )});
+      \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 15 )},{sin( 15 )});
       \fill[red!40!black] ({cos( 85 )},{sin( 85 )}) circle (1pt);
       \fill[red!40!black] ({cos( 15 )},{sin( 15 )}) circle (1pt);
 
@@ -841,10 +937,87 @@ where
     \end{tikzpicture}
   \end{center}
 \end{frame}
+%}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Local Moduli and the Stokes phenomenon}%%%%%%%%%%%%%%%%%%%%%%%%%%%%{{{
+\begin{frame}[t]
+  {\Huge\insertsection{}}
+  \begin{itemize}
+    \item \cite{boalch}
+  \end{itemize}
+  and
+  \begin{itemize}
+    \item \cite{Loday1994}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Now we move on to the local moduli of meromorphic connections}
+$\Syst(A^0):=\{d-A \mid A=\hat{F}[A^0] \text{ for some } \hat{F}\in
+  G\llbracket z\rrbracket\}$\footnote{the set of germs at $0\in\C$ of
+  meromorphic connections on the trivial rank $n$ vector bundle, that are
+  formally equivalent to $d-A^0$.}
+where
+  \begin{itemize}
+    \item $A$ is a matrix of germs of meromorphic one-forms
+    \item $\hat{F}[A^0]=(d\hat{F})\hat{F}^{-1}+\hat{F}A^0\hat{F}^{-1}$
+    \item $G\llbracket z\rrbracket:=\GL_n(\C\llbracket z\rrbracket)$
+      \begin{itemize}
+        \item does not act on $\Syst(A^0)$
+      \end{itemize}
+  \end{itemize}
+  The group $G\{z\}:=\GL_n(\C\{z\})$ acts on $\Syst(A^0)$,  study
+  \begin{center}
+    $\Syst(A^0)/G\{z\}$\footnote{The set of isomorphism classes of germs of
+    meromorphic connections formally equivalent to $A^0$. Note that any generic
+    connection is formally equivalent to some such $A^0$.}
+  \end{center}
+  In the abelian and the simple pole case this is only a point.
+\end{frame}
+
+\begin{frame}{It is useful to consider spaces slightly larger than $\Syst(A^0)$}
+  \begin{itemize}
+    \item $\widehat\Syst_{cf}(A^0)$ :\Leftrightarrow the set of compatibly
+      framed connection germs with both irregular and formal type $A^0$.
+    \item $\widehat\Syst_{mp}(A^0):=\{(A,\hat{F})\mid A\in\Syst(A^0)
+      ,\hat{F}\in G\llbracket z\rrbracket
+      ,A=\hat{F}[A^0]\}$
+      the set of \emph{marked pairs}.
+  \end{itemize}
+  There is a canonical isomorphism
+  $\widehat\Syst_{cf}(A^0)\cong\widehat\Syst_{mp}(A^0)$\footnote{Let
+  $\Syst(A^0)$ denote either of these two sets.}.
+
+  $G\{z\}$ action on marked pairs: $g(A,\hat{F})=(g[A],g\circ\hat{F})$
+  \[
+    \mathcal{H}(A^0):=\widehat\Syst(A^0)/G\{z\}
+  \]
+  Moreover the actions of $T$ and $G\{z\}$ on $\Syst(A^0)$ commute so
+  \[
+    \Syst(A^0)/G\{z\}\cong\mathcal{H}(A^0)/T
+  \]
+\end{frame}
+
+\begin{frame}
+  \begin{thm}[1.22 in \cite{thboalch}]
+    There is a natural isomorphism
+    \[
+      \cH(A^0)\cong\prod_{d\in\A}\Sto_d(A^0)
+    \]
+    and for each choice of $\log(z)$ in the direction $d$ the Stokes group
+    $\Sto_d(A^0)$ has a faithfull representation $\rho$ on $\C^n$ inducing an
+    isomorphism
+    \[
+      \rho:\Sto_d(A^0)\to\SSto_d(A^0).
+    \]
+    In particular each $\Sto_d(A^0)$ and therefore $\cH(A^0)$ is a\dots
+  \end{thm}
+\end{frame}
 
 \begin{frame}{Theorem 3.1}
-  \begin{thm}
-    Let $\hat{F}\in G\llbracket z\rrbracket$1 such that $A:=F[A0]$ has
+  \begin{thm}[3.1, or Prop 1.24 in \cite{thboalch}]
+    Let $\hat{F}\in G\llbracket z\rrbracket$1 such that $A:=F[A_0]$ has
     convergent entries.
     Set the radius of the sectors $\Sect_i$, $\widehat\Sect_i$ to be less than
     the radius of convergence of $A$.
@@ -866,6 +1039,18 @@ where
       $\hat F$ and one is being chosen in a canonical way
     \item $\Sigma_i(\hat F)$ is in fact uniquely characterised by property 2.
   \end{itemize}
+  \begin{prop}[Prop 1.24 in \cite{thboalch}]
+    \begin{enumerate}
+    \setcounter{enumi}{2}
+    \item If $\hat H\in\hat G$ is the taylor series at $0$ of an analytic gauge
+      transformation $H\in G\{z\}$ then
+      \[
+        \Sigma_i(\hat H \hat F)=H\Sigma_i(\hat F)
+        \qquad
+        \Sigma_i(\hat F \hat H)=\Sigma_i(\hat F)H
+      \]
+  \end{enumerate}
+  \end{prop}
 \end{frame}
 
 \begin{frame}{Functions on the quotient $\mathcal{H}(A^0)$}
@@ -890,12 +1075,33 @@ where
   A concrete description of $\kappa_i$ is obtained by choosing a basis of
   solution of $A^0$, which is made via a choice of branch of $\log(z)$.
 \end{frame}
+\begin{frame}{Remark in \cite{thboalch}}
+  \begin{rem}[1.41 from \cite{thboalch} on pages 16f]
+    Note that in most of the recent references we have used, Stokes matrices
+    are used to classify
+    \begin{itemize}
+      \item meromorphic connections within fixed formal \textbf{meromorphic
+        classes, modulo meromorphic equivalence}.
+    \end{itemize}
+    Whereas here we classify
+    \begin{itemize}
+      \item meromorphic connections within fixed \textbf{formal analytic
+        classes, modulo analytic equivalence},
+    \end{itemize}
+    as is done in the older literature.  The fact is that the sets equivalence
+    classes are the same in both cases. It is important for us to work with
+    analytic, rather than meromorphic gauge transformations, because then the
+    $\C^\infty$ viewpoint in Chapter 3 is cleaner. This distinction relates to
+    the difference between \textbf{‘regular singular’} connections and
+    \textbf{‘logarithmic’} connections.
+  \end{rem}
+\end{frame}
 %}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Asymptotic expansions}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{{{
-\begin{frame}
+\begin{frame}[t]
   {\Huge\insertsection{}}
   \begin{itemize}
     \item \cite{sabbah_cimpa90} §2.2.2 Asymptotic expansions
@@ -909,32 +1115,35 @@ where
   \end{itemize}
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Another definition of sectors}
   Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
   \begin{itemize}
     \item $\Delta_r^*(U):=
       \{z\in\Delta_r\mid z=\rho e^{i\theta},0<\rho<r,\theta\in U\}$%
-\footnote{$\Delta_r:=\Delta_r^*(S^1)$}
+    \begin{center}
+      \begin{tikzpicture}[scale=3]
+        \node (zero) at (0,0) {};
+        \node[below left] at (zero) {$0$};
+        \draw[blue,dashed] (zero) circle (1cm);
+
+        \filldraw[fill=green!20!white
+                 ,draw=green!60!black
+                 ,thick
+                 ,path fading=west] (0,0)
+          -- ({cos( -30 )*.7},{sin( -30 )*.7}) arc (-30:70:.7) -- cycle;
+        \node[green!40!black] at (.4,.3) {$\Delta_r^*(U)$};
+        \node[green!40!black] at (.3,-.25) {$r$};
+
+        \draw[thick,red!60!black] ({cos( -30 )},{sin( -30 )}) arc (-30:70:1);
+
+        \node[red!60!black,right] at (1,0) {$U$};
+
+        \fill[white] (zero) circle (1.5pt);
+        \fill (zero) circle (.7pt);
+      \end{tikzpicture}
+    \end{center}
+    \item $\Delta_r:=\Delta_r^*(S^1)$
   \end{itemize}
-  \begin{center}
-    \begin{tikzpicture}[scale=3]
-      \node (zero) at (0,0) {};
-      \node[below left] at (zero) {$0$};
-      \draw[blue,dashed] (zero) circle (1cm);
-
-      \filldraw[fill=green!20!white,draw=green!60!black,thick] (0,0)
-        -- ({cos( -30 )*.7},{sin( -30 )*.7}) arc (-30:70:.7) -- cycle;
-      \node[green!40!black] at (.4,.3) {$\Delta_r^*(U)$};
-      \node[green!40!black] at (.3,-.25) {$r$};
-
-      \draw[thick,red!60!black] ({cos( -30 )},{sin( -30 )}) arc (-30:70:1);
-
-      \node[red!60!black,right] at (1,0) {$U$};
-
-      \fill[white] (zero) circle (1.5pt);
-      \fill (zero) circle (.7pt);
-    \end{tikzpicture}
-  \end{center}
 \end{frame}
 
 \begin{frame}{Asymptotic expansion}
@@ -994,36 +1203,128 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 \end{frame}
 
 {\setbeamercolor{background canvas}{bg=gray!40!white}
-  \begin{frame}{Other definitions}
+  \begin{frame}[t]{Definition from \cite{van2003galois} (!!)}
+    Let $f$ be a holomorphic function on $S(a,b,\rho)$, where
     \begin{itemize}
-      \item \cite[2]{majima1984asymptotic} says:
-        $f\in\cA(U)$ iff for every \textbf{closed} subsector and for every
-        $N\in\N$
-        \[
-          \sup_{x\in\bar\cA(V,\tilde r)}
-            \left|x^{-N}\left(f(x)-\sum_{i=0}^{N-1}a_ix^i\right)\right|
-          <+\infty
-        \]
-      \item \cite{wasow2002asymptotic} defines:
-        Let the function $f(x)$ be defined in a point-set $S$ of the complex
-        $x$-plane having $x=0$ as an accumulation point. The power series
-        $\sum_{r=0}^\infty a_rx^r$ is said to represent $f(x)$ asymptotically,
-        as $x\to0$ is $S$, if
-        \[
-          x^{-m}\left[f(x)-\sum_{r=0}^ma_rx^r\right]
-        \]
-        tends to zero, for all $m\geq0$, as $x$ tends to zero in $S$.
-      \item \cite{zbMATH00060600} defines:
-        \textbf{asymptotic expansion of Grevrey order $s$}
+      \item $a,b\in S^1=\R/2\pi\Z$ and
+      \item $\rho$
         \begin{itemize}
-          \item see: the following slides
+          \item is a continous function on the open interval $(a,b)$ and
+          \item has values in the positive real numbers
+        \end{itemize}
+        and
+      \item $S(a,b,\rho)$ are the complex numbers $z\neq0$ satisfying
+        \begin{itemize}
+          \item $\arg(z)\in(a,b)$ and
+          \item $|z|<\rho(\arg(z))$.
+        \end{itemize}
+    \end{itemize}
+    \begin{defn}[7.1]
+      \def\myN{\textbf{\textcolor{blue!40!black}{N}}}
+      \def\mySect{\textcolor{red!40!black}{W}}
+      \def\myConst{\textcolor{green!40!black}{C(\myN,\mySect)}}
+      $f$ has the \textbf{formal Laurent series} $\sum_{n\geq n_0}c_nz^n$ as
+      asymptotic expansion if
+      \begin{itemize}
+        \item for every $\myN\geq0$ and
+        \item every closed subsector $\mySect$ in $S(a,b,\rho)$
+      \end{itemize}
+      there exists a constant $\myConst$ such that
+      \[
+        \left|
+          f(x)-\sum_{n_0\leq n\leq \myN-1}c_nz^n
+        \right|
+        \leq \myConst|z|^{\myN} \qquad \text{ for all } z\in \mySect
+      \]
+      \Leftrightarrow{}
+      \[
+        \lim_{z\to0,z\in{\mySect}}
+        |z|^{-(\myN-1)}
+        \left|
+          f(x)-\sum_{n_0\leq n\leq \myN-1}c_nz^n
+        \right|=0
+        \qquad \text{ for all } z\in \mySect
+      \]
+    \end{defn}
+    \begin{itemize}
+      \item One writes $J(f)$ for the formal Laurent series.
+      \item Define $\cA(a,b)$ as the limit of the $\cA(S(a,b,\rho))$ where
+        \begin{itemize}
+          \item $\cA(S(a,b,\rho))$ are the functions with asymptotic expansion.
         \end{itemize}
     \end{itemize}
   \end{frame}
 
-  \begin{frame}{Definition from \cite{zbMATH00060600}}
+  \begin{frame}[t]{Definition from \cite{van2003galois} (1)}
+    \begin{defn}[7.4]
+      Let
+      \begin{itemize}
+        \item $k$ be a positive real number and
+        \item $S$ be an open sector.
+      \end{itemize}
+      A function $f\in\cA(S)$, with asymptotic expansion
+      $J(f)=\sum_{n\geq n_0}c_nz^n$, is said to bea a \emph{Grevrey function of
+      order $k$} if:
+      \\For every closed subsector $W$ of $S$ there are constants
+      \begin{itemize}
+        \item $A>0$ and
+        \item $c>0$
+      \end{itemize}
+      such that for all
+      \begin{itemize}
+        \item $N\geq1$ and
+        \item all $z\in W$ and $|z|\leq c$
+      \end{itemize}
+      one has
+      \[
+        \left| f(z)-\sum_{n_0\leq n\leq N-1}c_nz^n \right| \leq
+        A^N \textcolor{green!40!black}{\Gamma\left(1+\frac{N}{k}\right)}|z|^N
+      \]
+      or equivalently
+      \[
+        \left| f(z)-\sum_{n_0\leq n\leq N-1}c_nz^n \right|
+        \leq A^N \textcolor{green!40!black}{(N!)^{\frac{1}{k}}} |z|^N
+      \]
+    \end{defn}
+  \end{frame}
+
+  \begin{frame}[t]{Definition from \cite{thboalch}, Appendix C}
+    Let
+    \begin{itemize}
+      \item $f$ be a holomorphic function on $S$, where
+        \begin{itemize}
+          \item $S:=\{z\in\C\mid\alpha<\arg(z)<\beta, 0<|z|<r\}$
+        \end{itemize}
+        and
+      \item $\hat f=\sum_{n\geq0}a_nz^n\in \C\llbracket z\rrbracket$ be an
+        arbitrary formal power series
+    \end{itemize}
+    \begin{defn}[C.1]
+      The function $f$ is said to \emph{have asymptotic expansion $\hat f$ on
+      $S$} if,
+      \begin{itemize}
+        \item for each closed subsector $S'\subset S$
+        \item and integer $p$,
+      \end{itemize}
+      there is a constant $c\in\C$ such that
+      \[
+        \left|f(z)-\sum_{n=0}^pa_nz^n\right|\leq c|z|^{p+1}
+      \]
+    \end{defn}
+    One way of think of this condition is \textbf{in terms of convergence of
+    the derivatives of $f(z)$:}
+    if $f$ is holomorphic on $S$ then it t urns out that $f$ has asymptotic
+    expansion $\hat f$ on $S$ iff for each closed subsector $S'\subset S$ and
+    integer $n$ we have
+    \[
+      \underset{s\in S'}{\lim_{z\to0}} f^{(n)}=n!a_n
+    \]
+  \end{frame}
+
+  \begin{frame}[t]{Definition from \cite{zbMATH00060600}}
   \begin{defn}
-    $f=\sum_ma_mx^m$ is of Grevrey order $s$ (nonegative) :\Leftrightarrow
+    $f=\sum_ma_mx^m$ is of \emph{Grevrey order $s$} (nonegative)
+    :\Leftrightarrow
     \begin{itemize}
       \item there exist $C$ and $A$ nonegative such that
       \[
@@ -1059,7 +1360,7 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
   \end{defn}
   \end{frame}
 
-  \begin{frame}{Definition from \cite{zbMATH00060600} (2)}
+  \begin{frame}[t]{Definition from \cite{zbMATH00060600} (2)}
     \begin{itemize}
       \item We denote by $\mathcal{A}_s(R_0,a,b)$ the set of all functions
       admitting asymptotic expansions of Grevrey $s$ as $z\to 0$ on the
@@ -1090,6 +1391,28 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 
     \textbf{2. Grevrey properties of formal solutions:} We can define the
     Newton polygon\dots
+  \end{frame}
+
+  \begin{frame}[t]{Other definitions}
+    \begin{itemize}
+      \item \textbf{\cite[2]{majima1984asymptotic} says:}
+        \\$f\in\cA(U)$ iff for every \textbf{closed} subsector and for every
+        $N\in\N$
+        \[
+          \sup_{x\in\bar\cA(V,\tilde r)}
+            \left|x^{-N}\left(f(x)-\sum_{i=0}^{N-1}a_ix^i\right)\right|
+          <+\infty
+        \]
+      \item \textbf{\cite{wasow2002asymptotic} defines:}
+        \\Let the function $f(x)$ be defined in a point-set $S$ of the complex
+        $x$-plane having $x=0$ as an accumulation point. The power series
+        $\sum_{r=0}^\infty a_rx^r$ is said to represent $f(x)$ asymptotically,
+        as $x\to0$ is $S$, if
+        \[
+          x^{-m}\left[f(x)-\sum_{r=0}^ma_rx^r\right]
+        \]
+        tends to zero, for all $m\geq0$, as $x$ tends to zero in $S$.
+    \end{itemize}
   \end{frame}
 }
 
@@ -1135,7 +1458,7 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
   \[
   \cA(U)\to\hat{K}
   \]
-  is onto\footnote{1p proof at \cite{sabbah_cimpa90}[p63]}.
+  is onto\footnote{1p proof at~\cite{sabbah_cimpa90}[p63]}.
   \end{lem}
 
   It follows from this lemma that one has an exact sequence
@@ -1143,8 +1466,16 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
     0 \to \cA^{<0}(U) \to \cA(U) \to \hat{K} \to 0 \,.
   \]
 \end{frame}
+%}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Asymptotic expansions: Main result}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{{{
+\begin{frame}[t]
+  {\Huge\insertsection{}}
+  \begin{itemize}
+    \item \cite{sabbah_cimpa90} §2.2.3
+  \end{itemize}
 
-\begin{frame}{Main result}
   \begin{thm}[2.3.1]
     Let $\cM_K$ be a meromorphic connection. There exists an integer $q\geq 1$
     such that, after the ramification $x=t^q$, one has, for all $\theta\in S^1$
@@ -1153,6 +1484,313 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
       \cA_L(V)\otimes_L\cM_L \cong
         \cA_L(V)\otimes_L\left(\cF_L^R\otimes\cG_L\right)
     \]
+  \end{thm}
+\end{frame}
+
+\begin{frame}[t]{Corollaries}
+  For all $\theta\in S^1$ and each \textbf{sufficiently small interval $U$}
+  centered
+  at $\theta$:
+  \begin{cor}[2.3.2]
+    Let $\cM_K$ be a meromorphic connection.
+    The formal decomposition into one slope terms
+    $\cM_{\hat K}=\bigoplus \cM_{\hat K}^{L_i}$ can be liftet into a
+    decomposition
+    \[
+      \cA(U)\otimes_K\cM_K \cong \bigoplus\cM_{\cA(U)}^{L_i}
+    \]
+  \end{cor}
+  \begin{cor}[2.3.3]
+    Let
+    \begin{itemize}
+      \item $\cM_K$ and $\cM_K'$ be two meromorphic connections and
+      \item $\hat\phi:\cM_{\hat{K}}\to\cM_{\hat{K}}'$ a left
+        $\cD_{\hat K}$-linear \textcolor{green!40!black}{(iso-)}morphism.
+    \end{itemize}
+    Then
+    $\hat\phi$ can be liftet into a $\cD_{\cA(U)}$-linear
+    \textcolor{green!40!black}{(iso-)}morphism
+    \[
+      \phi_U:\cA(U)\otimes_K\cM_K\to\cA(U)\otimes_K\cM_K'
+    \]
+
+    \begin{lem}[2.3.4]
+      Let $\cN_K$ be a meromorphic connection.
+      The natural\footnote{Induced by the Borel-Ritt lemma?} mapping
+      \[
+        \ker\left[\partial_x:\cN_{\cA(U)}\to\cN_{\cA(U)}\right]
+        \to
+        \ker\left[\partial_x:\cN_{\hat K}\to\cN_{\hat K}\right]
+      \]
+      is onto.
+    \end{lem}
+  \end{cor}
+\end{frame}
+
+\begin{frame}[t]{Proof (2.3.1)}
+  Let $\cM_K$ be a meromorphic connection. Choose first a ramified covering
+  $t\mapsto x=t^q$ in order to apply theorem I-5.4.7:
+  \[
+    \cM_{\hat L}\cong\bigoplus\cF_{\hat L}^R\otimes\cG_{\hat L}
+  \]
+  \begin{thm}[I-5.4.7]
+    Let $\cM_{\hat K}$ be a formal meromorphic connection. There exists an
+    integer $q$ sucht that the connection $\pi^*\cM_{\hat K}=\cM_{\hat L}$ is
+    isomorphic to a direct sum of elementary formal meromorphic connections.
+    \begin{defn}[5.4.4 + 5.4.5]
+      Let $R(z)=\sum_{i=1}^ka_iz^i\in\C[z]_k$.
+      \begin{itemize}
+        \item We shall denote by $\cF_{\hat K}^R$ the following meromorphic
+          connection:
+          \begin{itemize}
+            \item The $\hat K$-vector space is isomorphic to $\hat K$ with a
+              basis denoted by $e(R)$.
+            \item
+              The action of $x\partial_x$ is defined
+              by
+              \[
+                x\partial_x(\phi\cdot e(R))=\left[
+                  x\frac{\partial\phi}{\partial x}
+                  +\phi x\frac{\partial R(x^{-1})}{\partial x}
+                \right]\cdot e(R)
+              \]
+          \end{itemize}
+        \item An \emph{elementary meromorphic connection} (over $\hat K$) is a
+          connection isomorphic to $\cF_{\hat K}^R\otimes_{\hat K}\cG_{\hat K}$
+          where
+          \begin{itemize}
+            \item $\cG_{\hat K}$ is an elementary regular meromorphic
+              connection.
+          \end{itemize}
+      \end{itemize}
+    \end{defn}
+  \end{thm}
+\end{frame}
+
+\begin{frame}[t]{Proof (2.3.1)}
+  Put $\cM_{\hat L}=\cM_{\hat L}'\oplus\cM_{\hat L}''$ where
+  \begin{itemize}
+    \item $\cM_{\hat K}'$ is the sum of terms
+      $\cF_{\hat L}^R\otimes\cG_{\hat L}$ for which
+      \begin{itemize}
+        \item $R$ has maximal degree $k$ and
+        \item with fixed dominating coefficient $\alpha\in\C$
+      \end{itemize}
+    \item $\cM_{\hat K}''$ the sum of the other terms.
+  \end{itemize}
+  The proof will be done \textbf{by induction}, by showing that this splitting
+  can be liftet to $\cA_{L}(V)$ when $V$ is sufficiently small.  However the
+  terms $\cM_{\cA_{L}(V)}'$ and $\cM_{\cA_{L}(V)}''$ do not come necessarily
+  from modules defined over $L$.\footnote{That is why the proof has to be done
+  for modules defined over $\cA_{L}(V)$.}
+  \begin{lem}[2.4.1]
+    \begin{itemize}
+      \item Let $\cM_{\cA_L(V)}$ be a free $\cA_L(V)$-module equipped with a
+        connection and
+      \item let $\cM_{\hat L}$ be its formalized module.
+    \end{itemize}
+    A splitting of $\cM_{\hat L}$ as above can be lifted to a splitting of
+    $\cM_{\cA_L(V)}$ when $V$ is sufficiently small.
+  \end{lem}
+\end{frame}
+
+\begin{frame}[t]{Proof (2.3.1)}
+  For the proof of (2.4.1):
+  \\The first step is the case where $\cM_{\hat L}$ is regular. One must prove
+  a result analogous to theorem I-5.2.2\footnote{\begin{lem}[I-5.2.2]
+      Let $\cM_{\hat K}$ be regular formal meromorphic connection. Then there
+      exist a basis for which the matrix $x\partial_x$ is constant.
+    \end{lem}}:
+  \begin{lem}[2.4.2]
+    Let $\cM_{\cA_L(V)}$ be a free $\cA_L(V)$-module equipped with a connection
+    such that $\cM_{\hat L}$ is regular.
+    There exists a $\cA_L(V)$-basis $\textbf{m}$ of $\cM_{\cA_L(V)}$ such that
+    the matrix of $t\partial_t$ in this basis is constant.
+  \end{lem}
+
+  We want to use:
+  \begin{itemize}
+    \item matrix of $t\partial_t$ is constant \Rightarrow{} there exists a
+      basis $\textbf{m}$ such that the \textcolor{green!40!black}{corresponding
+      basis $\hat{\textbf{m}}$} is compatible with the splitting of
+      $\cM_{\hat L}$?
+  \end{itemize}
+\end{frame}
+%}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fi{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sabbas sheaf view: Stokes sheaf}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{{{
+\begin{frame}[t]
+  {\Huge\insertsection{}}
+  \begin{itemize}
+    \item \cite{sabbah2007isomonodromic} \textbf{II.6:}
+      The Riemann-Hilbert correspondence in the irregular case
+  \end{itemize}
+
+  \textcolor{green!60!black}{%
+    The data which enable us to recover the meromorphic bundle with connection
+    from the formal meromorphic bun- dle with connection are called a
+    \emph{Stokes structure.}\footnote{It is in fact a sheaf on the parameter
+    space.}
+  }
+
+  Three approaches to the stokes phenomenon:
+  \begin{itemize}
+    \item define the ``wild'' fundametal group and identify the category of
+      meromorphic connections to that of the finite dimensional linear
+      representations of this group
+    \item identify the category of meromorphic connection to that of filtered
+      local systems
+    \item the theory of \textbf{multiplicity}
+      \begin{itemize}
+        \item enables one to analyze in a finer way
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Flatness}
+  \begin{defn}[0.12.2]
+    The connection $\nabla:\cE\to \Omega_M^1\otimes_{\cO_M}\cE$ is said to be
+    \emph{integrable} or \emph{flat}, if
+    \begin{itemize}
+      \item its curvature $R_\nabla\equiv0$
+    \end{itemize}
+    where
+    \begin{itemize}
+      \item $R_\nabla:=\nabla\circ\nabla:\cE\to\Omega_M^2\otimes_{\cO_M}\cE$
+        is a $\cO_M$-linear morphism.
+    \end{itemize}
+  \end{defn}
+  \begin{prop}[0.12.4]
+    The connection $\nabla$ is flat if and only if, in any local basis $e$ of
+    $\cE$, the connection matrix $\Omega$ satisfies
+    \[
+      d\omega + \omega \wedge \omega = 0.
+    \]
+  \end{prop}
+  We will say that a connection on a meromorphic bundle is \emph{integrable}
+  or \emph{flat} if its restriction to $M\backslash Z$ is an integrable connection on
+  the holomorphic bundle $\cM_{|M\backslash Z}$.
+
+\end{frame}
+
+\begin{frame}[t]{Local study (\textbf{II.5})}
+  From \cite{sabbah2007isomonodromic} \emph{II.5:} Irregular singularities:
+  local study.
+
+  A \emph{model} is a meromorphic bundle with connection $(\cM,\nabla)$
+  isomorphic to a direct sum of elementary models, written as
+  \[
+    \bigoplus_\phi(\cE^\phi\otimes\cR_\phi)
+  \]
+  where we assume that
+  \begin{itemize}
+    \item the meromorphic bundles with connection $\cR_\phi$ have regular
+      singularity and
+    \item the $\phi\in\C\{t,x_1,\ldots,x_n\}[t−1]$ have no holomorphic part and
+      are pairwise distinct.
+  \end{itemize}
+  \begin{defn}[II.5.6]
+    We will say that a model is \emph{good} if,
+    \begin{itemize}
+      \item for all $\phi\neq\psi$
+        \begin{itemize}
+          \item such that $\cR_\phi$, $\cR_\psi$ are nonzero,
+        \end{itemize}
+        the order of the pole along $t=0$ of $(\phi−\psi)(t,x)$ does not depend
+        on $x$ being in some neighbourhood of $x^o$.
+    \end{itemize}
+  \end{defn}
+\end{frame}
+
+\begin{frame}[fragile]{Sectorial classification (\textbf{II.5.d})}
+  \begin{thm}[II.5.12]
+    Let $\sM$ be a germ at $(0,x^o)$ of a meromorphic bundle with poles along
+    $\{0\}\times X$.
+
+    Let us assume that there exists
+    \begin{itemize}
+      \item a good model $\sM^{good}$ and
+      \item an isomorphism $\hat\lambda: \hat\sM
+        \overset{\sim}{\to}\hat\sM^{good}$.
+    \end{itemize}
+    There exists then,
+    \begin{itemize}
+      \item for any $e^{i\theta^o}\in S^1$,
+    \end{itemize}
+    an isomorphism $\tilde\lambda_{\theta^o}: \tilde\sM_{\theta^o}
+    \overset{\sim}{\to}\tilde\sM^{good}_{\theta^o}$, lifting $\hat\lambda$.
+  \end{thm}
+  That is, such that the diagram
+  \[ \begin{tikzcd}
+      \tilde\sM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
+        \tilde\sM^{good}_{\theta^o} \dar
+        \\\hat\sM \rar{\hat\lambda} &
+        \hat\sM^{good}
+  \end{tikzcd} \]
+  commutes.
+\end{frame}
+
+\begin{frame}[t]{The Stokes sheaf (situation)}
+  Let
+  \begin{itemize}
+    \item $X$ be a complex analytic manifold and
+    \item $\cM^{good}$ be a meromorphic bundle on $D\times X$
+      \begin{itemize}
+        \item with poles along $\{0\}\times X$,
+      \end{itemize}
+      equipped with a flat connection $\nabla^{good}$.
+  \end{itemize}
+  We will assume that $\left(\cM^{good},\nabla^{good}\right)$ is a \emph{good
+  model} in the neighbourhood of $x^o$, that is that
+  \begin{itemize}
+    \item there exist pairwise distinct germs $\phi_1,\dots,\phi_p\in
+      t^{-1}\cO_{X,x^o}[t^{-1}]$ and
+    \item nonzero germs of systems with regular singularity
+      $\cR_{\phi_1},\dots,\cR_{\phi_p}$ along $\{0\}\times X$ such that
+          we have, in a neighbourhood of $x^o$,
+      \begin{itemize}
+        \item an isomorphism $\cM_{x^o}^{good}
+          \cong\bigoplus_k\left(\cE^{\phi_k}\otimes\cR_{\phi_k}\right)$.
+      \end{itemize}
+  \end{itemize}
+  $k\neq l$ $\overset{\text{II.5.6}}{\Rightarrow{}}$ the order of the pole with
+  respect to $t$ of $(\phi_k-\phi_l)(x,t)$ does not depend on $x$ in a
+  neighbourhood of $x^o$.
+\end{frame}
+
+\begin{frame}[t]{The Stokes sheaf (definition)}
+  \begin{defn}
+    Define the \emph{stokes sheaf} as the sheaf (on $X$) associated to the
+    presheaf
+    \[
+      U\mapsto H^1(S^1\times U,\Aut^{<X}(\tilde \cM^{good}) )
+    \]
+    where
+    \begin{itemize}
+      \item $\Aut^{<\{0\}\times X}(\tilde M^{good})$ or
+        $\Aut^{<X}(\tilde M^{good})$ is the sheaf on $S^1\otimes X$ of
+        auomorphisms of $\tilde M^{good}:=\cA_{\tilde D\times
+        X}\otimes_{\cO_{D\times X}}\cM^{good}$
+        witch are
+        \begin{itemize}
+          \item compatible with the connection and
+          \item are formally equal to the identity\footnote{i.e., which induce
+            the identity on $\hat \cM^{good}:=\hat \cO_{D\times
+            X}\otimes_{\cO_{D\times X}}\cM^{good}$}.
+        \end{itemize}
+        Its sections are called \emph{stokes matrices}.
+    \end{itemize}
+  \end{defn}
+\end{frame}
+
+\begin{frame}[t]{The Stokes sheaf}
+
+  \begin{thm}[The stokes sheaf is locally constant (6.1)]
+  \end{thm}
+  \begin{thm}[The Stokes sheaf classifies meromorphic connections with fived
+    normal type (6.3)]
   \end{thm}
 \end{frame}
 %}}}
