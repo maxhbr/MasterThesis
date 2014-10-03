@@ -1,7 +1,7 @@
+\iffalse{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  All contents  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\iffalse{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Some Symplectic Geometry}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{{{
 \begin{frame}[t]
@@ -1637,7 +1637,7 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 
   Three approaches to the stokes phenomenon:
   \begin{itemize}
-    \item define the ``wild'' fundametal group and identify the category of
+    \item define the ``wild'' fundamental group and identify the category of
       meromorphic connections to that of the finite dimensional linear
       representations of this group
     \item identify the category of meromorphic connection to that of filtered
@@ -1649,17 +1649,76 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
   \end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Flatness}
+\begin{frame}[t]{Holomorphic / Meromorphic bundles}
+  \begin{defn}[Holomorphic budles (0.3.?)]
+    Let 
+    \begin{itemize}
+      \item $\pi:E\to M$ be a holomorphic mapping between two complex analytic
+        manifolds.
+    \end{itemize}
+    We will say that
+    \begin{itemize}
+      \item $\pi$ is a \emph{vector fibration of rank $d$}, or
+      \item $\pi$ makes $E$ a \emph{vector bundle of rank $d$ on $M$}
+    \end{itemize}
+    if there exists a open covering\dots 
+  \end{defn}
+  Set $\sE(U)$ as the set of holomorphic sections, where
+  \begin{itemize}
+    \item a \emph{holomorphic section} of $E$ on $U$ is a holomorphic mapping
+      $\sigma:U\to E$ which
+      \begin{itemize}
+        \item is a section of the projection, i.e., which satisfies
+          $\pi\circ\sigma=\Id_U$.
+      \end{itemize}
+  \end{itemize}
+  This defines a sheaf $\sE$ of modules over $\cO_M(U)$.
+  \begin{prop}[Equivalence between vector bundles and locally free sheaves
+    (0.4.1)]
+  \end{prop}
+
+  \begin{defn}[Meromorphic bundles (0.8.?)]
+    A \emph{meromorphic bundle on $M$ with poles along $Z$} is a locally free
+    sheaf of $\cO_M(*Z)$-modules of finit rank.
+  \end{defn}
+\end{frame}
+
+\begin{frame}[t]{Holomorphic connections (0.11)}
+  \begin{defn}[Holomorphic connections (0.11.1)]
+    A \emph{holomorphic connection} $\nabla$ on a holomorphic vector bundle
+    $\pi:E\to M$ is a $\C$-linear homomorphism of sheaves
+    \[
+      \nabla:\sE\to\Omega_M^1\otimes_{\cO_M}\sE
+    \]
+    satisfying
+    \begin{itemize}
+      \item for 
+        \begin{itemize}
+          \item any open set $U$ of $M$,
+          \item any section $s\in\Gamma(U,\sE)$ and
+          \item any holomorphic function $f\in\cO(U)$
+        \end{itemize}
+        the \emph{Leibnitz rule}:
+        \[
+          \nabla(f\times s)=\nabla(s)+df\otimes
+          s\in\Gamma(U,\Omega_M^1\otimes_{\cO_M}\sE)
+        \]
+    \end{itemize}
+  \end{defn}
+\end{frame}
+
+\begin{frame}[t]{Flatness (0.12)}
   \begin{defn}[0.12.2]
     The connection $\nabla:\cE\to \Omega_M^1\otimes_{\cO_M}\cE$ is said to be
     \emph{integrable} or \emph{flat}, if
     \begin{itemize}
       \item its curvature $R_\nabla\equiv0$
-    \end{itemize}
-    where
-    \begin{itemize}
-      \item $R_\nabla:=\nabla\circ\nabla:\cE\to\Omega_M^2\otimes_{\cO_M}\cE$
-        is a $\cO_M$-linear morphism.
+
+      where
+      \begin{itemize}
+        \item $R_\nabla:=\nabla\circ\nabla:\cE\to\Omega_M^2\otimes_{\cO_M}\cE$
+          is a $\cO_M$-linear morphism.
+      \end{itemize}
     \end{itemize}
   \end{defn}
   \begin{prop}[0.12.4]
@@ -1672,7 +1731,15 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
   We will say that a connection on a meromorphic bundle is \emph{integrable}
   or \emph{flat} if its restriction to $M\backslash Z$ is an integrable connection on
   the holomorphic bundle $\cM_{|M\backslash Z}$.
+\end{frame}
 
+\begin{frame}[t]{Meromorphic connections (0.14)}
+  \begin{defn}[Meromorphic connections]
+    Let $\sM$ be a meromorphic bundle with poles along an analytic submanifold
+    $Z$ i.e., a locally free $\cO_M(*Z)$-module of rank $d$.
+    A \emph{connection on $\sM$} is defined as a $\C$-linear homomorphism
+    $\nabla:\sM\to\Omega_M^1\otimes{\cO_M}\sM$ satisfying the Leibnitz rule.
+  \end{defn}
 \end{frame}
 
 \begin{frame}[t]{Local study (\textbf{II.5})}
@@ -1705,22 +1772,25 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 \end{frame}
 
 \begin{frame}[fragile]{Sectorial classification (\textbf{II.5.d})}
+  Let $\sM$ be a germ at $(0,x^o)$ of a meromorphic bundle with poles along
+  $\{0\}\times X$.
   \begin{thm}[II.5.12]
-    Let $\sM$ be a germ at $(0,x^o)$ of a meromorphic bundle with poles along
-    $\{0\}\times X$.
-
     Let us assume that there exists
     \begin{itemize}
       \item a good model $\sM^{good}$ and
       \item an isomorphism $\hat\lambda: \hat\sM
-        \overset{\sim}{\to}\hat\sM^{good}$.
+        \overset{\sim}{\longrightarrow}\hat\sM^{good}$.
     \end{itemize}
-    There exists then,
+    Then,
     \begin{itemize}
       \item for any $e^{i\theta^o}\in S^1$,
     \end{itemize}
-    an isomorphism $\tilde\lambda_{\theta^o}: \tilde\sM_{\theta^o}
-    \overset{\sim}{\to}\tilde\sM^{good}_{\theta^o}$, lifting $\hat\lambda$.
+    there exists an isomorphism 
+    \[
+      \tilde\lambda_{\theta^o}: \tilde\sM_{\theta^o}
+      \overset{\sim}{\longrightarrow}\tilde\sM^{good}_{\theta^o},
+    \]
+    lifting $\hat\lambda$.
   \end{thm}
   That is, such that the diagram
   \[ \begin{tikzcd}
