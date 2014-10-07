@@ -19,7 +19,7 @@
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usetikzlibrary{matrix,arrows, calc, decorations.pathmorphing,%
-  decorations.pathreplacing, fadings }
+  decorations.pathreplacing, fadings, 3d }
 
 \usepackage{stmaryrd}
 

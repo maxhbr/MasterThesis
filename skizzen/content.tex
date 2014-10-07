@@ -1,4 +1,4 @@
-\iffalse{}
+\iffalse{} %{{{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  All contents  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1618,7 +1618,7 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 \end{frame}
 %}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\fi{}
+\fi{} %}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sabbas sheaf view: Stokes sheaf}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{{{
 \begin{frame}[t]
@@ -1651,7 +1651,7 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 
 \begin{frame}[t]{Holomorphic / Meromorphic bundles}
   \begin{defn}[Holomorphic budles (0.3.?)]
-    Let 
+    Let
     \begin{itemize}
       \item $\pi:E\to M$ be a holomorphic mapping between two complex analytic
         manifolds.
@@ -1661,7 +1661,7 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
       \item $\pi$ is a \emph{vector fibration of rank $d$}, or
       \item $\pi$ makes $E$ a \emph{vector bundle of rank $d$ on $M$}
     \end{itemize}
-    if there exists a open covering\dots 
+    if there exists a open covering\dots
   \end{defn}
   Set $\sE(U)$ as the set of holomorphic sections, where
   \begin{itemize}
@@ -1679,7 +1679,7 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 
   \begin{defn}[Meromorphic bundles (0.8.?)]
     A \emph{meromorphic bundle on $M$ with poles along $Z$} is a locally free
-    sheaf of $\cO_M(*Z)$-modules of finit rank.
+    sheaf of $\cO_M(*Z)$-modules of finite rank.
   \end{defn}
 \end{frame}
 
@@ -1692,7 +1692,7 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
     \]
     satisfying
     \begin{itemize}
-      \item for 
+      \item for
         \begin{itemize}
           \item any open set $U$ of $M$,
           \item any section $s\in\Gamma(U,\sE)$ and
@@ -1734,30 +1734,41 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 \end{frame}
 
 \begin{frame}[t]{Meromorphic connections (0.14)}
+  Let
+  \begin{itemize}
+    \item $\sM$ be a meromorphic bundle with poles along an analytic
+      submanifold $Z$ i.e., a locally free $\cO_M(*Z)$-module of rank $d$.
+  \end{itemize}
   \begin{defn}[Meromorphic connections]
-    Let $\sM$ be a meromorphic bundle with poles along an analytic submanifold
-    $Z$ i.e., a locally free $\cO_M(*Z)$-module of rank $d$.
     A \emph{connection on $\sM$} is defined as a $\C$-linear homomorphism
-    $\nabla:\sM\to\Omega_M^1\otimes{\cO_M}\sM$ satisfying the Leibnitz rule.
+    \[
+      \nabla:\sM\to\Omega_M^1\otimes_{\cO_M}\sM
+    \]
+    satisfying the Leibnitz rule.
   \end{defn}
 \end{frame}
 
-\begin{frame}[t]{Local study (\textbf{II.5})}
-  From \cite{sabbah2007isomonodromic} \emph{II.5:} Irregular singularities:
-  local study.
-
-  A \emph{model} is a meromorphic bundle with connection $(\cM,\nabla)$
-  isomorphic to a direct sum of elementary models, written as
-  \[
-    \bigoplus_\phi(\cE^\phi\otimes\cR_\phi)
-  \]
-  where we assume that
+\begin{frame}[t]{Irregular singularities: Local study (\textbf{II.5})}
+  Let the parameter space $X$ be
   \begin{itemize}
-    \item the meromorphic bundles with connection $\cR_\phi$ have regular
-      singularity and
-    \item the $\phi\in\C\{t,x_1,\ldots,x_n\}[t−1]$ have no holomorphic part and
-      are pairwise distinct.
+    \item an analytic manifold equipped with coordinates $x_1,\ldots,x_n$.
   \end{itemize}
+  \begin{defn}
+    A \emph{model} is a meromorphic bundle with connection $(\cM,\nabla)$
+    isomorphic to a direct sum of elementary models, written as
+    \[
+      \bigoplus_\phi(\cE^\phi\otimes\cR_\phi)
+    \]
+    where we assume that
+    \begin{itemize}
+      \item the meromorphic bundles with connection $\cR_\phi$ have regular
+        singularity and
+      \item the
+        $\phi\in\C\{t,\textcolor{green!40!black}{\underset{\text{parameter}}
+          {\underbrace{x_1,\ldots,x_n}}}\}[t−1]$
+        have no holomorphic part and are pairwise distinct.
+    \end{itemize}
+  \end{defn}
   \begin{defn}[II.5.6]
     We will say that a model is \emph{good} if,
     \begin{itemize}
@@ -1769,6 +1780,161 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
         on $x$ being in some neighbourhood of $x^o$.
     \end{itemize}
   \end{defn}
+  \begin{thm}[Formal decomposition (II.5.7)]
+  \end{thm}
+\end{frame}
+
+\begin{frame}[t]{Local study: The sheaf $\sA$ (\textbf{II.5.c}) (1)}
+  Let
+  \begin{itemize}
+    \item $D$ be a open disc
+      \begin{itemize}
+        \item with coordinate $t$ centered at the origin and
+        \item of radius $r^o>0$,
+      \end{itemize}
+    \item $\tilde D$ the product $[0,r^o[\times S^1$ and
+    \item $\pi: \tilde D\to D$ the mapping
+      $(r,e^{i\theta})\mapsto t=re^{i\theta}$.
+  \end{itemize}
+  In a neighbourhood of a point $(0,\theta^o)$ we will use
+  $(r,\theta)\in[0,r^o[\times]\theta^o-\eta,\theta^o+\eta[$ as coordinate
+  system.
+
+  \def\myincl{\textcolor{green!40!black}{i}}
+  \def\mymnf{\textcolor{blue!40!black}{]-\epsilon,r^o[\times S^1\times X}}
+  \def\mysheaf{\textcolor{yellow!60!black}{\sC_{\mymnf}^\infty}}
+  \def\mypbsheaf{\myincl^{-1}\mysheaf}
+  Let $\sC_{\tilde D\times X}^\infty$\footnote{%
+    It is (by definition) the sheaf of $C^\infty$ functions on the manifold
+    with boundary $\tilde D\times X$. In other words, a $C^\infty$ function on
+    $\tilde D\times X$ in the neighbourhood of $(0,\theta^o,x^o)$ is a function
+    which can be extended as a $C^\infty$ function on a neighbourhood of this
+    point in $]-\epsilon,r^o[\times S^1\times X$.}
+  denote
+  \begin{itemize}
+    \item the pullback sheaf $\mypbsheaf$ where (for $\epsilon>0$)
+      \begin{itemize}
+        \item $\myincl:\tilde D\times X\hookrightarrow\mymnf$ denotes the
+          inclusion and
+          \item $\mysheaf$ is the sheaf of $C^\infty$ functions on the
+            manifold $\mymnf$
+      \end{itemize}
+  \end{itemize}
+  Define the derivations
+  $t\frac{\partial}{\partial t}$, $\bar t\frac{\partial}{\partial\bar t}$,
+  $\frac{\partial}{\partial x_i}$ and $\frac{\partial}{\partial\bar x_i}$
+  $(i=1,\dots,n)$ on $\sC_{\tilde D\times X}^\infty$.
+  \begin{defn}[II.5.10]
+    The sheaf of rings $\sA_{\tilde D\times X}$ is
+    \begin{itemize}
+      \item the subsheaf of $\sC_{\tilde D\times X}^\infty$
+        \begin{itemize}
+          \item of germs killed by $\bar t\frac{\partial}{\partial\bar t}$ and
+            $\frac{\partial}{\partial\bar x_i}$ $(i=1,\dots,n)$.
+        \end{itemize}
+    \end{itemize}
+  \end{defn}
+  Denote by $\sA_{S^1\times X}$ the restriction of $\sA_{\tilde D\times X}$ to
+  $\{0\}\times S^1\times X$.
+\end{frame}
+
+\begin{frame}[t]{Local study: The sheaf $\sA$ (\textbf{II.5.c}) (2)}
+  \begin{enumerate}
+    \item On $\sC_{\tilde D\times X}^\infty$ we have
+      \[
+        t\frac{\partial}{\partial t}=
+          \frac{1}{2}\left(r\frac{\partial}{\partial r}
+          -i\frac{\partial}{\partial\theta} \right),
+        \qquad
+        \bar t\frac{\partial}{\partial\bar t}=
+          \frac{1}{2}\left(r\frac{\partial}{\partial r}
+          +i\frac{\partial}{\partial\theta} \right)\,.
+      \]
+    \item On $\sA_{\tilde D\times X}$ we also have the derivation
+      $\frac{\partial}{\partial t}$ and by using the vanishing of
+      $\bar t\frac{\partial}{\partial\bar t}$, we can set
+      \[
+        \frac{\partial}{\partial t}=e^{-i\theta}\frac{\partial}{\partial r}
+      \]
+    \item The action of the $\frac{\partial}{\partial x_i}$ on
+      $\sC_{\tilde D\times X}^\infty$ keeps $\sA_{\tilde D\times X}$ stable.
+    \item The sheaf $\sA_{\tilde D\times X}$ contains the subsheaf
+      $\pi^{-1}\cO_{D\times X}$
+      \begin{itemize}
+        \item if $f$ is holomorphic on $D\times X$ $\Rightarrow$ $f\circ\pi$ is
+          a section of $\sA_{\tilde D\times X}$
+      \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Local study: The sheaf $\sA$ (\textbf{II.5.c}) (3:Taylor)}
+  \begin{itemize}
+    \item The Taylor expansion of
+      \begin{itemize}
+        \item a $C^\infty$ germ
+          \begin{itemize}
+            \item in $(\theta^o,x^o)$
+            \item along $r=0$
+          \end{itemize}
+      \end{itemize}
+      can be written as
+      \[
+        \sum_{k\geq0}f_k(\textcolor{green!40!black}{\underset{\text{parameter}}
+          {\underbrace{x_1,\ldots,x_n}}},\theta)r^k
+      \]
+      where
+      \begin{itemize}
+        \item $f_k$ are $C^\infty$ functions on some \textbf{fixed}
+          neighbourhood of $(\theta^o,x^o)$
+      \end{itemize}
+    \item The Taylor expansion
+      \begin{itemize}
+        \item of a germ of $\sA_{\tilde D\times X}$
+          \begin{itemize}
+            \item in $(\theta^o,x^o)$
+            \item along $t=0$
+          \end{itemize}
+      \end{itemize}
+      thus takes the form
+      \[
+        \sum_{k\geq0}f_k(\textcolor{green!40!black}{\underset{\text{parameter}}
+          {\underbrace{x_1,\ldots,x_n}}})t^k
+      \]
+      where
+      \begin{itemize}
+        \item $f_k$ are holomorphic on some \textbf{fixed} neighbourhood of
+          $x^o$.
+      \end{itemize}
+  \end{itemize}
+  In other words: The Taylor expansion mapping defines a homomorphism
+  \[
+    T:\sA_{S^1\times X,(\theta^o,x^o)}\to\hat\cO_{D\times X,x^o}
+  \]
+\end{frame}
+
+\begin{frame}[t]{Local study: The sheaf $\sA$ (\textbf{II.5.c}) (4:Borel-Ritt)}
+  Let
+  \begin{itemize}
+    \item $\sA_{S^1\times X,(\theta^o,x^o)}^{<\{0\}\times X}$ or
+      $\sA_{S^1\times X,(\theta^o,x^o)}^{<X}$\footnote{if one identifies $X$ to
+      the divisor $\{0\}\times X$ of $D\times X$.} be the kernel of $T$
+  \end{itemize}
+  \begin{lem}[Borel-Ritt]
+    $T$ is onto:
+    \[
+      0 \to              \sA_{S^1\times X,(\theta^o,x^o)}^{<X}
+        \to              \sA_{S^1\times X,(\theta^o,x^o)}
+        \overset{T}{\to} \pi^{-1}\hat\cO_{D\times X}
+        \to 0
+        \qquad
+        \text{is exact}
+    \]
+  \end{lem}
+  where
+  \begin{itemize}
+    \item $\hat\cO_{D\times X}$ is a sheaf on $\{0\}\times X$, hence
+      $\pi^{-1}\hat\cO_{D\times X}$ is a sheaf on $S^1\times X$
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Sectorial classification (\textbf{II.5.d})}
@@ -1785,7 +1951,7 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
     \begin{itemize}
       \item for any $e^{i\theta^o}\in S^1$,
     \end{itemize}
-    there exists an isomorphism 
+    there exists an isomorphism
     \[
       \tilde\lambda_{\theta^o}: \tilde\sM_{\theta^o}
       \overset{\sim}{\longrightarrow}\tilde\sM^{good}_{\theta^o},
@@ -1856,7 +2022,6 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 \end{frame}
 
 \begin{frame}[t]{The Stokes sheaf}
-
   \begin{thm}[The stokes sheaf is locally constant (6.1)]
   \end{thm}
   \begin{thm}[The Stokes sheaf classifies meromorphic connections with fived
