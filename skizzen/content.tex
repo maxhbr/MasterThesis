@@ -1971,24 +1971,27 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 \begin{frame}[t]{The Stokes sheaf (situation)}
   Let
   \begin{itemize}
-    \item $X$ be a complex analytic manifold and
+    \item $X$ be a complex analytic manifold
+      (\textcolor{green!40!black}{parameter space}) and
     \item $\cM^{good}$ be a meromorphic bundle on $D\times X$
       \begin{itemize}
         \item with poles along $\{0\}\times X$,
       \end{itemize}
       equipped with a flat connection $\nabla^{good}$.
   \end{itemize}
-  We will assume that $\left(\cM^{good},\nabla^{good}\right)$ is a \emph{good
-  model} in the neighbourhood of $x^o$, that is that
+  We will assume that $\left(\cM^{good},\nabla^{good}\right)$ is 
   \begin{itemize}
-    \item there exist pairwise distinct germs $\phi_1,\dots,\phi_p\in
-      t^{-1}\cO_{X,x^o}[t^{-1}]$ and
-    \item nonzero germs of systems with regular singularity
-      $\cR_{\phi_1},\dots,\cR_{\phi_p}$ along $\{0\}\times X$ such that
-          we have, in a neighbourhood of $x^o$,
+    \item a good model in the neighbourhood of $x^o$, that is that
       \begin{itemize}
-        \item an isomorphism $\cM_{x^o}^{good}
-          \cong\bigoplus_k\left(\cE^{\phi_k}\otimes\cR_{\phi_k}\right)$.
+        \item there exist pairwise distinct germs $\phi_1,\dots,\phi_p\in
+          t^{-1}\cO_{X,x^o}[t^{-1}]$ and
+        \item nonzero germs of systems with regular singularity
+          $\cR_{\phi_1},\dots,\cR_{\phi_p}$ along $\{0\}\times X$ such that
+              we have, in a neighbourhood of $x^o$,
+          \begin{itemize}
+            \item an isomorphism $\cM_{x^o}^{good}
+              \cong\bigoplus_k\left(\cE^{\phi_k}\otimes\cR_{\phi_k}\right)$.
+          \end{itemize}
       \end{itemize}
   \end{itemize}
   $k\neq l$ $\overset{\text{II.5.6}}{\Rightarrow{}}$ the order of the pole with
@@ -1998,34 +2001,98 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 
 \begin{frame}[t]{The Stokes sheaf (definition)}
   \begin{defn}
-    Define the \emph{stokes sheaf} as the sheaf (on $X$) associated to the
-    presheaf
+    Define the \emph{stokes sheaf} $\St_X(\cM^{good})$ as the sheaf (on $X$)
+    associated to the presheaf
     \[
       U\mapsto H^1(S^1\times U,\Aut^{<X}(\tilde \cM^{good}) )
     \]
     where
     \begin{itemize}
       \item $\Aut^{<\{0\}\times X}(\tilde M^{good})$ or
-        $\Aut^{<X}(\tilde M^{good})$ is the sheaf on $S^1\otimes X$ of
-        auomorphisms of $\tilde M^{good}:=\cA_{\tilde D\times
-        X}\otimes_{\cO_{D\times X}}\cM^{good}$
-        witch are
+        $\Aut^{<X}(\tilde M^{good})$ is the sheaf
         \begin{itemize}
-          \item compatible with the connection and
-          \item are formally equal to the identity\footnote{i.e., which induce
-            the identity on $\hat \cM^{good}:=\hat \cO_{D\times
-            X}\otimes_{\cO_{D\times X}}\cM^{good}$}.
+          \item on $S^1\otimes X$
+          \item of auomorphisms of $\tilde M^{good}:=\cA_{\tilde D\times
+            X}\otimes_{\cO_{D\times X}}\cM^{good}$
+            witch are
+            \begin{itemize}
+              \item compatible with the connection and
+              \item are formally equal to the identity\footnote{i.e., which
+                induce the identity on $\hat \cM^{good}:=\hat \cO_{D\times
+                X}\otimes_{\cO_{D\times X}}\cM^{good}$}.
+            \end{itemize}
         \end{itemize}
-        Its sections are called \emph{stokes matrices}.
+        The sections of $\Aut^{<X}(\tilde M^{good})$ are called \emph{stokes
+        matrices}.
+    \end{itemize}
+  \end{defn}
+  \begin{thm}[The stokes sheaf is locally constant (6.1)]
+    The Stokes sheaf $\St_X(\cM^{good})$ is
+    \begin{itemize}
+      \item a locally constant sheaf
+      \item of pointed sets.
+    \end{itemize}
+  \end{thm}
+\end{frame}
+
+\begin{frame}[t]{The Stokes sheaf}
+  Let $(\cM,\nabla)$ be a meromorphic connection with
+  \begin{itemize}
+    \item poles on $D\times X$ 
+    \item flat connection, 
+      \begin{itemize}
+        \item having poles along $\{0\}\times X$.
+      \end{itemize}
+  \end{itemize}
+  \begin{defn}
+    $(\cM^{good},\nabla^{good})$ is a \emph{good formal model} for
+    $(\cM,\nabla)$ if
+    \begin{itemize}
+      \item there exists an isomorphism 
+        \[
+          \hat f(\widehat\cM,\widehat\nabla)\overset{\sim}{\to}
+          (\widehat{\cM^{good}},\widehat{\nabla^{good}})
+        \]
+        \begin{itemize}
+          \item of sheafes of $\hat\cO_{D\times X}$-modules
+          \item compatible with connection.
+        \end{itemize}
+    \end{itemize}
+  \end{defn}
+  \begin{defn}
+    Two germs $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$ along
+    $\{0\}\times X$ are \emph{isomorphic}, if
+    \begin{itemize}
+      \item there exists an isomorphism\footnote{such an isomorphism then is
+        unique} $g:(\cM,\nabla)\to(\cM',\nabla')$ with
+        \begin{itemize}
+          \item $\hat f=\hat f'\circ\hat g$.
+        \end{itemize}
     \end{itemize}
   \end{defn}
 \end{frame}
 
 \begin{frame}[t]{The Stokes sheaf}
-  \begin{thm}[The stokes sheaf is locally constant (6.1)]
-  \end{thm}
-  \begin{thm}[The Stokes sheaf classifies meromorphic connections with fived
+  Let
+  \begin{itemize}
+    \item $\sH_X$ be the (pre-) sheaf\footnote{Lemma 6.2: it is a sheaf.} where
+      \begin{itemize}
+        \item $\sH_X(U)$ is the set
+          \begin{itemize}
+            \item of isomorphism classes of germs $(\cM,\nabla,\hat f)$ defined
+              on $U$,
+            \item equipped with a distinguished element, namely, the class of
+              ${(\cM^{good},\nabla^{good},\widehat{\Id})}_{|U}$.
+          \end{itemize}
+      \end{itemize}
+  \end{itemize}
+  \begin{thm}[The Stokes sheaf classifies meromorphic connections with fixed
     normal type (6.3)]
+    The homomorphism so defined
+    \[
+      \sH_X\to St_X(\cM^{good})
+    \]
+    is an isomorphism of sheaves of pointed sets.
   \end{thm}
 \end{frame}
 %}}}
