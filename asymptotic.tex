@@ -2,19 +2,457 @@
 \begin{comment}
   \begin{itemize}
     \item \cite[60]{sabbah_cimpa90} Chapter II.2.2
+    \item \cite{van2003galois}
   \end{itemize}
 \end{comment}
-\[
-\triangle_r^*(U) =
-\{z \in \triangle_r(U) \mid z = ρe^{i\theta},0 < ρ < r,\theta \in U\}
-\]
-
+\section{Definition}
+Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
 \begin{defn}
-$\hat\phi=\sum_{n\geq n_0}a_nx^n$ mit $a_n\in\C$ ist eine asymptotische
-Erweiterung von $f$ bei $0$ falls für alle $m\in\N$ gilt
-\[
-\lim_{x\to 0,x\in\triangle_r^*(U)}
-\left|x^{-m}\right|\left|x^{n_{0}}f(x)-\sum_{0\leq n\leq m}a_{n}x^{n}\right|
-=0
-\]
+  \begin{itemize}
+    \item $\Delta_r^*(U):=
+      \{z\in\Delta_r\mid z=\rho e^{i\theta},0<\rho<r,\theta\in U\}$%
+      \begin{center}
+        \begin{tikzpicture}[scale=3]
+          \node (zero) at (0,0) {};
+          \node[below left] at (zero) {$0$};
+          \draw[blue,dashed] (zero) circle (1cm);
+
+          \filldraw[fill=green!20!white
+            ,draw=green!60!black
+            ,thick
+          ,path fading=west] (0,0)
+          -- ({cos( -30 )*.7},{sin( -30 )*.7}) arc (-30:70:.7) -- cycle;
+          \node[green!40!black] at (.4,.3) {$\Delta_r^*(U)$};
+          \node[green!40!black] at (.3,-.25) {$r$};
+
+          \draw[thick,red!60!black] ({cos( -30 )},{sin( -30 )}) arc (-30:70:1);
+
+          \node[red!60!black,right] at (1,0) {$U$};
+
+          \fill[white] (zero) circle (1.5pt);
+          \fill (zero) circle (.7pt);
+        \end{tikzpicture}
+      \end{center}
+    \item $\Delta_r:=\Delta_r^*(S^1)$
+  \end{itemize}
 \end{defn}
+
+Let $\hat\phi=\sum_{n\geq-n_0}a_nx^n$ with $a_n\in\C$ is as asymptotic
+expansion of $f$ at $0$ if for all $m\in\N$ one has
+\begin{equation} \label{eq:asymptoticExpansion}
+  \lim_{x\to 0,x\in\triangle_r^*(U)}
+  \left|x^{-m}\right|\left|x^{n_{0}}f(x)-\sum_{0\leq n\leq m}a_{n}x^{n}\right|
+  =0
+\end{equation}
+Define
+\begin{itemize}
+  \item $\bar\cA(U,r)\subset\cO(\Delta_r^*(U))$ the set of functions which
+    admits an asymptotic power series
+  \item $\cA(U,r):=\bigcap_{V}\bar\cA(V,r)$ where $V$ are relatively
+    compact open subsets of $U$
+    \begin{itemize}
+      \item $\cA(U,r)=\{\phi\in \bar\cA(U,r)
+        \mid \phi\in \bar\cA(V,r)
+        \forall V\text{ rel.\  cp.\  op.\  subset of }U\}$
+    \end{itemize}
+  \item $\cA(U):=\bigcup_r\cA(U,r)$%
+    \begin{itemize}
+      \item $\cA(U)=\{\phi\mid\exists r\text{: } \phi\in\cA(U,r)\}
+        =\{\phi\mid\exists r\text{: }
+          \forall V\subset U\text{ rel.cp.op.}\text{: }
+          \phi\in\bar\cA(V,r)\}$
+    \end{itemize}
+\end{itemize}
+The mapping $U\mapsto\cA(U)$ defines a sheaf on $S^1$
+
+\subsection{Better definition from \cite{van2003galois}}
+Let $f$ be a holomorphic function on $S(a,b,\rho)$, where
+\begin{itemize}
+  \item $a,b\in S^1=\R/2\pi\Z$ and
+  \item $\rho$
+    \begin{itemize}
+      \item is a continous function on the open interval $(a,b)$ and
+      \item has values in the positive real numbers
+    \end{itemize}
+    and
+  \item $S(a,b,\rho)$ are the complex numbers $z\neq0$ satisfying
+    \begin{itemize}
+      \item $\arg(z)\in(a,b)$ and
+      \item $|z|<\rho(\arg(z))$.
+    \end{itemize}
+\end{itemize}
+\begin{defn}[7.1]
+  \def\myN{\textbf{\textcolor{blue!40!black}{N}}}
+  \def\mySect{\textcolor{red!40!black}{W}}
+  \def\myConst{\textcolor{green!40!black}{C(\myN,\mySect)}}
+  $f$ has the \textbf{formal Laurent series} $\sum_{n\geq n_0}c_nz^n$ as
+  asymptotic expansion if
+  \begin{itemize}
+    \item for every $\myN\geq0$ and
+    \item every closed subsector $\mySect$ in $S(a,b,\rho)$
+  \end{itemize}
+  there exists a constant $\myConst$ such that
+  \[
+    \left|
+      f(x)-\sum_{n_0\leq n\leq \myN-1}c_nz^n
+    \right|
+    \leq \myConst|z|^{\myN} \qquad \text{ for all } z\in \mySect
+  \]
+  \Leftrightarrow{}
+  \[
+    \lim_{z\to0,z\in{\mySect}}
+    |z|^{-(\myN-1)}
+    \left|
+      f(x)-\sum_{n_0\leq n\leq \myN-1}c_nz^n
+    \right|=0
+    \qquad \text{ for all } z\in \mySect
+  \]
+\end{defn}
+\begin{itemize}
+  \item One writes $J(f)$ for the formal Laurent series.
+  \item Define $\cA(a,b)$ as the limit of the $\cA(S(a,b,\rho))$ where
+    \begin{itemize}
+      \item $\cA(S(a,b,\rho))$ are the functions with asymptotic expansion.
+    \end{itemize}
+\end{itemize}
+\begin{defn}[7.4]
+  Let
+  \begin{itemize}
+    \item $k$ be a positive real number and
+    \item $S$ be an open sector.
+  \end{itemize}
+  A function $f\in\cA(S)$, with asymptotic expansion
+  $J(f)=\sum_{n\geq n_0}c_nz^n$, is said to bea a \emph{Grevrey function of
+  order $k$} if:
+  \\For every closed subsector $W$ of $S$ there are constants
+  \begin{itemize}
+    \item $A>0$ and
+    \item $c>0$
+  \end{itemize}
+  such that for all
+  \begin{itemize}
+    \item $N\geq1$ and
+    \item all $z\in W$ and $|z|\leq c$
+  \end{itemize}
+  one has
+  \[
+    \left| f(z)-\sum_{n_0\leq n\leq N-1}c_nz^n \right| \leq
+    A^N \textcolor{green!40!black}{\Gamma\left(1+\frac{N}{k}\right)}|z|^N
+  \]
+  or equivalently
+  \[
+    \left| f(z)-\sum_{n_0\leq n\leq N-1}c_nz^n \right|
+    \leq A^N \textcolor{green!40!black}{(N!)^{\frac{1}{k}}} |z|^N
+  \]
+\end{defn}
+
+\subsection{Sheaf version}
+\def\myincl{\textcolor{green!40!black}{i}}
+\def\mymnf{\textcolor{blue!40!black}{]-\epsilon,r^o[\times S^1\times X}}
+\def\mysheaf{\textcolor{yellow!60!black}{\sC_{\mymnf}^\infty}}
+\def\mypbsheaf{\myincl^{-1}\mysheaf}
+
+Let
+\begin{itemize}
+  \item $D$ be a open disc
+    \begin{itemize}
+      \item with coordinate $t$ centered at the origin and
+      \item of radius $r^o>0$,
+    \end{itemize}
+  \item $\tilde D$ the product $[0,r^o[\times S^1$ and
+  \item $\pi: \tilde D\to D$ the mapping
+    $(r,e^{i\theta})\mapsto t=re^{i\theta}$.
+\end{itemize}
+Define the derivations
+$t\frac{\partial}{\partial t}$, $\bar t\frac{\partial}{\partial\bar t}$,
+$\frac{\partial}{\partial x_i}$ and $\frac{\partial}{\partial\bar x_i}$
+$(i=1,\dots,n)$ on $\sC_{\tilde D\times X}^\infty$.
+\begin{itemize}
+  \item On $\sC_{\tilde D\times X}^\infty$ we have
+      $t\frac{\partial}{\partial t}=
+        \frac{1}{2}\left(r\frac{\partial}{\partial r}
+        -i\frac{\partial}{\partial\theta} \right)$ and 
+      $\bar t\frac{\partial}{\partial\bar t}=
+        \frac{1}{2}\left(r\frac{\partial}{\partial r}
+        +i\frac{\partial}{\partial\theta} \right)$.
+\end{itemize}
+\begin{defn}[II.5.10]
+  The sheaf of rings $\sA_{\tilde D\times X}$ is
+  \begin{itemize}
+    \item the subsheaf of $\sC_{\tilde D\times X}^\infty$
+      \begin{itemize}
+        \item of germs killed by $\bar t\frac{\partial}{\partial\bar t}$ and
+          $\frac{\partial}{\partial\bar x_i}$ $(i=1,\dots,n)$.
+      \end{itemize}
+  \end{itemize}
+\end{defn}
+$\{0\}\times S^1\times X$.
+\begin{enumerate}
+  \item On $\sA_{\tilde D\times X}$ we also have the derivation
+    $\frac{\partial}{\partial t}$ and we can set
+    \[
+      \frac{\partial}{\partial t}=e^{-i\theta}\frac{\partial}{\partial r}
+    \]
+    \begin{itemize}
+      \item by using the vanishing of $\bar t\frac{\partial}{\partial\bar t}$
+    \end{itemize}
+  \item The action of the $\frac{\partial}{\partial x_i}$ on
+    $\sC_{\tilde D\times X}^\infty$ keeps $\sA_{\tilde D\times X}$ stable.
+  \item The sheaf $\sA_{\tilde D\times X}$ contains the subsheaf
+    $\pi^{-1}\cO_{D\times X}$
+    \begin{itemize}
+      \item if $f$ is holomorphic on $D\times X$ $\Rightarrow$ $f\circ\pi$ is
+        a section of $\sA_{\tilde D\times X}$
+    \end{itemize}
+\end{enumerate}
+Denote by $\sA_{S^1\times X}$ the restriction of $\sA_{\tilde D\times X}$ to
+\subsubsection{Taylor mapping}
+\begin{itemize}
+  \item The Taylor expansion of
+    \begin{itemize}
+      \item a $C^\infty$ germ
+        \begin{itemize}
+          \item in $(\theta^o,x^o)$
+          \item along $r=0$
+        \end{itemize}
+    \end{itemize}
+    can be written as
+    \[
+      \sum_{k\geq0}f_k(\textcolor{green!40!black}{\underset{\text{parameter}}
+        {\underbrace{x_1,\ldots,x_n}}},\theta)r^k
+    \]
+    where
+    \begin{itemize}
+      \item $f_k$ are $C^\infty$ functions on some \textbf{fixed}
+        neighbourhood of $(\theta^o,x^o)$
+    \end{itemize}
+  \item The Taylor expansion
+    \begin{itemize}
+      \item of a germ of $\sA_{\tilde D\times X}$
+        \begin{itemize}
+          \item in $(\theta^o,x^o)$
+          \item along $t=0$
+        \end{itemize}
+    \end{itemize}
+    thus takes the form
+    \[
+      \sum_{k\geq0}f_k(\textcolor{green!40!black}{\underset{\text{parameter}}
+        {\underbrace{x_1,\ldots,x_n}}})t^k
+    \]
+    where
+    \begin{itemize}
+      \item $f_k$ are holomorphic on some \textbf{fixed} neighbourhood of
+        $x^o$.
+    \end{itemize}
+\end{itemize}
+In other words: The Taylor expansion mapping defines a homomorphism
+\[
+  T:\sA_{S^1\times X,(\theta^o,x^o)}\to\hat\cO_{D\times X,x^o}
+\]
+Let
+\begin{itemize}
+  \item $\sA_{S^1\times X,(\theta^o,x^o)}^{<\{0\}\times X}$ or
+    $\sA_{S^1\times X,(\theta^o,x^o)}^{<X}$\footnote{if one identifies $X$ to
+    the divisor $\{0\}\times X$ of $D\times X$.} be the kernel of $T$
+\end{itemize}
+
+\section{Properties}
+\begin{enumerate}
+  \item If $\hat\phi$ is an Asymptotic expansion for $f$ then one has
+    \[
+      a_0=\lim_{x\to 0,x\in\Delta_r^*(U)}x^{n_0}f(x)
+    \]
+    and for $m>0$,
+    \[
+      a_m=\lim_{x\to 0,x\in\Delta_r^*(U)}x^{-m}
+        \left[x^{n_0}f(x)-\sum_{0\leq n\leq m-1}a_nx^n\right]
+    \]
+    In particular this asymptotic expansion is unique
+    \begin{itemize}
+      \item $f$ admits a zero asymptotic expansion iff for all $p\in\Z$
+        one has
+        \[
+          \lim_{x\to 0,x\in\Delta_r^*(U)}x^pf(x)=0
+        \]
+    \end{itemize}
+  \item
+    Define $\cA(U)\to \hat K$ denoted by $f\mapsto \hat{f}$.
+    \begin{itemize}
+      \item $\cA(U)$ is a subring of $\cO(\Delta_r^*(U))$
+      \item this mapping is a morphism of rings
+    \end{itemize}
+  \item Denote by $\cA^{<0}(U)$ the kernel of this morphism
+    \begin{itemize}
+      \item $x\mapsto e^{-\frac{1}{x}}$ has zero asymptotic expansion in
+        some sector around $\theta=0$
+    \end{itemize}
+  \item $\cA(U)$ is stable under derivation\footnote{Proof in
+    \cite{sabbah_cimpa90}}.
+  \item $\cA(U)$ contains $K$ as a subfield.
+\end{enumerate}
+
+\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{lem}[2.2.5]
+    If $U$ is a proper open interval of the unit circle the mapping
+    \[
+      \cA(U)\to\hat{K}
+    \]
+    is onto\footnote{1p proof at~\cite{sabbah_cimpa90}[p63]}.
+  \end{lem}
+
+  It follows from this lemma that one has an exact sequence
+  \[
+    0 \to \cA^{<0}(U) \to \cA(U) \to \hat{K} \to 0 \,.
+  \]
+  
+  \switchcolumn{} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{lem}[Borel-Ritt]
+    $T$ is onto:
+    \[
+      0 \to              \sA_{S^1\times X,(\theta^o,x^o)}^{<X}
+        \to              \sA_{S^1\times X,(\theta^o,x^o)}
+        \overset{T}{\to} \pi^{-1}\hat\cO_{D\times X}
+        \to 0
+        \qquad
+        \text{is exact}
+    \]
+  \end{lem}
+  where
+  \begin{itemize}
+    \item $\hat\cO_{D\times X}$ is a sheaf on $\{0\}\times X$, hence
+      $\pi^{-1}\hat\cO_{D\times X}$ is a sheaf on $S^1\times X$
+  \end{itemize}
+
+\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Main result}
+\begin{thm}[2.3.1]
+  Let $\cM_K$ be a meromorphic connection. There exists an integer $q\geq 1$
+  such that, after the ramification $x=t^q$, one has, for all $\theta\in S^1$
+  and each sufficiently small interval $V$ centered at $\theta$
+  \[
+    \cA_L(V)\otimes_L\cM_L \cong
+      \cA_L(V)\otimes_L\left(\cF_L^R\otimes\cG_L\right)
+  \]
+\end{thm}
+For all $\theta\in S^1$ and each \textbf{sufficiently small interval $U$}
+centered
+at $\theta$:
+\begin{cor}[2.3.2]
+  Let $\cM_K$ be a meromorphic connection.
+  The formal decomposition into one slope terms
+  $\cM_{\hat K}=\bigoplus \cM_{\hat K}^{L_i}$ can be liftet into a
+  decomposition
+  \[
+    \cA(U)\otimes_K\cM_K \cong \bigoplus\cM_{\cA(U)}^{L_i}
+  \]
+\end{cor}
+\begin{cor}[2.3.3]
+  Let
+  \begin{itemize}
+    \item $\cM_K$ and $\cM_K'$ be two meromorphic connections and
+    \item $\hat\phi:\cM_{\hat{K}}\to\cM_{\hat{K}}'$ a left
+      $\cD_{\hat K}$-linear \textcolor{green!40!black}{(iso-)}morphism.
+  \end{itemize}
+  Then
+  $\hat\phi$ can be liftet into a $\cD_{\cA(U)}$-linear
+  \textcolor{green!40!black}{(iso-)}morphism
+  \[
+    \phi_U:\cA(U)\otimes_K\cM_K\to\cA(U)\otimes_K\cM_K'
+  \]
+
+  \begin{lem}[2.3.4]
+    Let $\cN_K$ be a meromorphic connection.
+    The natural\footnote{Induced by the Borel-Ritt lemma?} mapping
+    \[
+      \ker\left[\partial_x:\cN_{\cA(U)}\to\cN_{\cA(U)}\right]
+      \to
+      \ker\left[\partial_x:\cN_{\hat K}\to\cN_{\hat K}\right]
+    \]
+    is onto.
+  \end{lem}
+\end{cor}
+
+\begin{proof}[of 2.3.1]
+    Let $\cM_K$ be a meromorphic connection. Choose first a ramified covering
+  $t\mapsto x=t^q$ in order to apply theorem I-5.4.7:
+  \[
+    \cM_{\hat L}\cong\bigoplus\cF_{\hat L}^R\otimes\cG_{\hat L}
+  \]
+  \begin{thm}[I-5.4.7]
+    Let $\cM_{\hat K}$ be a formal meromorphic connection. There exists an
+    integer $q$ sucht that the connection $\pi^*\cM_{\hat K}=\cM_{\hat L}$ is
+    isomorphic to a direct sum of elementary formal meromorphic connections.
+    \begin{defn}[5.4.4 + 5.4.5]
+      Let $R(z)=\sum_{i=1}^ka_iz^i\in\C[z]_k$.
+      \begin{itemize}
+        \item We shall denote by $\cF_{\hat K}^R$ the following meromorphic
+          connection:
+          \begin{itemize}
+            \item The $\hat K$-vector space is isomorphic to $\hat K$ with a
+              basis denoted by $e(R)$.
+            \item
+              The action of $x\partial_x$ is defined
+              by
+              \[
+                x\partial_x(\phi\cdot e(R))=\left[
+                  x\frac{\partial\phi}{\partial x}
+                  +\phi x\frac{\partial R(x^{-1})}{\partial x}
+                \right]\cdot e(R)
+              \]
+          \end{itemize}
+        \item An \emph{elementary meromorphic connection} (over $\hat K$) is a
+          connection isomorphic to $\cF_{\hat K}^R\otimes_{\hat K}\cG_{\hat K}$
+          where
+          \begin{itemize}
+            \item $\cG_{\hat K}$ is an elementary regular meromorphic
+              connection.
+          \end{itemize}
+      \end{itemize}
+    \end{defn}
+  \end{thm}
+  Put $\cM_{\hat L}=\cM_{\hat L}'\oplus\cM_{\hat L}''$ where
+  \begin{itemize}
+    \item $\cM_{\hat K}'$ is the sum of terms
+      $\cF_{\hat L}^R\otimes\cG_{\hat L}$ for which
+      \begin{itemize}
+        \item $R$ has maximal degree $k$ and
+        \item with fixed dominating coefficient $\alpha\in\C$
+      \end{itemize}
+    \item $\cM_{\hat K}''$ the sum of the other terms.
+  \end{itemize}
+  The proof will be done \textbf{by induction}, by showing that this splitting
+  can be liftet to $\cA_{L}(V)$ when $V$ is sufficiently small.  However the
+  terms $\cM_{\cA_{L}(V)}'$ and $\cM_{\cA_{L}(V)}''$ do not come necessarily
+  from modules defined over $L$.\footnote{That is why the proof has to be done
+  for modules defined over $\cA_{L}(V)$.}
+  \begin{lem}[2.4.1]
+    \begin{itemize}
+      \item Let $\cM_{\cA_L(V)}$ be a free $\cA_L(V)$-module equipped with a
+        connection and
+      \item let $\cM_{\hat L}$ be its formalized module.
+    \end{itemize}
+    A splitting of $\cM_{\hat L}$ as above can be lifted to a splitting of
+    $\cM_{\cA_L(V)}$ when $V$ is sufficiently small.
+  \end{lem}
+  For the proof of (2.4.1):
+  \\The first step is the case where $\cM_{\hat L}$ is regular. One must prove
+  a result analogous to theorem I-5.2.2\footnote{\begin{lem}[I-5.2.2]
+      Let $\cM_{\hat K}$ be regular formal meromorphic connection. Then there
+      exist a basis for which the matrix $x\partial_x$ is constant.
+    \end{lem}}:
+  \begin{lem}[2.4.2]
+    Let $\cM_{\cA_L(V)}$ be a free $\cA_L(V)$-module equipped with a connection
+    such that $\cM_{\hat L}$ is regular.
+    There exists a $\cA_L(V)$-basis $\textbf{m}$ of $\cM_{\cA_L(V)}$ such that
+    the matrix of $t\partial_t$ in this basis is constant.
+  \end{lem}
+
+  We want to use:
+  \begin{itemize}
+    \item matrix of $t\partial_t$ is constant \Rightarrow{} there exists a
+      basis $\textbf{m}$ such that the \textcolor{green!40!black}{corresponding
+      basis $\hat{\textbf{m}}$} is compatible with the splitting of
+      $\cM_{\hat L}$?
+  \end{itemize}
+\end{proof}

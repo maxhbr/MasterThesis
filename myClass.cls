@@ -344,6 +344,14 @@
     skipabove=\medskipamount,
     skipbelow=\medskipamount
   ]{rem}
+  \surroundwithmdframed[
+    topline=false,
+    rightline=false,
+    bottomline=false,
+    leftmargin=\parindent,
+    skipabove=\medskipamount,
+    skipbelow=\medskipamount
+  ]{proof}
 \fi
 
 \ifnum\myDevelopVariable=2
