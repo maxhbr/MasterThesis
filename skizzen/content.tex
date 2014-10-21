@@ -1,4 +1,4 @@
-\iffalse{} %{{{
+% \iffalse{} %{{{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  All contents  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1017,7 +1017,7 @@ where
 
 \begin{frame}{Theorem 3.1}
   \begin{thm}[3.1, or Prop 1.24 in \cite{thboalch}]
-    Let $\hat{F}\in G\llbracket z\rrbracket$1 such that $A:=F[A_0]$ has
+    Let $\hat{F}\in G\llbracket z\rrbracket$ such that $A:=F[A_0]$ has
     convergent entries.
     Set the radius of the sectors $\Sect_i$, $\widehat\Sect_i$ to be less than
     the radius of convergence of $A$.
@@ -1468,6 +1468,7 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 \end{frame}
 %}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Asymptotic expansions: Main result}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{{{
 \begin{frame}[t]
@@ -1618,7 +1619,7 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 \end{frame}
 %}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\fi{} %}}}
+% \fi{} %}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sabbas sheaf view: Stokes sheaf}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{{{
 \begin{frame}[t]
@@ -1630,18 +1631,18 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
 
   \textcolor{green!60!black}{%
     The data which enable us to recover the meromorphic bundle with connection
-    from the formal meromorphic bun- dle with connection are called a
+    from the formal meromorphic bundle with connection are called a
     \emph{Stokes structure.}\footnote{It is in fact a sheaf on the parameter
     space.}
   }
 
   Three approaches to the stokes phenomenon:
   \begin{itemize}
-    \item define the ``wild'' fundamental group and identify the category of
-      meromorphic connections to that of the finite dimensional linear
-      representations of this group
-    \item identify the category of meromorphic connection to that of filtered
-      local systems
+    \item define the \textbf{``wild'' fundamental group} and identify the
+      category of meromorphic connections to that of the finite dimensional
+      linear representations of this group
+    \item identify the category of meromorphic connection to that of
+      \textbf{filtered local systems}
     \item the theory of \textbf{multiplicity}
       \begin{itemize}
         \item enables one to analyze in a finer way
@@ -1754,37 +1755,127 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
     \item an analytic manifold equipped with coordinates $x_1,\ldots,x_n$.
   \end{itemize}
   \begin{defn}
-    A \emph{model} is a meromorphic bundle with connection $(\cM,\nabla)$
-    isomorphic to a direct sum of elementary models, written as
-    \[
-      \bigoplus_\phi(\cE^\phi\otimes\cR_\phi)
-    \]
-    where we assume that
+    Let $(\cM,\nabla)$ be a meromorphic bundle with connection.
     \begin{itemize}
-      \item the meromorphic bundles with connection $\cR_\phi$ have regular
-        singularity and
-      \item the
-        $\phi\in\C\{t,\textcolor{green!40!black}{\underset{\text{parameter}}
-          {\underbrace{x_1,\ldots,x_n}}}\}[t−1]$
-        have no holomorphic part and are pairwise distinct.
-    \end{itemize}
-  \end{defn}
-  \begin{defn}[II.5.6]
-    We will say that a model is \emph{good} if,
-    \begin{itemize}
-      \item for all $\phi\neq\psi$
+      \item A germ of a $(\cM,\nabla)$ is
+        \emph{elementary} if it is isomorphic to some germ
+        \[
+          (\cE^\phi,\nabla)\otimes(\cR,\nabla)
+        \]
+        where
         \begin{itemize}
-          \item such that $\cR_\phi$, $\cR_\psi$ are nonzero,
+          \item $(\cR,\nabla)$ ha regular singularity along $\{0\}\times X$
         \end{itemize}
-        the order of the pole along $t=0$ of $(\phi−\psi)(t,x)$ does not depend
-        on $x$ being in some neighbourhood of $x^o$.
+      \item $(\cM,\nabla)$ is a \emph{model} if it is isomorphic to a direct
+        sum of elementary models, written as
+        \[
+          \bigoplus_\phi(\cE^\phi\otimes\cR_\phi)
+        \]
+        where we assume that
+        \begin{itemize}
+          \item the meromorphic bundles with connection $\cR_\phi$ have regular
+            singularity and
+          \item the
+            $\phi\in\C\{t\textcolor{gray}{\underset{\text{parameter}}
+              {\underbrace{,x_1,\ldots,x_n}}}\}[t−1]$
+            \begin{itemize}
+              \item have no holomorphic part and
+              \item are pairwise distinct.
+            \end{itemize}
+        \end{itemize}
+      \item We will say that a model is \emph{good} if,
+        \begin{itemize}
+          \item for all $\phi\neq\psi$
+            \begin{itemize}
+              \item such that $\cR_\phi$, $\cR_\psi$ are nonzero,
+            \end{itemize}
+            the order of the pole along $t=0$ of $(\phi−\psi)(t,x)$ does not
+            depend on $x$ being in some neighbourhood of $x^o$.
+        \end{itemize}
     \end{itemize}
   \end{defn}
+\end{frame}
+
+\begin{frame}[t]{Irregular singularities: Formal decomposition}
   \begin{thm}[Formal decomposition (II.5.7)]
+    Let $(\cM,\nabla)$ be a germ of meromorphic bundle with connection,
+    \begin{itemize}
+      \item equipped with a basis 
+        \begin{itemize}
+          \item 
+            in which the matrix $\Omega$ takes the form
+            \[
+              \Omega=t^{-r}\left[A(t,x)\frac{dt}{t}
+                +\sum_{i=1}^nC^{(i)}(t,x)dx_i\right]
+            \]
+          with
+          \begin{itemize}
+            \item $r\geq1$
+            \item $A$ and the $C^{(i)}$ having holomorphic entries, and
+            \item $A_0:=A(0,x^0)$ being regular semisimple\footnote{i.e.\ with
+              pairwise distinct eigenvalues.}
+          \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    Then there exist
+    \begin{itemize}
+      \item a good model $(\cM^{good},\nabla)
+        =\left(\bigoplus_\phi(\cE^\phi\otimes\cR_\phi) \right)$ and
+      \item a \textcolor{red!40!black}{`formal'} isomorphism
+        \[
+          \textcolor{red!40!black}{\hat\cO_{D\times X,x_0}\otimes}(\cM,\nabla)
+          \overset{\sim}{\longrightarrow}
+        \textcolor{red!40!black}{\hat\cO_{D\times X,x_0}\otimes}
+          \left(\bigoplus_\phi(\cE^\phi\otimes\cR_\phi) \right)
+        \]
+    \end{itemize}
   \end{thm}
 \end{frame}
 
+\iffalse{} % Derivationen %{{{
+  \begin{frame}[t]{Derivationen}
+    Define local coordinates: $(r,e^{i\theta})\mapsto t=re^{i\theta}$.
+    \begin{itemize}
+      \item $\frac{\partial f}{\partial r}=\frac{\partial z}{\partial r}
+        \frac{\partial f}{\partial z}=\mathrm{e}^{\mathrm{i}\phi}f'$
+      \item $\frac{\partial f}{\partial\phi}=\frac{\partial z}{\partial\phi}
+        \frac{\partial f}{\partial z}=\mathrm{i}r\mathrm{e}^{\mathrm{i}\phi}f'$
+    \end{itemize}
+    \begin{align*}
+      0&=\frac{\partial}{\partial\bar t}f
+      \\&=\frac{\partial f}{\partial r}
+        +\frac{\mathrm{i}}{r}\frac{\partial f}{\partial\phi}
+      \\&=\frac{\partial u}{\partial r}
+        +\frac{\mathrm{i}}{r}\frac{\partial u}{\partial\phi}
+        +\mathrm{i}\frac{\partial v}{\partial r}
+        +\frac{\mathrm{i}^{2}}{r}\frac{\partial v}{\partial\phi}
+      \\&=\left(\frac{\partial u}{\partial r}
+        -\frac{1}{r}\frac{\partial v}{\partial\phi}\right)
+        +\mathrm{i}\left(\frac{1}{r}\frac{\partial u}{\partial\phi}
+        +\frac{\partial v}{\partial r}\right)
+    \end{align*}
+  \dots 
+    \begin{itemize}
+      \item $\frac{\partial}{\partial t}=\frac{1}{2}\left(
+          \frac{\partial}{\partial ?}-i\frac{\partial}{\partial ?}\right)$
+      \item $\frac{\partial}{\partial\bar t}=\frac{1}{2}\left(
+          \frac{\partial}{\partial ?}+i\frac{\partial}{\partial ?}\right)$
+      \item $t\frac{\partial}{\partial t}=
+            \frac{1}{2}\left(r\frac{\partial}{\partial r}
+            -i\frac{\partial}{\partial\theta} \right)$
+      \item $\bar t\frac{\partial}{\partial\bar t}=
+            \frac{1}{2}\left(r\frac{\partial}{\partial r}
+            +i\frac{\partial}{\partial\theta} \right)$
+    \end{itemize}
+  \end{frame}
+\fi{} %}}}
+
 \begin{frame}[t]{Local study: The sheaf $\sA$ (\textbf{II.5.c}) (1)}
+  \def\myincl{\textcolor{green!40!black}{i}}
+  \def\mymnf{\textcolor{blue!40!black}{]-\epsilon,r^o[\times S^1\times X}}
+  \def\mysheaf{\textcolor{yellow!60!black}{\sC_{\mymnf}^\infty}}
+  \def\mypbsheaf{\myincl^{-1}\mysheaf}
+
   Let
   \begin{itemize}
     \item $D$ be a open disc
@@ -1796,34 +1887,41 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
     \item $\pi: \tilde D\to D$ the mapping
       $(r,e^{i\theta})\mapsto t=re^{i\theta}$.
   \end{itemize}
-  In a neighbourhood of a point $(0,\theta^o)$ we will use
-  $(r,\theta)\in[0,r^o[\times]\theta^o-\eta,\theta^o+\eta[$ as coordinate
-  system.
+  % \iffals{}
+  %   In a neighbourhood of a point $(0,\theta^o)$ we will use
+  %   $(r,\theta)\in[0,r^o[\times]\theta^o-\eta,\theta^o+\eta[$ as coordinate
+  %   system.
 
-  \def\myincl{\textcolor{green!40!black}{i}}
-  \def\mymnf{\textcolor{blue!40!black}{]-\epsilon,r^o[\times S^1\times X}}
-  \def\mysheaf{\textcolor{yellow!60!black}{\sC_{\mymnf}^\infty}}
-  \def\mypbsheaf{\myincl^{-1}\mysheaf}
-  Let $\sC_{\tilde D\times X}^\infty$\footnote{%
-    It is (by definition) the sheaf of $C^\infty$ functions on the manifold
-    with boundary $\tilde D\times X$. In other words, a $C^\infty$ function on
-    $\tilde D\times X$ in the neighbourhood of $(0,\theta^o,x^o)$ is a function
-    which can be extended as a $C^\infty$ function on a neighbourhood of this
-    point in $]-\epsilon,r^o[\times S^1\times X$.}
-  denote
-  \begin{itemize}
-    \item the pullback sheaf $\mypbsheaf$ where (for $\epsilon>0$)
-      \begin{itemize}
-        \item $\myincl:\tilde D\times X\hookrightarrow\mymnf$ denotes the
-          inclusion and
-          \item $\mysheaf$ is the sheaf of $C^\infty$ functions on the
-            manifold $\mymnf$
-      \end{itemize}
-  \end{itemize}
+  %   Let $\sC_{\tilde D\times X}^\infty$\footnote{%
+  %     It is (by definition) the sheaf of $C^\infty$ functions on the manifold
+  %     with boundary $\tilde D\times X$. In other words, a $C^\infty$ function
+  %     on $\tilde D\times X$ in the neighbourhood of $(0,\theta^o,x^o)$ is a
+  %     function which can be extended as a $C^\infty$ function on a
+  %     neighbourhood of this point in $]-\epsilon,r^o[\times S^1\times X$.}
+  %   denote
+  %   \begin{itemize}
+  %     \item the pullback sheaf $\mypbsheaf$ where (for $\epsilon>0$)
+  %       \begin{itemize}
+  %         \item $\myincl:\tilde D\times X\hookrightarrow\mymnf$ denotes the
+  %           inclusion and
+  %           \item $\mysheaf$ is the sheaf of $C^\infty$ functions on the
+  %             manifold $\mymnf$
+  %       \end{itemize}
+  %   \end{itemize}
+  % \fi{}
   Define the derivations
   $t\frac{\partial}{\partial t}$, $\bar t\frac{\partial}{\partial\bar t}$,
   $\frac{\partial}{\partial x_i}$ and $\frac{\partial}{\partial\bar x_i}$
   $(i=1,\dots,n)$ on $\sC_{\tilde D\times X}^\infty$.
+  \begin{itemize}
+    \item On $\sC_{\tilde D\times X}^\infty$ we have
+        $t\frac{\partial}{\partial t}=
+          \frac{1}{2}\left(r\frac{\partial}{\partial r}
+          -i\frac{\partial}{\partial\theta} \right)$ and 
+        $\bar t\frac{\partial}{\partial\bar t}=
+          \frac{1}{2}\left(r\frac{\partial}{\partial r}
+          +i\frac{\partial}{\partial\theta} \right)$.
+  \end{itemize}
   \begin{defn}[II.5.10]
     The sheaf of rings $\sA_{\tilde D\times X}$ is
     \begin{itemize}
@@ -1836,26 +1934,15 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
   \end{defn}
   Denote by $\sA_{S^1\times X}$ the restriction of $\sA_{\tilde D\times X}$ to
   $\{0\}\times S^1\times X$.
-\end{frame}
-
-\begin{frame}[t]{Local study: The sheaf $\sA$ (\textbf{II.5.c}) (2)}
   \begin{enumerate}
-    \item On $\sC_{\tilde D\times X}^\infty$ we have
-      \[
-        t\frac{\partial}{\partial t}=
-          \frac{1}{2}\left(r\frac{\partial}{\partial r}
-          -i\frac{\partial}{\partial\theta} \right),
-        \qquad
-        \bar t\frac{\partial}{\partial\bar t}=
-          \frac{1}{2}\left(r\frac{\partial}{\partial r}
-          +i\frac{\partial}{\partial\theta} \right)\,.
-      \]
     \item On $\sA_{\tilde D\times X}$ we also have the derivation
-      $\frac{\partial}{\partial t}$ and by using the vanishing of
-      $\bar t\frac{\partial}{\partial\bar t}$, we can set
+      $\frac{\partial}{\partial t}$ and we can set
       \[
         \frac{\partial}{\partial t}=e^{-i\theta}\frac{\partial}{\partial r}
       \]
+      \begin{itemize}
+        \item by using the vanishing of $\bar t\frac{\partial}{\partial\bar t}$
+      \end{itemize}
     \item The action of the $\frac{\partial}{\partial x_i}$ on
       $\sC_{\tilde D\times X}^\infty$ keeps $\sA_{\tilde D\times X}$ stable.
     \item The sheaf $\sA_{\tilde D\times X}$ contains the subsheaf
@@ -1867,7 +1954,7 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
   \end{enumerate}
 \end{frame}
 
-\begin{frame}[t]{Local study: The sheaf $\sA$ (\textbf{II.5.c}) (3:Taylor)}
+\begin{frame}[t]{Local study: The sheaf $\sA$ (\textbf{II.5.c}) (2:Taylor)}
   \begin{itemize}
     \item The Taylor expansion of
       \begin{itemize}
@@ -1912,7 +1999,7 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
   \]
 \end{frame}
 
-\begin{frame}[t]{Local study: The sheaf $\sA$ (\textbf{II.5.c}) (4:Borel-Ritt)}
+\begin{frame}[t]{Local study: The sheaf $\sA$ (\textbf{II.5.c}) (3:Borel-Ritt)}
   Let
   \begin{itemize}
     \item $\sA_{S^1\times X,(\theta^o,x^o)}^{<\{0\}\times X}$ or
@@ -2029,9 +2116,9 @@ $ \left|\frac{1}{x} -\frac{1}{x} -a_1\right|\to0$ Thus $a_1=0$ and so on
   \begin{thm}[The stokes sheaf is locally constant (6.1)]
     The Stokes sheaf $\St_X(\cM^{good})$ is
     \begin{itemize}
-      \item a locally constant sheaf
-      \item of pointed sets.
+      \item a locally constant
     \end{itemize}
+    sheaf of pointed sets.
   \end{thm}
 \end{frame}
 

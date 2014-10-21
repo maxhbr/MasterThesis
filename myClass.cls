@@ -28,6 +28,8 @@
 %%%%  Design / Style  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{paracol}
+
 %%%% Headline styles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[automark]{scrpage2}
 \pagestyle{scrheadings}
@@ -149,8 +151,8 @@
 %%%%  Ploting  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{tikz}
 \usepackage{tikz-cd}
-\usetikzlibrary{matrix,arrows, calc, decorations.pathmorphing,%
-  decorations.pathreplacing }
+\usetikzlibrary{matrix, arrows, calc, decorations.pathmorphing,%
+  decorations.pathreplacing, fadings, 3d, decorations.markings}
 
 %%%%  figures  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{float}
@@ -334,6 +336,14 @@
     skipabove=\medskipamount,
     skipbelow=\medskipamount
   ]{lemdef}
+  \surroundwithmdframed[
+    topline=false,
+    rightline=false,
+    bottomline=false,
+    leftmargin=\parindent,
+    skipabove=\medskipamount,
+    skipbelow=\medskipamount
+  ]{rem}
 \fi
 
 \ifnum\myDevelopVariable=2
