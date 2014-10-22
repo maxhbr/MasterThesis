@@ -5,99 +5,485 @@ Siehe:
   \item \cite{sabbah2007isomonodromic}
 \end{itemize}
 \end{comment}
-%
-\ccite[Def 2.1]{boalch}
-Sei $D=k_1(a_1)+\dots+k_m(a_m)$ ein effektiver Divisor auf $\P^1$ und sei
-$V\to\P^1$ ein Rang $n$ Vektorbündel.
-\begin{defn}[Meromorpher Zusammenhang]
-Ein meromorpher Zusammenhang $\nabla$ auf $V$ mit Polen auf $D$ ist eine
-Abbildung
-\[
-  \nabla: V\to V\otimes K(D)
-\]
-so dass die Leibnitzregel
-\begin{equation}
-  \nabla(fv)=(df)\otimes v + f\nabla v
-\end{equation}
-erfüllt ist. Hierbei ist $v$ ein lokaler Schnitt von $V$, $f$ eine lokale
-holomorphe Funktion und $K$ die Garbe der holomorphen Eins-Formen.
-\comm{Sabbah schreibt $\Omega_{\P^1}^1$ für $K$ }
+Let
+\begin{itemize}
+  \item $D=k_1(a_1)+\dots+k_m(a_m)$ be an \textbf{effective divisor} on $\P^1$
+    so that
+    \begin{itemize}
+      \item $a_1,\dots,a_m\in\P^1$ are distinct points,
+      \item $k_1,\dots,k_m>0$ positive integers
+    \end{itemize}
+    and
+  \item let $V\to\P^1$ be a rank $n$ vector bundle.
+\end{itemize}
+\begin{defn}[2.1]
+  A \emph{meromorphic connection} $\nabla$ on $V$ with poles on $D$ is
+  \begin{itemize}
+    \item a map $\nabla:V\to V\times K(D)$ where
+      \begin{itemize}
+        \item from the sheaf of holomorphic sections of $V$
+        \item to the sheaf of sections of $V\otimes K(D)$
+      \end{itemize}
+    \item satisfying the Leibnitz rule
+      \begin{equation}
+        \nabla(fv)=(df)\otimes v + f\nabla v
+      \end{equation}
+      where
+      \begin{itemize}
+        \item $v$ is a local section of $V$,
+        \item $f$ is a local holomorphic function and
+        \item $K$ is the sheaf or holomorphic one-forms on $\P^1$
+      \end{itemize}
+  \end{itemize}
 \end{defn}
-%
+
+\begin{paracol}{2}\sloppy
+\switchcolumn[0]\noindent
+  If we choose a local coordinate $z$ on $\P^1$ vanishing at $a_i$ then in
+  terms of local trivialization of $V$, $\nabla$ has the form
+  $\nabla=d-A=d-{}^iA$\footnote{the presuperscript is used to signify local
+  information} where
+  \[
+    A=\left(\sum^{0}_{j=k_i}A_j\frac{dz}{z^{j}}\right)+A_0dz+\dots
+  \]
+  is a matrix of meromorphic one-forms and $A_j\in\End(\C^n)$.
+\switchcolumn[1]\noindent
+  \begin{defn}
+    \cite[Def 1.5]{thboalch}.
+    A \emph{germ of a meromorphic linear differential system}\footnote{or just
+    \emph{system} from now on} (of rank $n$) is
+    \begin{itemize}
+      \item a germ of a meromorphic connection
+        \begin{itemize}
+          \item on the trivial vector bundle with fibre $E$.
+        \end{itemize}
+    \end{itemize}
+  \end{defn}
+\end{paracol}
+\begin{paracol}{2}\sloppy
+\switchcolumn[0]\noindent
+\begin{defn}
+  A \emph{nice meromorphic connection} is\dots 
+\end{defn}
+\switchcolumn[1]\noindent
+  \begin{defn}
+    A \emph{nice formal normal form} $A^0$ is
+    \begin{itemize}
+      \item a nice diagonal system with no holomorphic part.
+    \end{itemize}
+    \begin{rem}
+      Such $A^0$ can be uniquely written as
+      \[
+      A^0:= dQ + \Lambda \frac{dz}{z},
+      \]
+      where
+      \begin{itemize}
+        \item $Q := \diag(q1,\dots ,qn)$
+          \begin{itemize}
+            \item $q_1,\dots ,q_n\in z^{−1}C[z^{−1}]$ are diagonal polynomials
+              \begin{itemize}
+                \item of degree $k-1$ in $z^{−1}$ with no constant term
+              \end{itemize}
+          \end{itemize}
+          and
+        \item $\Lambda = Res_0(A_0)$ is a constant diagonal matrix.
+      \end{itemize}
+    \end{rem}
+  \end{defn}
+\end{paracol}
+\begin{paracol}{2}\sloppy
+\switchcolumn[0]\noindent
+  % \begin{defn}[compatible framing]
+  %   A \emph{compatible framing} at $a_i$ of a vector bundle $V$ with nice
+  %   connection $\nabla$ is a choice of isomorphism $g$ between the fibre
+  %   $V_{a_i}$ and $\C^n$ which is compatible with $\nabla$ in the sense that
+  %   the leading term ${}^iA_{k_i}$ of $\nabla$ is diagonal in any local
+  %   trivialisation of $V$ extending this isomorphism.
+  % \end{defn}
+  \begin{defn}
+    A \emph{compatible framing} at $a_i$ of a vector bundle $V$ with generic
+    connection $\nabla$ is
+    \begin{itemize}
+      \item an isomorphism $g_0:V_{a_i}\to\C^n$
+        \begin{itemize}
+          \item between the firbre $V_{a_i}$ and $\C^n$
+        \end{itemize}
+        such that
+        \begin{itemize}
+          \item the leading coefficient of $\nabla$ is diagonal in any local
+            trivialization of $V$ extending $g_0$.
+        \end{itemize}
+    \end{itemize}
+    \begin{rem}
+      Given a trivialization of $V$ in a neighbourhood of $a_i$ so that
+      $\nabla=d-A$ as above, then
+      \begin{itemize}
+        \item a compatible framing is represented by a constant matrix
+          $g_0\in G$ such that $g_0A_{k_i}g_0^{-1}$ is diagonal
+      \end{itemize}
+    \end{rem}
+  \end{defn}
+\switchcolumn[1]\noindent
+  \begin{defn}[marked pair]
+    A \emph{marked pair} is a pair $(A, \hat F)$ consisting of
+    \begin{itemize}
+      \item a nice system $A$ and
+      \item a choice of formal isomorphism $\hat F \in \hat G$ such that
+        $A = \hat F[A^0]$
+    \end{itemize}
+  \end{defn}
+\end{paracol}
+
+\begin{defn}[2.4]
+  A connection $(V,\nabla)$ with compatible framing $g_0$ at $a_i$ has
+  \emph{irregular type ${}^iA^0$} if
+  \begin{itemize}
+    \item $g_0$ extends to a formal trivialization of $V$ at $a_i$, in which
+    $\nabla$ differs from $d-{}^iA^0$ by a matrix of one-forms witch just
+    simple poles.
+  \end{itemize}
+\end{defn}
+
+\subsection{Local moduli spaces} %{{{
+\begin{defn}
+  \begin{itemize}
+    \item $\Syst(A^0):=\{d-A \mid A=\hat{F}[A^0] \text{ for some } \hat{F}\in
+      G\llbracket z\rrbracket\}$\footnote{the set of germs at $0\in\C$ of
+      meromorphic connections on the trivial rank $n$ vector bundle, that are
+      formally equivalent to $d-A^0$.}
+      where
+      \begin{itemize}
+        \item $A$ is a matrix of germs of meromorphic one-forms
+        \item $\hat{F}[A^0]=(d\hat{F})\hat{F}^{-1}+\hat{F}A^0\hat{F}^{-1}$
+        \item $G\llbracket z\rrbracket:=\GL_n(\C\llbracket z\rrbracket)$
+          \begin{itemize}
+            \item does not act on $\Syst(A^0)$
+          \end{itemize}
+      \end{itemize}
+  \end{itemize}
+  The group $G\{z\}:=\GL_n(\C\{z\})$ acts on $\Syst(A^0)$, we are interested
+  in
+  \begin{center}
+    $\Syst(A^0)/G\{z\}$\footnote{The set of isomorphism classes of germs of
+    meromorphic connections formally equivalent to $A^0$. Note that any
+    generic connection is formally equivalent to some such $A^0$.}
+  \end{center}
+\end{defn}
+\begin{rem}
+  In the abelian and the simple pole case $\Syst(A^0)/G\{z\}$ is only a point.
+\end{rem}
+\begin{defn}
+  \begin{itemize}
+    \item $\widehat\Syst_{cf}(A^0)$~:\Leftrightarrow{} the set of compatibly
+      framed connection germs with both irregular and formal type $A^0$.
+    \item $\widehat\Syst_{mp}(A^0):=\{(A,\hat{F})\mid A\in\Syst(A^0)
+      ,\hat{F}\in G\llbracket z\rrbracket
+      ,A=\hat{F}[A^0]\}$
+      the set of \emph{marked pairs}.
+  \end{itemize}
+\end{defn}
+\begin{lem}
+  There is a canonical isomorphism
+  $\widehat\Syst_{cf}(A^0)\cong\widehat\Syst_{mp}(A^0)$\footnote{Let
+  $\Syst(A^0)$ denote either of these two sets.}.
+\end{lem}
+
+$G\{z\}$ action on marked pairs: $g(A,\hat{F})=(g[A],g\circ\hat{F})$
+\[
+  \mathcal{H}(A^0):=\widehat\Syst(A^0)/G\{z\}
+\]
 \begin{comment}
-\begin{prop}
-Die Differenz zweier meromorphen Zusammenhänge ist $???$-linear.
-\end{prop}
-\begin{proof}
-Denn für zwei meromorphe Zusammenhänge $\nabla_1$ und $\nabla_2$ gilt:
-\begin{align*}
-(\nabla_1 - \nabla_2)(fv) &= \nabla_1(fv) - \nabla_2(fv)
-\\&=(df)\otimes v + f\nabla_1 v -(df)\otimes v - f\nabla_2 v
-\\&=f\nabla_1 v - f\nabla_2 v
-\\&=f(\nabla_1 - \nabla_2) v
-\end{align*}
-und da ??? gilt, reicht dies um die Aussage zu zeigen
-\end{proof}
+  The actions of $T$ and $G\{z\}$ on $\Syst(A^0)$ commute so
+  \[
+    \Syst(A^0)/G\{z\}\cong\mathcal{H}(A^0)/T \,.
+  \]
 \end{comment}
+%}}}
 
-\begin{paracol}{2}
-Wählt man eine lokale Koordinate $z$ auf $\P^1$ welche bei $a_i$
-verschwindet. Dann hat, in terms of local trivialization of $V$, $\nabla$ die
-form:
-\[
-\nabla = d-{}^iA
-\]
-wobei
-\[
-{}^iA=\left(\sum^{0}_{j=k_i}{}^iA_j\frac{dz}{z^{j}}\right)+A_0dz+\dots
-\]
-\switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Moduli spaces}
+At each point $a_i$ choose
+\begin{itemize}
+  \item a germ $d-{}^iA^0$
+    \begin{itemize}
+      \item of a diagonal generic meromorphic connection on the trivial rank
+      $n$ vector bundle
+    \end{itemize}
+    such that
+    \begin{itemize}
+      \item ${}^iA^0$ is a matrix of germs of meromorphic one-forms, which we
+        require\footnote{without loss of generality} to be diagonal.
+    \end{itemize}
+\end{itemize}
+If $z_i$ is a local coordinate vanishing at $a_i$, write
+\begin{itemize}
+  \item ${}^iA^0=d({}^iQ)+{}^i\Lambda^0\frac{dz}{z}$ where
+    \begin{itemize}
+      \item ${}^i\Lambda^0$ is constant diagonal
+      \item ${}^iQ=diag(q_1,\dots,q_n)$ diagonal matrix of meromorphic
+        functions
+    \end{itemize}
+\end{itemize}
+Let  $\textbf{a}$ denote the choice of
+\begin{itemize}
+  \item the effectrive divisor $D$ and
+  \item all the germs ${}^iA^0$
+\end{itemize}
+\begin{defn}[2.5]
+  The \emph{moduli space $\cM^*(\textbf{a})$
+  \textcolor{green!40!black}{($\cM(\textbf{a})$)}} is
+  \begin{itemize}
+    \item the set of isomorphism classes of pairs $(V,\nabla)$ where
+      \begin{itemize}
+        \item a trivial \textcolor{green!40!black}{(degree zero)} rank $n$
+          holomorphic vector bundle $V$ over $\P^1$
+        \item a meromorphic connection $\nabla$ (with poles on $D$) on $V$
+          which is formally equivalent to $d-{}^iA^0$ at $a_i$ for each
+          $i$\footnote{and has no other poles}
+      \end{itemize}
+  \end{itemize}
+\end{defn}
+\begin{defn}[2.6]
+  The \emph{extended moduli space $\widetilde\cM^*(\textbf{a})$
+  \textcolor{green!40!black}{($\widetilde\cM(\textbf{a})$)}} is
+  \begin{itemize}
+    \item the set of isomorphism classes of triples $(V,\nabla,\textbf{g})$
+      where
+      \begin{itemize}
+        \item a trivial \textcolor{green!40!black}{(degree zero)}
+          \textcolor{gray}{rank $n$} holomorphic vector bundle $V$ over $\P^1$
+        \item a generic \textcolor{gray}{meromorphic} connection $\nabla$
+          (with poles on $D$) on $V$
+        \item compatible framins $\textbf{g}=({}^1g_0,\dots,{}^mg_0)$
+      \end{itemize}
+      such that $(V,\nabla,\textbf{g})$ has irregular type ${}^iA^0$ at each
+      $a_i$
+  \end{itemize}
+\end{defn}
+Since $\cM^*(\textbf{a})$ and $\widetilde\cM^*(\textbf{a})$ are moduli spaces
+of connections on trivial bundles we can obtain explicit descriptions of them.
+See \cite{thboalch} page 10ff.
+
+\section{\cite{sabbah2007isomonodromic}} %{{{
+\begin{defn}[Holomorphic budles (0.3.?)]
+  Let
+  \begin{itemize}
+    \item $\pi:E\to M$ be a holomorphic mapping between two complex analytic
+      manifolds.
+  \end{itemize}
+  We will say that
+  \begin{itemize}
+    \item $\pi$ is a \emph{vector fibration of rank $d$}, or
+    \item $\pi$ makes $E$ a \emph{vector bundle of rank $d$ on $M$}
+  \end{itemize}
+  if there exists a open covering\dots
+\end{defn}
+Set $\sE(U)$ as the set of holomorphic sections, where
+\begin{itemize}
+  \item a \emph{holomorphic section} of $E$ on $U$ is a holomorphic mapping
+    $\sigma:U\to E$ which
+    \begin{itemize}
+      \item is a section of the projection, i.e., which satisfies
+        $\pi\circ\sigma=\Id_U$.
+    \end{itemize}
+\end{itemize}
+This defines a sheaf $\sE$ of modules over $\cO_M(U)$.
+\begin{defn}[Meromorphic bundles (0.8.?)]
+  A \emph{meromorphic bundle on $M$ with poles along $Z$} is a locally free
+  sheaf of $\cO_M(*Z)$-modules of finite rank
+  where 
+  \begin{itemize}
+    \item $Z$ is a smooth hypersurface in a complex analytic manifold $M$
+    \item define the sheaf $\cO_M(*Z)$ by
+      \begin{itemize}
+        \item $U\mapsto$ functions which are \emph{meromorphic along $Z\cap U$}
+          i.e.\ which
+          \begin{itemize}
+            \item are holomorphic on $U\backslash Z\cap U$ and
+            \item for any chart $V$ of $M$
+              \begin{itemize}
+                \item contained in $U$ and
+                \item in which $Z\cap V$ is defined by the vanishing of some
+                  coordinate $z_1$
+              \end{itemize}
+              there exists
+              \begin{itemize}
+                \item an integer $m$
+              \end{itemize}
+              such that 
+              \begin{itemize}
+                \item $z_1^mf(z_1\dots z_n)$ is locally bounded in the
+                  neighbourhood of any point of $Z\cap V$.
+              \end{itemize}
+          \end{itemize}
+      \end{itemize}
+  \end{itemize}
+\end{defn}
+\begin{defn}[Holomorphic connections (0.11.1)]
+  A \emph{holomorphic connection} $\nabla$ on a holomorphic vector bundle
+  $\pi:E\to M$ is a $\C$-linear homomorphism of sheaves
+  \[
+    \nabla:\sE\to\Omega_M^1\otimes_{\cO_M}\sE
+  \]
+  satisfying
+  \begin{itemize}
+    \item for
+      \begin{itemize}
+        \item any open set $U$ of $M$,
+        \item any section $s\in\Gamma(U,\sE)$ and
+        \item any holomorphic function $f\in\cO(U)$
+      \end{itemize}
+      the \emph{Leibnitz rule}:
+      \[
+        \nabla(f\cdot s)=\nabla(s)+df\otimes
+        s\in\Gamma(U,\Omega_M^1\otimes_{\cO_M}\sE)
+      \]
+  \end{itemize}
+\end{defn}
+\begin{defn}[Meromorphic connections]
+  A \emph{connection on $\sM$} is defined as a $\C$-linear homomorphism
+  \[
+    \nabla:\sM\to\Omega_M^1\otimes_{\cO_M}\sM
+  \]
+  satisfying the Leibnitz rule.
+\end{defn}
+\begin{defn}[Flatness (0.12.2)]
+  The connection $\nabla:\cE\to \Omega_M^1\otimes_{\cO_M}\cE$ is said to be
+  \emph{integrable} or \emph{flat}, if
+  \begin{itemize}
+    \item its curvature $R_\nabla\equiv0$
+
+    where
+    \begin{itemize}
+      \item $R_\nabla:=\nabla\circ\nabla:\cE\to\Omega_M^2\otimes_{\cO_M}\cE$
+        is a $\cO_M$-linear morphism.
+    \end{itemize}
+  \end{itemize}
+  \begin{prop}[0.12.4]
+    The connection $\nabla$ is flat if and only if, in any local basis $e$ of
+    $\cE$, the connection matrix $\Omega$ satisfies
+    \[
+      d\omega + \omega \wedge \omega = 0.
+    \]
+  \end{prop}
+  We will say that a connection on a meromorphic bundle is \emph{integrable} or
+  \emph{flat} if its restriction to $M\backslash Z$ is an integrable connection
+  on the holomorphic bundle $\sM_{|M\backslash Z}$.
+\end{defn}
+
+\subsection{Models and formal decomposition of a germ}
+Let $\textbf{k}$ denote $\C\{t\}[1/t]$.
+\subsubsection{Regular singularities}
 \begin{defn}
-\cite[Def 1.5]{thboalch}.
-A \emph{germ of a meromorphic linear differential system} (of rank $n$), or
-just \emph{system} from now on, is a germ of a meromorphic connection on the
-trivial vector bundle with fibre $E$.
+  An \emph{elementary regular model} is
+  \begin{itemize}
+    \item a $(\textbf{k},\nabla)$-vector space
+      equipped with a basis in which
+      \begin{itemize}
+        \item the connection matrix is written as
+          $\Omega(t)=(\alpha\Id+N)\frac{dt}{t}$
+          where
+          \begin{itemize}
+            \item $\alpha\in\C$ and
+            \item $N$ is a nilpotent matrix
+          \end{itemize}
+      \end{itemize}
+  \end{itemize}
 \end{defn}
-Dieses $\nabla = d-{}^iA$ definiert ein \emph{System}. Der Buchstabe $k$ wird
-die Ordnung des Pols bezeichnen und $\Syst_k$ den Vektorraum aller Systeme mit
-Polordnung von höchstens $k$.
-
-Sind Zwei Systeme $A$ und $B$ gegeben, so definiert $dX=BX-XA$ ein System auf
-$\End(E)$ welches wir mit $\Hom(A,B)$ bezeichnen wollen.
-\end{paracol}
-
-\begin{paracol}{2}
-\switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{cor}[II.2.9]
+  Any $(\textbf{k},\nabla)$-vector space with regular singularity is isomorphic
+  to a direct sum of elementary regular models.
+\end{cor}
+\begin{prop}[Any formal solution is convergent(II.2.18)]
+  Let $A(t)$ be a matrix in $M_d(\C\{t\})$. Any vector $u(t)$ with entries in
+  $\C\llbracket t\rrbracket$ which is solution of the system
+  $tu'(t)+A(t)u(t)=0$ has converging entries.
+\end{prop}
+\subsubsection{Irregular singularities}
 \begin{defn}
-A \emph{nice formal normal form} $A^0$ is a nice diagonal system with no
-holomorphic part. Such $A^0$ can be uniquely written as
-\[
-A^0:= dQ + \Lambda \frac{dz}{z},
-\qquad
-Q := \diag(q1,\dots ,qn)
-\]
-where $q_1,\dots ,q_n\in z^{−1}C[z^{−1}]$ are diagonal polynomials of degree
-$k-1$ in $z^{−1}$ with no
-constant term and $\Lambda = Res_0(A_0)$ is a constant diagonal matrix.
+  Let $(\cM,\nabla)$ be a \textbf{germ} of a meromorphic bundle with
+  connection.
+  \begin{itemize}
+    \item A germ $(\cM,\nabla)$ is \emph{elementary} if it is isomorphic to
+      some germ
+      \[
+        (\cE^\phi,\nabla)\otimes(\cR,\nabla)
+      \]
+      where
+      \begin{itemize}
+        \item $(\cR,\nabla)$ ha regular singularity along $\{0\}\times X$
+      \end{itemize}
+    \item $(\cM,\nabla)$ is a \emph{model} if it is isomorphic to a direct sum
+      of elementary models, written as
+      \[
+        \bigoplus_\phi(\cE^\phi\otimes\cR_\phi)
+      \]
+      where we assume that
+      \begin{itemize}
+        \item the meromorphic bundles with connection $\cR_\phi$ have regular
+          singularity and
+        \item the
+          $\phi\in\C\{t\textcolor{gray}{\underset{\text{parameter}}
+            {\underbrace{,x_1,\ldots,x_n}}}\}[t−1]$
+          \begin{itemize}
+            \item have no holomorphic part and
+            \item are pairwise distinct.
+          \end{itemize}
+      \end{itemize}
+    \item We will say that a model is \emph{good} if,
+      \begin{itemize}
+        \item for all $\phi\neq\psi$
+          \begin{itemize}
+            \item such that $\cR_\phi$, $\cR_\psi$ are nonzero,
+          \end{itemize}
+          the order of the pole along $t=0$ of $(\phi-\psi)(t,x)$ does not
+          depend on $x$ being in some neighbourhood of $x^o$.
+      \end{itemize}
+  \end{itemize}
 \end{defn}
-\end{paracol}
+\begin{thm}[Formal decomposition (II.5.7)]
+  Let $(\cM,\nabla)$ be a germ of meromorphic bundle with connection,
+  \begin{itemize}
+    \item equipped with a basis
+      \begin{itemize}
+        \item
+          in which the matrix $\Omega$ takes the form
+          \[
+            \Omega=t^{-r}\left[A(t,x)\frac{dt}{t}
+              +\sum_{i=1}^nC^{(i)}(t,x)dx_i\right]
+          \]
+        with
+        \begin{itemize}
+          \item $r\geq1$
+          \item $A$ and the $C^{(i)}$ having holomorphic entries, and
+          \item $A_0:=A(0,x^0)$ being regular semisimple\footnote{i.e.\ with
+            pairwise distinct eigenvalues.}
+        \end{itemize}
+      \end{itemize}
+  \end{itemize}
+  Then there exist
+  \begin{itemize}
+    \item a good model $(\cM^{good},\nabla)
+      =\left(\bigoplus_\phi(\cE^\phi\otimes\cR_\phi) \right)$ and
+    \item a \textcolor{red!40!black}{`formal'} isomorphism
+      \[
+        \textcolor{red!40!black}{\hat\cO_{D\times X,x_0}\otimes}(\cM,\nabla)
+        \overset{\sim}{\longrightarrow}
+      \textcolor{red!40!black}{\hat\cO_{D\times X,x_0}\otimes}
+        \left(\bigoplus_\phi(\cE^\phi\otimes\cR_\phi) \right)
+      \]
+  \end{itemize}
+\end{thm}
+\begin{comment}
+  \begin{rem}
+    \begin{itemize}
+      \item In the present situation, no ramification is needed.
+        \TODO[Why?]
+      \item Moreover, we will see that all the components $\cR^\phi$ occurring
+        in the model have rank one, which is not the case in general, even when
+        no ramification is needed.
+    \end{itemize}
+  \end{rem}
+\end{comment}
+%}}}
 
-
-\begin{paracol}{2}
-\begin{defn}[compatible framing]
-A \textbf{compatible framing} at $a_i$ of a vector bundle $V$ with nice
-connection $\nabla$ is a choice of isomorphism $g$ between the fibre
-$V_{a_i}$ and $\C^n$ which is compatible with $\nabla$ in the sense that the
-leading term ${}^iA_{k_i}$ of $\nabla$ is diagonal in any local
-trivialisation of $V$ extending this isomorphism.
-\end{defn}
-\switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{defn}[marked pair]
-A marked pair is a pair $(A, \hat F)$ consisting of a nice system $A$ and a choice of formal
-isomorphism
-$\hat F \in \hat G$
-between $A$ and some formal normal form $A^0(A = \hat F[A0])$
-\end{defn}
-\end{paracol}
-
-% vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:
+% vim:set ft=tex foldmethod=marker foldmarker=%{{{,%}}}:

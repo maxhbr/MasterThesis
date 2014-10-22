@@ -1,4 +1,4 @@
-\chapter{Asymptotische Erweiterungen}
+\chapter{Asymptotic expansion}
 \begin{comment}
   \begin{itemize}
     \item \cite[60]{sabbah_cimpa90} Chapter II.2.2
@@ -41,28 +41,29 @@ Let $\hat\phi=\sum_{n\geq-n_0}a_nx^n$ with $a_n\in\C$ is as asymptotic
 expansion of $f$ at $0$ if for all $m\in\N$ one has
 \begin{equation} \label{eq:asymptoticExpansion}
   \lim_{x\to 0,x\in\triangle_r^*(U)}
-  \left|x^{-m}\right|\left|x^{n_{0}}f(x)-\sum_{0\leq n\leq m}a_{n}x^{n}\right|
+  \left|x^{-m}\right|\left|f(x)-\sum_{-n_0\leq n\leq m}a_{n}x^{n}\right|
   =0
 \end{equation}
-Define
-\begin{itemize}
-  \item $\bar\cA(U,r)\subset\cO(\Delta_r^*(U))$ the set of functions which
-    admits an asymptotic power series
-  \item $\cA(U,r):=\bigcap_{V}\bar\cA(V,r)$ where $V$ are relatively
-    compact open subsets of $U$
-    \begin{itemize}
-      \item $\cA(U,r)=\{\phi\in \bar\cA(U,r)
-        \mid \phi\in \bar\cA(V,r)
-        \forall V\text{ rel.\  cp.\  op.\  subset of }U\}$
-    \end{itemize}
-  \item $\cA(U):=\bigcup_r\cA(U,r)$%
-    \begin{itemize}
-      \item $\cA(U)=\{\phi\mid\exists r\text{: } \phi\in\cA(U,r)\}
-        =\{\phi\mid\exists r\text{: }
-          \forall V\subset U\text{ rel.cp.op.}\text{: }
-          \phi\in\bar\cA(V,r)\}$
-    \end{itemize}
-\end{itemize}
+\begin{defn}
+  \begin{itemize}
+    \item $\bar\cA(U,r)\subset\cO(\Delta_r^*(U))$ the set of functions which
+      admits an asymptotic power series
+    \item $\cA(U,r):=\bigcap_{V}\bar\cA(V,r)$ where $V$ are relatively
+      compact open subsets of $U$
+      \begin{itemize}
+        \item $\cA(U,r)=\{\phi\in \bar\cA(U,r)
+          \mid \phi\in \bar\cA(V,r)
+          \forall V\text{ rel.\  cp.\  op.\  subset of }U\}$
+      \end{itemize}
+    \item $\cA(U):=\bigcup_r\cA(U,r)$%
+      \begin{itemize}
+        \item $\cA(U)=\{\phi\mid\exists r\text{: } \phi\in\cA(U,r)\}
+          =\{\phi\mid\exists r\text{: }
+            \forall V\subset U\text{ rel.cp.op.}\text{: }
+            \phi\in\bar\cA(V,r)\}$
+      \end{itemize}
+  \end{itemize}
+\end{defn}
 The mapping $U\mapsto\cA(U)$ defines a sheaf on $S^1$
 
 \subsection{Better definition from \cite{van2003galois}}
@@ -115,36 +116,38 @@ Let $f$ be a holomorphic function on $S(a,b,\rho)$, where
       \item $\cA(S(a,b,\rho))$ are the functions with asymptotic expansion.
     \end{itemize}
 \end{itemize}
-\begin{defn}[7.4]
-  Let
-  \begin{itemize}
-    \item $k$ be a positive real number and
-    \item $S$ be an open sector.
-  \end{itemize}
-  A function $f\in\cA(S)$, with asymptotic expansion
-  $J(f)=\sum_{n\geq n_0}c_nz^n$, is said to bea a \emph{Grevrey function of
-  order $k$} if:
-  \\For every closed subsector $W$ of $S$ there are constants
-  \begin{itemize}
-    \item $A>0$ and
-    \item $c>0$
-  \end{itemize}
-  such that for all
-  \begin{itemize}
-    \item $N\geq1$ and
-    \item all $z\in W$ and $|z|\leq c$
-  \end{itemize}
-  one has
-  \[
-    \left| f(z)-\sum_{n_0\leq n\leq N-1}c_nz^n \right| \leq
-    A^N \textcolor{green!40!black}{\Gamma\left(1+\frac{N}{k}\right)}|z|^N
-  \]
-  or equivalently
-  \[
-    \left| f(z)-\sum_{n_0\leq n\leq N-1}c_nz^n \right|
-    \leq A^N \textcolor{green!40!black}{(N!)^{\frac{1}{k}}} |z|^N
-  \]
-\end{defn}
+\begin{comment}
+  \begin{defn}[7.4]
+    Let
+    \begin{itemize}
+      \item $k$ be a positive real number and
+      \item $S$ be an open sector.
+    \end{itemize}
+    A function $f\in\cA(S)$, with asymptotic expansion
+    $J(f)=\sum_{n\geq n_0}c_nz^n$, is said to bea a \emph{Grevrey function of
+    order $k$} if:
+    \\For every closed subsector $W$ of $S$ there are constants
+    \begin{itemize}
+      \item $A>0$ and
+      \item $c>0$
+    \end{itemize}
+    such that for all
+    \begin{itemize}
+      \item $N\geq1$ and
+      \item all $z\in W$ and $|z|\leq c$
+    \end{itemize}
+    one has
+    \[
+      \left| f(z)-\sum_{n_0\leq n\leq N-1}c_nz^n \right| \leq
+      A^N \textcolor{green!40!black}{\Gamma\left(1+\frac{N}{k}\right)}|z|^N
+    \]
+    or equivalently
+    \[
+      \left| f(z)-\sum_{n_0\leq n\leq N-1}c_nz^n \right|
+      \leq A^N \textcolor{green!40!black}{(N!)^{\frac{1}{k}}} |z|^N
+    \]
+  \end{defn}
+\end{comment}
 
 \subsection{Sheaf version}
 \def\myincl{\textcolor{green!40!black}{i}}
@@ -313,9 +316,8 @@ Let
         \to              \sA_{S^1\times X,(\theta^o,x^o)}
         \overset{T}{\to} \pi^{-1}\hat\cO_{D\times X}
         \to 0
-        \qquad
-        \text{is exact}
     \]
+    is exact
   \end{lem}
   where
   \begin{itemize}

@@ -23,6 +23,8 @@
 \usepackage{url} % URLS in bibtex
 
 \usepackage[german]{varioref}
+\usepackage{hyperref}
+\hypersetup{ colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%  Design / Style  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -89,7 +89,7 @@ S^1$ such that for some $i \neq j$: $q_{ij}(z)\in\R_{<0}$ for $z$ on the ray
 specified by $d$.
 \end{defn}
 \begin{center}
-  \begin{tikzpicture}[scale=3]
+  \begin{tikzpicture}[scale=2]
     \node[label=below left:$0$] (zero) at (0,0) {};
     \draw[blue] (zero) circle (1cm);
     \draw[red!60!black,thick,path fading=east] (0,0) -- +({cos( 33 )*2},{sin( 33 )*2});
@@ -156,7 +156,7 @@ specified by $d$.
     \begin{itemize}
       \item is divisible by $2(k-1)$ \Rightarrow $l:=\frac{r}{2k-2}$
     \end{itemize}
-  \item $\textbf{d}=(d_1,d_2,d_3,d_l)\subset\A$ is a half-period
+  \item $\textbf{d}=(d_1,d_2,d_3,\dots,d_l)\subset\A$ is a half-period
 \end{itemize}
 \begin{defn}
   \begin{itemize}
@@ -338,53 +338,6 @@ $d_1$ and label the subsequent rays $d_2,\dots,d_r$ in turn.
   \end{tikzpicture}
 \end{center}
 
-\subsection{More}
-\begin{defn}
-  \begin{itemize}
-    \item $\Syst(A^0):=\{d-A \mid A=\hat{F}[A^0] \text{ for some } \hat{F}\in
-      G\llbracket z\rrbracket\}$\footnote{the set of germs at $0\in\C$ of
-      meromorphic connections on the trivial rank $n$ vector bundle, that are
-      formally equivalent to $d-A^0$.}
-      where
-      \begin{itemize}
-        \item $A$ is a matrix of germs of meromorphic one-forms
-        \item $\hat{F}[A^0]=(d\hat{F})\hat{F}^{-1}+\hat{F}A^0\hat{F}^{-1}$
-        \item $G\llbracket z\rrbracket:=\GL_n(\C\llbracket z\rrbracket)$
-          \begin{itemize}
-            \item does not act on $\Syst(A^0)$
-          \end{itemize}
-      \end{itemize}
-  \end{itemize}
-  The group $G\{z\}:=\GL_n(\C\{z\})$ acts on $\Syst(A^0)$,  study
-  \begin{center}
-    $\Syst(A^0)/G\{z\}$\footnote{The set of isomorphism classes of germs of
-    meromorphic connections formally equivalent to $A^0$. Note that any
-    generic connection is formally equivalent to some such $A^0$.}
-  \end{center}
-  In the abelian and the simple pole case this is only a point.
-\end{defn}
-\begin{defn}
-  \begin{itemize}
-    \item $\widehat\Syst_{cf}(A^0)$ :\Leftrightarrow the set of compatibly
-      framed connection germs with both irregular and formal type $A^0$.
-    \item $\widehat\Syst_{mp}(A^0):=\{(A,\hat{F})\mid A\in\Syst(A^0)
-      ,\hat{F}\in G\llbracket z\rrbracket
-      ,A=\hat{F}[A^0]\}$
-      the set of \emph{marked pairs}.
-  \end{itemize}
-  There is a canonical isomorphism
-  $\widehat\Syst_{cf}(A^0)\cong\widehat\Syst_{mp}(A^0)$\footnote{Let
-  $\Syst(A^0)$ denote either of these two sets.}.
-
-  $G\{z\}$ action on marked pairs: $g(A,\hat{F})=(g[A],g\circ\hat{F})$
-  \[
-    \mathcal{H}(A^0):=\widehat\Syst(A^0)/G\{z\}
-  \]
-\end{defn}
-Moreover the actions of $T$ and $G\{z\}$ on $\Syst(A^0)$ commute so
-\[
-  \Syst(A^0)/G\{z\}\cong\mathcal{H}(A^0)/T \,.
-\]
 
 \subsection{Theoremes}
 \begin{thm}[1.22 in \cite{thboalch}]
@@ -457,104 +410,126 @@ Moreover the actions of $T$ and $G\{z\}$ on $\Syst(A^0)$ commute so
 %}}}
 
 \section{Sheaf view: \cite{sabbah2007isomonodromic}} %{{{
+Let
+\begin{itemize}
+  \item $X$ be a complex analytic manifold
+    (\textcolor{green!40!black}{parameter space}) and
+  \item $\cM^{good}$ be a meromorphic bundle on $D\times X$
+    \begin{itemize}
+      \item with poles along $\{0\}\times X$,
+    \end{itemize}
+    equipped with a flat connection $\nabla^{good}$.
+\end{itemize}
+We will assume that $\left(\cM^{good},\nabla^{good}\right)$ is 
+\begin{itemize}
+  \item a good model in the neighbourhood of $x^o$, that is that
+    \begin{itemize}
+      \item there exist pairwise distinct germs $\phi_1,\dots,\phi_p\in
+        t^{-1}\cO_{X,x^o}[t^{-1}]$ and
+      \item nonzero germs of systems with regular singularity
+        $\cR_{\phi_1},\dots,\cR_{\phi_p}$ along $\{0\}\times X$ such that
+            we have, in a neighbourhood of $x^o$,
+        \begin{itemize}
+          \item an isomorphism $\cM_{x^o}^{good}
+            \cong\bigoplus_k\left(\cE^{\phi_k}\otimes\cR_{\phi_k}\right)$.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+$k\neq l$ $\overset{\text{II.5.6}}{\Rightarrow{}}$ the order of the pole with
+respect to $t$ of $(\phi_k-\phi_l)(x,t)$ does not depend on $x$ in a
+neighbourhood of $x^o$.
 \begin{defn}
-  Let $(\cM,\nabla)$ be a meromorphic bundle with connection.
+  Define the \emph{stokes sheaf} $\St_X(\cM^{good})$ as the sheaf (on $X$)
+  associated to the presheaf
+  \[
+    U\mapsto H^1(S^1\times U,\Aut^{<X}(\tilde \cM^{good}) )
+  \]
+  where
   \begin{itemize}
-    \item A germ of a $(\cM,\nabla)$ is
-      \emph{elementary} if it is isomorphic to some germ
-      \[
-        (\cE^\phi,\nabla)\otimes(\cR,\nabla)
-      \]
-      where
+    \item $\Aut^{<\{0\}\times X}(\tilde M^{good})$ or
+      $\Aut^{<X}(\tilde M^{good})$ is the sheaf
       \begin{itemize}
-        \item $(\cR,\nabla)$ ha regular singularity along $\{0\}\times X$
-      \end{itemize}
-    \item $(\cM,\nabla)$ is a \emph{model} if it is isomorphic to a direct sum
-      of elementary models, written as
-      \[
-        \bigoplus_\phi(\cE^\phi\otimes\cR_\phi)
-      \]
-      where we assume that
-      \begin{itemize}
-        \item the meromorphic bundles with connection $\cR_\phi$ have regular
-          singularity and
-        \item the
-          $\phi\in\C\{t\textcolor{gray}{\underset{\text{parameter}}
-            {\underbrace{,x_1,\ldots,x_n}}}\}[t−1]$
+        \item on $S^1\otimes X$
+        \item of auomorphisms of $\tilde M^{good}:=\cA_{\tilde D\times
+          X}\otimes_{\cO_{D\times X}}\cM^{good}$
+          witch are
           \begin{itemize}
-            \item have no holomorphic part and
-            \item are pairwise distinct.
+            \item compatible with the connection and
+            \item are formally equal to the identity\footnote{i.e., which
+              induce the identity on $\hat \cM^{good}:=\hat \cO_{D\times
+              X}\otimes_{\cO_{D\times X}}\cM^{good}$}.
           \end{itemize}
       \end{itemize}
-    \item We will say that a model is \emph{good} if,
+      The sections of $\Aut^{<X}(\tilde M^{good})$ are called \emph{stokes
+      matrices}.
+  \end{itemize}
+\end{defn}
+\begin{thm}[The stokes sheaf is locally constant (6.1)]
+  The Stokes sheaf $\St_X(\cM^{good})$ is
+  \begin{itemize}
+    \item a locally constant
+  \end{itemize}
+  sheaf of pointed sets.
+\end{thm}
+Let $(\cM,\nabla)$ be a meromorphic connection with
+\begin{itemize}
+  \item poles on $D\times X$ 
+  \item flat connection, 
+    \begin{itemize}
+      \item having poles along $\{0\}\times X$.
+    \end{itemize}
+\end{itemize}
+\begin{defn}
+  $(\cM^{good},\nabla^{good})$ is a \emph{good formal model} for
+  $(\cM,\nabla)$ if
+  \begin{itemize}
+    \item there exists an isomorphism 
+      \[
+        \hat f(\widehat\cM,\widehat\nabla)\overset{\sim}{\to}
+        (\widehat{\cM^{good}},\widehat{\nabla^{good}})
+      \]
       \begin{itemize}
-        \item for all $\phi\neq\psi$
-          \begin{itemize}
-            \item such that $\cR_\phi$, $\cR_\psi$ are nonzero,
-          \end{itemize}
-          the order of the pole along $t=0$ of $(\phi−\psi)(t,x)$ does not
-          depend on $x$ being in some neighbourhood of $x^o$.
+        \item of sheafes of $\hat\cO_{D\times X}$-modules
+        \item compatible with connection.
       \end{itemize}
   \end{itemize}
 \end{defn}
-\begin{thm}[Formal decomposition (II.5.7)]
-  Let $(\cM,\nabla)$ be a germ of meromorphic bundle with connection,
+\begin{defn}
+  Two germs $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$ along
+  $\{0\}\times X$ are \emph{isomorphic}, if
   \begin{itemize}
-    \item equipped with a basis 
+    \item there exists an isomorphism\footnote{such an isomorphism then is
+      unique} $g:(\cM,\nabla)\to(\cM',\nabla')$ with
       \begin{itemize}
-        \item 
-          in which the matrix $\Omega$ takes the form
-          \[
-            \Omega=t^{-r}\left[A(t,x)\frac{dt}{t}
-              +\sum_{i=1}^nC^{(i)}(t,x)dx_i\right]
-          \]
-        with
-        \begin{itemize}
-          \item $r\geq1$
-          \item $A$ and the $C^{(i)}$ having holomorphic entries, and
-          \item $A_0:=A(0,x^0)$ being regular semisimple\footnote{i.e.\ with
-            pairwise distinct eigenvalues.}
-        \end{itemize}
+        \item $\hat f=\hat f'\circ\hat g$.
       \end{itemize}
   \end{itemize}
-  Then there exist
-  \begin{itemize}
-    \item a good model $(\cM^{good},\nabla)
-      =\left(\bigoplus_\phi(\cE^\phi\otimes\cR_\phi) \right)$ and
-    \item a \textcolor{red!40!black}{`formal'} isomorphism
-      \[
-        \textcolor{red!40!black}{\hat\cO_{D\times X,x_0}\otimes}(\cM,\nabla)
-        \overset{\sim}{\longrightarrow}
-      \textcolor{red!40!black}{\hat\cO_{D\times X,x_0}\otimes}
-        \left(\bigoplus_\phi(\cE^\phi\otimes\cR_\phi) \right)
-      \]
-  \end{itemize}
+\end{defn}
+Let
+\begin{itemize}
+  \item $\sH_X$ be the (pre-) sheaf\footnote{Lemma 6.2: it is a sheaf.} where
+    \begin{itemize}
+      \item $\sH_X(U)$ is the set
+        \begin{itemize}
+          \item of isomorphism classes of germs $(\cM,\nabla,\hat f)$ defined
+            on $U$,
+          \item equipped with a distinguished element, namely, the class of
+            ${(\cM^{good},\nabla^{good},\widehat{\Id})}_{|U}$.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\begin{thm}[The Stokes sheaf classifies meromorphic connections with fixed
+  normal type (6.3)]
+  The homomorphism so defined
+  \[
+    \sH_X\to St_X(\cM^{good})
+  \]
+  is an isomorphism of sheaves of pointed sets.
 \end{thm}
-
 %}}}
 
 \section{Local Moduli}
 \subsection{\dots / Models}
-
-\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{thm}[1.22 in \cite{thboalch}]
-    There is a natural isomorphism
-    \[
-      \cH(A^0)\cong\prod_{d\in\A}\Sto_d(A^0)
-    \]
-    and for each choice of $\log(z)$ in the direction $d$ the Stokes group
-    $\Sto_d(A^0)$ has a faithfull representation $\rho$ on $\C^n$ inducing an
-    isomorphism
-    \[
-      \rho:\Sto_d(A^0)\to\SSto_d(A^0).
-    \]
-    In particular each $\Sto_d(A^0)$ and therefore $\cH(A^0)$ is a\dots
-  \end{thm}
-
-  \switchcolumn{} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Asymptotic expansions / The sheaf $\cA$}
 
 \subsection{\dots / Sectorial classificaton} %{{{
 \begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -589,7 +564,5 @@ Moreover the actions of $T$ and $G\{z\}$ on $\Syst(A^0)$ commute so
   commutes.
 \end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %}}}
-
-\subsection{\dots / Stokes sheaf}
 
 \chapter{Stokes Structures: Global}
