@@ -393,12 +393,75 @@ Let $\textbf{k}$ denote $\C\{t\}[1/t]$.
   Any $(\textbf{k},\nabla)$-vector space with regular singularity is isomorphic
   to a direct sum of elementary regular models.
 \end{cor}
+Let
+\begin{itemize}
+  \item $x^0\in X$ and
+  \item $(x_1,\dots,x_n)$ be a system of coordinates centered at $x^0$.
+  \item $\Omega=A(t,x)\frac{dt}{t}+\sum_{i=1}^nC^{i}(t,x)dx_i$ be the
+    connection matrix
+    \begin{itemize}
+      \item in some basis $\textbf{e}$ of $\sM$
+      \item in the neighbourhood of $(0,x^0)$.
+    \end{itemize}
+\end{itemize}
+If the matrices $A$ and $C^{(i)}$ have holomorphic entries, $(\sM,\nabla)$ has
+regular singularity in the neighbourhood of $(0,x^0)$. For more criteria see
+\cite[II.4.a]{sabbah2007isomonodromic}: \textbf{How to recognize a regular
+  singularity}.
 \begin{prop}[Any formal solution is convergent(II.2.18)]
   Let $A(t)$ be a matrix in $M_d(\C\{t\})$. Any vector $u(t)$ with entries in
   $\C\llbracket t\rrbracket$ which is solution of the system
   $tu'(t)+A(t)u(t)=0$ has converging entries.
 \end{prop}
+\begin{defn}[II.2.24]
+  A meromorphic bundle $\sM$ on $D\times X$, with poles along $\{0\}\times X$,
+  equipped with a flat connection $\nabla$, has \emph{regular singularity} if
+  \begin{itemize}
+    \item in the neighbourhood of any point $(0,x^0)$ of $\{0\}\times X$
+      \begin{itemize}
+        \item there exists a logarithmic lattice of $(\sM,\nabla)$.
+      \end{itemize}
+  \end{itemize}
+\end{defn}
+\begin{thm}[Normal form of regular singularities with parameter (II.2.25)]
+  There exists a basis of the germ $\sM_{(0,x^0)}$ in which the matrix of
+  $\nabla$ can be written as $B\frac{dt}{t}$, where $B$ is constant.
+\end{thm}
 \subsubsection{Irregular singularities}
+\paragraph{In rank one.}
+Let
+\begin{itemize}
+  \item $\phi\in\C\{t,x_1,\dots,x_n\}[t^{-1}]$.
+\end{itemize}
+Denote by $\cE^{\phi}$
+\begin{itemize}
+  \item the germ $(\cM,\nabla):=(\C\{t,x_1,\dots,x_n\}[t^{-1}],d-d\phi)$
+    \begin{itemize}
+      \item this is the system satisfied by the function $e^\phi$
+    \end{itemize}
+\end{itemize}
+For $\alpha\in\C$, let $\cN_{\alpha,0}$ be
+\begin{itemize}
+  \item the germ
+    $(\cM,\nabla):=(\C\{t,x_1,\dots,x_n\}[t^{-1}],d-\alpha dt/t)$.
+\end{itemize}
+\begin{prop}[Classification of irregular singularities in rank one (II.5.1)]
+  Any germ $\cM,\nabla)$ of rank one is isomorphic to some germ
+  $\cE^{\phi}\otimes\cN_{\alpha,0}$.
+
+  Tow such germs are corresponding to $(\phi_1,\alpha_1)$ and
+  $(\phi_2,\alpha_2)$ are isomorphic iff
+  \begin{itemize}
+    \item $\phi_1-\phi_2$ has no pole and
+      \begin{itemize}
+        \item Therefore, the class of $\phi$ in
+          $\C\{t,x_1,\dots,x_n\}[t^{-1}]/\C\{t,x_1,\dots,x_n\}$ determines the
+          germ $\cE^\phi$.
+      \end{itemize}
+    \item $\alpha_1-\alpha_2\in\Z$.
+  \end{itemize}
+\end{prop}
+\paragraph{In arbitrary rank}
 \begin{defn}
   Let $(\cM,\nabla)$ be a \textbf{germ} of a meromorphic bundle with
   connection.
@@ -417,13 +480,13 @@ Let $\textbf{k}$ denote $\C\{t\}[1/t]$.
       \[
         \bigoplus_\phi(\cE^\phi\otimes\cR_\phi)
       \]
-      where we assume that
+      where
       \begin{itemize}
         \item the meromorphic bundles with connection $\cR_\phi$ have regular
           singularity and
         \item the
           $\phi\in\C\{t\textcolor{gray}{\underset{\text{parameter}}
-            {\underbrace{,x_1,\ldots,x_n}}}\}[t−1]$
+            {\underbrace{,x_1,\ldots,x_n}}}\}[t^{-1}]$
           \begin{itemize}
             \item have no holomorphic part and
             \item are pairwise distinct.
