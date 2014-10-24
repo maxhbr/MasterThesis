@@ -22,66 +22,46 @@
         \textbf{Elementary acceleration and multisummability.}
       \end{itemize}
     \item \cite{thboalch}
+    \item \cite{van2003galois}
     \item Marius van der Put, Kyoshi Saito => Diff.Galois Theory
   \end{itemize}
-  Moderne Sicht:
+  Moderne Sicht (sheaf-view):
   \begin{itemize}
     \item Malgrange
+    \item \cite{sabbah_cimpa90} and
     \item \cite{sabbah2007isomonodromic}
+    \item \cite{sabbah2009introduction} and \cite{sabbah2013introduction}
   \end{itemize}
 \end{comment}
 
-\begin{paracol}{2}
-  The Matrix-view is taken from 
-  \begin{itemize}
-    \item \cite{boalch},
-    \item \cite{thboalch} and
-    \item \cite{van2003galois}.
-  \end{itemize}
-  \switchcolumn{}
-  The Sheaf-view is taken from
-  \begin{itemize}
-    \item \cite{sabbah_cimpa90} and
-    \item \cite{sabbah2007isomonodromic}.
-  \end{itemize}
-\end{paracol}
-
-\subsection{Situation} %{{{
-\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  Fix the data $\textbf{a}$ of
-  \begin{itemize}
-    \item a Divisor $D=\sum k_i(a_i)$ on $\P^1$ and
-    \item and connection germs $d-{}^iA^0$ at each $a_i$.
-  \end{itemize}
-  Let $(V,\nabla,\textbf{g})$ be a compatibly framed meromorphic connection on
-  a holomorphic vector bundle $V\to\P^1$ with a irregular type $\textbf{a}$.
-
-  \switchcolumn{} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  Let
-  \begin{itemize}
-    \item $X$ be the parameter space
-      \begin{itemize}
-        \item an analytic manifold equipped with coordinates $x_1,\ldots,x_n$.
-      \end{itemize}
-    \item $\sM$ be a meromorphic bundle
-      \begin{itemize}
-        \item on $D\times X$
-        \item with poles along $\{0\}\times X$
-      \end{itemize}
-      with \textbf{flat} connection
-      $\nabla:\sM\to\Omega_{D\times X}^1\otimes\sM$
-    \item $\cM$ denote its germ at $(0,x^0)\in D\times X$
-      \begin{itemize}
-        \item this is a module over the ring
-          \[
-            \cO_{D\times X,(0,x^0)}[t^{-1}]=\C\{t,x_1,\dots,x_n\}[t^{-1}]
-          \]
-      \end{itemize}
-  \end{itemize}
-\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%}}}
-
-\section{Matrix view: \cite{boalch}} %{{{
+\section{Matrix view: \cite{boalch} and \cite{thboalch}} %{{{
+Let
+\begin{itemize}
+  \item $d-A^0$ be a diagonal meromorphic connection
+    \begin{itemize}
+      \item on the trivial rank $n$ vector bundle
+        \begin{itemize}
+          \item over the unit disc $\D\subset\C$
+        \end{itemize}
+      \item with a pole of order $k\geq2$ at $0$
+        \begin{itemize}
+          \item and no other poles.
+        \end{itemize}
+    \end{itemize}
+  \item $z$ a coordinate on $\D$ vanishing at $0$.
+\end{itemize}
+Thus $A^0=dQ+\Lambda^0\frac{dz}{z}$ where
+\begin{itemize}
+  \item $\Lambda^0$ is a constant diagonal matrix and
+  \item $Q$ is a diagonal matrix of meromorphic functions.
+    \begin{itemize}
+      \item write $Q=\diag(g_1,\dots,q_n)$
+    \end{itemize}
+\end{itemize}
+Define $q_{ij}(z)$ to be the leading term of $q_i-q_j$.
+\begin{itemize}
+  \item Thus if $q_i-q_j=a/z^{k-1}+b/z^{k-2}+\dots$ then $q_{ij}=a/z^{k-1}$.
+\end{itemize}
 \subsection{Basic definitions}
 \begin{defn}[Definition 3.2]
 The \emph{anti-Stokes} directions $\A\subset S^1$ are the directions $d\in
@@ -110,8 +90,8 @@ specified by $d$.
     \end{itemize}
   \item If $q_{ij}(z)\in\R_{<0}$ then $q_{ji}(z)\in\R_{>0}$
     \begin{itemize}
-      \item in any arc $U \subset S^1$ subtending angle $\frac{\pi}{k − 1}$
-        there are at most $\frac{n(n − 1)}{2}$ anti-Stokes directions.
+      \item in any arc $U \subset S^1$ subtending angle $\frac{\pi}{k-1}$
+        there are at most $\frac{n(n-1)}{2}$ anti-Stokes directions.
     \end{itemize}
 \end{itemize}
 \begin{center}
@@ -154,7 +134,7 @@ specified by $d$.
     \end{tikzpicture}
     $\in\A\subset S^1$ and $\#\A=:r$
     \begin{itemize}
-      \item is divisible by $2(k-1)$ \Rightarrow $l:=\frac{r}{2k-2}$
+      \item is divisible by $2(k-1)$ \Rightarrow{} $l:=\frac{r}{2k-2}$
     \end{itemize}
   \item $\textbf{d}=(d_1,d_2,d_3,\dots,d_l)\subset\A$ is a half-period
 \end{itemize}
@@ -351,7 +331,8 @@ $d_1$ and label the subsequent rays $d_2,\dots,d_r$ in turn.
   \[
     \rho:\Sto_d(A^0)\to\SSto_d(A^0).
   \]
-  In particular each $\Sto_d(A^0)$ and therefore $\cH(A^0)$ is a\dots
+  In particular each $\Sto_d(A^0)$ and therefore $\cH(A^0)$ is a unipotent Lie
+  group and the complex dimension \dots
 \end{thm}
 \begin{thm}[3.1, or Prop 1.24 in \cite{thboalch}]
   Let $\hat{F}\in G\llbracket z\rrbracket$ such that $A:=F[A_0]$ has
@@ -369,13 +350,15 @@ $d_1$ and label the subsequent rays $d_2,\dots,d_r$ in turn.
     \item If $g\in G\{z\}$ and $t\in T$ then
       $\Sigma_i(g\circ\hat F \circ t^{-1})=g\circ\Sigma_i(\hat F)\circ t^{-1}$.
   \end{enumerate}
+  \begin{rem}
+    \begin{itemize}
+      \item The point is that on a narrow sector there are generally many
+        holomorphic isomorphisms between $A_0$ and $A$ which are asymptotic to
+        $\hat F$ and one is being chosen in a canonical way
+      \item $\Sigma_i(\hat F)$ is in fact uniquely characterised by property 2.
+    \end{itemize}
+  \end{rem}
 \end{thm}
-\begin{itemize}
-  \item The point is that on a narrow sector there are generally many
-    holomorphic isomorphisms between $A_0$ and $A$ which are asymptotic to
-    $\hat F$ and one is being chosen in a canonical way
-  \item $\Sigma_i(\hat F)$ is in fact uniquely characterised by property 2.
-\end{itemize}
 \begin{prop}[Prop 1.24 in \cite{thboalch}]
   \begin{enumerate}
   \setcounter{enumi}{2}
@@ -388,25 +371,27 @@ $d_1$ and label the subsequent rays $d_2,\dots,d_r$ in turn.
     \]
   \end{enumerate}
 \end{prop}
-\begin{rem}[1.41 from \cite{thboalch} on pages 16f]
-  Note that in most of the recent references we have used, Stokes matrices
-  are used to classify
-  \begin{itemize}
-    \item meromorphic connections within fixed formal \textbf{meromorphic
-      classes, modulo meromorphic equivalence}.
-  \end{itemize}
-  Whereas here we classify
-  \begin{itemize}
-    \item meromorphic connections within fixed \textbf{formal analytic
-      classes, modulo analytic equivalence},
-  \end{itemize}
-  as is done in the older literature.  The fact is that the sets equivalence
-  classes are the same in both cases. It is important for us to work with
-  analytic, rather than meromorphic gauge transformations, because then the
-  $\C^\infty$ viewpoint in Chapter 3 is cleaner. This distinction relates to
-  the difference between \textbf{‘regular singular’} connections and
-  \textbf{‘logarithmic’} connections.
-\end{rem}
+\begin{comment}
+  \begin{rem}[1.41 from \cite{thboalch} on pages 16f]
+    Note that in most of the recent references we have used, Stokes matrices
+    are used to classify
+    \begin{itemize}
+      \item meromorphic connections within fixed formal \textbf{meromorphic
+        classes, modulo meromorphic equivalence}.
+    \end{itemize}
+    Whereas here we classify
+    \begin{itemize}
+      \item meromorphic connections within fixed \textbf{formal analytic
+        classes, modulo analytic equivalence},
+    \end{itemize}
+    as is done in the older literature.  The fact is that the sets equivalence
+    classes are the same in both cases. It is important for us to work with
+    analytic, rather than meromorphic gauge transformations, because then the
+    $\C^\infty$ viewpoint in Chapter 3 is cleaner. This distinction relates to
+    the difference between \textbf{‘regular singular’} connections and
+    \textbf{‘logarithmic’} connections.
+  \end{rem}
+\end{comment}
 %}}}
 
 \section{Sheaf view: \cite{sabbah2007isomonodromic}} %{{{
@@ -420,7 +405,7 @@ Let
     \end{itemize}
     equipped with a flat connection $\nabla^{good}$.
 \end{itemize}
-We will assume that $\left(\cM^{good},\nabla^{good}\right)$ is 
+We will assume that $\left(\sM^{good},\nabla^{good}\right)$ is 
 \begin{itemize}
   \item a good model in the neighbourhood of $x^o$, that is that
     \begin{itemize}
@@ -430,7 +415,7 @@ We will assume that $\left(\cM^{good},\nabla^{good}\right)$ is
         $\cR_{\phi_1},\dots,\cR_{\phi_p}$ along $\{0\}\times X$ such that
             we have, in a neighbourhood of $x^o$,
         \begin{itemize}
-          \item an isomorphism $\cM_{x^o}^{good}
+          \item an isomorphism $\sM_{x^o}^{good}
             \cong\bigoplus_k\left(\cE^{\phi_k}\otimes\cR_{\phi_k}\right)$.
         \end{itemize}
     \end{itemize}
@@ -439,10 +424,10 @@ $k\neq l$ $\overset{\text{II.5.6}}{\Rightarrow{}}$ the order of the pole with
 respect to $t$ of $(\phi_k-\phi_l)(x,t)$ does not depend on $x$ in a
 neighbourhood of $x^o$.
 \begin{defn}
-  Define the \emph{stokes sheaf} $\St_X(\cM^{good})$ as the sheaf (on $X$)
+  Define the \emph{stokes sheaf} $\St_X(\sM^{good})$ as the sheaf (on $X$)
   associated to the presheaf
   \[
-    U\mapsto H^1(S^1\times U,\Aut^{<X}(\tilde \cM^{good}) )
+    U\mapsto H^1(S^1\times U,\Aut^{<X}(\tilde \sM^{good}) )
   \]
   where
   \begin{itemize}
@@ -451,13 +436,13 @@ neighbourhood of $x^o$.
       \begin{itemize}
         \item on $S^1\otimes X$
         \item of auomorphisms of $\tilde M^{good}:=\cA_{\tilde D\times
-          X}\otimes_{\cO_{D\times X}}\cM^{good}$
+          X}\otimes_{\cO_{D\times X}}\sM^{good}$
           witch are
           \begin{itemize}
             \item compatible with the connection and
             \item are formally equal to the identity\footnote{i.e., which
-              induce the identity on $\hat \cM^{good}:=\hat \cO_{D\times
-              X}\otimes_{\cO_{D\times X}}\cM^{good}$}.
+              induce the identity on $\hat \sM^{good}:=\hat \cO_{D\times
+              X}\otimes_{\cO_{D\times X}}\sM^{good}$}.
           \end{itemize}
       \end{itemize}
       The sections of $\Aut^{<X}(\tilde M^{good})$ are called \emph{stokes
@@ -465,13 +450,13 @@ neighbourhood of $x^o$.
   \end{itemize}
 \end{defn}
 \begin{thm}[The stokes sheaf is locally constant (6.1)]
-  The Stokes sheaf $\St_X(\cM^{good})$ is
+  The Stokes sheaf $\St_X(\sM^{good})$ is
   \begin{itemize}
     \item a locally constant
   \end{itemize}
   sheaf of pointed sets.
 \end{thm}
-Let $(\cM,\nabla)$ be a meromorphic connection with
+Let $(\sM,\nabla)$ be a meromorphic connection with
 \begin{itemize}
   \item poles on $D\times X$ 
   \item flat connection, 
@@ -480,13 +465,13 @@ Let $(\cM,\nabla)$ be a meromorphic connection with
     \end{itemize}
 \end{itemize}
 \begin{defn}
-  $(\cM^{good},\nabla^{good})$ is a \emph{good formal model} for
-  $(\cM,\nabla)$ if
+  $(\sM^{good},\nabla^{good})$ is a \emph{good formal model} for
+  $(\sM,\nabla)$ if
   \begin{itemize}
     \item there exists an isomorphism 
       \[
-        \hat f(\widehat\cM,\widehat\nabla)\overset{\sim}{\to}
-        (\widehat{\cM^{good}},\widehat{\nabla^{good}})
+        \hat f(\widehat\sM,\widehat\nabla)\overset{\sim}{\to}
+        (\widehat{\sM^{good}},\widehat{\nabla^{good}})
       \]
       \begin{itemize}
         \item of sheafes of $\hat\cO_{D\times X}$-modules
@@ -495,11 +480,11 @@ Let $(\cM,\nabla)$ be a meromorphic connection with
   \end{itemize}
 \end{defn}
 \begin{defn}
-  Two germs $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$ along
+  Two germs $(\sM,\nabla,\hat f)$ and $(\sM',\nabla',\hat f')$ along
   $\{0\}\times X$ are \emph{isomorphic}, if
   \begin{itemize}
     \item there exists an isomorphism\footnote{such an isomorphism then is
-      unique} $g:(\cM,\nabla)\to(\cM',\nabla')$ with
+      unique} $g:(\sM,\nabla)\to(\sM',\nabla')$ with
       \begin{itemize}
         \item $\hat f=\hat f'\circ\hat g$.
       \end{itemize}
@@ -566,3 +551,40 @@ Let
 %}}}
 
 \chapter{Stokes Structures: Global}
+\subsection{Situation} %{{{
+\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  Fix the data $\textbf{a}$ of
+  \begin{itemize}
+    \item a Divisor $D=\sum k_i(a_i)$ on $\P^1$ and
+    \item and connection germs $d-{}^iA^0$ at each $a_i$.
+  \end{itemize}
+  Let $(V,\nabla,\textbf{g})$ be a compatibly framed meromorphic connection on
+  a holomorphic vector bundle $V\to\P^1$ with a irregular type $\textbf{a}$.
+
+  \switchcolumn{} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  Let
+  \begin{itemize}
+    \item $X$ be the parameter space
+      \begin{itemize}
+        \item an analytic manifold equipped with coordinates $x_1,\ldots,x_n$.
+      \end{itemize}
+    \item $\sM$ be a meromorphic bundle
+      \begin{itemize}
+        \item on $D\times X$
+        \item with poles along $\{0\}\times X$
+      \end{itemize}
+      with \textbf{flat} connection
+      \[
+        \nabla:\sM\to\Omega_{D\times X}^1\otimes\sM
+      \]
+    \item $\cM$ denote its germ at $(0,x^0)\in D\times X$
+      \begin{itemize}
+        \item this is a module over the ring
+          \[
+            \cO_{D\times X,(0,x^0)}[t^{-1}]=\C\{t,x_1,\dots,x_n\}[t^{-1}]
+          \]
+      \end{itemize}
+  \end{itemize}
+\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%}}}
+

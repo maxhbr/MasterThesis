@@ -22,7 +22,8 @@ Let
     \item a map $\nabla:V\to V\times K(D)$ where
       \begin{itemize}
         \item from the sheaf of holomorphic sections of $V$
-        \item to the sheaf of sections of $V\otimes K(D)$
+        \item to the sheaf of sections of $V\otimes K(D)$\footnote{for more
+          information about $K(D)$ see \cite{beauville1996complex}}
       \end{itemize}
     \item satisfying the Leibnitz rule
       \begin{equation}
@@ -74,15 +75,15 @@ Let
     \begin{rem}
       Such $A^0$ can be uniquely written as
       \[
-      A^0:= dQ + \Lambda \frac{dz}{z},
+        A^0:= dQ + \Lambda \frac{dz}{z},
       \]
       where
       \begin{itemize}
         \item $Q := \diag(q1,\dots ,qn)$
           \begin{itemize}
-            \item $q_1,\dots ,q_n\in z^{−1}C[z^{−1}]$ are diagonal polynomials
+            \item $q_1,\dots ,q_n\in z^{-1}C[z^{-1}]$ are diagonal polynomials
               \begin{itemize}
-                \item of degree $k-1$ in $z^{−1}$ with no constant term
+                \item of degree $k-1$ in $z^{-1}$ with no constant term
               \end{itemize}
           \end{itemize}
           and
@@ -201,19 +202,6 @@ $G\{z\}$ action on marked pairs: $g(A,\hat{F})=(g[A],g\circ\hat{F})$
 %}}}
 
 \subsection{Moduli spaces}
-At each point $a_i$ choose
-\begin{itemize}
-  \item a germ $d-{}^iA^0$
-    \begin{itemize}
-      \item of a diagonal generic meromorphic connection on the trivial rank
-      $n$ vector bundle
-    \end{itemize}
-    such that
-    \begin{itemize}
-      \item ${}^iA^0$ is a matrix of germs of meromorphic one-forms, which we
-        require\footnote{without loss of generality} to be diagonal.
-    \end{itemize}
-\end{itemize}
 If $z_i$ is a local coordinate vanishing at $a_i$, write
 \begin{itemize}
   \item ${}^iA^0=d({}^iQ)+{}^i\Lambda^0\frac{dz}{z}$ where
@@ -225,8 +213,20 @@ If $z_i$ is a local coordinate vanishing at $a_i$, write
 \end{itemize}
 Let  $\textbf{a}$ denote the choice of
 \begin{itemize}
-  \item the effectrive divisor $D$ and
-  \item all the germs ${}^iA^0$
+  \item an effectrive divisor $D=k_1(a_1)+\dots+k_m(a_m)$ and
+  \item a germ ${}^iA^0$ at each point $a_i$
+    \begin{itemize}
+      \item a germ $d-{}^iA^0$
+        \begin{itemize}
+          \item of a diagonal generic meromorphic connection on the trivial
+            rank $n$ vector bundle
+        \end{itemize}
+        such that
+        \begin{itemize}
+          \item ${}^iA^0$ is a matrix of germs of meromorphic one-forms, which
+            we require\footnote{without loss of generality} to be diagonal.
+        \end{itemize}
+    \end{itemize}
 \end{itemize}
 \begin{defn}[2.5]
   The \emph{moduli space $\cM^*(\textbf{a})$

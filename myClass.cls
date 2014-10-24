@@ -226,7 +226,8 @@
 }
 
 %%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[style=authoryear,natbib=true,backend=biber]{biblatex}
+% \usepackage[style=authoryear,natbib=true,backend=biber]{biblatex}
+\usepackage[style=alphabetic,natbib=true,backend=biber]{biblatex}
 \usepackage{fontspec}
 \usepackage[babel]{csquotes}
 %\usepackage{filecontents}
