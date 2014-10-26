@@ -151,8 +151,10 @@ specified by $d$.
     \begin{itemize}
       \item $i=j$ \Rightarrow $(ij)$ is not a root of $d$. There are $1$nes
         on the diagonal.
-      \item is a unipotent subgroup of $G=GL_n(\C)$ of dimension equal to the
-        multiplicity of $d$
+      \item is a unipotent subgroup of $G=GL_n(\C)$
+        \begin{itemize}
+          \item of dimension equal to the multiplicity of $d$
+        \end{itemize}
     \end{itemize}
     \item $n(n-1)/2=\Mult(d_1)+\dots+\Mult(d_l)$
   \end{itemize}
@@ -335,18 +337,36 @@ $d_1$ and label the subsequent rays $d_2,\dots,d_r$ in turn.
   group and the complex dimension \dots
 \end{thm}
 \begin{thm}[3.1, or Prop 1.24 in \cite{thboalch}]
-  Let $\hat{F}\in G\llbracket z\rrbracket$ such that $A:=F[A_0]$ has
-  convergent entries.
+  Let
+  \begin{itemize}
+    \item $\hat{F}\in G\llbracket z\rrbracket$
+      \begin{itemize}
+        \item such that $A:=F[A_0]$ has convergent entries.
+      \end{itemize}
+  \end{itemize}
   Set the radius of the sectors $\Sect_i$, $\widehat\Sect_i$ to be less than
   the radius of convergence of $A$.
   Then:
   \begin{enumerate}
-    \item On each sector $\Sect_i$ there is a canonical way to choose an
-      invertible $n\times n$ matrix of holomorphic Functions
-      $\Sigma_i(\hat F)$ such that $\Sigma_i(\hat F)[A^0]=A$
+    \item On each sector $\Sect_i$ there is a \textbf{canonical} way to choose
+      \begin{itemize}
+        \item $\Sigma_i(\hat F)$
+          \begin{itemize}
+            \item an invertible $n\times n$ matrix of holomorphic functions
+          \end{itemize}
+      \end{itemize}
+      such that $\Sigma_i(\hat F)[A^0]=A$.
     \item $\Sigma_i(\hat F)$ can be analytically continued to the supersector
-      $\widehat\Sect_i$ and then $\Sigma_i(\hat F)$ is asymptotic to $\hat F$
-      at $0$ within $\widehat\Sect_i$
+      $\widehat\Sect_i$ and then
+      \[
+        \Sigma_i(\hat F)
+        \qquad\text{is \textbf{asymptotic} to}\qquad
+        \hat F
+      \]
+      \begin{itemize}
+        \item at $0$
+        \item within $\widehat\Sect_i$.
+      \end{itemize}
     \item If $g\in G\{z\}$ and $t\in T$ then
       $\Sigma_i(g\circ\hat F \circ t^{-1})=g\circ\Sigma_i(\hat F)\circ t^{-1}$.
   \end{enumerate}
