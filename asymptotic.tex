@@ -6,6 +6,7 @@
         \item \cite{sabbah2000équations}
       \end{itemize}
     \item \cite{van2003galois}
+    \item \cite[II.5]{sabbah2007isomonodromic}
   \end{itemize}
 \end{comment}
 \section{Definition}
@@ -300,7 +301,7 @@ Let
 \end{enumerate}
 
 \begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{lem}[2.2.5]
+  \begin{lem}[\cite{sabbah_cimpa90}: 2.2.5]
     If $U$ is a proper open interval of the unit circle the mapping
     \[
       \cA(U)\to\hat{K}
@@ -314,7 +315,7 @@ Let
   \]
   
   \switchcolumn{} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{lem}[Borel-Ritt]
+  \begin{lem}[\cite{sabbah2007isomonodromic}: Borel-Ritt]
     $T$ is onto:
     \[
       0 \to              \sA_{S^1\times X,(\theta^o,x^o)}^{<X}
@@ -333,15 +334,61 @@ Let
 \end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Main result}
-\begin{thm}[2.3.1]
-  Let $\cM_K$ be a meromorphic connection. There exists an integer $q\geq 1$
-  such that, after the ramification $x=t^q$, one has, for all $\theta\in S^1$
-  and each sufficiently small interval $V$ centered at $\theta$
-  \[
-    \cA_L(V)\otimes_L\cM_L \cong
-      \cA_L(V)\otimes_L\left(\cF_L^R\otimes\cG_L\right)
-  \]
-\end{thm}
+\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  Let $\cM_K$ be a meromorphic connection.
+  \begin{thm}[\cite{sabbah_cimpa90}: 2.3.1]
+    There exists
+    \begin{itemize}
+      \item an integer $q\geq 1$
+    \end{itemize}
+    such that,
+    \begin{itemize}
+      \item after the ramification $x=t^q$,
+    \end{itemize}
+    for all
+    \begin{itemize}
+      \item $\theta\in S^1$ and
+      \item each sufficiently small interval $V$ centered at $\theta$
+    \end{itemize}
+    one has
+    \[
+      \cA_L(V)\otimes_L\cM_L \cong
+        \cA_L(V)\otimes_L\left(\cF_L^R\otimes\cG_L\right)
+    \]
+  \end{thm}
+  \switchcolumn{} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  Let $\cM$ be a germ at $(0,x^o)$ of a meromorphic bundle with poles along
+  $\{0\}\times X$.
+  \begin{thm}[\cite{sabbah2007isomonodromic}: II.5.12] \label{thm:sectDecomp}
+    Let us assume that there exists
+    \begin{itemize}
+      \item a good model $\cM^{good}$\footnote{such that no ramification is
+        needed} and
+      \item an isomorphism $\hat\lambda: \hat\cM
+        \overset{\sim}{\longrightarrow}\hat\cM^{good}$.
+    \end{itemize}
+    Then,
+    \begin{itemize}
+      \item for any $e^{i\theta^o}\in S^1$,
+    \end{itemize}
+    there exists an isomorphism
+    \[
+      \tilde\lambda_{\theta^o}: \tilde\cM_{\theta^o}
+      \overset{\sim}{\longrightarrow}\tilde\cM^{good}_{\theta^o},
+    \]
+    lifting $\hat\lambda$.
+  \end{thm}
+  That is, such that the diagram
+  \[ \begin{tikzcd}
+      \tilde\cM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
+        \tilde\cM^{good}_{\theta^o} \dar
+        \\\hat\cM \rar{\hat\lambda} &
+        \hat\cM^{good}
+  \end{tikzcd} \]
+  commutes.
+\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{More from \cite{sabbah_cimpa90}}
 For all $\theta\in S^1$ and each \textbf{sufficiently small interval $U$}
 centered
 at $\theta$:
