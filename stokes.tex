@@ -347,7 +347,7 @@ $d_1$ and label the subsequent rays $d_2,\dots,d_r$ in turn.
 \end{center}
 \end{comment}
 
-\subsection{Theoremes}
+\subsection{Main Theoreme}
 \begin{thm}[1.22 in \cite{thboalch}]
   \begin{itemize}
     \item There is a natural isomorphism
@@ -374,7 +374,7 @@ $d_1$ and label the subsequent rays $d_2,\dots,d_r$ in turn.
     \item $n$ is the rank.
   \end{itemize}
 \end{thm}
-\begin{thm}[3.1, or Prop 1.24 in \cite{thboalch}]
+\begin{prop}[3.1, or Prop 1.24 in \cite{thboalch}]
   Let
   \begin{itemize}
     \item $\hat{F}\in G\llbracket z\rrbracket$
@@ -425,7 +425,7 @@ $d_1$ and label the subsequent rays $d_2,\dots,d_r$ in turn.
       \item $\Sigma_i(\hat F)$ is in fact uniquely characterised by property 2.
     \end{itemize}
   \end{rem}
-\end{thm}
+\end{prop}
 \paragraph{Now define the map $\cH(A^0)\to\prod_{d\in\A}\Sto_d(A^0)$:} choose
 \begin{itemize}
   \item $\hat F\in\hat G(A^0)$
@@ -448,6 +448,8 @@ to each anti-Stokes direction $d=d_i$ there is
       \item describing how the sums of $\hat F$ differ on both sides of $d_i$
       \item it is a solution of $\Hom(A^0,A^0)$ asymptotic to $1$ on a
         sectorial neighbourhood of $d_i$
+      \item The third part of the Proposition implies that the automorphism
+        $\kappa_d$ only depends on the $G\{z\}$ orbit of $\hat F$.
     \end{itemize}
 \end{itemize}
 \begin{defn}[\cite{thboalch} 1.25]
@@ -459,7 +461,65 @@ to each anti-Stokes direction $d=d_i$ there is
         \mid \hat F\in\hat G(A^0)\right\}
   \]
 \end{defn}
-Taking all such automorphisms gives a map\dots
+Taking all such automorphisms gives a map
+\[
+  \hat G(A^0)\to\prod_{d\in\A}\Sto_d(A^0);
+    \hat F\mapsto(\kappa_{d_1},\dots,\kappa_{d_r})
+\]
+inducing a well defined map
+\[
+  \cH(A^0)\to\prod_{d\in\A}\Sto_d(A^0) \,.
+\]
+\begin{comment}
+  Using the Proposition:
+  \begin{align*}
+    \kappa_{d_i}&=(\Sigma_i(\hat F))^{-1}\Sigma_{i-1}(\hat F)
+    \\&=(\Sigma_i(\hat F))^{-1}g^{-1}g\Sigma_{i-1}(\hat F)
+    \\&=(g\Sigma_i(\hat F))^{-1}g\Sigma_{i-1}(\hat F)
+    \\&=(\Sigma_i(g\hat F))^{-1}\Sigma_{i-1}(g\hat F)
+  \end{align*}
+\end{comment}
+\paragraph{The faithfull representation of $\Sto_d(A^0)$} arises since the
+solutions of $\Hom(A^0,A^0)$ are known explicitly:
+\\Let
+\begin{itemize}
+  \item $d$ be a direction and
+  \item a choice of $\log(z)$ in the direction $d$ be given.
+\end{itemize}
+We get a genuine fundamental solution $z^\Lambda e^Q$ of $A^0$ there.
+The map 
+\[
+  \rho:\kappa\to K:=e^{-Q}z^{-\Lambda}\kappa z^\Lambda e^Q
+\]
+relates
+\begin{itemize}
+  \item solutions $\kappa$ of $\Hom(A^0,A^0)$
+\end{itemize}
+to
+\begin{itemize}
+  \item a konstant matrix $K\in\End(E)$
+    \begin{itemize}
+      \item that is, to solutions of $\Hom(0,0)$.
+    \end{itemize}
+\end{itemize}
+\begin{defn}[1.27]
+  Given a choice of labeling and $\log(z)$
+  \begin{rem}[Log.\ choices]
+    Rather than choose independent branches of $\log(z)$\dots
+  \end{rem}
+  The \emph{Stokes factors} of a compatibly framed system $(A,g)$ with
+  associated normal Form $A^0$ are
+  \[
+    \textbf{K}:=(K_1,\dots,K_r)\in\prod_{d\in\A}\mathbb{S}to_d
+  \]
+  \begin{itemize}
+    \item $r$-tuple of matrices
+    \item $K_i=\rho(\kappa_i)=e^{-Q}z^{-\Lambda}\kappa z^\Lambda e^Q$
+      \begin{itemize}
+        \item using the choice of $\log(z)$ along $d$.
+      \end{itemize}
+  \end{itemize}
+\end{defn}
 
 \begin{comment}
   \begin{rem}[1.41 from \cite{thboalch} on pages 16f]
