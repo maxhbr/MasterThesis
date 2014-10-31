@@ -103,18 +103,43 @@ specified by $d$.
         \fill[blue!20!white] (0,0) circle (1pt);
       \end{tikzpicture}
       $\in\A\subset S^1$,
+      \begin{itemize}
+        \item \textbf{Labeling convention:}
+          Choose a point\footnote{In~\cite{thboalch} a sector is chosen, which
+          does not contain any anti Stokes direction}
+          \textcolor{yellow!60!black}{$p$}.  Label the first anti-Stokes ray
+          when turning in a positive sense from $p$ as $d_1$ and label the
+          subsequent rays $d_2,\dots,d_r$ in turn.
+      \end{itemize}
   \end{itemize}
   \begin{itemize}
     \item
     \item $r:=\#\A$
       \begin{itemize}
-        \item $r$ is divisible by $2(k-1)$ 
+        \item $r$ is divisible by $2(k-1)$
           \begin{itemize}
             \item define $l:=\frac{r}{2k-2}$
           \end{itemize}
       \end{itemize}
-    \item $\textbf{d}:=(d_1,d_2,d_3,\dots,d_l)\subset\A$ is a
-      \emph{half-period}
+    \item $\textbf{d}:=(d_i,d_{i+1},d_{i+2},\dots,d_{i+l})\subset\A$ is a
+      \emph{half-period}\footnote{A $l$-tuple of \textbf{consecutive}
+      anti-Stokes directions}
+    \item Define the open sector $\Sect(d_i,d_j)$
+      \begin{itemize}
+        \item The radius \textcolor{green!40!black}{$r$} will be taken
+          sufficiently small when required later.
+        \item Write $\Sect_i:= \Sect(d_i,d_{i+1})$ the ‘ith sector’.
+          \begin{itemize}
+            \item Note \textcolor{yellow!60!black}{$p$} $\in\Sect_r= \Sect_0$
+          \end{itemize}
+      \end{itemize}
+    \item $\widehat{\Sect}_i:=
+      \Sect(d_i-\frac{\pi}{2k-2},d_{1+1}+\frac{\pi}{2k-2})$ the ‘ith
+      supersector’
+      \begin{itemize}
+        \item The rays bounding these supersectors are usually refered as
+          \textcolor{red!40!black}{‘Stokes rays’}.
+      \end{itemize}
   \end{itemize}
   \begin{center}
     \begin{tikzpicture}[scale=3]
@@ -146,36 +171,12 @@ specified by $d$.
         at ({.6 * cos( \sep + 30 )},{.5 * sin( \sep + 30)}) {\str};
       };
 
+      \fill[yellow!60!black] (0.8,0.07) circle (1pt);
+      \node[yellow!60!black,right] at (0.8,0.07) {$p$};
+
       \fill (zero) circle (1pt);
     \end{tikzpicture}
   \end{center}
-  \begin{itemize}
-    \item Label the rest of $\A$ uniquely as $d_{l+1},\dots,d_r$ (in order).
-  \end{itemize}
-\end{defn}
-\begin{defn}
-  \begin{itemize}
-    \item $\Roots(d)=\{(ij)\mid g_{ij}(z)\in \R_{<0} \text{ along } d \}$
-    \item The \emph{multiplicity} $\Mult(d)$ of $d$ is the number of roots
-      supporting $d$.
-    \item The group of \emph{Stokes factors} associated to $d$ is the group
-    \[
-      \mathbb{S}to_d(A^0) := \{K \in G \mid (K)_{ij}
-        =\delta_{ij} \text{ unless } (ij) \text{ is a root of } d\}.
-    \]
-    \begin{itemize}
-      \item $i=j$ \Rightarrow $(ij)$ is not a root of $d$. There are $1$nes
-        on the diagonal.
-      \item is a unipotent subgroup of $G=GL_n(\C)$
-        \begin{itemize}
-          \item of dimension equal to the multiplicity of $d$
-        \end{itemize}
-    \end{itemize}
-    \item $n(n-1)/2=\Mult(d_1)+\dots+\Mult(d_l)$
-  \end{itemize}
-\end{defn}
-\begin{defn}
-  Define the open sector $\Sect(d_i,d_j)$
   \begin{center}
     \begin{tikzpicture}[scale=3]
       \node[] (zero) at (0,0) {};
@@ -200,24 +201,82 @@ specified by $d$.
 
     \end{tikzpicture}
   \end{center}
+  \begin{center}
+    \begin{tikzpicture}[scale=3]
+      \node[] (zero) at (0,0) {};
+      \draw[blue] (zero) circle (1cm);
+
+      \fill[fill=green!20!white] (0,0) -- ({cos( 15 )},{sin( 15 )}) arc
+        (15:85:1) -- cycle;
+
+      \fill[fill=red!60!black] (0,0) -- ({cos( 15 )*0.5},{sin( 15 )*0.5}) arc
+        (15:45:0.5) -- cycle;
+      \fill[fill=red!60!black] (0,0) -- ({cos( 55 )*0.5},{sin( 55 )*0.5}) arc
+        (55:85:0.5) -- cycle;
+
+      \fill[fill=green!20!white] (0,0) -- ({cos( 15 )*0.4},{sin( 15 )*0.4}) arc
+        (15:85:0.4) -- cycle;
+
+      \node[green!40!black] at (1,1) {$\widehat\Sect_i$};
+
+      \node[] (lft) at ({cos( 85 )},{sin( 85 )}) {};
+      \node[] (rgt) at ({cos( 15 )},{sin( 15 )}) {};
+
+      \draw[->,red!40!black] ({cos( 45 )},{sin( 45 )})
+        to [out=35, in=25] (rgt);
+
+      \draw[->,red!40!black] ({cos( 55 )},{sin( 55 )})
+        to [out=65, in=75] (lft);
+
+      \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 85 )},{sin( 85 )});
+      \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 15 )},{sin( 15 )});
+      \fill[red!40!black] ({cos( 85 )},{sin( 85 )}) circle (1pt);
+      \fill[red!40!black] ({cos( 15 )},{sin( 15 )}) circle (1pt);
+
+      \foreach \w/\str in {10/$d_1$,
+                           20/$d_2$,
+                           45/$d_i$,
+                         55/$d_{i+1}$}
+      {\draw (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+       \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (.7pt);
+       \foreach \sep in {60,120,180,240,300}
+       {\draw (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+        \fill[blue!20!white]
+          ({cos( \w + \sep )},{sin( \w + \sep )}) circle (.7pt);
+       }
+      };
+
+      \fill[yellow!60!black] (0.8,0.07) circle (1pt);
+      \node[yellow!60!black,right] at (0.8,0.07) {$p$};
+
+      \fill (zero) circle (1pt);
+    \end{tikzpicture}
+  \end{center}
+\end{defn}
+\begin{defn}
   \begin{itemize}
-    \item The radius \textcolor{green!40!black}{$r$} will be taken sufficiently
-      small when required later.
+    \item $\Roots(d):=\{(ij)\mid g_{ij}(z)\in \R_{<0} \text{ along } d \}$
+    \item The \emph{multiplicity} $\Mult(d)$ of $d$ is the number of roots
+      supporting $d$ ($\#\Roots(d)$).
+      \begin{rem}
+        $n(n-1)/2=\Mult(d_1)+\cdots+\Mult(d_l)$
+      \end{rem}
+    \item The group of \emph{Stokes factors} associated to $d$ is the group
+    \[
+      \SSto_d(A^0) := \{K \in G \mid (K)_{ij}
+        =\delta_{ij} \text{ unless } (ij) \text{ is a root of } d\}.
+    \]
+    \begin{itemize}
+      \item $i=j$ \Rightarrow $(ij)$ is not a root of $d$. There are $1$nes
+        on the diagonal.
+      \item is a unipotent subgroup of $G=GL_n(\C)$
+        \begin{itemize}
+          \item of dimension equal to $\Mult(d)$
+        \end{itemize}
+    \end{itemize}
   \end{itemize}
 \end{defn}
-\[
-  q_i\underset{\textbf{d}}{<}q_j \qquad :\Leftrightarrow
-    \qquad (ij) \text{ is a root of some } d\in\textbf{d}
-\]
-Define permutation Matrix $P\in G$ associated to $\textbf{d}$ given by
-$(P)_{ij}=\delta_{\pi(i)j}$ where
-\begin{itemize}
-  \item $\pi$ is the permutation of $\{1,\dots,n\}$ corresponding to
-  \[
-    q_i\underset{\textbf{d}}{<}q_j \qquad \Leftrightarrow \qquad \pi(i)<\pi(j)
-  \]
-\end{itemize}
-\begin{lem}[3.2: 1]
+\begin{lem}[3.2]
   \begin{enumerate}
     \item \textbf{The product of the corresponding groups of Stokes factors} is
       isomorphic
@@ -228,12 +287,35 @@ $(P)_{ij}=\delta_{\pi(i)j}$ where
       to the \textbf{$\bf P$ conjugate of $\bf U_+$}\footnote{Is a subgroup of
       $G$.}:
       \[
-        \prod_{d\in\textbf{d}}\mathbb{S}to_d(A^0)\cong PU_+P^{-1} ;~
+        \prod_{d\in\textbf{d}}\SSto_d(A^0)\cong PU_+P^{-1} ;
+        \qquad
         (K_1,\dots,K_l)\mapsto K_l\dots K_2K_1\in G
       \]
+      where
+      \begin{itemize}
+        \item $P\in G$ the permutation Matrix associated to $\textbf{d}$ given
+          by $(P)_{ij}=\delta_{\pi(i)j}$ where
+          \begin{itemize}
+            \item $\pi$ is the permutation of $\{1,\dots,n\}$ corresponding to
+            \[
+              \pi(i)<\pi(j)
+              \qquad \Leftrightarrow \qquad
+              q_i\underset{\textbf{d}}{<}q_j
+            \]
+            where
+            \begin{itemize}
+              \item the total ordering is defined as
+                \[
+                  q_i\underset{\textbf{d}}{<}q_j \qquad :\Leftrightarrow
+                    \qquad (ij) \text{ is a root of some } d\in\textbf{d}
+                \]
+            \end{itemize}
+          \end{itemize}
+      \end{itemize}
     \item The map
       \[
-        \prod_{d\in\A}\mathbb{S}to_d(A^0)\cong (U_+\times U_-)^{k-1} ;~
+        \prod_{d\in\A}\SSto_d(A^0)\cong (U_+\times U_-)^{k-1} ;
+        \qquad
         (K_1,\dots,K_r)\mapsto (S_1,\dots,K_{2k-2})
       \]
       where
@@ -248,106 +330,8 @@ $(P)_{ij}=\delta_{\pi(i)j}$ where
       \end{itemize}
   \end{enumerate}
 \end{lem}
-\begin{comment}
-  \TODO[Move up!]
-Choose a point \textcolor{yellow!60!black}{$p$}\footnote{In~\cite{thboalch} a
-sector is chosen, which does not contain any anti Stokes direction}
-\begin{center}
-  \begin{tikzpicture}[scale=3]
-    \node[] (zero) at (0,0) {};
-    \draw[blue] (zero) circle (1cm);
 
-    \fill[fill=green!20!white] (0,0) -- ({cos( 20 )},{sin( 20 )}) arc
-    (20:45:1) -- cycle;
-    \node[green!40!black] at (1.0,0.6) {$\Sect_0$};
-
-    \foreach \w/\str in {10/$d_{r-1}$,
-                         20/$d_r$,
-                         45/$d_1$,
-                         55/$d_2$}
-    {\draw (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
-     \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
-     \foreach \sep in {60,120,180,240,300}
-     {\draw (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-      \fill[blue!20!white]
-        ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
-     }
-    };
-
-    \fill[yellow!60!black] (0.6,0.4) circle (1pt);
-    \node[yellow!60!black,right] at (0.6,0.4) {$p$};
-
-    \fill (zero) circle (1pt);
-  \end{tikzpicture}
-\end{center}
-Label the first anti-Stokes ray when turning in a positive sense from $p$ as
-$d_1$ and label the subsequent rays $d_2,\dots,d_r$ in turn.
-\begin{itemize}
-  \item Write $\Sect_i:= \Sect(d_i,d_{i+1})$ the ‘ith sector’.
-  \begin{itemize}
-    \item Note $p \in\Sect_r= \Sect_0$
-  \end{itemize}
-  \item $\widehat{\Sect}_i:=
-    \Sect(d_i-\frac{\pi}{2k-2},d_{1+1}+\frac{\pi}{2k-2})$ the ‘ith supersector’
-    \begin{itemize}
-      \item The rays bounding these supersectors are usually refered as
-        \textcolor{red!40!black}{‘Stokes rays’}.
-    \end{itemize}
-\end{itemize}
-\begin{center}
-  \begin{tikzpicture}[scale=3]
-    \node[] (zero) at (0,0) {};
-    \draw[blue] (zero) circle (1cm);
-
-    \fill[fill=green!20!white] (0,0) -- ({cos( 15 )},{sin( 15 )}) arc
-      (15:85:1) -- cycle;
-
-    \fill[fill=red!60!black] (0,0) -- ({cos( 15 )*0.5},{sin( 15 )*0.5}) arc
-      (15:45:0.5) -- cycle;
-    \fill[fill=red!60!black] (0,0) -- ({cos( 55 )*0.5},{sin( 55 )*0.5}) arc
-      (55:85:0.5) -- cycle;
-
-    \fill[fill=green!20!white] (0,0) -- ({cos( 15 )*0.4},{sin( 15 )*0.4}) arc
-      (15:85:0.4) -- cycle;
-
-    \node[green!40!black] at (.9,.9) {$\widehat\Sect_1$};
-
-    \node[] (lft) at ({cos( 85 )},{sin( 85 )}) {};
-    \node[] (rgt) at ({cos( 15 )},{sin( 15 )}) {};
-
-    \draw[->,red!40!black] ({cos( 45 )},{sin( 45 )})
-      to [out=35, in=25] (rgt);
-
-    \draw[->,red!40!black] ({cos( 55 )},{sin( 55 )})
-      to [out=65, in=75] (lft);
-
-    \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 85 )},{sin( 85 )});
-    \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 15 )},{sin( 15 )});
-    \fill[red!40!black] ({cos( 85 )},{sin( 85 )}) circle (1pt);
-    \fill[red!40!black] ({cos( 15 )},{sin( 15 )}) circle (1pt);
-
-    \foreach \w/\str in {10/$d_{r-1}$,
-                         20/$d_r$,
-                         45/$d_1$,
-                         55/$d_2$}
-    {\draw (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
-     \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (.7pt);
-     \foreach \sep in {60,120,180,240,300}
-     {\draw (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-      \fill[blue!20!white]
-        ({cos( \w + \sep )},{sin( \w + \sep )}) circle (.7pt);
-     }
-    };
-
-    \fill[yellow!60!black] (0.6,0.4) circle (1pt);
-    \node[yellow!60!black,right] at (0.6,0.4) {$p$};
-
-    \fill (zero) circle (1pt);
-  \end{tikzpicture}
-\end{center}
-\end{comment}
-
-\subsection{Main Theoreme}
+\subsection{Main theoreme: for Stokes factors}
 \begin{thm}[1.22 in \cite{thboalch}]
   \begin{itemize}
     \item There is a natural isomorphism
@@ -374,7 +358,7 @@ $d_1$ and label the subsequent rays $d_2,\dots,d_r$ in turn.
     \item $n$ is the rank.
   \end{itemize}
 \end{thm}
-\begin{prop}[3.1, or Prop 1.24 in \cite{thboalch}]
+\begin{thm}[3.1, or Prop 1.24 in \cite{thboalch}]
   Let
   \begin{itemize}
     \item $\hat{F}\in G\llbracket z\rrbracket$
@@ -425,7 +409,7 @@ $d_1$ and label the subsequent rays $d_2,\dots,d_r$ in turn.
       \item $\Sigma_i(\hat F)$ is in fact uniquely characterised by property 2.
     \end{itemize}
   \end{rem}
-\end{prop}
+\end{thm}
 \paragraph{Now define the map $\cH(A^0)\to\prod_{d\in\A}\Sto_d(A^0)$:} choose
 \begin{itemize}
   \item $\hat F\in\hat G(A^0)$
@@ -487,21 +471,59 @@ solutions of $\Hom(A^0,A^0)$ are known explicitly:
   \item a choice of $\log(z)$ in the direction $d$ be given.
 \end{itemize}
 We get a genuine fundamental solution $z^\Lambda e^Q$ of $A^0$ there.
-The map 
-\[
-  \rho:\kappa\to K:=e^{-Q}z^{-\Lambda}\kappa z^\Lambda e^Q
-\]
-relates
-\begin{itemize}
-  \item solutions $\kappa$ of $\Hom(A^0,A^0)$
-\end{itemize}
-to
-\begin{itemize}
-  \item a konstant matrix $K\in\End(E)$
+\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  The map
+  \[
+    \rho:\kappa\to K:=e^{-Q}z^{-\Lambda}\kappa z^\Lambda e^Q
+  \]
+  relates
+  \begin{itemize}
+    \item solutions $\kappa$ of $\Hom(A^0,A^0)$
+  \end{itemize}
+  to
+  \begin{itemize}
+    \item a konstant matrix $K\in\End(E)$
+      \begin{itemize}
+        \item that is, to solutions of $\Hom(0,0)$.
+      \end{itemize}
+  \end{itemize}
+  \begin{lem}
+    The Stokes factor $K_i$ is in the group $\SSto_{d_i}(A^0)$.
+  \end{lem}
+  \switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{defn}[\cite{boalch}: def 3.5]
+    Fix data $(A^0,z,\tilde\rho)$\footnote{as above.}.
+    The
     \begin{itemize}
-      \item that is, to solutions of $\Hom(0,0)$.
+      \item \emph{Stokes factors}
+        \begin{itemize}
+          \item of a compatibly framed connection
+            $(A,g^0)\in\widehat\Syst(A^0)$
+        \end{itemize}
     \end{itemize}
-\end{itemize}
+    are
+    \[
+      K_i:=e^{-Q}z^{-\Lambda^0}\kappa z^{\Lambda^0} e^Q
+    \]
+    using
+    \begin{itemize}
+      \item the choice of $\log(z)$ along $d_i$, where
+        $\kappa_i:=\Sigma_i(\hat F)^{-1}\circ\Sigma_{i-1}(\hat F)$.
+    \end{itemize}
+  \end{defn}
+  Since
+  \begin{itemize}
+    \item $z^{\Lambda^0}e^Q$ is a fundamental solution of $A^0$
+  \end{itemize}
+  we have
+  \begin{itemize}
+    \item $d(K_i)=0$
+      \begin{itemize}
+        \item The Stokes factors are constant invertible matrices.
+      \end{itemize}
+  \end{itemize}
+  A usefull equivalent definition is:\dots
+\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{defn}[1.27]
   Given a choice of labeling and $\log(z)$
   \begin{rem}[Log.\ choices]
@@ -510,7 +532,7 @@ to
   The \emph{Stokes factors} of a compatibly framed system $(A,g)$ with
   associated normal Form $A^0$ are
   \[
-    \textbf{K}:=(K_1,\dots,K_r)\in\prod_{d\in\A}\mathbb{S}to_d
+    \textbf{K}:=(K_1,\dots,K_r)\in\prod_{d\in\A}\SSto_d
   \]
   \begin{itemize}
     \item $r$-tuple of matrices
@@ -520,6 +542,147 @@ to
       \end{itemize}
   \end{itemize}
 \end{defn}
+\subsubsection{A usefull way of thinking about these}
+Fix
+\begin{itemize}
+  \item a choice of labelling and
+  \item a choice of $\log(z)$.
+\end{itemize}
+\begin{defn}
+  If
+  \begin{itemize}
+    \item $(A,g)$ is a compatibly framed system
+      \begin{itemize}
+        \item with associated formal normal form $A^0$
+      \end{itemize}
+  \end{itemize}
+  then the \emph{cononical fundamental solution of $A$} on $\Sect_i$ is
+  \[
+    \Phi_i:=\Sigma_i(\hat F)z^\Lambda e^Q
+  \]
+  where
+  \begin{itemize}
+    \item $z^\Lambda$ uses the given choice of $\log(z)$ on $\Sect_i$.
+  \end{itemize}
+  \begin{rem}[???]
+    \begin{itemize}
+      \item $\Phi_i$ is a solution of $\Hom(0,A)$
+      \item $\Phi_i$ is asymptotic to $\hat Fz^\Lambda e^Q$
+        \begin{itemize}
+          \item at $0$
+          \item within $\widehat \Sect_i$
+        \end{itemize}
+        when continued without any winding.
+    \end{itemize}
+  \end{rem}
+\end{defn}
+Then we get:
+\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{lem}
+    If $\Phi_i$ is continued across the anti-Stokes ray $d_{i+1}$ then on
+    $\Sect_{i+1}$:
+    \[
+      \Phi_i=\Phi_{i+1}K_{i+1}
+      \qquad \text{ for } i=1,\dots,r-1 \text{ and}
+    \]
+    \[
+      \Phi_r=\Phi_1K_1M_0
+    \]
+    where
+    \begin{itemize}
+      \item $M_0=e^{2\pi\sqrt{-1}\Lambda}$ is the formal monodromy.
+    \end{itemize}
+  \end{lem}
+  \switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{defn}[\cite{boalch}: def 3.6]
+    If $\Phi_i$ is continued across the anti-Stokes ray $d_{i+1}$ then on
+    $\Sect_{i+1}$ we have:
+    \[
+      K_{i+1}:=\Phi_{i+1}^{-1}\circ\Phi_i
+    \]
+    for all $i$ except $K_1:=\Phi_{r+1}^{-1}\circ\Phi_r\circ M_0^{-1}$
+    where
+    \begin{itemize}
+      \item $M_0=e^{2\pi\sqrt{-1}\Lambda}$ is the so-called `formal monodromy'.
+    \end{itemize}
+  \end{defn}
+  \begin{lem}
+    The Stokes factor $K_i$ is in the group $\SSto_{d_i}(A^0)$.
+  \end{lem}
+\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Thus, in summary, a compatibly framed system $(A,g)$ has canonical
+fundamental solutions $\Phi_i$ and the Stokes factors express how these
+differ and moreover they encode the moduli of $(A,g)$.
+
+\subsection{Main theoreme: for Stokes matrices}
+\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  Thus we can define the Stokes matrices of $(A,g_0)\in\hat\Syst(A^0)$
+  \[
+    S_i:=P^{-1}K_{il}\dots K_{(i-1)l+1}P\in U_{+/-}
+    \qquad
+    \text{if } i \text{ is odd / even}
+  \]
+  where
+  \begin{itemize}
+    \item $i=1,\dots,2k-2$ and
+    \item $P$ is the permutation matrix associated to the half-period
+      $(d_1,\dots,d_l)$.
+  \end{itemize}
+\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{prop}[\cite{thboalch}: 1.35]
+  $P$ is the (unique) permutation matrix, such that the multiplication map
+  \begin{align*}
+    \SSto_{il}(A^0)\times\dots\times\SSto_{(i-1)l+1}(A^0)
+    &\to \GL_n(\C)
+  \\(K_{il},\dots,K_{(i-1)l+1})&\mapsto P^{-1}K_{il}\cdots K_{(i-1)l+1}P
+  \end{align*}
+  is
+  \begin{itemize}
+    \item a diffeomorphism onto
+      $
+      \begin{cases}
+        U_+ & \text{if $i$ is odd}
+      \\U_- & \text{if $i$ is even}
+      \end{cases}
+      $
+  \end{itemize}
+  where
+  \begin{itemize}
+    \item $i=1,\dots$ and
+    \item all depends on the ordering $d_1,\dots,d_r$ of the anti-stokes directions.
+  \end{itemize}
+  \begin{defn}
+    The \emph{$i$th Stokes matrix}
+    \begin{itemize}
+      \item with respect to a fixed labelling and $\log(z)$ choice
+    \end{itemize}
+    is the following product of $l$ Stokes factors
+    \[
+      S_i:=K_{il}\cdots K_{(i-1)l+1}\in PU_{\pm}P{-1}\subset\GL_n(\C)
+    \]
+  \end{defn}
+  \begin{thm}[\cite{boalch}: Thm 3.2]
+    Fix the data $(A^0,z,\tilde p)$ as above.
+    Then 
+    \begin{itemize}
+      \item the \emph{`local monodromy map'}
+        \begin{itemize}
+          \item taking the stokes matrices
+        \end{itemize}
+    \end{itemize}
+    induces a bijection
+    \begin{align*}
+      \cH(A^0)&\overset{\cong}{\to}(U_+\times U_-)^{k-1}
+    \\ \left[(A,g_0)\right] &\mapsto(S_1,\dots,S_{2k-2})
+    \end{align*}
+    In particular
+    \begin{itemize}
+      \item $\cH(A^0)$ is isomorphic to the vector space $\C^{(k-1)n(n-1)}$.
+    \end{itemize}
+  \end{thm}
+\end{prop}
+
 
 \begin{comment}
   \begin{rem}[1.41 from \cite{thboalch} on pages 16f]
@@ -561,7 +724,7 @@ Let
       \nabla^{good}:\sM\to\Omega_{D\times X}^1\otimes\sM
     \]
 \end{itemize}
-We will assume that $\left(\sM^{good},\nabla^{good}\right)$ is 
+We will assume that $\left(\sM^{good},\nabla^{good}\right)$ is
 \begin{itemize}
   \item a good model
     \begin{itemize}
@@ -619,11 +782,11 @@ can be decomposed into blocks
 \[
   a_{kl}:\tilde\sE^{\phi_k}\otimes\tilde\sR_k
     \to
-    \tilde\sE^{\phi_l}\otimes\tilde\sR_l 
+    \tilde\sE^{\phi_l}\otimes\tilde\sR_l
 \]
 The term thus takes the form $e^{\phi_k-\phi_l}b_{kl}$, where
 \begin{itemize}
-  \item $b_{kl}$ is a homomorphism of bundles with connection 
+  \item $b_{kl}$ is a homomorphism of bundles with connection
     $\tilde\sR_k\to\tilde\sR_l$.
 \end{itemize}
 Assume that $X$ is a ball.
@@ -743,7 +906,7 @@ Let
     \end{itemize}
 \end{itemize}
 \begin{rem}
-  Any Stokes matrix (local section of $\sL$) is 
+  Any Stokes matrix (local section of $\sL$) is
   \begin{itemize}
     \item unipotent
       \begin{itemize}
@@ -791,7 +954,7 @@ Let
   \begin{rem}
     A pair $(k,l)$ contributes to the directions
     \[
-      \frac{\left(\eta_{kl}+\frac{\pi}{2}+j\pi\right)}{n_{kl}} 
+      \frac{\left(\eta_{kl}+\frac{\pi}{2}+j\pi\right)}{n_{kl}}
     \]
     for $j=0,\dots,2n_{kl}-1$.
   \end{rem}
@@ -826,8 +989,8 @@ Let
 \begin{defn}
   Let $(\sM,\nabla)$ be a meromorphic connection with
   \begin{itemize}
-    \item poles on $D\times X$ 
-    \item flat connection, 
+    \item poles on $D\times X$
+    \item flat connection,
       \begin{itemize}
         \item having poles along $\{0\}\times X$.
       \end{itemize}
@@ -836,7 +999,7 @@ Let
     $(\sM^{good},\nabla^{good})$ is a \emph{good formal model} for
     $(\sM,\nabla)$ if
     \begin{itemize}
-      \item there exists an isomorphism 
+      \item there exists an isomorphism
         \[
           \hat f(\widehat\sM,\widehat\nabla)\overset{\sim}{\to}
           (\widehat{\sM^{good}},\widehat{\nabla^{good}})
@@ -907,7 +1070,7 @@ pointed sets
     \begin{itemize}
       \item If $f_i'$ is another lifting of $\hat f$\dots
       \item If $(\sM,\nabla,\hat f)$ and $(\sM',\nabla',\hat f')$ are
-        isomorphic\dots 
+        isomorphic\dots
     \end{itemize}
     We have thus defined a mapping of pointed sets
     \[
