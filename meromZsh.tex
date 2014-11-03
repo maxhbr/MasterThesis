@@ -1,10 +1,14 @@
 \chapter{Meromorphe Zusammenhänge}
 \begin{comment}
-Siehe:
-\begin{itemize}
-  \item \cite{sabbah2007isomonodromic}
-\end{itemize}
+  Siehe:
+  \begin{itemize}
+    \item \cite{boalch} and \cite{thboalch}
+    \item \cite{sabbah2007isomonodromic}
+  \end{itemize}
 \end{comment}
+
+\section{\cite{boalch} and \cite{thboalch}}
+%{{{
 Let
 \begin{itemize}
   \item $D=k_1(a_1)+\dots+k_m(a_m)$ be an \textbf{effective divisor} on $\P^1$
@@ -14,7 +18,7 @@ Let
       \item $k_1,\dots,k_m>0$ positive integers
     \end{itemize}
     and
-  \item let $V\to\P^1$ be a rank $n$ vector bundle.
+  \item $V\to\P^1$ be a rank $n$ vector bundle.
 \end{itemize}
 \begin{defn}[2.1]
   A \emph{meromorphic connection} $\nabla$ on $V$ with poles on $D$ is
@@ -64,7 +68,24 @@ Let
 \begin{paracol}{2}\sloppy
 \switchcolumn[0]\noindent
 \begin{defn}
-  A \emph{nice meromorphic connection} is\dots 
+  A meromorphic connection is a \emph{nice meromorphic connection} if
+  \begin{itemize}
+    \item at each $a_i$
+  \end{itemize}
+  the leading coefficient ${}^iA_{k_i}$ is
+  \begin{itemize}
+    \item diagonalisable with distinct eigenvalues and $k_i\geq2$, or
+    \item diagonalisable with distinct eigenvalues $\mod\Z$ and $k_i=1$
+  \end{itemize}
+  \begin{rem}
+    \begin{itemize}
+      \item This condition is independent of the trivialisation and coordinate
+        choice.
+      \item We will restrict to nice connections since they are simplest yet
+        sufficient\footnote{to describe the symplectic nature of isomonodromic
+        deformations} for our purposes.
+    \end{itemize}
+  \end{rem}
 \end{defn}
 \switchcolumn[1]\noindent
   \begin{defn}
@@ -79,11 +100,12 @@ Let
       \]
       where
       \begin{itemize}
-        \item $Q := \diag(q1,\dots ,qn)$
+        \item $Q := \diag(q_1,\dots ,q_n)$
           \begin{itemize}
-            \item $q_1,\dots ,q_n\in z^{-1}C[z^{-1}]$ are diagonal polynomials
+            \item $q_1,\dots ,q_n\in z^{-1}C[z^{-1}]$ are polynomials
               \begin{itemize}
-                \item of degree $k-1$ in $z^{-1}$ with no constant term
+                \item of degree $k-1$ in $z^{-1}$
+                \item with no constant term
               \end{itemize}
           \end{itemize}
           and
@@ -144,8 +166,9 @@ Let
     simple poles.
   \end{itemize}
 \end{defn}
+%}}}
 
-\subsection{Local moduli spaces} %{{{
+\subsubsection{Local moduli spaces} %{{{
 \begin{defn}
   \begin{itemize}
     \item $\Syst(A^0):=\{d-A \mid A=\hat{F}[A^0] \text{ for some } \hat{F}\in
@@ -158,22 +181,27 @@ Let
         \item $\hat{F}[A^0]=(d\hat{F})\hat{F}^{-1}+\hat{F}A^0\hat{F}^{-1}$
         \item $G\llbracket z\rrbracket:=\GL_n(\C\llbracket z\rrbracket)$
           \begin{itemize}
+            \item group of \emph{formal transformations}
             \item does not act on $\Syst(A^0)$
           \end{itemize}
       \end{itemize}
   \end{itemize}
-  The group $G\{z\}:=\GL_n(\C\{z\})$ acts on $\Syst(A^0)$, we are interested
-  in
+  The group $G\{z\}:=\GL_n(\C\{z\})$
+  \begin{itemize}
+    \item the group of \emph{local analytic gauge transformations}
+  \end{itemize}
+  acts on $\Syst(A^0)$.
   \begin{center}
-    $\Syst(A^0)/G\{z\}$\footnote{The set of isomorphism classes of germs of
-    meromorphic connections formally equivalent to $A^0$. Note that any
-    generic connection is formally equivalent to some such $A^0$.}
+    \textbf{We are interested in $\bf\Syst(A^0)/G\{z\}$}\footnote{The set of
+    isomorphism classes of germs of meromorphic connections formally equivalent
+    to $A^0$. Note that any generic connection is formally equivalent to some
+    such $A^0$.}
   \end{center}
 \end{defn}
 \begin{rem}
   In the abelian and the simple pole case $\Syst(A^0)/G\{z\}$ is only a point.
 \end{rem}
-\begin{defn}
+\begin{defn} Define
   \begin{itemize}
     \item $\widehat\Syst_{cf}(A^0)$~:\Leftrightarrow{} the set of compatibly
       framed connection germs with both irregular and formal type $A^0$.
@@ -181,50 +209,45 @@ Let
       ,\hat{F}\in G\llbracket z\rrbracket
       ,A=\hat{F}[A^0]\}$
       the set of \emph{marked pairs}.
+      \begin{itemize}
+        \item $G\{z\}$ action on marked pairs:
+          $g(A,\hat{F})=(g[A],g\circ\hat{F})$
+          \[
+            \mathcal{H}(A^0):=\widehat\Syst(A^0)/G\{z\}
+          \]
+      \end{itemize}
   \end{itemize}
+
+  \begin{lem}
+    There is a canonical isomorphism
+    \[
+      \widehat\Syst_{cf}(A^0)\cong\widehat\Syst_{mp}(A^0) \,,
+    \]
+  \end{lem}
+  Let $\Syst(A^0)$ denote either of these two sets.
 \end{defn}
 \begin{lem}
-  There is a canonical isomorphism
-  $\widehat\Syst_{cf}(A^0)\cong\widehat\Syst_{mp}(A^0)$\footnote{Let
-  $\Syst(A^0)$ denote either of these two sets.}.
-\end{lem}
-
-$G\{z\}$ action on marked pairs: $g(A,\hat{F})=(g[A],g\circ\hat{F})$
+The actions of $T$ and $G\{z\}$ on $\Syst(A^0)$ commute:
 \[
-  \mathcal{H}(A^0):=\widehat\Syst(A^0)/G\{z\}
+  \Syst(A^0)/G\{z\}\cong\mathcal{H}(A^0)/T \,.
 \]
-\begin{comment}
-  The actions of $T$ and $G\{z\}$ on $\Syst(A^0)$ commute so
-  \[
-    \Syst(A^0)/G\{z\}\cong\mathcal{H}(A^0)/T \,.
-  \]
-\end{comment}
+\end{lem}
 %}}}
 
-\subsection{Moduli spaces}
-If $z_i$ is a local coordinate vanishing at $a_i$, write
-\begin{itemize}
-  \item ${}^iA^0=d({}^iQ)+{}^i\Lambda^0\frac{dz}{z}$ where
-    \begin{itemize}
-      \item ${}^i\Lambda^0$ is constant diagonal
-      \item ${}^iQ=diag(q_1,\dots,q_n)$ diagonal matrix of meromorphic
-        functions
-    \end{itemize}
-\end{itemize}
+\subsubsection{Moduli spaces} %{{{
 Let  $\textbf{a}$ denote the choice of
 \begin{itemize}
   \item an effectrive divisor $D=k_1(a_1)+\dots+k_m(a_m)$ and
-  \item a germ ${}^iA^0$ at each point $a_i$
+  \item at each point $a_i$
+    % a germ ${}^iA^0$
     \begin{itemize}
       \item a germ $d-{}^iA^0$
         \begin{itemize}
-          \item of a diagonal generic meromorphic connection on the trivial
-            rank $n$ vector bundle
-        \end{itemize}
-        such that
-        \begin{itemize}
-          \item ${}^iA^0$ is a matrix of germs of meromorphic one-forms, which
-            we require\footnote{without loss of generality} to be diagonal.
+          \item of a diagonal generic meromorphic connection
+            \begin{itemize}
+              \item on the trivial rank $n$ vector bundle
+            \end{itemize}
+          \item write ${}^iA^0=d({}^iQ)+{}^i\Lambda^0\frac{dz}{z}$
         \end{itemize}
     \end{itemize}
 \end{itemize}
@@ -262,6 +285,7 @@ Let  $\textbf{a}$ denote the choice of
 Since $\cM^*(\textbf{a})$ and $\widetilde\cM^*(\textbf{a})$ are moduli spaces
 of connections on trivial bundles we can obtain explicit descriptions of them.
 See \cite{thboalch} page 10ff.
+%}}}
 
 \section{\cite{sabbah2007isomonodromic}} %{{{
 \begin{defn}[Holomorphic budles (0.3.?)]
@@ -290,7 +314,7 @@ This defines a sheaf $\sE$ of modules over $\cO_M(U)$.
 \begin{defn}[Meromorphic bundles (0.8.?)]
   A \emph{meromorphic bundle on $M$ with poles along $Z$} is a locally free
   sheaf of $\cO_M(*Z)$-modules of finite rank
-  where 
+  where
   \begin{itemize}
     \item $Z$ is a smooth hypersurface in a complex analytic manifold $M$
     \item define the sheaf $\cO_M(*Z)$ by
@@ -309,9 +333,9 @@ This defines a sheaf $\sE$ of modules over $\cO_M(U)$.
               \begin{itemize}
                 \item an integer $m$
               \end{itemize}
-              such that 
+              such that
               \begin{itemize}
-                \item $z_1^mf(z_1\dots z_n)$ is locally bounded in the
+                \item $z_1^mf(z_1,\dots,z_n)$ is locally bounded in the
                   neighbourhood of any point of $Z\cap V$.
               \end{itemize}
           \end{itemize}
@@ -332,12 +356,12 @@ This defines a sheaf $\sE$ of modules over $\cO_M(U)$.
         \item any section $s\in\Gamma(U,\sE)$ and
         \item any holomorphic function $f\in\cO(U)$
       \end{itemize}
-      the \emph{Leibnitz rule}:
-      \[
-        \nabla(f\cdot s)=\nabla(s)+df\otimes
-        s\in\Gamma(U,\Omega_M^1\otimes_{\cO_M}\sE)
-      \]
   \end{itemize}
+  the \emph{Leibnitz rule}:
+  \[
+    \nabla(f\cdot s)=\nabla(s)+df\otimes
+    s\in\Gamma(U,\Omega_M^1\otimes_{\cO_M}\sE)
+  \]
 \end{defn}
 \begin{defn}[Meromorphic connections]
   A \emph{connection on $\sM$} is defined as a $\C$-linear homomorphism

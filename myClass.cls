@@ -56,21 +56,22 @@
 
 \iftrue %Horizontale Linien
   %\definecolor{myheadLineColor}{RGB}{0,51,128}
-  \definecolor{myheadLineColor}{RGB}{0,0,0}
+  % \definecolor{myheadLineColor}{RGB}{0,0,0}
+  \definecolor{myheadLineColor}{RGB}{0,51,128}
   \usepackage{sectsty}
-  \chapterfont{
+  \chapterfont{%
     \color{myheadLineColor}
     \sectionrule{0pt}{0pt}{-5pt}{2pt}
     }
-  \sectionfont{
+  \sectionfont{%
     \color{myheadLineColor}
     \sectionrule{0pt}{0pt}{-5pt}{0.8pt}
     }
-  \subsectionfont{
+  \subsectionfont{%
     \color{myheadLineColor}
     \sectionrule{0pt}{0pt}{-5pt}{0.6pt}
     }
-  \subsubsectionfont{
+  \subsubsectionfont{%
     \color{myheadLineColor}
     \sectionrule{0pt}{0pt}{-5pt}{0.4pt}
     }
@@ -127,10 +128,11 @@
 \numberwithin{figure}{chapter}
 %\numberwithin{figure}{thm}
 
+\definecolor{myVLineColor}{RGB}{0,51,128}
 \usepackage[framemethod=TikZ]{mdframed}
 \surroundwithmdframed[
   linewidth=2pt,
-  linecolor=gray,
+  linecolor=myVLineColor,
   topline=false,
   rightline=false,
   bottomline=false,
@@ -141,7 +143,7 @@
 
 \surroundwithmdframed[
   linewidth=2pt,
-  linecolor=gray,
+  linecolor=myVLineColor,
   %topline=false,
   %rightline=false,
   %bottomline=false,
@@ -295,7 +297,7 @@
 
   \surroundwithmdframed[
     linewidth=2pt,
-    linecolor=gray,
+    linecolor=myVLineColor,
     topline=false,
     rightline=false,
     bottomline=false,
@@ -305,7 +307,7 @@
   ]{cor}
   \surroundwithmdframed[
     linewidth=2pt,
-    linecolor=gray,
+    linecolor=myVLineColor,
     topline=false,
     rightline=false,
     bottomline=false,
@@ -315,7 +317,7 @@
   ]{lem}
   \surroundwithmdframed[
     linewidth=2pt,
-    linecolor=gray,
+    linecolor=myVLineColor,
     topline=false,
     rightline=false,
     bottomline=false,
@@ -324,6 +326,8 @@
     skipbelow=\medskipamount
   ]{prop}
   \surroundwithmdframed[
+    linewidth=1pt,
+    linecolor=myVLineColor,
     topline=false,
     rightline=false,
     bottomline=false,
@@ -332,6 +336,7 @@
     skipbelow=\medskipamount
   ]{defn}
   \surroundwithmdframed[
+    linecolor=myVLineColor,
     topline=false,
     rightline=false,
     bottomline=false,
@@ -340,6 +345,7 @@
     skipbelow=\medskipamount
   ]{lemdef}
   \surroundwithmdframed[
+    linecolor=myVLineColor,
     topline=false,
     rightline=false,
     bottomline=false,
@@ -348,6 +354,7 @@
     skipbelow=\medskipamount
   ]{rem}
   \surroundwithmdframed[
+    linecolor=myVLineColor,
     topline=false,
     rightline=false,
     bottomline=false,
