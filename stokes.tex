@@ -285,6 +285,8 @@ specified by $d$.
   \end{itemize}
 \end{defn}
 \begin{lem}[3.2]
+  \TODO[move down?]
+  let $\textbf{d}$ be a half-period.
   \begin{enumerate}
     \item \textbf{The product of the corresponding groups of Stokes factors} is
       isomorphic
@@ -533,12 +535,13 @@ We get a genuine fundamental solution $z^\Lambda e^Q$ of $A^0$ there.
   A usefull equivalent definition is:\dots
 \end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{defn}[1.27]
-  Given a choice of labeling and $\log(z)$
-  \begin{rem}[Log.\ choices]
-    Rather than choose independent branches of $\log(z)$\dots
-  \end{rem}
-  The \emph{Stokes factors} of a compatibly framed system $(A,g)$ with
-  associated normal Form $A^0$ are
+  Given $\tilde p$\footnote{a choice of labeling and $\log(z)$}.
+  The \emph{Stokes factors} 
+  \begin{itemize}
+    \item of a compatibly framed system $(A,g)$
+    \item with associated normal Form $A^0$
+  \end{itemize}
+  are
   \[
     \textbf{K}:=(K_1,\dots,K_r)\in\prod_{d\in\A}\SSto_d
   \]
@@ -702,7 +705,7 @@ differ and moreover they encode the moduli of $(A,g)$.
     \end{itemize}
     and so, there is a bijection
     \[
-      \Syst(A^0)/G\{z\}\cong(U_+\times H_-)^{k-1}/T
+      \Syst(A^0)/G\{z\}\cong(U_+\times U_-)^{k-1}/T
     \]
   \end{cor}
   \begin{cor}
@@ -763,18 +766,21 @@ We will assume that $\left(\sM^{good},\nabla^{good}\right)$ is
 \begin{itemize}
   \item a good model
     \begin{itemize}
-      \item in the neighbourhood of $x^0$,
+      \item in the neighbourhood of any point $x^0\in X$,
     \end{itemize}
-    that is that
+    that is that, for every $x^0$,
     \begin{itemize}
       \item there exist pairwise distinct germs $\phi_1,\dots,\phi_p\in
         t^{-1}\cO_{X,x^0}[t^{-1}]$ and
       \item nonzero germs of systems with regular singularity
         $\cR_{\phi_1},\dots,\cR_{\phi_p}$ along $\{0\}\times X$ such that
-            we have, in a neighbourhood of $x^0$,
+            we have, in the neighbourhood of $x^0$,
         \begin{itemize}
           \item an isomorphism $\sM_{x^0}^{good}
             \cong\bigoplus_k\left(\cE^{\phi_k}\otimes\cR_{\phi_k}\right)$.
+            \begin{itemize}
+              \item \TODO[wo/wie kommt hier die Umgebung rein? (p110)]
+            \end{itemize}
         \end{itemize}
     \end{itemize}
 \end{itemize}
@@ -898,7 +904,7 @@ $\psi_{kl}(x)$:
     \item For $k\neq l$, the matrix $e^{\phi_k-\phi_l}b_{kl}$
       \begin{itemize}
         \item in $\cO_{D\times X}[t^{-1}]$-bases of $\sE^{\phi_k}\otimes\sR_k$,
-          $\sE^{\phi_l}\tilde\sR_l$
+          $\sE^{\phi_l}\otimes\sR_l$
       \end{itemize}
       has enties in
       \begin{itemize}
@@ -957,13 +963,17 @@ Let
   \end{itemize}
 \end{rem}
 \begin{cor}[The Stokes martices are constant]
-  For any open interval $I\neq S^1$, the restriction to $I\times X$ of the
-  sheaves $\Aut^{<X}(\tilde\sM^{good})$ and $\sL$ are isomorphic.
-  \begin{comment}
-    \begin{proof}[Proof]
-      Let $I\neq S^1$\dots
-    \end{proof}
-  \end{comment}
+  For
+  \begin{itemize}
+    \item any open interval $I\neq S^1$,
+  \end{itemize}
+  the restriction to $I\times X$ of the
+  sheaves $\bf\Aut^{<X}(\tilde\sM^{good})$ and $\bf\sL$ are isomorphic:
+  \[
+    \Aut^{<X}(\tilde\sM^{good})_{|I\times X}
+    \cong
+    \sL_{|I\times X}
+  \]
 \end{cor}
 \begin{cor}[Base change for horizontal sections]
   Let
@@ -1003,7 +1013,7 @@ Let
   6.8)]
 \end{ex}
 
-\subsection{The sheaf $\St_X(\sM^{good})$}
+\subsection{The Stokes sheaf $\St_X(\sM^{good})$}
 \begin{defn}
   Define the \emph{stokes sheaf} $\St_X(\sM^{good})$ as the sheaf (on $X$)
   associated to the presheaf
@@ -1017,6 +1027,11 @@ Let
     \item a locally constant
   \end{itemize}
   sheaf of pointed sets.
+  \begin{comment}
+    \begin{proof}
+      \cite[p. 113]{sabbah2007isomonodromic}: paragraph 6.c.
+    \end{proof}
+  \end{comment}
 \end{thm}
 \begin{prop}[Base change for the Stokes sheaf]
   The germ at $x^0$ of the Stokes sheaf $\St_X(\sM^{good})$ is equal to the
@@ -1027,12 +1042,15 @@ Let
 
 \subsection{The sheaf $\sH_X$}
 \begin{defn}
-  Let $(\sM,\nabla)$ be a meromorphic connection with
+  Let $(\sM,\nabla)$ be
   \begin{itemize}
-    \item poles on $D\times X$
-    \item flat connection,
+    \item a meromorphic bundle
+      with
       \begin{itemize}
-        \item having poles along $\{0\}\times X$.
+        \item flat connection,
+          \begin{itemize}
+            \item having poles along $\{0\}\times X$.
+          \end{itemize}
       \end{itemize}
   \end{itemize}
   \begin{defn}
@@ -1061,20 +1079,33 @@ Let
         \end{itemize}
     \end{itemize}
   \end{defn}
+  Let
+  \begin{itemize}
+    \item $(\sM^{good},\nabla^{good})$ be a fixed good formal model.
+  \end{itemize}
   Define
   \begin{itemize}
     \item $\sH_X$ be the (pre-) sheaf\footnote{Lemma 6.2: it is a sheaf.} where
       \begin{itemize}
         \item $\sH_X(U)$ is the (pointed) set
           \begin{itemize}
-            \item of isomorphism classes of germs $(\sM,\nabla,\hat f)$ defined
-              on $U$,
-        \item equipped with a distinguished element, namely, the class of
-          ${(\sM^{good},\nabla^{good},\widehat{\Id})}_{|U}$.
+            \item of isomorphism classes of
+              germs\footnote{along $\{0\}\times U$}
+              $(\sM,\nabla,\hat f)$ defined on $U$,
+              \begin{comment}
+                \begin{itemize}
+                  \item Why germs??
+                  \item along $\{0\}\times U$??
+                \end{itemize}
+              \end{comment}
+            \item equipped with a distinguished element, namely, the class of
+              ${(\sM^{good},\nabla^{good},\widehat{\Id})}_{|U}$.
           \end{itemize}
       \end{itemize}
   \end{itemize}
 \end{defn}
+
+\subsection{Main Result}
 Use Thoreme~\ref{thm:sectDecomp} to construct\footnote{see:
 \cite[p. 111f]{sabbah2007isomonodromic}} a homomorphism of sheaves of
 pointed sets
@@ -1112,7 +1143,6 @@ pointed sets
     from which we deduce the homomorphism of sheaves.
 \end{itemize}
 
-\subsection{Main Result}
 \begin{thm}[The Stokes sheaf classifies meromorphic connections with fixed
   normal type (6.3)]
   The homomorphism so defined
