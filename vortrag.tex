@@ -63,6 +63,7 @@ Sei
     \end{defn}
   \end{comment}
 \end{defn}
+\TODO[Zusammenhang zu (Partiellen-)DGLs]
 \subsection{Irregularität von meromorphen Zusammenhängen} %{{{
 \TODO
 %}}}
@@ -115,10 +116,76 @@ Sei
 %}}}
 %}}}
 \section{Asymptotische Erweiterungen} %{{{
+Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
+\begin{defn}
+  \begin{itemize}
+    \item $\Delta_r^*(U):=
+      \{z\in\Delta_r\mid z=\rho e^{i\theta},0<\rho<r,\theta\in U\}$%
+      \begin{center}
+        \begin{tikzpicture}[scale=3]
+          \node (zero) at (0,0) {};
+          \node[below left] at (zero) {$0$};
+          \draw[blue,dashed] (zero) circle (1cm);
+
+          \filldraw[fill=green!20!white
+            ,draw=green!60!black
+            ,thick
+          ,path fading=west] (0,0)
+          -- ({cos( -30 )*.7},{sin( -30 )*.7}) arc (-30:70:.7) -- cycle;
+          \node[green!40!black] at (.4,.3) {$\Delta_r^*(U)$};
+          \node[green!40!black] at (.3,-.25) {$r$};
+
+          \draw[thick,red!60!black] ({cos( -30 )},{sin( -30 )}) arc (-30:70:1);
+
+          \node[red!60!black,right] at (1,0) {$U$};
+
+          \fill[white] (zero) circle (1.5pt);
+          \fill (zero) circle (.7pt);
+        \end{tikzpicture}
+      \end{center}
+  \end{itemize}
+\end{defn}
+\begin{defn}
+  \def\myN{\textbf{\textcolor{blue!40!black}{N}}}
+  \def\mySect{\textcolor{red!40!black}{W}}
+  \def\myConst{\textcolor{green!40!black}{C(\myN,\mySect)}}
+  $f$ hat die \textbf{formale Laurent Reihe} $\sum_{n\geq n_0}c_nz^n$ als
+  \emph{asymptotische Erweiterung}, falls
+  \begin{itemize}
+    \item für alle $\myN\geq0$ und
+    \item für alle abgeschlossenen Untersektoren $\mySect$ in $\Delta_r^*(U)$
+  \end{itemize}
+  eine Konstante $\myConst$ existiert, so dass
+  \[
+    \left|
+      f(x)-\sum_{n_0\leq n\leq \myN-1}c_nz^n
+    \right|
+    \leq \myConst|z|^{\myN} \qquad \text{ für alle } z\in \mySect
+  \]
+  \Leftrightarrow{}
+  \[
+    \lim_{z\to0,z\in{\mySect}}
+    |z|^{-(\myN-1)}
+    \left|
+      f(x)-\sum_{n_0\leq n\leq \myN-1}c_nz^n
+    \right|=0
+    \qquad \text{ für alle } z\in \mySect
+  \]
+\end{defn}
+\begin{lem}[Borel-Ritt]
+  \TODO
+\end{lem}
+\begin{thm}[Sectorial lifting]
+  \TODO
+\end{thm}
 %}}}
 \section{Stokes Strukturen} %{{{
 %}}}
 \section{Theoreme} %{{{
+\begin{thm}
+  Die Stokes-Garbe $\St_X(\sM^{good})$ ist eine lokal konstante Garbe von
+  punktierten Mengen.
+\end{thm}
 \begin{thm}
   Die Abbildung
   \[
