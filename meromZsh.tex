@@ -7,7 +7,33 @@
   \end{itemize}
 \end{comment}
 
-\section{\cite{boalch} and \cite{thboalch}}
+\section{From \cite{thpym} and \cite{citeulike:12387686}}
+Consider a Riemann surface $X$ and an effective divisor $D$.
+\begin{defn}
+  If $E$ is a holomorphic vector bundle over $X$, a \emph{meromorphic connection
+  on $E$ with poles bounded by $D$} is a differential operator
+  \[
+    \nabla:\cE\to\Omega_X^1(D)\otimes\cE
+  \]
+  on $\cE$
+  \begin{itemize}
+    \item the sheaf of holomorphic sections on $E$
+  \end{itemize}
+  that satisfies the Leibnitz rule
+  \[
+    \nabla(fs)=f\nabla s + (df)\otimes s
+  \]
+  \begin{rem}
+    Thus, in a local trivialization of $E$ near a point $p\in D$ of
+    multiplicity $k$ and a coordinate $z$ centered at $p$, we may write
+    \[
+      \nabla=d-\frac{1}{z^k}A(z)dz
+    \]
+    for a holomorphic matrix $A(z)$.
+  \end{rem}
+\end{defn}
+
+\section{Matrix version from \cite{boalch} and \cite{thboalch}}
 %{{{
 Let
 \begin{itemize}
@@ -44,15 +70,33 @@ Let
 
 \begin{paracol}{2}\sloppy
 \switchcolumn[0]\noindent
-  If we choose a local coordinate $z$ on $\P^1$ vanishing at $a_i$ then in
-  terms of local trivialization of $V$, $\nabla$ has the form
-  $\nabla=d-A=d-{}^iA$\footnote{the presuperscript is used to signify local
-  information} where
+\begin{rem}
+  If we choose a local coordinate $z$ on $\P^1$ vanishing at $a_i$ then
+  \begin{itemize}
+    \item in terms of local trivialization of $V$,
+  \end{itemize}
+  $\nabla$ has the form
   \[
-    A=\left(\sum^{0}_{j=k_i}A_j\frac{dz}{z^{j}}\right)+A_0dz+\dots
+    \nabla=d-A=d-{}^iA\footnote{the presuperscript is used to signify local
+    information}
   \]
-  is a matrix of meromorphic one-forms and $A_j\in\End(\C^n)$.
+  where
+  \begin{itemize}
+    \item $A=\left(\sum^{0}_{j=k_i}A_j\frac{dz}{z^{j}}\right)+A_0dz+\dots$
+      \begin{itemize}
+        \item is a matrix of meromorphic one-forms and
+        \item $A_j\in\End(\C^n)$.
+      \end{itemize}
+  \end{itemize}
+\end{rem}
 \switchcolumn[1]\noindent
+  Let $E=\C^n$ be
+  \begin{itemize}
+    \item a fixed complex vector space
+      \begin{itemize}
+        \item with preferred basis.
+      \end{itemize}
+  \end{itemize}
   \begin{defn}
     \cite[Def 1.5]{thboalch}.
     A \emph{germ of a meromorphic linear differential system}\footnote{or just
@@ -64,11 +108,30 @@ Let
         \end{itemize}
     \end{itemize}
   \end{defn}
+  \begin{rem}
+    \begin{itemize}
+      \item The set of systems is isomorphic to $\End(E)\otimes\C\{z\}[z^{-1}]$
+      \item A matrix of germs of meromorphic functions
+        $A'\in\End(E)\otimes\C\{z\}[z^{-1}]$ determines
+        \[
+          \frac{dv}{dz}=A'v
+        \]
+        \begin{itemize}
+          \item a system of equations for $v(z)\in E$
+          \item which corresponds to the connection germ $\nabla=d_A=d-A$
+            \begin{itemize}
+              \item on $E$
+              \item where $A=A'dz$.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+  \end{rem}
 \end{paracol}
 \begin{paracol}{2}\sloppy
 \switchcolumn[0]\noindent
-\begin{defn}
-  A meromorphic connection is a \emph{nice meromorphic connection} if
+\begin{defn}[\cite{boalch} Def 2.2]
+  A meromorphic connection is a \emph{nice (or generic) meromorphic connection}
+  if
   \begin{itemize}
     \item at each $a_i$
   \end{itemize}
@@ -79,7 +142,7 @@ Let
   \end{itemize}
   \begin{rem}
     \begin{itemize}
-      \item This condition is independent of the trivialisation and coordinate
+      \item This condition is independent of the trivialization and coordinate
         choice.
       \item We will restrict to nice connections since they are simplest yet
         sufficient\footnote{to describe the symplectic nature of isomonodromic
@@ -93,6 +156,7 @@ Let
     \begin{itemize}
       \item a nice diagonal system with no holomorphic part.
     \end{itemize}
+    \TODO[Entspricht dies der Levelt-Turittin-Zerlegung??]
     \begin{rem}
       Such $A^0$ can be uniquely written as
       \[
@@ -114,58 +178,6 @@ Let
     \end{rem}
   \end{defn}
 \end{paracol}
-\begin{paracol}{2}\sloppy
-\switchcolumn[0]\noindent
-  % \begin{defn}[compatible framing]
-  %   A \emph{compatible framing} at $a_i$ of a vector bundle $V$ with nice
-  %   connection $\nabla$ is a choice of isomorphism $g$ between the fibre
-  %   $V_{a_i}$ and $\C^n$ which is compatible with $\nabla$ in the sense that
-  %   the leading term ${}^iA_{k_i}$ of $\nabla$ is diagonal in any local
-  %   trivialisation of $V$ extending this isomorphism.
-  % \end{defn}
-  \begin{defn}
-    A \emph{compatible framing} at $a_i$ of a vector bundle $V$ with generic
-    connection $\nabla$ is
-    \begin{itemize}
-      \item an isomorphism $g_0:V_{a_i}\to\C^n$
-        \begin{itemize}
-          \item between the firbre $V_{a_i}$ and $\C^n$
-        \end{itemize}
-        such that
-        \begin{itemize}
-          \item the leading coefficient of $\nabla$ is diagonal in any local
-            trivialization of $V$ extending $g_0$.
-        \end{itemize}
-    \end{itemize}
-    \begin{rem}
-      Given a trivialization of $V$ in a neighbourhood of $a_i$ so that
-      $\nabla=d-A$ as above, then
-      \begin{itemize}
-        \item a compatible framing is represented by a constant matrix
-          $g_0\in G$ such that $g_0A_{k_i}g_0^{-1}$ is diagonal
-      \end{itemize}
-    \end{rem}
-  \end{defn}
-\switchcolumn[1]\noindent
-  \begin{defn}[marked pair]
-    A \emph{marked pair} is a pair $(A, \hat F)$ consisting of
-    \begin{itemize}
-      \item a nice system $A$ and
-      \item a choice of formal isomorphism $\hat F \in \hat G$ such that
-        $A = \hat F[A^0]$
-    \end{itemize}
-  \end{defn}
-\end{paracol}
-
-\begin{defn}[2.4]
-  A connection $(V,\nabla)$ with compatible framing $g_0$ at $a_i$ has
-  \emph{irregular type ${}^iA^0$} if
-  \begin{itemize}
-    \item $g_0$ extends to a formal trivialization of $V$ at $a_i$, in which
-    $\nabla$ differs from $d-{}^iA^0$ by a matrix of one-forms witch just
-    simple poles.
-  \end{itemize}
-\end{defn}
 %}}}
 
 \subsubsection{Local moduli spaces} %{{{
@@ -201,6 +213,53 @@ Let
 \begin{rem}
   In the abelian and the simple pole case $\Syst(A^0)/G\{z\}$ is only a point.
 \end{rem}
+\subsubsection{Add a little bit more information}
+\begin{defn}
+  A \emph{compatible framing} at $a_i$ of a vector bundle $V$ with
+  generic\footnote{The precise notion of ‘generic’ is given in
+    \cite{thboalch} Definition 1.2 and we will refer to such connections as
+    \emph{nice}.} connection $\nabla$ is
+  \begin{itemize}
+    \item an isomorphism $g_0:V_{a_i}\to\C^n$
+      \begin{itemize}
+        \item between the firbre $V_{a_i}$ and $\C^n$
+      \end{itemize}
+      such that
+      \begin{itemize}
+        \item the leading coefficient of $\nabla$ is diagonal in any local
+          trivialization of $V$ extending $g_0$.
+      \end{itemize}
+  \end{itemize}
+  \begin{rem}
+    Given a trivialization of $V$ in a neighbourhood of $a_i$ so that
+    $\nabla=d-A$ as above, then
+    \begin{itemize}
+      \item a compatible framing is represented by a constant matrix
+        $g_0\in G$ such that $g_0A_{k_i}g_0^{-1}$ is diagonal
+    \end{itemize}
+  \end{rem}
+\end{defn}
+\begin{paracol}{2}\sloppy
+\switchcolumn[0]\noindent
+  \begin{defn}[2.4]
+    A connection $(V,\nabla)$ with compatible framing $g_0$ at $a_i$ has
+    \emph{irregular type ${}^iA^0$} if
+    \begin{itemize}
+      \item $g_0$ extends to a formal trivialization of $V$ at $a_i$, in which
+      $\nabla$ differs from $d-{}^iA^0$ by a matrix of one-forms with just
+      simple poles.
+    \end{itemize}
+  \end{defn}
+\switchcolumn[1]\noindent
+  \begin{defn}[marked pair]
+    A \emph{marked pair} is a pair $(A, \hat F)$ consisting of
+    \begin{itemize}
+      \item a nice system $A$ and
+      \item a choice of formal isomorphism $\hat F \in \hat G$ such that
+        $A = \hat F[A^0]$
+    \end{itemize}
+  \end{defn}
+\end{paracol}
 \begin{defn} Define
   \begin{itemize}
     \item $\widehat\Syst_{cf}(A^0)$~:\Leftrightarrow{} the set of compatibly
@@ -235,15 +294,15 @@ The actions of $T$ and $G\{z\}$ on $\Syst(A^0)$ commute:
 %}}}
 
 \subsubsection{Moduli spaces} %{{{
-Let  $\textbf{a}$ denote the choice of
+Let $\textbf{a}$\footnote{In \cite{thboalch} denoted by $\textbf{A}$} denote
+the choice of
 \begin{itemize}
-  \item an effectrive divisor $D=k_1(a_1)+\dots+k_m(a_m)$ and
+  \item an effective divisor $D=k_1(a_1)+\dots+k_m(a_m)$ and
   \item at each point $a_i$
-    % a germ ${}^iA^0$
     \begin{itemize}
       \item a germ $d-{}^iA^0$
         \begin{itemize}
-          \item of a diagonal generic meromorphic connection
+          \item of a \textbf{diagonal generic meromorphic connection}
             \begin{itemize}
               \item on the trivial rank $n$ vector bundle
             \end{itemize}
@@ -287,7 +346,31 @@ of connections on trivial bundles we can obtain explicit descriptions of them.
 See \cite{thboalch} page 10ff.
 %}}}
 
-\section{\cite{sabbah2007isomonodromic}} %{{{
+\begin{comment}
+  \section{Definition from \cite{sabbah_cimpa90}}
+  \begin{defn}
+    A \emph{meromorphic connection} $\cM_K$ is a 
+    \begin{itemize}
+      \item $K$-vector space of finite dimension
+      \item equipped with
+        \begin{itemize}
+          \item a $\C$-linear derivation $\partial_x: \cM_K\to\cM_K$
+        \end{itemize}
+        such that, for all $f\in K$ and all $m\in\cM_K$ one has
+        \[
+          \partial_x(fm)=\frac{\partial f}{\partial m}+f\partial_xm.
+        \]
+    \end{itemize}
+  \end{defn}
+
+  \begin{thm}
+    Let $\cM_{\hat K}$ be a formal meromorphic connection. There exists an
+    integer $q$ such that the connection $\pi^*\cM_{\hat K}=\cM_{\hat L}$ is
+    isomorphic to a direct sum of elementary formal meromorphic connections.
+  \end{thm}
+\end{comment}
+
+\section{Sheaf version from \cite{sabbah2007isomonodromic}} %{{{
 \begin{defn}[Holomorphic budles (0.3.?)]
   Let
   \begin{itemize}
@@ -342,33 +425,43 @@ This defines a sheaf $\sE$ of modules over $\cO_M(U)$.
       \end{itemize}
   \end{itemize}
 \end{defn}
-\begin{defn}[Holomorphic connections (0.11.1)]
-  A \emph{holomorphic connection} $\nabla$ on a holomorphic vector bundle
-  $\pi:E\to M$ is a $\C$-linear homomorphism of sheaves
-  \[
-    \nabla:\sE\to\Omega_M^1\otimes_{\cO_M}\sE
-  \]
-  satisfying
+\begin{defn}[Holomorphic / meromorphic connections]
   \begin{itemize}
-    \item for
+    \item A \emph{holomorphic connection} $\nabla$ on a holomorphic vector
+      bundle $\pi:E\to M$ is a $\C$-linear homomorphism of sheaves
+      \[
+        \nabla:\sE\to\Omega_M^1\otimes_{\cO_M}\sE
+      \]
+      satisfying the Leibnitz rule.
+    \item A \emph{connection} on a meromorphic bundle $\sM$ is defined as a
+      $\C$-linear homomorphism
+      \[
+        \nabla:\sM\to\Omega_M^1\otimes_{\cO_M}\sM
+      \]
+      satisfying
       \begin{itemize}
-        \item any open set $U$ of $M$,
-        \item any section $s\in\Gamma(U,\sE)$ and
-        \item any holomorphic function $f\in\cO(U)$
+        \item for
+          \begin{itemize}
+            \item any open set $U$ of $M$,
+            \item any section $s\in\Gamma(U,\sE)$ and
+            \item any holomorphic function $f\in\cO(U)$
+          \end{itemize}
       \end{itemize}
+      the \emph{Leibnitz rule}:
+      \[
+        \nabla(f\cdot s)=\nabla(s)+df\otimes
+        s\in\Gamma(U,\Omega_M^1\otimes_{\cO_M}\sE)
+      \]
   \end{itemize}
-  the \emph{Leibnitz rule}:
-  \[
-    \nabla(f\cdot s)=\nabla(s)+df\otimes
-    s\in\Gamma(U,\Omega_M^1\otimes_{\cO_M}\sE)
-  \]
-\end{defn}
-\begin{defn}[Meromorphic connections]
-  A \emph{connection on $\sM$} is defined as a $\C$-linear homomorphism
-  \[
-    \nabla:\sM\to\Omega_M^1\otimes_{\cO_M}\sM
-  \]
-  satisfying the Leibnitz rule.
+  \begin{comment}
+    What is the difference between
+    \begin{itemize}
+      \item \textbf{meromorphic} bundle with \textbf{holomorphic} connection,
+      \item \textbf{holomorphic} bundle with \textbf{meromorphic} connection
+        and
+      \item \textbf{meromorphic} bundle with \textbf{meromorphic} connection.
+    \end{itemize}
+  \end{comment}
 \end{defn}
 \begin{defn}[Flatness (0.12.2)]
   The connection $\nabla:\cE\to \Omega_M^1\otimes_{\cO_M}\cE$ is said to be
@@ -468,8 +561,7 @@ regular singularity in the neighbourhood of $(0,x^0)$. For more criteria see
   There exists a basis of the germ $\sM_{(0,x^0)}$ in which the matrix of
   $\nabla$ can be written as $B\frac{dt}{t}$, where $B$ is constant.
 \end{thm}
-\subsubsection{Irregular singularities}
-\paragraph{In rank one.}
+\subsubsection{Irregular singularities in rank one}
 Let
 \begin{itemize}
   \item $\phi\in\C\{t,x_1,\dots,x_n\}[t^{-1}]$.
@@ -487,7 +579,7 @@ For $\alpha\in\C$, let $\cN_{\alpha,0}$ be
     $(\cM,\nabla):=(\C\{t,x_1,\dots,x_n\}[t^{-1}],d-\alpha dt/t)$.
 \end{itemize}
 \begin{prop}[Classification of irregular singularities in rank one (II.5.1)]
-  Any germ $\cM,\nabla)$ of rank one is isomorphic to some germ
+  Any germ $(\cM,\nabla)$ of rank one is isomorphic to some germ
   $\cE^{\phi}\otimes\cN_{\alpha,0}$.
 
   Tow such germs are corresponding to $(\phi_1,\alpha_1)$ and
@@ -502,7 +594,7 @@ For $\alpha\in\C$, let $\cN_{\alpha,0}$ be
     \item $\alpha_1-\alpha_2\in\Z$.
   \end{itemize}
 \end{prop}
-\paragraph{In arbitrary rank}
+\subsubsection{Irregular singularities in arbitrary rank}
 \begin{defn}
   Let $(\cM,\nabla)$ be a \textbf{germ} of a meromorphic bundle with
   connection.
@@ -550,6 +642,8 @@ For $\alpha\in\C$, let $\cN_{\alpha,0}$ be
     \item equipped with a basis
       \begin{itemize}
         \item
+          \marginnote{This condition \textbf{might be} equivalent to the
+            condition of being \textbf{nice} in \cite{thboalch}.}
           in which the matrix $\Omega$ takes the form
           \[
             \Omega=t^{-r}\left[A(t,x)\frac{dt}{t}
@@ -563,6 +657,7 @@ For $\alpha\in\C$, let $\cN_{\alpha,0}$ be
             pairwise distinct eigenvalues.}
         \end{itemize}
       \end{itemize}
+      \TODO[is this the condition, such that no ramification is necessary?]
   \end{itemize}
   Then there exist
   \begin{itemize}

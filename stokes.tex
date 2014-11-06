@@ -284,62 +284,6 @@ specified by $d$.
     \end{itemize}
   \end{itemize}
 \end{defn}
-\begin{lem}[3.2]
-  \TODO[move down?]
-  let $\textbf{d}$ be a half-period.
-  \begin{enumerate}
-    \item \textbf{The product of the corresponding groups of Stokes factors} is
-      isomorphic
-      \begin{itemize}
-        \item as a variety,
-        \item via the product map,
-      \end{itemize}
-      to the \textbf{$\bf P$ conjugate of $\bf U_+$}\footnote{Is a subgroup of
-      $G$.}:
-      \[
-        \prod_{d\in\textbf{d}}\SSto_d(A^0)\cong PU_+P^{-1} ;
-        \qquad
-        (K_1,\dots,K_l)\mapsto K_l\dots K_2K_1\in G
-      \]
-      where
-      \begin{itemize}
-        \item $P\in G$ the permutation Matrix associated to $\textbf{d}$ given
-          by $(P)_{ij}=\delta_{\pi(i)j}$ where
-          \begin{itemize}
-            \item $\pi$ is the permutation of $\{1,\dots,n\}$ corresponding to
-            \[
-              \pi(i)<\pi(j)
-              \qquad \Leftrightarrow \qquad
-              q_i\underset{\textbf{d}}{<}q_j
-            \]
-            where
-            \begin{itemize}
-              \item the total ordering is defined as
-                \[
-                  q_i\underset{\textbf{d}}{<}q_j \qquad :\Leftrightarrow
-                    \qquad (ij) \text{ is a root of some } d\in\textbf{d}
-                \]
-            \end{itemize}
-          \end{itemize}
-      \end{itemize}
-    \item The map
-      \[
-        \prod_{d\in\A}\SSto_d(A^0)\cong (U_+\times U_-)^{k-1} ;
-        \qquad
-        (K_1,\dots,K_r)\mapsto (S_1,\dots,K_{2k-2})
-      \]
-      where
-      \begin{itemize}
-        \item $S_i:=P^{-1}K_{il}\dots K_{(i-1)l+1}P\in U_{+/-}$ if $i$ is
-        odd / even
-      \end{itemize}
-      from the \textbf{product of all the groups of
-      Stokes factors}, is
-      \begin{itemize}
-        \item an isomorphism of varieties.
-      \end{itemize}
-  \end{enumerate}
-\end{lem}
 
 \subsection{Main theoreme: for Stokes factors}
 \begin{thm}[1.22 in \cite{thboalch}]
@@ -626,22 +570,53 @@ fundamental solutions $\Phi_i$ and the Stokes factors express how these
 differ and moreover they encode the moduli of $(A,g)$.
 
 \subsection{Main theoreme: for Stokes matrices}
-\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  Thus we can define the Stokes matrices of $(A,g_0)\in\hat\Syst(A^0)$
-  \[
-    S_i:=P^{-1}K_{il}\dots K_{(i-1)l+1}P\in U_{+/-}
-    \qquad
-    \text{if } i \text{ is odd / even}
-  \]
-  where
-  \begin{itemize}
-    \item $i=1,\dots,2k-2$ and
-    \item $P$ is the permutation matrix associated to the half-period
-      $(d_1,\dots,d_l)$.
-  \end{itemize}
-\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{lem}[\cite{boalch}: 3.2]
+  let $\textbf{d}$ be a half-period.
+  \begin{enumerate}
+    \def\myP{\textcolor{green!60!gray}{P}}
+    \item \textbf{The product of the corresponding groups of Stokes factors}
+      is isomorphic
+      \begin{itemize}
+        \item as a variety,
+        \item via the product map,
+      \end{itemize}
+      to the \textbf{$\bf \myP$ conjugate of $\bf U_+$}\footnote{Is a subgroup
+      of $G$.}:
+      \begin{align*}
+        \prod_{d\in\textbf{d}}\SSto_d(A^0)&\cong \myP U_+\myP^{-1} ;
+        \\(K_1,\dots,K_l)&\mapsto K_l\dots K_2K_1\in G
+      \end{align*}
+      where
+      \begin{itemize}
+        \item $\myP\in G$ the permutation Matrix associated to $\textbf{d}$
+          given by $(P)_{ij}=\delta_{\pi(i)j}$ where
+          \begin{itemize}
+            \item
+              \marginnote{The ordering on $\textbf{d}+l$ is opposite to this
+                ordering}
+              $\pi$ is the permutation of $\{1,\dots,n\}$ corresponding to
+              \[
+                \pi(i)<\pi(j)
+                \qquad \Leftrightarrow \qquad
+                q_i\underset{\textbf{d}}{<}q_j
+              \]
+              where
+              \begin{itemize}
+                \item the total ordering is defined as
+                  \[
+                    q_i\underset{\textbf{d}}{<}q_j \qquad :\Leftrightarrow
+                    \qquad (ij) \text{ is a root of some } d\in\textbf{d}
+                  \]
+              \end{itemize}
+          \end{itemize}
+      \end{itemize}
+      \begin{comment}
+        See \cite[13]{thboalch}: \textbf{Proof of Proposition 1.35}
+      \end{comment}
+  \end{enumerate}
+\end{lem}
 \begin{prop}[\cite{thboalch}: 1.35]
+  let $\textbf{d}=((i-1)l+1,\dots,il)$ be a half-period.
   $P$ is the (unique) permutation matrix, such that the multiplication map
   \begin{align*}
     \SSto_{il}(A^0)\times\dots\times\SSto_{(i-1)l+1}(A^0)
@@ -674,53 +649,87 @@ differ and moreover they encode the moduli of $(A,g)$.
     \]
   \end{defn}
 \end{prop}
-\begin{thm}[\cite{boalch}: Thm 3.2]
-  Fix the data $(A^0,z,\tilde p)$ as above.
-  Then 
-  \begin{itemize}
-    \item the \emph{`local monodromy map'}
-      \begin{itemize}
-        \item taking the stokes matrices
-      \end{itemize}
-  \end{itemize}
-  induces a bijection
-  \begin{align*}
-    \cH(A^0)&\overset{\cong}{\to}(U_+\times U_-)^{k-1}
-  \\ \left[(A,g_0)\right] &\mapsto(S_1,\dots,S_{2k-2})
-  \end{align*}
-  In particular
-  \begin{itemize}
-    \item $\cH(A^0)$ is isomorphic to the vector space $\C^{(k-1)n(n-1)}$.
-  \end{itemize}
-
-  \begin{cor}
-    The torus action of $\cH(A^0)$ changing the compatible framing
-    corresponds to
+\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{thm}[\cite{boalch}: Thm 3.2]
+    Fix the data $(A^0,z,\tilde p)$ as above.
+    Then 
     \begin{itemize}
-      \item the conjugation action
-        $t(\textbf{S})=(tS_1t^{-1},\dots,tS_{2k-2}t^{-1})$
+      \item the \emph{`local monodromy map'}
         \begin{itemize}
-          \item on the Stokes matrices
+          \item taking the stokes matrices
         \end{itemize}
     \end{itemize}
-    and so, there is a bijection
-    \[
-      \Syst(A^0)/G\{z\}\cong(U_+\times U_-)^{k-1}/T
-    \]
-  \end{cor}
-  \begin{cor}
-    If $\Phi_0$ is contiuned once around $0$ in a positive sense, then on
-    return to $\Sect_0$ is will become
-    \[
-      \Phi_0\cdot PS_{2k-2}\cdots S_2S_1P^{-1}M_0
-    \]
-    where
+    induces a bijection
+    \begin{align*}
+      \cH(A^0)&\overset{\cong}{\to}(U_+\times U_-)^{k-1}
+    \\ \left[(A,g_0)\right] &\mapsto(S_1,\dots,S_{2k-2})
+    \end{align*}
+    In particular
     \begin{itemize}
-      \item $M_0=e^{2\pi\sqrt{-1}\cdot\Lambda^0}$ is the formal monodromy.
+      \item $\cH(A^0)$ is isomorphic to the vector space $\C^{(k-1)n(n-1)}$.
     \end{itemize}
-  \end{cor}
-\end{thm}
 
+    \begin{cor}
+      The torus action of $\cH(A^0)$ changing the compatible framing
+      corresponds to
+      \begin{itemize}
+        \item the conjugation action
+          $t(\textbf{S})=(tS_1t^{-1},\dots,tS_{2k-2}t^{-1})$
+          \begin{itemize}
+            \item on the Stokes matrices
+          \end{itemize}
+      \end{itemize}
+      and so, there is a bijection
+      \[
+        \Syst(A^0)/G\{z\}\cong(U_+\times U_-)^{k-1}/T
+      \]
+    \end{cor}
+    \begin{cor}
+      If $\Phi_0$ is contiuned once around $0$ in a positive sense, then on
+      return to $\Sect_0$ is will become
+      \[
+        \Phi_0\cdot PS_{2k-2}\cdots S_2S_1P^{-1}M_0
+      \]
+      where
+      \begin{itemize}
+        \item $M_0=e^{2\pi\sqrt{-1}\cdot\Lambda^0}$ is the formal monodromy.
+      \end{itemize}
+    \end{cor}
+  \end{thm}
+  \switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{lem}[\cite{boalch}: 3.2]
+    \begin{enumerate}
+      \setcounter{enumi}{1}
+      \item The map
+        \begin{align*}
+          \prod_{d\in\A}\SSto_d(A^0)&\cong (U_+\times U_-)^{k-1} ;
+          \\(K_1,\dots,K_r)&\mapsto (S_1,\dots,K_{2k-2})
+        \end{align*}
+        where
+        \begin{itemize}
+          \item $S_i:=P^{-1}K_{il}\dots K_{(i-1)l+1}P\in U_{+/-}$ if $i$ is
+            odd / even
+        \end{itemize}
+        from the \textbf{product of all the groups of
+        Stokes factors}, is
+        \begin{itemize}
+          \item an isomorphism of varieties.
+        \end{itemize}
+    \end{enumerate}
+  \end{lem}
+  Thus we can define the Stokes matrices of $(A,g_0)\in\hat\Syst(A^0)$
+  \[
+    S_i:=P^{-1}K_{il}\dots K_{(i-1)l+1}P\in U_{+/-}
+    \qquad
+    \text{if } i \text{ is odd / even}
+  \]
+  where
+  \begin{itemize}
+    \item $i=1,\dots,2k-2$ and
+    \item $P$ is the permutation matrix associated to the half-period
+      $(d_1,\dots,d_l)$.
+  \end{itemize}
+\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{comment}
   \begin{rem}[1.41 from \cite{thboalch} on pages 16f]
@@ -796,8 +805,11 @@ We will assume that $\left(\sM^{good},\nabla^{good}\right)$ is
   $\Aut^{<X}(\tilde\sM^{good})$ as the sheaf
   \begin{itemize}
     \item on $S^1\otimes X$
-    \item of automorphisms of $\tilde\sM^{good}:=\sA_{\tilde D\times
-      X}\otimes_{\cO_{D\times X}}\sM^{good}$
+    \item of automorphisms of
+      \[
+        \tilde\sM^{good}
+          :=\sA_{\tilde D\times X}\otimes_{\cO_{D\times X}}\sM^{good}
+      \]
       witch are
       \begin{itemize}
         \item compatible with the connection and
@@ -837,7 +849,8 @@ Assume that $X$ is a ball.
   \begin{itemize}
     \item $V_k$ to be the $\C$-vector space consisting of
       \begin{itemize}
-        \item \textbf{multivalued horizontal sections}
+        \item \textbf{multivalued horizontal sections} \TODO[Def?]
+          \marginnote{See \cite{pym2012meromorphic} p. 2}
           \begin{itemize}
             \item of $\tilde\sR_k$
             \item on $D^*\times X$
@@ -1189,6 +1202,7 @@ pointed sets
 \end{cor}
 %}}}
 
+\begin{comment}
 \section{Comparison}
 \subsection{Situation} %{{{
 \begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1226,4 +1240,5 @@ pointed sets
   \end{itemize}
 \end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %}}}
+\end{comment}
 

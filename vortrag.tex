@@ -1,0 +1,136 @@
+\chapter{Vortrag}
+\section{Motivation} %{{{
+Wir wollen \textbf{irregulär singulärere meromorphe Zusammenhänge}, welche zu
+einem vorgegebenen gutem Modell formal isomorph sind, betrachten und fragen
+uns, wie wir Isomorphieklassen dieser klassifizieren.
+
+Es stellt sich heraus, das die dafür benötigte Information genau durch die
+\textbf{Stokes Struktur} gegeben ist.
+
+\begin{comment}
+  Um diese zu erklären wir zunächst das Konzept einer \textbf{Asymptotischen
+  Erweiterung} erläutert, danach sollen die Stokes Strukturen in einer
+  \textbf{Matrix-} sowie einer \textbf{Garben-Variante} definiert werden.
+  Zum Schluss werden noch die essentiellen Theoreme erwähnt.
+\end{comment}
+%}}}
+\section{Meromorphe Zusammenhänge} %{{{
+Sei
+\begin{itemize}
+  \item $M$ eine Riemann-Fläche,
+  \item $D$ ein effektiver Divisor auf $M$ und
+  \item $E$ ein holomorphes Vektor Bündel über $M$
+    \begin{itemize}
+      \item mit der Garbe $\cE$ als Garbe der holomorphen Schnitte.
+    \end{itemize}
+\end{itemize}
+\begin{defn}
+  Ein \emph{meromorpher Zusammenhang auf $E$ mit Polen, welche durch $D$
+  beschränkt sind,} ist ein Differentialoperator
+  \[
+    \nabla:\cE\to\Omega_X^1(D)\otimes\cE
+  \]
+  welcher
+  \begin{itemize}
+    \item für
+      \begin{itemize}
+        \item alle offenen Mengen $U\subset M$,
+        \item alle Schnitte $s\in\Gamma(U,\cE)$ und
+        \item alle holomorphen Funktionen $f\in\cO(U)$
+      \end{itemize}
+  \end{itemize}
+  die \textbf{Leibnitz Regel}
+  \[
+    \nabla(fs)=f\nabla s+(df)\otimes s
+    \qquad
+    \in\Gamma(U,\Omega_M^1\otimes_{\cO_M}\cE)
+  \]
+  erfüllt.
+  \begin{comment}
+    \begin{defn}
+      Ein Zusammenhang heiß \emph{flach} oder \emph{integrabel} falls
+      \begin{itemize}
+        \item seine Krümmung $R_\nabla\equiv0$
+          wobei
+          \begin{itemize}
+            \item $R_\nabla
+              :=\nabla\circ\nabla:\cE\to\Omega_M^2\otimes_{\cO_M}\cE$
+          \end{itemize}
+      \end{itemize}
+      \begin{rem}[ \cite{sabbah2007isomonodromic} Rem 0.12.5]
+        Falls $\dim(M)=1$ ist jeder Zusammenhang flach.
+      \end{rem}
+    \end{defn}
+  \end{comment}
+\end{defn}
+\subsection{Irregularität von meromorphen Zusammenhängen} %{{{
+\TODO
+%}}}
+\subsection{Modelle und formale Zerlegung}%{{{
+\begin{defn}
+  Let $(\cM,\nabla)$ be a \textbf{germ} of a meromorphic bundle with
+  connection.
+  \begin{itemize}
+    \item A germ $(\cM,\nabla)$ is \emph{elementary} if it is isomorphic to
+      some germ
+      \[
+        (\cE^\phi,\nabla)\otimes(\cR,\nabla)
+      \]
+      where
+      \begin{itemize}
+        \item $(\cR,\nabla)$ ha regular singularity along $\{0\}\times X$
+      \end{itemize}
+    \item $(\cM,\nabla)$ is a \emph{model} if it is isomorphic to a direct sum
+      of elementary models, written as
+      \[
+        \bigoplus_\phi(\cE^\phi\otimes\cR_\phi)
+      \]
+      where
+      \begin{itemize}
+        \item the meromorphic bundles with connection $\cR_\phi$ have regular
+          singularity and
+        \item the
+          $\phi\in\C\{t\textcolor{gray}{\underset{\text{parameter}}
+            {\underbrace{,x_1,\ldots,x_n}}}\}[t^{-1}]$
+          \begin{itemize}
+            \item have no holomorphic part and
+            \item are pairwise distinct.
+          \end{itemize}
+      \end{itemize}
+  \end{itemize}
+  \begin{comment}
+    \begin{itemize}
+      \item We will say that a model is \emph{good} if,
+        \begin{itemize}
+          \item for all $\phi\neq\psi$
+            \begin{itemize}
+              \item such that $\cR_\phi$, $\cR_\psi$ are nonzero,
+            \end{itemize}
+            the order of the pole along $t=0$ of $(\phi-\psi)(t,x)$ does not
+            depend on $x$ being in some neighbourhood of $x^o$.
+        \end{itemize}
+    \end{itemize}
+  \end{comment}
+\end{defn}
+%}}}
+%}}}
+\section{Asymptotische Erweiterungen} %{{{
+%}}}
+\section{Stokes Strukturen} %{{{
+%}}}
+\section{Theoreme} %{{{
+\begin{thm}
+  Die Abbildung
+  \[
+    \sH_X\to\St_X(\sM^{good})
+  \]
+  ist ein Isomorphismus von Garben punktierter Mengen.
+\end{thm}
+
+\begin{thm}
+  Es gibt einen Isomorphismus
+  \[
+    \Syst(A^0)/G\{z\}\cong(U_+\times U_-)^{k-1}/T
+  \]
+\end{thm}
+%}}}
