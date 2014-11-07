@@ -17,12 +17,13 @@ Es stellt sich heraus, das die dafür benötigte Information genau durch die
 \section{Meromorphe Zusammenhänge} %{{{
 Sei
 \begin{itemize}
-  \item $M$ eine Riemann-Fläche,
-  \item $D$ ein effektiver Divisor auf $M$ und
+  \item $M$ eine Riemann-Fläche\marginnote{$\C$},
+  \item $D$ ein effektiver Divisor\marginnote{$1(0)$} auf $M$ und
   \item $E$ ein holomorphes Vektor Bündel über $M$
     \begin{itemize}
       \item mit der Garbe $\cE$ als Garbe der holomorphen Schnitte.
     \end{itemize}
+  \item \TODO[meromorphes Bündel!?!]
 \end{itemize}
 \begin{defn}
   Ein \emph{meromorpher Zusammenhang auf $E$ mit Polen, welche durch $D$
@@ -31,14 +32,16 @@ Sei
     \nabla:\cE\to\Omega_X^1(D)\otimes\cE
   \]
   welcher
-  \begin{itemize}
-    \item für
-      \begin{itemize}
-        \item alle offenen Mengen $U\subset M$,
-        \item alle Schnitte $s\in\Gamma(U,\cE)$ und
-        \item alle holomorphen Funktionen $f\in\cO(U)$
-      \end{itemize}
-  \end{itemize}
+  \begin{comment}
+    \begin{itemize}
+      \item für
+        \begin{itemize}
+          \item alle offenen Mengen $U\subset M$,
+          \item alle Schnitte $s\in\Gamma(U,\cE)$ und
+          \item alle holomorphen Funktionen $f\in\cO(U)$
+        \end{itemize}
+    \end{itemize}
+  \end{comment}
   die \textbf{Leibnitz Regel}
   \[
     \nabla(fs)=f\nabla s+(df)\otimes s
@@ -63,9 +66,31 @@ Sei
     \end{defn}
   \end{comment}
 \end{defn}
+\begin{rem}
+  Lokal sieht $\cE$ wie $U\times\C^n$ aus und ein $s\in\cE$ wie 
+  $\begin{pmatrix}f_{1}\\ \vdots\\ f_{n} \end{pmatrix}=:f$ mit holomorphen
+  Funktionen $f_j$.
+  Dann
+  \[
+    \nabla s=df - A(z)f
+  \]
+  wobei $A(z)$ eine holomorphe matrix-wertige Funktion ist.
+  \begin{comment}
+    Wollen diese Klassifizieren. Klassifiziere diese durch die Lösung von
+    $\nabla s=0$. Dies ist eine DGL (ODE).
+  \end{comment}
+\end{rem}
 \TODO[Zusammenhang zu (Partiellen-)DGLs]
-\subsection{Irregularität von meromorphen Zusammenhängen} %{{{
+\subsection{Formalisieren} %{{{
 \TODO
+%}}}
+\subsection{Irregularität von meromorphen Zusammenhängen} %{{{
+Wir wollen irregulär singuläre meromorphe Zusammenhänge betrachten. Die regulär
+singulären sind durch \TODO
+\TODO
+
+\TODO[\cite{sabbah2007isomonodromic}: p. 86]
+\TODO[\cite{sabbah2007isomonodromic}: Def II.2.24]
 %}}}
 \subsection{Modelle und formale Zerlegung}%{{{
 \begin{defn}
@@ -162,16 +187,21 @@ Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
     \right|
     \leq \myConst|z|^{\myN} \qquad \text{ für alle } z\in \mySect
   \]
-  \Leftrightarrow{}
-  \[
-    \lim_{z\to0,z\in{\mySect}}
-    |z|^{-(\myN-1)}
-    \left|
+  \begin{comment}
+    \Leftrightarrow{}
+    \[
+      \lim_{z\to0,z\in{\mySect}}
+      |z|^{-(\myN-1)}
+      \left|
       f(x)-\sum_{n_0\leq n\leq \myN-1}c_nz^n
-    \right|=0
-    \qquad \text{ für alle } z\in \mySect
-  \]
+      \right|=0
+      \qquad \text{ für alle } z\in \mySect
+    \]
+  \end{comment}
 \end{defn}
+
+\TODO[The sheaf $\sA$]
+
 \begin{lem}[Borel-Ritt]
   \TODO
 \end{lem}
@@ -180,6 +210,54 @@ Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
 \end{thm}
 %}}}
 \section{Stokes Strukturen} %{{{
+\TODO[Trivial parameter space?]
+Sei
+\begin{itemize}
+  \item $X$ eine analytische Mannigfaltigkeit mit Koordinaten $x_1,\dots,x_n$
+    \marginnote{Parameter Raum}
+  \item $\sM^{good}$ ein meromorphes Bündel
+    \begin{itemize}
+      \item auf $D\times X$
+      \item mit Polen entlang $\{0\}\times X$
+    \end{itemize}
+    mit einem \textbf{flachem} Zusammenhang
+    \[
+      \nabla^{good}:\sM\to\Omega_{D\times X}^1\otimes \sM
+    \]
+\end{itemize}
+$(\sM^{good},\nabla^{good})$ soll ein \textbf{gutes Modell} in der Umgebung von
+jedem $x^0\in X$ sein. Das bedeutet \TODO
+
+\TODO[The sheaf $\Aut^{<X}(\sM^{good})$]
+
+\begin{defn}
+  Die Garbe $\Aut^{<X}(\sM^{good})$ ist die Garbe
+  \begin{itemize}
+    \item auf $S^1\otimes X$
+    \item von Automorphismen von
+      \[
+        \tilde\sM^{good}:=\sA_{\tilde D\times X}\otimes\sM^{good}
+      \]
+      welche
+      \begin{itemize}
+        \item mit dem Zusammenhang kompatibel\TODO[in Formeln] sind und
+        \item formal äquivalent zur Identität sind.
+      \end{itemize}
+  \end{itemize}
+  Die Schnitte heißen \emph{Stokes Matrizen}.
+\end{defn}
+\begin{defn}
+  Definiere die \emph{Stokes Garbe\footnote{von punktierten Mengen}
+  $\St_X(\sM^{good})$ auf $X$} als die Garbe zur Prägarbe
+  \[
+    U\mapsto H^1(S^1\times U,\Aut^{<X}(\tilde \sM^{good}))
+  \]
+  \begin{thm}
+    Die Stokes Garbe ist \textbf{lokal konstant}.
+  \end{thm}
+\end{defn}
+
+\TODO[The sheaf $\sH_X$]
 %}}}
 \section{Theoreme} %{{{
 \begin{thm}
@@ -194,6 +272,8 @@ Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
   ist ein Isomorphismus von Garben punktierter Mengen.
 \end{thm}
 
+\TODO[From $\sH_X$ to $\Syst(A^0)/G\{z\}$]
+
 \begin{thm}
   Es gibt einen Isomorphismus
   \[
@@ -201,3 +281,4 @@ Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
   \]
 \end{thm}
 %}}}
+
