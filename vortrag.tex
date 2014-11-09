@@ -100,13 +100,28 @@ Sei
     $\nabla s=0$. Dies ist eine DGL (ODE).
   \end{comment}
 \end{rem}
-\[
-  \hat F[A^0]=(d\hat F)\hat F^{-1}+\hat FA^0\hat F^{-1}
-\]
-\subsection{Formalisieren} %{{{
-Durch das Tensorieren mit formalen Potenzreihen erhält man einen Funktor.
-\TODO
-%}}}
+\begin{comment}
+  \TODO[$A^0=\dots$]
+  \begin{defn}
+    \begin{itemize}
+      \item $G\{z\}:=\GL_n(\C\{z\})$ \emph{locale analytischen Gauge
+        Tranformationen}
+        \begin{itemize}
+          \item mit Wirkung $F[A^0]=(dF)F^{-1}+FA^0F^{-1}$
+        \end{itemize}
+      \item $\hat G:=\GL_n(\C\llbracket z\rrbracket)$ \emph{formale
+        Tranformationen}
+    \end{itemize}
+    definiere
+    \[
+      \Syst(A^0)
+      :=\left\{A \mid A=\hat F[A^0]\text{ für ein }\hat F\in\hat G\right\}
+    \]
+  \end{defn}
+  \begin{center}
+    \textbf{Wir sind interessiert in $\Syst(A^0)/\C\{z\}$}
+  \end{center}
+\end{comment}
 \subsection{Irregularität von meromorphen Zusammenhängen} %{{{
 Wir wollen irregulär singuläre meromorphe Zusammenhänge betrachten. Die regulär
 singulären sind durch \TODO
@@ -117,45 +132,46 @@ singulären sind durch \TODO
 \TODO[\cite{sabbah2007isomonodromic}: Def II.2.24]
 %}}}
 \subsection{Modelle und formale Zerlegung}%{{{
+\begin{comment}
+  Durch das Tensorieren mit formalen Potenzreihen erhält man einen Funktor.
+\end{comment}
+%}}}
 \begin{defn}
-  Sei $(\cM,\nabla)$ ein \textbf{Keim} eines meromorphen Bündels mit
-  Zusammenhangs.
+  Sei $(\sM,\nabla)$ ein meromorphen Bündel mit Zusammenhang.
+  \TODO[oder merom zsh?]
   \begin{itemize}
-    \item $(\cM,\nabla)$ ist ein \emph{Model} 
-      falls
-      \[
-        (\cM,\nabla)
-        \cong
-        \bigoplus_\phi(\cE^\phi\otimes\cR_\phi)
-      \]
-      wobei
-      \begin{itemize}
-        \item \TODO[$\cE^\phi$ wird gelöst von\dots]
-        \item die $\cR_\phi$ regulär singulär sind und
-        \item die
-          $\phi\in\C\{t\textcolor{gray}{\underset{\text{parameter}}
-            {\underbrace{,x_1,\ldots,x_n}}}\}[t^{-1}]$
-          \begin{itemize}
-            \item keinen holomorphen Anteil haben und
-            \item paarweise unterschiedlich sind.
-          \end{itemize}
-      \end{itemize}
-      Die $\cE^\phi\otimes\cR_\phi$ heißen elementare Zusammenhänge.
-    \item \TODO[Modell eines (nicht Keims) eines Zusammenhangs]
+    \item $(\sM,\nabla)$ ist ein \emph{Model} falls
       \[
         (\sM,\nabla)
         \cong
         \bigoplus_\phi(\sE^\phi\otimes\sR_\phi)
       \]
-    \item Ein Model ist \emph{gut} falls die Ordnung der Pole entlang $t=0$ von
-      $(\phi-\psi)(t,x)$ nicht von $x$ abhängt.
+      wobei
+      \begin{itemize}
+        \item \TODO[$\sE^\phi$ wird gelöst von\dots]
+        \item die $\sR_\phi$ regulär singulär sind und
+        \item die
+          $\phi\in\C\{t\}[t^{-1}]$
+          \begin{itemize}
+            \item keinen holomorphen Anteil haben und
+            \item paarweise unterschiedlich sind.
+          \end{itemize}
+      \end{itemize}
+      Die $\sE^\phi\otimes\sR_\phi$ heißen elementare Zusammenhänge.
   \end{itemize}
 \end{defn}
-\begin{thm}[Levelt-Turittin]
-  Zu einem formalem meromorphen Zusammenhang gibt es, bis auf Zurückziehen,
-  immer einen Isomorphismus zu einer direkten Summe formaler elementarer
-  Zusammenhänge.
-\end{thm}
+\begin{comment}
+  \begin{thm}[Levelt-Turittin]
+    Zu einem formalem meromorphen Zusammenhang gibt es, bis auf Zurückziehen,
+    immer einen Isomorphismus zu einer direkten Summe formaler elementarer
+    Zusammenhänge.
+    \begin{rem}
+      \textbf{Übergang:}
+      Aber keinen konvergenten lift.
+      Sektorweise aber schon mit asymptotischer Analysis
+    \end{rem}
+  \end{thm}
+\end{comment}
 %}}}
 %}}}
 \section{Asymptotische Erweiterungen} %{{{
@@ -236,38 +252,56 @@ Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
   \]
   eine surjektion.
 \end{lem}
-\begin{thm}[Sectorial lifting]
-  \TODO
+\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{thm}
+    \begin{itemize}
+      \item Für jedes $e^{i\theta^o}\in S^1$,
+    \end{itemize}
+    existiert ein Isomorphismus
+    \[
+      \tilde\lambda_{\theta^o}: \tilde\sM_{\theta^o}
+      \overset{\sim}{\longrightarrow}\tilde\sM^{good}_{\theta^o},
+    \]
+    so dass das Diagramm
+    \[ \begin{tikzcd}
+        \tilde\sM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
+        \tilde\sM^{good}_{\theta^o} \dar
+        \\\hat\sM \rar{\hat\lambda} &
+        \hat\sM^{good}
+    \end{tikzcd} \]
+    kommutiert
+  \end{thm}
+\switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thm}
+  Zu jedem $\theta\in\S^1$ und jedem genügend kleinem Intervall um $V$ gilt
+  \[
+    \sA(V)\otimes\sM\cong\sA(V)\otimes\bigoplus_\phi(\sE^\phi\otimes\sR_\phi)
+  \]
 \end{thm}
+\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %}}}
 \section{Stokes Strukturen} %{{{
-\TODO[Trivial parameter space?]
 Sei
 \begin{itemize}
-  \item $X$ eine analytische Mannigfaltigkeit mit Koordinaten $x_1,\dots,x_n$
+  \item $(\sM^{good},\nabla^{good})$ ein \textbf{Modell}
     \begin{itemize}
-      \item Parameter Raum der Deformation
+      \item $\sM^{good}$ ein meromorphes Bündel
+        \begin{itemize}
+          \item auf $D$
+          \item mit Pol bei $\{0\}$
+        \end{itemize}
+        mit einem \textbf{flachem} Zusammenhang\marginnote{holomorph}
+        \[
+          \nabla^{good}:\sM\to\Omega_{D\times X}^1\otimes \sM
+        \]
     \end{itemize}
-  \item $\sM^{good}$ ein meromorphes Bündel
-    \begin{itemize}
-      \item auf $D\times X$
-      \item mit Polen entlang $\{0\}\times X$
-    \end{itemize}
-    mit einem \textbf{flachem} Zusammenhang\marginnote{holomorph}
-    \[
-      \nabla^{good}:\sM\to\Omega_{D\times X}^1\otimes \sM
-    \]
 \end{itemize}
-$(\sM^{good},\nabla^{good})$ soll ein \textbf{gutes Modell} in der Umgebung von
-jedem $x^0\in X$ sein. Das bedeutet \TODO
-
 \begin{defn}
   \begin{itemize}
-    \item 
-      Definiere auf $S^1\times X$ die Garbe
+    \item Definiere auf $S^1$ die Garbe
       \begin{itemize}
-        \item $\Aut^{<X}(
-          \underset{\sA_{\tilde D\times X}\otimes\sM^{good}}
+        \item $\Aut^{<0}(
+          \underset{\sA_{\tilde D}\otimes\sM^{good}}
           {\underbrace{\tilde\sM^{good}}})$ der Automorphismen
           welche
           \begin{itemize}
@@ -276,38 +310,54 @@ jedem $x^0\in X$ sein. Das bedeutet \TODO
           \end{itemize}
       \end{itemize}
       Die Schnitte heißen \emph{Stokes Matrizen}.
-    \item Definiere die \emph{Stokes Garbe $\St_X(\sM^{good})$ auf $X$} als die
-    Garbe zur Prägarbe
-    \[
-      U\mapsto H^1\left(S^1\times U,\Aut^{<X}\left(\tilde \sM^{good}\right)\right)
-    \]
-    \begin{thm}
-      Die Stokes-Garbe $\St_X(\sM^{good})$ ist eine lokal konstante
-      Garbe\footnote{von punktierten Mengen}.
-    \end{thm}
+    \item definiere
+      \[
+        \St(\sM^{good})
+          :=H^1\left(S^1,\Aut^{<0}\left(\tilde \sM^{good}\right)\right)
+      \]
   \end{itemize}
+  \begin{comment}
+    \begin{itemize}
+      \item Definiere die \emph{Stokes Garbe $\St_X(\sM^{good})$ auf $X$} als
+        die Garbe zur Prägarbe
+        \[
+          U\mapsto
+          H^1\left(S^1\times U,\Aut^{<X}\left(\tilde \sM^{good}\right)\right)
+        \]
+        \begin{thm}
+          Die Stokes-Garbe $\St_X(\sM^{good})$ ist eine lokal konstante
+          Garbe\footnote{von punktierten Mengen}.
+        \end{thm}
+    \end{itemize}
+  \end{comment}
 \end{defn}
 
-Definiere $\sH_X$ als die (Prä-)Garbe auf $X$ mit
+\begin{comment}
+  Definiere $\sH_X$ als die (Prä-)Garbe auf $X$ mit
+  \[
+    U\mapsto\sH_X(U)=\{(\sM,\nabla,\hat f) \mid \text{definiert auf $U$}\}
+    /\sim
+  \]
+\end{comment}
+Definiere 
 \[
-  U\mapsto\sH_X(U)=\{(\sM,\nabla,\hat f) \mid \text{definiert auf $U$}\} /\sim
+  \sH:=\left\{(\sM,\nabla,\hat f)\right\}/\sim
 \]
 \TODO[definieren isomorphie von `Keimen']
 
 \TODO[Morphism $\sH_X\to\St_X(\sM^{good})$]
 %}}}
-\section{Theoreme} %{{{
+\section{Theorem 1} %{{{
 \begin{thm}
   Die Abbildung
   \[
-    \sH_X\to\St_X(\sM^{good})
+    \sH\to\St(\sM^{good})
   \]
-  ist ein Isomorphismus von Garben\footnote{punktierter Mengen}.
+  ist ein Isomorphismus von punktierter Mengen.
 \end{thm}
-
-\section{Matrix Variante\TODO[Besserer Titel]}
-Nun wählen wir den Parameterraum $X$ als trivial.
-\TODO[From $\sH_X$ to $\Syst(A^0)/G\{z\}$]
+%}}}
+\section{Theorem 2} %{{{
+\TODO[From $\sH$ to $\Syst(A^0)/G\{z\}$]
 \begin{comment}
   Sei $x^0\in X$ dann $\sH_{X,x_0}=\cH(A^0)$ für passendes $A^0$.
 \end{comment}
