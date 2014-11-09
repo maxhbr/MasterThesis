@@ -94,7 +94,7 @@ Sei
   \[
     \nabla s=df - A(z)f
   \]
-  wobei $A(z)$ eine holomorphe matrix-wertige Funktion ist.
+  wobei $A(z)$ eine holomorphe\TODO[meromorph?] matrix-wertige Funktion ist.
   \begin{comment}
     Wollen diese Klassifizieren. Klassifiziere diese durch die Lösung von
     $\nabla s=0$. Dies ist eine DGL (ODE).
@@ -125,8 +125,6 @@ Sei
 \subsection{Irregularität von meromorphen Zusammenhängen} %{{{
 Wir wollen irregulär singuläre meromorphe Zusammenhänge betrachten. Die regulär
 singulären sind durch \TODO
-
-\TODO
 
 \TODO[\cite{sabbah2007isomonodromic}: p. 86]
 \TODO[\cite{sabbah2007isomonodromic}: Def II.2.24]
@@ -178,35 +176,36 @@ singulären sind durch \TODO
 \begin{comment}
   See \cite{van2003galois}
 \end{comment}
-Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
-\begin{defn}
-  \begin{itemize}
-    \item $\Delta_r^*(U):=
-      \{z\in\Delta_r\mid z=\rho e^{i\theta},0<\rho<r,\theta\in U\}$%
-      \begin{center}
-        \begin{tikzpicture}[scale=3]
-          \node (zero) at (0,0) {};
-          \node[below left] at (zero) {$0$};
-          \draw[blue,dashed] (zero) circle (1cm);
-
-          \filldraw[fill=green!20!white
-            ,draw=green!60!black
-            ,thick
-          ,path fading=west] (0,0)
-          -- ({cos( -30 )*.7},{sin( -30 )*.7}) arc (-30:70:.7) -- cycle;
-          \node[green!40!black] at (.4,.3) {$\Delta_r^*(U)$};
-          \node[green!40!black] at (.3,-.25) {$r$};
-
-          \draw[thick,red!60!black] ({cos( -30 )},{sin( -30 )}) arc (-30:70:1);
-
-          \node[red!60!black,right] at (1,0) {$U$};
-
-          \fill[white] (zero) circle (1.5pt);
-          \fill (zero) circle (.7pt);
-        \end{tikzpicture}
-      \end{center}
-  \end{itemize}
+\begin{paracol}{2}
+\begin{defn} Sei \textcolor{red!60!black}{$U$} ein offener Intervall von $S^1$
+  \begin{align*}
+    \Delta_r^*(U):= \{z\in\Delta_r&\mid z=\rho e^{i\theta}
+                                \\&,0<\rho<r
+                                \\&,\theta\in U\}
+  \end{align*}
 \end{defn}
+\switchcolumn
+  \begin{tikzpicture}[scale=3]
+    \node (zero) at (0,0) {};
+    \node[below left] at (zero) {$0$};
+    \draw[blue,dashed] (zero) circle (1cm);
+
+    \filldraw[fill=green!20!white
+      ,draw=green!60!black
+      ,thick
+    ,path fading=west] (0,0)
+    -- ({cos( -30 )*.7},{sin( -30 )*.7}) arc (-30:70:.7) -- cycle;
+    \node[green!40!black] at (.4,.3) {$\Delta_r^*(U)$};
+    \node[green!40!black] at (.3,-.25) {$r$};
+
+    \draw[thick,red!60!black] ({cos( -30 )},{sin( -30 )}) arc (-30:70:1);
+
+    \node[red!60!black,right] at (1,0) {$U$};
+
+    \fill[white] (zero) circle (1.5pt);
+    \fill (zero) circle (.7pt);
+  \end{tikzpicture}
+\end{paracol}
 \begin{defn}
   \def\myN{\textbf{\textcolor{blue!40!black}{N}}}
   \def\mySect{\textcolor{red!40!black}{W}}
@@ -235,22 +234,28 @@ Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
       \qquad \text{ für alle } z\in \mySect
     \]
   \end{comment}
+  Damit bekommt man die Garbe $\sA$ auf $S^1$, die zu einem offenem Intervall
+  $U$ von $S^1$ die Menge $\sA(U)\subset\cO(\Delta_r^*(U))$ der Funktionen mit
+  asymptotischer Entwicklung auf dem entsprechendem Sektor zuordnet.
 \end{defn}
 
-\begin{comment}
-  Damit bekommt man die Garbe $\cA$ auf $S^1$, die zu einem offenem Intervall
-  $U$ von $S^1$ die Menge $\cA(U)$ der Funktionen mit asymptotischer
-  Entwicklung auf dem entsprechendem Sektor zuordnet.
-
-  \TODO[The sheaf $\sA$]
-\end{comment}
-
 \begin{lem}[Borel-Ritt]
-  Für jedes echtes offenes Intervall $X$ von $S^1$ ist die Abbildung
+  Für jedes \textbf{echtes} offenes Intervall $X$ von $S^1$ ist die Abbildung
   \[
     \sA(U)\to \C((z))
   \]
   eine surjektion.
+  \begin{comment}
+    \begin{itemize}
+      \item $x\mapsto e^{-\frac{1}{x}}$ hat verschwindende asymptotische
+        Erweiterung in Sektoren um $\theta=0$
+        \begin{itemize}
+          \item geht schneller als jedes Polynom gegen $0$
+        \end{itemize}
+      \item $ 0\to \sA^{<0} \to \sA \overset{T}{\to}
+          \underset{\hat\cO_{S^1}}{\underbrace{\pi^{-1}\hat\cO_{D}}} \to 0$
+    \end{itemize}
+  \end{comment}
 \end{lem}
 \begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{thm}
@@ -316,20 +321,6 @@ Sei
           :=H^1\left(S^1,\Aut^{<0}\left(\tilde \sM^{good}\right)\right)
       \]
   \end{itemize}
-  \begin{comment}
-    \begin{itemize}
-      \item Definiere die \emph{Stokes Garbe $\St_X(\sM^{good})$ auf $X$} als
-        die Garbe zur Prägarbe
-        \[
-          U\mapsto
-          H^1\left(S^1\times U,\Aut^{<X}\left(\tilde \sM^{good}\right)\right)
-        \]
-        \begin{thm}
-          Die Stokes-Garbe $\St_X(\sM^{good})$ ist eine lokal konstante
-          Garbe\footnote{von punktierten Mengen}.
-        \end{thm}
-    \end{itemize}
-  \end{comment}
 \end{defn}
 
 \begin{comment}
@@ -345,9 +336,22 @@ Definiere
 \]
 \TODO[definieren isomorphie von `Keimen']
 
-\TODO[Morphism $\sH_X\to\St_X(\sM^{good})$]
 %}}}
-\section{Theorem 1} %{{{
+\subsection{Theorem 1} %{{{
+Sei $(\sM,\nabla,\hat f)\in\sH$. Dann gibt es eine Überdeckung
+$\mathfrak{W}$ von $S^1$ und für jedes $W_i\in\mathfrak{W}$ einen
+Lift\footnote{$\hat f_i=\hat f$} von $\hat f$
+\[
+  f_i:(\tilde\sM,\tilde\nabla)_{W_i}
+  \overset{\sim}{\to}
+  (\tilde\sM^{good},\tilde\nabla^{good})_{W_i} \,.
+\]
+Dann ist$(f_jf_i^{-1})_{i,j}$ ein Kozykel in der Garbe
+$\Aut^{<0}(\tilde\sM^{good})$ relativ zur Überdeckung $\mathfrak{W}$.
+Damit haben wir eine Abbildung
+\[
+  \sH\to H^1(S^1,\Aut^{<0}(\hat \sM^{good}))
+\]
 \begin{thm}
   Die Abbildung
   \[
@@ -356,7 +360,7 @@ Definiere
   ist ein Isomorphismus von punktierter Mengen.
 \end{thm}
 %}}}
-\section{Theorem 2} %{{{
+\subsection{Theorem 2} %{{{
 \TODO[From $\sH$ to $\Syst(A^0)/G\{z\}$]
 \begin{comment}
   Sei $x^0\in X$ dann $\sH_{X,x_0}=\cH(A^0)$ für passendes $A^0$.
