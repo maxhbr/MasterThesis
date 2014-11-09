@@ -1,11 +1,21 @@
 \chapter{Vortrag}
+Here are the german notes of my Presentation of Stokes structures.
 \section{Motivation} %{{{
 Wir wollen \textbf{irregulär singulärere meromorphe Zusammenhänge}, welche zu
-einem vorgegebenen gutem Modell formal isomorph sind, betrachten und fragen
-uns, wie wir Isomorphieklassen dieser klassifizieren.
+einem vorgegebenen `gutem Modell' \textbf{formal isomorph} sind, betrachten und
+fragen uns, wie wir
+\begin{center}
+  \textbf{Isomorphieklassen dieser klassifizieren.}
+\end{center}
 
 Es stellt sich heraus, das die dafür benötigte Information genau durch die
-\textbf{Stokes Struktur} gegeben ist.
+\textbf{Stokes Struktur} gegeben ist. 
+
+\begin{comment}
+  \TODO[Siehe \textbf{\cite{van2003galois}: Chapter 7} für mehr Motivation]
+  DGLs mit konvergenten Einträgen haben manchmal eine Lösung die dann nur
+  formal ist.
+\end{comment}
 
 \begin{comment}
   Um diese zu erklären wir zunächst das Konzept einer \textbf{Asymptotischen
@@ -19,17 +29,18 @@ Sei
 \begin{itemize}
   \item $M$ eine Riemann-Fläche\marginnote{$\C$},
   \item $D$ ein effektiver Divisor\marginnote{$1(0)$} auf $M$ und
-  \item $E$ ein holomorphes Vektor Bündel über $M$
+  \item ein holomorphes Bündel $\sE$ ist ein lokal freier $\cO_M$-Modul
     \begin{itemize}
-      \item mit der Garbe $\cE$ als Garbe der holomorphen Schnitte.
+      \item $E$ das entsprechende Vektor Bündel über $M$
     \end{itemize}
-  \item \TODO[meromorphes Bündel!?!]
+  \item ein meromorphes Bündel $\sM$ ist ein lokal freier $\cO_M(*Z)$-Modul
 \end{itemize}
+\TODO[Divisor $D$ oder hyperfläche $Z$?]
 \begin{defn}
   Ein \emph{meromorpher Zusammenhang auf $E$ mit Polen, welche durch $D$
-  beschränkt sind,} ist ein Differentialoperator
+  beschränkt sind,} ist eine $\C$-lineare Derivation
   \[
-    \nabla:\cE\to\Omega_X^1(D)\otimes\cE
+    \nabla:\sE\to\Omega_X^1(D)\otimes\sE
   \]
   welcher
   \begin{comment}
@@ -37,7 +48,7 @@ Sei
       \item für
         \begin{itemize}
           \item alle offenen Mengen $U\subset M$,
-          \item alle Schnitte $s\in\Gamma(U,\cE)$ und
+          \item alle Schnitte $s\in\Gamma(U,\sE)$ und
           \item alle holomorphen Funktionen $f\in\cO(U)$
         \end{itemize}
     \end{itemize}
@@ -46,9 +57,12 @@ Sei
   \[
     \nabla(fs)=f\nabla s+(df)\otimes s
     \qquad
-    \in\Gamma(U,\Omega_M^1\otimes_{\cO_M}\cE)
+    \in\Gamma(U,\Omega_M^1\otimes_{\cO_M}\sE)
   \]
   erfüllt.
+
+  \TODO[(Iso)morphism of connections]
+
   \begin{comment}
     \begin{defn}
       Ein Zusammenhang heiß \emph{flach} oder \emph{integrabel} falls
@@ -57,7 +71,7 @@ Sei
           wobei
           \begin{itemize}
             \item $R_\nabla
-              :=\nabla\circ\nabla:\cE\to\Omega_M^2\otimes_{\cO_M}\cE$
+              :=\nabla\circ\nabla:\sE\to\Omega_M^2\otimes_{\cO_M}\sE$
           \end{itemize}
       \end{itemize}
       \begin{rem}[ \cite{sabbah2007isomonodromic} Rem 0.12.5]
@@ -67,9 +81,15 @@ Sei
   \end{comment}
 \end{defn}
 \begin{rem}
-  Lokal sieht $\cE$ wie $U\times\C^n$ aus und ein $s\in\cE$ wie 
-  $\begin{pmatrix}f_{1}\\ \vdots\\ f_{n} \end{pmatrix}=:f$ mit holomorphen
-  Funktionen $f_j$.
+  Lokal sieht
+  \begin{itemize}
+    \item $\sE$ wie $U\times\C^n$ aus und
+    \item ein $s\in\sE$ wie 
+      $\begin{pmatrix}f_{1}\\ \vdots\\ f_{n} \end{pmatrix}=:f$
+      \begin{itemize}
+        \item mit $f_j$ holomorph.
+      \end{itemize}
+  \end{itemize}
   Dann
   \[
     \nabla s=df - A(z)f
@@ -80,13 +100,17 @@ Sei
     $\nabla s=0$. Dies ist eine DGL (ODE).
   \end{comment}
 \end{rem}
-\TODO[Zusammenhang zu (Partiellen-)DGLs]
+\[
+  \hat F[A^0]=(d\hat F)\hat F^{-1}+\hat FA^0\hat F^{-1}
+\]
 \subsection{Formalisieren} %{{{
+Durch das Tensorieren mit formalen Potenzreihen erhält man einen Funktor.
 \TODO
 %}}}
 \subsection{Irregularität von meromorphen Zusammenhängen} %{{{
 Wir wollen irregulär singuläre meromorphe Zusammenhänge betrachten. Die regulär
 singulären sind durch \TODO
+
 \TODO
 
 \TODO[\cite{sabbah2007isomonodromic}: p. 86]
@@ -94,53 +118,50 @@ singulären sind durch \TODO
 %}}}
 \subsection{Modelle und formale Zerlegung}%{{{
 \begin{defn}
-  Let $(\cM,\nabla)$ be a \textbf{germ} of a meromorphic bundle with
-  connection.
+  Sei $(\cM,\nabla)$ ein \textbf{Keim} eines meromorphen Bündels mit
+  Zusammenhangs.
   \begin{itemize}
-    \item A germ $(\cM,\nabla)$ is \emph{elementary} if it is isomorphic to
-      some germ
+    \item $(\cM,\nabla)$ ist ein \emph{Model} 
+      falls
       \[
-        (\cE^\phi,\nabla)\otimes(\cR,\nabla)
-      \]
-      where
-      \begin{itemize}
-        \item $(\cR,\nabla)$ ha regular singularity along $\{0\}\times X$
-      \end{itemize}
-    \item $(\cM,\nabla)$ is a \emph{model} if it is isomorphic to a direct sum
-      of elementary models, written as
-      \[
+        (\cM,\nabla)
+        \cong
         \bigoplus_\phi(\cE^\phi\otimes\cR_\phi)
       \]
-      where
+      wobei
       \begin{itemize}
-        \item the meromorphic bundles with connection $\cR_\phi$ have regular
-          singularity and
-        \item the
+        \item \TODO[$\cE^\phi$ wird gelöst von\dots]
+        \item die $\cR_\phi$ regulär singulär sind und
+        \item die
           $\phi\in\C\{t\textcolor{gray}{\underset{\text{parameter}}
             {\underbrace{,x_1,\ldots,x_n}}}\}[t^{-1}]$
           \begin{itemize}
-            \item have no holomorphic part and
-            \item are pairwise distinct.
+            \item keinen holomorphen Anteil haben und
+            \item paarweise unterschiedlich sind.
           \end{itemize}
       \end{itemize}
+      Die $\cE^\phi\otimes\cR_\phi$ heißen elementare Zusammenhänge.
+    \item \TODO[Modell eines (nicht Keims) eines Zusammenhangs]
+      \[
+        (\sM,\nabla)
+        \cong
+        \bigoplus_\phi(\sE^\phi\otimes\sR_\phi)
+      \]
+    \item Ein Model ist \emph{gut} falls die Ordnung der Pole entlang $t=0$ von
+      $(\phi-\psi)(t,x)$ nicht von $x$ abhängt.
   \end{itemize}
-  \begin{comment}
-    \begin{itemize}
-      \item We will say that a model is \emph{good} if,
-        \begin{itemize}
-          \item for all $\phi\neq\psi$
-            \begin{itemize}
-              \item such that $\cR_\phi$, $\cR_\psi$ are nonzero,
-            \end{itemize}
-            the order of the pole along $t=0$ of $(\phi-\psi)(t,x)$ does not
-            depend on $x$ being in some neighbourhood of $x^o$.
-        \end{itemize}
-    \end{itemize}
-  \end{comment}
 \end{defn}
+\begin{thm}[Levelt-Turittin]
+  Zu einem formalem meromorphen Zusammenhang gibt es, bis auf Zurückziehen,
+  immer einen Isomorphismus zu einer direkten Summe formaler elementarer
+  Zusammenhänge.
+\end{thm}
 %}}}
 %}}}
 \section{Asymptotische Erweiterungen} %{{{
+\begin{comment}
+  See \cite{van2003galois}
+\end{comment}
 Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
 \begin{defn}
   \begin{itemize}
@@ -200,10 +221,20 @@ Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
   \end{comment}
 \end{defn}
 
-\TODO[The sheaf $\sA$]
+\begin{comment}
+  Damit bekommt man die Garbe $\cA$ auf $S^1$, die zu einem offenem Intervall
+  $U$ von $S^1$ die Menge $\cA(U)$ der Funktionen mit asymptotischer
+  Entwicklung auf dem entsprechendem Sektor zuordnet.
+
+  \TODO[The sheaf $\sA$]
+\end{comment}
 
 \begin{lem}[Borel-Ritt]
-  \TODO
+  Für jedes echtes offenes Intervall $X$ von $S^1$ ist die Abbildung
+  \[
+    \sA(U)\to \C((z))
+  \]
+  eine surjektion.
 \end{lem}
 \begin{thm}[Sectorial lifting]
   \TODO
@@ -214,13 +245,15 @@ Let \textcolor{red!60!black}{$U$} be an open interval in $S^1$
 Sei
 \begin{itemize}
   \item $X$ eine analytische Mannigfaltigkeit mit Koordinaten $x_1,\dots,x_n$
-    \marginnote{Parameter Raum}
+    \begin{itemize}
+      \item Parameter Raum der Deformation
+    \end{itemize}
   \item $\sM^{good}$ ein meromorphes Bündel
     \begin{itemize}
       \item auf $D\times X$
       \item mit Polen entlang $\{0\}\times X$
     \end{itemize}
-    mit einem \textbf{flachem} Zusammenhang
+    mit einem \textbf{flachem} Zusammenhang\marginnote{holomorph}
     \[
       \nabla^{good}:\sM\to\Omega_{D\times X}^1\otimes \sM
     \]
@@ -228,51 +261,56 @@ Sei
 $(\sM^{good},\nabla^{good})$ soll ein \textbf{gutes Modell} in der Umgebung von
 jedem $x^0\in X$ sein. Das bedeutet \TODO
 
-\TODO[The sheaf $\Aut^{<X}(\sM^{good})$]
-
 \begin{defn}
-  Die Garbe $\Aut^{<X}(\sM^{good})$ ist die Garbe
   \begin{itemize}
-    \item auf $S^1\otimes X$
-    \item von Automorphismen von
-      \[
-        \tilde\sM^{good}:=\sA_{\tilde D\times X}\otimes\sM^{good}
-      \]
-      welche
+    \item 
+      Definiere auf $S^1\times X$ die Garbe
       \begin{itemize}
-        \item mit dem Zusammenhang kompatibel\TODO[in Formeln] sind und
-        \item formal äquivalent zur Identität sind.
+        \item $\Aut^{<X}(
+          \underset{\sA_{\tilde D\times X}\otimes\sM^{good}}
+          {\underbrace{\tilde\sM^{good}}})$ der Automorphismen
+          welche
+          \begin{itemize}
+            \item mit dem Zusammenhang kompatibel\TODO[in Formeln] sind und
+            \item formal äquivalent zur Identität sind.
+          \end{itemize}
       \end{itemize}
+      Die Schnitte heißen \emph{Stokes Matrizen}.
+    \item Definiere die \emph{Stokes Garbe $\St_X(\sM^{good})$ auf $X$} als die
+    Garbe zur Prägarbe
+    \[
+      U\mapsto H^1\left(S^1\times U,\Aut^{<X}\left(\tilde \sM^{good}\right)\right)
+    \]
+    \begin{thm}
+      Die Stokes-Garbe $\St_X(\sM^{good})$ ist eine lokal konstante
+      Garbe\footnote{von punktierten Mengen}.
+    \end{thm}
   \end{itemize}
-  Die Schnitte heißen \emph{Stokes Matrizen}.
-\end{defn}
-\begin{defn}
-  Definiere die \emph{Stokes Garbe\footnote{von punktierten Mengen}
-  $\St_X(\sM^{good})$ auf $X$} als die Garbe zur Prägarbe
-  \[
-    U\mapsto H^1(S^1\times U,\Aut^{<X}(\tilde \sM^{good}))
-  \]
-  \begin{thm}
-    Die Stokes Garbe ist \textbf{lokal konstant}.
-  \end{thm}
 \end{defn}
 
-\TODO[The sheaf $\sH_X$]
+Definiere $\sH_X$ als die (Prä-)Garbe auf $X$ mit
+\[
+  U\mapsto\sH_X(U)=\{(\sM,\nabla,\hat f) \mid \text{definiert auf $U$}\} /\sim
+\]
+\TODO[definieren isomorphie von `Keimen']
+
+\TODO[Morphism $\sH_X\to\St_X(\sM^{good})$]
 %}}}
 \section{Theoreme} %{{{
-\begin{thm}
-  Die Stokes-Garbe $\St_X(\sM^{good})$ ist eine lokal konstante Garbe von
-  punktierten Mengen.
-\end{thm}
 \begin{thm}
   Die Abbildung
   \[
     \sH_X\to\St_X(\sM^{good})
   \]
-  ist ein Isomorphismus von Garben punktierter Mengen.
+  ist ein Isomorphismus von Garben\footnote{punktierter Mengen}.
 \end{thm}
 
+\section{Matrix Variante\TODO[Besserer Titel]}
+Nun wählen wir den Parameterraum $X$ als trivial.
 \TODO[From $\sH_X$ to $\Syst(A^0)/G\{z\}$]
+\begin{comment}
+  Sei $x^0\in X$ dann $\sH_{X,x_0}=\cH(A^0)$ für passendes $A^0$.
+\end{comment}
 
 \begin{thm}
   Es gibt einen Isomorphismus
@@ -280,5 +318,41 @@ jedem $x^0\in X$ sein. Das bedeutet \TODO
     \Syst(A^0)/G\{z\}\cong(U_+\times U_-)^{k-1}/T
   \]
 \end{thm}
-%}}}
 
+\begin{center}
+  \begin{tikzpicture}[scale=3]
+    \node[] (zero) at (0,0) {};
+    \fill[fill=green!20!white] (0,0) -- (1,0) arc (0:60:1.0cm) -- cycle;
+    \draw[blue] (zero) circle (1cm);
+
+    \foreach \w/\str in {10/$d_1\in S^1$,
+                         20/$d_2$,
+                         45/$d_3$,
+                         55/$d_l$}
+    {\draw[thick,purple!\w!blue,path fading=west]
+        (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+     \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
+     \foreach \sep in {60,120,180,240,300}
+     {\draw[green!20!white,thick] (zero) -- +({cos( \sep )},{sin( \sep )});
+      \draw[purple!\w!blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+      \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
+     }
+    };
+
+    \foreach \sep/\str in {0/$1$
+                          ,60/$2$
+                          ,120/$k-1$
+                          ,180/$4$
+                          ,240/$5$
+                          ,300/$2(k-1)$}
+    {\node[green!40!black]
+      at ({.6 * cos( \sep + 30 )},{.5 * sin( \sep + 30)}) {\str};
+    };
+
+    \fill[yellow!60!black] (0.8,0.07) circle (1pt);
+    \node[yellow!60!black,right] at (0.8,0.07) {$p$};
+
+    \fill (zero) circle (1pt);
+  \end{tikzpicture}
+\end{center}
+%}}}

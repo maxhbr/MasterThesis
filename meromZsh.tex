@@ -246,11 +246,19 @@ Let
     \emph{irregular type ${}^iA^0$} if
     \begin{itemize}
       \item $g_0$ extends to a formal trivialization of $V$ at $a_i$, in which
-      $\nabla$ differs from $d-{}^iA^0$ by a matrix of one-forms with just
-      simple poles.
+        $\nabla$ differs from $d-{}^iA^0$ by a matrix of one-forms with just
+        simple poles.
     \end{itemize}
   \end{defn}
 \switchcolumn[1]\noindent
+  \begin{defn}
+    The set of \emph{applicable formal transformations} is
+    \[
+      \hat G(A^0):=\left\{\hat F\in\hat G
+        \mid\hat F[A^0] \text{ is convergent}\right\}\,.
+    \]
+  \end{defn}
+
   \begin{defn}[marked pair]
     A \emph{marked pair} is a pair $(A, \hat F)$ consisting of
     \begin{itemize}
@@ -260,7 +268,8 @@ Let
     \end{itemize}
   \end{defn}
 \end{paracol}
-\begin{defn} Define
+\begin{defn}
+  Define
   \begin{itemize}
     \item $\widehat\Syst_{cf}(A^0)$~:\Leftrightarrow{} the set of compatibly
       framed connection germs with both irregular and formal type $A^0$.
@@ -271,9 +280,6 @@ Let
       \begin{itemize}
         \item $G\{z\}$ action on marked pairs:
           $g(A,\hat{F})=(g[A],g\circ\hat{F})$
-          \[
-            \mathcal{H}(A^0):=\widehat\Syst(A^0)/G\{z\}
-          \]
       \end{itemize}
   \end{itemize}
 
@@ -283,8 +289,25 @@ Let
       \widehat\Syst_{cf}(A^0)\cong\widehat\Syst_{mp}(A^0) \,,
     \]
   \end{lem}
-  Let $\Syst(A^0)$ denote either of these two sets.
+  Let $\widehat\Syst(A^0)$ denote either of these two sets.
 \end{defn}
+\begin{paracol}{2}\sloppy %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{defn}
+    \[
+      \mathcal{H}(A^0):=\widehat\Syst(A^0)/G\{z\}
+    \]
+  \end{defn}
+\switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{defn} Definition from \cite{thboalch}:
+    \[
+      \mathcal{H}(A^0):=G\{z\}\backslash\hat G(A^0)
+    \]
+  \end{defn}
+  \begin{lem}
+    The set is canonically isomorphic to the set of isomorphism classes of
+    compatibly framed systems having associated formal normal form $A^0$.
+  \end{lem}
+\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{lem}
 The actions of $T$ and $G\{z\}$ on $\Syst(A^0)$ commute:
 \[
