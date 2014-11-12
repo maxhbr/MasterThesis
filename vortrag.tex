@@ -28,19 +28,23 @@ Es stellt sich heraus, das die dafür benötigte Information genau durch die
 Sei
 \begin{itemize}
   \item $M$ eine Riemann-Fläche\marginnote{$\C$},
-  \item $D$ ein effektiver Divisor\marginnote{$1(0)$} auf $M$ und
+  \item $D$ ein effektiver Divisor auf $M$ und
   \item ein holomorphes Bündel $\sE$ ist ein lokal freier $\cO_M$-Modul
     \begin{itemize}
       \item $E$ das entsprechende Vektor Bündel über $M$
     \end{itemize}
-  \item ein meromorphes Bündel $\sM$ ist ein lokal freier $\cO_M(*Z)$-Modul
 \end{itemize}
+\begin{comment}
+  \begin{itemize}
+    \item ein meromorphes Bündel $\sM$ ist ein lokal freier $\cO_M(*Z)$-Modul
+  \end{itemize}
+\end{comment}
 \TODO[Divisor $D$ oder hyperfläche $Z$?]
 \begin{defn}
-  Ein \emph{meromorpher Zusammenhang auf $E$ mit Polen, welche durch $D$
-  beschränkt sind,} ist eine $\C$-lineare Derivation
+  Ein \emph{meromorpher Zusammenhang auf $\sE$ (bzw. $E$) mit Polen, welche
+  durch $D$ beschränkt sind,} ist eine $\C$-lineare Derivation
   \[
-    \nabla:\sE\to\Omega_X^1(D)\otimes\sE
+    \nabla:\sE\to\Omega_M^1(D)\otimes\sE
   \]
   welcher
   \begin{comment}
@@ -53,11 +57,9 @@ Sei
         \end{itemize}
     \end{itemize}
   \end{comment}
-  die \textbf{Leibnitz Regel}
+  die \textbf{Leibniz Regel}
   \[
     \nabla(fs)=f\nabla s+(df)\otimes s
-    \qquad
-    \in\Gamma(U,\Omega_M^1\otimes_{\cO_M}\sE)
   \]
   erfüllt.
 
@@ -65,14 +67,14 @@ Sei
 
   \begin{comment}
     \begin{defn}
-      Ein Zusammenhang heiß \emph{flach} oder \emph{integrabel} falls
+      Ein Zusammenhang heißt \emph{flach} oder \emph{integrabel} falls
       \begin{itemize}
         \item seine Krümmung $R_\nabla\equiv0$
-          wobei
-          \begin{itemize}
-            \item $R_\nabla
-              :=\nabla\circ\nabla:\sE\to\Omega_M^2\otimes_{\cO_M}\sE$
-          \end{itemize}
+      \end{itemize}
+      wobei
+      \begin{itemize}
+        \item $R_\nabla
+          :=\nabla\circ\nabla:\sE\to\Omega_M^2(D)\otimes_{\cO_M}\sE$
       \end{itemize}
       \begin{rem}[ \cite{sabbah2007isomonodromic} Rem 0.12.5]
         Falls $\dim(M)=1$ ist jeder Zusammenhang flach.
@@ -108,6 +110,7 @@ Sei
         Tranformationen}
         \begin{itemize}
           \item mit Wirkung $F[A^0]=(dF)F^{-1}+FA^0F^{-1}$
+            \marginnote{see \cite{sabbah2007isomonodromic} II.2.a}
         \end{itemize}
       \item $\hat G:=\GL_n(\C\llbracket z\rrbracket)$ \emph{formale
         Tranformationen}
@@ -119,8 +122,10 @@ Sei
     \]
   \end{defn}
   \begin{center}
-    \textbf{Wir sind interessiert in $\Syst(A^0)/\C\{z\}$}
+    \textbf{Wir sind interessiert in $\Syst(A^0)/G\{z\}$}
   \end{center}
+  Wir benötigen aber den etwas größeren Raum
+  $\widehat\Syst(A^0)/G\{z\}=:\sH$.
 \end{comment}
 \subsection{Irregularität von meromorphen Zusammenhängen} %{{{
 Wir wollen irregulär singuläre meromorphe Zusammenhänge betrachten. Die regulär
@@ -135,28 +140,23 @@ singulären sind durch \TODO
 \end{comment}
 %}}}
 \begin{defn}
-  Sei $(\sM,\nabla)$ ein meromorphen Bündel mit Zusammenhang.
-  \TODO[oder merom zsh?]
+  Ein meromorpher Zusammenhang $(\sM,\nabla)$ ist ein \emph{Model} falls
+  \[
+    (\sM,\nabla)
+    \cong
+    \bigoplus_\phi(\sE^\phi\otimes\sR_\phi)
+  \]
+  wobei
   \begin{itemize}
-    \item $(\sM,\nabla)$ ist ein \emph{Model} falls
-      \[
-        (\sM,\nabla)
-        \cong
-        \bigoplus_\phi(\sE^\phi\otimes\sR_\phi)
-      \]
-      wobei
+    \item \TODO[$\sE^\phi$ wird gelöst von\dots]
+    \item die $\sR_\phi$ regulär singulär sind und
+    \item die
+      $\phi\in t^{-1}\C[t^{-1}]=\C\{t\}[t^{-1}]\backslash\C\{t\}$
       \begin{itemize}
-        \item \TODO[$\sE^\phi$ wird gelöst von\dots]
-        \item die $\sR_\phi$ regulär singulär sind und
-        \item die
-          $\phi\in\C\{t\}[t^{-1}]$
-          \begin{itemize}
-            \item keinen holomorphen Anteil haben und
-            \item paarweise unterschiedlich sind.
-          \end{itemize}
+        \item paarweise unterschiedlich sind.
       \end{itemize}
-      Die $\sE^\phi\otimes\sR_\phi$ heißen elementare Zusammenhänge.
   \end{itemize}
+  Die $\sE^\phi\otimes\sR_\phi$ heißen elementare Zusammenhänge.
 \end{defn}
 \begin{comment}
   \begin{thm}[Levelt-Turittin]
@@ -215,6 +215,7 @@ singulären sind durch \TODO
   \begin{itemize}
     \item für alle $\myN\geq0$ und
     \item für alle abgeschlossenen Untersektoren $\mySect$ in $\Delta_r^*(U)$
+      \TODO
   \end{itemize}
   eine Konstante $\myConst$ existiert, so dass
   \[
@@ -234,28 +235,35 @@ singulären sind durch \TODO
       \qquad \text{ für alle } z\in \mySect
     \]
   \end{comment}
-  Damit bekommt man die Garbe $\sA$ auf $S^1$, die zu einem offenem Intervall
-  $U$ von $S^1$ die Menge $\sA(U)\subset\cO(\Delta_r^*(U))$ der Funktionen mit
-  asymptotischer Entwicklung auf dem entsprechendem Sektor zuordnet.
+  Damit bekommt man
+  \begin{itemize}
+    \item $\sA(U,r)\subset\cO(\Delta_r^*(U))$ die Funktionen mit asymptotischer
+      Entwicklung auf $\Delta_r^*(U)$
+    \item die Garbe $\sA$ auf $S^1$,
+      \[
+        \underset{\text{off. Intervall}}{U}\mapsto\sA(U):=\colim_r\sA(U,r)
+      \]
+  \end{itemize}
 \end{defn}
-
 \begin{lem}[Borel-Ritt]
+  \marginnote{$x\mapsto e^{-\frac{1}{x}}$ hat verschwindende asymptotische
+  Damit bekommt man
+  \begin{itemize}
+    \item die Garbe $\sA$ auf $S^1$,
+      \begin{itemize}
+        \item die zu einem offenem Intervall $U$ von $S^1$ die Menge
+          $\sA(U)\subset\cO(\Delta_r^*(U))$ der Funktionen mit asymptotischer
+          Entwicklung auf dem entsprechendem Sektor zuordnet.
+      \end{itemize}
+  \end{itemize}
+  Erweiterung in Sektoren um $\theta=0$}
   Für jedes \textbf{echtes} offenes Intervall $X$ von $S^1$ ist die Abbildung
   \[
+    \textcolor{gray}{0\to \sA^{<0} \to}
     \sA(U)\to \C((z))
+    \textcolor{gray}{\to0}
   \]
   eine surjektion.
-  \begin{comment}
-    \begin{itemize}
-      \item $x\mapsto e^{-\frac{1}{x}}$ hat verschwindende asymptotische
-        Erweiterung in Sektoren um $\theta=0$
-        \begin{itemize}
-          \item geht schneller als jedes Polynom gegen $0$
-        \end{itemize}
-      \item $ 0\to \sA^{<0} \to \sA \overset{T}{\to}
-          \underset{\hat\cO_{S^1}}{\underbrace{\pi^{-1}\hat\cO_{D}}} \to 0$
-    \end{itemize}
-  \end{comment}
 \end{lem}
 \begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{thm}
@@ -278,10 +286,12 @@ singulären sind durch \TODO
   \end{thm}
 \switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{thm}
-  Zu jedem $\theta\in\S^1$ und jedem genügend kleinem Intervall um $V$ gilt
-  \[
-    \sA(V)\otimes\sM\cong\sA(V)\otimes\bigoplus_\phi(\sE^\phi\otimes\sR_\phi)
-  \]
+  \textcolor{gray}{%
+    Zu jedem $\theta\in S^1$ und jedem genügend kleinem Intervall um $V$ gilt
+    \[
+      \sA(V)\otimes\sM\cong\sA(V)\otimes\bigoplus_\phi(\sE^\phi\otimes\sR_\phi)
+    \]
+  }
 \end{thm}
 \end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %}}}
@@ -290,15 +300,12 @@ Sei
 \begin{itemize}
   \item $(\sM^{good},\nabla^{good})$ ein \textbf{Modell}
     \begin{itemize}
-      \item $\sM^{good}$ ein meromorphes Bündel
+      \item $\sM^{good}$ ein holomorphes Bündel
         \begin{itemize}
           \item auf $D$
           \item mit Pol bei $\{0\}$
         \end{itemize}
-        mit einem \textbf{flachem} Zusammenhang\marginnote{holomorph}
-        \[
-          \nabla^{good}:\sM\to\Omega_{D\times X}^1\otimes \sM
-        \]
+        mit einem \textbf{flachem} meromorphen Zusammenhang $\nabla^{good}$
     \end{itemize}
 \end{itemize}
 \begin{defn}
