@@ -9,7 +9,7 @@ fragen uns, wie wir
 \end{center}
 
 Es stellt sich heraus, das die dafür benötigte Information genau durch die
-\textbf{Stokes Struktur} gegeben ist. 
+\textbf{Stokes Struktur} gegeben ist.
 
 \begin{comment}
   \TODO[Siehe \textbf{\cite{van2003galois}: Chapter 7} für mehr Motivation]
@@ -28,7 +28,7 @@ Es stellt sich heraus, das die dafür benötigte Information genau durch die
 Sei
 \begin{itemize}
   \item $M$ eine Riemann-Fläche\marginnote{$\C$},
-  \item $D$ ein effektiver Divisor auf $M$ und
+  \item $Z$ ein effektiver Divisor auf $M$ und
   \item ein holomorphes Bündel $\sE$ ist ein lokal freier $\cO_M$-Modul
     \begin{itemize}
       \item $E$ das entsprechende Vektor Bündel über $M$
@@ -44,7 +44,7 @@ Sei
   Ein \emph{meromorpher Zusammenhang auf $\sE$ (bzw. $E$) mit Polen, welche
   durch $D$ beschränkt sind,} ist eine $\C$-lineare Derivation
   \[
-    \nabla:\sE\to\Omega_M^1(D)\otimes\sE
+    \nabla:\sE\to\Omega_M^1(Z)\otimes\sE
   \]
   welcher
   \begin{comment}
@@ -63,70 +63,81 @@ Sei
   \]
   erfüllt.
 
-  \TODO[(Iso)morphism of connections]
-
-  \begin{comment}
-    \begin{defn}
-      Ein Zusammenhang heißt \emph{flach} oder \emph{integrabel} falls
-      \begin{itemize}
-        \item seine Krümmung $R_\nabla\equiv0$
-      \end{itemize}
-      wobei
-      \begin{itemize}
-        \item $R_\nabla
-          :=\nabla\circ\nabla:\sE\to\Omega_M^2(D)\otimes_{\cO_M}\sE$
-      \end{itemize}
-      \begin{rem}[ \cite{sabbah2007isomonodromic} Rem 0.12.5]
-        Falls $\dim(M)=1$ ist jeder Zusammenhang flach.
-      \end{rem}
-    \end{defn}
-  \end{comment}
+  \begin{defn}
+    Ein Zusammenhang heißt \emph{flach} oder \emph{integrabel} falls
+    \begin{itemize}
+      \item seine Krümmung $R_\nabla\equiv0$
+    \end{itemize}
+    wobei
+    \begin{itemize}
+      \item $R_\nabla
+        :=\nabla\circ\nabla:\sE\to\Omega_M^2(Z)\otimes_{\cO_M}\sE$
+    \end{itemize}
+    \begin{rem}[ \cite{sabbah2007isomonodromic} Rem 0.12.5]
+      Falls $\dim(M)=1$ ist jeder Zusammenhang flach.
+    \end{rem}
+  \end{defn}
 \end{defn}
 \begin{rem}
-  Lokal sieht
-  \begin{itemize}
-    \item $\sE$ wie $U\times\C^n$ aus und
-    \item ein $s\in\sE$ wie 
-      $\begin{pmatrix}f_{1}\\ \vdots\\ f_{n} \end{pmatrix}=:f$
-      \begin{itemize}
-        \item mit $f_j$ holomorph.
-      \end{itemize}
-  \end{itemize}
+  \marginnote{Siehe
+  \\\bullet\cite{pym}
+  \\\bullet\cite{sabbah2007isomonodromic} 0.11.a}
+  Lokal sieht $\sE$ wie $U\times\C^n$ und ein $s\in\sE$ wie
+  $\begin{pmatrix}f_{1}\\ \vdots\\ f_{n} \end{pmatrix}=:f$, mit $f_j\in\cO(U)$,
+  aus.
   Dann
   \[
     \nabla s=df - A(z)f
   \]
-  wobei $A(z)$ eine holomorphe\TODO[meromorph?] matrix-wertige Funktion ist.
+  wobei $A(z)\in\C\{z\}[1/z]$ ist die \emph{Zusammenhangs Matrix}.
+  \begin{comment}
+    Hat $A$ werte in den 1-Formen??
+  \end{comment}
   \begin{comment}
     Wollen diese Klassifizieren. Klassifiziere diese durch die Lösung von
     $\nabla s=0$. Dies ist eine DGL (ODE).
   \end{comment}
 \end{rem}
-\begin{comment}
-  \TODO[$A^0=\dots$]
-  \begin{defn}
-    \begin{itemize}
-      \item $G\{z\}:=\GL_n(\C\{z\})$ \emph{locale analytischen Gauge
-        Tranformationen}
-        \begin{itemize}
-          \item mit Wirkung $F[A^0]=(dF)F^{-1}+FA^0F^{-1}$
-            \marginnote{see \cite{sabbah2007isomonodromic} II.2.a}
-        \end{itemize}
-      \item $\hat G:=\GL_n(\C\llbracket z\rrbracket)$ \emph{formale
-        Tranformationen}
-    \end{itemize}
-    definiere
-    \[
-      \Syst(A^0)
-      :=\left\{A \mid A=\hat F[A^0]\text{ für ein }\hat F\in\hat G\right\}
-    \]
-  \end{defn}
-  \begin{center}
-    \textbf{Wir sind interessiert in $\Syst(A^0)/G\{z\}$}
-  \end{center}
-  Wir benötigen aber den etwas größeren Raum
-  $\widehat\Syst(A^0)/G\{z\}=:\sH$.
-\end{comment}
+\TODO[$A^0=\dots$]
+\begin{defn}
+  \begin{itemize}
+    \item $G\{z\}:=\GL_n(\C\{z\})$ \emph{locale analytischen Gauge
+      Tranformationen}
+      \begin{itemize}
+        \item mit Wirkung $F[A^0]=(dF)F^{-1}+FA^0F^{-1}$
+          \marginnote{see \cite{sabbah2007isomonodromic} II.2.a}
+      \end{itemize}
+    \item $\hat G:=\GL_n(\C\llbracket z\rrbracket)$ \emph{formale
+      Tranformationen}
+  \end{itemize}
+  definiere
+  \[
+    \Syst(A^0)
+    :=\left\{A \mid A=\hat F[A^0]\text{ für ein }\hat F\in\hat G\right\}
+  \]
+\end{defn}
+\begin{center}
+  \textbf{Wir sind interessiert in $\Syst(A^0)/G\{z\}$}
+\end{center}
+Wir benötigen aber den etwas größeren Raum
+\[
+  \widehat\Syst(A^0):=\{(A,\hat F)\mid A\in\Syst(A^0)
+                                     , \hat F\in G\llbracket z\rrbracket
+                                     , A=\hat F[A^0]\}
+\]
+und damit
+\begin{paracol}{5}
+  \[
+    \sH:=\widehat\Syst(A^0)/G\{z\}
+  \]
+\switchcolumn
+\switchcolumn
+  \[
+    \sH:=\left\{(\sM,\nabla,\hat f)
+      \mid \hat f:(\sM,\nabla)\overset{\cong}\to(\sM^{good},\nabla^{good})
+    \right\}/\sim
+  \]
+\end{paracol}
 \subsection{Irregularität von meromorphen Zusammenhängen} %{{{
 Wir wollen irregulär singuläre meromorphe Zusammenhänge betrachten. Die regulär
 singulären sind durch \TODO
@@ -140,7 +151,7 @@ singulären sind durch \TODO
 \end{comment}
 %}}}
 \begin{defn}
-  Ein meromorpher Zusammenhang $(\sM,\nabla)$ ist ein \emph{Model} falls
+  $(\sM,\nabla)$ ist ein \emph{Model} falls
   \[
     (\sM,\nabla)
     \cong
@@ -150,61 +161,69 @@ singulären sind durch \TODO
   \begin{itemize}
     \item \TODO[$\sE^\phi$ wird gelöst von\dots]
     \item die $\sR_\phi$ regulär singulär sind und
-    \item die
-      $\phi\in t^{-1}\C[t^{-1}]=\C\{t\}[t^{-1}]\backslash\C\{t\}$
-      \begin{itemize}
-        \item paarweise unterschiedlich sind.
-      \end{itemize}
+    \item die $\phi\in t^{-1}\C[t^{-1}]=\C\{t\}[t^{-1}]\backslash\C\{t\}$
+      paarweise unterschiedlich sind.
   \end{itemize}
   Die $\sE^\phi\otimes\sR_\phi$ heißen elementare Zusammenhänge.
 \end{defn}
-\begin{comment}
+\begin{paracol}{2}
   \begin{thm}[Levelt-Turittin]
-    Zu einem formalem meromorphen Zusammenhang gibt es, bis auf Zurückziehen,
-    immer einen Isomorphismus zu einer direkten Summe formaler elementarer
-    Zusammenhänge.
-    \begin{rem}
-      \textbf{Übergang:}
-      Aber keinen konvergenten lift.
-      Sektorweise aber schon mit asymptotischer Analysis
-    \end{rem}
+    Zu einem \textbf{formalem} meromorphen Zusammenhang gibt es, bis auf
+    Zurückziehen, immer einen Isomorphismus 
+    \[
+      \hat\lambda:\hat\sM
+      \overset{\cong}\longrightarrow
+      \hat\sM^{good}
+    \]
+    zu einem \textbf{formalem Modell}.
   \end{thm}
-\end{comment}
+\switchcolumn
+  \begin{rem}
+    Aber keinen konvergenten lift.
+    \[ \Large\begin{tikzcd}
+        \sM \dar \rar[dashed]{???} &
+        \sM^{good} \dar
+        \\\hat\sM \rar{\hat\lambda} &
+        \hat\sM^{good}
+    \end{tikzcd} \]
+    Sektorweise aber schon mit asymptotischer Analysis
+  \end{rem}
+\end{paracol}
 %}}}
 %}}}
 \section{Asymptotische Erweiterungen} %{{{
-\begin{comment}
-  See \cite{van2003galois}
-\end{comment}
+\marginnote{See \cite{van2003galois}}
 \begin{paracol}{2}
 \begin{defn} Sei \textcolor{red!60!black}{$U$} ein offener Intervall von $S^1$
   \begin{align*}
     \Delta_r^*(U):= \{z\in\Delta_r&\mid z=\rho e^{i\theta}
-                                \\&,0<\rho<r
-                                \\&,\theta\in U\}
+                                \\&~,0<\rho<r
+                                \\&~,\theta\in U\}
   \end{align*}
 \end{defn}
 \switchcolumn
-  \begin{tikzpicture}[scale=3]
-    \node (zero) at (0,0) {};
-    \node[below left] at (zero) {$0$};
-    \draw[blue,dashed] (zero) circle (1cm);
+  \begin{center}
+    \begin{tikzpicture}[scale=3]
+      \node (zero) at (0,0) {};
+      \node[below left] at (zero) {$0$};
+      \draw[blue,dashed] (zero) circle (1cm);
 
-    \filldraw[fill=green!20!white
-      ,draw=green!60!black
-      ,thick
-    ,path fading=west] (0,0)
-    -- ({cos( -30 )*.7},{sin( -30 )*.7}) arc (-30:70:.7) -- cycle;
-    \node[green!40!black] at (.4,.3) {$\Delta_r^*(U)$};
-    \node[green!40!black] at (.3,-.25) {$r$};
+      \filldraw[fill=green!20!white
+        ,draw=green!60!black
+        ,thick
+      ,path fading=west] (0,0)
+      -- ({cos( -30 )*.7},{sin( -30 )*.7}) arc (-30:70:.7) -- cycle;
+      \node[green!40!black] at (.4,.3) {$\Delta_r^*(U)$};
+      \node[green!40!black] at (.3,-.25) {$r$};
 
-    \draw[thick,red!60!black] ({cos( -30 )},{sin( -30 )}) arc (-30:70:1);
+      \draw[thick,red!60!black] ({cos( -30 )},{sin( -30 )}) arc (-30:70:1);
 
-    \node[red!60!black,right] at (1,0) {$U$};
+      \node[red!60!black,right] at (1,0) {$U$};
 
-    \fill[white] (zero) circle (1.5pt);
-    \fill (zero) circle (.7pt);
-  \end{tikzpicture}
+      \fill[white] (zero) circle (1.5pt);
+      \fill (zero) circle (.7pt);
+    \end{tikzpicture}
+  \end{center}
 \end{paracol}
 \begin{defn}
   \def\myN{\textbf{\textcolor{blue!40!black}{N}}}
@@ -215,24 +234,22 @@ singulären sind durch \TODO
   \begin{itemize}
     \item für alle $\myN\geq0$ und
     \item für alle abgeschlossenen Untersektoren $\mySect$ in $\Delta_r^*(U)$
-      \TODO
   \end{itemize}
   eine Konstante $\myConst$ existiert, so dass
   \[
     \left|
-      f(x)-\sum_{n_0\leq n\leq \myN-1}c_nz^n
+      f(x)-\sum_{n_0\leq n\leq\myN-1}c_nz^n
     \right|
     \leq \myConst|z|^{\myN} \qquad \text{ für alle } z\in \mySect
   \]
   \begin{comment}
-    \Leftrightarrow{}
+    oder äquivalent
     \[
       \lim_{z\to0,z\in{\mySect}}
       |z|^{-(\myN-1)}
       \left|
-      f(x)-\sum_{n_0\leq n\leq \myN-1}c_nz^n
+        f(x)-\sum_{n_0\leq n\leq \myN-1}c_nz^n
       \right|=0
-      \qquad \text{ für alle } z\in \mySect
     \]
   \end{comment}
   Damit bekommt man
@@ -241,23 +258,15 @@ singulären sind durch \TODO
       Entwicklung auf $\Delta_r^*(U)$
     \item die Garbe $\sA$ auf $S^1$,
       \[
-        \underset{\text{off. Intervall}}{U}\mapsto\sA(U):=\colim_r\sA(U,r)
+        \underset{\text{von } S^1}{\underset{\text{off. Intervall}}{U}}
+        \mapsto\sA(U):=\colim_r\sA(U,r)
       \]
   \end{itemize}
 \end{defn}
 \begin{lem}[Borel-Ritt]
   \marginnote{$x\mapsto e^{-\frac{1}{x}}$ hat verschwindende asymptotische
-  Damit bekommt man
-  \begin{itemize}
-    \item die Garbe $\sA$ auf $S^1$,
-      \begin{itemize}
-        \item die zu einem offenem Intervall $U$ von $S^1$ die Menge
-          $\sA(U)\subset\cO(\Delta_r^*(U))$ der Funktionen mit asymptotischer
-          Entwicklung auf dem entsprechendem Sektor zuordnet.
-      \end{itemize}
-  \end{itemize}
   Erweiterung in Sektoren um $\theta=0$}
-  Für jedes \textbf{echtes} offenes Intervall $X$ von $S^1$ ist die Abbildung
+  Für jedes \textbf{echtes} offenes Intervall $U$ von $S^1$ ist die Abbildung
   \[
     \textcolor{gray}{0\to \sA^{<0} \to}
     \sA(U)\to \C((z))
@@ -276,7 +285,7 @@ singulären sind durch \TODO
       \overset{\sim}{\longrightarrow}\tilde\sM^{good}_{\theta^o},
     \]
     so dass das Diagramm
-    \[ \begin{tikzcd}
+    \[ \Large\begin{tikzcd}
         \tilde\sM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
         \tilde\sM^{good}_{\theta^o} \dar
         \\\hat\sM \rar{\hat\lambda} &
@@ -296,33 +305,31 @@ singulären sind durch \TODO
 \end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %}}}
 \section{Stokes Strukturen} %{{{
-Sei
+Fixiere
 \begin{itemize}
   \item $(\sM^{good},\nabla^{good})$ ein \textbf{Modell}
     \begin{itemize}
       \item $\sM^{good}$ ein holomorphes Bündel
         \begin{itemize}
-          \item auf $D$
-          \item mit Pol bei $\{0\}$
+          \item auf $M$
+          \item mit Pol bei $\{0\}=Z$
         \end{itemize}
         mit einem \textbf{flachem} meromorphen Zusammenhang $\nabla^{good}$
     \end{itemize}
 \end{itemize}
 \begin{defn}
+  Definiere
   \begin{itemize}
-    \item Definiere auf $S^1$ die Garbe
+    \item auf $S^1$ die Garbe
+      $\Aut^{<0}(\underset{\sA_{\tilde D}\otimes\sM^{good}}
+      {\underbrace{\tilde\sM^{good}}})$ der Automorphismen
+      welche
       \begin{itemize}
-        \item $\Aut^{<0}(
-          \underset{\sA_{\tilde D}\otimes\sM^{good}}
-          {\underbrace{\tilde\sM^{good}}})$ der Automorphismen
-          welche
-          \begin{itemize}
-            \item mit dem Zusammenhang kompatibel\TODO[in Formeln] sind und
-            \item formal äquivalent zur Identität sind.
-          \end{itemize}
+        \item mit dem Zusammenhang kompatibel\TODO[in Formeln] sind und
+        \item formal äquivalent zur Identität sind.
       \end{itemize}
       Die Schnitte heißen \emph{Stokes Matrizen}.
-    \item definiere
+    \item und damit
       \[
         \St(\sM^{good})
           :=H^1\left(S^1,\Aut^{<0}\left(\tilde \sM^{good}\right)\right)
@@ -330,30 +337,17 @@ Sei
   \end{itemize}
 \end{defn}
 
-\begin{comment}
-  Definiere $\sH_X$ als die (Prä-)Garbe auf $X$ mit
-  \[
-    U\mapsto\sH_X(U)=\{(\sM,\nabla,\hat f) \mid \text{definiert auf $U$}\}
-    /\sim
-  \]
-\end{comment}
-Definiere 
-\[
-  \sH:=\left\{(\sM,\nabla,\hat f)\right\}/\sim
-\]
-\TODO[definieren isomorphie von `Keimen']
-
 %}}}
 \subsection{Theorem 1} %{{{
 Sei $(\sM,\nabla,\hat f)\in\sH$. Dann gibt es eine Überdeckung
 $\mathfrak{W}$ von $S^1$ und für jedes $W_i\in\mathfrak{W}$ einen
 Lift\footnote{$\hat f_i=\hat f$} von $\hat f$
 \[
-  f_i:(\tilde\sM,\tilde\nabla)_{W_i}
-  \overset{\sim}{\to}
-  (\tilde\sM^{good},\tilde\nabla^{good})_{W_i} \,.
+  f_i:(\tilde\sM,\tilde\nabla)_{|W_i}
+  \overset{\sim}{\longrightarrow}
+  (\tilde\sM^{good},\tilde\nabla^{good})_{|W_i} \,.
 \]
-Dann ist$(f_jf_i^{-1})_{i,j}$ ein Kozykel in der Garbe
+Dann ist $(f_jf_i^{-1})_{i,j}$ ein Kozykel in der Garbe
 $\Aut^{<0}(\tilde\sM^{good})$ relativ zur Überdeckung $\mathfrak{W}$.
 Damit haben wir eine Abbildung
 \[
@@ -368,10 +362,9 @@ Damit haben wir eine Abbildung
 \end{thm}
 %}}}
 \subsection{Theorem 2} %{{{
+Fixiere $A^0=dQ+\Lambda\frac{dz}{z}$.
+
 \TODO[From $\sH$ to $\Syst(A^0)/G\{z\}$]
-\begin{comment}
-  Sei $x^0\in X$ dann $\sH_{X,x_0}=\cH(A^0)$ für passendes $A^0$.
-\end{comment}
 
 \begin{thm}
   Es gibt einen Isomorphismus
@@ -380,40 +373,118 @@ Damit haben wir eine Abbildung
   \]
 \end{thm}
 
-\begin{center}
-  \begin{tikzpicture}[scale=3]
-    \node[] (zero) at (0,0) {};
-    \fill[fill=green!20!white] (0,0) -- (1,0) arc (0:60:1.0cm) -- cycle;
-    \draw[blue] (zero) circle (1cm);
+\begin{paracol}{2}
+  \begin{defn}
+    Die \emph{anti-Stokes Richtungen $\A$} sind\dots
+    \begin{itemize}
+      \item $r:=\#\A$
+      \item $l:=r/(2k-2)$
+      \item $\textbf{d}:=\dots$ \TODO[half-period]
+    \end{itemize}
+    Definiere die Totale Ordnung
+    \[
+      q_i\underset{\textbf{d}}{<}g_j\Leftrightarrow{}q_{ij}\in\R_{<0}\text{
+      entlang einem } d\in\textbf{d}
+    \]
+    \begin{itemize}
+      \item $(P)_{ij}=\delta_{\pi(i)j}$
+    \end{itemize}
+  \end{defn}
+\switchcolumn
+  \begin{center}
+    \begin{tikzpicture}[scale=3]
+      \node[] (zero) at (0,0) {};
+      \fill[fill=green!20!white] (0,0) -- (1,0) arc (0:60:1.0cm) -- cycle;
+      \draw[blue] (zero) circle (1cm);
 
-    \foreach \w/\str in {10/$d_1\in S^1$,
-                         20/$d_2$,
-                         45/$d_3$,
-                         55/$d_l$}
-    {\draw[thick,purple!\w!blue,path fading=west]
-        (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
-     \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
-     \foreach \sep in {60,120,180,240,300}
-     {\draw[green!20!white,thick] (zero) -- +({cos( \sep )},{sin( \sep )});
-      \draw[purple!\w!blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-      \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
-     }
-    };
+      \foreach \w/\str in {10/$d_1\in S^1$,
+                           20/$d_2$,
+                           45/$d_3$,
+                           55/$d_l$}
+      {\draw[thick,purple!\w!blue,path fading=west]
+          (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+       \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
+       \foreach \sep in {60,120,180,240,300}
+       {\draw[green!20!white,thick] (zero) -- +({cos( \sep )},{sin( \sep )});
+        \draw[purple!\w!blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+        \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
+       }
+      };
 
-    \foreach \sep/\str in {0/$1$
-                          ,60/$2$
-                          ,120/$k-1$
-                          ,180/$4$
-                          ,240/$5$
-                          ,300/$2(k-1)$}
-    {\node[green!40!black]
-      at ({.6 * cos( \sep + 30 )},{.5 * sin( \sep + 30)}) {\str};
-    };
+      \foreach \sep/\str in {0/$1$
+                            ,60/$2$
+                            ,120/$k-1$
+                            ,180/$4$
+                            ,240/$5$
+                            ,300/$2(k-1)$}
+      {\node[green!40!black]
+        at ({.6 * cos( \sep + 30 )},{.5 * sin( \sep + 30)}) {\str};
+      };
 
-    \fill[yellow!60!black] (0.8,0.07) circle (1pt);
-    \node[yellow!60!black,right] at (0.8,0.07) {$p$};
+      \fill[yellow!60!black] (0.8,0.07) circle (1pt);
+      \node[yellow!60!black,right] at (0.8,0.07) {$p$};
 
-    \fill (zero) circle (1pt);
-  \end{tikzpicture}
-\end{center}
+      \fill (zero) circle (1pt);
+    \end{tikzpicture}
+  \end{center}
+\end{paracol}
+\begin{thm}[3.1]
+  Sei $\hat{F}\in G\llbracket z\rrbracket$ so dass $A:=\hat F[A_0]$ konvergente
+  Einträge hat.
+
+  Dann:
+  \begin{itemize}
+    \item
+      \marginnote{eine \textbf{invertierbare} $n\times n$ Matrix von
+      holomorphen Einträgen}
+      gibt es auf jedem Sector $\Sect_i$ einen Lift
+      \begin{itemize}
+        \item $\Sigma_i(\hat F)\in\Gl_n(\cO_{\Sect_i})$
+      \end{itemize}
+      so dass $\Sigma_i(\hat F)[A^0]=A$.
+    \item $\Sigma_i(\hat F)$ kann analytisch auf den Supersektor
+      $\widehat\Sect_i$ fortgesetzt werden und hat dort asymptotische
+      Entwicklung $\hat F$
+  \end{itemize}
+  \begin{comment}
+    \begin{itemize}
+      \item If $g\in G\{z\}$ and $t\in T$ then
+        $\Sigma_i(g\circ\hat F \circ t^{-1})=g\circ\Sigma_i(\hat F)\circ t^{-1}$.
+    \end{itemize}
+  \end{comment}
+\end{thm}
+\begin{defn}
+  \begin{itemize}
+    \item Die \emph{Stokes Faktoren} eines markierten Paares
+      $(A,\hat F)\in\widehat\Syst(A^0)$ sind
+      \[
+        K_i:= e^{-Q}\cdot e^{-\Lambda} \cdot \underset{\kappa_i}{\underbrace{%
+          \Sigma_i(\hat F)^{-1}\cdot \Sigma_{i-1}(\hat F)}}
+        \cdot  e^{\Lambda}\cdot e^{Q}
+      \]
+    \item Die \emph{Gruppe der Stokes Faktoren}
+      \[
+        \SSto_d(A^0) := \{K \in G \mid (K)_{ij}
+          =\delta_{ij} \text{ unless } (ij) \text{ is a root of } d\}.
+      \]
+      \begin{lem}
+        $K_i\in\SSto_{d_i}(A^0)$
+      \end{lem}
+  \end{itemize}
+\end{defn}
+\begin{lem}[3.2]
+
+\end{lem}
+\begin{thm}[Balser, Jurkat, Lutz]
+  \marginnote{Isomorph zu $\C^{(k-1)n(n-1)}$}
+  Es gibt einen Isomorphismus
+  \begin{align*}
+    \cH(A^0)&\cong(U_+\times U_-)^{k-1}
+  \\ [(A,g_0)]&\mapsto(S_1,\dots,S_{2k-2})=\textbf{S}
+  \end{align*}
+\end{thm}
+Torus-Wirkung auf Stokes Matrizen
+\[
+  t(\textbf{S})=(tS_1t^{-1},\dots,tS_{2k-2}t^{-1})
+\]
 %}}}
