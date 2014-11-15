@@ -2,7 +2,7 @@
 cd "`dirname "$0"`"
 
 echo "% generated with mklist.sh" > ../notes.tex
-echo "\\chapter{Notizen}" >> ../notes.tex
+echo "\\chapter{Notes}" >> ../notes.tex
 
 for f in ./*.tex
 do

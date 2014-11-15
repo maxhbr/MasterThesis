@@ -94,6 +94,7 @@
 
 \theoremstyle{plain}% default
 \newtheorem{thm}{Satz}[chapter]
+\newtheorem{tthm}{Satz}[chapter]
 %\newtheorem{thm}[satz]{Satz}
 \newtheorem{lemma}[thm]{Lemma}
 \newtheorem{lem}[thm]{Lemma}
@@ -136,10 +137,13 @@
   topline=false,
   rightline=false,
   bottomline=false,
-  leftmargin=\parindent,
-  skipabove=\medskipamount,
-  skipbelow=\medskipamount
+  leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
 ]{thm}
+\surroundwithmdframed[
+  linewidth=2pt,
+  linecolor=myVLineColor,
+  leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
+]{tthm}
 
 \surroundwithmdframed[
   linewidth=2pt,
@@ -147,9 +151,7 @@
   %topline=false,
   %rightline=false,
   %bottomline=false,
-  leftmargin=\parindent,
-  skipabove=\medskipamount,
-  skipbelow=\medskipamount
+  leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
 ]{ex}
 
 %%%%  Ploting  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -301,9 +303,7 @@
     topline=false,
     rightline=false,
     bottomline=false,
-    leftmargin=\parindent,
-    skipabove=\medskipamount,
-    skipbelow=\medskipamount
+    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
   ]{cor}
   \surroundwithmdframed[
     linewidth=2pt,
@@ -311,9 +311,7 @@
     topline=false,
     rightline=false,
     bottomline=false,
-    leftmargin=\parindent,
-    skipabove=\medskipamount,
-    skipbelow=\medskipamount
+    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
   ]{lem}
   \surroundwithmdframed[
     linewidth=2pt,
@@ -321,9 +319,7 @@
     topline=false,
     rightline=false,
     bottomline=false,
-    leftmargin=\parindent,
-    skipabove=\medskipamount,
-    skipbelow=\medskipamount
+    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
   ]{prop}
   \surroundwithmdframed[
     linewidth=1pt,
@@ -331,36 +327,28 @@
     topline=false,
     rightline=false,
     bottomline=false,
-    leftmargin=\parindent,
-    skipabove=\medskipamount,
-    skipbelow=\medskipamount
+    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
   ]{defn}
   \surroundwithmdframed[
     linecolor=myVLineColor,
     topline=false,
     rightline=false,
     bottomline=false,
-    leftmargin=\parindent,
-    skipabove=\medskipamount,
-    skipbelow=\medskipamount
+    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
   ]{lemdef}
   \surroundwithmdframed[
     linecolor=myVLineColor,
     topline=false,
     rightline=false,
     bottomline=false,
-    leftmargin=\parindent,
-    skipabove=\medskipamount,
-    skipbelow=\medskipamount
+    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
   ]{rem}
   \surroundwithmdframed[
     linecolor=myVLineColor,
     topline=false,
     rightline=false,
     bottomline=false,
-    leftmargin=\parindent,
-    skipabove=\medskipamount,
-    skipbelow=\medskipamount
+    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
   ]{proof}
 \fi
 
