@@ -1,4 +1,4 @@
-\chapter{Vortrag}
+\chapter{Vortrag: Stokes Strukturen}
 Here are the german notes of my Presentation of Stokes structures.
 \setcounter{section}{-1} \section{Motivation} %{{{
 \marginnote{\tiny DGLs mit konvergenten Einträgen haben manchmal eine formale
@@ -67,14 +67,14 @@ $:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
   $\begin{pmatrix}f_{1}\\\vdots\\f_{n}\end{pmatrix}=:f\in\cO(U)^n$, aus.
   \\Dann
   \[
-    \nabla s=df - A(t)f
+    \nabla s=df-Af
   \]
-  wobei $A(t)\in M(n\times n,\Omega_M^1(*Z)(U))$ ist die \emph{Zusammenhangs
+  wobei $A\in M(n\times n,\Omega_M^1(*Z)(U))$ ist die \emph{Zusammenhangs
   Matrix}.
   \begin{comment}
     Klassifiziere diese durch die Lösung der DGL $\nabla s=0$.
   \end{comment}
-  Eine Wechsel $F\in\Gl_n(\cO_X(U))$ der Trivialisierung entspricht 
+  Ein Wechsel $F\in\Gl_n(\cO_X(U))$ der Trivialisierung entspricht 
   $F[A^0]=(dF)F^{-1}+FA^0F^{-1}$.
   \marginnote{\tiny see \cite{sabbah2007isomonodromic} II.2.a}
 \end{rem}
@@ -83,7 +83,7 @@ $:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
   \\\TODO[\cite{sabbah2007isomonodromic}: p. 86]
   \TODO[\cite{sabbah2007isomonodromic}: Def II.2.24]
 \end{comment}
-\subsection{Modelle und formale Zerlegung}%{{{
+\pagebreak \subsection{Modelle und formale Zerlegung}%{{{
 \begin{defn}
   Ein Keim $(\cM,\nabla)$ ist ein \emph{Model} falls
   \[
@@ -103,22 +103,20 @@ $:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
     \item $\cE^\phi$ wird gelöst von $e^\phi$.
   \end{itemize}
 \end{defn}
-\begin{comment}
-  \begin{lem}
-    Ist $(\sM,\nabla)$ ein Modell\TODO[Oder Halm??], so lässt sich die
-    Zusammenhangs Matrix schreiben als
-    \[
-      A^0=dQ+\Lambda\frac{dt}{t}
-    \]
-    wobei
-    \begin{itemize}
-      \item $Q=\diag(q_1,\dots,q_n)$ mit $q_i$ meromorph und
-      \item $\Lambda$ diagonal und konstant ist.
-    \end{itemize}
-  \end{lem}
-\end{comment}
+\begin{lem}
+  Ist $(\sM,\nabla)$ ein Modell, so lässt sich die Zusammenhangs Matrix
+  schreiben als
+  \[
+    A^0=dQ+\Lambda\frac{dt}{t}
+  \]
+  wobei
+  \begin{itemize}
+    \item $Q=\diag(\phi_1,\dots,\phi_n)$ und
+    \item $\Lambda$ diagonal und konstant ist.
+  \end{itemize}
+\end{lem}
 \begin{paracol}{2}
-  \begin{thm}[Levelt-Turittin]
+  \begin{tthm}[Levelt-Turittin]
     Zu einem Keim $(\cM,\nabla)$ eines \textbf{formalem} meromorphen
     Zusammenhang gibt es, bis auf Zurückziehen, immer einen Isomorphismus
     \[
@@ -128,7 +126,7 @@ $:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
       =\hat\cO_{x^0}\otimes\cM^{good}
     \]
     zu einem \textbf{formalem Modell}.
-  \end{thm}
+  \end{tthm}
 \switchcolumn
   \begin{rem}
     Aber keinen konvergenten lift.
@@ -146,7 +144,7 @@ $:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
 \end{paracol}
 %}}}
 %}}}
-\section{Asymptotische Entwicklungen} %{{{
+\pagebreak \section{Asymptotische Entwicklungen} %{{{
 Betrachte nun $M=D=\{t\in\C\mid|t|<r\}$ für $r$ beliebig klein und $Z=\{0\}$.
 \marginnote{\tiny See \cite{van2003galois}}
 \begin{paracol}{2}
@@ -160,14 +158,13 @@ Betrachte nun $M=D=\{t\in\C\mid|t|<r\}$ für $r$ beliebig klein und $Z=\{0\}$.
               &\mid 0<\rho<\textcolor{blue!60!black}{r}
             \\&~,\theta\in(\textcolor{red!60!black}{\theta_0,\theta_1})\}
         \end{aligned}$
-      \item $\Sect_r(\textcolor{red!60!black}{U})
-        \!\!\overset{\textcolor{red!60!black}{U=(\theta_0,\theta_1)}}{:=}\!\!
-        \Sect_{\textcolor{blue!60!black}{r}}
-        (\textcolor{red!60!black}{\theta_0,\theta_1})$
       \item $\Sect(\textcolor{red!60!black}{\theta_0,\theta_1}):=
         \Sect_{\textcolor{blue!60!black}{r}}
         (\textcolor{red!60!black}{\theta_0,\theta_1})$
         für $\textcolor{blue!60!black}{r}$ klein genug.
+      \item $\Sect(\textcolor{red!60!black}{U})
+        \!\!\overset{\textcolor{red!60!black}{U=(\theta_0,\theta_1)}}{:=}\!\!
+        \Sect(\textcolor{red!60!black}{\theta_0,\theta_1})$
     \end{itemize}
   \end{defn}
 \switchcolumn
@@ -238,9 +235,8 @@ Betrachte nun $M=D=\{t\in\C\mid|t|<r\}$ für $r$ beliebig klein und $Z=\{0\}$.
     \subset\cO(\Sect(U)) \text{ die Funktionen mit asymptotischer
     Entwicklung auf } \Sect(U)
   \]
-  \TODO[Garbe auf $\tilde D=S^1\times[0,r)$ anstatt auf $S^1$]
 \end{defn}
-\begin{lem}[Borel-Ritt]
+\begin{llem}[Borel-Ritt]
   \marginnote{$t\mapsto e^{-\frac{1}{t}}$ hat verschwindende asy.\  Entw.\  in
   Sektoren um $\theta=0$}
   Für jedes \textbf{echte} offene Intervall $U$ von $S^1$ ist die Abbildung
@@ -256,7 +252,7 @@ Betrachte nun $M=D=\{t\in\C\mid|t|<r\}$ für $r$ beliebig klein und $Z=\{0\}$.
     \to0}
   \]
   eine surjektion.
-\end{lem}
+\end{llem}
 \begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{thm}
     Für jedes $e^{i\theta}\in S^1$, existiert ein Isomorphismus
@@ -295,7 +291,7 @@ $\{0\}=Z$ und somit auch eine Matrix $A^0=dQ+\Lambda\frac{dt}{t}$.
           (\hat\sM^{good},\hat\nabla^{good})
       \right\}\Big/\sim$.}
 \end{center}
-Wir betrachten dazu aber die größere die Punktierte Menge 
+Wir betrachten dazu aber die größere die \textcolor{gray}{punktierte} Menge 
 \[
   \sH(\sM^{good}):=\left\{(\sM,\nabla,\hat f)
       \mid \hat f:(\hat\sM,\hat\nabla)
@@ -305,53 +301,60 @@ Wir betrachten dazu aber die größere die Punktierte Menge
     \qquad \qquad
     \textcolor{gray}{\ni (\sM^{good},\nabla^{good},\hat \Id)}\,.
 \]
-Lokal\TODO[am Halm] bei $0$ ist $(\sM,\nabla)$ gegeben durch eine
-Zusammenhangs Matrix $A$ und ein Tuppel $(\sM,\nabla,\hat f)$ durch ein Paar
-$(A,\hat F)$.
-\\Damit erhalten wir die Mengen
+Indem wir zu Zusammenhangs Matrizen übergehen erhalten wir die Mengen
 \[
-  \left\{A \mid A=\hat F[A^0]\text{ für ein }\hat F\in\hat G
-    :=\GL_n(\C\llbracket t\rrbracket)\right\}/G\{t\}
+  \underset{=:\Syst(A^0)}{\underbrace{%
+      \left\{A \mid A=\hat F[A^0]\text{~für ein~}\hat F\in\hat G
+      :=\GL_n(\C\llbracket t\rrbracket)\right\}
+  }}\Big/G\{t\}
 \]
 und
 \[
-  \left\{(A,\hat F)\in\Syst(A^0)\times\hat G\mid A=\hat F[A^0]\right\}/G\{t\}
+  \cH(A^0):=\left\{
+      (A,\hat F)\in\Syst(A^0)\times\hat G\mid A=\hat F[A^0]
+    \right\}\Big/G\{t\}
 \]
 
-\begin{comment}
-Definiere
-\[
-  \Syst(A^0):=\left\{A \mid A=\hat F[A^0]\text{ für ein }\hat F\in\hat G
-    :=\GL_n(\C\llbracket t\rrbracket)\right\}
-\]
-\begin{center}
-  \textbf{Wir sind interessiert in $\Syst(A^0)/G\{t\}$.}
-\end{center}
-wobei $G\{t\}:=\GL_n(\C\{t\})$ \emph{lokale analytischen Gauge
-Tranformationen}
-\begin{itemize}
-  \item mit Wirkung $F[A^0]=(dF)F^{-1}+FA^0F^{-1}$.
-    \marginnote{\tiny see \cite{sabbah2007isomonodromic} II.2.a}
-\end{itemize}
-Wir benötigen aber den etwas größeren Raum
-\[
-  \widehat\Syst(A^0):=
-    \left\{(A,\hat F)\in\Syst(A^0)\times\hat G\mid A=\hat F[A^0]\right\}
-\]
-und damit
-\begin{paracol}{5}
-  $\cH(A^0):=\widehat\Syst(A^0)/G\{t\}$
-\switchcolumn
-\switchcolumn
-  $\sH(\sM^{good}):=\left\{(\sM,\nabla,\hat f)
-      \mid \hat f:(\sM,\nabla)\overset{\cong}\to(\sM^{good},\nabla^{good})
-    \right\}/\sim$
-\end{paracol}
-\TODO[ist $\cH(A^0)$ der Halm bei $0$ von $\sH(\sM^{good})$?]
-\end{comment}
+% \begin{comment}
+% Definiere
+% \[
+%   \Syst(A^0):=\left\{A \mid A=\hat F[A^0]\text{ für ein }\hat F\in\hat G
+%     :=\GL_n(\C\llbracket t\rrbracket)\right\}
+% \]
+% \begin{center}
+%   \textbf{Wir sind interessiert in $\Syst(A^0)/G\{t\}$.}
+% \end{center}
+% wobei $G\{t\}:=\GL_n(\C\{t\})$ \emph{lokale analytischen Gauge
+% Tranformationen}
+% \begin{itemize}
+%   \item mit Wirkung $F[A^0]=(dF)F^{-1}+FA^0F^{-1}$.
+%     \marginnote{\tiny see \cite{sabbah2007isomonodromic} II.2.a}
+% \end{itemize}
+% Wir benötigen aber den etwas größeren Raum
+% \[
+%   \widehat\Syst(A^0):=
+%     \left\{(A,\hat F)\in\Syst(A^0)\times\hat G\mid A=\hat F[A^0]\right\}
+% \]
+% und damit
+% \begin{paracol}{5}
+%   $\cH(A^0):=\widehat\Syst(A^0)/G\{t\}$
+% \switchcolumn
+% \switchcolumn
+%   $\sH(\sM^{good}):=\left\{(\sM,\nabla,\hat f)
+%       \mid \hat f:(\sM,\nabla)\overset{\cong}\to(\sM^{good},\nabla^{good})
+%     \right\}/\sim$
+% \end{paracol}
+% \TODO[ist $\cH(A^0)$ der Halm bei $0$ von $\sH(\sM^{good})$?]
+% \end{comment}
 
 %}}}
-\subsection{Theorem 1} %{{{
+\pagebreak \subsection{Theorem 1} %{{{
+\begin{comment}
+  see:
+  \begin{itemize}
+    \item \cite[29]{Varadarajan96linearmeromorphic}
+  \end{itemize}
+\end{comment}
 \begin{defn}
   Definiere den \emph{Stokes Raum}
   % \marginnote{Kompliziert, da dies über Garbenkohomologie von Garben von
@@ -394,7 +397,7 @@ Damit haben wir eine Abbildung
   Das ist ein Isomorphismus \textcolor{gray}{von punktierter Mengen}.
 \end{tthm}
 %}}}
-\subsection{Theorem 2} %{{{
+\pagebreak \subsection{Theorem 2} %{{{
 \begin{tthm}[Balser, Jurkat, Lutz]
   Es gibt einen Isomorphismus
   \begin{align*}
@@ -411,37 +414,37 @@ Damit haben wir eine Abbildung
 \end{tthm}
 
 \begin{defn}
-  \marginnote{\tiny Richtungen, entlang denen $e^{q_i-q_j}$ am schnellsten
+  \marginnote{\tiny Richtungen, entlang denen $e^{\phi_i-\phi_j}$ am schnellsten
   fällt}
-  Sei $q_{ij}(z)$ der führende Koeffizient von $q_i-q_j$
+  Sei $\phi_{ij}(z)$ der führende Koeffizient von $\phi_i-\phi_j$
   \begin{itemize}
-    \item \textcolor{gray}{für $q_i-q_j=a/z^{k-1}+b/z^{k-2}+\dots$ dann
-      $q_{ij}=a/z^{k-1}$.}
+    \item \textcolor{gray}{für $\phi_i-\phi_j=a/z^{k-1}+b/z^{k-2}+\dots$ dann
+      $\phi_{ij}=a/z^{k-1}$.}
   \end{itemize}
   $d\in\A\subset S^1$
   $:\Leftrightarrow{}$
-  es gibt $i\neq j$ so dass $q_{ij}(z)\in\R_{<0}$ für $z\to0$ auf dem `Strahl
-  durch $d$'.
+  es gibt $i\neq j$ so dass $\phi_{ij}(z)\in\R_{<0}$ für $z\to0$ auf dem
+  `Strahl durch $d$'.
   \\Die Richtungen in $\A$ heißen \emph{anti-Stokes-Richtungen}.
 \end{defn}
 \begin{paracol}{2}
 \switchcolumn[0]
+  Sei $r:=\#\A$, $l:=r/(2k-2)$ und $\textbf{\underline{d}}:=(d_1,\dots,d_l)$
+  \emph{Halb-Periode}.
   \begin{defn}
-    \begin{itemize}
-      \item $r:=\#\A$
-      \item $l:=r/(2k-2)$
-      \item $\textbf{d}:=(d_1,\dots,d_l)$ Halb-Periode
-    \end{itemize}
+    Definiere die \emph{totale Ordnung}
+    \[
+      \phi_i\underset{\textbf{\underline{d}}}{<}\phi_j
+      \Leftrightarrow{}
+      \phi_{ij}\in\R_{<0}\text{
+      entlang einem } d\in\textbf{\underline{d}}
+    \]
+    und durch $\phi_i\underset{\textbf{\underline{d}}}{<}\phi_j
+    \Leftrightarrow{}\pi_i<\pi_j$ die
+    \[
+      \text{\emph{Permutations Matrix} } (P)_{ij}=\delta_{\pi(i)j} \,.
+    \]
   \end{defn}
-  Definiere die \emph{totale Ordnung}
-  \[
-    q_i\underset{\textbf{d}}{<}q_j\Leftrightarrow{}q_{ij}\in\R_{<0}\text{
-    entlang einem } d\in\textbf{d}
-  \]
-  und durch $q_i\underset{\textbf{d}}{<}q_j\Leftrightarrow{}\pi_i<\pi_j$ die
-  \[
-    \text{\emph{Permutations Matrix} } (P)_{ij}=\delta_{\pi(i)j} \,.
-  \]
 \switchcolumn[1]
   \begin{center}
     \begin{tikzpicture}[scale=3]
@@ -502,10 +505,9 @@ Damit haben wir eine Abbildung
     \end{tikzpicture}
   \end{center}
 \end{paracol}
-\begin{thm}[3.1]
-  Sei $(A,\hat F)\in\hat\Syst(A^0)$.
-  \\Dann gibt es auf jedem Sektor $\Sect\left(d_i,d_{i+1}\right)$ einen
-  \textcolor{gray}{(kanonischen)} Lift
+\begin{thm}
+  Zu $(A,\hat F)$ gibt es auf jedem Sektor $\Sect\left(d_i,d_{i+1}\right)$
+  einen \textcolor{gray}{(kanonischen)} Lift
   \marginnote{\tiny eine \textbf{invertierbare} $n\times n$ Matrix von
   holomorphen Einträgen}
   \[
@@ -521,7 +523,7 @@ Damit haben wir eine Abbildung
   %   $\Sigma_i(g\circ\hat F \circ t^{-1})=g\circ\Sigma_i(\hat F)\circ t^{-1}$.}
 \end{thm}
 \begin{defn}
-  Die \emph{Stokes Faktoren} zu $(A,\hat F)\in\widehat\Syst(A^0)$ sind
+  Die \emph{Stokes Faktoren} zu $(A,\hat F)$ sind
   \marginnote{$\kappa_i$ ist formal äquivalent zu $\id$:
   $\kappa_i[A^0]=A^0$.}
   \[
@@ -533,11 +535,11 @@ Damit haben wir eine Abbildung
     $K_i$ ist in der \emph{Gruppe der Stokes Faktoren}
     \[
       \SSto_{d_i}(A^0) := \{K \in G \mid (K)_{ij}
-      =\delta_{ij} \text{ außer } q_{ij}\in\R_{<0}\text{ entlang } d_i \}.
+      =\delta_{ij} \text{ außer } \phi_{ij}\in\R_{<0}\text{ entlang } d_i \}.
     \]
   \end{lem}
 \end{defn}
-\begin{lem}[3.2]
+\begin{lem}
   Sei $\textbf{d}=(d_1,\dots,d_l)$.
   \begin{enumerate}
     \item $\prod_{d\in\textbf{d}}\SSto_d(A^0)\cong PU_+P^{-1};

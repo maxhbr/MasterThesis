@@ -98,6 +98,7 @@
 %\newtheorem{thm}[satz]{Satz}
 \newtheorem{lemma}[thm]{Lemma}
 \newtheorem{lem}[thm]{Lemma}
+\newtheorem{llem}[thm]{Lemma}
 \newtheorem{lemdef}[thm]{Lemma/Definition}
 \newtheorem{lemcor}[thm]{Lemma/Korollar}
 \newtheorem{defcor}[thm]{Definition/Korollar}
@@ -313,6 +314,11 @@
     bottomline=false,
     leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
   ]{lem}
+  \surroundwithmdframed[
+    linewidth=2pt,
+    linecolor=myVLineColor,
+    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
+  ]{llem}
   \surroundwithmdframed[
     linewidth=2pt,
     linecolor=myVLineColor,
