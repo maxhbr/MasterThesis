@@ -1,24 +1,40 @@
-\chapter{Vortrag: Stokes Strukturen}
+\chapter{Vortrag: Stokes Strukturen meromorpher Zusammenhänge}
 Here are the german notes of my Presentation of Stokes structures.
 \setcounter{section}{-1} \section{Motivation} %{{{
-\marginnote{\tiny DGLs mit konvergenten Einträgen haben manchmal eine formale
-Lösung die dann dann aber nicht konvergiert.}
-Wir wollen \textbf{irregulär singulärere meromorphe Zusammenhänge}, welche zu
-einem vorgegebenen `gutem Modell' \textbf{formal isomorph} sind, betrachten und
-fragen uns, wie wir
-\begin{center}
-  \textbf{Isomorphieklassen dieser klassifizieren.}
-\end{center}
+% \marginnote{\tiny DGLs mit konvergenten Einträgen haben manchmal eine formale
+% Lösung die dann dann aber nicht konvergiert.}
+% Wir wollen \textbf{irregulär singulärere meromorphe Zusammenhänge}, welche zu
+% einem vorgegebenen `gutem Modell' \textbf{formal isomorph} sind, betrachten und
+% fragen uns, wie wir
+% \begin{center}
+%   \textbf{Isomorphieklassen dieser beschreiben können.}
+% \end{center}
 
-Es stellt sich heraus, das hier die formalen Invarianten nicht ausreichen.
-Die benötigte Information ist aber genau durch die \textbf{Stokes Struktur}
-beschrieben, welche aus der asymptotischen Analysis entsteht.
+% Es stellt sich heraus, das hier die formalen Invarianten nicht ausreichen.
+% Die benötigte Information ist aber genau durch die \textbf{Stokes Struktur}
+% gegeben, welche aus der asymptotischen Analysis entsteht.
+\marginnote{In diesem Vortrag werden Stokes-Strukturen sowie meromorphe
+Zusammenhänge und alles benötigte aus der asymptotischen Analysis definiert.
+Kenntnisse aus der Theorie der D-Moduln werden nicht benötigt.}
+Es ist eine bekannte Tatsache, dass eine irregulär singuläre
+Diffenentialgleichung mit konvergenten Einträgen eine formale Lösung haben
+kann, welche divergent ist.  Deshalb will man Isomorphieklassen von (irregulär
+singulären) meromorphen Zusammenhängen, welche zu einem vorgegebenen `gutem
+Model' formal isomorph sind, beschreiben.
+
+Es stellt sich heraus, das dafür die formalen Invarianten, wie beispielsweise
+die formale Monodromie, nicht ausreichen. Die benötigte Information ist aber
+durch die Stokes-Struktur gegeben, welche mit Hilfe der asymptotischen Analysis
+entsteht.
+
 %}}}
 \section{Meromorphe Zusammenhänge} %{{{
 Sei $M$ eine \textbf{Riemann-Fläche}\footnote{Komplexe Mannigfaltigkeit von
 Dimension 1.}, $Z$ ein \textbf{effektiver Divisor}\footnote{Formale Summe von
 Hyperflächen mit positiven Koeffizienten.} auf $M$.
 \begin{comment}
+  Starte mit einer Diffenentialgleichung.
+
   Über jedem Punkt von $M\backslash Z$ hat man einen endlichen Vektorraum von
   `initial data' und erhalte ein holomorphes Bündel $\sM$ auf $M$
   \textcolor{gray}{(durch fortsetzen)}.
@@ -74,7 +90,7 @@ $:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
   \begin{comment}
     Klassifiziere diese durch die Lösung der DGL $\nabla s=0$.
   \end{comment}
-  Ein Wechsel $F\in\Gl_n(\cO_X(U))$ der Trivialisierung entspricht 
+  Ein Wechsel $F\in\Gl_n(\cO_X(U))$ der Trivialisierung entspricht
   $F[A^0]=(dF)F^{-1}+FA^0F^{-1}$.
   \marginnote{\tiny see \cite{sabbah2007isomonodromic} II.2.a}
 \end{rem}
@@ -117,7 +133,8 @@ $:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
 \end{lem}
 \begin{paracol}{2}
   \begin{tthm}[Levelt-Turittin]
-    Zu einem Keim $(\cM,\nabla)$ eines \textbf{formalem} meromorphen
+    Zu einem Keim\footnote{denn möglicherweise muss man sich auf eine kleine
+    Scheibe einschränken.} $(\cM,\nabla)$ eines \textbf{formalem} meromorphen
     Zusammenhang gibt es, bis auf Zurückziehen, immer einen Isomorphismus
     \[
       \hat\lambda:\hat\cM
@@ -135,8 +152,8 @@ $:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
         \rar[green!60!black]{\tilde\lambda}&
         \textcolor{green!60!black}{%
           \tilde{\textcolor{black}{\sM}}_{\theta}}^{good} \dar
-        \\\hat\sM_{x^0} \rar{\hat\lambda} &
-          \hat\sM_{x^0}^{good}
+        \\\hat\sM \rar{\hat\lambda} &
+          \hat\sM^{good}
     \end{tikzcd} \]
     \textcolor{green!60!black}{Sektorweise aber schon, mit asymptotischer
     Analysis}
@@ -204,7 +221,7 @@ Betrachte nun $M=D=\{t\in\C\mid|t|<r\}$ für $r$ beliebig klein und $Z=\{0\}$.
   \def\myN{\textbf{\textcolor{blue!40!black}{N}}}
   \def\mySect{\textcolor{red!40!black}{W}}
   \def\myConst{\textcolor{green!40!black}{C(\myN,\mySect)}}
-  $f\in\cO_D(*\{0\})$ hat die \textbf{formale Laurent Reihe}
+  $f\in\cO_D(*Z)$ hat die \textbf{formale Laurent Reihe}
   $\sum_{n\geq n_0}c_nz^n$ als \emph{asymptotische Entwicklung auf
   $\Sect(U)$}, falls
   \begin{itemize}
@@ -280,7 +297,7 @@ Betrachte nun $M=D=\{t\in\C\mid|t|<r\}$ für $r$ beliebig klein und $Z=\{0\}$.
 \end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %}}}
 \section{Stokes Strukturen} %{{{
-Fixiere $(\sM^{good},\nabla^{good})$ ein \textbf{Modell} auf $D$ mit Pol bei
+Fixiere ein \textbf{Modell} $(\sM^{good},\nabla^{good})$ auf $D$ mit Pol bei
 $\{0\}=Z$ und somit auch eine Matrix $A^0=dQ+\Lambda\frac{dt}{t}$.
 
 \begin{center}
@@ -291,7 +308,7 @@ $\{0\}=Z$ und somit auch eine Matrix $A^0=dQ+\Lambda\frac{dt}{t}$.
           (\hat\sM^{good},\hat\nabla^{good})
       \right\}\Big/\sim$.}
 \end{center}
-Wir betrachten dazu aber die größere die \textcolor{gray}{punktierte} Menge 
+Wir betrachten dazu aber die größere die \textcolor{gray}{punktierte} Menge
 \[
   \sH(\sM^{good}):=\left\{(\sM,\nabla,\hat f)
       \mid \hat f:(\hat\sM,\hat\nabla)
