@@ -135,7 +135,7 @@ $:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
   \begin{tthm}[Levelt-Turittin]
     Zu einem Keim\footnote{denn möglicherweise muss man sich auf eine kleine
     Scheibe einschränken.} $(\cM,\nabla)$ eines \textbf{formalem} meromorphen
-    Zusammenhang gibt es, bis auf Zurückziehen, immer einen Isomorphismus
+    Zusammenhang gibt es, bis auf Verzweigung, immer einen Isomorphismus
     \[
       \hat\lambda:\hat\cM
       \overset{\cong}\longrightarrow
@@ -148,11 +148,12 @@ $:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
   \begin{rem}
     Aber keinen konvergenten lift.
     \[ \Large\begin{tikzcd}
-        \textcolor{green!60!black}{\tilde{\textcolor{black}{\sM}}_{\theta}}\dar
+        \textcolor{green!60!black}{\tilde{\textcolor{black}{\sM}}_{\theta}}
+        \dar
         \rar[green!60!black]{\tilde\lambda}&
         \textcolor{green!60!black}{%
           \tilde{\textcolor{black}{\sM}}_{\theta}}^{good} \dar
-        \\\hat\sM \rar{\hat\lambda} &
+          \\\hat\sM \rar{\underset{\sim}{\hat\lambda}} &
           \hat\sM^{good}
     \end{tikzcd} \]
     \textcolor{green!60!black}{Sektorweise aber schon, mit asymptotischer
@@ -296,7 +297,7 @@ Betrachte nun $M=D=\{t\in\C\mid|t|<r\}$ für $r$ beliebig klein und $Z=\{0\}$.
 \end{thm}
 \end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %}}}
-\section{Stokes Strukturen} %{{{
+\section{Stokes-Strukturen} %{{{
 Fixiere ein \textbf{Modell} $(\sM^{good},\nabla^{good})$ auf $D$ mit Pol bei
 $\{0\}=Z$ und somit auch eine Matrix $A^0=dQ+\Lambda\frac{dt}{t}$.
 
@@ -318,7 +319,8 @@ Wir betrachten dazu aber die größere die \textcolor{gray}{punktierte} Menge
     \qquad \qquad
     \textcolor{gray}{\ni (\sM^{good},\nabla^{good},\hat \Id)}\,.
 \]
-Indem wir zu Zusammenhangs Matrizen übergehen erhalten wir die Mengen
+Indem wir zu Zusammenhangs Matrizen übergehen erhalten wir die isomorphen
+Mengen
 \[
   \underset{=:\Syst(A^0)}{\underbrace{%
       \left\{A \mid A=\hat F[A^0]\text{~für ein~}\hat F\in\hat G
@@ -386,10 +388,10 @@ und
       {\underbrace{\tilde\sM^{good}}}\!\!\!)$
       die Garbe auf $S^1$ der Automorphismen welche
       \begin{itemize}
-        \item mit dem Zusammenhang kompatibel sind und
+        \item mit dem Zusammenhang kompatibel sind\TODO und
         \item formal äquivalent zur Identität sind.
       \end{itemize}
-      Die Schnitte heißen \emph{Stokes Matrizen}.
+      \textcolor{gray}{Die Schnitte heißen \emph{Stokes Matrizen}.}
   \end{itemize}
   \begin{thm}
     $\St(\sM^{good})$ ist ein $\C$-Vektorraum.
@@ -422,22 +424,24 @@ Damit haben wir eine Abbildung
     &\textcolor{gray}{\cong\C^{(k-1)n(n-1)}}
   \\ [(A,\hat F)]&\mapsto\textbf{S}=(S_1,\dots,S_{2k-2})
   \end{align*}
-  es gibt einen Isomorphismus
-  \[
-    \Syst(A^0)/G\{t\}\cong(U_+\times U_-)^{k-1}/T
-  \]
-  \textcolor{gray}{Durch Rausteilen der Torus \marginnote{$T=(\C^*)^n$}
-    Wirkung: $t(\textbf{S})=(tS_1t^{-1},\dots,tS_{2k-2}t^{-1})$.}
+  \begin{cor}
+    Es gibt einen Isomorphismus
+    \[
+      \Syst(A^0)/G\{t\}\cong(U_+\times U_-)^{k-1}/T
+    \]
+    \textcolor{gray}{Durch Rausteilen der Torus \marginnote{$T=(\C^*)^n$}
+      Wirkung: $t(\textbf{S})=(tS_1t^{-1},\dots,tS_{2k-2}t^{-1})$.}
+  \end{cor}
 \end{tthm}
 
 \begin{defn}
-  \marginnote{\tiny Richtungen, entlang denen $e^{\phi_i-\phi_j}$ am schnellsten
-  fällt}
   Sei $\phi_{ij}(z)$ der führende Koeffizient von $\phi_i-\phi_j$
   \begin{itemize}
     \item \textcolor{gray}{für $\phi_i-\phi_j=a/z^{k-1}+b/z^{k-2}+\dots$ dann
       $\phi_{ij}=a/z^{k-1}$.}
   \end{itemize}
+  \marginnote{\tiny Richtungen, entlang denen $e^{\phi_i-\phi_j}$ am
+  schnellsten fällt}
   $d\in\A\subset S^1$
   $:\Leftrightarrow{}$
   es gibt $i\neq j$ so dass $\phi_{ij}(z)\in\R_{<0}$ für $z\to0$ auf dem
@@ -571,4 +575,14 @@ Damit haben wir eine Abbildung
       \end{itemize}
   \end{enumerate}
 \end{lem}
+
+\begin{thm}
+  Die Abbildung
+  \[ \Large\begin{tikzcd}[row sep=0em]
+      \cH(A^0) \rar & (U_+\times U_-)^{k-1}
+    \\(A,\hat F) \rar[mapsto] & (S_1,\dots,S_{2k-2})
+  \end{tikzcd} \]
+  ist ein Isomorphismus.
+  \\Also ist insbesondere $\cH(A^0)$ isomorph zum VR $\C^{(k-1)n(n-1)}$.
+\end{thm}
 %}}}
