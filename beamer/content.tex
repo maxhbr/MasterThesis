@@ -1,70 +1,128 @@
+\def\tilde{\widetilde}
+\def\hat{\widehat}
+
 \section{Meromorphe Zusammenhänge}
-\begin{frame}[t]{Meromorpher Zusammenhang}
-  Sei $M$ eine \textbf{Riemann-Fläche}, $Z$ ein \textbf{effektiver Divisor} auf
-  $M$.
+\subsection{Definition}
+\begin{frame}[t]{Meromorphe Zusammenhänge}
+  Sei $M$ eine \textbf{Riemann-Fläche} und $Z$ ein \textbf{effektiver Divisor}
+  auf $M$.
   \\Sei $\sM$ ein \textbf{holomorphes Bündel}
   $:\Leftrightarrow{}$ lokal freier $\cO_M$-Modul.
-  \begin{defn}
-    \def\myU{\textcolor{green!30!black}{U}}
-    \def\mys{\textcolor{blue!60!black}{s}}
-    \def\myf{\textcolor{red!60!black}{f}}
-    Ein \emph{meromorpher Zusammenhang auf $\sM$ mit Polen auf $Z$}
-    ist eine $\C$-lineare Abbildung
-    \[
-      \nabla:\sM\to\Omega_M^1(*Z)\otimes\sM
-    \]
-    welche für alle offenen Mengen $\myU\subset M$, Schnitte
-    $\mys\textcolor{blue!60!black}{\in\Gamma(\myU,\sM)}$ und holomorphen
-    Funktionen $\myf\textcolor{red!60!black}{\in\cO(\myU)}$ die \textbf{Leibniz
-    Regel}
-    \[
-      \nabla(\myf\mys)=\myf\nabla\mys+(d\myf)\otimes\mys
-    \]
-    erfüllt.
-  \end{defn}
+  \visible<2>{%
+    \begin{defn}
+      \def\myU{\textcolor{green!30!black}{U}}
+      \def\mys{\textcolor{blue!60!black}{s}}
+      \def\myf{\textcolor{red!60!black}{f}}
+      Ein \emph{meromorpher Zusammenhang auf $\sM$ mit Polen auf $Z$}
+      ist eine $\C$-lineare Abbildung
+      \[
+        \nabla:\sM\to\Omega_M^1(*Z)\otimes\sM
+      \]
+      welche für alle $\myU\overset{\text{off.}}{\subset} M$ die
+      \textbf{Leibniz Regel}
+      \begin{multicols}{2}
+        \[
+          \nabla(\tikzmark{e2}\myf\overset{\tikzmark{e1}}\mys)
+            =\myf\nabla\mys+(d\myf)\otimes\mys
+        \]
+        \columnbreak
+        \begin{itemize}
+          \item[\tikzmarkc{n1}{blue}]
+            $\mys\textcolor{blue!60!black}{\in\Gamma(\myU,\sM)}$ und
+          \item[\tikzmarkc{n2}{red}]
+            $\myf\textcolor{red!60!black}{\in\cO(\myU)}$
+        \end{itemize}
+      \end{multicols}
+      erfüllt.
+      \begin{tikzpicture}[remember picture,overlay]
+        \draw[->,blue,opacity=.5] (n1) to[bend right] (e1);
+        \draw[->,red,opacity=.5] (n2) to[bend left] (e2);
+      \end{tikzpicture}
+    \end{defn}
+  }
 \end{frame}
 \begin{frame}[t]{Zusammenhangs Matrix}
-  Lokal sieht $\sM$ wie $U\times\C^n$ und ein $s\in\sM$ wie
-  $\begin{pmatrix}f_{1}\\\vdots\\f_{n}\end{pmatrix}=:f\in\cO(U)^n$, aus.
-  \\Dann
+  Lokal lässt sich ein Schnitt $s\in\sM$ schreiben als
+  $\begin{pmatrix}s_{1}\\\vdots\\s_{n}\end{pmatrix}=s\in\cO(U)^n$.
+  Dann
   \[
-    \nabla s=df-Af
+    \nabla s=ds-As
   \]
-  wobei $A\in M(n\times n,\Omega_M^1(*Z)(U))$ ist die \emph{Zusammenhangs
-  Matrix}.
-
-  Ein Wechsel $F\in\Gl_n(\cO_X(U))$ der Trivialisierung entspricht
-  \[
-    F[A^0]=(dF)F^{-1}+FA^0F^{-1} \,.
-  \]
+  für eine \emph{Zusammenhangs Matrix}
+  $A\in M\left(n\times n,\Omega_M^1(*Z)(U)\right)$.
+  \vfill
+  \visible<2>{%
+    Ein Wechsel $F\in\Gl_n(\cO_X(U))$ der Trivialisierung entspricht
+    \[
+      F[A^0]=(dF)F^{-1}+FA^0F^{-1} \,.
+    \]
+  }
+  % \begin{rem}
+  %   Zwei Zusammenhänge sind isomorph, genau dann, wenn ihre Zusammenhangs
+  %   Matrizen isomorph sind.
+  % \end{rem}
 \end{frame}
 
 \subsection{Modelle und formale Zerlegung}
 \begin{frame}[t]
   \begin{defn}
     Ein Keim $(\cM,\nabla)$ ist ein \emph{Model} falls
-    \[
-      (\cM,\nabla)
-      \cong
-      \bigoplus_\phi
-      \underset{\text{merom. Zus.}}{%
-        \underset{\text{elementare}}{%
-          \underbrace{\cE^\phi\otimes\cR_\phi}
+    \begin{multicols}{2}
+      \def\myPhi{\textcolor{red!60!black}{\phi}}
+      \[
+        \lambda:(\cM,\nabla)
+        \overset{\cong}{\longrightarrow}
+        % \cong
+        \bigoplus_{\tikzmark{e3}\myPhi}
+        \underset{\text{merom. Zus.}}{%
+          \underset{\text{elementare}}{%
+            \underbrace{%
+              \overset{\tikzmark{e2}}{\cE^{\myPhi}}
+              \otimes
+              \overset{\tikzmark{e1}}{\cR_{\myPhi}}
+            }
+          }
         }
-      }
-    \]
-    wobei
-    \begin{itemize}
-      \item die $\phi\in t^{-1}\C[t^{-1}]$ paarweise unterschiedlich sind,
-      \item die $\cR_\phi$ regulär singulär sind und
-      \item $\cE^\phi$ wird gelöst von $e^\phi$.
-    \end{itemize}
+      \]
+      \columnbreak
+      \begin{itemize}
+        \item[\tikzmarkc{n2}{blue}] irregulär singulär
+        \item[\tikzmarkc{n1}{blue}] regulär singulär
+        \item[\tikzmarkc{n3}{red}] $\myPhi\in t^{-1}\C[t^{-1}]$ paarweise
+          verschwinden
+      \end{itemize}
+    \end{multicols}
   \end{defn}
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[->,blue,opacity=.5] (n1) to[bend right] (e1);
+    \draw[->,blue,opacity=.5] (n2) to[bend right] (e2);
+    \draw[->,red,opacity=.5] (n3) to[bend left] (e3);
+  \end{tikzpicture}
+  \visible<2>{%
+    \begin{lem}
+      Ist $(\sM,\nabla)$ ein Modell, so lässt sich die Zusammenhangs Matrix
+      schreiben als
+      \begin{multicols}{2}
+        \[
+          A^0=d\overset{\tikzmark{e1}}{\textcolor{red!60!black}{Q}}
+            +\underset{\tikzmark{e2}}{\Lambda}\frac{dt}{t}
+        \]
+        \columnbreak
+        \begin{itemize}
+          \item[\tikzmarkc{n1}{red}]
+            $\textcolor{red!60!black}{Q=\diag(\phi_1,\dots,\phi_n)}$
+          \item[\tikzmarkc{n2}{blue}]
+            $\Lambda$ diagonal und konstant ist.
+        \end{itemize}
+      \end{multicols}
+    \end{lem}
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[->,red,opacity=.5] (n1) to[bend right] (e1);
+      \draw[->,blue,opacity=.5] (n2) to[bend left] (e2);
+    \end{tikzpicture}
+  }
 \end{frame}
-\begin{frame}[t]{Zusammenhangs Matrix\dots}
-  
-\end{frame}
-\begin{frame}[t]{Levelt-Turittin-Theorem}
+\begin{frame}{Levelt-Turittin-Theorem}
   \begin{tthm}[Levelt-Turittin]
     Zu einem Keim $(\cM,\nabla)$ eines \textbf{formalem} meromorphen
     Zusammenhang gibt es, bis auf Verzweigung, immer einen Isomorphismus
@@ -72,33 +130,268 @@
       \hat\lambda:\hat\cM
       \overset{\cong}\longrightarrow
       \hat\cM^{good}
-      =\hat\cO_{x^0}\otimes\cM^{good}
+      =\hat\cO\otimes\cM^{good}
     \]
     zu einem \textbf{formalem Modell}.
   \end{tthm}
 \end{frame}
 
 \section{Asymptotische Entwicklungen}
-\begin{frame}[t]{defns}
-  Sei $r:=\#\A$, $l:=r/(2k-2)$ und $\textbf{\underline{d}}:=(d_1,\dots,d_l)$
-  \emph{Halb-Periode}.
+\subsection{Definition}
+\begin{frame}[t]
+  % Ab jetzt: $M=D=\{t\in\C\mid|t|<r\}$ für $r$ klein genug und $Z=\{0\}$.
   \begin{defn}
-    Definiere die \emph{totale Ordnung}
-    \[
-      \phi_i\underset{\textbf{\underline{d}}}{<}\phi_j
-      \Leftrightarrow{}
-      \phi_{ij}\in\R_{<0}\text{
-      entlang einem } d\in\textbf{\underline{d}}
-    \]
-    und durch $\phi_i\underset{\textbf{\underline{d}}}{<}\phi_j
-    \Leftrightarrow{}\pi_i<\pi_j$ die
-    \[
-      \text{\emph{Permutations Matrix} } (P)_{ij}=\delta_{\pi(i)j} \,.
-    \]
+    Sei $\textcolor{red!60!black}{\theta_0,\theta_1}\in S^1$.
+    \begin{itemize}
+      \item $\textcolor{green!40!black}{\Sect_{\textcolor{blue!60!black}{r}}
+        (\textcolor{red!60!black}{\theta_0,\theta_1})}
+        := \{t=\rho e^{i\theta}\in\C
+          \mid 0<\rho<\textcolor{blue!60!black}{r},
+              \theta\in(\textcolor{red!60!black}{\theta_0,\theta_1})\}$
+      \item $\Sect(\textcolor{red!60!black}{\theta_0,\theta_1}):=
+        \Sect_{\textcolor{blue!60!black}{r}}
+        (\textcolor{red!60!black}{\theta_0,\theta_1})$
+        für $\textcolor{blue!60!black}{r}$ klein genug.
+      \item $\Sect(\textcolor{red!60!black}{U})
+        \!\!\overset{\textcolor{red!60!black}{U=(\theta_0,\theta_1)}}{:=}\!\!
+        \Sect(\textcolor{red!60!black}{\theta_0,\theta_1})$
+    \end{itemize}
+  \end{defn}
+  \begin{center}
+    \begin{tikzpicture}[scale=2.5]
+      \node (zero) at (0,0) {};
+      \node[below left] at (zero) {$0$};
+      \draw[blue,dashed] (zero) circle (1cm);
+
+      \filldraw[fill=green!20!white
+        ,draw=green!60!black
+        ,thick
+        ,path fading=west] (0,0)
+      -- ({cos( -30 )*.65},{sin( -30 )*.65}) arc (-30:70:.65) -- cycle;
+      \draw[blue!60!black,thick] (0,0) -- ({cos( -30 )*.65},{sin( -30)*.65});
+      \node[green!40!black] at (.4,.3)
+        {$\Sect_{\textcolor{blue!60!black}{r}}
+        (\textcolor{red!60!black}{\theta_0,\theta_1})$};
+      \node[green!40!black] at (.3,-.25) {$\textcolor{blue!60!black}{r}$};
+
+      \draw[thick,red!60!black] ({cos( -30 )},{sin( -30 )}) arc (-30:70:1);
+
+      \fill[red!60!black] ({cos( -30 )},{sin( -30 )}) circle(.7pt);
+      \fill[red!60!black] ({cos( 70 )},{sin( 70 )}) circle(.7pt);
+
+      \node[red!60!black] at ({1.1 * cos(70)},{1.1 * sin(70)}) {$\theta_1$};
+      \node[red!60!black] at ({1.1 * cos(-30)},{1.1 * sin(-30)}) {$\theta_0$};
+
+      \node[red!60!black,right] at (1,0) {$U$};
+
+      \fill[white] (zero) circle (1.5pt);
+      \fill (zero) circle (.7pt);
+    \end{tikzpicture}
+  \end{center}
+\end{frame}
+\begin{frame}[t]{Asymptotische Entwicklung}
+  \begin{defn}
+    \def\myN{\textbf{\textcolor{blue!40!black}{N}}}
+    \def\mySect{\textcolor{red!40!black}{W}}
+    \def\myConst{\textcolor{green!40!black}{C(\myN,\mySect)}}
+    $f\in\cO(\Sect(U))$ hat $\sum_{n\geq n_0}c_nt^n\in\C(\!(t)\!)$ als
+    \emph{asymptotische Entwicklung auf $\Sect(U)$}, falls
+    \begin{itemize}
+      \item $\exists$ $\textcolor{yellow!30!black}{r}$ so dass
+        $\forall$ $\myN\geq0$ und
+        $\forall$ $\mySect$ abg. Untersektor von
+        $\Sect_{\textcolor{yellow!30!black}{r}}(U)$
+        eine Konstante $\myConst$ existiert, so dass
+        \[
+          \left|
+            f(t)-\sum_{n_0\leq n\leq\myN-1}c_nt^n
+          \right|
+          \leq \myConst|t|^{\myN} \qquad \text{ für alle } t\in \mySect \,.
+        \]
+    \end{itemize}
+    \visible<2>{%
+      Erhalte die Garbe $\sA$ auf $S^1$:
+      \[
+        \underset{\text{von } S^1}{\underset{\text{off. Intervall}}{U}}
+        \mapsto\sA(U)
+        \textcolor{gray}{\subset\cO(\Sect(U))}
+      \]
+      wobei $\sA(U)$ die Funktionen mit asymptotischer Entwicklung auf
+      $\Sect(U)$.
+    }
   \end{defn}
 \end{frame}
-\begin{frame}[t]{title}
+\subsection{Borel-Ritt Lemma}
+\begin{frame}[t,fragile]{Borel-Ritt}
+  \begin{llem}[Borel-Ritt]
+    Für jedes \textbf{echte} offene Intervall $U$ von $S^1$ ist die Abbildung
+    \[
+      \visible<2-3>{%
+        \textcolor{gray}{0\to \sA^{<0}(U) \to}
+      }
+      \sA(U) \overset{T}\twoheadrightarrow \C((t))
+      \visible<2-3>{%
+        \textcolor{gray}{\to0}
+      }
+    \]
+    eine surjektion.
+  \end{llem}
+  \visible<3>{%
+    \begin{thm}
+      Für jedes genügend kleinem Intervall $V\subset S^1$ gibt es einen lift
+      \[
+        \tilde\lambda:
+        \underset{=:\tilde\sM(V)}{\underbrace{\sA(V)\otimes\sM}}
+        \overset{\cong}{\longrightarrow}
+        \sA(V)\otimes\bigoplus_\phi(\sE^\phi\otimes\sR_\phi)
+      \]
+      von $\hat \lambda$.
+    \end{thm}
+  }
+\end{frame}
+
+\section{Stokes-Strukturen}
+\begin{frame}[t]{Modulräume}
+  Fixiere ein \textbf{Modell} $(\sM^{good},\nabla^{good})$ auf $D$ mit Pol bei
+  $\{0\}=Z$ und somit auch eine Matrix $A^0=dQ+\Lambda\frac{dt}{t}$.
+
+  \textbf{Wir sind interessiert an:}
   \begin{center}
+      $\left\{(\sM,\nabla)
+          \mid \hat f:(\hat\sM,\hat\nabla)
+            \overset{\cong}\longrightarrow
+            (\hat\sM^{good},\hat\nabla^{good})
+        \right\}\Big/\sim$.
+  \end{center}
+  \visible<2-3>{%
+    Wir betrachten dazu aber die größere die \textcolor{gray}{punktierte} Menge
+    \[
+      \sH(\sM^{good}):=\left\{(\sM,\nabla,\hat f)
+          \mid \hat f:(\hat\sM,\hat\nabla)
+            \overset{\cong}\longrightarrow
+            (\hat\sM^{good},\hat\nabla^{good})
+        \right\}\Big/\sim
+    \]
+  }
+
+  \visible<3>{%
+    Als Zusammenhangs Matrizen:
+    \[
+      \underset{=:\Syst(A^0)}{\underbrace{%
+          \left\{A \mid A=\hat F[A^0]\text{~für ein~}\hat F\in\hat G
+          :=\GL_n(\C\llbracket t\rrbracket)\right\}
+      }}\Big/G\{t\}
+    \]
+    und
+    \[
+      \sH(A^0):=\left\{
+          (A,\hat F)\in\Syst(A^0)\times\hat G\mid A=\hat F[A^0]
+        \right\}\Big/G\{t\}
+    \]
+  }
+\end{frame}
+
+\subsection{Garben Version}
+\begin{frame}[t]{Garben Version: Stokes Raum}
+  \begin{defn}
+    Definiere den \emph{Stokes Raum}
+    \[
+      \St(\sM^{good})
+        :=H^1\left(S^1,\Aut^{<0}\left(\tilde \sM^{good}\right)\right)
+    \]
+    wobei
+    \begin{itemize}
+      \item $\Aut^{<0}(\!\!\!\underset{\sA_{\tilde D}\otimes\sM^{good}}
+        {\underbrace{\tilde\sM^{good}}}\!\!\!)$
+        die Garbe auf $S^1$ der Automorphismen welche eine asymptotische
+        Entwicklung der Identität sind.
+        \textcolor{gray}{Die Schnitte heißen \emph{Stokes Matrizen}.}
+    \end{itemize}
+    \visible<2>{%
+      \begin{thm}
+        $\St(\sM^{good})$ ist ein $\C$-Vektorraum.
+      \end{thm}
+    }
+  \end{defn}
+\end{frame}
+\begin{frame}[t]{Garben Version}
+  Sei $\left[(\sM,\nabla,\hat f)\right]\in\sH(\sM^{good})$. Dann gibt es eine
+  Überdeckung $\mathfrak{W}$ von $S^1$ und für jedes $W_i\in\mathfrak{W}$ einen
+  Lift
+  \[
+    f_i:(\tilde\sM,\tilde\nabla)_{|W_i}
+    \overset{\sim}{\longrightarrow}
+    (\tilde\sM^{good},\tilde\nabla^{good})_{|W_i}
+  \]
+  von $\hat f$.
+  Dann ist $(f_jf_i^{-1})_{i,j}$ ein Kozykel in der Garbe
+  $\Aut^{<0}(\tilde\sM^{good})$ relativ zur Überdeckung $\mathfrak{W}$.
+  Damit haben wir eine Abbildung
+  \[
+    \sH(\sM^{good})\to H^1(S^1,\Aut^{<0}(\tilde\sM^{good}))=\St(\sM^{good})
+  \]
+  \visible<2>{%
+    \begin{tthm}[Malgrange-Sibuya]
+      Das ist ein Isomorphismus \textcolor{gray}{von punktierter Mengen}.
+    \end{tthm}
+  }
+\end{frame}
+
+\subsection{Matrix Version}
+\begin{frame}{Matrix Version}
+  \begin{tthm}[Balser, Jurkat, Lutz]
+    Es gibt einen Isomorphismus
+    \begin{align*}
+      \sH(A^0)&\cong(U_+\times U_-)^{k-1}
+      &\textcolor{gray}{\cong\C^{(k-1)n(n-1)}}
+    \\ [(A,\hat F)]&\mapsto\textbf{S}=(S_1,\dots,S_{2k-2})
+    \end{align*}
+    \visible<2>{%
+      \begin{cor}
+        Es gibt einen Isomorphismus
+        \[
+          \Syst(A^0)/G\{t\}\cong(U_+\times U_-)^{k-1}/T
+        \]
+      \end{cor}
+    }
+  \end{tthm}
+\end{frame}
+\begin{frame}[t]{Matrix Version: Definitionen}
+  \begin{defn}
+    Sei $\phi_{ij}(z)$ der führende Term von $\phi_i-\phi_j$.
+    \begin{align*}
+    d\in\A\subset S^1
+    :\Leftrightarrow{} &
+    \begin{cases}
+      \text{es gibt $i\neq j$ so dass $\phi_{ij}(z)\in\R_{<0}$}
+    \\\text{für $z\to0$ auf dem `Strahl durch $d$'.}
+    \end{cases}
+    \end{align*}
+    Die Elemente in $\A$ heißen \emph{anti-Stokes-Richtungen}.
+  \end{defn}
+  Sei
+  \begin{itemize}
+    \item $r:=\#\A$,
+    \item $l:=r/(2k-2)$ und
+    \item $\textbf{d}:=(d_1,\dots,d_l)$ \emph{Halb-Periode}.
+  \end{itemize}
+  % \begin{defn}
+  %   Definiere die \emph{totale Ordnung}
+  %   \[
+  %     \phi_i\underset{\textbf{\underline{d}}}{<}\phi_j
+  %     \Leftrightarrow{}
+  %     \phi_{ij}\in\R_{<0}\text{
+  %     entlang einem } d\in\textbf{\underline{d}}
+  %   \]
+  %   und durch $\phi_i\underset{\textbf{\underline{d}}}{<}\phi_j
+  %   \Leftrightarrow{}\pi_i<\pi_j$ die
+  %   \[
+  %     \text{\emph{Permutations Matrix} } (P)_{ij}=\delta_{\pi(i)j} \,.
+  %   \]
+  % \end{defn}
+\end{frame}
+\begin{frame}{Matrix Version: Definitionen}
+  \begin{multicols}{3}
     \begin{tikzpicture}[scale=3]
       \node[] (zero) at (0,0) {};
 
@@ -128,7 +421,7 @@
       \foreach \w/\str in {10/$d_1\in S^1$,
                            20/$d_2$,
                            45/$d_3$,
-                           55/$d_l$}
+                           55/$d_{\overset{\tikzmark{e2}}{l}}$}
       {\draw[thick,purple!\w!blue,path fading=west]
           (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
        \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
@@ -138,6 +431,8 @@
         \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
        }
       };
+      \node[right,red!30!black] at ({cos( 355 )},{sin( 355 )})
+        {$d_{\tikzmark{e1}r}$};
 
       \foreach \sep/\str in {0/$1$
                             ,60/$2$
@@ -155,95 +450,103 @@
       \fill[white] (zero) circle (1pt);
       \fill (zero) circle (.7pt);
     \end{tikzpicture}
-  \end{center}
+    \columnbreak
+    \columnbreak
+    \begin{itemize}
+      \item[\tikzmarkc{n2}{red}] $l:=r/(2k-2)$
+      \item[\tikzmarkc{n1}{blue}] $r:=\#\A$
+      % \item $\textbf{\underline{d}}:=(d_1,\dots,d_l)$
+    \end{itemize}
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[->,blue,opacity=.5] (n1) to[bend left] (e1);
+      \draw[->,red,opacity=.5] (n2) to[bend right] (e2);
+    \end{tikzpicture}
+  \end{multicols}
 \end{frame}
-\begin{frame}[t]{Asymptotische Entwicklung}
-  
-\end{frame}
-\begin{frame}[t]{Borel-Ritt}
-  \begin{llem}[Borel-Ritt]
-    Für jedes \textbf{echte} offene Intervall $U$ von $S^1$ ist die Abbildung
-    \[
-      \textcolor{gray}{0\to \sA^{<0}(U) \to}
-      \sA(U) \overset{T}\twoheadrightarrow \C((t))
-      \textcolor{gray}{\to0}
-    \]
-    % \[
-    %   \textcolor{gray}{0\to \sA^{<0} \to
-    %   \sA \to \pi^{-1}\hat\cO_{D}
-    %   \to0}
-    % \]
-    eine surjektion.
-  \end{llem}
+\begin{frame}[t]{Garben Version: Asymptotische Analysis}
   \begin{thm}
-    Für jedes genügend kleinem Intervall $V\subset S^1$ gilt
-    \[
-      \sA(V)\otimes\sM\cong\sA(V)\otimes\bigoplus_\phi(\sE^\phi\otimes\sR_\phi)
-    \]
+    \begin{itemize}
+      \item Zu $(A,\hat F)$ gibt es auf jedem Sektor
+        $\Sect\left(d_i,d_{i+1}\right)$ einen \textcolor{gray}{(kanonischen)}
+        Lift
+        \[
+          \Sigma_i(\hat F)\in\Gl_n(\cO_{\Sect_i})
+        \]
+        so dass $\Sigma_i(\hat F)[A^0]=A$.
+      \visible<2>{%
+        \item 
+          Die analyt. Fortsetzung auf
+          $\Sect\left(d_i-\frac{\pi}{2k-2},d_{i+1}+\frac{\pi}{2k-2}\right)$
+          von $\Sigma_i(\hat F)$ ist dort immer noch asymptotisch zu $\hat F$.
+        }
+    \end{itemize}
   \end{thm}
 \end{frame}
-
-\section{Stokes-Strukturen}
-\begin{frame}[t]{Modulräume?}
-  
-\end{frame}
-
-\subsection{Garben Version}
-\begin{frame}[t]{title}
+\begin{frame}[t]{Garben Version: Stokes Faktoren}
   \begin{defn}
-    Definiere den \emph{Stokes Raum}
+    Die \emph{Stokes Faktoren} zu $(A,\hat F)$ sind
     \[
-      \St(\sM^{good})
-        :=H^1\left(S^1,\Aut^{<0}\left(\tilde \sM^{good}\right)\right)
+      K_i:= e^{-Q}\cdot e^{-\Lambda} \cdot
+        \underset{\kappa_i}{\underbrace{%
+        \Sigma_i(\hat F)^{-1}\cdot \Sigma_{i-1}(\hat F)}}
+      \cdot  e^{\Lambda}\cdot e^{Q}
     \]
-    wobei
-    \begin{itemize}
-      \item $\Aut^{<0}(\!\!\!\underset{\sA_{\tilde D}\otimes\sM^{good}}
-        {\underbrace{\tilde\sM^{good}}}\!\!\!)$
-        die Garbe auf $S^1$ der Automorphismen welche
-        \begin{itemize}
-          \item mit dem Zusammenhang kompatibel sind und
-          \item formal äquivalent zur Identität sind.
-        \end{itemize}
-        \textcolor{gray}{Die Schnitte heißen \emph{Stokes Matrizen}.}
-    \end{itemize}
-    \begin{thm}
-      $\St(\sM^{good})$ ist ein $\C$-Vektorraum.
-    \end{thm}
+    \visible<2>{%
+      \begin{lem}
+        $K_i$ ist in der \emph{Gruppe der Stokes Faktoren}
+        \[
+          \SSto_{d_i}(A^0) := \{K \in G \mid (K)_{ij}
+          =\delta_{ij} \text{ außer }
+            \phi_{ij}\in\R_{<0}\text{ entlang } d_i \}.
+        \]
+      \end{lem}
+    }
   \end{defn}
 \end{frame}
-\begin{frame}[t]{title}
-  Sei $(\sM,\nabla,\hat f)\in\sH(\sM^{good})$. Dann gibt es eine Überdeckung
-  $\mathfrak{W}$ von $S^1$ und für jedes $W_i\in\mathfrak{W}$ einen
-  Lift\footnote{$\hat f_i=\hat f$} von $\hat f$
-  \[
-    f_i:(\tilde\sM,\tilde\nabla)_{|W_i}
-    \overset{\sim}{\longrightarrow}
-    (\tilde\sM^{good},\tilde\nabla^{good})_{|W_i} \,.
-  \]
-  Dann ist $(f_jf_i^{-1})_{i,j}$ ein Kozykel in der Garbe
-  $\Aut^{<0}(\tilde\sM^{good})$ relativ zur Überdeckung $\mathfrak{W}$.
-  Damit haben wir eine Abbildung
-  \[
-    \sH(\sM^{good})\to H^1(S^1,\Aut^{<0}(\tilde\sM^{good}))=\St(\sM^{good})
-  \]
-\end{frame}
-
-\subsection{Matrix Version}
-\begin{frame}[t]{title}
-  \begin{tthm}[Balser, Jurkat, Lutz]
-    Es gibt einen Isomorphismus
+\begin{frame}[t]
+  \begin{lem}
+    Sei $\textbf{d}=(d_1,\dots,d_l)$ eine Halb-Periode.
     \begin{align*}
-      \cH(A^0)&\cong(U_+\times U_-)^{k-1}
+      \prod_{d\in\textbf{d}}\SSto_d(A^0) &\cong PU_+P^{-1}\\
+      (K_1,\dots,K_l) &\mapsto K_l\dots K_2K_1\in G
+    \end{align*}
+  \end{lem}
+  \visible<2>{%
+    \begin{cor}
+      \begin{align*}
+        \prod_{d\in\A}\SSto_d(A^0)&\cong (U_+\times U_-)^{k-1}\\
+        (K_1,\dots,K_r)&\mapsto (S_1,\dots,S_{2k-2})
+      \end{align*}
+      mit $S_i:=P^{-1}K_{il}\dots K_{(i-1)l+1}P\in U_{+/-}$ falls $i$
+      ungerade/gerade die Stokes Matrizen.
+    \end{cor}
+  }
+\end{frame}
+% \begin{frame}[t,fragile]{Matrix Version}
+%   \begin{thm}
+%     Die Abbildung
+%     \[ \begin{tikzcd}[row sep=0em]
+%         \sH(A^0) \rar & (U_+\times U_-)^{k-1}
+%       \\(A,\hat F) \rar[mapsto] & (S_1,\dots,S_{2k-2})
+%     \end{tikzcd} \]
+%     ist ein Isomorphismus.
+%   \end{thm}
+% \end{frame}
+\begin{frame}{Matrix Version}
+  \begin{tthm}[Balser, Jurkat, Lutz]
+    Die hier definierte Abbildung
+    \begin{align*}
+      \sH(A^0)&\cong(U_+\times U_-)^{k-1}
       &\textcolor{gray}{\cong\C^{(k-1)n(n-1)}}
     \\ [(A,\hat F)]&\mapsto\textbf{S}=(S_1,\dots,S_{2k-2})
     \end{align*}
+    ist ein Isomorphismus
     \begin{cor}
-      Es gibt einen Isomorphismus
+      Es ist auch 
       \[
         \Syst(A^0)/G\{t\}\cong(U_+\times U_-)^{k-1}/T
       \]
+      ein Isomorphismus
     \end{cor}
   \end{tthm}
 \end{frame}
-

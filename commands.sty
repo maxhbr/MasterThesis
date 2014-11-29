@@ -177,4 +177,9 @@
 \newcommand{\symplquot}[2]{{%
   \raisebox{.3em}{$#1$\!}\Big/\!\!\!\Big/\raisebox{-.3em}{\!$#2$}}}
 
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+\newcommand{\tikzmarkc}[2]{%
+  \tikz[overlay,remember picture] \node (#1) {};%
+  \tikz[overlay,remember picture] \draw[fill,#2!50] (#1) circle (2pt);}
+
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:

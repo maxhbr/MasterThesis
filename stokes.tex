@@ -187,7 +187,7 @@ For $k\neq l$, write
 where
 \begin{itemize}
   \item $n_{kl}>0$,
-  \item $\psi_{kl}(x)\in\cO_{X,x^0}^*$ 
+  \item $\psi_{kl}(x)\in\cO_{X,x^0}^*$
     \begin{itemize}
       \item i.e., does not vanish
     \end{itemize}
@@ -631,6 +631,7 @@ Define $q_{ij}(z)$ to be the leading term of $q_i-q_j$.
         \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
        }
       };
+      \node[right,red!30!black] at ({cos( 355 )},{sin( 355 )}) {$d_r$};
 
       \foreach \sep/\str in {0/$1$
                             ,60/$2$
@@ -664,6 +665,7 @@ Define $q_{ij}(z)$ to be the leading term of $q_i-q_j$.
        \foreach \sep in {60,120,180,240,300}
        {\draw[gray] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}
       };
+      \node[right] at ({cos( 355 )},{sin( 355 )}) {$d_r$};
 
       \fill (zero) circle (1pt);
 
@@ -719,6 +721,7 @@ Define $q_{ij}(z)$ to be the leading term of $q_i-q_j$.
           ({cos( \w + \sep )},{sin( \w + \sep )}) circle (.7pt);
        }
       };
+      \node[right] at ({cos( 355 )},{sin( 355 )}) {$d_r$};
 
       \fill[yellow!60!black] (0.8,0.07) circle (1pt);
       \node[yellow!60!black,right] at (0.8,0.07) {$p$};
@@ -947,7 +950,7 @@ We get a genuine fundamental solution $z^\Lambda e^Q$ of $A^0$ there.
 \end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{defn}[1.27]
   Given $\tilde p$\footnote{a choice of labeling and $\log(z)$}.
-  The \emph{Stokes factors} 
+  The \emph{Stokes factors}
   \begin{itemize}
     \item of a compatibly framed system $(A,g)$
     \item with associated normal Form $A^0$
@@ -1119,7 +1122,7 @@ differ and moreover they encode the moduli of $(A,g)$.
 \begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{thm}[\cite{boalch}: Thm 3.2]
     Fix the data $(A^0,z,\tilde p)$ as above.
-    Then 
+    Then
     \begin{itemize}
       \item the \emph{`local monodromy map'}
         \begin{itemize}

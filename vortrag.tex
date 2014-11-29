@@ -42,7 +42,7 @@ Hyperflächen mit positiven Koeffizienten.} auf $M$.
   bei $x$ gibt es einen eindeutig bestimmten Schnitt in der Umgebung von $x$.
 \end{comment}
 Sei $\sM$ ein \textbf{\textcolor{gray}{(holomorphes)} Bündel}
-$:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
+$:\Leftrightarrow{}$ lokal freier $\cO_M$-Modul.
 \begin{defn}
   \def\myU{\textcolor{green!30!black}{U}}
   \def\mys{\textcolor{blue!60!black}{s}}
@@ -95,9 +95,8 @@ $:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
   \marginnote{\tiny see \cite{sabbah2007isomonodromic} II.2.a}
 \end{rem}
 \begin{comment}
-  Irregularität von meromorphen Zusammenhängen
-  \\\TODO[\cite{sabbah2007isomonodromic}: p. 86]
-  \TODO[\cite{sabbah2007isomonodromic}: Def II.2.24]
+  Ein Zusammenhang is irregulär singulär, falls er einen Pol hat, der auch nach
+  Tranformation immer noch Ordnung $\geq1$ hat.
 \end{comment}
 \pagebreak \subsection{Modelle und formale Zerlegung}%{{{
 \begin{defn}
@@ -131,20 +130,18 @@ $:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
     \item $\Lambda$ diagonal und konstant ist.
   \end{itemize}
 \end{lem}
-\begin{paracol}{2}
-  \begin{tthm}[Levelt-Turittin]
-    Zu einem Keim\footnote{denn möglicherweise muss man sich auf eine kleine
-    Scheibe einschränken.} $(\cM,\nabla)$ eines \textbf{formalem} meromorphen
-    Zusammenhang gibt es, bis auf Verzweigung, immer einen Isomorphismus
-    \[
-      \hat\lambda:\hat\cM
-      \overset{\cong}\longrightarrow
-      \hat\cM^{good}
-      =\hat\cO_{x^0}\otimes\cM^{good}
-    \]
-    zu einem \textbf{formalem Modell}.
-  \end{tthm}
-\switchcolumn
+\begin{tthm}[Levelt-Turittin]
+  Zu 
+  % einem Keim\footnote{denn möglicherweise muss man sich auf eine kleine Scheibe einschränken.} 
+  $(\cM,\nabla)$
+  gibt es, bis auf Verzweigung, immer einen \textbf{formalem} Isomorphismus
+  \[
+    \hat\lambda:\hat\cM
+    \overset{\cong}\longrightarrow
+    \hat\cM^{good}
+    =\hat\cO\otimes\cM^{good}
+  \]
+  zu einem \textbf{formalem Modell}.
   \begin{rem}
     Aber keinen konvergenten lift.
     \[ \Large\begin{tikzcd}
@@ -159,7 +156,7 @@ $:\Leftrightarrow{}$ lokal freie $\cO_M$-Modul.
     \textcolor{green!60!black}{Sektorweise aber schon, mit asymptotischer
     Analysis}
   \end{rem}
-\end{paracol}
+\end{tthm}
 %}}}
 %}}}
 \pagebreak \section{Asymptotische Entwicklungen} %{{{
@@ -222,9 +219,11 @@ Betrachte nun $M=D=\{t\in\C\mid|t|<r\}$ für $r$ beliebig klein und $Z=\{0\}$.
   \def\myN{\textbf{\textcolor{blue!40!black}{N}}}
   \def\mySect{\textcolor{red!40!black}{W}}
   \def\myConst{\textcolor{green!40!black}{C(\myN,\mySect)}}
-  $f\in\cO_D(*Z)$ hat die \textbf{formale Laurent Reihe}
-  $\sum_{n\geq n_0}c_nz^n$ als \emph{asymptotische Entwicklung auf
-  $\Sect(U)$}, falls
+  % $f\in\cO_D(*Z)$
+  $f\in\cO(\Sect(U))$
+  hat
+  $\sum_{n\geq n_0}c_nt^n\in\C(\!(t)\!)$\footnote{\textbf{formale Laurent Reihe}}
+  als \emph{asymptotische Entwicklung auf $\Sect(U)$}, falls
   \begin{itemize}
     \item $\exists$ $\textcolor{yellow!30!black}{r}$ so dass
       $\forall$ $\myN\geq0$ und
@@ -246,7 +245,7 @@ Betrachte nun $M=D=\{t\in\C\mid|t|<r\}$ für $r$ beliebig klein und $Z=\{0\}$.
           \right|=0$
       \end{comment}
   \end{itemize}
-  Damit bekommt man die Garbe $\sA$ auf $S^1$:
+  Erhalte die Garbe $\sA$ auf $S^1$:
   \[
     \underset{\text{von } S^1}{\underset{\text{off. Intervall}}{U}}
     \mapsto\sA(U)
@@ -256,11 +255,11 @@ Betrachte nun $M=D=\{t\in\C\mid|t|<r\}$ für $r$ beliebig klein und $Z=\{0\}$.
 \end{defn}
 \begin{llem}[Borel-Ritt]
   \marginnote{$t\mapsto e^{-\frac{1}{t}}$ hat verschwindende asy.\  Entw.\  in
-  Sektoren um $\theta=0$}
+  Sektoren um $\theta=0$ \cite[6]{Varadarajan96linearmeromorphic}}
   Für jedes \textbf{echte} offene Intervall $U$ von $S^1$ ist die Abbildung
   \[
     \textcolor{gray}{0\to \sA^{<0}(U) \to}
-    \sA(U) \overset{T}\twoheadrightarrow \C((t))
+    \sA(U) \overset{T}\twoheadrightarrow \C(\!(t)\!)
     \textcolor{gray}{\to0}
     \qquad
     \qquad
@@ -286,16 +285,30 @@ Betrachte nun $M=D=\{t\in\C\mid|t|<r\}$ für $r$ beliebig klein und $Z=\{0\}$.
     kommutiert
   \end{thm}
 \switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{thm}
-  \textcolor{gray}{%
-    Zu jedem $\theta\in S^1$ und jedem genügend kleinem Intervall $V\ni\theta$
-    gilt
-    \[
-      \sA(V)\otimes\sM\cong\sA(V)\otimes\bigoplus_\phi(\sE^\phi\otimes\sR_\phi)
-    \]
-  }
-\end{thm}
+  \begin{thm}
+    \textcolor{gray}{%
+      Zu jedem $\theta\in S^1$ und jedem genügend kleinem Intervall
+      $V\ni\theta$ gilt
+      \[
+        \sA(V)\otimes\sM\cong\sA(V)\otimes\bigoplus_\phi(\sE^\phi\otimes\sR_\phi)
+      \]
+    }
+  \end{thm}
 \end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thm}
+  Zu jedem $\theta\in S^1$ und jedem genügend kleinem Intervall
+  $V\ni\theta$ gibt es einen Lift 
+  $\textcolor{green!40!black}{\tilde\lambda_V}$ so dass das Diagramm
+  \[ \Large\begin{tikzcd}
+      \textcolor{green!40!black}{\tilde{\textcolor{black}{\sM}}_V}
+      \dar \rar[green!40!black]{\tilde\lambda_V}&
+      \textcolor{green!40!black}{%
+        \tilde{\textcolor{black}{\sM}}_V^{\textcolor{black}{good}}}\dar
+      \\\hat\sM \rar{\hat\lambda} &
+      \hat\sM^{good}
+  \end{tikzcd} \]
+  kommutiert
+\end{thm}
 %}}}
 \section{Stokes-Strukturen} %{{{
 Fixiere ein \textbf{Modell} $(\sM^{good},\nabla^{good})$ auf $D$ mit Pol bei
@@ -435,7 +448,7 @@ Damit haben wir eine Abbildung
 \end{tthm}
 
 \begin{defn}
-  Sei $\phi_{ij}(z)$ der führende Koeffizient von $\phi_i-\phi_j$
+  Sei $\phi_{ij}(z)$ der führende Term von $\phi_i-\phi_j$
   \begin{itemize}
     \item \textcolor{gray}{für $\phi_i-\phi_j=a/z^{k-1}+b/z^{k-2}+\dots$ dann
       $\phi_{ij}=a/z^{k-1}$.}
@@ -446,7 +459,7 @@ Damit haben wir eine Abbildung
   $:\Leftrightarrow{}$
   es gibt $i\neq j$ so dass $\phi_{ij}(z)\in\R_{<0}$ für $z\to0$ auf dem
   `Strahl durch $d$'.
-  \\Die Richtungen in $\A$ heißen \emph{anti-Stokes-Richtungen}.
+  \\Die Elemente in $\A$ heißen \emph{anti-Stokes-Richtungen}.
 \end{defn}
 \begin{paracol}{2}
 \switchcolumn[0]
@@ -507,6 +520,7 @@ Damit haben wir eine Abbildung
         \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
        }
       };
+      \node[right,red!30!black] at ({cos( 355 )},{sin( 355 )}) {$d_r$};
 
       \foreach \sep/\str in {0/$1$
                             ,60/$2$

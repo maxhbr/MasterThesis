@@ -26,6 +26,9 @@
 %%%% Text
 \usefonttheme{serif}
 
+
+\AtBeginSection{\frame{\sectionpage}}
+
 %%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[style=authoryear,natbib=true,backend=biber]{biblatex}
 \usepackage{fontspec}
@@ -145,6 +148,6 @@
 % \setlength{\paperheight}{15cm}
 % \setlength{\textwidth}{13cm}
 % \setlength{\textheight}{13cm}
-% \beamertemplatenavigationsymbolsempty
+\beamertemplatenavigationsymbolsempty
 
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:
