@@ -131,8 +131,8 @@ $:\Leftrightarrow{}$ lokal freier $\cO_M$-Modul.
   \end{itemize}
 \end{lem}
 \begin{tthm}[Levelt-Turittin]
-  Zu 
-  % einem Keim\footnote{denn möglicherweise muss man sich auf eine kleine Scheibe einschränken.} 
+  Zu
+  % einem Keim\footnote{denn möglicherweise muss man sich auf eine kleine Scheibe einschränken.}
   $(\cM,\nabla)$
   gibt es, bis auf Verzweigung, immer einen \textbf{formalem} Isomorphismus
   \[
@@ -270,41 +270,19 @@ Betrachte nun $M=D=\{t\in\C\mid|t|<r\}$ für $r$ beliebig klein und $Z=\{0\}$.
   \]
   eine surjektion.
 \end{llem}
-\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{thm}
-    Für jedes $e^{i\theta}\in S^1$, existiert ein Isomorphismus
-    $\textcolor{green!40!black}{\tilde\lambda_\theta}$ so dass das Diagramm
-    \[ \Large\begin{tikzcd}
-        \textcolor{green!40!black}{\tilde{\textcolor{black}{\sM}}_\theta}
-        \dar \rar[green!40!black]{\tilde\lambda_\theta}&
-        \textcolor{green!40!black}{%
-        \tilde{\textcolor{black}{\sM}}_\theta^{\textcolor{black}{good}}}\dar
-        \\\hat\sM_0 \rar{\hat\lambda} &
-        \hat\sM_0^{good}
-    \end{tikzcd} \]
-    kommutiert
-  \end{thm}
-\switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{thm}
-    \textcolor{gray}{%
-      Zu jedem $\theta\in S^1$ und jedem genügend kleinem Intervall
-      $V\ni\theta$ gilt
-      \[
-        \sA(V)\otimes\sM\cong\sA(V)\otimes\bigoplus_\phi(\sE^\phi\otimes\sR_\phi)
-      \]
-    }
-  \end{thm}
-\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{thm}
   Zu jedem $\theta\in S^1$ und jedem genügend kleinem Intervall
-  $V\ni\theta$ gibt es einen Lift 
-  $\textcolor{green!40!black}{\tilde\lambda_V}$ so dass das Diagramm
+  $V\ni\theta$ gibt es einen Lift
+  $\textcolor{green!40!black}{\tilde\lambda(V)}$ so dass das Diagramm
   \[ \Large\begin{tikzcd}
-      \textcolor{green!40!black}{\tilde{\textcolor{black}{\sM}}_V}
-      \dar \rar[green!40!black]{\tilde\lambda_V}&
+      \sA(V)\otimes\sM \cong:&
+      \textcolor{green!40!black}{\tilde{\textcolor{black}{\sM}}(V)}
+      \dar \rar[green!40!black]{\tilde\lambda(V)}&
       \textcolor{green!40!black}{%
-        \tilde{\textcolor{black}{\sM}}_V^{\textcolor{black}{good}}}\dar
-      \\\hat\sM \rar{\hat\lambda} &
+        \tilde{\textcolor{black}{\sM}}(V)^{\textcolor{black}{good}}}\dar &
+        :\cong\sA(V)\otimes\bigoplus_\phi(\sE^\phi\otimes\sR_\phi)
+      \\&
+      \hat\sM \rar{\hat\lambda} &
       \hat\sM^{good}
   \end{tikzcd} \]
   kommutiert

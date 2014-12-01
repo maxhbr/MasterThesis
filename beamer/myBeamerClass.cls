@@ -84,6 +84,16 @@
 \surroundwithmdframed[
   linewidth=2pt,
   linecolor=myVLineColor,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  leftmargin=\parindent,
+  skipabove=\medskipamount,
+  skipbelow=\medskipamount
+]{lemdef}
+\surroundwithmdframed[
+  linewidth=2pt,
+  linecolor=myVLineColor,
   leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
 ]{llem}
 \surroundwithmdframed[
@@ -141,6 +151,16 @@
   skipabove=\medskipamount,
   skipbelow=\medskipamount
 ]{probl}
+\surroundwithmdframed[
+  linewidth=1pt,
+  linecolor=myVLineColor,
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  leftmargin=\parindent,
+  skipabove=\medskipamount,
+  skipbelow=\medskipamount
+]{rem}
 
 
 
