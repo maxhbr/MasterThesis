@@ -4,9 +4,14 @@
   ,numbers=noenddot % obsolete
   ,10pt
   ,utf8,notheorems,compress
+  % ,handout
 ]{./myBeamerClass}
 \usepackage{etex}
 \usepackage{paracol}
+
+% \usepackage{beamerarticle}
+% \usepackage{pgfpages}
+% \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm] % for instance
 
 \bibliography{../literatur.bib}
 
@@ -55,8 +60,10 @@
 
 \input{content}
 
-\printbibliography[keyword={prim},title={Literatur}]
-\printbibliography[notkeyword={prim},title={Weitere Literatur}]
+% {\setbeamercolor{background canvas}{bg=black} \begin{frame} \end{frame} }
+
+% \printbibliography[keyword={prim},title={Literatur}]
+% \printbibliography[notkeyword={prim},title={Weitere Literatur}]
 
 \end{document}
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:

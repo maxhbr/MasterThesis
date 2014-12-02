@@ -6,7 +6,7 @@
 \begin{frame}[t]{Meromorphe Zusammenhänge}
   Sei $~\tikzmark{e2}\!\!M$ eine \textbf{Riemann-Fläche} und
   $~\tikzmark{e1}\!\!Z$ ein \textbf{effektiver Divisor} auf $M$.
-  \only<1>{\vspace{1cm}\begin{flushright}
+  \only<1| handout:0>{\vspace{1cm}\begin{flushright}
       \tikzmarkc{n1}{blue} denke an $Z=1\cdot\{0\}$
     \end{flushright}
     \vspace{1cm}
@@ -57,42 +57,158 @@
     \end{defn}
   }
 \end{frame}
+\begin{frame}[t,fragile]{Keim eines Meromorphen Zusammenhangs}
+  Wenn man an lokaler Information an einer Singulariät interessiert ist,
+  redet man oft von Keimen meromorpher Zusammenhänge.
+  \vfill
+  \only<2>{%
+    Ein solcher Keim ist dann gegeben durch
+    \begin{itemize}
+      \item einen $\C\{t\}$-Vektorraum $~~\tikzmark{e1}\!\!\!\!\cM$ und
+        \begin{flushright}
+          \tikzmarkc{n1}{gray}
+          \textcolor{gray}{Keim von $\sM$}
+        \end{flushright}
+        \begin{tikzpicture}[remember picture,overlay]
+          \draw[->,gray!50!white,thick] (n1) to[out=180,in=-90] (e1);
+        \end{tikzpicture}
+      \item einer $\C$-linearen Derivation $\nabla:\cM\to\cO(*Z)\otimes\cM$
+        welche
+        \begin{itemize}
+          \item die \emph{Leibnitz-Regel}
+            \begin{multicols}{2}
+              \[
+                \nabla(\tikzmark{e2}f\overset{\tikzmark{e1}}m)
+                  =\frac{\partial f}{\partial x}m+f\nabla m
+              \]
+              \columnbreak
+              \begin{itemize}
+                \item[\tikzmarkc{n1}{blue}] $s\in\cM$
+                \item[\tikzmarkc{n2}{red}] $f\in\C\{t\}$
+              \end{itemize}
+              \begin{tikzpicture}[remember picture,overlay]
+                \draw[->,blue!50!white,thick] (n1) to[bend right,out=0] (e1);
+                \draw[->,red!50!white,thick] (n2) to[bend left,out=0] (e2);
+              \end{tikzpicture}
+            \end{multicols}
+            erfüllt.
+        \end{itemize}
+    \end{itemize}
+  }
+\end{frame}
 \begin{frame}[t]{Zusammenhangs Matrix}
-  Lokal lässt sich ein Schnitt $s\in\sM$ schreiben als
-  $\begin{pmatrix}s_{1}\\\vdots\\s_{n}\end{pmatrix}=s\in\cO_M(U)^n$.
-  \begin{lemdef}
-    Dann
-    \[
-      \nabla s=ds-As
-    \]
-    für eine \emph{Zusammenhangs Matrix}
-    $A\in M\left(n\!\times\! n,\Omega_M^1(*Z)(U)\right)$.
-  \end{lemdef}
-  \visible<2>{%
-    Ein Wechsel $F\in\Gamma(U,\Gl_n(\cO_M))$ der Trivialisierung entspricht der
-    \emph{Gauge Transformation} auf Zusammenhangs Matrizen
+  Zu einer Basis $\textbf{e}$ von $\cM$ gibt es eine \emph{Zusammenhangs
+  Matrix} $A=A'dt$ für ein $A'\in M(n\times n,\C\{t\}[t^{-1}])$ so dass
+  $\nabla\textbf{e}=A\textbf{e}$. Damit ist lokal
+  \[
+    \nabla s=ds-As
+  \]
+  \vfill
+  \visible<2->{%
+    Ein Wechsel $F\in G\{t\}:=\Gl_n(\C\{t\})$ der Trivialisierung
+    entspricht der \emph{Gauge Transformation} auf Zusammenhangs Matrizen
     \[
       F[A]=(dF)F^{-1}+FAF^{-1} \,.
     \]
+  }
+  \vfill
+  \visible<3->{%
     \begin{defn}
-      $A$ \emph{äquivalent zu} $B$ 
-      :\Leftrightarrow{}
-      $\exists F\in$
-      mit $F[A]=B$.
+      \begin{itemize}
+        \item $A$ \emph{äquivalent zu} $B$ 
+          :\Leftrightarrow{}
+          $\exists F\in G\{t\}$
+          mit $F[A]=B$.
+        \item $A$ \emph{formal äquivalent zu} $B$ 
+          :\Leftrightarrow{}
+          $\exists \hat F\in G\llbracket t\rrbracket$
+          mit $\hat F[A]=B$.
+      \end{itemize}
     \end{defn}
   }
-  % \begin{rem}
-  %   Zwei Zusammenhänge sind isomorph, genau dann, wenn ihre Zusammenhangs
-  %   Matrizen isomorph sind.
-  % \end{rem}
+  \vfill
 \end{frame}
+\iffalse
+% {\setbeamercolor{background canvas}{bg=gray!40!white}
+%   \begin{frame}[t]{Zusammenhangs Matrix}
+%     Lokal lässt sich ein Schnitt $s\in\sM$ schreiben als
+%     $\begin{pmatrix}s_{1}\\\vdots\\s_{n}\end{pmatrix}=s\in\cO_M(U)^n$.
+%     \begin{lemdef}
+%       Dann
+%       \[
+%         \nabla s=ds-As
+%       \]
+%       für eine \emph{Zusammenhangs Matrix}
+%       $A\in M\left(n\!\times\! n,\Omega_M^1(*Z)(U)\right)$.
+%     \end{lemdef}
+%     \visible<2>{%
+%       Ein Wechsel $F\in\Gamma(U,\Gl_n(\cO_M))$ der Trivialisierung entspricht der
+%       \emph{Gauge Transformation} auf Zusammenhangs Matrizen
+%       \[
+%         F[A]=(dF)F^{-1}+FAF^{-1} \,.
+%       \]
+%       \begin{defn}
+%         $A$ \emph{äquivalent zu} $B$ 
+%         :\Leftrightarrow{}
+%         $\exists F\in$
+%         mit $F[A]=B$.
+%       \end{defn}
+%     }
+%     % \begin{rem}
+%     %   Zwei Zusammenhänge sind isomorph, genau dann, wenn ihre Zusammenhangs
+%     %   Matrizen isomorph sind.
+%     % \end{rem}
+%   \end{frame}
+% }
+% {\setbeamercolor{background canvas}{bg=gray!40!white}
+%   \begin{frame}[t]{Zusammenhangs Matrix}
+%     Sei $z\in|Z|$ und $U\ni z$ eine Trivialisierende Teilmenge von $M$.
+%     Sei $t$ eine lokale Koordinate, welche an $z$ verschwindet.
+%     \begin{lemdef}
+%       Dann hat $\nabla$, bezüglich der Trivialisierung, die Form 
+%       \[
+%         \nabla s=ds-\underline{A}s
+%       \]
+%       für eine \emph{Zusammenhangs
+%       Matrix}
+%       \[
+%         \underline{A}\in M\left(n\!\times\! n,\Omega_{M}^1(*Z)(U)\right)
+%       \]
+%     \end{lemdef}
+%   \end{frame}
+% }
+% {\setbeamercolor{background canvas}{bg=gray!40!white}
+%   \begin{frame}[t]{Zusammenhangs Matrix: Äquivalenz}
+%     \def\mySet{\Gamma(U,\Gl_n(\cO_M))}
+%     Ein Wechsel $F\in\mySet$ der Trivialisierung entspricht der
+%     \emph{Gauge Transformation} auf Zusammenhangs Matrizen
+%     \[
+%       F[A]=(dF)F^{-1}+FAF^{-1} \,.
+%     \]
+%     \begin{defn}
+%       $A$ \emph{äquivalent zu} $B$ 
+%       :\Leftrightarrow{}
+%       $\exists F\in\mySet$
+%       mit $F[A]=B$.
+%     \end{defn}
+%     \begin{defn}
+%       $A$ \emph{formal äquivalent zu} $B$ 
+%       :\Leftrightarrow{}
+%       $\exists F\in\text{?}$
+%       mit $F[A]=B$.
+%     \end{defn}
+%   \end{frame}
+% }
+\fi
 
 \subsection{Modelle und formale Zerlegung}
-\begin{frame}[t]
+\begin{frame}[t]{Formale Zerlegung}
+  \def\myPhi{\textcolor{red!60!black}{\phi}}
+  \def\myE{\textcolor{green!40!black}{\cE^{\myPhi}}}
   \begin{defn}
-    Ein Keim $(\cM,\nabla)$ ist ein \emph{Model} falls
+    Ein Keim $(\cM,\nabla)$ ist ein \emph{Model} oder eine \emph{formale
+    Zerlegung} falls
     \begin{multicols}{2}
-      \def\myPhi{\textcolor{red!60!black}{\phi}}
       \[
         \lambda:(\cM,\nabla)
         \overset{\cong}{\longrightarrow}
@@ -101,56 +217,68 @@
         \underset{\text{merom. Zus.}}{%
           \underset{\text{elementare}}{%
             \underbrace{%
-              \overset{\tikzmark{e2}}{\cE^{\myPhi}}
+              \overset{\tikzmark{e2}}{\myE}
               \otimes
-              \overset{\tikzmark{e1}}{\cR_{\myPhi}}
+              \overset{\tikzmark{e1}}{\textcolor{blue!40!black}{\cR_{\myPhi}}}
             }
           }
         }
       \]
       \columnbreak
       \begin{itemize}
-        \item[\tikzmarkc{n2}{blue}] irregulär singulär
+        \item[\tikzmarkb{n2}{green}] irregulär singulär
         \item[\tikzmarkc{n1}{blue}] regulär singulär
         \item[\tikzmarkc{n3}{red}] $\myPhi\in t^{-1}\C[t^{-1}]$ paarweise
           verschieden
       \end{itemize}
       \begin{tikzpicture}[remember picture,overlay]
-        \draw[->,blue!50!white,thick] (n1) to[bend right,out=0,in=-110] (e1);
-        \draw[->,blue!50!white,thick] (n2) to[bend right,out=0,in=-110] (e2);
-        \draw[->,red!50!white,thick] (n3) to[bend left,in=90,out=35] (e3);
+        \draw[->,blue!50!white,thick] (n1) to[out=180,in=70] (e1);
+        \draw[->,green!40!black,thick] (n2) to[out=180,in=70] (e2);
+        \draw[->,red!50!white,thick] (n3) to[out=205,in=-70] (e3);
       \end{tikzpicture}
     \end{multicols}
+    wobei $(\myE,\nabla)=(\C\{t\},d-d\phi)$.
   \end{defn}
+\end{frame}
+\begin{frame}[t]{Formale Zerlegung}
+  \begin{lem}
+    Ist $(\cM,\nabla)$ ein Modell, so lässt sich die Zusammenhangs Matrix
+    schreiben als
+    \begin{multicols}{2}
+      \[
+        A^0=d\overset{~\tikzmark{e1}}{\textcolor{green!40!black}{Q}}
+           +~\tikzmark{e2}\!\!\Lambda\frac{dt}{t}
+      \]
+      \columnbreak
+      \begin{itemize}
+        \item[\tikzmarkb{n1}{green}]
+          $\textcolor{green!40!black}{Q
+            =\diag(\textcolor{red!60!black}{\phi_1,\dots,\phi_n})}$
+        \item[\tikzmarkc{n2}{blue}]
+          $\Lambda$ diagonal und konstant
+      \end{itemize}
+    \end{multicols}
+  \end{lem}
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[->,green!40!black,thick] (n1) to[out=180,in=70] (e1);
+    \draw[->,blue!50!white,thick] (n2) to[out=180,in=-70] (e2);
+  \end{tikzpicture}
+  \vfill
   \visible<2>{%
-    \begin{lem}
-      Ist $(\sM,\nabla)$ ein Modell, so lässt sich die Zusammenhangs Matrix
-      schreiben als
-      \begin{multicols}{2}
-        \[
-          A^0=d\overset{~\tikzmark{e1}}{\textcolor{red!60!black}{Q}}
-             +~\tikzmark{e2}\!\!\Lambda\frac{dt}{t}
-        \]
-        \columnbreak
-        \begin{itemize}
-          \item[\tikzmarkc{n1}{red}]
-            $\textcolor{red!60!black}{Q=\diag(\phi_1,\dots,\phi_n)}$
-          \item[\tikzmarkc{n2}{blue}]
-            $\Lambda$ diagonal und konstant
-        \end{itemize}
-      \end{multicols}
-    \end{lem}
-    \begin{tikzpicture}[remember picture,overlay]
-      \draw[->,red!50!white,thick] (n1) to[bend right,out=0,in=-90] (e1);
-      \draw[->,blue!50!white,thick] (n2) to[bend left,out=0,in=90] (e2);
-    \end{tikzpicture}
+    \begin{defn}
+      Der Zusammenhang heißt \emph{generisch} falls der Grad der Singularität
+      von $\textcolor{red!60!black}{\phi_i}-\textcolor{red!60!black}{\phi_j}=k$
+      für alle $i,j$.
+    \end{defn}
+    Wir beschränken uns auf generische Zusammenhänge.
   }
+  \vfill
 \end{frame}
 \subsection{Levelt-Turittin-Theorem}
 \begin{frame}{Levelt-Turittin-Theorem}
   \begin{tthm}[Levelt-Turittin]
     Zu einem Keim $(\cM,\nabla)$ eines meromorphen Zusammenhang gibt es, bis
-    auf Verzweigung, immer einen \textbf{formalem} Isomorphismus
+    auf Verzweigung, immer einen \textbf{formalen} Isomorphismus
     \[
       \hat\lambda:\hat\cM
       \overset{\cong}\longrightarrow
@@ -181,8 +309,8 @@
           \mid 0<\rho<\textcolor{blue!60!black}{r},
               \theta\in(\textcolor{red!60!black}{\theta_0,\theta_1})\}$
       \item $\Sect(\textcolor{red!60!black}{\theta_0,\theta_1}):=
-        \Sect_{\textcolor{blue!60!black}{r}}
-        (\textcolor{red!60!black}{\theta_0,\theta_1})$
+        \textcolor{green!40!black}{\Sect_{\textcolor{blue!60!black}{r}}
+        (\textcolor{red!60!black}{\theta_0,\theta_1})}$
         für $\textcolor{blue!60!black}{r}$ klein genug
       \item $\Sect(\textcolor{red!60!black}{U})
         \!\!\overset{\textcolor{red!60!black}{U=(\theta_0,\theta_1)}}{:=}\!\!
@@ -222,7 +350,7 @@
     \end{tikzpicture}
   \end{center}
 \end{frame}
-\begin{frame}[t]{Asymptotische Entwicklung}
+\begin{frame}[t]{Asymptotische Entwicklung: Definition}
   \begin{defn}
     \def\myN{\textbf{\textcolor{blue!40!black}{N}}}
     \def\mySet{\textcolor{red!40!black}{V}}
@@ -231,7 +359,7 @@
     \emph{asymptotische Entwicklung auf $\Sect(U)$}, falls
     \begin{itemize}
       \item[] $\exists$ $\textcolor{orange!50!black}{r}$ so dass
-        \only<1>{\begin{itemize}
+        \only<1| handout:0>{\begin{itemize}
             \item[] $\forall$ $\myN\geq0$ und
             \item[] $\forall$ abgeschlossenen Intervall $\mySet$ in $U$
           \end{itemize}
@@ -256,44 +384,68 @@
         \mapsto\sA(U)
         \textcolor{gray}{\subset\cO(\Sect(U))}
       \]
-      wobei $\sA(U)$ die Funktionen mit asymptotischer Entwicklung auf
-      $\Sect(U)$.
+      \begin{itemize}
+        \item[] wobei $\sA(U)$ die Funktionen mit asymptotischer Entwicklung
+          auf $\Sect(U)$.
+      \end{itemize}
     }
   \end{defn}
 \end{frame}
 \subsection{Borel-Ritt Lemma}
 \begin{frame}[t,fragile]{Borel-Ritt}
   \begin{llem}[Borel-Ritt]
-    Für jedes \textbf{echte} offene Intervall $U$ von $S^1$ ist die Abbildung
+    Für jedes \textbf{ec~\tikzmark{e1}\!\!hte} offene Intervall $U$ von $S^1$ ist die Abbildung
     \[
-      \visible<2-3>{%
-        \textcolor{blue!60!black}{0\to \sA^{<0}(U) \to}
+      \visible<2->{%
+        \textcolor{blue!60!black}{0\to
+        ~~~\tikzmark{e2}\!\!\!\!\!\!\sA^{<0}(U) \to}
       }
       \sA(U) \twoheadrightarrow \C(\!(t)\!)
-      \visible<2-3>{%
+      \visible<2->{%
         \textcolor{blue!60!black}{\to0}
       }
     \]
     welche $f$ die die asymptotische Entwicklung $\hat f$ zuordnet, eine
     surjektion.
   \end{llem}
-  \visible<3>{%
+  \only<1>{%
+    \begin{flushright}
+      \tikzmarkc{n1}{gray}
+      \textcolor{gray}{denn $\sA(S^1)=\C\{t\}$}
+    \end{flushright}
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[->,gray!50!white,thick] (n1) to[out=180,in=-90] (e1);
+    \end{tikzpicture}
+  }
+  \only<2>{%
+    \begin{flushright}
+      \tikzmarkc{n1}{gray}
+      \textcolor{gray!50!white}{$t\mapsto e^{-\frac{1}{t}}
+        \in\sA^{<0}\left(\Sect\left(-\frac{\pi}{2},\frac{\pi}{2}\right)\right)$}
+    \end{flushright}
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[->,gray!50!white,thick] (n1) to[out=180,in=-90] (e2);
+    \end{tikzpicture}
+  }
+  \vfill
+  \only<3>{%
     \begin{thm}
       Für jedes genügend kleinem Intervall $V\subset S^1$ gibt es einen Lift
       \[
         \tilde\lambda:
         \textcolor{gray}{%
-          \underset{=:\tilde\sM(V)}{\underbrace{%
-              \textcolor{black}{\sA(V)\otimes\sM}
+          \underset{=:\tilde\cM(V)}{\underbrace{%
+              \textcolor{black}{\sA(V)\otimes\cM}
             }
           }
         }
         \overset{\cong}{\longrightarrow}
-        \sA(V)\otimes\sM^{good}
+        \sA(V)\otimes\cM^{good}
       \]
       von $\hat \lambda$.
     \end{thm}
   }
+  \vfill
 \end{frame}
 
 \section{Stokes-Strukturen}
@@ -311,7 +463,7 @@
         \right\}\Big
         /~~\tikzmark{e1}\!\!\!\!\sim$.
   \end{center}
-  \only<1>{\vspace{5mm}\begin{flushright}
+  \only<1| handout:0>{\vspace{5mm}\begin{flushright}
       \tikzmarkc{n1}{blue} Isomorphie
     \end{flushright}
     \vspace{5mm}
@@ -332,7 +484,7 @@
             (\hat\sM^{good},\hat\nabla^{good})
         \right\}\Big/\sim
     \]
-    \only<2>{\vspace{5mm}\begin{flushright}
+    \only<2| handout:0>{\vspace{5mm}\begin{flushright}
         \tikzmarkc{n1}{blue} merke den formalen Isomorphismus.
       \end{flushright}
       \begin{tikzpicture}[remember picture,overlay]
@@ -341,19 +493,19 @@
     }
   }
 
-  \visible<3>{%
+  \only<3>{%
     Als Zusammenhangs Matrizen:
     \[
-      \underset{=:\Syst(A^0)}{\underbrace{%
-          \left\{A \mid A=\hat F[A^0]\text{~für ein~}\hat F\in\hat G
-          :=\GL_n(\C\llbracket t\rrbracket)\right\}
-      }}\Big/G\{t\}
+      \underset{=:\Syst(A^0)}{\underbrace{\!
+          \left\{A \mid A=\hat F[A^0]\text{~für ein~}
+            \hat F\in G\llbracket t\rrbracket\right\}
+      \!}\,}\Big/G\{t\}
     \]
     und
     \[
       \sH(A^0):=\left\{
-          (A,\hat F)\in\Syst(A^0)\times\hat G\mid A=\hat F[A^0]
-        \right\}\Big/G\{t\}
+          (A,\hat F)\in\Syst(A^0)\times G\llbracket t\rrbracket
+          \mid A=\hat F[A^0] \right\}\Big/G\{t\}
     \]
   }
 \end{frame}
@@ -363,8 +515,7 @@
   \begin{defn}
     Definiere
     \begin{itemize}
-      \item $\Aut^{<0}(\!\!\textcolor{gray}{\underset{\sA\otimes\sM^{good}}
-        {\underbrace{\textcolor{black}{\tilde\sM^{good}}}}}\!\!)$
+      \item $\Aut^{<0}(\tilde\sM^{good})$
         die Garbe auf $S^1$ der Automorphismen welche die Identität als
         asymptotische Entwicklung haben
         \textcolor{gray}{(Die Schnitte heißen \emph{Stokes Matrizen})}
@@ -382,22 +533,26 @@
   \end{defn}
 \end{frame}
 \begin{frame}[t]{Garben Version}
-  Sei $\left[(\sM,\nabla,\hat f)\right]\in\sH(\sM^{good})$. 
-  Es gibt dann eine Überdeckung $\mathfrak{W}$ von $S^1$ und für jedes
-  $W_i\in\mathfrak{W}$ einen Lift
+  Sei $\left[(\sM,\nabla,\hat f)\right]\in\sH(\sM^{good})$.  Es gibt dann eine
+  (zyklische\footnote{Schnitt zweier Mengen in $\mathfrak{W}$ ist immer ein
+  Intervall.}) Überdeckung $\mathfrak{W}$ von $S^1$ so dass für jedes
+  $W_i\in\mathfrak{W}$ ein Lift
   \[
     f_i:(\tilde\sM,\tilde\nabla)_{|W_i}
     \overset{\sim}{\longrightarrow}
     (\tilde\sM^{good},\tilde\nabla^{good})_{|W_i}
   \]
-  von $\hat f$.
-  \\Dann ist $(f_jf_i^{-1})_{i,j}$ ein Kozykel in der Garbe
-  $\Aut^{<0}(\tilde\sM^{good})$ relativ zur Überdeckung $\mathfrak{W}$.
-  Damit haben wir eine Abbildung
-  \[
-    \sH(\sM^{good})\to H^1(S^1,\Aut^{<0}(\tilde\sM^{good}))=\St(\sM^{good})
-  \]
-  \visible<2>{%
+  von $\hat f$ existiert.
+  \visible<2->{%
+    \\Dann ist $(f_jf_i^{-1})_{i,j}$ ein Kozykel in der Garbe
+    $\Aut^{<0}(\tilde\sM^{good})$ relativ zur Überdeckung $\mathfrak{W}$ und
+    damit haben wir eine Abbildung
+    \[
+      \sH(\sM^{good})\longrightarrow
+      H^1\left(S^1,\Aut^{<0}\left(\tilde\sM^{good}\right)\right)=\St(\sM^{good})
+    \]
+  }
+  \visible<3>{%
     \begin{tthm}[Malgrange-Sibuya]
       Das ist ein Isomorphismus \textcolor{gray}{von punktierter Mengen}.
     \end{tthm}
@@ -405,6 +560,21 @@
 \end{frame}
 
 \subsection{Matrix Version}
+\begin{frame}[t]{Matrix Version: Modulräume}
+  Als Zusammenhangs Matrizen:
+  \[
+    \underset{=:\Syst(A^0)}{\underbrace{\!
+        \left\{A \mid A=\hat F[A^0]\text{~für ein~}
+          \hat F\in G\llbracket t\rrbracket\right\}
+    \!}\,}\Big/G\{t\}
+  \]
+  und
+  \[
+    \sH(A^0):=\left\{
+        (A,\hat F)\in\Syst(A^0)\times G\llbracket t\rrbracket
+        \mid A=\hat F[A^0] \right\}\Big/G\{t\}
+  \]
+\end{frame}
 \begin{frame}{Matrix Version}
   \begin{tthm}[Balser, Jurkat, Lutz]
     Es gibt einen Isomorphismus
@@ -417,11 +587,20 @@
       \begin{cor}
         Damit gibt es einen Isomorphismus
         \[
-          \Syst(A^0)/G\{t\}\cong(U_+\times U_-)^{k-1}/T \,.
+          \Syst(A^0)/G\{t\}\cong(U_+\times U_-)^{k-1}/~\tikzmark{e1}\!\!T \,.
         \]
       \end{cor}
     }
   \end{tthm}
+  \visible<2>{%
+    \begin{flushright}
+      \tikzmarkc{n1}{gray}
+      \textcolor{gray}{Torus Wirkung\\durch Konjugation}
+    \end{flushright}
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[->,gray!50!white,thick] (n1) to[out=180,in=-90] (e1);
+    \end{tikzpicture}
+  }
 \end{frame}
 \begin{frame}[t]{Matrix Version: Definitionen}
   \begin{defn}
@@ -459,85 +638,104 @@
 \end{frame}
 \begin{frame}{Matrix Version: Definitionen}
   \begin{multicols}{3}
-    \begin{tikzpicture}[scale=3]
-      \node[] (zero) at (0,0) {};
+    \only<1| handout:0>{%
+      \begin{tikzpicture}[scale=3]
+        \node[] (zero) at (0,0) {};
 
-      % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      % \fill[fill=red!60!black] (0,0) -- ({cos( 75 )*1.1},{sin( 75 )*1.1}) arc
-      %   (75:105:1.1) -- cycle;
-      % \fill[fill=red!60!black] (0,0) -- ({cos( 115 )*1.1},{sin( 115 )*1.1}) arc
-      %   (115:145:1.1) -- cycle;
+        \fill[fill=green!20!white] (0,0) -- (1,0) arc (0:60:1.0cm) -- cycle;
+        \draw[blue] (zero) circle (1cm);
 
-      % \fill[fill=red!60!black] (0,0) -- ({cos( 75 )*1.05},{sin( 75 )*1.05}) arc
-      %   (75:145:1.05) -- cycle;
+        \foreach \w/\str in {10/$d_1$}
+        {\draw[thick,purple!\w!blue,path fading=west]
+            (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+         \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
+         \foreach \sep in {60,120,180,240,300}
+         {\draw[green!20!white,thick] (zero) -- +({cos( \sep )},{sin( \sep )});
+          \draw[purple!\w!blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+          \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
+         }
+        };
 
-      % \fill[fill=white] (0,0) -- ({cos( 75 )*1},{sin( 75 )*1}) arc
-      %   (75:145:1) -- cycle;
+        \foreach \sep/\str in {0/$1$
+                              ,60/$2$
+                              ,120/$k-1$
+                              ,180/$4$
+                              ,240/$5$
+                              ,300/$2k-2$}
+        {\node[green!40!black]
+          at ({.6 * cos( \sep + 30 )},{.5 * sin( \sep + 30)}) {\str};
+        };
 
-      % \node[red!40!black] at (-0.5,1.1) {$\widehat\Sect_i$};
+        \fill[yellow!60!black] (0.8,0.07) circle (1pt);
+        \node[yellow!60!black,right] at (0.8,0.07) {$p$};
 
-      % \draw[thick,red!40!black] (0,0) -- +({cos( 145 )},{sin( 145 )});
-      % \draw[thick,red!40!black] (0,0) -- +({cos( 75 )},{sin( 75 )});
-      % \fill[red!40!black] ({cos( 145 )},{sin( 145 )}) circle (1pt);
-      % \fill[red!40!black] ({cos( 75 )},{sin( 75 )}) circle (1pt);
-      % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \fill[white] (zero) circle (1pt);
+        \fill (zero) circle (.7pt);
+      \end{tikzpicture}
+    }
+    \only<2->{%
+      \begin{tikzpicture}[scale=3]
+        \node[] (zero) at (0,0) {};
 
-      \fill[fill=green!20!white] (0,0) -- (1,0) arc (0:60:1.0cm) -- cycle;
-      \draw[blue] (zero) circle (1cm);
+        \fill[fill=green!20!white] (0,0) -- (1,0) arc (0:60:1.0cm) -- cycle;
+        \draw[blue] (zero) circle (1cm);
 
-      \foreach \w/\str in {10/$d_1$,
-                           20/$d_2$,
-                           45/$d_3$,
-                           55/$~\tikzmark{e2}\!\!d_l$}
-      {\draw[thick,purple!\w!blue,path fading=west]
-          (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
-       \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
-       \foreach \sep in {60,120,180,240,300}
-       {\draw[green!20!white,thick] (zero) -- +({cos( \sep )},{sin( \sep )});
-        \draw[purple!\w!blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-        \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
-       }
-      };
-      \node[right,red!30!black] at ({cos( 355 )},{sin( 355 )})
-        {$~\tikzmark{e1}\!\!d_{r}$};
+        \foreach \w/\str in {10/$d_1$,
+                             20/$d_2$,
+                             45/$d_3$,
+                             55/$~\tikzmark{e2}\!\!d_l$}
+        {\draw[thick,purple!\w!blue,path fading=west]
+            (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+         \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
+         \foreach \sep in {60,120,180,240,300}
+         {\draw[green!20!white,thick] (zero) -- +({cos( \sep )},{sin( \sep )});
+          \draw[purple!\w!blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+          \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
+         }
+        };
+        \node[right,red!30!black] at ({cos( 355 )},{sin( 355 )})
+          {$~\tikzmark{e1}\!\!d_{r}$};
 
-      \foreach \sep/\str in {0/$1$
-                            ,60/$2$
-                            ,120/$k-1$
-                            ,180/$4$
-                            ,240/$5$
-                            ,300/$2k-2$}
-      {\node[green!40!black]
-        at ({.6 * cos( \sep + 30 )},{.5 * sin( \sep + 30)}) {\str};
-      };
+        \foreach \sep/\str in {0/$1$
+                              ,60/$2$
+                              ,120/$k-1$
+                              ,180/$4$
+                              ,240/$5$
+                              ,300/$2k-2$}
+        {\node[green!40!black]
+          at ({.6 * cos( \sep + 30 )},{.5 * sin( \sep + 30)}) {\str};
+        };
 
-      \fill[yellow!60!black] (0.8,0.07) circle (1pt);
-      \node[yellow!60!black,right] at (0.8,0.07) {$p$};
+        \fill[yellow!60!black] (0.8,0.07) circle (1pt);
+        \node[yellow!60!black,right] at (0.8,0.07) {$p$};
 
-      \fill[white] (zero) circle (1pt);
-      \fill (zero) circle (.7pt);
-    \end{tikzpicture}
+        \fill[white] (zero) circle (1pt);
+        \fill (zero) circle (.7pt);
+      \end{tikzpicture}
+    }
     \columnbreak
     \columnbreak
-    \begin{itemize}
-      \item[\tikzmarkc{n2}{red}] $l:=r/(2k-2)$
-      \item[\tikzmarkc{n1}{blue}] $r:=\#\A$
-      % \item $\textbf{\underline{d}}:=(d_1,\dots,d_l)$
-    \end{itemize}
-    \begin{tikzpicture}[remember picture,overlay]
-      \draw[->,blue!50!white,thick] (n1) to[bend left,out=0] (e1);
-      \draw[->,red!50!white,thick] (n2) to[bend right,out=0] (e2);
-    \end{tikzpicture}
+    \only<2->{%
+      \begin{itemize}
+        \item[\tikzmarkc{n2}{red}] $l:=r/(2k-2)$
+        \item[\tikzmarkc{n1}{blue}] $r:=\#\A$
+        % \item $\textbf{\underline{d}}:=(d_1,\dots,d_l)$
+      \end{itemize}
+      \begin{tikzpicture}[remember picture,overlay]
+        \draw[->,blue!50!white,thick] (n1) to[bend left,out=0] (e1);
+        \draw[->,red!50!white,thick] (n2) to[bend right,out=0] (e2);
+      \end{tikzpicture}
+    }
   \end{multicols}
 \end{frame}
-\begin{frame}[t]{Garben Version: Asymptotische Analysis}
+\begin{frame}[t]{Matrix Version: Asymptotische Analysis}
   \begin{thm}
     \begin{itemize}
       \item Zu $(A,\hat F)$ gibt es auf jedem Sektor $\Sect$ einen kanonischen
         Lift
         \[
           \Sigma_i(\hat F)
-            \in\Gl_n\left(\cO_{\Sect\left(d_i,d_{i+1}\right)}\right)
+          \in\Gl_n\left(\cO_M(\Sect\left(d_i,d_{i+1}\right))\right)
         \]
         so dass $\Sigma_i(\hat F)[A^0]=A$.
       \visible<2->{%
@@ -555,7 +753,7 @@
     \end{defn}
   }
 \end{frame}
-\begin{frame}[t]{Garben Version: Stokes Faktoren}
+\begin{frame}[t]{Matrix Version: Stokes Faktoren}
   \begin{defn}
     Die \emph{Stokes Faktoren} zu $(A,\hat F)$ sind
     \[
@@ -568,7 +766,7 @@
       \begin{lem}
         $K_i$ ist in der \emph{Gruppe der Stokes Faktoren}
         \[
-          \SSto_{d_i}(A^0) := \{K \in G \mid (K)_{ij}
+          \SSto_{d_i}(A^0) := \{K \in \Gl_n(\C) \mid (K)_{ij}
           =\delta_{ij} \text{ außer }
             \phi_{ij}\in\R_{<0}\text{ entlang } d_i \}.
         \]
@@ -576,44 +774,26 @@
     }
   \end{defn}
 \end{frame}
-\begin{frame}[t]
+\begin{frame}[t,fragile]
   \begin{lem}
     Sei $\textbf{d}=(d_1,\dots,d_l)$ eine Halb-Periode.
-    \only<1>{%
-      \begin{align*}
-        \prod_{d\in\textbf{d}}\SSto_d(A^0) &\cong PU_+P^{-1}\\
-        (K_1,\dots,K_l) &\mapsto K_l\dots K_2K_1\in G
-      \end{align*}
-    }
-    \only<2->{%
-      \begin{align*}
-        \prod_{d\in\textbf{d}}\SSto_d(A^0) &\cong U_+\\
-        (K_1,\dots,K_l) &\mapsto P^{-1}K_l\dots K_2K_1P
-      \end{align*}
-    }
+    \begin{align*}
+      \prod_{d\in\textbf{d}}\SSto_d(A^0) &\cong U_+\\
+      (K_1,\dots,K_l) &\mapsto P^{-1}K_l\dots K_2K_1P
+    \end{align*}
     für eine Permutations Matrix $P$.
   \end{lem}
-  \visible<3>{%
+  \visible<2>{%
     \begin{cor}
       \begin{align*}
         \prod_{d\in\A}\SSto_d(A^0)&\cong (U_+\times U_-)^{k-1}\\
         (K_1,\dots,K_r)&\mapsto (S_1,\dots,S_{2k-2})
       \end{align*}
       mit $S_i:=P^{-1}K_{il}\dots K_{(i-1)l+1}P\in U_{+/-}$ falls $i$
-      ungerade/gerade die Stokes Matrizen.
+      ungerade/gerade die \emph{Stokes Matrizen}.
     \end{cor}
   }
 \end{frame}
-% \begin{frame}[t,fragile]{Matrix Version}
-%   \begin{thm}
-%     Die Abbildung
-%     \[ \begin{tikzcd}[row sep=0em]
-%         \sH(A^0) \rar & (U_+\times U_-)^{k-1}
-%       \\(A,\hat F) \rar[mapsto] & (S_1,\dots,S_{2k-2})
-%     \end{tikzcd} \]
-%     ist ein Isomorphismus.
-%   \end{thm}
-% \end{frame}
 \begin{frame}{Matrix Version}
   \begin{tthm}[Balser, Jurkat, Lutz]
     Die hier definierte Abbildung

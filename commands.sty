@@ -181,5 +181,8 @@
 \newcommand{\tikzmarkc}[2]{%
   \tikz[overlay,remember picture] \node (#1) {};%
   \tikz[overlay,remember picture] \draw[fill,#2!50] (#1) circle (2pt);}
+\newcommand{\tikzmarkb}[2]{%
+  \tikz[overlay,remember picture] \node (#1) {};%
+  \tikz[overlay,remember picture] \draw[fill,#2!50!black] (#1) circle (2pt);}
 
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:
