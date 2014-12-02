@@ -7,6 +7,10 @@
                 ,handout]{./myBeamerClass}
   \usepackage{pgfpages}
   \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+  % \usepackage{fancyhdr}
+  % \pagestyle{fancy}
+  % \fancyhf{}
+  % \fancyhead[R]{\textcolor{red}{\thepage}}
 }{%
   \xdef\myDevelopVariable{0}
   \documentclass[ngerman
@@ -57,13 +61,20 @@
 
 \begin{document}
 
+\IfSubStr{\jobname}{\detokenize{handout}}{}{%
+  {\setbeamercolor{background canvas}{bg=black} \begin{frame} \end{frame} }
+}
+
 \frame{\titlepage}
 
 \frame[t]{\frametitle{Outline}\begin{itemize}\item[]\tableofcontents\end{itemize}}
 
 \input{content}
 
-% {\setbeamercolor{background canvas}{bg=black} \begin{frame} \end{frame} }
+\IfSubStr{\jobname}{\detokenize{handout}}{}{%
+  {\setbeamercolor{background canvas}{bg=black} \begin{frame} \end{frame} }
+}
+
 
 % \printbibliography[keyword={prim},title={Literatur}]
 % \printbibliography[notkeyword={prim},title={Weitere Literatur}]
