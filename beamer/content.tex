@@ -561,19 +561,26 @@
 
 \subsection{Matrix Version}
 \begin{frame}[t]{Matrix Version: Modulräume}
-  Als Zusammenhangs Matrizen:
+  \textbf{Wir sind interessiert an:}
   \[
     \underset{=:\Syst(A^0)}{\underbrace{\!
         \left\{A \mid A=\hat F[A^0]\text{~für ein~}
           \hat F\in G\llbracket t\rrbracket\right\}
     \!}\,}\Big/G\{t\}
   \]
-  und
+  und betrachten dazu aber die größere die Menge
   \[
     \sH(A^0):=\left\{
-        (A,\hat F)\in\Syst(A^0)\times G\llbracket t\rrbracket
+      (A,~\tikzmark{e1}\!\!\hat F)\in\Syst(A^0)\times G\llbracket t\rrbracket
         \mid A=\hat F[A^0] \right\}\Big/G\{t\}
   \]
+  \vspace{5mm}\begin{flushright}
+    \tikzmarkc{n1}{blue} merke die formale Transformation.
+  \end{flushright}
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[->,blue!50!white,thick] (n1) to[out=180,in=-90] (e1);
+  \end{tikzpicture}
+
 \end{frame}
 \begin{frame}{Matrix Version}
   \begin{tthm}[Balser, Jurkat, Lutz]
