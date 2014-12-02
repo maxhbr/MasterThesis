@@ -51,8 +51,8 @@
       \end{multicols}
       erfüllt.
       \begin{tikzpicture}[remember picture,overlay]
-        \draw[->,blue!50!white,thick] (n1) to[bend right,out=0] (e1);
-        \draw[->,red!50!white,thick] (n2) to[bend left,out=0] (e2);
+        \draw[->,blue!50!white,thick] (n1) to[out=180,in=70] (e1);
+        \draw[->,red!50!white,thick] (n2) to[out=180,in=-70] (e2);
       \end{tikzpicture}
     \end{defn}
   }
@@ -67,15 +67,15 @@
       \item einen $\C\{t\}$-Vektorraum $~~\tikzmark{e1}\!\!\!\!\cM$ und
         \begin{flushright}
           \tikzmarkc{n1}{gray}
-          \textcolor{gray}{Keim von $\sM$}
+          \textcolor{gray}{Halm von $\sM$}
         \end{flushright}
         \begin{tikzpicture}[remember picture,overlay]
-          \draw[->,gray!50!white,thick] (n1) to[out=180,in=-90] (e1);
+          \draw[->,gray!50!white,thick] (n1) to[out=180,in=-70] (e1);
         \end{tikzpicture}
       \item einer $\C$-linearen Derivation $\nabla:\cM\to\cO(*Z)\otimes\cM$
         welche
         \begin{itemize}
-          \item die \emph{Leibnitz-Regel}
+          \item die \emph{Leibniz Regel}
             \begin{multicols}{2}
               \[
                 \nabla(\tikzmark{e2}f\overset{\tikzmark{e1}}m)
@@ -83,12 +83,12 @@
               \]
               \columnbreak
               \begin{itemize}
-                \item[\tikzmarkc{n1}{blue}] $s\in\cM$
+                \item[\tikzmarkc{n1}{blue}] $m\in\cM$
                 \item[\tikzmarkc{n2}{red}] $f\in\C\{t\}$
               \end{itemize}
               \begin{tikzpicture}[remember picture,overlay]
-                \draw[->,blue!50!white,thick] (n1) to[bend right,out=0] (e1);
-                \draw[->,red!50!white,thick] (n2) to[bend left,out=0] (e2);
+                \draw[->,blue!50!white,thick] (n1) to[out=180,in=70] (e1);
+                \draw[->,red!50!white,thick] (n2) to[out=180,in=-70] (e2);
               \end{tikzpicture}
             \end{multicols}
             erfüllt.
@@ -377,6 +377,7 @@
           t\in\Sect_{\textcolor{orange!50!black}{r}}(\mySet) \,.
         \]
     \end{itemize}
+    \only<1| handout:0>{\vspace{-9mm}}
     \visible<2>{%
       Erhalte die Garbe $\sA$ auf $S^1$:
       \[
@@ -408,19 +409,19 @@
     welche $f$ die die asymptotische Entwicklung $\hat f$ zuordnet, eine
     surjektion.
   \end{llem}
-  \only<1>{%
+  \only<1| handout:0>{%
     \begin{flushright}
       \tikzmarkc{n1}{gray}
       \textcolor{gray}{denn $\sA(S^1)=\C\{t\}$}
     \end{flushright}
     \begin{tikzpicture}[remember picture,overlay]
-      \draw[->,gray!50!white,thick] (n1) to[out=180,in=-90] (e1);
+      \draw[->,gray!50!white,thick] (n1) to[out=180,in=-88] (e1);
     \end{tikzpicture}
   }
-  \only<2>{%
+  \only<2| handout:0>{%
     \begin{flushright}
       \tikzmarkc{n1}{gray}
-      \textcolor{gray!50!white}{$t\mapsto e^{-\frac{1}{t}}
+      \textcolor{gray}{$t\mapsto e^{-\frac{1}{t}}
         \in\sA^{<0}\left(\Sect\left(-\frac{\pi}{2},\frac{\pi}{2}\right)\right)$}
     \end{flushright}
     \begin{tikzpicture}[remember picture,overlay]
