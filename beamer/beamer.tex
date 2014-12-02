@@ -1,17 +1,20 @@
-\xdef\myDevelopVariable{1}
-
-\documentclass[ngerman
-  ,numbers=noenddot % obsolete
-  ,10pt
-  ,utf8,notheorems,compress
-  % ,handout
-]{./myBeamerClass}
+\RequirePackage{xstring}
+\IfSubStr{\jobname}{\detokenize{handout}}{%
+  \xdef\myDevelopVariable{1}
+  \documentclass[ngerman
+                ,10pt
+                ,utf8,notheorems,compress
+                ,handout]{./myBeamerClass}
+  \usepackage{pgfpages}
+  \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+}{%
+  \xdef\myDevelopVariable{0}
+  \documentclass[ngerman
+                ,10pt
+                ,utf8,notheorems,compress]{./myBeamerClass}
+}
 \usepackage{etex}
 \usepackage{paracol}
-
-% \usepackage{beamerarticle}
-% \usepackage{pgfpages}
-% \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm] % for instance
 
 \bibliography{../literatur.bib}
 

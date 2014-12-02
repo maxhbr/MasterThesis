@@ -72,14 +72,14 @@
         \begin{tikzpicture}[remember picture,overlay]
           \draw[->,gray!50!white,thick] (n1) to[out=180,in=-70] (e1);
         \end{tikzpicture}
-      \item einer $\C$-linearen Derivation $\nabla:\cM\to\cO(*Z)\otimes\cM$
-        welche
+      \item einer $\C$-linearen Derivation
+        $\nabla:\cM\to\C\{t\}[t^{-1}]\otimes\cM$ welche
         \begin{itemize}
           \item die \emph{Leibniz Regel}
             \begin{multicols}{2}
               \[
                 \nabla(\tikzmark{e2}f\overset{\tikzmark{e1}}m)
-                  =\frac{\partial f}{\partial x}m+f\nabla m
+                  =\frac{\partial f}{\partial t}m+f\nabla m
               \]
               \columnbreak
               \begin{itemize}
