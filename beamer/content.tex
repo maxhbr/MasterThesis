@@ -55,9 +55,13 @@
         \draw[->,red!50!white,thick] (n2) to[out=180,in=-70] (e2);
       \end{tikzpicture}
     \end{defn}
+    \textcolor{gray}{Schreibe $(\sM,\nabla)$ oder nur $\sM$ für den
+      meromorphen Zusammenhang.}
   }
 \end{frame}
 \begin{frame}[t,fragile]{Keim eines Meromorphen Zusammenhangs}
+  \def\myf{\textcolor{red!60!black}{f}}
+  \def\mym{\textcolor{blue!60!black}{m}}
   Wenn man an lokaler Information an einer Singulariät interessiert ist,
   redet man oft von Keimen meromorpher Zusammenhänge.
   \vfill
@@ -77,13 +81,13 @@
         $\nabla$ welche die \emph{Leibniz Regel}
         \begin{multicols}{2}
           \[
-            \nabla(\tikzmark{e2}f\overset{\tikzmark{e1}}m)
-            =\frac{\partial f}{\partial t}m+f\nabla m
+            \nabla(\tikzmark{e2}\myf\overset{\tikzmark{e1}}\mym)
+            =\frac{\partial\myf}{\partial t}\mym+\myf\nabla\mym
           \]
           \columnbreak
           \begin{itemize}
-            \item[\tikzmarkc{n1}{blue}] $m\in\cM$
-            \item[\tikzmarkc{n2}{red}] $f\in\C\{t\}$
+            \item[\tikzmarkc{n1}{blue}] $\mym\in\cM$
+            \item[\tikzmarkc{n2}{red}] $\myf\in\C\{t\}$
           \end{itemize}
           \begin{tikzpicture}[remember picture,overlay]
             \draw[->,blue!50!white,thick] (n1) to[out=180,in=70] (e1);
@@ -95,9 +99,9 @@
   }
 \end{frame}
 \begin{frame}[t]{Zusammenhangs Matrix}
-  Zu einer Basis $\textbf{e}$ von $\cM$ gibt es eine \emph{Zusammenhangs
-  Matrix} $A=A'dt$ für ein $A'\in M(n\times n,\C\{t\}[t^{-1}])$ so dass
-  $\nabla\textbf{e}=A\textbf{e}$. Damit ist lokal
+  Zu einer Basis $\textbf{e}$ einer lokalen Trivialisierung von $\sM$ gibt es
+  eine \emph{Zusammenhangs Matrix} $A=A'dt$ für ein $A'\in M(n\times
+  n,\C\{t\}[t^{-1}])$ so dass $\nabla\textbf{e}=A\textbf{e}$. Damit ist lokal
   \[
     \nabla s=ds-As
   \]
@@ -280,10 +284,9 @@
     \[
       \hat\lambda:\hat\cM
       \overset{\cong}\longrightarrow
-      \hat\cM^{good}
-      :=~\tikzmark{e1}\!\!\hat\cO_M\otimes\cM^{good}
+      \hat\cM^{good}:=~\tikzmark{e1}\!\!\hat\cO_M\otimes\cM^{good}
     \]
-    zu einem \textbf{formalem Modell}.
+    zu einem Modell $\cM^{good}$.
   \end{tthm}
   \begin{flushright}
     \tikzmarkc{n1}{gray}
@@ -648,17 +651,36 @@
       \begin{tikzpicture}[scale=3]
         \node[] (zero) at (0,0) {};
 
+        \draw[blue] (zero) circle (1cm);
+
+        \foreach \w/\str in {10/$d_1$}
+        {\draw[thick,purple!\w!blue,path fading=west]
+            (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+         \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (.7pt);
+        };
+
+        \fill[white] (zero) circle (1pt);
+        \fill (zero) circle (.7pt);
+      \end{tikzpicture}
+    }
+    \only<2| handout:0>{%
+      \begin{tikzpicture}[scale=3,remember picture]
+        \node[] (e3) at ({cos(70)},{sin(70)}) {};
+        % \node[] (e3b) at ({cos(310)},{sin(310)}) {};
+        \node[] (zero) at (0,0) {};
+
         \fill[fill=green!20!white] (0,0) -- (1,0) arc (0:60:1.0cm) -- cycle;
         \draw[blue] (zero) circle (1cm);
 
         \foreach \w/\str in {10/$d_1$}
         {\draw[thick,purple!\w!blue,path fading=west]
             (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
-         \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
+         \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (.7pt);
          \foreach \sep in {60,120,180,240,300}
          {\draw[green!20!white,thick] (zero) -- +({cos( \sep )},{sin( \sep )});
           \draw[purple!\w!blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-          \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
+          \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle
+          (.7pt);
          }
         };
 
@@ -672,15 +694,13 @@
           at ({.6 * cos( \sep + 30 )},{.5 * sin( \sep + 30)}) {\str};
         };
 
-        \fill[yellow!60!black] (0.8,0.07) circle (1pt);
-        \node[yellow!60!black,right] at (0.8,0.07) {$p$};
-
         \fill[white] (zero) circle (1pt);
         \fill (zero) circle (.7pt);
       \end{tikzpicture}
     }
-    \only<2->{%
-      \begin{tikzpicture}[scale=3]
+    \only<3->{%
+      \begin{tikzpicture}[scale=3,remember picture]
+        \node[] (e3) at ({cos(70)},{sin(70)}) {};
         \node[] (zero) at (0,0) {};
 
         \fill[fill=green!20!white] (0,0) -- (1,0) arc (0:60:1.0cm) -- cycle;
@@ -688,15 +708,18 @@
 
         \foreach \w/\str in {10/$d_1$,
                              20/$d_2$,
-                             45/$d_3$,
+                             40/,
+                             42/,
+                             45/,
                              55/$~\tikzmark{e2}\!\!d_l$}
         {\draw[thick,purple!\w!blue,path fading=west]
             (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
-         \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
+         \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (.7pt);
          \foreach \sep in {60,120,180,240,300}
          {\draw[green!20!white,thick] (zero) -- +({cos( \sep )},{sin( \sep )});
           \draw[purple!\w!blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-          \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
+          \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle
+          (.7pt);
          }
         };
         \node[right,red!30!black] at ({cos( 355 )},{sin( 355 )})
@@ -712,21 +735,25 @@
           at ({.6 * cos( \sep + 30 )},{.5 * sin( \sep + 30)}) {\str};
         };
 
-        \fill[yellow!60!black] (0.8,0.07) circle (1pt);
-        \node[yellow!60!black,right] at (0.8,0.07) {$p$};
-
         \fill[white] (zero) circle (1pt);
         \fill (zero) circle (.7pt);
       \end{tikzpicture}
     }
     \columnbreak
     \columnbreak
-    \only<2->{%
       \begin{itemize}
-        \item[\tikzmarkc{n2}{red}] $l:=r/(2k-2)$
-        \item[\tikzmarkc{n1}{blue}] $r:=\#\A$
+        \item<2>[\tikzmarkc{n3}{gray}] \textcolor{gray}{durch
+          $\frac{\pi}{k-1}$-rotations Symmetrie}
+        \item<3>[\tikzmarkc{n2}{red}] $l:=r/(2k-2)$
+        \item<3>[\tikzmarkc{n1}{blue}] $r:=\#\A$
         % \item $\textbf{\underline{d}}:=(d_1,\dots,d_l)$
       \end{itemize}
+    \visible<2>{%
+      \begin{tikzpicture}[remember picture,overlay]
+        \draw[->,gray!50!white,thick] (n3) to[in=70,out=180] (e3);
+      \end{tikzpicture}
+    }
+    \visible<3->{%
       \begin{tikzpicture}[remember picture,overlay]
         \draw[->,blue!50!white,thick] (n1) to[bend left,out=0] (e1);
         \draw[->,red!50!white,thick] (n2) to[bend right,out=0] (e2);
@@ -737,8 +764,8 @@
 \begin{frame}[t]{Matrix Version: Asymptotische Analysis}
   \begin{thm}
     \begin{itemize}
-      \item Zu $(A,\hat F)$ gibt es auf jedem Sektor $\Sect$ einen kanonischen
-        Lift
+      \item Zu $(A,\hat F)$ gibt es auf jedem Sektor
+        $\Sect\left(d_i,d_{i+1}\right)$ einen kanonischen Lift
         \[
           \Sigma_i(\hat F)
           \in\Gl_n\left(\cO_M(\Sect\left(d_i,d_{i+1}\right))\right)
