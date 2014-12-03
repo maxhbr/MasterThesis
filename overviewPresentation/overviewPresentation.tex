@@ -61,20 +61,11 @@
 
 \begin{document}
 
-\IfSubStr{\jobname}{\detokenize{handout}}{}{%
-  {\setbeamercolor{background canvas}{bg=black} \begin{frame} \end{frame} }
-}
-
 \frame{\titlepage}
 
 \frame[t]{\frametitle{Outline}\begin{itemize}\item[]\tableofcontents\end{itemize}}
 
 \input{content}
-
-\IfSubStr{\jobname}{\detokenize{handout}}{}{%
-  {\setbeamercolor{background canvas}{bg=black} \begin{frame} \end{frame} }
-}
-
 
 % \printbibliography[keyword={prim},title={Literatur}]
 % \printbibliography[notkeyword={prim},title={Weitere Literatur}]

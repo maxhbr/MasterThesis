@@ -59,45 +59,45 @@
       meromorphen Zusammenhang.}
   }
 \end{frame}
-\begin{frame}[t,fragile]{Keim eines Meromorphen Zusammenhangs}
-  \def\myf{\textcolor{red!60!black}{f}}
-  \def\mym{\textcolor{blue!60!black}{m}}
-  Wenn man an lokaler Information an einer Singulariät interessiert ist,
-  redet man oft von Keimen meromorpher Zusammenhänge.
-  \vfill
-  \only<2>{%
-    Ein solcher Keim ist dann gegeben durch
-    \begin{itemize}
-      \item einen $\C\{t\}$-Modul $~~\tikzmark{e1}\!\!\!\!\cM$ und
-        \begin{flushright}
-          \tikzmarkc{n1}{gray}
-          \textcolor{gray}{Halm von $\sM$}
-        \end{flushright}
-        \begin{tikzpicture}[remember picture,overlay]
-          \draw[->,gray!50!white,thick] (n1) to[out=180,in=-70] (e1);
-        \end{tikzpicture}
-      \item einer $\C$-linearen Derivation
-        % $\nabla:\cM\to\C\{t\}[t^{-1}]\otimes\cM$
-        $\nabla$ welche die \emph{Leibniz Regel}
-        \begin{multicols}{2}
-          \[
-            \nabla(\tikzmark{e2}\myf\overset{\tikzmark{e1}}\mym)
-            =\frac{\partial\myf}{\partial t}\mym+\myf\nabla\mym
-          \]
-          \columnbreak
-          \begin{itemize}
-            \item[\tikzmarkc{n1}{blue}] $\mym\in\cM$
-            \item[\tikzmarkc{n2}{red}] $\myf\in\C\{t\}$
-          \end{itemize}
-          \begin{tikzpicture}[remember picture,overlay]
-            \draw[->,blue!50!white,thick] (n1) to[out=180,in=70] (e1);
-            \draw[->,red!50!white,thick] (n2) to[out=180,in=-70] (e2);
-          \end{tikzpicture}
-        \end{multicols}
-        erfüllt.
-    \end{itemize}
-  }
-\end{frame}
+% \begin{frame}[t,fragile]{Keim eines Meromorphen Zusammenhangs}
+%   \def\myf{\textcolor{red!60!black}{f}}
+%   \def\mym{\textcolor{blue!60!black}{m}}
+%   Wenn man an lokaler Information an einer Singulariät interessiert ist,
+%   redet man oft von Keimen meromorpher Zusammenhänge.
+%   \vfill
+%   \only<2>{%
+%     Ein solcher Keim ist dann gegeben durch
+%     \begin{itemize}
+%       \item einen $\C\{t\}$-Modul $~~\tikzmark{e1}\!\!\!\!\cM$ und
+%         \begin{flushright}
+%           \tikzmarkc{n1}{gray}
+%           \textcolor{gray}{Halm von $\sM$}
+%         \end{flushright}
+%         \begin{tikzpicture}[remember picture,overlay]
+%           \draw[->,gray!50!white,thick] (n1) to[out=180,in=-70] (e1);
+%         \end{tikzpicture}
+%       \item einer $\C$-linearen Derivation
+%         % $\nabla:\cM\to\C\{t\}[t^{-1}]\otimes\cM$
+%         $\nabla$ welche die \emph{Leibniz Regel}
+%         \begin{multicols}{2}
+%           \[
+%             \nabla(\tikzmark{e2}\myf\overset{\tikzmark{e1}}\mym)
+%             =\frac{\partial\myf}{\partial t}\mym+\myf\nabla\mym
+%           \]
+%           \columnbreak
+%           \begin{itemize}
+%             \item[\tikzmarkc{n1}{blue}] $\mym\in\cM$
+%             \item[\tikzmarkc{n2}{red}] $\myf\in\C\{t\}$
+%           \end{itemize}
+%           \begin{tikzpicture}[remember picture,overlay]
+%             \draw[->,blue!50!white,thick] (n1) to[out=180,in=70] (e1);
+%             \draw[->,red!50!white,thick] (n2) to[out=180,in=-70] (e2);
+%           \end{tikzpicture}
+%         \end{multicols}
+%         erfüllt.
+%     \end{itemize}
+%   }
+% \end{frame}
 \begin{frame}[t]{Zusammenhangs Matrix}
   Zu einer Basis $\textbf{e}$ einer lokalen Trivialisierung von $\sM$ gibt es
   eine \emph{Zusammenhangs Matrix} $A=A'dt$ für ein $A'\in M(n\times
@@ -257,7 +257,7 @@
           $\textcolor{green!40!black}{Q
             =\diag(\textcolor{red!60!black}{\phi_1,\dots,\phi_n})}$
         \item[\tikzmarkc{n2}{blue}]
-          $\Lambda$ diagonal und konstant
+          $\Lambda$ konstant
       \end{itemize}
     \end{multicols}
   \end{lem}
