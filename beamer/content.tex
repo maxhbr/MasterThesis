@@ -73,26 +73,24 @@
           \draw[->,gray!50!white,thick] (n1) to[out=180,in=-70] (e1);
         \end{tikzpicture}
       \item einer $\C$-linearen Derivation
-        $\nabla:\cM\to\C\{t\}[t^{-1}]\otimes\cM$ welche
-        \begin{itemize}
-          \item die \emph{Leibniz Regel}
-            \begin{multicols}{2}
-              \[
-                \nabla(\tikzmark{e2}f\overset{\tikzmark{e1}}m)
-                  =\frac{\partial f}{\partial t}m+f\nabla m
-              \]
-              \columnbreak
-              \begin{itemize}
-                \item[\tikzmarkc{n1}{blue}] $m\in\cM$
-                \item[\tikzmarkc{n2}{red}] $f\in\C\{t\}$
-              \end{itemize}
-              \begin{tikzpicture}[remember picture,overlay]
-                \draw[->,blue!50!white,thick] (n1) to[out=180,in=70] (e1);
-                \draw[->,red!50!white,thick] (n2) to[out=180,in=-70] (e2);
-              \end{tikzpicture}
-            \end{multicols}
-            erfüllt.
-        \end{itemize}
+        % $\nabla:\cM\to\C\{t\}[t^{-1}]\otimes\cM$
+        $\nabla$ welche die \emph{Leibniz Regel}
+        \begin{multicols}{2}
+          \[
+            \nabla(\tikzmark{e2}f\overset{\tikzmark{e1}}m)
+            =\frac{\partial f}{\partial t}m+f\nabla m
+          \]
+          \columnbreak
+          \begin{itemize}
+            \item[\tikzmarkc{n1}{blue}] $m\in\cM$
+            \item[\tikzmarkc{n2}{red}] $f\in\C\{t\}$
+          \end{itemize}
+          \begin{tikzpicture}[remember picture,overlay]
+            \draw[->,blue!50!white,thick] (n1) to[out=180,in=70] (e1);
+            \draw[->,red!50!white,thick] (n2) to[out=180,in=-70] (e2);
+          \end{tikzpicture}
+        \end{multicols}
+        erfüllt.
     \end{itemize}
   }
 \end{frame}
