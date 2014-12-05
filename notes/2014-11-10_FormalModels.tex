@@ -1,0 +1,46 @@
+\section{Formal model vs. Formal Decomposition}
+\begin{paracol}{2}\sloppy
+\switchcolumn[0]\noindent
+  Write $A$ as
+  \[
+    A=\left(\sum^{0}_{j=k_i}A_j\frac{dz}{z^{j}}\right)+A_0dz+\dots
+  \]
+  \begin{defn}[\cite{boalch} Def 2.2]
+    A meromorphic connection is a \emph{nice (or generic) meromorphic connection}
+    if
+    \begin{itemize}
+      \item at each $a_i$
+    \end{itemize}
+    the leading coefficient ${}^iA_{k_i}$ is
+    \begin{itemize}
+      \item diagonalisable with distinct eigenvalues and $k_i\geq2$, or
+      \item diagonalisable with distinct eigenvalues $\mod\Z$ and $k_i=1$
+    \end{itemize}
+  \end{defn}
+\switchcolumn[1]\noindent
+  \begin{thm}[Formal decomposition (II.5.7)]
+    Let $(\cM,\nabla)$ be a germ of meromorphic bundle with connection,
+    \begin{itemize}
+      \item equipped with a basis in which the matrix $\Omega$ takes the form
+        \[
+          \Omega=t^{-r}A(t)\frac{dt}{t}
+        \]
+        with $r\geq1$, $A$ having holomorphic entries, and $A_0:=A(0)$
+        being regular semisimple\footnote{i.e.\ with pairwise distinct
+        eigenvalues.}
+    \end{itemize}
+    Then there exist
+    \begin{itemize}
+      \item a model $(\cM^{good},\nabla)
+        =\left(\bigoplus_\phi(\cE^\phi\otimes\cR_\phi) \right)$ and
+      \item a \textcolor{red!40!black}{`formal'} isomorphism
+        \[
+          \textcolor{red!40!black}{\hat\cO_{D}\otimes}(\cM,\nabla)
+          \overset{\sim}{\longrightarrow}
+        \textcolor{red!40!black}{\hat\cO_{D}\otimes}
+          \left(\bigoplus_\phi(\cE^\phi\otimes\cR_\phi) \right)
+        \]
+    \end{itemize}
+  \end{thm}
+\end{paracol}
+

@@ -1,26 +1,37 @@
-\xdef\myDevelopVariable{1}
-
-\documentclass[ngerman
-  ,fontsize=11pt % TODO
-  ,numbers=noenddot % obsolete
-  %,headsepline
-  ,parskip=half*
-  ,openany
-  ,DIV=10
-  ,fleqn % mv align to left
-  ,oneside
-  %,titelpage % unused
-  %,biblography=totoc  % unused
-  %,landscape,twocolumn
-  % ,draft
-]{./myClass}
-
-% \IfSubStr{\jobname}{\detokenize{nonotes}}{
-%   \setbeameroption{hide notes}
-% }{
-%   \setbeameroption{show notes}
-% }
-
+\RequirePackage{xstring}
+\IfSubStr{\jobname}{\detokenize{nonotes}}{%
+  \xdef\myDevelopVariable{0}
+  \documentclass[ngerman
+    ,fontsize=11pt % TODO
+    ,numbers=noenddot % obsolete
+    %,headsepline
+    ,parskip=half*
+    ,openany
+    ,DIV=10
+    ,fleqn % mv align to left
+    ,oneside
+    %,titelpage % unused
+    %,biblography=totoc  % unused
+    %,landscape,twocolumn
+    % ,draft
+  ]{./myClass}
+}{%
+  \xdef\myDevelopVariable{1}
+  \documentclass[ngerman
+    ,fontsize=11pt % TODO
+    ,numbers=noenddot % obsolete
+    %,headsepline
+    ,parskip=half*
+    ,openany
+    ,DIV=10
+    ,fleqn % mv align to left
+    ,oneside
+    %,titelpage % unused
+    %,biblography=totoc  % unused
+    %,landscape,twocolumn
+    % ,draft
+  ]{./myClass}
+}
 
 \bibliography{literatur.bib}
 
@@ -98,12 +109,15 @@
 \appendix
 \addcontentsline{toc}{chapter}{Anhang}
 
-\input{vortrag.tex}
-\input{notes.tex}
-\input{aufgaben.tex}
-\input{literatur.tex}
+\ifnum\myDevelopVariable=1
+  \input{overviewPresentation/notes.tex}
+  \input{notes.tex}
+  \input{aufgaben.tex}
+\fi
 
 %\input{anhang1.tex}
+
+\input{literatur.tex}
 
 %\nocite{*}
 %\bibliographystyle{geralpha}
