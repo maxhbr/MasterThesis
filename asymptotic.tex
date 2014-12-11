@@ -8,6 +8,7 @@
     \item Van der Put: \cite{van2003galois}: Chapter 7: Exact Asymptotics
     \item \cite[II.5]{sabbah2007isomonodromic}
     \item \cite{majima1984asymptotic}
+    \item \cite{Balser2000Formal}
   \end{itemize}
 \end{comment}
 \section{Definition}
@@ -153,6 +154,29 @@ Let $f$ be a holomorphic function on $S(a,b,\rho)$, where
     \]
   \end{defn}
 \end{comment}
+
+\subsubsection{Definition from \cite{Loday1994}}
+$\Lambda_\theta(A_0)$ $:\Leftrightarrow{}$ sheaf of flat isotropies over $S^1$
+\marginnote{p. 854f \cite{Loday1994}}
+\begin{defn}
+  A germ of $\Lambda_\theta(A_0)$ at $\theta_0\in S^1$ is
+  \begin{itemize}
+    \item an invertible Matrix $f\in\Gl_n(\cO(U))$ 
+      \begin{itemize}
+        \item for suitable arc $U=U(\theta_0,\epsilon,\epsilon')$
+      \end{itemize}
+      satisfying:
+      \begin{enumerate}
+        \item \emph{Flatness:}
+          \[
+            \underset{x\in U}{\underset{x\to0}{\lim}}f(x)=\Id
+            \text{ and }
+            f\underset{U}{\sim}I
+          \]
+        \item \emph{Isotropy of $[A_0]$: ${}^fA_0=A_0$.}
+      \end{enumerate}
+  \end{itemize}
+\end{defn}
 
 \subsection{Sheaf version}
 \def\myincl{\textcolor{green!40!black}{i}}
