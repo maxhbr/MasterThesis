@@ -61,7 +61,7 @@ $\Lambda_\theta(A_0)$ $:\Leftrightarrow{}$ sheaf of flat isotropies over $S^1$
 \begin{defn}
   A germ of $\Lambda_\theta(A_0)$ at $\theta_0\in S^1$ is
   \begin{itemize}
-    \item an invertible Matrix $f\in\Gl_n(\cO(U))$ 
+    \item an invertible Matrix $f\in\Gl_n(\cO(U))$
       \begin{itemize}
         \item for suitable arc $U=U(\theta_0,\epsilon,\epsilon')$
       \end{itemize}
@@ -73,7 +73,7 @@ $\Lambda_\theta(A_0)$ $:\Leftrightarrow{}$ sheaf of flat isotropies over $S^1$
             \text{ and }
             f\underset{U}{\sim}I
           \]
-        \item \emph{Isotropy of $[A_0]$: ${}^fA_0=A_0$.}
+        \item \emph{Isotropy of $[A_0]$: ${}^f\!A_0=A_0$.}
       \end{enumerate}
   \end{itemize}
 \end{defn}
@@ -82,7 +82,6 @@ $\Lambda_\theta(A_0)$ $:\Leftrightarrow{}$ sheaf of flat isotropies over $S^1$
   \begin{tikzpicture}[scale=1]
     \node[] (zero) at (0,0) {};
     \fill (zero) circle (1pt);
-    \draw (0,2) arc (270:-90:0.5 and 2);
 
     \fill[blue!20!white] (theta) circle (1pt);
 
@@ -93,18 +92,21 @@ $\Lambda_\theta(A_0)$ $:\Leftrightarrow{}$ sheaf of flat isotropies over $S^1$
       -- ({cos( -50 )*4},{sin( -50 )*1}) arc (-50:20:4 and 1)
       -- cycle;
 
-    \filldraw[fill=white,draw=green!60!black] (0,4)
-      -- +({cos( -50 )*0.5},{sin( -50 )*2}) arc (-50:20:0.5 and 2)
+    \filldraw[fill=green!20!white
+      ,draw=green!60!black
+      ,thick
+    ,path fading=west] (0,4)
+      -- ({cos( -50 )*0.5},{4 + sin( -50 )*2})
+      -- ({cos( -50 )*0.5 + cos( -10 )*3}
+        ,{4 + sin( -50 )*2 + sin( -10 )*12})
+      arc (-80:40:1 and 3)
+      -- ({cos( 20 )*0.5},{4 + sin( 20 )*2})
       -- cycle;
 
-    \filldraw[fill=gray,draw=green!60!black] (0,4)
-      -- ({cos( -50 )*0.5},{4 + sin( -20 )*2})
-      -- ({cos( -50 )*0.5 + cos( -20 )*0.5}
-        ,{4 + sin( -50 )*2 + sin( -50 )*2})
-      arc (-50:20:0.5 and 2)
-      -- cycle;
+    \fill[fill=white,draw=black] (0,2) arc (270:-90:0.5 and 2);
 
-    \draw[blue!60!black] (zero) -- ({cos( -15 )*4},{sin( -15 )*1});
+    \draw[blue!60!black,path fading=east]
+      (zero) -- ({cos( -15 )*4},{sin( -15 )*1});
 
     \draw[dashed] (zero) -- (0,2);
   \end{tikzpicture}
@@ -115,3 +117,359 @@ $\Lambda_\theta(A_0)$ $:\Leftrightarrow{}$ sheaf of flat isotropies over $S^1$
   \item p. 861 in the paper
   \item p. 78 in the book
 \end{itemize}
+
+\subsection{Definition of $\cF$}
+
+\subsection{Adequate coverings}
+\begin{center}
+  \begin{tikzpicture}[scale=2]
+    \node (zero) at (0,0) {};
+    \draw (zero) circle (1cm);
+
+    \node at (-1,1) {$\cK=\{5\}:$};
+
+    \foreach \w in {55}
+    {\foreach \sep in {0,45,90,135,180,225,270,315}
+     {\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
+
+    \fill[white] (zero) circle (1.5pt);
+    \fill (zero) circle (.7pt);
+  \end{tikzpicture}
+  \begin{tikzpicture}[scale=2]
+    \node (zero) at (0,0) {};
+    \draw (zero) circle (1cm);
+
+    \node at (-1,1) {$\cK=\{5,4\}:$};
+
+    \foreach \w in {55}
+    {\foreach \sep in {0,45,90,135,180,225,270,315}
+     {\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
+
+    \foreach \w in {10,20,55}
+    {\foreach \sep in {0,60,120,180,240,300}
+     {\draw[blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
+
+    \fill[white] (zero) circle (1.5pt);
+    \fill (zero) circle (.7pt);
+  \end{tikzpicture}
+  \begin{tikzpicture}[scale=2]
+    \node (zero) at (0,0) {};
+    \draw (zero) circle (1cm);
+
+    \node at (-1,1) {$\cK=\{5,4,3\}:$};
+
+    \foreach \w in {55}
+    {\foreach \sep in {0,45,90,135,180,225,270,315}
+     {\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
+
+    \foreach \w in {10,20,55}
+    {\foreach \sep in {0,60,120,180,240,300}
+     {\draw[blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
+
+    \foreach \w in {30,35}
+    {\foreach \sep in {0,90,180,270}
+     {\draw[red] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
+
+    \fill[white] (zero) circle (1.5pt);
+    \fill (zero) circle (.7pt);
+  \end{tikzpicture}
+\end{center}
+
+Let $k\in\cK$.
+\subsubsection{The \emph{cyclic covering $\cU^k=\{U_\alpha^k;\alpha\in\A^k\}$}}
+\paragraph{$k=5$:}
+\begin{center}
+  \begin{tikzpicture}[scale=2.5]
+    \node (zero) at (0,0) {};
+    \draw (zero) circle (1cm);
+
+    \node at (-1.5,1.5) {$\textcolor{purple}{\cU^k}:$};
+    \node at (-1,1) {$\textcolor{purple}{\dot\cU^k}:$};
+
+    \foreach \w in {55}
+    {\foreach \sep in {0,45,90,135,180,225,270,315}
+     {\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+
+      \pgfmathsetmacro\r{{1.1 + mod(\sep,2)/ 20}}
+      \draw[dotted,purple] ({cos( \w + \sep )},{sin( \w + \sep )})
+        -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+
+      \draw[thick,purple] ({cos( \w + \sep -22) * \r},{sin( \w + \sep -22) * \r})
+        arc ({\w + \sep - 22}:{\w + \sep +22}:\r);
+
+      \pgfmathsetmacro\r{{1.7 + mod(\sep,180)/1800 + mod(\sep,2)/ 10}}
+
+      \draw[purple,thick] ({cos( \w + \sep -22) * \r},{sin( \w + \sep -22) * \r})
+        arc ({\w + \sep - 22}:{\w + \sep + 22 + 44}:\r);
+      }};
+
+    \foreach \w in {10,20,55}
+    {\foreach \sep in {0,60,120,180,240,300}
+     {\draw[blue!40!white] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
+
+    \foreach \w in {30,35}
+    {\foreach \sep in {0,90,180,270}
+     {\draw[red!40!white] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
+
+    \fill[white] (zero) circle (1.5pt);
+    \fill (zero) circle (.7pt);
+  \end{tikzpicture}
+\end{center}
+\paragraph{$k=4$:}
+\begin{center}
+  \begin{tikzpicture}[scale=2.5]
+    \node (zero) at (0,0) {};
+    \draw (zero) circle (1cm);
+
+    \node at (-1.5,1.5) {$\textcolor{blue}{\cU^k}:\TODO$};
+    \node at (-1.2,1.2) {$\textcolor{blue}{\dot\cU^k}:$};
+
+    \foreach \w in {55}
+    {\foreach \sep in {0,45,90,135,180,225,270,315}
+     {\draw[purple!40!white] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
+
+    \foreach \w in {10,20,55}
+    {\foreach \sep in {0,60,120,180,240,300}
+     {\draw[blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+
+     \pgfmathsetmacro\r{{1.1 + mod(\w,20)/100 + mod(\w,2)/10 + mod(\sep,120)/1200}}
+      \draw[dotted,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
+        -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+
+      \draw[blue,thick] ({cos( \w + \sep -29) * \r},{sin( \w + \sep -29) * \r})
+        arc ({\w + \sep - 29}:{\w + \sep + 29}:\r);}};
+
+    \foreach \w in {30,35}
+    {\foreach \sep in {0,90,180,270}
+     {\draw[red!40!white] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
+
+    \fill[white] (zero) circle (1.5pt);
+    \fill (zero) circle (.7pt);
+  \end{tikzpicture}
+\end{center}
+\paragraph{$k=3$:}
+\begin{center}
+  \begin{tikzpicture}[scale=2.5]
+    \node (zero) at (0,0) {};
+    \draw (zero) circle (1cm);
+
+    \node at (-1.5,1.5) {$\textcolor{red}{\cU^k}:\TODO$};
+    \node at (-1,1) {$\textcolor{red}{\dot\cU^k}:$};
+
+    \foreach \w in {55}
+    {\foreach \sep in {0,45,90,135,180,225,270,315}
+     {\draw[purple!40!white] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
+
+    \foreach \w in {10,20,55}
+    {\foreach \sep in {0,60,120,180,240,300}
+     {\draw[blue!40!white] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
+
+    \foreach \w in {30,35}
+    {\foreach \sep in {0,90,180,270}
+     {\draw[red] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+
+     \pgfmathsetmacro\r{{1.1 + mod(\w,2)/10 + mod(\sep,180)/1800}}
+      \draw[dotted,red] ({cos( \w + \sep )},{sin( \w + \sep )})
+        -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+
+      \draw[red,thick] ({cos( \w + \sep -44) * \r},{sin( \w + \sep -44) * \r})
+        arc ({\w + \sep - 44}:{\w + \sep + 44}:\r);
+    }};
+
+    \fill[white] (zero) circle (1.5pt);
+    \fill (zero) circle (.7pt);
+  \end{tikzpicture}
+\end{center}
+\begin{center}
+  \begin{tikzpicture}[scale=2.5]
+    \node (zero) at (0,0) {};
+    \draw (zero) circle (1cm);
+
+    \node at (-1,1) {$\textcolor{purple}{\dot\cU^{5}}:$};
+    \node at (-1.7,1.7) {$\textcolor{blue}{\dot\cU^{4}}:$};
+    \node at (-2.2,2.2) {$\textcolor{green!60!black}{\dot\cU^{3}}:$};
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%  Purple
+    \foreach \w in {10,25}
+    {\foreach \sep in {0,45,90,135,180,225,270,315}
+     {\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+
+      \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,2)/10}}
+      \draw[dotted,purple] ({cos( \w + \sep )},{sin( \w + \sep )})
+        -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+
+      \draw[thick,purple] ({cos( \w + \sep -22) * \r},{sin( \w + \sep -22) * \r})
+        arc ({\w + \sep - 22}:{\w + \sep +22}:\r);
+      }};
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%  Blue
+    \foreach \w in {10,20,55}
+    {\foreach \sep in {0,60,120,180,240,300}
+     {\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});}};
+
+    \foreach \sep in {0,180}
+    {\pgfmathsetmacro\rr{1.7}
+     \foreach \w in {10,20,55
+                    ,70,80,115
+                    ,130,140,175}
+     {\pgfmathsetmacro\rr{{\rr + (mod(\w,60) - 5*mod(\w,10))/150 
+                               + mod(\w + \sep - mod(\w,60),120)/300}}
+      \draw[dotted,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
+        -- ({cos( \w + \sep) * \rr},{sin( \w + \sep) * \rr});
+      \draw[blue,thick] ({cos(\sep+\w -29) * \rr},{sin(\sep+\w -29) * \rr})
+        arc ({\sep+\w -29}:{\sep+\w +29}:\rr);
+     }
+    }
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%  Green
+    \foreach \w in {30,35}
+    {\foreach \sep in {0,90,180,270}
+     {\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});}};
+
+    \foreach \sep in {0,180}
+    {\pgfmathsetmacro\rr{2.8}
+     \foreach \w in {30,35
+                    ,120,125}
+     {\pgfmathsetmacro\rr{{\rr + mod(\w,10)/100 + mod(\w-mod(\w,90),180)/900}}
+      \draw[dotted,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
+        -- ({cos( \w + \sep) * \rr},{sin( \w + \sep) * \rr});
+      \draw[green!60!black,thick] ({cos(\sep+\w -44) * \rr},{sin(\sep+\w -44) * \rr})
+        arc ({\sep+\w -44}:{\sep+\w +44}:\rr);
+     }
+    }
+
+    \fill[white] (zero) circle (1.5pt);
+    \fill (zero) circle (.7pt);
+  \end{tikzpicture}
+\end{center}
+
+\subsubsection{The \emph{cyclic covering
+  $\cU^{\leq k}=\{U_\alpha^{\leq k};\alpha\in\A^{\leq k}\}$}}
+\begin{center}
+  \begin{tikzpicture}[scale=2.5]
+    \node (zero) at (0,0) {};
+    \draw (zero) circle (1cm);
+
+    \node at (-1,1) {$\textcolor{purple}{\dot\cU^{\leq 5}}:$};
+    \node at (-1.7,1.7) {$\textcolor{blue}{\dot\cU^{\leq 4}}:$};
+    \node at (-2.2,2.2) {$\textcolor{green!60!black}{\dot\cU^{\leq 3}}:$};
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%  Purple
+    \foreach \w in {10,25}
+    % {\foreach \sep in {0,45,90,135,180,225,270,315}
+    {\foreach \sep in {0,36,72,108,144,180,216,252,288,324}
+     {\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+
+      \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
+      \draw[dotted,purple] ({cos( \w + \sep )},{sin( \w + \sep )})
+        -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+
+      \draw[thick,purple] ({cos( \w + \sep -17.5) * \r},{sin( \w + \sep -17.5) * \r})
+        arc ({\w + \sep - 17.5}:{\w + \sep +17.5}:\r);
+
+      \draw[purple,dashed] ({cos( \w + \sep -17.5) * \r},{sin( \w + \sep -17.5) * \r})
+        -- ({cos( \w + \sep -17.5) * 2.3},{sin( \w + \sep -17.5) * 2.3});
+      \draw[purple,dashed] ({cos( \w + \sep +17.5) * \r},{sin( \w + \sep +17.5) * \r})
+        -- ({cos( \w + \sep +17.5) * 2.3},{sin( \w + \sep +17.5) * 2.3});
+      }};
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%  Blue
+    \foreach \w in {10,20,55}
+    {\foreach \sep in {0,60,120,180,240,300}
+     {\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});}};
+
+    \foreach \sep in {0,180}
+    {\pgfmathsetmacro\rr{1.7}
+     \foreach \w in {10,20,55
+                    ,70,80,115
+                    ,130,140,175}
+     {\pgfmathsetmacro\rr{{1.7 + (mod(\w,60) - 5*mod(\w,10))/150 
+                               + mod(\w + \sep - mod(\w,60),120)/300}}
+      \draw[dotted,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
+        -- ({cos( \w + \sep) * \rr},{sin( \w + \sep) * \rr});
+      \draw[gray] ({cos(\sep+\w -29) * \rr},{sin(\sep+\w -29) * \rr})
+        arc ({\sep+\w -29}:{\sep+\w +29}:\rr);
+     }
+
+     \pgfmathsetmacro\w{10}
+     \pgfmathsetmacro\rr{{1.7 + (mod(\w,60) - 5*mod(\w,10))/150 
+                              + mod(\w + \sep - mod(\w,60),120)/300}}
+     \draw[thick,blue] ({cos(\sep+\w -17.5) * \rr},{sin(\sep+\w -17.5) * \rr})
+       arc ({\sep+\w -17.5}:{\sep+\w +17.5}:\rr);
+
+     \pgfmathsetmacro\w{20}
+     \pgfmathsetmacro\rr{{1.7 + (mod(\w,60) - 5*mod(\w,10))/150 
+                              + mod(\w + \sep - mod(\w,60),120)/300}}
+     \draw[thick,blue] ({cos(\sep+ -7.5) * \rr},{sin(\sep+ -7.5) * \rr})
+       arc ({\sep+ -7.5}:{\sep+ 42.5}:\rr);
+
+     \pgfmathsetmacro\w{55}
+     \pgfmathsetmacro\rr{{1.7 + (mod(\w,60) - 5*mod(\w,10))/150 
+                              + mod(\w + \sep - mod(\w,60),120)/300}}
+     \draw[thick,blue] ({cos(\sep+ 28.5) * \rr},{sin(\sep+ 28.5) * \rr})
+       arc ({\sep+ 28.5}:{\sep+ 78.5}:\rr);
+
+     \pgfmathsetmacro\w{70}
+     \pgfmathsetmacro\rr{{1.7 + (mod(\w,60) - 5*mod(\w,10))/150 
+                              + mod(\w + \sep - mod(\w,60),120)/300}}
+     \draw[thick,blue] ({cos(\sep+ 43.5) * \rr},{sin(\sep+ 43.5) * \rr})
+       arc ({\sep+ 43.5}:{\sep + \w + 29}:\rr);
+
+     \pgfmathsetmacro\w{80}
+     \pgfmathsetmacro\rr{{1.7 + (mod(\w,60) - 5*mod(\w,10))/150 
+                              + mod(\w + \sep - mod(\w,60),120)/300}}
+     \draw[thick,blue] ({cos(\sep+ \w - 29) * \rr},{sin(\sep+ \w - 29) * \rr})
+       arc ({\sep+ \w - 29}:{\sep + 99.5}:\rr);
+
+     \pgfmathsetmacro\w{115}
+     \pgfmathsetmacro\rr{{1.7 + (mod(\w,60) - 5*mod(\w,10))/150 
+                              + mod(\w + \sep - mod(\w,60),120)/300}}
+     \draw[thick,blue] ({cos(\sep+ \w - 29) * \rr},{sin(\sep+ \w - 29) * \rr})
+       arc ({\sep+ \w - 29}:{\sep + 135.5}:\rr);
+
+     \pgfmathsetmacro\w{130}
+     \pgfmathsetmacro\rr{{1.7 + (mod(\w,60) - 5*mod(\w,10))/150 
+                              + mod(\w + \sep - mod(\w,60),120)/300}}
+     \draw[thick,blue] ({cos(\sep+ \w - 29) * \rr},{sin(\sep+ \w - 29) * \rr})
+       arc ({\sep+ \w - 29}:{\sep + 150.5}:\rr);
+
+     \pgfmathsetmacro\w{140}
+     \pgfmathsetmacro\rr{{1.7 + (mod(\w,60) - 5*mod(\w,10))/150 
+                              + mod(\w + \sep - mod(\w,60),120)/300}}
+     \draw[thick,blue] ({cos(\sep+ 115.5) * \rr},{sin(\sep+ 115.5) * \rr})
+       arc ({\sep+ 115.5}:{\sep + \w + 29}:\rr);
+
+     \pgfmathsetmacro\w{175}
+     \pgfmathsetmacro\rr{{1.7 + (mod(\w,60) - 5*mod(\w,10))/150 
+                              + mod(\w + \sep - mod(\w,60),120)/300}}
+     \draw[thick,blue] ({cos(\sep+ 151.5) * \rr},{sin(\sep+ 151.5) * \rr})
+       arc ({\sep+ 151.5}:{\sep + \w + 29}:\rr);
+    }
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%  Green
+    \foreach \w in {30,35}
+    {\foreach \sep in {0,90,180,270}
+     {\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});}};
+
+    % \foreach \sep in {0,180}
+    % {\pgfmathsetmacro\rr{2.8}
+    %  \foreach \w in {30,35
+    %                 ,120,125}
+    %  {\pgfmathsetmacro\rr{{\rr + mod(\w,10)/100 + mod(\w-mod(\w,90),180)/900}}
+    %   \draw[dotted,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
+    %     -- ({cos( \w + \sep) * \rr},{sin( \w + \sep) * \rr});
+    %   \draw[green!60!black,thick] ({cos(\sep+\w -44) * \rr},{sin(\sep+\w -44) * \rr})
+    %     arc ({\sep+\w -44}:{\sep+\w +44}:\rr);
+    %  }
+    % }
+
+    \fill[white] (zero) circle (1.5pt);
+    \fill (zero) circle (.7pt);
+  \end{tikzpicture}
+\end{center}
