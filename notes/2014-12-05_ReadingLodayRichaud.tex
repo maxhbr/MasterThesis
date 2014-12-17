@@ -24,6 +24,8 @@
     \end{itemize}
 \end{itemize}
 
+$k -1 \to k$
+
 \subsection{Determination $\tilde\theta$ of $\theta$}
 \begin{center}
   \begin{tikzpicture}[scale=1]
@@ -177,117 +179,14 @@ $\Lambda_\theta(A_0)$ $:\Leftrightarrow{}$ sheaf of flat isotropies over $S^1$
 
 Let $k\in\cK$.
 \subsubsection{The \emph{cyclic covering $\cU^k=\{U_\alpha^k;\alpha\in\A^k\}$}}
-\paragraph{$k=5$:}
-\begin{center}
-  \begin{tikzpicture}[scale=2.5]
-    \node (zero) at (0,0) {};
-    \draw (zero) circle (1cm);
-
-    \node at (-1.5,1.5) {$\textcolor{purple}{\cU^k}:$};
-    \node at (-1,1) {$\textcolor{purple}{\dot\cU^k}:$};
-
-    \foreach \w in {55}
-    {\foreach \sep in {0,45,90,135,180,225,270,315}
-     {\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-
-      \pgfmathsetmacro\r{{1.1 + mod(\sep,2)/ 20}}
-      \draw[dotted,purple] ({cos( \w + \sep )},{sin( \w + \sep )})
-        -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-
-      \draw[thick,purple] ({cos( \w + \sep -22) * \r},{sin( \w + \sep -22) * \r})
-        arc ({\w + \sep - 22}:{\w + \sep +22}:\r);
-
-      \pgfmathsetmacro\r{{1.7 + mod(\sep,180)/1800 + mod(\sep,2)/ 10}}
-
-      \draw[purple,thick] ({cos( \w + \sep -22) * \r},{sin( \w + \sep -22) * \r})
-        arc ({\w + \sep - 22}:{\w + \sep + 22 + 44}:\r);
-      }};
-
-    \foreach \w in {10,20,55}
-    {\foreach \sep in {0,60,120,180,240,300}
-     {\draw[blue!40!white] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
-
-    \foreach \w in {30,35}
-    {\foreach \sep in {0,90,180,270}
-     {\draw[red!40!white] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
-
-    \fill[white] (zero) circle (1.5pt);
-    \fill (zero) circle (.7pt);
-  \end{tikzpicture}
-\end{center}
-\paragraph{$k=4$:}
-\begin{center}
-  \begin{tikzpicture}[scale=2.5]
-    \node (zero) at (0,0) {};
-    \draw (zero) circle (1cm);
-
-    \node at (-1.5,1.5) {$\textcolor{blue}{\cU^k}:\TODO$};
-    \node at (-1.2,1.2) {$\textcolor{blue}{\dot\cU^k}:$};
-
-    \foreach \w in {55}
-    {\foreach \sep in {0,45,90,135,180,225,270,315}
-     {\draw[purple!40!white] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
-
-    \foreach \w in {10,20,55}
-    {\foreach \sep in {0,60,120,180,240,300}
-     {\draw[blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-
-     \pgfmathsetmacro\r{{1.1 + mod(\w,20)/100 + mod(\w,2)/10 + mod(\sep,120)/1200}}
-      \draw[dotted,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
-        -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-
-      \draw[blue,thick] ({cos( \w + \sep -29) * \r},{sin( \w + \sep -29) * \r})
-        arc ({\w + \sep - 29}:{\w + \sep + 29}:\r);}};
-
-    \foreach \w in {30,35}
-    {\foreach \sep in {0,90,180,270}
-     {\draw[red!40!white] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
-
-    \fill[white] (zero) circle (1.5pt);
-    \fill (zero) circle (.7pt);
-  \end{tikzpicture}
-\end{center}
-\paragraph{$k=3$:}
-\begin{center}
-  \begin{tikzpicture}[scale=2.5]
-    \node (zero) at (0,0) {};
-    \draw (zero) circle (1cm);
-
-    \node at (-1.5,1.5) {$\textcolor{red}{\cU^k}:\TODO$};
-    \node at (-1,1) {$\textcolor{red}{\dot\cU^k}:$};
-
-    \foreach \w in {55}
-    {\foreach \sep in {0,45,90,135,180,225,270,315}
-     {\draw[purple!40!white] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
-
-    \foreach \w in {10,20,55}
-    {\foreach \sep in {0,60,120,180,240,300}
-     {\draw[blue!40!white] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}};
-
-    \foreach \w in {30,35}
-    {\foreach \sep in {0,90,180,270}
-     {\draw[red] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-
-     \pgfmathsetmacro\r{{1.1 + mod(\w,2)/10 + mod(\sep,180)/1800}}
-      \draw[dotted,red] ({cos( \w + \sep )},{sin( \w + \sep )})
-        -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-
-      \draw[red,thick] ({cos( \w + \sep -44) * \r},{sin( \w + \sep -44) * \r})
-        arc ({\w + \sep - 44}:{\w + \sep + 44}:\r);
-    }};
-
-    \fill[white] (zero) circle (1.5pt);
-    \fill (zero) circle (.7pt);
-  \end{tikzpicture}
-\end{center}
 \begin{center}
   \begin{tikzpicture}[scale=2.5]
     \node (zero) at (0,0) {};
     \draw (zero) circle (1cm);
 
     \node at (-1,1) {$\textcolor{purple}{\dot\cU^{5}}:$};
-    \node at (-1.7,1.7) {$\textcolor{blue}{\dot\cU^{4}}:$};
-    \node at (-2.2,2.2) {$\textcolor{green!60!black}{\dot\cU^{3}}:$};
+    \node at (-1.6,1.6) {$\textcolor{blue}{\dot\cU^{4}}:$};
+    \node at (-2,2) {$\textcolor{green!60!black}{\dot\cU^{3}}:$};
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%  Purple
@@ -310,7 +209,7 @@ Let $k\in\cK$.
      {\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});}};
 
     \foreach \sep in {0,180}
-    {\pgfmathsetmacro\rr{1.7}
+    {\pgfmathsetmacro\rr{1.6}
      \foreach \w in {10,20,55
                     ,70,80,115
                     ,130,140,175}
@@ -330,7 +229,7 @@ Let $k\in\cK$.
      {\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});}};
 
     \foreach \sep in {0,180}
-    {\pgfmathsetmacro\rr{2.8}
+    {\pgfmathsetmacro\rr{2.4}
      \foreach \w in {30,35
                     ,120,125}
      {\pgfmathsetmacro\rr{{\rr + mod(\w,10)/100 + mod(\w-mod(\w,90),180)/900}}
@@ -353,9 +252,9 @@ Let $k\in\cK$.
     \node (zero) at (0,0) {};
     \draw (zero) circle (1cm);
 
-    \node at (-1,1) {$\textcolor{purple}{\dot\cU^{\leq 5}}:$};
-    \node at (-1.7,1.7) {$\textcolor{blue}{\dot\cU^{\leq 4}}:$};
-    \node at (-2.2,2.2) {$\textcolor{green!60!black}{\dot\cU^{\leq 3}}:$};
+    \node at (-1.05,1.05) {$\textcolor{purple}{\dot\cU^{\leq 5}}:$};
+    \node at (-1.65,1.65) {$\textcolor{blue}{\dot\cU^{\leq 4}}:$};
+    \node at (-2.05,2.05) {$\textcolor{green!60!black}{\dot\cU^{\leq 3}}:$};
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%  Purple
@@ -371,10 +270,10 @@ Let $k\in\cK$.
       \draw[thick,purple] ({cos( \w + \sep -17.5) * \r},{sin( \w + \sep -17.5) * \r})
         arc ({\w + \sep - 17.5}:{\w + \sep +17.5}:\r);
 
-      \draw[purple,dashed] ({cos( \w + \sep -17.5) * \r},{sin( \w + \sep -17.5) * \r})
-        -- ({cos( \w + \sep -17.5) * 2.3},{sin( \w + \sep -17.5) * 2.3});
-      \draw[purple,dashed] ({cos( \w + \sep +17.5) * \r},{sin( \w + \sep +17.5) * \r})
-        -- ({cos( \w + \sep +17.5) * 2.3},{sin( \w + \sep +17.5) * 2.3});
+      % \draw[purple] ({cos( \w + \sep -17.5) * \r},{sin( \w + \sep -17.5) * \r})
+      %   -- ({cos( \w + \sep -17.5) * 1.5},{sin( \w + \sep -17.5) * 1.5});
+      % \draw[purple] ({cos( \w + \sep +17.5) * \r},{sin( \w + \sep +17.5) * \r})
+      %   -- ({cos( \w + \sep +17.5) * 1.5},{sin( \w + \sep +17.5) * 1.5});
       }};
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -384,16 +283,20 @@ Let $k\in\cK$.
      {\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});}};
 
     \foreach \sep in {0,180}
-    {\pgfmathsetmacro\rr{1.7}
-     \foreach \w in {10,20,55
+    {\foreach \w in {10,20,55
                     ,70,80,115
                     ,130,140,175}
      {\pgfmathsetmacro\rr{{1.7 + (mod(\w,60) - 5*mod(\w,10))/150 
                                + mod(\w + \sep - mod(\w,60),120)/300}}
       \draw[dotted,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
         -- ({cos( \w + \sep) * \rr},{sin( \w + \sep) * \rr});
-      \draw[gray] ({cos(\sep+\w -29) * \rr},{sin(\sep+\w -29) * \rr})
+      \draw[gray!42!white] ({cos(\sep+\w -29) * \rr},{sin(\sep+\w -29) * \rr})
         arc ({\sep+\w -29}:{\sep+\w +29}:\rr);
+
+      % \draw[gray!42!white] ({cos( \w + \sep -29) * \rr},{sin( \w + \sep -29) * \rr})
+      %   -- ({cos( \w + \sep -29) * 1.5},{sin( \w + \sep -29) * 1.5});
+      % \draw[gray!42!white] ({cos( \w + \sep +29) * \rr},{sin( \w + \sep +29) * \rr})
+      %   -- ({cos( \w + \sep +29) * 1.5},{sin( \w + \sep +29) * 1.5});
      }
 
      \pgfmathsetmacro\w{10}
@@ -457,19 +360,41 @@ Let $k\in\cK$.
     {\foreach \sep in {0,90,180,270}
      {\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});}};
 
-    % \foreach \sep in {0,180}
-    % {\pgfmathsetmacro\rr{2.8}
-    %  \foreach \w in {30,35
-    %                 ,120,125}
-    %  {\pgfmathsetmacro\rr{{\rr + mod(\w,10)/100 + mod(\w-mod(\w,90),180)/900}}
-    %   \draw[dotted,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
-    %     -- ({cos( \w + \sep) * \rr},{sin( \w + \sep) * \rr});
-    %   \draw[green!60!black,thick] ({cos(\sep+\w -44) * \rr},{sin(\sep+\w -44) * \rr})
-    %     arc ({\sep+\w -44}:{\sep+\w +44}:\rr);
-    %  }
-    % }
+    \foreach \sep in {0,180}
+    {\foreach \w in {30,35
+                    ,120,125}
+     {\pgfmathsetmacro\rr{{2.5 + mod(\w,10)/100 + mod(\w-mod(\w,90),180)/900}}
+      \draw[dotted,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
+        -- ({cos( \w + \sep) * \rr},{sin( \w + \sep) * \rr});
+      \draw[gray!42!white] ({cos(\sep+\w -44) * \rr},{sin(\sep+\w -44) * \rr})
+        arc ({\sep+\w -44}:{\sep+\w +44}:\rr);
+     }
+
+
+     \pgfmathsetmacro\w{30}
+     \pgfmathsetmacro\rr{{2.5 + mod(\w,10)/100 + mod(\w-mod(\w,90),180)/900}}
+     \draw[thick,green!60!black] ({cos(\sep+ 7.5) * \rr},{sin(\sep+ 7.5) * \rr})
+       arc ({\sep+ 7.5}:{\sep +63.5}:\rr);
+     \pgfmathsetmacro\w{35}
+     \pgfmathsetmacro\rr{{2.5 + mod(\w,10)/100 + mod(\w-mod(\w,90),180)/900}}
+     \draw[thick,green!60!black] ({cos(\sep+ 7.5) * \rr},{sin(\sep+ 7.5) * \rr})
+       arc ({\sep+ 7.5}:{\sep +63.5}:\rr);
+
+     \pgfmathsetmacro\w{120}
+     \pgfmathsetmacro\rr{{2.5 + mod(\w,10)/100 + mod(\w-mod(\w,90),180)/900}}
+     \draw[thick,green!60!black] ({cos(\sep+ 100.5) * \rr},{sin(\sep+ 100.5) * \rr})
+       arc ({\sep+ 100.5}:{\sep +150.5}:\rr);
+     \pgfmathsetmacro\w{125}
+     \pgfmathsetmacro\rr{{2.5 + mod(\w,10)/100 + mod(\w-mod(\w,90),180)/900}}
+     \draw[thick,green!60!black] ({cos(\sep+ 100.5) * \rr},{sin(\sep+ 100.5) * \rr})
+       arc ({\sep+ 100.5}:{\sep +150.5}:\rr);
+    }
 
     \fill[white] (zero) circle (1.5pt);
     \fill (zero) circle (.7pt);
   \end{tikzpicture}
 \end{center}
+
+\subsection{Proof}
+\subsubsection{Unique level} \marginnote{p. 872}
+\subsubsection{Multi level} \marginnote{p. 872}
