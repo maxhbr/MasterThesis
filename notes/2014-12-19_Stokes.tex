@@ -1,0 +1,1179 @@
+
+\section{Sheaf view: \cite{sabbah2007isomonodromic}} %{{{
+Let
+\begin{itemize}
+  \item $X$ be the \textcolor{green!40!black}{parameter space}
+    \begin{itemize}
+      \item an analytic manifold equipped with coordinates $x_1,\ldots,x_n$.
+    \end{itemize}
+  \item $\sM^{good}$ be a meromorphic bundle
+    \begin{itemize}
+      \item on $D\times X$
+      \item with poles along $\{0\}\times X$
+    \end{itemize}
+    equipped with \textbf{flat} connection
+    \[
+      \nabla^{good}:\sM\to\Omega_{D\times X}^1\otimes\sM
+    \]
+\end{itemize}
+We will assume that $\left(\sM^{good},\nabla^{good}\right)$ is
+\begin{itemize}
+  \item a good model
+    \begin{itemize}
+      \item in the neighbourhood of any point $x^0\in X$,
+    \end{itemize}
+    that is that, for every $x^0$,
+    \begin{itemize}
+      \item there exist pairwise distinct germs $\phi_1,\dots,\phi_p\in
+        t^{-1}\cO_{X,x^0}[t^{-1}]$ and
+      \item nonzero germs of systems with regular singularity
+        $\cR_{\phi_1},\dots,\cR_{\phi_p}$ along $\{0\}\times X$ such that
+            we have, in the neighbourhood of $x^0$,
+        \begin{itemize}
+          \item an isomorphism $\sM_{x^0}^{good}
+            \cong\bigoplus_k\left(\cE^{\phi_k}\otimes\cR_{\phi_k}\right)$.
+            \begin{itemize}
+              \item \TODO[wo/wie kommt hier die Umgebung rein? (p110)]
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\begin{comment}
+  $k\neq l$ $\overset{\text{II.5.6}}{\Rightarrow{}}$ the order of the pole with
+  respect to $t$ of $(\phi_k-\phi_l)(x,t)$ does not depend on $x$ in a
+  neighbourhood of $x^0$.
+\end{comment}
+
+\subsection{The sheaf $\Aut^{<X}(\sM^{good})$}
+\begin{defn}
+  Define $\Aut^{<\{0\}\times X}(\tilde\sM^{good})$ or
+  $\Aut^{<X}(\tilde\sM^{good})$ as the sheaf
+  \begin{itemize}
+    \item on $S^1\otimes X$
+    \item of automorphisms of
+      \[
+        \tilde\sM^{good}
+          :=\sA_{\tilde D\times X}\otimes_{\cO_{D\times X}}\sM^{good}
+      \]
+      witch are
+      \begin{itemize}
+        \item compatible with the connection and
+        \item are formally equal to the identity\footnote{i.e., which
+          induce the identity on $\hat \sM^{good}:=\hat \cO_{D\times
+          X}\otimes_{\cO_{D\times X}}\sM^{good}$}.
+      \end{itemize}
+  \end{itemize}
+  The sections of $\Aut^{<X}(\tilde\sM^{good})$ are called \emph{Stokes
+  matrices}.
+\end{defn}
+The germs $\phi_k$ of $\Aut^{<X}(\tilde\sM^{good})$ are polynomials in $t^{-1}$
+without constant term, with coefficients in $\cO_{X,x^0}$.
+
+An automorphism $a$ of $\tilde\sM^{good}$
+\begin{itemize}
+  \item on $I\times U$ where
+    \begin{itemize}
+      \item $I$ is an interval and
+      \item $U$ is a sufficiently small neighbourhood of $x^0$
+    \end{itemize}
+\end{itemize}
+can be decomposed into blocks
+\[
+  a_{kl}:\tilde\sE^{\phi_k}\otimes\tilde\sR_k
+    \to
+    \tilde\sE^{\phi_l}\otimes\tilde\sR_l
+\]
+The term thus takes the form $e^{\phi_k-\phi_l}b_{kl}$, where
+\begin{itemize}
+  \item $b_{kl}$ is a homomorphism of bundles with connection
+    $\tilde\sR_k\to\tilde\sR_l$.
+\end{itemize}
+Assume that $X$ is a ball.
+\begin{defn}
+  Define
+  \begin{itemize}
+    \item $V_k$ to be the $\C$-vector space consisting of
+      \begin{itemize}
+        \item \textbf{multivalued horizontal sections} \TODO[Def?]
+          \begin{itemize}
+            \item of $\tilde\sR_k$
+            \item on $D^*\times X$
+          \end{itemize}
+      \end{itemize}
+  \end{itemize}
+  \begin{rem}
+    \begin{itemize}
+      \item $V_k$ is finite dimensional and
+      \item on an open set like $]0,r[\times I\times X$,
+        \begin{itemize}
+          \item with $I\neq S^1$,
+        \end{itemize}
+        the \textbf{space of horizontal sections of $\bf\tilde\sR_k$}
+        can be identified\footnote{This identification depending on the choice
+        of a determination of the logarithm on $I$.} to \textbf{$\bf V_k$}.
+    \end{itemize}
+  \end{rem}
+\end{defn}
+Use the identification and $b_{kl}$ to induce a $\C$-linear map
+\[
+  b_{kl}:V_k\to V_l \,.
+\]
+\begin{rem}
+  \begin{itemize}
+    \item The matrix of $b_{kl}$
+      \begin{itemize}
+        \item with respect to the bases of $V_k$, $V_l$
+      \end{itemize}
+      is thus \textbf{constant}.
+    \item The matrix of $b_{kl}$
+      \begin{itemize}
+        \item with respect to the $\cO_{D\times X}[t^{-1}]$-bases of $\sR_k$,
+          $\sR_l$
+      \end{itemize}
+      has \textbf{moderate growth}.
+  \end{itemize}
+\end{rem}
+For $k\neq l$, write
+\[
+  (\phi_k-\phi_l)(t,x)=\frac{\psi_{kl}(x)}{t^{n_{kl}}}\cdot U_{kl}(t,x)
+\]
+where
+\begin{itemize}
+  \item $n_{kl}>0$,
+  \item $\psi_{kl}(x)\in\cO_{X,x^0}^*$
+    \begin{itemize}
+      \item i.e., does not vanish
+    \end{itemize}
+    and
+  \item $u(t,x)$
+    \begin{itemize}
+      \item is holomorphic in the neighbourhood of $(0,x^0)$ and
+      \item $u(0,0)=1$.
+    \end{itemize}
+\end{itemize}
+We also choose some $C^\infty$ determination $\eta_{kl}(x)$ of the argument of
+$\psi_{kl}(x)$:
+\[
+  \psi_{kl}(x)=|\psi_{kl}(x)|\cdot e^{i\eta_{kl}(x)}
+\]
+\begin{rem}
+  $\psi_{kl}(x)=-\psi_{lk}(x)$
+\end{rem}
+\begin{lem}
+  Let us pick $e^{i\theta^0}\in S^1$
+  \begin{enumerate}
+    \item For $k\neq l$, the matrix $e^{\phi_k-\phi_l}b_{kl}$
+      \begin{itemize}
+        \item in $\cO_{D\times X}[t^{-1}]$-bases of $\sE^{\phi_k}\otimes\sR_k$,
+          $\sE^{\phi_l}\otimes\sR_l$
+      \end{itemize}
+      has enties in
+      \begin{itemize}
+        \item $\sA_{S^1\times X}^{<X}$
+          \begin{itemize}
+            \item in the neighbourhood of $(e^{i\theta^0},x^0)$
+          \end{itemize}
+      \end{itemize}
+      if and only if $b_{kl}=0$ or
+      $\cos(n_{kl}\theta^0-\eta_{kl})<0$.
+    \item The matrix $b_{kk}-\Id$ has entries in
+      \begin{itemize}
+        \item $\sA_{S^1\times X}^{<X}$
+          \begin{itemize}
+            \item in the neighbourhood of $(e^{i\theta^0},x^0)$
+          \end{itemize}
+      \end{itemize}
+      if and only if $b_{kk}-\Id=0$.
+  \end{enumerate}
+  \begin{comment}
+    \begin{proof}[Proofsketch]
+      For the first point, it is enough to check that $e^{\phi_k-\phi_l}$
+      belongs to $\sA_{S^1\times X}^{<X}$ in the neighbourhood of
+      $(e^{i\theta^0},x^0)$ if and only if $\Re(\phi_k-\phi_l)<0$ on a
+      sufficiently small neighbourhood of $(e^{i\theta^0},x^0)$, then to
+      express this condition on the leading term of $\phi_k-\phi_l$.  Then, one
+      notices that, as $b_{kl}$ has moderate growth, it does not affect the
+      rapid decay or the exponential growth property.
+    \end{proof}
+  \end{comment}
+\end{lem}
+Let
+\begin{itemize}
+  \item $V=\bigoplus_kV_k$ be the $\C$-vector space of multivalued horizontal
+    sections of $\bigoplus_k\sR_k$ on $D^*\times X$.
+  \item $\sL$ the subsheaf of the constant sheaf $\Aut(V)$
+    \begin{itemize}
+      \item of which the germ at $(e^{i\theta^0},x^0)$ is
+        the space of automorphism $\Id+(\oplus c_{kl})$ with
+        \begin{itemize}
+          \item $c_{kk}=0$ and
+          \item $c_{kl}:V_k\to V_l$ is nonzero if and only if
+            $\cos(n_{kl}\theta^0-\eta_{kl})<0$.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\begin{rem}
+  Any Stokes matrix (local section of $\sL$) is
+  \begin{itemize}
+    \item unipotent
+      \begin{itemize}
+        \item if we suitably order the set of indices, we can assume that
+          $c_{kl}=0$ for $k<l$ and the matrix of $\oplus c_{kl}$ is strictly
+          uppertriangular.
+      \end{itemize}
+  \end{itemize}
+\end{rem}
+\begin{cor}[The Stokes martices are constant]
+  For
+  \begin{itemize}
+    \item any open interval $I\neq S^1$,
+  \end{itemize}
+  the restriction to $I\times X$ of the
+  sheaves $\bf\Aut^{<X}(\tilde\sM^{good})$ and $\bf\sL$ are isomorphic:
+  \[
+    \Aut^{<X}(\tilde\sM^{good})_{|I\times X}
+    \cong
+    \sL_{|I\times X}
+  \]
+\end{cor}
+\begin{cor}[Base change for horizontal sections]
+  Let
+  \begin{itemize}
+    \item $i:S^1\times\{x^0\}\hookrightarrow S^1\times X$ denote the inclusion
+  \end{itemize}
+  then the natural morphism
+  \[
+    i^{-1}\Aut^{<X}(\tilde\sM^{good})\to\Aut^{<0}(\widetilde{i^+\sM}^{good})
+  \]
+  is an isomorphism.
+\end{cor}
+\begin{defn}
+  The \emph{manifold of Stokes directions}
+  \begin{itemize}
+    \item in $S^1\times U$, where
+      \begin{itemize}
+        \item $U$ is a neighbourhood of $x^0$ on which the $\phi_k$ are defined
+          and satisfy the goodness properties
+      \end{itemize}
+  \end{itemize}
+  is the union of the sets having the equation
+  \[
+    \cos(n_{kl}\theta-\eta_{kl}(x))=0 \,.
+  \]
+  The restriction of this set to $S^1\times\{x^0\}$ is a finite set of points,
+  called the \emph{Stokes directions at $x^0$}.
+  \begin{rem}
+    A pair $(k,l)$ contributes to the directions
+    \[
+      \frac{\left(\eta_{kl}+\frac{\pi}{2}+j\pi\right)}{n_{kl}}
+    \]
+    for $j=0,\dots,2n_{kl}-1$.
+  \end{rem}
+\end{defn}
+\begin{ex}[Straightening the Stokes manifold (\cite{sabbah2007isomonodromic}
+  6.8)]
+\end{ex}
+
+\subsection{The Stokes sheaf $\St_X(\sM^{good})$}
+\begin{defn}
+  Define the \emph{stokes sheaf} $\St_X(\sM^{good})$ as the sheaf (on $X$)
+  associated to the presheaf
+  \[
+    U\mapsto H^1\left(S^1\times U,\Aut^{<X}\left(\tilde \sM^{good}\right)\right)
+  \]
+\end{defn}
+\begin{thm}[The stokes sheaf is locally constant (6.1)]
+  The Stokes sheaf $\St_X(\sM^{good})$ is
+  \begin{itemize}
+    \item a locally constant
+  \end{itemize}
+  sheaf of pointed sets.
+  \begin{comment}
+    \begin{proof}
+      \cite[p. 113]{sabbah2007isomonodromic}: paragraph 6.c.
+    \end{proof}
+  \end{comment}
+\end{thm}
+\begin{prop}[Base change for the Stokes sheaf]
+  The germ at $x^0$ of the Stokes sheaf $\St_X(\sM^{good})$
+  \[
+    \St_X(\sM^{good})_{x^0}
+  \]
+  is equal to
+  \begin{center}
+    the Stokes space\footnote{Is equipped with a natural structure of affine
+    space.} $H^1(S^1,\Aut^{<0}(\widetilde{i^+\sM}^{good}))$ of the connection
+    $i^+\sM^{good}$.
+  \end{center}
+\end{prop}
+
+\subsection{The sheaf $\sH_X$}
+\begin{defn}
+  Let
+  \begin{itemize}
+    \item $(\sM^{good},\nabla^{good})$ be a fixed good formal model with
+      \begin{itemize}
+        \item flat connection,
+        \item having poles along $\{0\}\times X$.
+      \end{itemize}
+  \end{itemize}
+  \begin{defn}
+    $(\sM^{good},\nabla^{good})$ is a \emph{good formal model} for
+    $(\sM,\nabla)$ if
+    \begin{itemize}
+      \item there exists an isomorphism
+        \[
+          \hat f:
+          \underset{\hat\cO_{D\times X}\otimes(\sM,\nabla)}
+          {\underbrace{(\widehat\sM,\widehat\nabla)}}
+          \overset{\sim}{\longrightarrow}
+          \underset{\hat\cO_{D\times X}\otimes(\sM^{good},\nabla^{good})}
+          {\underbrace{(\widehat{\sM^{good}},\widehat{\nabla^{good}})}}
+        \]
+        \begin{itemize}
+          \item of sheafes of $\hat\cO_{D\times X}$-modules
+          \item compatible with connection.
+        \end{itemize}
+    \end{itemize}
+  \end{defn}
+  \begin{defn}
+    Two germs $(\sM,\nabla,\hat f)$ and $(\sM',\nabla',\hat f')$ along
+    $\{0\}\times X$ are \emph{isomorphic}, if
+    \begin{itemize}
+      \item there exists an isomorphism\footnote{such an isomorphism then is
+        unique} $g:(\sM,\nabla)\to(\sM',\nabla')$ with
+        \begin{itemize}
+          \item $\hat f=\hat f'\circ\hat g$.
+        \end{itemize}
+    \end{itemize}
+  \end{defn}
+  Define
+  \begin{itemize}
+    \item $\sH_X$ be the (pre-) sheaf\footnote{Lemma 6.2: it is a sheaf.} where
+      \begin{itemize}
+        \item $\sH_X(U)$ is the (pointed) set
+          \begin{itemize}
+            \item of \textbf{isomorphism classes} of
+              germs\footnote{along $\{0\}\times U$}
+              $(\sM,\nabla,\hat f)$ defined on $U$,
+              \begin{comment}
+                \begin{itemize}
+                  \item Why germs??
+                  \item along $\{0\}\times U$??
+                \end{itemize}
+              \end{comment}
+            \item equipped with a distinguished element, namely, the class of
+              ${(\sM^{good},\nabla^{good},\widehat{\Id})}_{|U}$.
+          \end{itemize}
+      \end{itemize}
+  \end{itemize}
+\end{defn}
+
+\subsection{Main Result}
+Use Thoreme~\ref{thm:sectDecomp} to construct\footnote{see:
+\cite[p. 111f]{sabbah2007isomonodromic}} a homomorphism of sheaves of
+pointed sets
+\[
+  \sH_X\to\St_X(\sM^{good})
+\]
+\begin{itemize}
+  \item If \begin{itemize}
+      \item $(\sM,\nabla,\hat f)$ is defined on $U$
+    \end{itemize}
+    there exists
+    \begin{itemize}
+      \item an open covering $\mathfrak{W}$ of $S^1\times U$ and
+      \item for any $W_i$ in $\mathfrak{W}$
+        \begin{itemize}
+          \item an isomorphism
+            $f_i:(\tilde\sM,\tilde\nabla)_{W_i}
+              \overset{\sim}{\to}
+              (\tilde\sM^{good},\tilde\nabla^{good})_{W_i}$
+        \end{itemize}
+    \end{itemize}
+    such that $\hat f_i=\hat f$.
+
+    Then $(f_jf_i^{-1})_{i,j}$ is a cocycle of the sheaf
+    $\Aut^{<X}(\tilde\sM^{good})$ relative to the covering $\mathfrak{W}$.
+    \begin{itemize}
+      \item If $f_i'$ is another lifting of $\hat f$\dots
+      \item If $(\sM,\nabla,\hat f)$ and $(\sM',\nabla',\hat f')$ are
+        isomorphic\dots
+    \end{itemize}
+    We have thus defined a mapping of pointed sets
+    \[
+      \Gamma(U,\sH_X)\to H^1(S^1\times U,\Aut^{<X}(\hat\sM^{good}))
+    \]
+    from which we deduce the homomorphism of sheaves.
+\end{itemize}
+
+\begin{thm}[The Stokes sheaf classifies meromorphic connections with fixed
+  normal type (6.3)]
+  The homomorphism so defined
+  \[
+    \sH_X\to St_X(\sM^{good})
+  \]
+  is an isomorphism of sheaves of pointed sets.
+\end{thm}
+\begin{cor}[Analytic extension with fixed formal structure]
+  Let
+  \begin{itemize}
+    \item $X$ be $1$-connected and
+    \item $(\sM^0,\nabla^0,\hat f^0)$ be a germ of meromorphic bundle
+      \begin{itemize}
+        \item on $D$
+        \item with pole at $0$
+        \item equipped with a formal isomorphism
+          \[
+            \hat f^0:(\sM^0,\nabla^0)
+              \overset{\sim}{\to}
+              i^+(\sM^{good},\nabla^{good})
+          \]
+          where
+          \begin{itemize}
+            \item $i$ denotes the inclusion
+              $D\times\{x^0\}\hookrightarrow D\times X$
+          \end{itemize}
+      \end{itemize}
+  \end{itemize}
+  then there exists
+  \begin{itemize}
+    \item a meromorphic bundle with connection $(\sM,\nabla,\hat f)$
+      \begin{itemize}
+        \item equipped with a formal isomorphism $\hat f$ to
+          $(\sM^{good},\nabla^{good})$
+      \end{itemize}
+  \end{itemize}
+  such that
+  \begin{itemize}
+    \item $i^+(\sM,\nabla,\hat f)$ is isomorphic to
+      $(\sM^0,\nabla^0,\hat f^0)$.
+  \end{itemize}
+  Such an object is unique up to unique isomorphism.
+\end{cor}
+%}}}
+
+\section{Matrix view: \cite{boalch} and \cite{thboalch}} %{{{
+Let
+\begin{itemize}
+  \item $z$ be a coordinate on $\D$ vanishing at $0$ and
+  \item $d-A^0$ be a diagonal meromorphic connection
+    \begin{itemize}
+      \item on the trivial rank $n$ vector bundle
+        \begin{itemize}
+          \item over the unit disc $\D\subset\C$
+        \end{itemize}
+      \item with a pole of order $k\geq2$ at $0$
+        \begin{itemize}
+          \item and no other poles.
+        \end{itemize}
+    \end{itemize}
+    thus $A^0=dQ+\Lambda^0\frac{dz}{z}$ where
+    \begin{itemize}
+      \item $\Lambda^0$ is a constant diagonal matrix and
+      \item $Q$ is a diagonal matrix of meromorphic functions.
+        \begin{itemize}
+          \item write $Q=\diag(g_1,\dots,q_n)$
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\subsection{Basic definitions}
+Define $q_{ij}(z)$ to be the leading term of $q_i-q_j$.
+\begin{itemize}
+  \item Thus if $q_i-q_j=a/z^{k-1}+b/z^{k-2}+\dots$ then $q_{ij}=a/z^{k-1}$.
+\end{itemize}
+\begin{defn}[Definition 3.2]
+  The \emph{anti-Stokes} directions $\A\subset S^1$ are the directions $d\in
+  S^1$ such that for some $i \neq j$: $q_{ij}(z)\in\R_{<0}$ for $z$ on the ray
+  specified by $d$.
+\end{defn}
+\begin{center}
+  \begin{tikzpicture}[scale=2]
+    \node[label=below left:$0$] (zero) at (0,0) {};
+    \draw[blue] (zero) circle (1cm);
+    \draw[red!60!black,thick,path fading=east] (0,0) -- +({cos( 33 )*2},{sin( 33 )*2});
+    \fill[blue!20!white] ({cos( 33 )},{sin( 33 )}) circle (1pt);
+
+    \node[blue] at (-0.9,0.6) {$S^1$};
+    \node at (-1.3,-0.7) {$\C$};
+    \node[blue!60!black,right] at ({cos( 33 )},{sin( 33 )}) {$d$};
+    \node[red!60!black] at (2.2,.9) {ray specified by $d$};
+    \fill (zero) circle (1pt);
+  \end{tikzpicture}
+\end{center}
+\begin{rem}
+  \begin{itemize}
+    \item We have $\frac{\pi}{k-1}$ rotational symmetry
+      \begin{itemize}
+        \item if $q_{ij}(z)\in\R_{<0}$ then
+          $q_{ij}(z\exp(\frac{\pi\sqrt{-1}}{k-1}))\in\R_{<0}$
+      \end{itemize}
+    \item If $q_{ij}(z)\in\R_{<0}$ then $q_{ji}(z)\in\R_{>0}$
+      \begin{itemize}
+        \item in any arc $U \subset S^1$ subtending angle $\frac{\pi}{k-1}$
+          there are at most $\frac{n(n-1)}{2}$ anti-Stokes directions.
+      \end{itemize}
+  \end{itemize}
+\end{rem}
+\begin{defn}
+  \begin{itemize}
+    \item Define the \emph{set of all anti stokes directions}
+      \begin{tikzpicture}[scale=3]
+        \fill[blue!20!white] (0,0) circle (1pt);
+      \end{tikzpicture}
+      $\in\A\subset S^1$,
+      \begin{itemize}
+        \item
+          \textbf{Labeling convention:}
+          Choose a point\footnote{In~\cite{thboalch} a sector is chosen, which
+          does not contain any anti Stokes direction}
+          \textcolor{yellow!60!black}{$p$} $\in \D$.
+          Label the first anti-Stokes ray when turning in a positive sense from
+          $p$ as $d_1$ and label the subsequent rays $d_2,\dots,d_r$ in turn.
+          \begin{rem}
+            The choice of labeling together with the choice of $\log(z)$ is
+            given by a lift $\tilde p$ of $p$ to the universal cover of $D^*$.
+          \end{rem}
+      \end{itemize}
+  \end{itemize}
+  \begin{itemize}
+    \item
+    \item $r:=\#\A$
+      \begin{itemize}
+        \item $r$ is divisible by $2(k-1)$
+          \begin{itemize}
+            \item define $l:=\frac{r}{2k-2}$
+          \end{itemize}
+      \end{itemize}
+    \item $\textbf{d}:=(d_i,d_{i+1},d_{i+2},\dots,d_{i+l})\subset\A$ is a
+      \emph{half-period}\footnote{A $l$-tuple of \textbf{consecutive}
+      anti-Stokes directions}
+    \item Define the open sector $\Sect(d_i,d_j)$
+      \begin{itemize}
+        \item The radius \textcolor{green!40!black}{$r$} will be taken
+          sufficiently small when required later.
+        \item Write $\Sect_i:= \Sect(d_i,d_{i+1})$ the ‘ith sector’.
+          \begin{itemize}
+            \item Note \textcolor{yellow!60!black}{$p$} $\in\Sect_r= \Sect_0$
+          \end{itemize}
+      \end{itemize}
+    \item $\widehat{\Sect}_i:=
+      \Sect(d_i-\frac{\pi}{2k-2},d_{1+1}+\frac{\pi}{2k-2})$ the ‘ith
+      supersector’
+      \begin{itemize}
+        \item The rays bounding these supersectors are usually refered as
+          \textcolor{red!40!black}{‘Stokes rays’}.
+      \end{itemize}
+  \end{itemize}
+  \begin{center}
+    \begin{tikzpicture}[scale=3]
+      \node[] (zero) at (0,0) {};
+      \fill[fill=green!20!white] (0,0) -- (1,0) arc (0:60:1.0cm) -- cycle;
+      \draw[blue] (zero) circle (1cm);
+
+      \foreach \w/\str in {10/$d_1\in S^1$,
+                           20/$d_2$,
+                           45/$d_3$,
+                           55/$d_l$}
+      {\draw[thick,purple!\w!blue,path fading=west]
+          (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+       \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (1pt);
+       \foreach \sep in {60,120,180,240,300}
+       {\draw[green!20!white,thick] (zero) -- +({cos( \sep )},{sin( \sep )});
+        \draw[purple!\w!blue] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+        \fill[blue!20!white] ({cos( \w + \sep )},{sin( \w + \sep )}) circle (1pt);
+       }
+      };
+      \node[right,red!30!black] at ({cos( 355 )},{sin( 355 )}) {$d_r$};
+
+      \foreach \sep/\str in {0/$1$
+                            ,60/$2$
+                            ,120/$k-1$
+                            ,180/$4$
+                            ,240/$5$
+                            ,300/$2(k-1)$}
+      {\node[green!40!black]
+        at ({.6 * cos( \sep + 30 )},{.5 * sin( \sep + 30)}) {\str};
+      };
+
+      \fill[yellow!60!black] (0.8,0.07) circle (1pt);
+      \node[yellow!60!black,right] at (0.8,0.07) {$p$};
+
+      \fill (zero) circle (1pt);
+    \end{tikzpicture}
+  \end{center}
+  \begin{center}
+    \begin{tikzpicture}[scale=3]
+      \node[] (zero) at (0,0) {};
+      \draw[blue] (zero) circle (1cm);
+      \fill[fill=green!20!white]
+        (0,0) -- +({cos(10) * 0.7},{sin(10) * 0.7}) arc (10:45:0.7cm) -- cycle;
+      \draw[->,thick,green!40!black] ({cos(10) * 0.7},{sin(10) * 0.7}) arc (10:45:0.7cm);
+
+      \foreach \w/\str in {10/$d_1\in S^1$,
+                           20/$d_2$,
+                           45/$d_3$,
+                           55/$d_l$}
+      {\draw[thick,path fading=west] (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+       \foreach \sep in {60,120,180,240,300}
+       {\draw[gray] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});}
+      };
+      \node[right] at ({cos( 355 )},{sin( 355 )}) {$d_r$};
+
+      \fill (zero) circle (1pt);
+
+      \fill[yellow!60!black] (0.8,0.07) circle (1pt);
+      \node[yellow!60!black,right] at (0.8,0.07) {$p$};
+
+      \node[green!40!black] at (1.2,0.6) {$\Sect(d_1,d_3)$};
+      \node[green!40!black] at (0.4,0.02) {$r$};
+
+    \end{tikzpicture}
+  \end{center}
+  \begin{center}
+    \begin{tikzpicture}[scale=3]
+      \node[] (zero) at (0,0) {};
+      \draw[blue] (zero) circle (1cm);
+
+      \fill[fill=green!20!white] (0,0) -- ({cos( 15 )},{sin( 15 )}) arc
+        (15:85:1) -- cycle;
+
+      \fill[fill=red!60!black] (0,0) -- ({cos( 15 )*0.5},{sin( 15 )*0.5}) arc
+        (15:45:0.5) -- cycle;
+      \fill[fill=red!60!black] (0,0) -- ({cos( 55 )*0.5},{sin( 55 )*0.5}) arc
+        (55:85:0.5) -- cycle;
+
+      \fill[fill=green!20!white] (0,0) -- ({cos( 15 )*0.4},{sin( 15 )*0.4}) arc
+        (15:85:0.4) -- cycle;
+
+      \node[green!40!black] at (1,1) {$\widehat\Sect_i$};
+
+      \node[] (lft) at ({cos( 85 )},{sin( 85 )}) {};
+      \node[] (rgt) at ({cos( 15 )},{sin( 15 )}) {};
+
+      \draw[->,red!40!black] ({cos( 45 )},{sin( 45 )})
+        to [out=35, in=25] (rgt);
+
+      \draw[->,red!40!black] ({cos( 55 )},{sin( 55 )})
+        to [out=65, in=75] (lft);
+
+      \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 85 )},{sin( 85 )});
+      \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 15 )},{sin( 15 )});
+      \fill[red!40!black] ({cos( 85 )},{sin( 85 )}) circle (1pt);
+      \fill[red!40!black] ({cos( 15 )},{sin( 15 )}) circle (1pt);
+
+      \foreach \w/\str in {10/$d_1$,
+                           20/$d_2$,
+                           45/$d_i$,
+                         55/$d_{i+1}$}
+      {\draw (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+       \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (.7pt);
+       \foreach \sep in {60,120,180,240,300}
+       {\draw (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+        \fill[blue!20!white]
+          ({cos( \w + \sep )},{sin( \w + \sep )}) circle (.7pt);
+       }
+      };
+      \node[right] at ({cos( 355 )},{sin( 355 )}) {$d_r$};
+
+      \fill[yellow!60!black] (0.8,0.07) circle (1pt);
+      \node[yellow!60!black,right] at (0.8,0.07) {$p$};
+
+      \fill (zero) circle (1pt);
+    \end{tikzpicture}
+  \end{center}
+\end{defn}
+\begin{defn}
+  \begin{itemize}
+    \item $\Roots(d):=\{(ij)\mid g_{ij}(z)\in \R_{<0} \text{ along } d \}$
+    \item The \emph{multiplicity} $\Mult(d)$ of $d$ is the number of roots
+      supporting $d$ ($\#\Roots(d)$).
+      \begin{rem}
+        $n(n-1)/2=\Mult(d_1)+\cdots+\Mult(d_l)$
+      \end{rem}
+    \item The group of \emph{Stokes factors} associated to $d$ is the group
+    \[
+      \SSto_d(A^0) := \{K \in G \mid (K)_{ij}
+        =\delta_{ij} \text{ unless } (ij) \text{ is a root of } d\}.
+    \]
+    \begin{itemize}
+      \item $i=j$ \Rightarrow $(ij)$ is not a root of $d$. There are $1$nes
+        on the diagonal.
+      \item is a unipotent subgroup of $G=GL_n(\C)$
+        \begin{itemize}
+          \item of dimension equal to $\Mult(d)$
+        \end{itemize}
+    \end{itemize}
+  \end{itemize}
+\end{defn}
+
+\subsection{Main theoreme: for Stokes factors}
+\begin{thm}[1.22 in \cite{thboalch}]
+  \begin{itemize}
+    \item There is a natural isomorphism
+      \[
+        \cH(A^0)\cong\prod_{d\in\A}\Sto_d(A^0)
+      \]
+      and
+    \item for each choice of $\log(z)$ in the direction $d$
+      \begin{itemize}
+        \item the Stokes group $\Sto_d(A^0)$ has
+          \begin{itemize}
+            \item a faithfull representation $\rho$ on $\C^n$
+          \end{itemize}
+          inducing an isomorphism
+          \[
+            \rho:\Sto_d(A^0)\to\SSto_d(A^0).
+          \]
+      \end{itemize}
+  \end{itemize}
+  In particular each $\Sto_d(A^0)$ and therefore $\cH(A^0)$ is a unipotent Lie
+  group and the complex dimension of $\cH(A^0)$ is $(k-1)n(n-1)$ where
+  \begin{itemize}
+    \item $k$ is the order of the pole of $A^0$ and
+    \item $n$ is the rank.
+  \end{itemize}
+\end{thm}
+\begin{thm}[3.1, or Prop 1.24 in \cite{thboalch}]
+  Let
+  \begin{itemize}
+    \item $\hat{F}\in G\llbracket z\rrbracket$
+      \begin{itemize}
+        \item such that $A:=\hat F[A_0]$ has convergent entries.
+      \end{itemize}
+  \end{itemize}
+  Set the radius of the sectors $\Sect_i$, $\widehat\Sect_i$ to be less than
+  the radius of convergence of $A$.
+  Then:
+  \begin{enumerate}
+    \item On each sector $\Sect_i$ there is a \textbf{canonical} way to choose
+      \begin{itemize}
+        \item $\Sigma_i(\hat F)$
+          \begin{itemize}
+            \item an \textbf{invertible} $n\times n$ matrix of holomorphic
+              functions
+          \end{itemize}
+      \end{itemize}
+      such that $\Sigma_i(\hat F)[A^0]=A$.
+    \item $\Sigma_i(\hat F)$ can be analytically continued to the supersector
+      $\widehat\Sect_i$ and then
+      \[
+        \Sigma_i(\hat F)
+        \qquad\text{is \textbf{asymptotic} to}\qquad
+        \hat F
+      \]
+      \begin{itemize}
+        \item at $0$
+        \item within $\widehat\Sect_i$.
+      \end{itemize}
+    \item If $g\in G\{z\}$ and $t\in T$ then
+      $\Sigma_i(g\circ\hat F \circ t^{-1})=g\circ\Sigma_i(\hat F)\circ t^{-1}$.
+      \begin{prop}[Prop 1.24 in \cite{thboalch}]
+        If $\hat H\in\hat G$ is the taylor series at $0$ of an analytic gauge
+        transformation $H\in G\{z\}$ then
+        \[
+          \Sigma_i(\hat H \hat F)=H\Sigma_i(\hat F)
+          \qquad
+          \Sigma_i(\hat F \hat H)=\Sigma_i(\hat F)H
+        \]
+      \end{prop}
+  \end{enumerate}
+  \begin{rem}
+    \begin{itemize}
+      \item The point is that on a narrow sector there are generally many
+        holomorphic isomorphisms between $A_0$ and $A$ which are asymptotic to
+        $\hat F$ and one is being chosen in a canonical way
+      \item $\Sigma_i(\hat F)$ is in fact uniquely characterised by property 2.
+    \end{itemize}
+  \end{rem}
+\end{thm}
+\paragraph{Now define the map $\cH(A^0)\to\prod_{d\in\A}\Sto_d(A^0)$:} choose
+\begin{itemize}
+  \item $\hat F\in\hat G(A^0)$
+    \begin{itemize}
+      \item representing an element
+        $\cH(A^0)\cong G\{z\}\backslash\hat G(A^0)$
+    \end{itemize}
+    and
+  \item an anti-Stokes direction $d\in\A$.
+\end{itemize}
+The sums of $\hat F$ on the two sectors adjacent to $d$ may be analytically
+continued across $d$, and they will generally be different on the overlap. Thus
+to each anti-Stokes direction $d=d_i$ there is
+\begin{itemize}
+  \item an associated automorphism
+    \[
+      \kappa_{d_i}:=(\Sigma_i(\hat F))^{-1}\Sigma_{i-1}(\hat F)
+    \]
+    \begin{itemize}
+      \item describing how the sums of $\hat F$ differ on both sides of $d_i$
+      \item it is a solution of $\Hom(A^0,A^0)$ asymptotic to $1$ on a
+        sectorial neighbourhood of $d_i$
+      \item The third part of the Proposition implies that the automorphism
+        $\kappa_d$ only depends on the $G\{z\}$ orbit of $\hat F$.
+    \end{itemize}
+\end{itemize}
+\begin{defn}[\cite{thboalch} 1.25]
+  The \emph{Stokes group} $\Sto_d(A^0)$ of such automorphisms that arise as we
+  vary the choice of $\hat F$:
+  \[
+    \Sto_d(A^0):=
+      \left\{\kappa_d=(\Sigma_i(\hat F))^{-1}\Sigma_{i-1}(\hat F)
+        \mid \hat F\in\hat G(A^0)\right\}
+  \]
+\end{defn}
+Taking all such automorphisms gives a map
+\[
+  \hat G(A^0)\to\prod_{d\in\A}\Sto_d(A^0);
+    \hat F\mapsto(\kappa_{d_1},\dots,\kappa_{d_r})
+\]
+inducing a well defined map
+\[
+  \cH(A^0)\to\prod_{d\in\A}\Sto_d(A^0) \,.
+\]
+\begin{comment}
+  Using the Proposition:
+  \begin{align*}
+    \kappa_{d_i}&=(\Sigma_i(\hat F))^{-1}\Sigma_{i-1}(\hat F)
+    \\&=(\Sigma_i(\hat F))^{-1}g^{-1}g\Sigma_{i-1}(\hat F)
+    \\&=(g\Sigma_i(\hat F))^{-1}g\Sigma_{i-1}(\hat F)
+    \\&=(\Sigma_i(g\hat F))^{-1}\Sigma_{i-1}(g\hat F)
+  \end{align*}
+\end{comment}
+\paragraph{The faithfull representation of $\Sto_d(A^0)$} arises since the
+solutions of $\Hom(A^0,A^0)$ are known explicitly:
+\\Let
+\begin{itemize}
+  \item $d$ be a direction and
+  \item a choice of $\log(z)$ in the direction $d$ be given.
+\end{itemize}
+We get a genuine fundamental solution $z^\Lambda e^Q$ of $A^0$ there.
+\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  The map
+  \[
+    \rho:\kappa\to K:=e^{-Q}z^{-\Lambda}\kappa z^\Lambda e^Q
+  \]
+  relates
+  \begin{itemize}
+    \item solutions $\kappa$ of $\Hom(A^0,A^0)$
+  \end{itemize}
+  to
+  \begin{itemize}
+    \item a konstant matrix $K\in\End(E)$
+      \begin{itemize}
+        \item that is, to solutions of $\Hom(0,0)$.
+      \end{itemize}
+  \end{itemize}
+  \begin{lem}
+    The Stokes factor $K_i$ is in the group $\SSto_{d_i}(A^0)$.
+  \end{lem}
+  \switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{defn}[\cite{boalch}: def 3.5]
+    Fix data $(A^0,z,\tilde\rho)$\footnote{as above.}.
+    The
+    \begin{itemize}
+      \item \emph{Stokes factors}
+        \begin{itemize}
+          \item of a compatibly framed connection
+            $(A,g^0)\in\widehat\Syst(A^0)$
+        \end{itemize}
+    \end{itemize}
+    are
+    \[
+      K_i:=e^{-Q}z^{-\Lambda^0}\kappa z^{\Lambda^0} e^Q
+    \]
+    using
+    \begin{itemize}
+      \item the choice of $\log(z)$ along $d_i$, where
+        $\kappa_i:=\Sigma_i(\hat F)^{-1}\circ\Sigma_{i-1}(\hat F)$.
+    \end{itemize}
+  \end{defn}
+  Since
+  \begin{itemize}
+    \item $z^{\Lambda^0}e^Q$ is a fundamental solution of $A^0$
+  \end{itemize}
+  we have
+  \begin{itemize}
+    \item $d(K_i)=0$
+      \begin{itemize}
+        \item The Stokes factors are constant invertible matrices.
+      \end{itemize}
+  \end{itemize}
+  A usefull equivalent definition is:\dots
+\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{defn}[1.27]
+  Given $\tilde p$\footnote{a choice of labeling and $\log(z)$}.
+  The \emph{Stokes factors}
+  \begin{itemize}
+    \item of a compatibly framed system $(A,g)$
+    \item with associated normal Form $A^0$
+  \end{itemize}
+  are
+  \[
+    \textbf{K}:=(K_1,\dots,K_r)\in\prod_{d\in\A}\SSto_d
+  \]
+  \begin{itemize}
+    \item $r$-tuple of matrices
+    \item $K_i=\rho(\kappa_i)=e^{-Q}z^{-\Lambda}\kappa z^\Lambda e^Q$
+      \begin{itemize}
+        \item using the choice of $\log(z)$ along $d$.
+      \end{itemize}
+  \end{itemize}
+\end{defn}
+\subsubsection{A usefull way of thinking about these}
+Fix
+\begin{itemize}
+  \item a choice of labelling and
+  \item a choice of $\log(z)$.
+\end{itemize}
+\begin{defn}
+  If
+  \begin{itemize}
+    \item $(A,g)$ is a compatibly framed system
+      \begin{itemize}
+        \item with associated formal normal form $A^0$
+      \end{itemize}
+  \end{itemize}
+  then the \emph{cononical fundamental solution of $A$} on $\Sect_i$ is
+  \[
+    \Phi_i:=\Sigma_i(\hat F)z^\Lambda e^Q
+  \]
+  where
+  \begin{itemize}
+    \item $z^\Lambda$ uses the given choice of $\log(z)$ on $\Sect_i$.
+  \end{itemize}
+  \begin{rem}[???]
+    \begin{itemize}
+      \item $\Phi_i$ is a solution of $\Hom(0,A)$
+      \item $\Phi_i$ is asymptotic to $\hat Fz^\Lambda e^Q$
+        \begin{itemize}
+          \item at $0$
+          \item within $\widehat \Sect_i$
+        \end{itemize}
+        when continued without any winding.
+    \end{itemize}
+  \end{rem}
+\end{defn}
+Then we get:
+\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{lem}
+    If $\Phi_i$ is continued across the anti-Stokes ray $d_{i+1}$ then on
+    $\Sect_{i+1}$:
+    \[
+      \Phi_i=\Phi_{i+1}K_{i+1}
+      \qquad \text{ for } i=1,\dots,r-1 \text{ and}
+    \]
+    \[
+      \Phi_r=\Phi_1K_1M_0
+    \]
+    where
+    \begin{itemize}
+      \item $M_0=e^{2\pi\sqrt{-1}\Lambda}$ is the formal monodromy.
+    \end{itemize}
+  \end{lem}
+  \switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{defn}[\cite{boalch}: def 3.6]
+    If $\Phi_i$ is continued across the anti-Stokes ray $d_{i+1}$ then on
+    $\Sect_{i+1}$ we have:
+    \[
+      K_{i+1}:=\Phi_{i+1}^{-1}\circ\Phi_i
+    \]
+    for all $i$ except $K_1:=\Phi_{r+1}^{-1}\circ\Phi_r\circ M_0^{-1}$
+    where
+    \begin{itemize}
+      \item $M_0=e^{2\pi\sqrt{-1}\Lambda}$ is the so-called `formal monodromy'.
+    \end{itemize}
+  \end{defn}
+  \begin{lem}
+    The Stokes factor $K_i$ is in the group $\SSto_{d_i}(A^0)$.
+  \end{lem}
+\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Thus, in summary, a compatibly framed system $(A,g)$ has canonical
+fundamental solutions $\Phi_i$ and the Stokes factors express how these
+differ and moreover they encode the moduli of $(A,g)$.
+
+\subsection{Main theoreme: for Stokes matrices}
+\begin{lem}[\cite{boalch}: 3.2]
+  let $\textbf{d}$ be a half-period.
+  \begin{enumerate}
+    \def\myP{\textcolor{green!60!gray}{P}}
+    \item \textbf{The product of the corresponding groups of Stokes factors}
+      is isomorphic
+      \begin{itemize}
+        \item as a variety,
+        \item via the product map,
+      \end{itemize}
+      to the \textbf{$\bf \myP$ conjugate of $\bf U_+$}\footnote{Is a subgroup
+      of $G$.}:
+      \begin{align*}
+        \prod_{d\in\textbf{d}}\SSto_d(A^0)&\cong \myP U_+\myP^{-1} ;
+        \\(K_1,\dots,K_l)&\mapsto K_l\dots K_2K_1\in G
+      \end{align*}
+      where
+      \begin{itemize}
+        \item $\myP\in G$ the permutation Matrix associated to $\textbf{d}$
+          given by $(P)_{ij}=\delta_{\pi(i)j}$ where
+          \begin{itemize}
+            \item
+              \marginnote{The ordering on $\textbf{d}+l$ is opposite to this
+                ordering}
+              $\pi$ is the permutation of $\{1,\dots,n\}$ corresponding to
+              \[
+                \pi(i)<\pi(j)
+                \qquad \Leftrightarrow \qquad
+                q_i\underset{\textbf{d}}{<}q_j
+              \]
+              where
+              \begin{itemize}
+                \item the total ordering is defined as
+                  \[
+                    q_i\underset{\textbf{d}}{<}q_j \qquad :\Leftrightarrow
+                    \qquad (ij) \text{ is a root of some } d\in\textbf{d}
+                  \]
+              \end{itemize}
+          \end{itemize}
+      \end{itemize}
+      \begin{comment}
+        See \cite[13]{thboalch}: \textbf{Proof of Proposition 1.35}
+      \end{comment}
+  \end{enumerate}
+\end{lem}
+\begin{prop}[\cite{thboalch}: 1.35]
+  let $\textbf{d}=((i-1)l+1,\dots,il)$ be a half-period.
+  $P$ is the (unique) permutation matrix, such that the multiplication map
+  \begin{align*}
+    \SSto_{il}(A^0)\times\dots\times\SSto_{(i-1)l+1}(A^0)
+    &\to \GL_n(\C)
+  \\(K_{il},\dots,K_{(i-1)l+1})&\mapsto P^{-1}K_{il}\cdots K_{(i-1)l+1}P
+  \end{align*}
+  is
+  \begin{itemize}
+    \item a diffeomorphism onto
+      $
+      \begin{cases}
+        U_+ & \text{if $i$ is odd}
+      \\U_- & \text{if $i$ is even}
+      \end{cases}
+      $
+  \end{itemize}
+  where
+  \begin{itemize}
+    \item $i=1,\dots$ and
+    \item all depends on the ordering $d_1,\dots,d_r$ of the anti-stokes directions.
+  \end{itemize}
+  \begin{defn}
+    The \emph{$i$th Stokes matrix}
+    \begin{itemize}
+      \item with respect to a fixed labelling and $\log(z)$ choice
+    \end{itemize}
+    is the following product of $l$ Stokes factors
+    \[
+      S_i:=K_{il}\cdots K_{(i-1)l+1}\in PU_{\pm}P{-1}\subset\GL_n(\C)
+    \]
+  \end{defn}
+\end{prop}
+\begin{paracol}{2} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{thm}[\cite{boalch}: Thm 3.2]
+    Fix the data $(A^0,z,\tilde p)$ as above.
+    Then
+    \begin{itemize}
+      \item the \emph{`local monodromy map'}
+        \begin{itemize}
+          \item taking the stokes matrices
+        \end{itemize}
+    \end{itemize}
+    induces a bijection
+    \begin{align*}
+      \cH(A^0)&\overset{\cong}{\to}(U_+\times U_-)^{k-1}
+    \\ \left[(A,g_0)\right] &\mapsto(S_1,\dots,S_{2k-2})
+    \end{align*}
+    In particular
+    \begin{itemize}
+      \item $\cH(A^0)$ is isomorphic to the vector space $\C^{(k-1)n(n-1)}$.
+    \end{itemize}
+
+    \begin{cor}
+      The torus action of $\cH(A^0)$ changing the compatible framing
+      corresponds to
+      \begin{itemize}
+        \item the conjugation action
+          $t(\textbf{S})=(tS_1t^{-1},\dots,tS_{2k-2}t^{-1})$
+          \begin{itemize}
+            \item on the Stokes matrices
+          \end{itemize}
+      \end{itemize}
+      and so, there is a bijection
+      \[
+        \Syst(A^0)/G\{z\}\cong(U_+\times U_-)^{k-1}/T
+      \]
+    \end{cor}
+    \begin{cor}
+      If $\Phi_0$ is contiuned once around $0$ in a positive sense, then on
+      return to $\Sect_0$ is will become
+      \[
+        \Phi_0\cdot PS_{2k-2}\cdots S_2S_1P^{-1}M_0
+      \]
+      where
+      \begin{itemize}
+        \item $M_0=e^{2\pi\sqrt{-1}\cdot\Lambda^0}$ is the formal monodromy.
+      \end{itemize}
+    \end{cor}
+  \end{thm}
+  \switchcolumn %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{lem}[\cite{boalch}: 3.2]
+    \begin{enumerate}
+      \setcounter{enumi}{1}
+      \item The map
+        \begin{align*}
+          \prod_{d\in\A}\SSto_d(A^0)&\cong (U_+\times U_-)^{k-1} ;
+          \\(K_1,\dots,K_r)&\mapsto (S_1,\dots,K_{2k-2})
+        \end{align*}
+        where
+        \begin{itemize}
+          \item $S_i:=P^{-1}K_{il}\dots K_{(i-1)l+1}P\in U_{+/-}$ if $i$ is
+            odd / even
+        \end{itemize}
+        from the \textbf{product of all the groups of
+        Stokes factors}, is
+        \begin{itemize}
+          \item an isomorphism of varieties.
+        \end{itemize}
+    \end{enumerate}
+  \end{lem}
+  Thus we can define the Stokes matrices of $(A,g_0)\in\hat\Syst(A^0)$
+  \[
+    S_i:=P^{-1}K_{il}\dots K_{(i-1)l+1}P\in U_{+/-}
+    \qquad
+    \text{if } i \text{ is odd / even}
+  \]
+  where
+  \begin{itemize}
+    \item $i=1,\dots,2k-2$ and
+    \item $P$ is the permutation matrix associated to the half-period
+      $(d_1,\dots,d_l)$.
+  \end{itemize}
+\end{paracol} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{comment}
+  \begin{rem}[1.41 from \cite{thboalch} on pages 16f]
+    Note that in most of the recent references we have used, Stokes matrices
+    are used to classify
+    \begin{itemize}
+      \item meromorphic connections within fixed formal \textbf{meromorphic
+        classes, modulo meromorphic equivalence}.
+    \end{itemize}
+    Whereas here we classify
+    \begin{itemize}
+      \item meromorphic connections within fixed \textbf{formal analytic
+        classes, modulo analytic equivalence},
+    \end{itemize}
+    as is done in the older literature.  The fact is that the sets equivalence
+    classes are the same in both cases. It is important for us to work with
+    analytic, rather than meromorphic gauge transformations, because then the
+    $\C^\infty$ viewpoint in Chapter 3 is cleaner. This distinction relates to
+    the difference between \textbf{‘regular singular’} connections and
+    \textbf{‘logarithmic’} connections.
+  \end{rem}
+\end{comment}
+%}}}
+
