@@ -1,1 +1,363 @@
 \chapter{Meromorphe Zusammenhänge}
+\begin{comment}
+  Siehe:
+  \begin{itemize}
+    \item \cite{boalch} and \cite{thboalch}
+    \item \cite{sabbah2007isomonodromic}
+  \end{itemize}
+  and
+  \begin{itemize}
+    \item \cite{Varadarajan96linearmeromorphic}
+  \end{itemize}
+\end{comment}
+
+Let $M$ be a riemanian surface and let $Z=k_1(a_1)+\cdots+k_m(a_m)>0$ be an
+effective divisor\footnote{The $a_i$ are distinct points and the $k_i$ are
+positive integers.} on $M$.
+It is sufficient to think $M=\P^1$.
+
+Let $\sM$ be a holomorphic Bundle i.e.\ a locally free $\cO_m$-module of rank
+$n$.
+
+A meromorphic connection is then defined as follows.
+\begin{defn}
+  \def\myU{\textcolor{green!30!black}{U}}
+  \def\mys{\textcolor{blue!60!black}{s}}
+  \def\myf{\textcolor{red!60!black}{f}}
+  A \emph{meromorphic connection $(\sM,\nabla)$ on $\sM$ with poles on $Z$}
+  is a $\C$-linear morphism of sheaves
+  \[
+    \nabla:\sM\to\Omega_M^1(*Z)\otimes\sM
+  \]
+  satisfying, for each $\myU\overset{\text{op.}}{\subset} M$, the
+  \emph{Leibniz rule}
+  \begin{multicols}{2}
+    \[
+      \nabla(\tikzmark{e2}\myf\overset{\tikzmark{e1}}\mys)
+        =\myf\nabla\mys+(d\myf)\otimes\mys \,.
+    \]
+    \columnbreak
+    \begin{itemize}
+      \item[\tikzmarkc{n1}{blue}]
+        $\mys\textcolor{blue!60!black}{\in\Gamma(\myU,\sM)}$
+      \item[\tikzmarkc{n2}{red}]
+        $\myf\textcolor{red!60!black}{\in\cO_M(\myU)}$
+    \end{itemize}
+  \end{multicols}
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[->,blue!50!white,thick] (n1) to[out=180,in=70] (e1);
+    \draw[->,red!50!white,thick] (n2) to[out=180,in=-70] (e2);
+  \end{tikzpicture}
+\end{defn}
+\begin{rem}
+  \begin{enumerate}
+    \item We will occasionally omit the $\nabla$ and simply call $\sM$ the
+      meromorphic connection.
+    \item Here, the variant `holomorphic bundle with meromorphic connection' is
+      chosen, like in \cite{boalch}.  There is also the twisted description
+      `meromorphic bundle with holomorphic connection' which is used in
+      \cite{sabbah2007isomonodromic}.
+      \\ By choosing a lattice of a meromophic bundle, one gets a holomorphic
+      bundle but the connection is no longer holomorphic. Such that we obtain a
+      meromorphic connection in our\dots\TODO
+  \end{enumerate}
+\end{rem}
+
+\begin{defn}[Flatness (0.12.2)]
+  The connection $\nabla:\cM\to \Omega_M^1\otimes_{\cO_M}\cM$ is said to be
+  \emph{integrable} or \emph{flat}, if
+  \begin{itemize}
+    \item its curvature $R_\nabla\equiv0$
+    where
+    \begin{itemize}
+      \item $R_\nabla:=\nabla\circ\nabla:\cE\to\Omega_M^2\otimes_{\cO_M}\cE$
+        is a $\cO_M$-linear morphism.
+    \end{itemize}
+  \end{itemize}
+  \begin{prop}[0.12.4]
+    The connection $\nabla$ is flat if and only if, in any local basis $e$ of
+    $\cM$, the connection matrix $\Omega$ satisfies
+    \[
+      d\omega + \omega \wedge \omega = 0.
+    \]
+  \end{prop}
+  We will say that a connection on a meromorphic bundle is \emph{integrable} or
+  \emph{flat} if its restriction to $M\backslash Z$ is an integrable connection
+  on the holomorphic bundle $\sM_{|M\backslash Z}$.
+\end{defn}
+
+\section{Germ of a meromophic Connection / local expression / Connection
+  matrices / systems}
+\begin{comment}
+  \cite{sabbah2007isomonodromic} p.28
+\end{comment}
+\begin{comment}
+  \cite{boalch} wants \textbf{generic} meromorphic connections
+  \begin{itemize}
+    \item\dots simplest jet sufficient\dots
+  \end{itemize}
+\end{comment}
+
+Let $U$ be a trivializing open set for $M$ and let $\textbf{e}=(e_1,\dots,e_n)$
+be a basis of $\Gamma(U,\sM)$.
+There exists then a $n\times n$ matrix $A$ of meromophic 1-forms such
+that\dots
+\begin{defn}
+  This matrix is called \emph{connection matrix} for $(\sM,\nabla)$.
+\end{defn}
+
+\begin{comment}
+  \TODO[Gauge transformation]
+  \begin{itemize}
+    \item meromorphic transformation \cite{Loday1994} p. 852
+    \item holomorphic trasformation
+  \end{itemize}
+\end{comment}
+
+\begin{cor}
+  The connection matrices describe the germs of meromophic connections.
+\end{cor}
+
+\subsection{Connection matrix \leftrightarrow{} system}
+\subsection{Connection matrix \rightarrow{} connection}
+\begin{comment}
+  There is a thm in \cite{sabbah2007isomonodromic}
+\end{comment}
+
+\subsection{Meromorphic / formal transformation}
+\begin{comment}\footnotesize
+  see \cite{thboalch} \textbf{Rem 1.41 on p. 16}:
+  \begin{rem}
+    Note that in most of the recent references we have used, Stokes matrices
+    are used to classify
+    \begin{itemize}
+      \item meromorphic connections within fixed formal \textbf{meromorphic
+        classes, modulo meromorphic equivalence}.
+    \end{itemize}
+    Whereas here we classify
+    \begin{itemize}
+      \item meromorphic connections within fixed \textbf{formal analytic
+        classes, modulo analytic equivalence},
+    \end{itemize}
+    as is done in the older literature.  The fact is that the sets equivalence
+    classes are the same in both cases. It is important for us to work with
+    analytic, rather than meromorphic gauge transformations, because then the
+    $\C^\infty$ viewpoint in Chapter 3 is cleaner. This distinction relates to
+    the difference between \textbf{‘regular singular’} connections and
+    \textbf{‘logarithmic’} connections.
+  \end{rem}
+\end{comment}
+By \emph{transformation} (or \emph{meromophic transformation}) of a connection
+matrix $A$ we mean a linear change of the trivialzation. Such a change is given
+by a matrix $F\in\Gl_n(\C\{t\}[1/t])$ and the transformed matrix $[{}^F\!A]$ is
+obtained through
+\[
+  {}^F\!A=(dF)F^{-1} + FAF^{-1} \,.
+\]
+If $F$ is formal i.e. $F\in\Gl_n(\C\llbracket t\rrbracket[1/t])$, it will
+usually be denoted by $\hat F$. The transformation of $A$ by $\hat F$ is not
+guaranteed to have konvergent entries. We denote by $\hat G(A)$ the set of all
+formal transformations
+\[
+  \hat G(A):=\left\{\hat F\in\Gl_n(\C\llbracket t\rrbracket[1/t])
+    \mid {}^{\hat F}\!A \text{ has konvergent entries}
+  \right\}\,.
+\]
+Denote the set of all systems, which are formally equivalent to $d-A^0$ by
+\[
+  \Syst(A^0):=\{d-A \mid A={}^{\hat F}A^0 \text{ for some }\hat G(A^0)\}
+\]
+\begin{rem}
+  \def\myB{\textcolor{blue!60!black}{B}}
+  \def\myA{\textcolor{green!30!black}{A}}
+  \def\myF{\textcolor{red!60!black}{F}}
+  The condition 
+  \begin{itemize}
+    \item[] $\myB$ is obtained from $\myA$ by transformation $\myF$
+  \end{itemize}
+  is clearly equivalent to
+  \begin{itemize}
+    \item[]  $\myF$ solves the linear differential system
+      \[
+        \frac{d\myF}{dt}=\myB\myF-\myF\myA
+      \]
+      which is denoted by $[\myA,\myB]$.
+  \end{itemize}
+\end{rem}
+
+This defines equivalence relations\dots \TODO
+
+\begin{defn}
+  Two germs of meromophic connections are isomorphic if and only if \TODO
+\end{defn}
+
+\begin{defn}
+  \begin{itemize}
+    \item An \emph{isotropy} of $A^0$ is a transformation $\hat F$ which
+      satisfy ${}^{\hat F}\!A=A$. Thus, the isotropies are the solutions of the
+      system $[\End A^0]:=[A^0,A^0]$.
+      \marginnote{\cite{Loday1994} p. 853}
+    \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
+  \end{itemize}
+\end{defn}
+
+\TODO[Define marked pairs, twice]
+
+\section{Models and formal decomposition of a germ}
+\begin{paracol}{2}\sloppy
+\switchcolumn[0]\noindent
+  For a $\phi\in\C\{t\}[t^{-1}]$ we use $\cE^{\phi}$ to denote the germ
+  \[
+    (\cE^{\phi},\nabla)=(\C\{t\},d-d\phi)\,.
+  \]
+  This is the system satisfied by the function $e^\phi$.
+  \\For $\alpha\in\C$, define $\cN_{\alpha,0}$ as the germ
+  \[
+    (\cN_{\alpha,0},\nabla)=(\C\{t\}[t^{-1}],d+\alpha dt/t)\,.
+  \]
+  \begin{prop}
+    \begin{enumerate}
+      \item Every germ of a meromophic connection of rank one is isomorphic to
+        some germ
+        \[
+          \cE^\phi\otimes\cN_{\alpha,0}
+        \]
+      \item Two such germs corresponding to $(\phi_1,\alpha_1)$ and
+        $(\phi_2,\alpha_2)$ are isomorphic if and only if
+        \begin{itemize}
+          \item $\phi_1-\phi_2$ has no pole and
+          \item $\alpha_1-\alpha_2\in\Z$.
+        \end{itemize}
+    \end{enumerate}
+  \end{prop}
+  \begin{proof}
+    See \cite{sabbah2007isomonodromic} Proposition II.5.1.
+  \end{proof}
+\switchcolumn[1]\noindent
+  As something like building blocks of some meromophic
+  connections\footnote{Which we will call models} we introduce the elementary
+  irregular models.
+  \begin{defn}[Elementary irregular models]
+    \marginnote{\cite{sabbah2007isomonodromic} Definition II.5.2}
+    A Germ $(\cM,\nabla)$ is called \emph{elementary} if it is isomorphic to
+    some germ $(\cE^\phi,\nabla)\otimes(\cR,\nabla)$ where
+    \begin{itemize}
+      \item $(\cR,\nabla)$ has regular singularity at $\{0\}$.
+    \end{itemize}
+    \marginnote{\cite{sabbah2007isomonodromic} II.2.f}
+  \end{defn}
+\end{paracol}
+\begin{cor}
+  $\cE^\phi$ is determined by the class of $\phi$ in
+  $\C\{t\}[t^{-1}]/\C\{t\}$. In the following, we will only consider the
+  unique element $\phi$ in each class which has no holomorphic part.
+\end{cor}
+\begin{defn}
+  \def\myPhi{\textcolor{red!60!black}{\phi}}
+  \def\myE{\textcolor{green!40!black}{\cE^{\myPhi}}}
+  A germ $(\cM,\nabla)$ is a \emph{model} or a \emph{formal decomposition} if
+  there exists a isomorphism
+  \begin{multicols}{2}
+    \[
+      \lambda:(\cM,\nabla)
+      \overset{\cong}{\longrightarrow}
+      % \cong
+      \bigoplus_{~\tikzmark{e3}\!\!\myPhi}
+      \underset{\text{merom. Zus.}}{%
+        \underset{\text{elementare}}{%
+          \underbrace{%
+            \overset{\tikzmark{e2}}{\myE}
+            \otimes
+            \overset{\tikzmark{e1}}{\textcolor{blue!40!black}{\cR_{\myPhi}}}
+          }
+        }
+      }\,.
+    \]
+    \columnbreak
+    \begin{itemize}
+      \item[\tikzmarkb{n2}{green}] irregular singular
+      \item[\tikzmarkc{n1}{blue}] has regular singularity at $\{0\}$
+      \item[\tikzmarkc{n3}{red}] $\myPhi\in t^{-1}\C[t^{-1}]$ pairwise distinct
+    \end{itemize}
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[->,blue!50!white,thick] (n1) to[out=180,in=70] (e1);
+      \draw[->,green!40!black,thick] (n2) to[out=180,in=70] (e2);
+      \draw[->,red!50!white,thick] (n3) to[out=205,in=-70] (e3);
+    \end{tikzpicture}
+  \end{multicols}
+\end{defn}
+\begin{lem}
+  If $(\cM,\nabla)$ is a model, if and only if there is a basis in which the
+  connection matrix has the form
+  \begin{multicols}{2}
+    \[
+      A^0=d\overset{~\tikzmark{e1}}{\textcolor{green!40!black}{Q}}
+         +~\tikzmark{e2}\!\!\Lambda\frac{dt}{t} \,.
+    \]
+    \columnbreak
+    \begin{itemize}
+      \item[\tikzmarkb{n1}{green}]
+        $\textcolor{green!40!black}{Q
+          =\diag(\textcolor{red!60!black}{\phi_1,\dots,\phi_n})}$
+      \item[\tikzmarkc{n2}{blue}]
+        $\Lambda$ constant
+    \end{itemize}
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[->,green!40!black,thick] (n1) to[out=180,in=70] (e1);
+      \draw[->,blue!50!white,thick] (n2) to[out=180,in=-70] (e2);
+    \end{tikzpicture}
+  \end{multicols}
+\end{lem}
+\begin{proof}
+  \TODO{}
+\end{proof}
+
+The important theoreme here is the Levelt-Turittin-theoreme.
+\begin{thm}[Levelt-Turittin]
+  To each germ $(\cM,\nabla)$ of a meromorphic connection there exists, after
+  pontentially needed \textcolor{blue!60!black}{pullback by some suitable
+  ramification $t=z^q$ of order $q\geq1$}, a
+  \textcolor{green!40!black}{\textbf{formal}} isomorphism
+  \[
+    \textcolor{green!40!black}{\hat{\textcolor{black}{\lambda}}}:
+    \textcolor{blue!60!black}{\pi^{+}}
+    \textcolor{green!40!black}{\hat{\textcolor{black}{\cM}}}
+    \overset{\cong}\longrightarrow
+    \textcolor{green!40!black}{\hat{\textcolor{black}{\cM}}^{good}}
+    :=\textcolor{green!40!black}{\hat\cO_M\otimes}\cM^{good}
+  \]
+  to a model $\cM^{good}$\footnote{The word `good' only means, that it is a
+  model. In \cite{sabbah2007isomonodromic} it means good-model,
+  which\dots\TODO}.
+\end{thm}
+\begin{proof}
+  See \TODO
+\end{proof}
+
+\begin{prop}
+  \marginnote{This condition \textbf{might be} equivalent to the
+    condition of being \textbf{nice} in \cite{thboalch}.}
+  Let $(\cM,\nabla)$ be a germ,
+  \begin{itemize}
+    \item equipped with a basis in which the matrix $A$ takes the form
+      \[
+        A=t^{-r}A(t)\frac{dt}{t}
+      \]
+      with
+      \begin{itemize}
+        \item $r\geq1$,
+        \item $A$ has holomorphic entries, and
+        \item $A_0:=A(0)$ being regular semisimple\footnote{i.e.\ with
+          pairwise distinct eigenvalues.}
+      \end{itemize}
+  \end{itemize}
+  Then there is no ramification needed, to apply the Levelt-Turittin-theoreme.
+  \begin{comment}
+    Further, all the summands $\cR_\phi$ have rank one, which is not the case
+    in general.
+  \end{comment}
+\end{prop}
+\begin{proof}
+  See \cite{sabbah2007isomonodromic} theoreme II.5.7.
+\end{proof}
+

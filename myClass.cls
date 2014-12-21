@@ -257,6 +257,7 @@
   \renewcommand{\comment}{\color{commentTextColor}%
     \def\FrameCommand{\fcolorbox{CommentFrameColor}{commentShadeColor}}%
     \MakeFramed {\FrameRestore}%
+    \footnotesize%
     %\textbf{\tiny Kommentar: } 
     }
   \renewcommand{\endcomment}{\endMakeFramed}
