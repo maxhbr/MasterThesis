@@ -57,7 +57,7 @@ A meromorphic connection is then defined as follows.
       chosen, like in \cite{boalch}.  There is also the twisted description
       `meromorphic bundle with holomorphic connection' which is used in
       \cite{sabbah2007isomonodromic}.
-      \\ By choosing a lattice of a meromophic bundle, one gets a holomorphic
+      \\ By choosing a lattice of a meromorphic bundle, one gets a holomorphic
       bundle but the connection is no longer holomorphic. Such that we obtain a
       meromorphic connection in our\dots\TODO
   \end{enumerate}
@@ -86,25 +86,57 @@ A meromorphic connection is then defined as follows.
   on the holomorphic bundle $\sM_{|M\backslash Z}$.
 \end{defn}
 
-\section{Germ of a meromophic Connection / local expression / Connection
-  matrices / systems}
+\section{Local expression of meromorphic connections}
+\TODO[Germ of a meromorphic Connection / Connection matrices
+  / systems]
 \begin{comment}
-  \cite{sabbah2007isomonodromic} p.28
+  \begin{itemize}
+    \item \cite{sabbah2007isomonodromic} p.28
+    \item \cite{thboalch} p.2
+  \end{itemize}
 \end{comment}
+We will usually be interested in local information of a meromorphic connection.
+This means, that we look at a connection in a neighbourhood of $0$ and  allow
+only one singularity at $0$.
+There are many ways of expressing the local information, we will either talk
+about germs of meromorphic connections or systems, which is coordinate-
+and trivialization-dependent.
+
+\begin{paracol}{2}\sloppy
+\switchcolumn[0]\noindent
+  Let $U$ be a trivializing open set for $M$ and let
+  $\textbf{e}=(e_1,\dots,e_n)$ be a basis of $\Gamma(U,\sM)$.
+  There exists then a $n\times n$ matrix $A$ of meromorphic 1-forms such
+  that\dots
+  \begin{defn}
+    This matrix is called \emph{connection matrix} for $(\sM,\nabla)$.
+  \end{defn}
+\switchcolumn[1]\noindent
+  Let $U$ be a neighbourhood of $0$ and $t$ a coordinate on $U$ vanishing at
+  $0$.
+\end{paracol}
+
+\begin{comment}
+  Some Literature like \cite{sabbah_cimpa90} always talks about germs\dots
+\end{comment}
+\begin{defn}
+  A \emph{germ of a meromorphic linear differential system} of rank $n$, or
+  just a \emph{system}, is a germ of a meromorphic connection on the trivial
+  vector bundle with fibre $E=\C^n$.
+\end{defn}
+The set of systems is, via the Taylor expansion, isomorphic to
+$\End(E)\otimes\C\{t\}[t^{-1}]$. A matrix
+$A'\in\End(E)\otimes\C\{t\}[t^{-1}]$ determines a system
+\[
+  \frac{dv}{dt}=A'v
+\]
+which corresponds to the connection germ $\nabla=d-A$ on $E$ where $A=A'dt$.
 \begin{comment}
   \cite{boalch} wants \textbf{generic} meromorphic connections
   \begin{itemize}
     \item\dots simplest jet sufficient\dots
   \end{itemize}
 \end{comment}
-
-Let $U$ be a trivializing open set for $M$ and let $\textbf{e}=(e_1,\dots,e_n)$
-be a basis of $\Gamma(U,\sM)$.
-There exists then a $n\times n$ matrix $A$ of meromophic 1-forms such
-that\dots
-\begin{defn}
-  This matrix is called \emph{connection matrix} for $(\sM,\nabla)$.
-\end{defn}
 
 \begin{comment}
   \TODO[Gauge transformation]
@@ -115,7 +147,7 @@ that\dots
 \end{comment}
 
 \begin{cor}
-  The connection matrices describe the germs of meromophic connections.
+  The connection matrices describe the germs of meromorphic connections.
 \end{cor}
 
 \subsection{Connection matrix \leftrightarrow{} system}
@@ -147,7 +179,7 @@ that\dots
     \textbf{‘logarithmic’} connections.
   \end{rem}
 \end{comment}
-By \emph{transformation} (or \emph{meromophic transformation}) of a connection
+By \emph{transformation} (or \emph{meromorphic transformation}) of a connection
 matrix $A$ we mean a linear change of the trivialzation. Such a change is given
 by a matrix $F\in\Gl_n(\C\{t\}[1/t])$ and the transformed matrix $[{}^F\!A]$ is
 obtained through
@@ -188,7 +220,7 @@ Denote the set of all systems, which are formally equivalent to $d-A^0$ by
 This defines equivalence relations\dots \TODO
 
 \begin{defn}
-  Two germs of meromophic connections are isomorphic if and only if \TODO
+  Two germs of meromorphic connections are isomorphic if and only if \TODO
 \end{defn}
 
 \begin{defn}
@@ -217,7 +249,7 @@ This defines equivalence relations\dots \TODO
   \]
   \begin{prop}
     \begin{enumerate}
-      \item Every germ of a meromophic connection of rank one is isomorphic to
+      \item Every germ of a meromorphic connection of rank one is isomorphic to
         some germ
         \[
           \cE^\phi\otimes\cN_{\alpha,0}
@@ -234,7 +266,7 @@ This defines equivalence relations\dots \TODO
     See \cite{sabbah2007isomonodromic} Proposition II.5.1.
   \end{proof}
 \switchcolumn[1]\noindent
-  As something like building blocks of some meromophic
+  As something like building blocks of some meromorphic
   connections\footnote{Which we will call models} we introduce the elementary
   irregular models.
   \begin{defn}[Elementary irregular models]
