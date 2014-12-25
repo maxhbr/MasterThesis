@@ -112,6 +112,7 @@
 
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition}
+\newtheorem{notations}[thm]{Notations}
 \newtheorem{conj}[thm]{Conjecture}
 \newtheorem{exmp}[thm]{Beispiel}
 \newtheorem{bsp}[thm]{Beispiel}
@@ -336,6 +337,14 @@
     bottomline=false,
     leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
   ]{defn}
+  \surroundwithmdframed[
+    linewidth=1pt,
+    linecolor=myVLineColor,
+    topline=false,
+    rightline=false,
+    bottomline=false,
+    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
+  ]{notations}
   \surroundwithmdframed[
     linecolor=myVLineColor,
     topline=false,

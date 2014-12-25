@@ -4,7 +4,7 @@ maArbeit
 ## TODO:
 * Alles
 
-## Das Verzeichnis `output`
+## Das Verzeichnis `_output`
 In diesem Verzeichnis sollen sich die (hofffentlich aktuellen) **PDF**s
 befinden.
 

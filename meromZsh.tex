@@ -130,7 +130,8 @@ $A'\in\End(E)\otimes\C\{t\}[t^{-1}]$ determines a system
 \[
   \frac{dv}{dt}=A'v
 \]
-which corresponds to the connection germ $\nabla=d-A$ on $E$ where $A=A'dt$.
+which corresponds to the connection germ $\nabla=[A]=d-A$ on $E$ where
+$A=A'dt$.
 \begin{comment}
   \cite{boalch} wants \textbf{generic} meromorphic connections
   \begin{itemize}
@@ -179,31 +180,39 @@ which corresponds to the connection germ $\nabla=d-A$ on $E$ where $A=A'dt$.
     \textbf{‘logarithmic’} connections.
   \end{rem}
 \end{comment}
+\begin{notations}
+  We will use the following notations
+  \begin{itemize}
+    \item $G=\Gl_n(\C)$
+    \item $G[t]=\Gl_n(\C[t])$
+    \item $G\{t\}=\Gl_n(\C\{t\})$
+    \item $G(\!\{t\}\!)=\Gl_n(\C\{t\}[t^{-1}])$
+    \item $G\llbracket t\rrbracket=\Gl_n(\C\llbracket t\rrbracket)$
+    \item $G(\!(t)\!)=\Gl_n(\C\llbracket t\rrbracket[t^{-1}])$
+  \end{itemize}
+\end{notations}
 By \emph{transformation} (or \emph{meromorphic transformation}) of a connection
 matrix $A$ we mean a linear change of the trivialzation. Such a change is given
-by a matrix $F\in\Gl_n(\C\{t\}[1/t])$ and the transformed matrix $[{}^F\!A]$ is
+by a matrix $F\in\Gl_n(\C\{t\}[1/t])$ and the transformed matrix ${}^F\!A$ is
 obtained through
 \[
   {}^F\!A=(dF)F^{-1} + FAF^{-1} \,.
 \]
 If $F$ is formal i.e. $F\in\Gl_n(\C\llbracket t\rrbracket[1/t])$, it will
 usually be denoted by $\hat F$. The transformation of $A$ by $\hat F$ is not
-guaranteed to have konvergent entries. We denote by $\hat G(A)$ the set of all
-formal transformations
+guaranteed to have konvergent entries.
+We denote by $\hat G(A)$ the set of all \emph{(applicable) formal
+transformations}
 \[
   \hat G(A):=\left\{\hat F\in\Gl_n(\C\llbracket t\rrbracket[1/t])
     \mid {}^{\hat F}\!A \text{ has konvergent entries}
   \right\}\,.
 \]
-Denote the set of all systems, which are formally equivalent to $d-A^0$ by
-\[
-  \Syst(A^0):=\{d-A \mid A={}^{\hat F}A^0 \text{ for some }\hat G(A^0)\}
-\]
 \begin{rem}
   \def\myB{\textcolor{blue!60!black}{B}}
   \def\myA{\textcolor{green!30!black}{A}}
   \def\myF{\textcolor{red!60!black}{F}}
-  The condition 
+  The condition
   \begin{itemize}
     \item[] $\myB$ is obtained from $\myA$ by transformation $\myF$
   \end{itemize}
@@ -222,18 +231,6 @@ This defines equivalence relations\dots \TODO
 \begin{defn}
   Two germs of meromorphic connections are isomorphic if and only if \TODO
 \end{defn}
-
-\begin{defn}
-  \begin{itemize}
-    \item An \emph{isotropy} of $A^0$ is a transformation $\hat F$ which
-      satisfy ${}^{\hat F}\!A=A$. Thus, the isotropies are the solutions of the
-      system $[\End A^0]:=[A^0,A^0]$.
-      \marginnote{\cite{Loday1994} p. 853}
-    \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
-  \end{itemize}
-\end{defn}
-
-\TODO[Define marked pairs, twice]
 
 \section{Models and formal decomposition of a germ}
 \begin{paracol}{2}\sloppy
@@ -332,7 +329,7 @@ This defines equivalence relations\dots \TODO
         $\textcolor{green!40!black}{Q
           =\diag(\textcolor{red!60!black}{\phi_1,\dots,\phi_n})}$
       \item[\tikzmarkc{n2}{blue}]
-        $\Lambda$ constant
+        $\Lambda$ constant, usually not of rank $1$
     \end{itemize}
     \begin{tikzpicture}[remember picture,overlay]
       \draw[->,green!40!black,thick] (n1) to[out=180,in=70] (e1);
@@ -393,3 +390,138 @@ The important theoreme here is the Levelt-Turittin-theoreme.
   See \cite{sabbah2007isomonodromic} theoreme II.5.7.
 \end{proof}
 
+\subsection{Meromorphic / formal transformation II}
+\begin{defn}
+  \begin{itemize}
+    \item An \emph{isotropy} of $A^0$ is a transformation $\hat F$ which
+      satisfy ${}^{\hat F}\!A=A$. Thus, the isotropies are the solutions of the
+      system $[\End A^0]:=[A^0,A^0]$.
+      \marginnote{\cite{Loday1994} p. 853}
+    \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
+      \begin{rem}
+        They are, a priori, formal transformations. Actually $G(A^0)$ is a
+        subgroup of $\Gl_n(\C[1/x,x])$.
+      \end{rem}
+  \end{itemize}
+\end{defn}
+\begin{lem}
+  \marginnote{\cite[854]{Loday1994}}
+  Two formal transformations $\hat F_1$ and $\hat F_2$ take $A^0$ into
+  equivalent matrices ${}^{\hat F_1}\!A^0$ and  ${}^{\hat F_2}\!A^0$ if and
+  only if there exists $f_0\in G_0(A^0)$ such that $\hat F_1=\hat F_2f_0$.
+\end{lem}
+\begin{proof}
+  \TODO
+\end{proof}
+
+\section{The classifying set}
+Let us now fix a model $\cM^{good}$.
+\begin{comment}
+  \begin{itemize}
+    \item \cite{thboalch} p.6
+      \begin{itemize}
+        \item \cite{boalch} p.19
+      \end{itemize}
+    \item \cite{Loday1994} p.852
+    \item \cite{sabbah2007isomonodromic} p.111
+  \end{itemize}
+\end{comment}
+\begin{comment}
+  Roughly speaking, we want to understand the difference between the formal
+  Classification of meromophic connections and the finer meromophic
+  classification.
+  It is natural to fix a model $A^0$ and restrict to the meromophic connections
+  formally isomorphic to this model.
+\end{comment}
+
+
+Our goal is to understand the set
+\begin{align*}
+  {}^0C(\cM^{good},\nabla^{good})=\left\{
+    \left[(\cM,\nabla)\right]
+      \mid \text{there exists a formal isomorphism }
+      \hat f:(\hat\cM,\hat\nabla)
+        \overset{\sim}\to
+        (\hat\cM^{good},\hat\nabla^{good})
+  \right\}
+\end{align*}
+of all isomorphism classes meromophic connections, which are formally
+isomorphic to $\cM^{good}$.
+\\To achieve this goal, we look at the slightly larger space of marked pairs
+\[
+  \cH=\hat\cH(\cM^{good},\nabla^{good})=\left\{
+    \left[(\cM,\nabla,\hat f)\right]
+      \hat f:(\hat\cM,\hat\nabla)
+        \overset{\sim}\to
+        (\hat\cM^{good},\hat\nabla^{good})
+  \right\}
+\]
+in which we also keep the additional information, of the formal isomorphism, by
+which the meromorphic connection is formally isomorphic to the model.
+Where two germs $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$ are
+isomorphic if there exists an isomorphism
+$g:(\cM,\nabla)\overset{\sim}\to(\cM',\nabla')$ such that
+$\hat f=\hat f'\circ \hat g$.
+\begin{comment}
+  \cite[111]{sabbah2007isomonodromic}:\dots it is important to remark that such
+  an isomorphism is then unique.
+\end{comment}
+
+Since the meromophic connections are described by the connection matrices we
+will \TODO{}
+
+\dots thus the set of meromophic classes of systems can be identified to the
+left and right quotient
+\[
+  G\backslash\hat G(A^0)/G_0(A^0)
+\]
+whereas the set of meromophic classes of transformations of $[A^0]$ is
+represented by the left quotient
+\[
+  G\backslash\hat G(A^0) \,.
+\]
+
+
+\begin{comment}
+and
+$(\cM,\nabla)$ is (formally) isomorphic to $(\cM',\nabla')$ if and only if
+there exists a (formal) transformation $F$ such that \TODO, we get
+\begin{notations}
+  \begin{itemize}
+    \item Denote the set of all systems, which are formally equivalent to
+      $d-A^0$ by
+      \[
+        \Syst(A^0)=\{d-A
+          \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\}
+      \]
+    \item
+      \[
+        \hat\Syst(A^0)=\{(A,\hat F)
+          \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\}
+      \]
+  \end{itemize}
+  \TODO[analytic or meromorphic classification?]
+\end{notations}
+
+\begin{lem}
+  \marginnote{see \cite[854]{Loday1994}}
+  \begin{itemize}
+    \item The left and right quotient
+      \[
+        G\backslash\hat G(A^0)/G_0(A^0)
+      \]
+      of
+      % $\hat G(A^0)$
+      \dots \TODO
+    \item
+      \[
+        G\backslash\hat G(A^0)
+      \]
+      represets the set of meromophic classes of transformations of $[A^0]$.
+  \end{itemize}
+\end{lem}
+\end{comment}
+
+\begin{comment}
+  \TODO: left quotient? $G\backslash\hat G(A_0)$
+\end{comment}

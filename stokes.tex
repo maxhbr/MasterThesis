@@ -47,8 +47,12 @@
         \item \cite{Loday2014}
       \end{itemize}
     \item \cite{Varadarajan96linearmeromorphic} for \textbf{overview of both}
+    \item \cite{sibuya1990Linear} looks at $\infty$
+    \item \cite{BJL1979Birkhoff} looks at $\infty$ 
   \end{itemize}
 \end{comment}
+A great overview of this topic is found in
+\cite{Varadarajan96linearmeromorphic}.
 
 \begin{comment}
   \section{Dictionary}
@@ -94,53 +98,18 @@
     \draw[thick,double] (mat) -- (mat2);
 
     \draw[->,green!40!black] (modSpcSheaf) -- (sheaf);
-    \draw[->,blue] (modSpcMat) -- (mat);
-    \draw[->,blue] (class) -- (mat);
+    \draw[->,blue,dashed] (modSpcMat) -- (mat);
+    \draw[->,blue,dashed] (class) -- (mat);
     \draw[->,blue] (mat) -- (mat');
-    \draw[->,purple] (class) -- (sheaf2);
-    \draw[->,purple] (class) -- (mat2);
-    \draw[->,purple] (mat2) -- (sheaf2);
+    \draw[->,purple,dashed] (class) -- (sheaf2);
+    \draw[->,purple,dashed] (class) -- (mat2);
+    \draw[->,purple] (sheaf2) -- (mat2);
 
     \node[green!40!black] at (1,1) {\cite{sabbah2007isomonodromic}};
-    \node[blue] at (1,-1) {\cite{thboalch},\cite{boalch}};
+    \node[blue] at (2.3,-1.6) {\cite{thboalch},\cite{boalch}};
     \node[purple] at (4.5,0) {\cite{Loday1994}{\footnotesize(\cite{Loday2014})}};
   \end{tikzpicture}
 \end{center}
-
-\section{The classifying set}
-\begin{comment}
-  \begin{itemize}
-    \item \cite{thboalch} p.6
-      \begin{itemize}
-        \item \cite{boalch} p.19
-      \end{itemize}
-    \item \cite{Loday1994} p.852
-    \item \cite{sabbah2007isomonodromic} p.111
-  \end{itemize}
-\end{comment}
-Roughly speaking, we want to understand the difference between the formal
-Classification of meromophic connections and the finer meromophic
-classification.
-It is natural to fix a model $A^0$ and restrict to the meromophic connections
-formally isomorphic to this model.
-
-
-Our goal is to understand \TODO.
-To achieve this goal, we look at the slightly larger space \TODO.
-
-\TODO[Define $\sH$]
-\begin{comment} \footnotesize
-  \begin{lem}
-    The presheaf $\sH$ is a sheaf on $\{0\}$.
-  \end{lem}
-  \begin{proof}
-    See \cite{sabbah2007isomonodromic} lemma II.6.2. 
-  \end{proof}
-\end{comment}
-
-\begin{comment}
-  \TODO: left quotient? $G\backslash\hat G(A_0)$
-\end{comment}
 
 \section{Stokes Structures: Cohomology version}
 \begin{comment}
