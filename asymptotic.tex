@@ -25,7 +25,7 @@
 In this chapter, we want to look ak asymptotic expansions (at $0$).
 There are various references for Poincarè asymptotic expansions, or for shor,
 asymptotic expansions.
-We will mostly refer to \cite[chapter 2]{Loday2014} and 
+We will mostly refer to \cite[chapter 2]{Loday2014} and
 \cite[chapter 7]{van2003galois}.
 For the \TODO-definition we will also use \cite{sabbah2007isomonodromic}.
 
@@ -34,7 +34,8 @@ For the \TODO-definition we will also use \cite{sabbah2007isomonodromic}.
 We introduce the following notations:
 \begin{notations} We denote by
   \begin{itemize}
-    \item $\mathfrak{s}=\mathfrak{s}_{a,b}(r)$ the open sector
+    \item $\mathfrak{s}=\mathfrak{s}_{a,b}(r)$, $a,b\in\S^1$ and $r\in\R_{>0}$
+      the open sector
       \[
         \mathfrak{s}_{a,b}(r):=\left\{t\in\C \mid a<\arg(t)<b, 0<|t|<r\right\}
       \]
@@ -75,6 +76,8 @@ We introduce the following notations:
     \end{tikzpicture}
   \end{center}
 \end{notations}
+We will say, that \emph{a sector $\mathfrak{s}_{I}(r)$ contains $\theta\in
+S^1$} if $\theta\in I$.
 \begin{defn}
   A sector $\mathfrak{s}_{a',b'}(r')$ is said to be a proper sub-sector of the
   sector $\mathfrak{s}_{a,b}(r)$,
@@ -94,7 +97,7 @@ We introduce the following notations:
   \def\myConst{\textcolor{green!40!black}{C(\myN,\mySect)}}
   A function $f\in\cO(\mathfrak{s})$ is said to \emph{have the formal Laurent
   series $\sum_{n\geq n_0}a_nt^n$ as asymptotic expansion} (or \emph{to be
-  asymptotic to the series}) on the sector $\mathfrak{s}$ if 
+  asymptotic to the series}) on the sector $\mathfrak{s}$ if
   \begin{itemize}
     \item for all proper sub-sectors $\mySect\Subset\mathfrak{s}$ and
     \item all $\myN\in\N$,
@@ -119,7 +122,15 @@ We introduce the following notations:
       \qquad \text{ for all } t\in \mySect \,.
     \]
   \end{rem}
+  We will say, that \emph{$f$ has the formal Laurent series $\hat g$ as
+  asymptotic expansion on the interval $I\subset S^1$} if there exists a
+  $r\in\R_{>0}$ such that $f$ has the formal Laurent series $\hat g$ as
+  asymptotic expansion on $\mathfrak{s}_I(r)$.
+  \TODO[Asymptotic expansion in direction $\theta\in S^1$]
 \end{defn}
+If $f$ hat $\hat g$ as asymptotic expansion on the sector $\mathfrak{s}$ (or on
+the interval $I\subset S^1$), we denote that by $f\sim_{\mathfrak{s}}\hat g$
+(or $f\sim_{I}\hat g$).
 \begin{notations}
   \begin{itemize}
     \item Define $\cA(\mathfrak{s})$ as the set of holomorphic functions
@@ -131,6 +142,8 @@ We introduce the following notations:
       \]
       for the mapping, which associates to each function
       $f\in\cA(\mathfrak{s})$ its asymptotic expansion.
+    \item A function with $f$ with $T_{\mathfrak{s}}(f)=\id_{\mathfrak{s}}$ is
+      called \emph{flat (on $\mathfrak{s}$)}
     \item Denote by $\cA^{<0}(\mathfrak{s})$ the set
       $\ker(T_{\mathfrak{s}})\subset\cA(\mathfrak{s})$ of functions asymptotic
       to zero at $0$.
@@ -150,15 +163,15 @@ We introduce the following notations:
 \end{notations}
 It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
 \begin{itemize}
+  \marginnote{\cite{van2003galois} p. 194}
   \item $\cA(S^1)=$\TODO
   \item\dots
 \end{itemize}
-\marginnote{\cite{van2003galois} p. 194}
 
 \TODO[Properties,Examples,\dots]
 \begin{thm}[Borel-Ritt]
   Let $\mathfrak{s}$ be an open sector with a opening less than $2\pi$.
-  Then the Taylor map 
+  Then the Taylor map
   \[
     T_{\mathfrak{s}}:\cA(\mathfrak{s})\to\C(\!(t)\!)
   \]
@@ -170,3 +183,4 @@ It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sheaf definition from \cite{sabbah2007isomonodromic}}
+

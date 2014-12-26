@@ -112,14 +112,14 @@
 
 \theoremstyle{definition}
 \newtheorem{defn}[thm]{Definition}
-\newtheorem{notations}[thm]{Notations}
+\newtheorem*{notations}{Notations}
 \newtheorem{conj}[thm]{Conjecture}
 \newtheorem{exmp}[thm]{Beispiel}
 \newtheorem{bsp}[thm]{Beispiel}
 
 \theoremstyle{remark}
-\newtheorem{rem}[thm]{Bemerkung}
-\newtheorem{bem}[thm]{Bemerkung}
+\newtheorem{rem}[thm]{Remark}
+\newtheorem{bem}[thm]{Remark}
 \newtheorem{beo}[thm]{Beobachtung}
 \newtheorem{note}[thm]{Notiz}
 

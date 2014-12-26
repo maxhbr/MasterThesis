@@ -48,7 +48,7 @@
       \end{itemize}
     \item \cite{Varadarajan96linearmeromorphic} for \textbf{overview of both}
     \item \cite{sibuya1990Linear} looks at $\infty$
-    \item \cite{BJL1979Birkhoff} looks at $\infty$ 
+    \item \cite{BJL1979Birkhoff} looks at $\infty$
   \end{itemize}
 \end{comment}
 A great overview of this topic is found in
@@ -81,6 +81,8 @@ A great overview of this topic is found in
 \end{comment}
 
 \section{Situation}
+Let $\cM^{good}$ be a fixed model with the corresponding connection matrix
+$A^0$.
 \begin{center}
   \begin{tikzpicture}[scale=3]
     \node[green!40!black] (modSpcSheaf) at (0,0.3) {$\sH(\sM^{good})$};
@@ -111,12 +113,32 @@ A great overview of this topic is found in
   \end{tikzpicture}
 \end{center}
 
-\section{Stokes Structures: Cohomology version}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Stokes sheaf}
+Let us now define a Stokes sheaf on $S^1$, as the sheaf of flat
+isotropies\TODO[\dots]
+\begin{defn}
+  The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is the sheaf of groups defined on
+  $S^1$ whose stalk at any point $\theta\in S^1$ is the group of germs of
+  $f\in\Gl_n(\cO(s))$, $\mathfrak{s}$ a sector containing $\theta$, satisfying
+  the conditions:
+  \begin{enumerate}
+    \item Flatness: $\underset{x\in\mathfrak{s}}{\underset{x\to0}{\lim}}f(x)=1$
+      and $f\sim_{\mathfrak{s}} 1$;
+    \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
+  \end{enumerate}
+\end{defn}
+
+\subsection{Using $\sA$ from \cite{sabbah2007isomonodromic}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Stokes Structures: Malgrange-Sibuya isomorphism}
 \begin{comment}
   \begin{itemize}
+    \item \cite{Loday1994} Thm I.2.1
     \item \cite{Loday2014} Thm. 4.3.9, on p. 78
-    \item \cite{sabbah2007isomonodromic}
-  \end{itemize}  
+    \item \cite{sabbah2007isomonodromic} Thm II.6.2
+  \end{itemize}
 \end{comment}
 Here we will look at the classifying set and we will proof, that it is
 isomorphic \TODO[as\dots] to the first non abelian cohomology set
@@ -132,5 +154,7 @@ Let $(\sM,\nabla,\hat f)$ be defined on\dots
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes Structures: Matrix version}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{From cohomology to matrix version}
