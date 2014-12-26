@@ -105,7 +105,8 @@ $A^0$.
     \draw[->,blue] (mat) -- (mat');
     \draw[->,purple,dashed] (class) -- (sheaf2);
     \draw[->,purple,dashed] (class) -- (mat2);
-    \draw[->,purple] (sheaf2) -- (mat2);
+    \draw[->,purple] (mat2) -- (sheaf2);
+    \draw[->,purple,dashed] (sheaf2) edge[bend right=20] (mat2);
 
     \node[green!40!black] at (1,1) {\cite{sabbah2007isomonodromic}};
     \node[blue] at (2.3,-1.6) {\cite{thboalch},\cite{boalch}};
@@ -114,8 +115,19 @@ $A^0$.
 \end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Stokes sheaf}
-Let us now define a Stokes sheaf on $S^1$, as the sheaf of flat
+\section{Stokes Structures: Malgrange-Sibuya isomorphism}
+\begin{comment}
+  \begin{itemize}
+    \item \cite{Loday1994} Thm I.2.1
+    \item \cite{Loday2014} Thm. 4.3.9, on p. 78
+    \item \cite{sabbah2007isomonodromic} Thm II.6.2
+  \end{itemize}
+\end{comment}
+Here we will look at the classifying set and we will proof, that it is
+isomorphic \TODO[as\dots] to the first non abelian cohomology set
+$H^1(S^1;\Lambda^{<0}(A^0))=:\St(A^0)$.
+
+Let us first define a Stokes sheaf on $S^1$, as the sheaf of flat
 isotropies\TODO[\dots]
 \begin{defn}
   The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is the sheaf of groups defined on
@@ -129,28 +141,22 @@ isotropies\TODO[\dots]
   \end{enumerate}
 \end{defn}
 
-\subsection{Using $\sA$ from \cite{sabbah2007isomonodromic}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Stokes Structures: Malgrange-Sibuya isomorphism}
-\begin{comment}
-  \begin{itemize}
-    \item \cite{Loday1994} Thm I.2.1
-    \item \cite{Loday2014} Thm. 4.3.9, on p. 78
-    \item \cite{sabbah2007isomonodromic} Thm II.6.2
-  \end{itemize}
-\end{comment}
-Here we will look at the classifying set and we will proof, that it is
-isomorphic \TODO[as\dots] to the first non abelian cohomology set
-$H^1(S^1;\Lambda^{<0}(A^0))$
-
-\TODO[The stokes sheaf]
 Let $(\sM,\nabla,\hat f)$ be defined on\dots
 
 \begin{thm}
-  The homomorphism $\sH\to\St(\sM^{good})$ is an isomorphism of pointed sets.
+  The homomorphism 
+  \[
+    \sH\to\St(A^0)=H^1(S^1;\Lambda^{<0}(A^0))
+  \]
+  is an isomorphism of pointed sets.
 \end{thm}
 \TODO[\cite{sabbah2007isomonodromic} cor II.6.4.]
+\begin{rem}
+  \begin{comment}
+    \cite{Loday1994} Remark I.2.2
+  \end{comment}
+  To another normal form\dots
+\end{rem}
 
 
 

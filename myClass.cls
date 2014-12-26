@@ -275,8 +275,8 @@
 
   \usepackage{ifthen}
   \makeatletter
-  \renewcommand{\ccite}[2][\empty]{{
-    \fcolorbox{CommentFrameColor}{commentShadeColor}{
+  \renewcommand{\ccite}[2][\empty]{{%
+    \fcolorbox{CommentFrameColor}{commentShadeColor}{%
       \ifthenelse{\equal{#1}{\empty}}
         {\cite{#2}}
         {\cite[#1]{#2}}
@@ -284,8 +284,9 @@
   }}
   \makeatother
 
-  \renewcommand{\TODO}[1][\empty]{{
-    \fcolorbox{CommentFrameColor}{commentShadeColor}{
+  \renewcommand{\TODO}[1][\empty]{{%
+      \fcolorbox{CommentFrameColor}{commentShadeColor}{%
+      \footnotesize{}
       \ifthenelse{\equal{#1}{\empty}}
         {TODO}
         {TODO: #1}
