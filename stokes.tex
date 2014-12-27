@@ -148,19 +148,70 @@ Let $(\sM,\nabla,\hat f)$ be defined on\dots
   \[
     \sH\to\St(A^0)=H^1(S^1;\Lambda^{<0}(A^0))
   \]
-  is an isomorphism of pointed sets.
+  is an isomorphism of pointed\footnote{which maps \TODO{} to \TODO{}} sets.
 \end{thm}
 \TODO[\cite{sabbah2007isomonodromic} cor II.6.4.]
 \begin{rem}
-  \begin{comment}
-    \cite{Loday1994} Remark I.2.2
-  \end{comment}
-  To another normal form\dots
+  \marginnote{\cite{Loday1994} Remark I.2.2}
+  To another normal form $A_1={}^f\!A_0$ there correspond cochains which are
+  conjugated via $f$.
+  We get the following commutative diagram:
+  \TODO{}
 \end{rem}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes Structures: Matrix version}
+\begin{comment}
+  See
+  \begin{itemize}
+    \item \cite{Loday1994}
+    \item \cite{boalch} and \cite{thboalch}
+  \end{itemize}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Definitions}
+\TODO[cyclic covering]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The main theorem}
+\marginnote{\cite[868]{Loday1994}}
+Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
+$\dot\phi=(\dot\phi_{\theta_j})_{j\in J}\in\prod_{j\in J}\Lambda_{\theta_j}(A^0)$
+be a finite family of germs.
+In the following way, one can associate a cohomology class to any $\dot\phi$:
+let $\dot\phi_j$ be the function representing the germ $\dot\phi_{\theta_j}$ on
+its maximal arc of definition $\Omega_j$ around $\theta_j$.
+When a cyclic covering $\cU=\{U_j;j\in J\}$ satisfies
+$\dot U_j\subset \Omega_j$ for all $j\in J$ one can define the $1$-cocycle
+$(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
+To a differente $\cU$ this construction yields a cohomologous
+$1$-coycle\TODO[Proof], thus the resulting map, in the case
+$\{\theta_j\mid j\in J\}=\A$,
+\[
+  h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to \St(A^0)=H^1(A^1;\Lambda(A^0))
+\]
+is welldefined.
+\begin{thm}
+  The map
+  \[
+    h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to \St(A^0)=H^1(A^1;\Lambda(A^0))
+  \]
+  is a bijection and natural.
+  \begin{rem}
+    \marginnote{\cite[869]{Loday1994}}
+    Natural means that $h$ commutes to isomorphisms and constructions over
+    systems or connections they represent.
+    \begin{comment}
+      See \cite{Loday1994} Section III.3.3
+    \end{comment}
+  \end{rem}
+\end{thm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Proof}
+We will only look at the unramified case, the proof in the ramified case can be
+found in \cite{Loday1994} section II.4.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{From cohomology to matrix version}

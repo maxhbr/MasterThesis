@@ -236,55 +236,69 @@ This defines equivalence relations\dots \TODO
   Two germs of meromorphic connections are isomorphic if and only if \TODO
 \end{defn}
 
+\subsection{Regular / irregular singularities}
+\TODO[regular / irregular singularity]
+
 \section{Models and formal decomposition of a germ}
-\begin{paracol}{2}\sloppy
-\switchcolumn[0]\noindent
-  For a $\phi\in\C\{t\}[t^{-1}]$ we use $\cE^{\phi}$ to denote the germ
-  \[
-    (\cE^{\phi},\nabla)=(\C\{t\},d-d\phi)\,.
-  \]
-  This is the system satisfied by the function $e^\phi$.
-  \\For $\alpha\in\C$, define $\cN_{\alpha,0}$ as the germ
-  \[
-    (\cN_{\alpha,0},\nabla)=(\C\{t\}[t^{-1}],d+\alpha dt/t)\,.
-  \]
-  \begin{prop}
-    \begin{enumerate}
-      \item Every germ of a meromorphic connection of rank one is isomorphic to
-        some germ
-        \[
-          \cE^\phi\otimes\cN_{\alpha,0}
-        \]
-      \item Two such germs corresponding to $(\phi_1,\alpha_1)$ and
-        $(\phi_2,\alpha_2)$ are isomorphic if and only if
-        \begin{itemize}
-          \item $\phi_1-\phi_2$ has no pole and
-          \item $\alpha_1-\alpha_2\in\Z$.
-        \end{itemize}
-    \end{enumerate}
-  \end{prop}
-  \begin{proof}
-    See \cite{sabbah2007isomonodromic} Proposition II.5.1.
-  \end{proof}
-\switchcolumn[1]\noindent
-  As something like building blocks of some meromorphic
-  connections\footnote{Which we will call models} we introduce the elementary
-  irregular models.
-  \begin{defn}[Elementary irregular models]
-    \marginnote{\cite{sabbah2007isomonodromic} Definition II.5.2}
-    A Germ $(\cM,\nabla)$ is called \emph{elementary} if it is isomorphic to
-    some germ $(\cE^\phi,\nabla)\otimes(\cR,\nabla)$ where
-    \begin{itemize}
-      \item $(\cR,\nabla)$ has regular singularity at $\{0\}$.
-    \end{itemize}
-    \marginnote{\cite{sabbah2007isomonodromic} II.2.f}
-  \end{defn}
-\end{paracol}
-\begin{cor}
-  $\cE^\phi$ is determined by the class of $\phi$ in
-  $\C\{t\}[t^{-1}]/\C\{t\}$. In the following, we will only consider the
-  unique element $\phi$ in each class which has no holomorphic part.
-\end{cor}
+As something like building blocks of some meromorphic connections we introduce
+the elementary irregular models. Into which meromorphic connections, after
+pontentially needed pullback, decompose.
+
+The building blocks of these building blocks are defined as follows.
+\begin{defn}
+  \begin{itemize}
+    \item For a $\phi\in\C\{t\}[t^{-1}]$ we use $\cE^{\phi}$ to denote the germ
+      \[
+        (\cE^{\phi},\nabla)=(\C\{t\},d-d\phi)\,.
+      \]
+      This is the system satisfied by the function $e^\phi$.
+      \begin{cor}
+        $\cE^\phi$ is determined by the class of $\phi$ in
+        $\C\{t\}[t^{-1}]/\C\{t\}=t^{-1}\C[t^{-1}]$. In the following, we will
+        only consider the unique element $\phi$ in each class which has no
+        holomorphic part.
+      \end{cor}
+    \item For $\alpha\in\C$, define $\cN_{\alpha,0}$ as the germ
+      \[
+        (\cN_{\alpha,0},\nabla)=(\C\{t\}[t^{-1}],d+\alpha dt/t)\,.
+      \]
+      This is the system satisfied by \TODO{}.
+  \end{itemize}
+\end{defn}
+\begin{prop}
+  \begin{enumerate}
+    \item Every regular germ of a meromorphic connection is isomorphic to some
+      \TODO{}
+      \begin{rem}
+        For a detailed analysis of regular meromorphic connections see
+        \cite{sabbah2007isomonodromic} chapter II.2.
+      \end{rem}
+    \item Every germ of a meromorphic connection of rank one is isomorphic to
+      some germ
+      \[
+        \cE^\phi\otimes\cN_{\alpha,0} \,.
+      \]
+    \item Two such germs corresponding to $(\phi_1,\alpha_1)$ and
+      $(\phi_2,\alpha_2)$ are isomorphic if and only if
+      \begin{itemize}
+        \item $\phi_1-\phi_2$ has no pole and
+        \item $\alpha_1-\alpha_2\in\Z$.
+      \end{itemize}
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  See \cite{sabbah2007isomonodromic} Proposition II.5.1.
+\end{proof}
+\begin{defn}
+  \marginnote{\cite{sabbah2007isomonodromic} Definition II.5.2}
+  A Germ $(\cM,\nabla)$ is called \emph{elementary} if it is isomorphic to
+  some germ $(\cE^\phi,\nabla)\otimes(\cR,\nabla)$ where
+  \begin{itemize}
+    \item $(\cR,\nabla)$ has regular singularity at $\{0\}$ but has not to be
+      of rank $1$.
+  \end{itemize}
+  \marginnote{\cite{sabbah2007isomonodromic} II.2.f}
+\end{defn}
 \begin{defn}
   \def\myPhi{\textcolor{red!60!black}{\phi}}
   \def\myE{\textcolor{green!40!black}{\cE^{\myPhi}}}
