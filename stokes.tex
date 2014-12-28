@@ -168,12 +168,35 @@ Let $(\sM,\nabla,\hat f)$ be defined on\dots
   \begin{itemize}
     \item \cite{Loday1994}
     \item \cite{boalch} and \cite{thboalch}
+    \item \cite{babbitt1989local}
   \end{itemize}
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Definitions}
-\TODO[cyclic covering]
+\TODO[cyclic covering, nerve]
+\begin{defn}[cyclic covering]
+  A covering $\cU=\{U_j;j\in J\}$ is called \emph{cyclic covering} if
+  \begin{enumerate}
+    \item the set $J$ is finite and cyclic $J=\Z/\nu\Z$;
+    \item the $U_j$ and, if $\#J>2$, the $U_j\cap U_{j+1}$ are connected arcs on
+      $S^1$;
+    \item the bisecting directions of the $U_j$ are in ascending order with
+      respect to the clockwise orientation of $S^1$;
+    \item the $U_j$ are not encased, this means that the arcs
+      $U_j\backslash U_l$ are connected arcsz for all $j,l\in J$.
+  \end{enumerate}
+\end{defn}
+\begin{defn}[nerve of a cyclic covering]
+  The \emph{nerve} of a cyclic covering $\cU=\{U_j;j\in J\}$ is the family
+  $\dot\cU=\{\dot U_j;j\in J\}$ defined by:
+  \begin{itemize}
+    \item $U_j=U_j\cap U_{j+1}$ when $\#J>2$,
+    \item $\dot U_1$ and $\dot U_2$ the connected components of $U_1\cap U_2$
+      when $\#J=2$.
+  \end{itemize}
+\end{defn}
+The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The main theorem}
