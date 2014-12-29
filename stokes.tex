@@ -51,34 +51,8 @@
     \item \cite{BJL1979Birkhoff} looks at $\infty$
   \end{itemize}
 \end{comment}
-A great overview of this topic is found in
+A great overview of this topic is given in
 \cite{Varadarajan96linearmeromorphic}.
-
-\begin{comment}
-  \section{Dictionary}
-  \begin{center}
-    \begin{tabular}{|c|c||c|c||c|c|}
-      \cite{sabbah_cimpa90} & \cite{sabbah2007isomonodromic} &
-      \cite{boalch}& \cite{thboalch} &
-      \cite{Loday1994} & \cite{Loday2014} \tabularnewline
-    \hline
-    &  & & & $A_0$ & \tabularnewline{}
-    &  & $\A$ & $\A$ &
-      $\A$, $\A^{\star}$
-      \marginnote{\footnotesize$\star\in\{{}^k,{}^{<k},{}^{\leq k}\}$} &
-      $\mathfrak{A}$
-      \tabularnewline
-    &  & $\Sto_\alpha$ & $\Sto_\alpha$ & $\Sto_\alpha$ & \tabularnewline
-    &  &  &  & $\Lambda(A_0)$ & \tabularnewline
-      &  &  &  & $[{}^F\!A]$ & \tabularnewline
-    &  &  &  &  & \tabularnewline
-    &  &  &  &  & \tabularnewline
-    &  &  &  &  & \tabularnewline
-    &  &  &  &  & \tabularnewline
-    &  &  &  &  & \tabularnewline
-    \end{tabular}
-  \end{center}
-\end{comment}
 
 \section{Situation}
 Let $\cM^{good}$ be a fixed model with the corresponding connection matrix
@@ -174,8 +148,31 @@ Let $(\sM,\nabla,\hat f)$ be defined on\dots
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Definitions}
-\TODO[cyclic covering, nerve]
-\begin{defn}[cyclic covering]
+\subsubsection{Stokes directions / \dots}
+\begin{comment}
+  \cite{Loday1994} \$I.4
+\end{comment}
+\begin{notations}
+  We set
+  \[
+    \cQ_{[A^0]}=\left\{q_1(t^{-1}),\dots,q_n(t^{-1})\right\}
+  \]
+  and
+  \[
+    \cQ_{[\End A^0]}=\left\{\left(q_i-q_l\right)(t^{-1})
+      \mid q_i \neq q_l \in\cQ_{[A^0]}
+    \right\}
+  \]
+  where\dots
+\end{notations}
+
+\subsubsection{Coverings / Stokes cocycle}
+\begin{comment}
+  \cite{Loday1994} \$II.1
+\end{comment}
+A covering $\cV$ is said to \emph{refine} a covering $\cU$ if, to each open set
+$V\in\cV$ there is at least one $U\in\cU$ with $V\subset U$.
+\begin{defn}
   A covering $\cU=\{U_j;j\in J\}$ is called \emph{cyclic covering} if
   \begin{enumerate}
     \item the set $J$ is finite and cyclic $J=\Z/\nu\Z$;
@@ -187,7 +184,7 @@ Let $(\sM,\nabla,\hat f)$ be defined on\dots
       $U_j\backslash U_l$ are connected arcsz for all $j,l\in J$.
   \end{enumerate}
 \end{defn}
-\begin{defn}[nerve of a cyclic covering]
+\begin{defn}
   The \emph{nerve} of a cyclic covering $\cU=\{U_j;j\in J\}$ is the family
   $\dot\cU=\{\dot U_j;j\in J\}$ defined by:
   \begin{itemize}
@@ -197,6 +194,24 @@ Let $(\sM,\nabla,\hat f)$ be defined on\dots
   \end{itemize}
 \end{defn}
 The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
+\begin{prop}
+  \marginnote{\cite{Loday1994} Prop II.1.3}
+  \dots $\cV$ refines $\cU$ when each $\dot U_j$ contains at least one
+  $\dot V_l$.
+\end{prop}
+
+\begin{defn}
+  A covering $\cU$ beyond which the inductive limit\TODO[which] is stationary
+  is said to be \emph{adequate} to describe $H^1(S^1;\Lambda(A^0))$ (or
+  \emph{adequate} to $\Lambda(A^0)$).
+\end{defn}
+
+\TODO[\dots]
+
+\begin{defn}
+  \marginnote{\cite{Loday1994} Defn II.1.8}
+  \dots \emph{Stokes cocycle} \dots
+\end{defn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The main theorem}
@@ -211,16 +226,17 @@ When a cyclic covering $\cU=\{U_j;j\in J\}$ satisfies
 $\dot U_j\subset \Omega_j$ for all $j\in J$ one can define the $1$-cocycle
 $(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
 To a differente $\cU$ this construction yields a cohomologous
-$1$-coycle\TODO[Proof], thus the resulting map, in the case
+$1$-cocycle\TODO[Proof], thus the resulting map, in the case
 $\{\theta_j\mid j\in J\}=\A$,
 \[
-  h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to \St(A^0)=H^1(A^1;\Lambda(A^0))
+  h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to 
+  H^1(A^1;\Lambda(A^0))=\St(A^0)
 \]
 is welldefined.
 \begin{thm}
   The map
   \[
-    h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to \St(A^0)=H^1(A^1;\Lambda(A^0))
+    h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to \St(A^0)
   \]
   is a bijection and natural.
   \begin{rem}

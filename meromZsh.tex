@@ -155,6 +155,9 @@ $A=A'dt$.
 \begin{cor}
   The connection matrices describe the germs of meromorphic connections.
 \end{cor}
+\begin{proof}
+  \TODO
+\end{proof}
 
 \subsection{Connection matrix \leftrightarrow{} system}
 \subsection{Connection matrix \rightarrow{} connection}
@@ -190,27 +193,29 @@ $A=A'dt$.
   \begin{itemize}
     \item $G=\Gl_n(\C)$
     \item $G[t]=\Gl_n(\C[t])$
-    \item $G\{t\}=\Gl_n(\C\{t\})$
-    \item $G(\!\{t\}\!)=\Gl_n(\C\{t\}[t^{-1}])$
+    \item $G\{t\}=\Gl_n(\C\{t\})$ analytic tranformations
+    \item $G(\!\{t\}\!)=\Gl_n(\C\{t\}[t^{-1}])$ meromorphic transformations
     \item $G\llbracket t\rrbracket=\Gl_n(\C\llbracket t\rrbracket)$
+      (maby not applicable) formal tranformations
     \item $G(\!(t)\!)=\Gl_n(\C\llbracket t\rrbracket[t^{-1}])$
+      (maby not applicable) formal meromorphic tranformations
   \end{itemize}
 \end{notations}
 By \emph{transformation} (or \emph{meromorphic transformation}) of a connection
 matrix $A$ we mean a linear change of the trivialization. Such a change is given
-by a matrix $F\in\Gl_n(\C\{t\}[1/t])$ and the transformed matrix ${}^F\!A$ is
+by a matrix $F\in G(\!\{t\}\!)$ and the transformed matrix ${}^F\!A$ is
 obtained through
 \[
   {}^F\!A=(dF)F^{-1} + FAF^{-1} \,.
 \]
-If $F$ is formal i.e. $F\in\Gl_n(\C\llbracket t\rrbracket[1/t])$, it will
-usually be denoted by $\hat F$. The transformation of $A$ by $\hat F$ is not
-guaranteed to have konvergent entries.
+If $F$ is formal i.e. $F\in G(\!(t)\!)$, it will usually be denoted by
+$\hat F$. The transformation of $A$ by $\hat F$ is not guaranteed to have
+convergent entries.
 We denote by $\hat G(A)$ the set of all \emph{(applicable) formal
 transformations}
 \[
-  \hat G(A):=\left\{\hat F\in\Gl_n(\C\llbracket t\rrbracket[1/t])
-    \mid {}^{\hat F}\!A \text{ has konvergent entries}
+  \hat G(A):=\left\{\hat F\in G(\!(t)\!)
+    \mid {}^{\hat F}\!A \text{ has convergent entries}
   \right\}\,.
 \]
 \begin{rem}
@@ -231,21 +236,36 @@ transformations}
   \end{itemize}
 \end{rem}
 
-This defines equivalence relations\dots \TODO
+This defines equivalence relations\dots \TODO and one optains the notions of
+(formal) equivalence classes of meromorphic connections.
 
 \begin{defn}
-  Two germs of meromorphic connections are isomorphic if and only if \TODO
+  Two germs of meromorphic connections are (formally) isomorphic if and only if
+  their corresponding connection matrices are (formally) equivalent.
+  \TODO[is this a proposition]
 \end{defn}
 
 \subsection{Regular / irregular singularities}
 \TODO[regular / irregular singularity]
 
 \section{Models and formal decomposition of a germ}
-As something like building blocks of some meromorphic connections we introduce
-the elementary irregular models. Into which meromorphic connections, after
-pontentially needed pullback, decompose.
+\begin{paracol}{2}
+\switchcolumn[0]\noindent
+  As something like building blocks of some meromorphic connections we introduce
+  the elementary irregular models. Into which meromorphic connections, after
+  potentially needed pullback, decompose.
 
-The building blocks of these building blocks are defined as follows.
+  The building blocks of these building blocks are defined as follows.
+\switchcolumn[1]\noindent
+  In every formal equivalence class of meromorphic connections, there are some
+  meromorphic connection of special form, which we will call models. They are
+  not unique but all of them lie in the same convergent equivalence class.
+
+  On the other hand, the Levelt-Turittin theoreme says, that  each meromorphic
+  connection is, after potentially needed ramification, formally isomorphic to
+  such a model, that means, that in each formal class there are some models.
+  \TODO[Problems with ramification??]
+\end{paracol}
 \begin{defn}
   \begin{itemize}
     \item For a $\phi\in\C\{t\}[t^{-1}]$ we use $\cE^{\phi}$ to denote the germ
@@ -355,6 +375,8 @@ The building blocks of these building blocks are defined as follows.
       \draw[->,blue!50!white,thick] (n2) to[out=180,in=-70] (e2);
     \end{tikzpicture}
   \end{multicols}
+  where the $\textcolor{red!60!black}{\phi_i}$ are the same as in the above
+  definition.
 \end{lem}
 \begin{proof}
   \TODO{}
@@ -363,7 +385,7 @@ The building blocks of these building blocks are defined as follows.
 The important theoreme here is the Levelt-Turittin-theoreme.
 \begin{thm}[Levelt-Turittin]
   To each germ $(\cM,\nabla)$ of a meromorphic connection there exists, after
-  pontentially needed \textcolor{blue!60!black}{pullback by some suitable
+  potentially needed \textcolor{blue!60!black}{pullback by some suitable
   ramification $t=z^q$ of order $q\geq1$}, a
   \textcolor{green!40!black}{\textbf{formal}} isomorphism
   \[
@@ -409,21 +431,48 @@ The important theoreme here is the Levelt-Turittin-theoreme.
   See \cite{sabbah2007isomonodromic} theoreme II.5.7.
 \end{proof}
 
-\subsection{Meromorphic / formal transformation II}
+\begin{comment}
+  \subsection{By fundamental solutions\dots}
+  \marginnote{\cite{Loday1994} p. 853}
+  A system
+  \[
+    \frac{dX}{dt}=A^0X
+  \]
+  is called a \emph{normal form} if it satisfies the following Properties:
+  there exists a fundamental solution $X_0$ of $[A^0]$, i.e., a $n\times n$
+  matrix
+
+  \dots
+
+  of the form $X_0=t^Le^{Q(t^{-1})}$ where
+  \begin{itemize}
+    \item $L$ is a constant matrix called the \emph{matrix of exponents of
+      formal Monodromy} and
+    \item $Q(t^{-1})=\diag\left(q_1(t^{-1}),\dots,q_n(t^{-1})\right)$ is a
+      diagonal matrix where
+      \begin{itemize}
+        \item the $q_j(t^{-1})$ are polynomials in a root $z^{-1}=t^{-1/p}$,
+          $p\in\N^*$, of the variable $t$ without constant term.
+      \end{itemize}
+  \end{itemize}
+  Such a solution will be called \emph{normal solution}.
+\end{comment}
+
+\section{Meromorphic / formal transformation II}
 \begin{defn}
   \begin{itemize}
     \item An \emph{isotropy} of $A^0$ is a transformation $\hat F$ which
       satisfy ${}^{\hat F}\!A=A$. Thus, the isotropies are the solutions of the
       system $[\End A^0]:=[A^0,A^0]$.
       \marginnote{\cite{Loday1994} p. 853}
-    \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
-      \begin{comment}
-        In the nice case this is only $T$?
-      \end{comment}
       \begin{rem}
         They are, a priori, formal transformations. Actually $G(A^0)$ is a
         subgroup of $\Gl_n(\C[1/x,x])$.
       \end{rem}
+    \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
+      \begin{comment}
+        In the nice case this is only $T$?
+      \end{comment}
   \end{itemize}
 \end{defn}
 \begin{lem}
@@ -431,6 +480,7 @@ The important theoreme here is the Levelt-Turittin-theoreme.
   Two formal transformations $\hat F_1$ and $\hat F_2$ take $A^0$ into
   equivalent matrices ${}^{\hat F_1}\!A^0$ and  ${}^{\hat F_2}\!A^0$ if and
   only if there exists $f_0\in G_0(A^0)$ such that $\hat F_1=\hat F_2f_0$.
+  \TODO[\Leftrightarrow{} $f_0$ is a isotropy?]
 \end{lem}
 \begin{proof}
   \TODO
@@ -438,8 +488,25 @@ The important theoreme here is the Levelt-Turittin-theoreme.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The classifying set}
-Let us now fix a model $\cM^{good}$ with the corresponding connection matrix
-$A^0$.
+We want to understand the Set $\{[(\cM,\nabla)]\}$ of the (convergent)
+isomorphism classes of all meromorphic connections. Since we have also the
+formal classification and we know, that all elements in a convergent
+isomorphism class lie in the same formal isomorphism class, we can reduce the
+problem by fixing a model $(\cM^{good},\nabla^{good})$ with the corresponding
+connection matrix $A^0$. Thus we can restrict ourself to the subset
+\begin{align*}
+  {}^0C(\cM^{good},\nabla^{good})=\left\{
+    \left[(\cM,\nabla)\right]
+      \mid \text{there exists a formal isomorphism }
+      \hat f:(\hat\cM,\hat\nabla)
+        \overset{\sim}\longrightarrow
+        (\hat\cM^{good},\hat\nabla^{good})
+  \right\}
+\end{align*}
+of all isomorphism classes of
+meromorphic connections, which are formally isomorphic to
+$(\cM^{good},\nabla^{good})$. This is the set, that we will be calling the
+\emph{classifying set}.
 \begin{comment}
   \begin{itemize}
     \item \cite{thboalch} p.6
@@ -450,31 +517,12 @@ $A^0$.
     \item \cite{sabbah2007isomonodromic} p.111
   \end{itemize}
 \end{comment}
-\begin{comment}
-  Roughly speaking, we want to understand the difference between the formal
-  Classification of meromorphic connections and the finer meromorphic
-  classification.
-  It is natural to fix a model $A^0$ and restrict to the meromorphic connections
-  formally isomorphic to this model.
-\end{comment}
 
-
-Our goal is to understand the set
-\begin{align*}
-  {}^0C(\cM^{good},\nabla^{good})=\left\{
-    \left[(\cM,\nabla)\right]
-      \mid \text{there exists a formal isomorphism }
-      \hat f:(\hat\cM,\hat\nabla)
-        \overset{\sim}\longrightarrow
-        (\hat\cM^{good},\hat\nabla^{good})
-  \right\}
-\end{align*}
-of all isomorphism classes meromorphic connections, which are formally
-isomorphic to $\cM^{good}$.
-\\To achieve this goal, we look at the slightly larger space of marked pairs
+It is convenient to look at the slightly larger space of \emph{marked pairs}
 \[
   \cH=\cH(\cM^{good},\nabla^{good})=\left\{
     \left[(\cM,\nabla,\hat f)\right]
+      \mid
       \hat f:(\hat\cM,\hat\nabla)
         \overset{\sim}\longrightarrow
         (\hat\cM^{good},\hat\nabla^{good})
@@ -482,21 +530,25 @@ isomorphic to $\cM^{good}$.
 \]
 in which we also keep the additional information, of the formal isomorphism, by
 which the meromorphic connection is formally isomorphic to the model.
-Where two germs $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$ are
-isomorphic if there exists an isomorphism
-$g:(\cM,\nabla)\overset{\sim}\longrightarrow(\cM',\nabla')$ such that
-$\hat f=\hat f'\circ \hat g$.
-\begin{comment}
-  \cite[111]{sabbah2007isomonodromic}:\dots it is important to remark that such
-  an isomorphism is then unique.
-\end{comment}
+Where the isomorphisms of of marked pairs are defined as follows:
+\begin{defn}
+  Two germs $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$ are
+  isomorphic if there exists an isomorphism
+  $g:(\cM,\nabla)\overset{\sim}\longrightarrow(\cM',\nabla')$ such that
+  $\hat f=\hat f'\circ \hat g$.
+  \begin{comment}
+    \cite[111]{sabbah2007isomonodromic}:\dots it is important to remark that
+    such an isomorphism is then unique.
+  \end{comment}
+\end{defn}
 
-Equivalently, one can talk in terms of systems. We then denote by 
+Equivalently, one can talk in terms of systems. We then denote by
 \[
   \Syst_m(A^0):=\{d-A
     \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\}
 \]
-the set of systems formally meromorphic equivalent to $A^0$.
+the set of systems formally meromorphic equivalent to $A^0$\footnote{Since we
+use meromorphic equivalences we denote that by the subscript ${}_m$.}.
 Thus ${}^0C(\cM^{good},\nabla^{good})$ corresponds to
 the set ${}^0C(A^0):=\Syst_m(A^0)/G(\!\{t\}\!)$ of meromorphic classes which
 are formally equivalent to $A^0$.
