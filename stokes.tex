@@ -118,7 +118,7 @@ isotropies\TODO[\dots]
 Let $(\sM,\nabla,\hat f)$ be defined on\dots
 
 \begin{thm}
-  The homomorphism 
+  The homomorphism
   \[
     \sH\to\St(A^0)=H^1(S^1;\Lambda^{<0}(A^0))
   \]
@@ -167,12 +167,17 @@ where\dots
   \begin{itemize}
     \item Define $q_{jl}(t^{-1})$ to be the leading term of
       $q_j-g_l\in\cQ_{[\End A^0]}$.  Thus if
-      $(q_j-q_l)(t^{-1})=\frac{a}{t^k}+\frac{b}{t^{k-1}}+\cdots$, $a\neq0$ then
-      $q_{jl}=\frac{a}{t^k}$.
+      $(q_j-q_l)(t^{-1}) =\frac{a_{jl}}{t^k}+\frac{b}{t^{k-1}}+\cdots$,
+      $a\neq0$ then $q_{jl}=\frac{a_{jl}}{t^k}$.
       \begin{comment}
-        Thus if $(q_j-q_l)(t^{-1})=\frac{a}{t^k}+h$ with $h\in o(t^{-k})$ then
-        $q_{jl}=\frac{a}{t^k}$.
+        Thus if $(q_j-q_l)(t^{-1})=\frac{a_{jl}}{t^k}+h$ with $h\in o(t^{-k})$
+        then $q_{jl}=\frac{a_{jl}}{t^k}$.
       \end{comment}
+      \begin{rem}
+        In \cite{boalch} and \cite{thboalch} the $k$ is incremented by one. We
+        will use this definition, which is taken from \cite{Loday1994}, because
+        \TODO
+      \end{rem}
     \item The leading exponent $k$ is called
       \begin{itemize}
         \item the \emph{degree} $\deg(q_j-q_l)$ of $(q_j-q_l)$ and
@@ -180,6 +185,10 @@ where\dots
       \end{itemize}
     \item The degrees of the elements in $\cQ_{[\End A^0]}$ are the
       \emph{levels} of $A^0$.
+      The set of all levels of $A^0$ will be denoted by
+      \[
+        \cK=\{k_1<\dots<k_r\} \,.
+      \]
       \begin{comment}
         \begin{rem}
           Levels are rational numbers. The unramified case is the case when
@@ -188,8 +197,63 @@ where\dots
             ramification]
         \end{rem}
       \end{comment}
+    \item \TODO[define half periode?]
   \end{itemize}
 \end{defn}
+
+On the elements of $\cQ(A^0)$ we define the following (partial) order
+relations:
+\begin{defn}
+  We define the relations
+  \begin{itemize}
+    \item $q_j \underset{\theta}{\prec} q_l$
+      :\Leftrightarrow{} $\Re(a_{ij}e^{-ik\theta})<0$
+      \begin{comment}
+        \Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is flat at $0$ in a
+        neighbourhood of the direction $\theta$.
+        \TODO[define?]
+      \end{comment}
+    \item $q_j \underset{\theta,\max}{\prec} q_l$
+      :\Leftrightarrow{} $a_{ij}e^{-ik\theta}$ is a real negative number.
+      \begin{comment}
+        \Leftrightarrow{} $q_{ij}(t^{-1})\in\R_{<0}$ along $\theta$.
+      \end{comment}
+      \begin{comment}
+        \Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is of maximal decay in the
+        direction $\theta$.
+        \TODO[define?]
+      \end{comment}
+  \end{itemize}
+  \begin{comment}
+    see \cite{Loday1994} Def I.4.4 for the definition in the ramified case,
+    since
+    \begin{itemize}
+      \item In the unramified case these relations do not depend on the
+        determination $\tilde\theta$ of $\theta$
+    \end{itemize}
+  \end{comment}
+\end{defn}
+
+\begin{defn}
+  \marginnote{See
+    \cite[Definition I.4.5]{Loday1994}
+    \cite[Definition 3.2]{boalch}}
+  \begin{enumerate}
+    \item $\theta$ is an \emph{anti-Stokes direction}\dots
+      \begin{itemize}
+        \item Let $\A=\{\alpha_1,\dots,\alpha_{\nu}\}$ denote the set of all
+          anti-Stokes directions in a clockwise ordering. For a uniform
+          notation later, define $\A$ to contain a single, arbitrary direction
+          if $k=0$.
+      \end{itemize}
+    \item $\theta$ is an \emph{Stokes direction}\dots
+      \begin{itemize}
+        \item Let $\S=\{\sigma_1<\cdots<\sigma_\mu\}$ be the set of Stokes
+          directions.
+      \end{itemize}
+  \end{enumerate}
+\end{defn}
+
 
 \subsubsection{Coverings / Stokes cocycle}
 \begin{comment}
@@ -254,7 +318,7 @@ To a differente $\cU$ this construction yields a cohomologous
 $1$-cocycle\TODO[Proof], thus the resulting map, in the case
 $\{\theta_j\mid j\in J\}=\A$,
 \[
-  h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to 
+  h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to
   H^1(A^1;\Lambda(A^0))=\St(A^0)
 \]
 is welldefined.
