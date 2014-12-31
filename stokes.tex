@@ -101,29 +101,43 @@ Here we will look at the classifying set and we will proof, that it is
 isomorphic \TODO[as\dots] to the first non abelian cohomology set
 $H^1(S^1;\Lambda^{<0}(A^0))=:\St(A^0)$.
 
-Let us first define a Stokes sheaf on $S^1$, as the sheaf of flat
+\subsection{Definitions}
+\begin{itemize}
+  \item $D=$\dots
+  \item $\tilde D=$\dots
+\end{itemize}
+
+Let us now define a Stokes sheaf on $S^1$, as the sheaf of flat
 isotropies\TODO[\dots]
 \begin{defn}
   The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is the sheaf of groups defined on
   $S^1$ whose stalk at any point $\theta\in S^1$ is the group of germs of
-  $f\in\Gl_n(\cO(s))$, $\mathfrak{s}$ a sector containing $\theta$, satisfying
+  $f\in\Gl_n(\cO(\mathfrak{s}))$, $\mathfrak{s}$ a sector containing $\theta$, satisfying
   the conditions:
   \begin{enumerate}
     \item Flatness: $\underset{x\in\mathfrak{s}}{\underset{x\to0}{\lim}}f(x)=1$
       and $f\sim_{\mathfrak{s}} 1$;
     \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
   \end{enumerate}
+  \begin{rem}
+    $\Lambda(A^0)$ is the same as $\Aut^{<0}(\tilde\cM^{good})$
+    in~\cite{sabbah2007isomonodromic} which is defined as follows \TODO
+  \end{rem}
 \end{defn}
 
-Let $(\sM,\nabla,\hat f)$ be defined on\dots
+\subsection{The main theoreme}
+Let $(\cM,\nabla,\hat f)$ be defined on\dots
 
-\begin{thm}
+\begin{tthm}[Malgrange-Sbuya]
   The homomorphism
   \[
-    \sH\to\St(A^0)=H^1(S^1;\Lambda^{<0}(A^0))
+    g:\cH\to\St(A^0)=H^1(S^1;\Lambda^{<0}(A^0))
   \]
-  is an isomorphism of pointed\footnote{which maps \TODO{} to \TODO{}} sets.
-\end{thm}
+  is an isomorphism of pointed \TODO[which maps \TODO{} to \TODO{}] sets.
+  \begin{rem}
+    $g$ is just the letter before $h$, which is the next important isomorphism.
+  \end{rem}
+\end{tthm}
 \TODO[\cite{sabbah2007isomonodromic} cor II.6.4.]
 \begin{rem}
   \marginnote{\cite{Loday1994} Remark I.2.2}
@@ -133,7 +147,56 @@ Let $(\sM,\nabla,\hat f)$ be defined on\dots
   \TODO{}
 \end{rem}
 
+\subsection{Proof}
+We will mainly refer to \cite[section 6.d]{sabbah2007isomonodromic}, where a
+more complicated case, with deformation space, is proofen.
+\begin{comment}
+  See also \cite{BJL1979Birkhoff} and \cite{babbitt1989local} although the proof
+  goes back to work from Malgrange and Sibuya (see for example
+  \cite{sibuya1990Linear}).
+\end{comment}
+\begin{proof}
+  \textbf{First look at injectivity:}
+  Consider the two elements $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$
+  of $\cH$ which map to same element
+  \[
+    g((\cM,\nabla,\hat f))=\lambda=g((\cM',\nabla',\hat f'))
+      \in H^1(S^1;\Lambda^{<0}(A^0)) \,.
+  \]
+  Since \TODO{}, it is then possible to find a finite covering
+  $\cU=\{U_j;j\in J\}$ of $S^1$ such that $\lambda$ is the class of the
+  cocycles $(f_lf_j^{-1})$ and $(f_l',f_j'^{-1})$, where $f_j$,$f_j'$ are
+  defined on $U_j$.
+  \TODO
 
+  \textbf{Now look at surjectivity:}
+  Exactly as in \cite{sabbah2007isomonodromic} we will start this part of the
+  proof by giving a necesary and sufficient condition for a class $\lambda$ in
+  $H^1(S^1,\Lambda^{<0}(A^0))$ to come from an object 
+  $(\cM,\nabla,\hat f)\in\cH$:
+  \begin{itemize}
+    \item[] This is the case if and only if its image in the set
+      $H^1(S^1,\Aut_{\cA}(\cM^{good}))$, where we only take the $\cA$-linear
+      automorphisms, is the identity.
+  \end{itemize}
+  \TODO
+
+  Thus, the proof is a consequence of the following Malgrange-Sibuya Theoreme.
+  \begin{thm}[Malgrange-Sbuya]
+    \marginnote{\cite{sabbah2007isomonodromic} Thm II.6.10}
+    The image of the mapping
+    \[
+      H^1(S^1,\Gl_d^{<0}(\cA_{\tilde D}))
+      \to
+      H^1(H^1,\Gl_d(\cA_{\tilde D}))
+    \] 
+    is the identity.
+  \end{thm}
+  \begin{proof}
+     For which we refer to \TODO[Mal83b, Appendice],
+     \cite[Th.6.4.1]{sibuya1990Linear}, \TODO[BV89a, Chap.4].
+  \end{proof}
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes Structures: Matrix version}
@@ -242,7 +305,10 @@ relations:
     \item $\theta$ is an \emph{anti-Stokes direction}\dots
       \begin{itemize}
         \item Let $\A=\{\alpha_1,\dots,\alpha_{\nu}\}$ denote the set of all
-          anti-Stokes directions in a clockwise ordering. For a uniform
+          anti-Stokes directions in a clockwise ordering\footnote{In
+          \cite{Loday1994} this ordering is chosen, since the calculations are
+          then compatible with the calculations, which look at $\infty$ and take
+          a counterclockwise ordering.}. For a uniform
           notation later, define $\A$ to contain a single, arbitrary direction
           if $k=0$.
       \end{itemize}
@@ -254,6 +320,10 @@ relations:
   \end{enumerate}
 \end{defn}
 
+\TODO
+\begin{defn}
+  The sheaf $\Lambda(A^0)$
+\end{defn}
 
 \subsubsection{Coverings / Stokes cocycle}
 \begin{comment}
@@ -322,7 +392,7 @@ $\{\theta_j\mid j\in J\}=\A$,
   H^1(A^1;\Lambda(A^0))=\St(A^0)
 \]
 is welldefined.
-\begin{thm}
+\begin{tthm}
   The map
   \[
     h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to \St(A^0)
@@ -336,7 +406,7 @@ is welldefined.
       See \cite{Loday1994} Section III.3.3
     \end{comment}
   \end{rem}
-\end{thm}
+\end{tthm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Proof}
 We will only look at the unramified case, the proof in the ramified case can be
