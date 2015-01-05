@@ -11,8 +11,13 @@
 
 %%%% Sprache
 \usepackage{polyglossia}
-\setdefaultlanguage{german}
-\setotherlanguages{english}
+\iffalse
+  \setdefaultlanguage{german}
+  \setotherlanguages{english}
+\else
+  \setdefaultlanguage{english}
+  \setotherlanguages{germal}
+\fi
 
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{latexsym}

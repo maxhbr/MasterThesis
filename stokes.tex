@@ -167,11 +167,16 @@ more complicated case, with deformation space, is proofen.
   $\cU=\{U_j;j\in J\}$ of $S^1$ such that $\lambda$ is the class of the
   cocycles $(f_lf_j^{-1})$ and $(f_l',f_j'^{-1})$, where $f_j$,$f_j'$ are
   defined on $U_j$.
+  Then there exists \TODO{} a $0$-cochain $(g_j)$ of the sheaf
+  $\Aut^{<0}(\tilde\cM^{good})$ relative to the covering $(I_j)$, such that
+  \[
+    f_l'f_j'^{-1}=g_lf_lf_j^{-1}g_j^{-1} \text{ on } I_j\cap I_l.
+  \]
   \TODO
 
   \textbf{Now look at surjectivity:}
   Exactly as in \cite{sabbah2007isomonodromic} we will start this part of the
-  proof by giving a necesary and sufficient condition for a class $\lambda$ in
+  proof by giving a necessary and sufficient condition for a class $\lambda$ in
   $H^1(S^1,\Lambda^{<0}(A^0))$ to come from an object 
   $(\cM,\nabla,\hat f)\in\cH$:
   \begin{itemize}
@@ -193,8 +198,10 @@ more complicated case, with deformation space, is proofen.
     is the identity.
   \end{thm}
   \begin{proof}
-     For which we refer to \TODO[Mal83b, Appendice],
-     \cite[Th.6.4.1]{sibuya1990Linear}, \TODO[BV89a, Chap.4].
+     For which we refer to 
+     \cite[Th.A.1]{Malgrange1983},
+     \cite[Th.6.4.1]{sibuya1990Linear},
+     \cite{babbitt1989local}
   \end{proof}
 \end{proof}
 
@@ -211,123 +218,13 @@ more complicated case, with deformation space, is proofen.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Definitions}
-\subsubsection{Stokes directions / \dots}
-\begin{comment}
-  \cite{Loday1994} \$I.4
-\end{comment}
-We set
-\[
-  \cQ_{[A^0]}:=\left\{q_1(t^{-1}),\dots,q_n(t^{-1})\right\}
-\]
-and
-\[
-  \cQ_{[\End A^0]}:=\left\{\left(q_i-q_l\right)(t^{-1})
-    \mid q_i \neq q_l \in\cQ_{[A^0]}
-  \right\}
-\]
-where\dots
-\begin{defn}
-  \begin{itemize}
-    \item Define $q_{jl}(t^{-1})$ to be the leading term of
-      $q_j-g_l\in\cQ_{[\End A^0]}$.  Thus if
-      $(q_j-q_l)(t^{-1}) =\frac{a_{jl}}{t^k}+\frac{b}{t^{k-1}}+\cdots$,
-      $a\neq0$ then $q_{jl}=\frac{a_{jl}}{t^k}$.
-      \begin{comment}
-        Thus if $(q_j-q_l)(t^{-1})=\frac{a_{jl}}{t^k}+h$ with $h\in o(t^{-k})$
-        then $q_{jl}=\frac{a_{jl}}{t^k}$.
-      \end{comment}
-      \begin{rem}
-        In \cite{boalch} and \cite{thboalch} the $k$ is incremented by one. We
-        will use this definition, which is taken from \cite{Loday1994}, because
-        \TODO
-      \end{rem}
-    \item The leading exponent $k$ is called
-      \begin{itemize}
-        \item the \emph{degree} $\deg(q_j-q_l)$ of $(q_j-q_l)$ and
-        \item a \emph{level} of $A^0$.
-      \end{itemize}
-    \item The degrees of the elements in $\cQ_{[\End A^0]}$ are the
-      \emph{levels} of $A^0$.
-      The set of all levels of $A^0$ will be denoted by
-      \[
-        \cK=\{k_1<\dots<k_r\} \,.
-      \]
-      \begin{comment}
-        \begin{rem}
-          Levels are rational numbers. The unramified case is the case when
-          all levels are integers.
-          \TODO[Maby use definitions from \cite{Loday1994} p.857 in case of
-            ramification]
-        \end{rem}
-      \end{comment}
-    \item \TODO[define half periode?]
-  \end{itemize}
-\end{defn}
-
-On the elements of $\cQ(A^0)$ we define the following (partial) order
-relations:
-\begin{defn}
-  We define the relations
-  \begin{itemize}
-    \item $q_j \underset{\theta}{\prec} q_l$
-      :\Leftrightarrow{} $\Re(a_{ij}e^{-ik\theta})<0$
-      \begin{comment}
-        \Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is flat at $0$ in a
-        neighbourhood of the direction $\theta$.
-        \TODO[define?]
-      \end{comment}
-    \item $q_j \underset{\theta,\max}{\prec} q_l$
-      :\Leftrightarrow{} $a_{ij}e^{-ik\theta}$ is a real negative number.
-      \begin{comment}
-        \Leftrightarrow{} $q_{ij}(t^{-1})\in\R_{<0}$ along $\theta$.
-      \end{comment}
-      \begin{comment}
-        \Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is of maximal decay in the
-        direction $\theta$.
-        \TODO[define?]
-      \end{comment}
-  \end{itemize}
-  \begin{comment}
-    see \cite{Loday1994} Def I.4.4 for the definition in the ramified case,
-    since
-    \begin{itemize}
-      \item In the unramified case these relations do not depend on the
-        determination $\tilde\theta$ of $\theta$
-    \end{itemize}
-  \end{comment}
-\end{defn}
-
-\begin{defn}
-  \marginnote{See
-    \cite[Definition I.4.5]{Loday1994}
-    \cite[Definition 3.2]{boalch}}
-  \begin{enumerate}
-    \item $\theta$ is an \emph{anti-Stokes direction}\dots
-      \begin{itemize}
-        \item Let $\A=\{\alpha_1,\dots,\alpha_{\nu}\}$ denote the set of all
-          anti-Stokes directions in a clockwise ordering\footnote{In
-          \cite{Loday1994} this ordering is chosen, since the calculations are
-          then compatible with the calculations, which look at $\infty$ and take
-          a counterclockwise ordering.}. For a uniform
-          notation later, define $\A$ to contain a single, arbitrary direction
-          if $k=0$.
-      \end{itemize}
-    \item $\theta$ is an \emph{Stokes direction}\dots
-      \begin{itemize}
-        \item Let $\S=\{\sigma_1<\cdots<\sigma_\mu\}$ be the set of Stokes
-          directions.
-      \end{itemize}
-  \end{enumerate}
-\end{defn}
-
-\TODO
-\begin{defn}
-  The sheaf $\Lambda(A^0)$
-\end{defn}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Coverings / Stokes cocycle}
 \begin{comment}
-  \cite{Loday1994} \$II.1
+  \begin{itemize}
+    \item \cite{Loday1994} Section II.1
+    \item \cite{Loday1994} Section II.3.1
+  \end{itemize}
 \end{comment}
 A covering $\cV$ is said to \emph{refine} a covering $\cU$ if, to each open set
 $V\in\cV$ there is at least one $U\in\cU$ with $V\subset U$.
@@ -369,8 +266,314 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
 
 \begin{defn}
   \marginnote{\cite{Loday1994} Defn II.1.8}
-  \dots \emph{Stokes cocycle} \dots
+  \dots{} \emph{Stokes cocycle} \dots{}
 \end{defn}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Choice of $\log$ / Determination $\tilde\theta$ of $\theta$}
+\begin{center}
+  \begin{tikzpicture}[scale=1]
+    \node[] (zero) at (0,0) {};
+    \fill (zero) circle (1pt);
+    \draw (0,-0.5) arc (270:-90:2 and 0.5);
+
+    \node (theta) at ({cos(240) * 2},{sin(240) * 0.5}) {};
+    % \node [below left of=theta,blue!40!white] {$\theta$};
+
+    \draw[dotted] (0,0) -- (theta);
+    \fill[blue!20!white] (theta) circle (1pt);
+
+
+    \draw[] (-1,2) arc (270:200:-3 and -0.7);
+    \draw[ultra thick,white] (-1,2) arc (270:90:1 and -0.2) arc (270:90:-3 and 0.7);
+    \draw[] (-1,2) arc (270:90:1 and -0.2) arc (270:90:-3 and 0.7);
+    \fill[blue!20!white] (-1,1.6) circle (1pt);
+
+    \draw[ultra thick,white] (-1,3) arc (270:90:1 and -0.2) arc (270:90:-3 and 0.7);
+    \draw[] (-1,3) arc (270:90:1 and -0.2) arc (270:90:-3 and 0.7);
+    \fill[green!60!black] (-1,2.6) circle (1pt);
+
+    \draw[ultra thick,white] (-1,4) arc (270:90:1 and -0.2) arc (270:90:-3 and 0.7);
+    \draw[] (-1,4) arc (270:90:1 and -0.2) arc (270:90:-3 and 0.7);
+    \fill[blue!20!white] (-1,3.6) circle (1pt);
+
+    \draw[ultra thick,white] (-1,5) arc (270:90:1 and -0.2) arc (270:200:-3 and 0.7);
+    \draw[] (-1,5) arc (270:90:1 and -0.2) arc (270:200:-3 and 0.7);
+    \fill[blue!20!white] (-1,4.6) circle (1pt);
+
+
+    \draw[->,gray!50!white] (-1,1.6) to[out=250,in=120] (theta);
+    \draw[->,gray!50!white] (-1,3.6) to[out=250,in=120] (theta);
+    \draw[->,gray!50!white] (-1,4.6) to[out=250,in=120] (theta);
+    \draw[->,green!60!black,thick] (-1,2.6) to[out=250,in=120] (theta);
+  \end{tikzpicture}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Stokes directions / \dots}
+\begin{comment}
+  \cite{Loday1994} \$I.4
+\end{comment}
+We set
+\[
+  \cQ_{[A^0]}:=\left\{q_1(t^{-1}),\dots,q_n(t^{-1})\right\}
+\]
+and
+\[
+  \cQ_{[\End A^0]}:=\left\{\left(q_i-q_l\right)(t^{-1})
+    \mid q_i \neq q_l \in\cQ_{[A^0]}
+  \right\}
+\]
+where\dots
+\begin{defn}
+  We call
+  \begin{itemize}
+    \item $a_{(j,l)}\in\C\backslash\{0\}$ the \emph{leading factor},
+    \item $\frac{a_{(j,l)}}{t^k}=:q_{(j,l)}(t^{-1})$ the \emph{leading
+      coefficient} and
+    \item $k$ the \emph{degree} $\deg(q_j-q_l)$ of $(q_j-q_l)$ or a
+      \emph{level} of $A^0$
+  \end{itemize}
+  of $q_j-q_l\in\cQ_{[\End A^0]}$ if
+  \[
+    q_j-q_l\in\left\{ \frac{a_{(j,l)}}{t^k}+h \mid h \in o(t^{-k})\right\} \,.
+  \]
+  \begin{rem}
+    In \cite{boalch} and \cite{thboalch} the $k$ is always an integer and
+    is incremented by one. We will prefer the other definition, which is
+    taken from \cite{Loday1994}, because \TODO
+  \end{rem}
+  The degrees of the elements in $\cQ_{[\End A^0]}$ are the
+  \emph{levels} of $A^0$.
+  The set of all levels of $A^0$ will be denoted by
+  \[
+    \cK=\{k_1<\dots<k_r\} \subset \Q \,.
+  \]
+  \begin{rem}
+    $A^0$ is unramified if and only if $\cK\subset\Z$. Since we only look at
+    the unramified case, this will be always the case.
+  \end{rem}
+\end{defn}
+
+On the elements of $\cQ(A^0)$ we define the following (partial) order
+relations:
+\begin{defn}
+  \marginnote{\cite[Def.I.4.4]{Loday1994}}
+  Let $\tilde\theta$ be a determination of $\theta$.
+  We define the relations
+  \begin{itemize}
+    \item $q_j \underset{\tilde\theta}{\prec} q_l$
+      :\Leftrightarrow{} $\Re(a_{ij}e^{-ik\theta})<0$
+    \\\Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is
+      flat\footnote{\TODO[define?]} at $0$ in a neighbourhood of the direction
+      $\tilde\theta$.
+    \item $q_j \underset{\tilde\theta,\max}{\prec} q_l$
+      :\Leftrightarrow{} $a_{ij}e^{-ik\tilde\theta}$ is a real negative number.
+      \\\Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is of maximal
+      decay\footnote{\TODO[define?]} in the
+      direction $\tilde\theta$.
+      \begin{comment}
+        \Leftrightarrow{} $q_{ij}(t^{-1})\in\R_{<0}$ along $\tilde\theta$.
+      \end{comment}
+  \end{itemize}
+\end{defn}
+\begin{rem}
+  In the unramified case these relations do not depend on the determination
+  $\tilde\theta$ of $\theta$. As a consequence we will only write 
+  $\underset{\theta}{\prec}$ and $\underset{\theta,\max}{\prec}$.
+\end{rem}
+
+\begin{defn}
+  \marginnote{See
+    \cite[Def.I.4.5]{Loday1994}(for the ramified case)
+    \cite[Def.3.2]{boalch}}
+  \begin{enumerate}
+    \item $\theta$ is an \emph{anti-Stokes direction} if there is at least one
+      pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies 
+      $q_j \underset{\theta,\max}{\prec} q_l$.
+      \begin{itemize}
+        \item Let $\A=\{\alpha_1,\dots,\alpha_{\nu}\}$ denote the set of all
+          anti-Stokes directions in a clockwise ordering\footnote{In
+          \cite{Loday1994} this ordering is chosen, since the calculations are
+          then compatible with the calculations, which look at $\infty$ and take
+          a counterclockwise ordering. \cite{boalch} and \cite{thboalch} use the
+          inverse ordering, but look also at $0$.}. For a uniform notation
+          later, define $\A$ to contain a single, arbitrary direction if $k=0$.
+      \end{itemize}
+    \item $\theta$ is an \emph{Stokes direction} when there is at least one
+      pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies neither
+      $q_j\underset{\theta}{\prec} q_l$. nor $q_l\underset{\theta}{\prec} q_j$.
+      \begin{itemize}
+        \item Let $\S=\{\sigma_1<\cdots<\sigma_\mu\}$ be the set of Stokes
+          directions.
+      \end{itemize}
+  \end{enumerate}
+\end{defn}
+
+\TODO
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Stokes group $\Sto_\theta(A^0)$}
+\begin{defn}
+  Define the \emph{Stokes group}
+  \[
+    \Sto_\theta(A^0)=
+    \left\{\phi_\theta\in\Lambda_\theta^{<0}(A^0)
+      \mid \phi_\theta \text{ has maximal decay at } \theta
+    \right\}
+  \]
+  and the group
+  \[
+    \SSto_d(A^0)= \left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
+      q_j \underset{\theta,\max}{\prec} q_l \right\}
+  \]
+  which will arise as faithfull representation of $\Sto_\theta(A^0)$.
+  \begin{rem}
+    For $\theta\notin\A$ the group $\Sto_\theta(A^0)$ is trivial, since no flat
+    isotropy has maximal decay, but the identity.
+  \end{rem}
+\end{defn}
+For every representation $\tilde\theta$ of $\theta$ there is an isomorphism
+\[
+  \rho_{\tilde\theta}:\Sto_\theta(A^0)\to\SSto_\theta(A^0)
+\]
+which maps a germ of $\Sto_\theta(A^0)$ to its faithfull representation. This
+process, in the case when $\theta\in\A$, is described as follows:
+\begin{itemize}
+  \item[] given
+    \begin{itemize}
+      \item a normal solution $X_0=t^\Lambda e^{Q(t^{-1})}$ and
+      \item a determination $\tilde\theta$ of $\theta$.
+    \end{itemize}
+    Then denote by $X_{0,\tilde\theta}$ the function defined by $X_0$ with that
+    determination of the argument near the direction $\theta$.
+\end{itemize}
+An element $\phi_\theta(t)\in\Sto_\theta(A^0)$ is thus a flat transformation
+such that
+\[
+  \phi_\theta(t)X_{0,\tilde\theta}(t)
+  =X_{0,\tilde\theta}(t)(1_n+C_{\tilde\theta})
+\]
+for a unique constant invertible matrix of the form $1_n+C_{\tilde\theta}$,
+which we will call the \emph{representation of $\phi_\theta$}.
+Some little reshaping results in the following equation
+\[
+  \phi_\theta(t)
+  =t^\Lambda e^{Q(t^{-1})}(1_n+C_{\tilde\theta})e^{-Q(t^{-1})}t^{-\Lambda}
+\]
+and after decomposing\TODO[Fitting the structure of $Q$] $C_{\tilde\theta}$
+into 
+\begin{align*}
+  C_{\tilde\theta}&=\begin{pmatrix}
+    c_{(1,1)} & c_{(1,2)} & \cdots &\\
+    c_{(2,1} & \ddots\\
+    \vdots \\
+    & & & c_{(n,n)}
+  \end{pmatrix}
+\\&=
+  \underset{C_{\tilde\theta}^{(1,1)}}{\underbrace{%
+    \begin{pmatrix}
+      c_{(1,1)} & 0 & \cdots &\\
+      0\\
+      \vdots&\\
+      &
+    \end{pmatrix}
+  }}
+  +
+  \underset{C_{\tilde\theta}^{(1,2)}}{\underbrace{%
+    \begin{pmatrix}
+      0 & c_{(1,2)} & 0 & \cdots\\
+      & 0 &\\
+      &\vdots\\
+      &
+    \end{pmatrix}
+  }}
+  +\cdots+
+  \underset{C_{\tilde\theta}^{(n,n)}}{\underbrace{%
+    \begin{pmatrix}
+      &\\
+      & & & \vdots\\
+      & & & 0\\
+      & \cdots & 0 & c_{(n,n)}
+    \end{pmatrix}
+  }}
+\\&=\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}
+\end{align*}
+we get
+\[
+  \phi_\theta=
+    t^\Lambda\left(
+      1_n+C_{\tilde\theta}^{(l,j)}e^{(q_l-q_j)(t^{-1})}
+    \right)t^{-\Lambda} \,.
+\]
+
+\begin{paracol}{2}
+\switchcolumn[0]\noindent
+  Thus $\phi_\theta$ is flat in direction $\theta$ if and only if, as soon as
+  $e^{(q_l-q_j)(t^{-1})}$ does not have maximal decay in direction
+  $\tilde\theta$ the corresponding block $C_{\tilde\theta}^{(l,j)}$ is zero.
+\switchcolumn[1]\noindent
+  Thus, for $\phi_{\tilde\theta}$ to be flat in direction $\theta$, it is
+  necessary and sufficient that if $e^{(q_l-q_j)(t^{-1})}$ does not have
+  maximal decay in direction $\tilde\theta$ the corresponding block
+  $C_{\tilde\theta}^{(l,j)}$ vanishes.
+\end{paracol}
+In particular we get, that
+\begin{itemize}
+  \item for $j=l$ are the blocks $C_{\tilde\theta}^{(l,j)}$ are zero and
+  \item if $e^{q_j-q_l}$ has has maximal decay, then $e^{q_l-q_j}$. Thus if
+    $C_{\tilde\theta}^{(l,j)}$ is not equal to zero, the block 
+    $C_{\tilde\theta}^{(j,l)}$ is necessarily zero.
+\end{itemize}
+This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent.
+On the other hand, every constant unipotent Matrix, with zeros at the necessary
+positions, characterizes a unique element of $\Sto_\theta(A^0)$.
+Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.
+
+\begin{lem}
+  \marginnote{\cite[Def.I.4.12]{Loday1994}}
+  A germ $\phi_\theta\in\Lambda_\theta(A^0)$ is a Stokes germ, i.e.\ an element
+  in $\Sto_\theta(A^0)$ if and only if for some, hence all determination
+  $\tilde\theta$, it has a representation $C_{\tilde\theta}$ of the form 
+  $ C_{\tilde\theta}=\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}$.
+\end{lem}
+\begin{proof}
+  See \cite[Def.I.4.12]{Loday1994}.
+  \TODO
+\end{proof}
+
+\begin{comment}
+  If we fix a normal solution $X_0=e^Le^{Q(1/x)}$
+  \begin{lem}
+    Each germ $\phi_\theta\in\Lambda_\theta(A^0)$ is representable, relative to
+    $X_{0,\tilde\theta}$, by a unique matrix
+    \[
+      C_{X_{0,\tilde\theta}}=
+        1+\sum_{(j,l)\mid q_j \underset{\theta}{\prec} q_l} c_{(j,l)}E_{(j,l)}
+    \]
+    such that $\phi_\theta(x)
+    =X_{0,\tilde\theta}(x)C_{X_{0,\tilde\theta}}X_{0,\tilde\theta}(x)^{-1}$ near
+    $\theta$.
+
+    \TODO
+
+    \marginnote{\cite[Con.I.4.8]{Loday1994}}
+    Thus the sheaf $\Lambda(A^0)$ is a sheaf of non-Abelian unipotent groups.
+  \end{lem}
+
+  \begin{defn}
+    \marginnote{\cite[Def.I.4.12]{Loday1994}}
+    The \emph{group of Stokes germs} \TODO
+    
+    \begin{comment}
+      In \cite[Def.1.21]{thboalch} there is the \emph{group of Stokes factors}
+      \[
+        \SSto_d(A^0)= \left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
+          q_j \underset{\theta,\max}{\prec} q_l \right\}
+      \]
+    \end{comment}
+  \end{defn}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The main theorem}
@@ -411,5 +614,11 @@ is welldefined.
 \subsection{Proof}
 We will only look at the unramified case, the proof in the ramified case can be
 found in \cite{Loday1994} section II.4.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{The case of a unique level}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{The case of a several level}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{From cohomology to matrix version}

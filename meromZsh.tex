@@ -360,7 +360,7 @@ This defines equivalence relations\dots \TODO and one optains the notions of
   \begin{multicols}{2}
     \[
       A^0=d\overset{~\tikzmark{e1}}{\textcolor{green!40!black}{Q}}
-         +~\tikzmark{e2}\!\!\Lambda\frac{dt}{t} \,.
+        +~\tikzmark{e2}\!\!\textcolor{blue!40!black}{\Lambda}\frac{dt}{t} \,.
     \]
     \columnbreak
     \begin{itemize}
@@ -368,7 +368,8 @@ This defines equivalence relations\dots \TODO and one optains the notions of
         $\textcolor{green!40!black}{Q
           =\diag(\textcolor{red!60!black}{\phi_1,\dots,\phi_n})}$
       \item[\tikzmarkc{n2}{blue}]
-        $\Lambda$ constant, usually not of rank $1$
+        $\textcolor{blue!40!black}{\Lambda}$ constant \emph{matrix of exponets
+        of formal Monodromy}\footnote{usually not of rank $1$}
     \end{itemize}
     \begin{tikzpicture}[remember picture,overlay]
       \draw[->,green!40!black,thick] (n1) to[out=180,in=70] (e1);
@@ -433,7 +434,8 @@ The important theoreme here is the Levelt-Turittin-theoreme.
 
 \begin{comment}
   \subsection{By fundamental solutions\dots}
-  \marginnote{\cite{Loday1994} p. 853}
+  \marginnote{\cite[853]{Loday1994}}
+  \marginnote{\cite[Th.4.3.1]{Loday2014}}
   A system
   \[
     \frac{dX}{dt}=A^0X
@@ -582,8 +584,8 @@ equivalence classes in
   \end{itemize}
 \end{proof}
 
-The group $G_0(A^0)$ is easy to compute and is often trivial.
-For example, in the nice case, it is only $T$\TODO[correct?].
+The group $G_0(A^0)$ is easy to compute and is often trivial. In fact, the
+elements are block-diagonal, see \cite[77]{Loday2014}.
 Thus the structure of ${}^0C(A^0)$ is easily deduced from the structure of
 $G\backslash\hat G(A^0)$.
 
