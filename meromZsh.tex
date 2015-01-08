@@ -323,8 +323,7 @@ This defines equivalence relations\dots \TODO and one optains the notions of
 \begin{defn}
   \def\myPhi{\textcolor{red!60!black}{\phi}}
   \def\myE{\textcolor{green!40!black}{\cE^{\myPhi}}}
-  A germ $(\cM,\nabla)$ is a \emph{model} or a \emph{formal decomposition} if
-  there exists a isomorphism
+  A germ $(\cM,\nabla)$ is a \emph{model} if there exists a isomorphism
   \begin{multicols}{2}
     \[
       \lambda:(\cM,\nabla)
@@ -343,7 +342,7 @@ This defines equivalence relations\dots \TODO and one optains the notions of
     \]
     \columnbreak
     \begin{itemize}
-      \item[\tikzmarkb{n2}{green}] irregular singular
+      \item[\tikzmarkb{n2}{green}] is irregular singular
       \item[\tikzmarkc{n1}{blue}] has regular singularity at $\{0\}$
       \item[\tikzmarkc{n3}{red}] $\myPhi\in t^{-1}\C[t^{-1}]$ pairwise distinct
     \end{itemize}
@@ -360,7 +359,7 @@ This defines equivalence relations\dots \TODO and one optains the notions of
   \begin{multicols}{2}
     \[
       A^0=d\overset{~\tikzmark{e1}}{\textcolor{green!40!black}{Q}}
-        +~\tikzmark{e2}\!\!\textcolor{blue!40!black}{\Lambda}\frac{dt}{t} \,.
+        +~\tikzmark{e2}\!\!\textcolor{blue!40!black}{\Lambda}\frac{dt}{t}
     \]
     \columnbreak
     \begin{itemize}
@@ -388,18 +387,20 @@ The important theoreme here is the Levelt-Turittin-theoreme.
   To each germ $(\cM,\nabla)$ of a meromorphic connection there exists, after
   potentially needed \textcolor{blue!60!black}{pullback by some suitable
   ramification $t=z^q$ of order $q\geq1$}, a
-  \textcolor{green!40!black}{\textbf{formal}} isomorphism
+  \textcolor{green!30!black}{\textbf{formal}} isomorphism
   \[
-    \textcolor{green!40!black}{\hat{\textcolor{black}{\lambda}}}:
+    \textcolor{green!30!black}{\hat{\textcolor{black}{\lambda}}}:
     \textcolor{blue!60!black}{\pi^{+}}
-    \textcolor{green!40!black}{\hat{\textcolor{black}{\cM}}}
+    \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}}
     \overset{\cong}\longrightarrow
-    \textcolor{green!40!black}{\hat{\textcolor{black}{\cM}}^{good}}
-    :=\textcolor{green!40!black}{\hat\cO_M\otimes}\cM^{good}
+    \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}^{good}}
+    :=\textcolor{green!30!black}{\hat\cO_M\otimes}\cM^{good}
   \]
   to a model $\cM^{good}$\footnote{The word `good' only means, that it is a
   model. In \cite{sabbah2007isomonodromic} it means good-model,
   which\dots\TODO}.
+  We then call $\cM^{good}$ a \emph{formal decomposition} or \emph{formal
+  model} of $\cM$.
 \end{thm}
 \begin{proof}
   See \TODO
@@ -419,7 +420,7 @@ The important theoreme here is the Levelt-Turittin-theoreme.
         \item $r\geq1$,
         \item $A$ has holomorphic entries, and
         \item $A_0:=A(0)$ being regular semisimple\footnote{i.e.\ with
-          pairwise distinct eigenvalues.}
+          pairwise distinct eigenvalues.}.
       \end{itemize}
   \end{itemize}
   Then there is no ramification needed, to apply the Levelt-Turittin-theoreme.
@@ -434,8 +435,7 @@ The important theoreme here is the Levelt-Turittin-theoreme.
 
 \begin{comment}
   \subsection{By fundamental solutions\dots}
-  \marginnote{\cite[853]{Loday1994}}
-  \marginnote{\cite[Th.4.3.1]{Loday2014}}
+  \marginnote{\cite[853]{Loday1994}, \cite[Th.4.3.1]{Loday2014}}
   A system
   \[
     \frac{dX}{dt}=A^0X
@@ -466,7 +466,7 @@ The important theoreme here is the Levelt-Turittin-theoreme.
     \item An \emph{isotropy} of $A^0$ is a transformation $\hat F$ which
       satisfy ${}^{\hat F}\!A=A$. Thus, the isotropies are the solutions of the
       system $[\End A^0]:=[A^0,A^0]$.
-      \marginnote{\cite{Loday1994} p. 853}
+      \marginnote{\cite[853]{Loday1994}}
       \begin{rem}
         They are, a priori, formal transformations. Actually $G(A^0)$ is a
         subgroup of $\Gl_n(\C[1/x,x])$.
@@ -532,7 +532,7 @@ It is convenient to look at the slightly larger space of \emph{marked pairs}
 \]
 in which we also keep the additional information, of the formal isomorphism, by
 which the meromorphic connection is formally isomorphic to the model.
-Where the isomorphisms of of marked pairs are defined as follows:
+Where the isomorphisms of marked pairs are defined as follows:
 \begin{defn}
   Two germs $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$ are
   isomorphic if there exists an isomorphism

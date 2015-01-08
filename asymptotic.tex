@@ -27,7 +27,8 @@ There are various references for Poincarè asymptotic expansions, or for shor,
 asymptotic expansions.
 We will mostly refer to \cite[chapter 2]{Loday2014} and
 \cite[chapter 7]{van2003galois}.
-For the \TODO-definition we will also use \cite{sabbah2007isomonodromic}.
+\TODO[For the second definition we will also use
+\cite{sabbah2007isomonodromic}.]
 
 \TODO[Define Sect command]
 
@@ -40,8 +41,9 @@ We introduce the following notations:
         \mathfrak{s}_{a,b}(r):=\left\{t\in\C \mid a<\arg(t)<b, 0<|t|<r\right\}
       \]
       of all points $t\in\C$ satisfying $a<\arg(t)<b$ and $0<|t|<r$;
-    \item $\mathfrak{s}_{I}(r)=\mathfrak{s}_{a,b}(r)$ for $I=(a,b)$
-    \item $\bar{\mathfrak{s}}=\bar{\mathfrak{s}}_{a,b}(r)$ its closure in \TODO.
+    \item $\mathfrak{s}_{I}(r)=\mathfrak{s}_{a,b}(r)$ for $I=(a,b)$;
+    \item $\bar{\mathfrak{s}}=\bar{\mathfrak{s}}_{a,b}(r)$ the closure of
+      $\mathfrak{s}_{a,b}(r)$ in $\C^*:=\C\backslash\{0\}$.
   \end{itemize}
   \begin{center}
     \begin{tikzpicture}[scale=4]
@@ -122,15 +124,20 @@ S^1$} if $\theta\in I$.
       \qquad \text{ for all } t\in \mySect \,.
     \]
   \end{rem}
-  We will say, that \emph{$f$ has the formal Laurent series $\hat g$ as
-  asymptotic expansion on the interval $I\subset S^1$} if there exists a
-  $r\in\R_{>0}$ such that $f$ has the formal Laurent series $\hat g$ as
-  asymptotic expansion on $\mathfrak{s}_I(r)$.
-  \TODO[Asymptotic expansion in direction $\theta\in S^1$]
+  \begin{enumerate}
+    \item We will say, that \emph{$f$ has the formal Laurent series $\hat g$ as
+      asymptotic expansion on the interval $I\subset S^1$} if there exists a
+      $r\in\R_{>0}$ such that $f$ has the formal Laurent series $\hat g$ as
+      asymptotic expansion on $\mathfrak{s}_I(r)$.
+    \item We will say, that \emph{$f$ has the formal Laurent series $\hat g$ as
+      asymptotic expansion in the direction $\theta$} if there exists an
+      interval $\theta\in I\subset S^1$ such that $f$ has formal Laurent series
+      $\hat g$ as asymptotic expansion on the interval $I$.
+  \end{enumerate}
 \end{defn}
-If $f$ hat $\hat g$ as asymptotic expansion on the sector $\mathfrak{s}$ (or on
-the interval $I\subset S^1$), we denote that by $f\sim_{\mathfrak{s}}\hat g$
-(or $f\sim_{I}\hat g$).
+If $f$ has $\hat g$ as asymptotic expansion on the sector $\mathfrak{s}$ (or on
+the interval $I\subset S^1$, or in the direction $\theta$), we denote that by
+$f\sim_{\mathfrak{s}}\hat g$ (or $f\sim_{I}\hat g$, or $f\sim_{\theta}\hat g$).
 \begin{notations}
   \begin{itemize}
     \item Define $\cA(\mathfrak{s})$ as the set of holomorphic functions
@@ -140,9 +147,9 @@ the interval $I\subset S^1$), we denote that by $f\sim_{\mathfrak{s}}\hat g$
       \[
         T_{\mathfrak{s}}:\cA(\mathfrak{s})\to\C(\!(t)\!)
       \]
-      for the mapping, which associates to each function
-      $f\in\cA(\mathfrak{s})$ its asymptotic expansion.
-    \item A function with $f$ with $T_{\mathfrak{s}}(f)=\id_{\mathfrak{s}}$ is
+      for the mapping, which associates to each
+      function $f\in\cA(\mathfrak{s})$ its asymptotic expansion.
+    \item A function $f$ with $T_{\mathfrak{s}}(f)=\id_{\mathfrak{s}}$ is
       called \emph{flat (on $\mathfrak{s}$)}
     \item Denote by $\cA^{<0}(\mathfrak{s})$ the set
       $\ker(T_{\mathfrak{s}})\subset\cA(\mathfrak{s})$ of functions asymptotic
@@ -161,9 +168,22 @@ the interval $I\subset S^1$), we denote that by $f\sim_{\mathfrak{s}}\hat g$
       Analogous $\cA^{<0}(I)$ is defined.
   \end{itemize}
 \end{notations}
+\begin{rem}
+  One can also define 
+  \begin{itemize}
+    \item $\cA(I)$ and $\cA(\theta)$,
+    \item $T_I$ and $T_\theta$,
+    \item $\cA^{<0}(I)$ and $\cA^{<0}(\theta)$.
+  \end{itemize}
+\end{rem}
 It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
+\begin{comment}
+  \begin{rem}
+    $\cA_\theta=\cA(\theta)$ and $\cA^{<0}_\theta=\cA^{<0}(\theta)$.
+  \end{rem}
+\end{comment}
 \begin{itemize}
-  \marginnote{\cite{van2003galois} p. 194}
+    \marginnote[194]{\cite{van2003galois}}
   \item $\cA(S^1)=$\TODO
   \item\dots
 \end{itemize}
@@ -192,9 +212,7 @@ It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \section{Sheaf definition from \cite{sabbah2007isomonodromic}}
-  \begin{comment}
-    see \cite{sabbah2007isomonodromic} II.5.c
-  \end{comment}
+  See \cite[II.5.c]{sabbah2007isomonodromic}.
   Let
   \begin{itemize}
     \item $D$ the open disc with coordinate $t$ centered at the origin and of
@@ -205,15 +223,15 @@ It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
   \dots we can define the derivations $t\partial/\partial t$ and 
   $\bar t\partial/\partial\bar t$.
   \begin{defn}
-    The sheaf of rings $\cA_{\tilde D}$ is the subsheaf of
+    The sheaf of rings $\cA_{\tilde D}$ is defined as the subsheaf of
     $\sC_{\tilde D}^\infty$ of germs killed by $\bar t\partial/\partial\bar t$.
   \end{defn}
   \begin{rem}
     \cite{sabbah2007isomonodromic}: Remark 5.11
   \end{rem}
-  \begin{comment}
+  \begin{rem}
     On the sheaf $\cA_{\tilde D}$ is defined the action of the derivation
     $\partial/\partial t$\dots
-  \end{comment}
+  \end{rem}
   \dots
 \end{comment}

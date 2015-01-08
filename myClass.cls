@@ -95,71 +95,144 @@
 %\linespread{1.5}
 
 %%%%  Theoreme Styles  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[framemethod=TikZ]{mdframed}
+\definecolor{myVLineColor}{RGB}{0,51,128}
 \makeatletter
 
 \theoremstyle{plain}% default
-\newtheorem{thm}{Satz}[chapter]
-\newtheorem{tthm}{Satz}[chapter]
-%\newtheorem{thm}[satz]{Satz}
-\newtheorem{lemma}[thm]{Lemma}
-\newtheorem{lem}[thm]{Lemma}
-\newtheorem{llem}[thm]{Lemma}
-\newtheorem{lemdef}[thm]{Lemma/Definition}
-\newtheorem{lemcor}[thm]{Lemma/Korollar}
-\newtheorem{defcor}[thm]{Definition/Korollar}
-\newtheorem{cor}[thm]{Korollar}
-\newtheorem{kor}[thm]{Korollar}
-\newtheorem{prop}[thm]{Proposition}
+\iffalse
+  \newtheorem{thm}{Satz}[chapter]
+  \newtheorem{tthm}{Satz}[chapter]
+  \newtheorem{lemma}[thm]{Lemma}
+  \newtheorem{lem}[thm]{Lemma}
+  \newtheorem{llem}[thm]{Lemma}
+  \newtheorem{lemdef}[thm]{Lemma/Definition}
+  \newtheorem{lemcor}[thm]{Lemma/Korollar}
+  \newtheorem{defcor}[thm]{Definition/Korollar}
+  \newtheorem{cor}[thm]{Korollar}
 
-\newtheorem{ex}{Aufgabe}[chapter]
-\newtheorem*{beh}{Behauptung}
-\newtheorem*{dazu}{Dazu}
+  \newtheorem{kor}[thm]{Korollar}
+  \newtheorem{prop}[thm]{Proposition}
 
-\theoremstyle{definition}
-\newtheorem{defn}[thm]{Definition}
-\newtheorem*{notations}{Notations}
-\newtheorem{conj}[thm]{Conjecture}
-\newtheorem{exmp}[thm]{Beispiel}
-\newtheorem{bsp}[thm]{Beispiel}
+  \newtheorem{ex}{Aufgabe}[chapter]
+  \newtheorem*{beh}{Behauptung}
+  \newtheorem*{dazu}{Dazu}
 
-\theoremstyle{remark}
-\newtheorem{rem}[thm]{Remark}
-\newtheorem{bem}[thm]{Remark}
-\newtheorem{beo}[thm]{Beobachtung}
-\newtheorem{note}[thm]{Notiz}
+  \theoremstyle{definition}
+  \newtheorem{defn}[thm]{Definition}
+  \newtheorem*{notations}{Notations}
+  \newtheorem{conj}[thm]{Conjecture}
+  \newtheorem{exmp}[thm]{Beispiel}
+  \newtheorem{bsp}[thm]{Beispiel}
 
-%\usepackage{thmbox}
-\newtheorem{try}{Versuch}
-\newtheorem{case}{Fall}
+  \theoremstyle{remark}
+  \newtheorem{rem}[thm]{Remark}
+  \newtheorem{bem}[thm]{Remark}
+  \newtheorem{beo}[thm]{Beobachtung}
+  \newtheorem{note}[thm]{Notiz}
+
+  %\usepackage{thmbox}
+  \newtheorem{try}{Versuch}
+  \newtheorem{case}{Fall}
+\else
+  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+            ,topline=false, rightline=false, bottomline=false
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{thm}{Theorem}[chapter]
+  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{tthm}{Theorem}[chapter]
+  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+            ,topline=false, rightline=false, bottomline=false
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{lem}[thm]{Lemma}
+  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{llem}[thm]{Lemma}
+  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+            ,topline=false, rightline=false, bottomline=false
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{lemdef}[thm]{Lemma/Definition}
+  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+            ,topline=false, rightline=false, bottomline=false
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{lemdef}[thm]{Lemma/Corollary}
+  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+            ,topline=false, rightline=false, bottomline=false
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{lemdef}[thm]{Definition/Corollary}
+  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+            ,topline=false, rightline=false, bottomline=false
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{cor}[thm]{Corollary}
+  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+            ,topline=false, rightline=false, bottomline=false
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{kor}[thm]{Corollary}
+  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+            ,topline=false, rightline=false, bottomline=false
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{prop}[thm]{Proposition}
+
+  \newtheorem{ex}{Aufgabe}[chapter]
+  \newtheorem*{beh}{Behauptung}
+  \newtheorem*{dazu}{Dazu}
+
+  \theoremstyle{definition}
+  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+            ,topline=false, rightline=false, bottomline=false
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{defn}[thm]{Definition}
+  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+            ,topline=false, rightline=false, bottomline=false
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{notations}[thm]{Notations}
+  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{notations}[conj]{Conjecture}
+  \newtheorem{exmp}[thm]{Beispiel}
+  \newtheorem{bsp}[thm]{Beispiel}
+
+  \theoremstyle{remark}
+  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+            ,topline=false, rightline=false, bottomline=false
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{rem}[thm]{Remark}
+  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+            ,topline=false, rightline=false, bottomline=false
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{bem}[thm]{Remark}
+  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+            ,topline=false, rightline=false, bottomline=false
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{note}[thm]{Note}
+
+  \newtheorem{beo}[thm]{Beobachtung}
+
+  %\usepackage{thmbox}
+  \newtheorem{try}{Versuch}
+  \newtheorem{case}{Fall}
+\fi
 
 \numberwithin{equation}{chapter}
 \numberwithin{figure}{chapter}
 %\numberwithin{figure}{thm}
-
-\definecolor{myVLineColor}{RGB}{0,51,128}
-\usepackage[framemethod=TikZ]{mdframed}
-\surroundwithmdframed[
-  linewidth=2pt,
-  linecolor=myVLineColor,
-  topline=false,
-  rightline=false,
-  bottomline=false,
-  leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
-]{thm}
-\surroundwithmdframed[
-  linewidth=2pt,
-  linecolor=myVLineColor,
-  leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
-]{tthm}
-
-\surroundwithmdframed[
-  linewidth=2pt,
-  linecolor=myVLineColor,
-  %topline=false,
-  %rightline=false,
-  %bottomline=false,
-  leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
-]{ex}
 
 %%%%  Ploting  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{tikz}
@@ -250,6 +323,7 @@
 \newcommand{\comm}[1] {}
 \newcommand{\ccite}[2][\empty] {}
 \newcommand{\TODO}[1][\empty] {}
+
 \ifnum\myDevelopVariable=1
   \usepackage{xcolor}
   \usepackage{color}
@@ -294,84 +368,17 @@
       \footnotesize{}
       \ifthenelse{\equal{#1}{\empty}}
         {TODO}
-        {TODO: #1}
+        {#1} % {TODO: #1}
       
   }}}
 
   %Zeilenhöhe, für bessere lesbarkeit
   \linespread{1.3}
 
-  %\cfoot{-\thepage-\\\today}
+  % \cfoot{-\thepage-\\\today}
 
   % einseitig, überschreibt KOMA
   %\setboolean{@twoside}{false}
-
-  \surroundwithmdframed[
-    linewidth=2pt,
-    linecolor=myVLineColor,
-    topline=false,
-    rightline=false,
-    bottomline=false,
-    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
-  ]{cor}
-  \surroundwithmdframed[
-    linewidth=2pt,
-    linecolor=myVLineColor,
-    topline=false,
-    rightline=false,
-    bottomline=false,
-    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
-  ]{lem}
-  \surroundwithmdframed[
-    linewidth=2pt,
-    linecolor=myVLineColor,
-    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
-  ]{llem}
-  \surroundwithmdframed[
-    linewidth=2pt,
-    linecolor=myVLineColor,
-    topline=false,
-    rightline=false,
-    bottomline=false,
-    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
-  ]{prop}
-  \surroundwithmdframed[
-    linewidth=1pt,
-    linecolor=myVLineColor,
-    topline=false,
-    rightline=false,
-    bottomline=false,
-    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
-  ]{defn}
-  \surroundwithmdframed[
-    linewidth=1pt,
-    linecolor=myVLineColor,
-    topline=false,
-    rightline=false,
-    bottomline=false,
-    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
-  ]{notations}
-  \surroundwithmdframed[
-    linecolor=myVLineColor,
-    topline=false,
-    rightline=false,
-    bottomline=false,
-    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
-  ]{lemdef}
-  \surroundwithmdframed[
-    linecolor=myVLineColor,
-    topline=false,
-    rightline=false,
-    bottomline=false,
-    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
-  ]{rem}
-  \surroundwithmdframed[
-    linecolor=myVLineColor,
-    topline=false,
-    rightline=false,
-    bottomline=false,
-    leftmargin=\parindent, skipabove=\medskipamount, skipbelow=\medskipamount
-  ]{proof}
 \fi
 
 \ifnum\myDevelopVariable=2
