@@ -142,8 +142,8 @@ Let $(\cM,\nabla,\hat f)$ be defined on\dots
 \begin{comment}
   \begin{rem}
     \marginnote{\cite{Loday1994} Remark I.2.2}
-    To another normal form $A^1={}^f\!A^0$ there correspond cochains which are
-    conjugated via $f$.
+    To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains which
+    are conjugated via $\Phi$.
     We get the following commutative diagram:
     \[ \begin{tikzcd}
         G\backslash\hat G(A^1) \rar{\cdot\Phi}\dar{\exp} 
@@ -363,17 +363,17 @@ by $\Gamma(\dot U^k;\Lambda^k(A^0))$ and so on.
 \begin{comment}
   \cite[I.4]{Loday1994}
 \end{comment}
-We set
+We denote
 \[
   \cQ_{[A^0]}:=\left\{q_1(t^{-1}),\dots,q_n(t^{-1})\right\}
 \]
-and
+the set of the determining polynomials of $[A^0]$
 \[
   \cQ_{[\End A^0]}:=\left\{\left(q_i-q_l\right)(t^{-1})
     \mid q_i \neq q_l \in\cQ_{[A^0]}
   \right\}
 \]
-where\dots
+the set of the determining polynomials of $[\End A^0]$ where\dots
 \begin{defn}
   We call
   \begin{itemize}
@@ -388,9 +388,14 @@ where\dots
     q_j-q_l\in\left\{ \frac{a_{(j,l)}}{t^k}+h \mid h \in o(t^{-k})\right\} \,.
   \]
   \begin{rem}
-    In \cite{boalch} and \cite{thboalch} the $k$ is always an integer and
-    is incremented by one. We will prefer the other definition, which is
-    taken from \cite{Loday1994}, because \TODO
+    \begin{enumerate}
+      \item In \cite{boalch} and \cite{thboalch} the $k$ is always an integer
+        and is incremented by one. We will prefer the other definition, which
+        is taken from \cite{Loday1994}, because \TODO
+      \item In \cite[Def.4.3.6]{Loday2014} $a_{(j,l)}$ gets a negative sign to
+        be consistend with calculations at $\infty$. Here this is not
+        necessary, since we use then clockwise ordering.
+    \end{enumerate}
   \end{rem}
   The degrees of the elements in $\cQ_{[\End A^0]}$ are the
   \emph{levels} of $A^0$.
@@ -790,7 +795,17 @@ First we will look at the case of a unique level. This means that
   \end{enumerate}
 \end{lem}
 \begin{proof}
-  See \cite[Lem.II.3.3]{Loday1994}.
+  \begin{comment}
+    See \cite[Lem.II.3.3]{Loday1994}.
+  \end{comment}
+  \begin{enumerate}
+    \item \TODO{}
+    \item
+      Denote by $\theta^+$ the nearest anti-Stokes direction in $\A^{\leq k}$
+      on the right\footnote{In clockwise direction.} of $\theta$.
+      \TODO{}
+    \item \TODO{}
+  \end{enumerate}
   \TODO{}
 \end{proof}
 \begin{cor}

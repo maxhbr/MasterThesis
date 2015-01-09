@@ -228,6 +228,15 @@
   %\usepackage{thmbox}
   \newtheorem{try}{Versuch}
   \newtheorem{case}{Fall}
+
+  \surroundwithmdframed[linecolor=myVLineColor
+                       ,topline=false
+                       ,rightline=false
+                       ,bottomline=false
+                       ,leftmargin=\parindent
+                       ,skipabove=\medskipamount
+                       ,skipbelow=\medskipamount
+                       ]{proof}
 \fi
 
 \numberwithin{equation}{chapter}
