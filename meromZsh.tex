@@ -1,14 +1,52 @@
 \chapter{Meromorphe Zusammenhänge}
 \begin{comment}
+  \begin{multicols}{2}
+    \textbf{Global}
+    \begin{itemize}
+      \item Meromorphic connection
+      \item $\cD$-modules (global)
+    \end{itemize}
+    \columnbreak
+    \textbf{Local}
+    \begin{itemize}
+      \item Germ of a meromophic connection
+      \item $\cD$-modules (local)
+      \item System
+        \begin{itemize}
+          \item coordinate dependent
+        \end{itemize}
+      \item Conection matrix
+        \begin{itemize}
+          \item coordinate dependent
+        \end{itemize}
+    \end{itemize}
+  \end{multicols}
+\end{comment}
+There are multiple languages, which can be used for talking about meromorphic
+connections. Firstly the languages of meromorphic connections, and also
+$\cD$-modules\TODO[global]. These two can be used to talk about global
+information. For local description one can use germs of meromorphic connections
+or $\cD$-modules\TODO[local] which are coordinate independent. Coordinate
+dependent alternatives are (local) systems and connection matrices. Also, one
+can use the fundamental solutions to describe local informations of meromophic
+connections.
+\begin{comment}
   Siehe:
-  \begin{itemize}
-    \item \cite{boalch} and \cite{thboalch}
-    \item \cite{sabbah2007isomonodromic}
-  \end{itemize}
-  and
-  \begin{itemize}
-    \item \cite{Varadarajan96linearmeromorphic}
-  \end{itemize}
+  \begin{multicols}{3}
+    \begin{itemize}
+      \item \cite{boalch} and \cite{thboalch}
+      \item \cite{sabbah2007isomonodromic}
+    \end{itemize}
+    \columnbreak
+    \begin{itemize}
+      \item \cite{Varadarajan96linearmeromorphic}
+    \end{itemize}
+    \columnbreak
+    \begin{itemize}
+      \item \cite{Loday1994}
+      \item \cite{Loday2014}
+    \end{itemize}
+  \end{multicols}
 \end{comment}
 
 Let $M$ be a riemanian surface and let $Z=k_1(a_1)+\cdots+k_m(a_m)>0$ be an
@@ -31,23 +69,12 @@ A meromorphic connection is then defined as follows.
   \]
   satisfying, for each $\myU\overset{\text{op.}}{\subset} M$, the
   \emph{Leibniz rule}
-  \begin{multicols}{2}
     \[
-      \nabla(\tikzmark{e2}\myf\overset{\tikzmark{e1}}\mys)
-        =\myf\nabla\mys+(d\myf)\otimes\mys \,.
+      \nabla(\myf\mys)=\myf\nabla\mys+(d\myf)\otimes\mys
     \]
-    \columnbreak
-    \begin{itemize}
-      \item[\tikzmarkc{n1}{blue}]
-        $\mys\textcolor{blue!60!black}{\in\Gamma(\myU,\sM)}$
-      \item[\tikzmarkc{n2}{red}]
-        $\myf\textcolor{red!60!black}{\in\cO_M(\myU)}$
-    \end{itemize}
-  \end{multicols}
-  \begin{tikzpicture}[remember picture,overlay]
-    \draw[->,blue!50!white,thick] (n1) to[out=180,in=70] (e1);
-    \draw[->,red!50!white,thick] (n2) to[out=180,in=-70] (e2);
-  \end{tikzpicture}
+  for $\mys\textcolor{blue!60!black}{\in\Gamma(\myU,\sM)}$ and
+  $\myf\textcolor{red!60!black}{\in\cO_M(\myU)}$.
+
 \end{defn}
 \begin{rem}
   \begin{enumerate}
@@ -86,6 +113,7 @@ A meromorphic connection is then defined as follows.
   on the holomorphic bundle $\sM_{|M\backslash Z}$.
 \end{defn}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Local expression of meromorphic connections}
 \TODO[Germ of a meromorphic Connection / Connection matrices
   / systems]
@@ -144,14 +172,6 @@ $A=A'dt$.
   \end{itemize}
 \end{comment}
 
-\begin{comment}
-  \TODO[Gauge transformation]
-  \begin{itemize}
-    \item meromorphic transformation \cite{Loday1994} p. 852
-    \item holomorphic trasformation
-  \end{itemize}
-\end{comment}
-
 \begin{cor}
   The connection matrices describe the germs of meromorphic connections.
 \end{cor}
@@ -159,12 +179,15 @@ $A=A'dt$.
   \TODO
 \end{proof}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Connection matrix \leftrightarrow{} system}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Connection matrix \rightarrow{} connection}
 \begin{comment}
   There is a thm in \cite{sabbah2007isomonodromic}
 \end{comment}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Meromorphic / formal transformation}
 \begin{comment}\footnotesize
   see \cite{thboalch} \textbf{Rem 1.41 on p. 16}:
@@ -235,20 +258,26 @@ transformations}
       which is denoted by $[\myA,\myB]$.
   \end{itemize}
 \end{rem}
-
-This defines equivalence relations\dots \TODO and one optains the notions of
-(formal) equivalence classes of meromorphic connections.
+We define the (formal) equivalence relation on the connection matrices as $A$
+is (formally) equivalent to $B$ if and only if $B$ is obtained from $A$ by
+(formal) transformation. Thus $B$ is (formally) equivalent to $B$ if and only
+if there is a (formal) solution of $[A,B]$.
 
 \begin{defn}
+  \TODO[is this a proposition]
   Two germs of meromorphic connections are (formally) isomorphic if and only if
   their corresponding connection matrices are (formally) equivalent.
-  \TODO[is this a proposition]
 \end{defn}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Regular / irregular singularities}
 \TODO[regular / irregular singularity]
 
-\section{Models and formal decomposition of a germ}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fundamental solution}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Models and formal decomposition of a germ / formal classification}
 \begin{paracol}{2}
 \switchcolumn[0]\noindent
   As something like building blocks of some meromorphic connections we introduce
@@ -354,35 +383,46 @@ This defines equivalence relations\dots \TODO and one optains the notions of
   \end{multicols}
 \end{defn}
 \begin{lem}
-  If $(\cM,\nabla)$ is a model, if and only if there is a basis in which the
-  connection matrix has the form
-  \begin{multicols}{2}
-    \[
-      A^0=d\overset{~\tikzmark{e1}}{\textcolor{green!40!black}{Q}}
-        +~\tikzmark{e2}\!\!\textcolor{blue!40!black}{\Lambda}\frac{dt}{t}
-    \]
-    \columnbreak
-    \begin{itemize}
-      \item[\tikzmarkb{n1}{green}]
-        $\textcolor{green!40!black}{Q
-          =\diag(\textcolor{red!60!black}{\phi_1,\dots,\phi_n})}$
-      \item[\tikzmarkc{n2}{blue}]
-        $\textcolor{blue!40!black}{\Lambda}$ constant \emph{matrix of exponets
-        of formal Monodromy}\footnote{usually not of rank $1$}
-    \end{itemize}
-    \begin{tikzpicture}[remember picture,overlay]
-      \draw[->,green!40!black,thick] (n1) to[out=180,in=70] (e1);
-      \draw[->,blue!50!white,thick] (n2) to[out=180,in=-70] (e2);
-    \end{tikzpicture}
-  \end{multicols}
-  where the $\textcolor{red!60!black}{\phi_i}$ are the same as in the above
-  definition.
+  Let $(\cM,\nabla)$ be a model of a meromophic connection, which is
+  represented by the system $[A^0]$.
+  \begin{enumerate}
+    \item 
+      If $(\cM,\nabla)$ is a model, if and only if there is a basis in which
+      the fundamental solution\footnote{A $n\times n$ matrix whose
+      columns are $n$ $\C$-linearly independent solutions of the system
+      $[A^0]$.} $\mathcal{Y}_0$ has the form
+      \[
+        \mathcal{Y}_0(t)=t^L e^{Q(1/t)}
+      \]
+      with
+      \begin{itemize}
+        \item
+          $Q(1/t)=\underset{j=1}{\overset{r}{\bigoplus}}\phi_j(t^{-1})1_{r_j}$
+          \begin{itemize}
+            \item $\sum r_i=n$
+            \item i.e.  $Q=\diag(\underset{r_1\text{-times}}{\underbrace{%
+              \phi_1,\dots,\phi_1}},\phi_2,\dots,\phi_r)$
+          \end{itemize}
+          \TODO[ramified case]
+        \item $L\in\gl_n(\C)$ constant matrix called the \emph{matrix of
+          formal monodromy}. ($t^L$ means $e^{L\ln t}$.)
+      \end{itemize}
+      The matrix $\mathcal{Y}_0$ is called a \emph{normal solution}.
+    \item The matrix $A^0=dQ+L\frac{dt}{t}$ is a connection matrix for
+      $(\cM,\nabla)$.
+    \item If $(\cM',\nabla')$ is obtained from $(\cM,\nabla)$ via the formal
+      meromophic transformation $\hat F$, then is
+      \[
+        \mathcal{Y}=\hat F t^L e^{Q(1/t)}
+      \]
+      a fundamental solution for $Y'={}^{\hat F}\!A^0(t)Y$.
+  \end{enumerate}
 \end{lem}
 \begin{proof}
   \TODO{}
 \end{proof}
 
-The important theoreme here is the Levelt-Turittin-theoreme.
+The important theoreme here is the Levelt-Turittin theoreme.
 \begin{thm}[Levelt-Turittin]
   To each germ $(\cM,\nabla)$ of a meromorphic connection there exists, after
   potentially needed \textcolor{blue!60!black}{pullback by some suitable
@@ -405,6 +445,11 @@ The important theoreme here is the Levelt-Turittin-theoreme.
 \begin{proof}
   See \TODO
 \end{proof}
+\begin{cor}
+  \marginnote{\cite[Thm.4.3.1]{Loday2014}}
+  To any system $[A]$ there exists a fundamental solution $\mathcal{Y}$ of the
+  form $\mathcal{Y}=\hat F t^\Lambda e^{Q(1/t)}$.
+\end{cor}
 
 \begin{prop}
   \marginnote{This condition \textbf{might be} equivalent to the
@@ -433,39 +478,14 @@ The important theoreme here is the Levelt-Turittin-theoreme.
   See \cite{sabbah2007isomonodromic} theoreme II.5.7.
 \end{proof}
 
-\begin{comment}
-  \subsection{By fundamental solutions\dots}
-  \marginnote{\cite[853]{Loday1994}, \cite[Th.4.3.1]{Loday2014}}
-  A system
-  \[
-    \frac{dX}{dt}=A^0X
-  \]
-  is called a \emph{normal form} if it satisfies the following Properties:
-  there exists a fundamental solution $X_0$ of $[A^0]$, i.e., a $n\times n$
-  matrix
-
-  \dots
-
-  of the form $X_0=t^Le^{Q(t^{-1})}$ where
-  \begin{itemize}
-    \item $L$ is a constant matrix called the \emph{matrix of exponents of
-      formal Monodromy} and
-    \item $Q(t^{-1})=\diag\left(q_1(t^{-1}),\dots,q_n(t^{-1})\right)$ is a
-      diagonal matrix where
-      \begin{itemize}
-        \item the $q_j(t^{-1})$ are polynomials in a root $z^{-1}=t^{-1/p}$,
-          $p\in\N^*$, of the variable $t$ without constant term.
-      \end{itemize}
-  \end{itemize}
-  Such a solution will be called \emph{normal solution}.
-\end{comment}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Meromorphic / formal transformation II}
 \begin{defn}
   \begin{itemize}
     \item An \emph{isotropy} of $A^0$ is a transformation $\hat F$ which
-      satisfy ${}^{\hat F}\!A=A$. Thus, the isotropies are the solutions of the
-      system $[\End A^0]:=[A^0,A^0]$.
+      satisfy ${}^{\hat F}\!A^0=A^0$.
+      Thus, the isotropies are the solutions of the system
+      $[\End A^0]:=[A^0,A^0]$.
       \marginnote{\cite[853]{Loday1994}}
       \begin{rem}
         They are, a priori, formal transformations. Actually $G(A^0)$ is a

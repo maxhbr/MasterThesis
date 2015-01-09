@@ -376,8 +376,8 @@
       \fcolorbox{CommentFrameColor}{commentShadeColor}{%
       \footnotesize{}
       \ifthenelse{\equal{#1}{\empty}}
-        {TODO}
-        {#1} % {TODO: #1}
+        {\tiny T\!O\!D\!O}
+        {\tiny T\!O\!D\!O: #1} % {TODO: #1}
       
   }}}
 

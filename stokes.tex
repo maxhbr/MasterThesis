@@ -9,15 +9,11 @@
         \textbf{Formal reduction theory of meromorphic differential equations:
           a group theoretic view.}
         \texttt{euclid.pjm.1102720203.pdf}
-        \item[\textbf{11}] W. Balser, W.B. Jurkat, and D.A. Lutz.
-        \textbf{Birkhoff invariants and Stokes’ multipliers for meromorphic
-          linear differential equations.}
+        \item[\textbf{11}] \cite{BJL1979Birkhoff}
         \item[\textbf{40}] M. Jimbo, T. Miwa, and Kimio Ueno.
         \textbf{Monodromy preserving deformations of linear differential
           equations with rational coefficients I.}
-        \item[\textbf{43}] M. Loday-Richaud
-        \textbf{Stokes phenomenon, multisummability and differential Galois
-          groups.}
+        \item[\textbf{43}] \cite{Loday1994}
         \item[\textbf{50}] J. Martinet and J.P. Ramis.
         \textbf{Elementary acceleration and multisummability.}
       \end{itemize}
@@ -32,20 +28,14 @@
     \item \cite{sabbah2007isomonodromic}
     \item \cite{sabbah2009introduction} and \cite{sabbah2013introduction}
   \end{itemize}
+  and
+  \begin{itemize}
+    \item \cite{LodayRichaud2004}
+    \item \cite{Loday2014}
+  \end{itemize}
   See also:
   \begin{itemize}
     \item \cite{Loday1994} for \textbf{Sheaf $\to$ Matrix}
-      \begin{thm}[II.2.1]
-        The map
-        \[
-          h:\prod_{\alpha\in\A}\Sto_\alpha(A_0)\to H^1(S^1;\Lambda(A_0))
-        \]
-        is bijective and natural.
-      \end{thm}
-      \begin{itemize}
-        \item \cite{LodayRichaud2004}
-        \item \cite{Loday2014}
-      \end{itemize}
     \item \cite{Varadarajan96linearmeromorphic} for \textbf{overview of both}
     \item \cite{sibuya1990Linear} looks at $\infty$
     \item \cite{BJL1979Birkhoff} looks at $\infty$
@@ -129,6 +119,7 @@ isotropies\TODO[\dots]
 Let $(\cM,\nabla,\hat f)$ be defined on\dots
 
 \begin{tthm}[Malgrange-Sbuya]
+  \label{thm:mainThm1}
   The homomorphism
   \[
     g:\cH\to\St(A^0)=H^1(S^1;\Lambda^{<0}(A^0))
@@ -252,6 +243,13 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
     \item \cite{babbitt1989local}
   \end{itemize}
 \end{comment}
+The goal in this section is to prove, that
+\begin{itemize}
+  \item[] there is a bijective and natural map
+    \[
+      h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0) \,.
+    \]
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Definitions}
@@ -357,6 +355,8 @@ by $\Gamma(\dot U^k;\Lambda^k(A^0))$ and so on.
     \node at (2.2,0) {$S^1$};
   \end{tikzpicture}
 \end{center}
+
+\dots{}determination of a function\dots
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Stokes directions / \dots}
@@ -467,6 +467,32 @@ relations:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Stokes group $\Sto_\theta(A^0)$}
+\cite[Def.4.1]{hall2003lie} says the following about faithful
+representations:
+\begin{defn}
+  Let $G$ bi a matrix Lie group. Then a \emph{(finite-dimensional complex)
+  representation} of $G$ is a Lie group homomorphism
+  \[
+    \rho:G\to\Gl(V)
+  \]
+  where
+  \begin{itemize}
+    \item $V$ is a finite-dimensional complex vector space.
+  \end{itemize}
+  If $\rho$ is a one-to-one homomorphism, then the representation is called
+  \emph{faithful}.
+  \begin{comment}
+    \textbf{Other criterion:}
+    If the associated homomorphism $G\to\Aut(V)$ is injective, then the
+    representation is \emph{faithful}.
+  \end{comment}
+  \begin{rem}
+    If a representation $\rho$ is a faithful representation of a matrix Lie
+    group $G$ then $\{\rho(A)\mid A\in G\}$ is a group of matrices that is
+    isomorphic to the original group $G$. Thus, $\rho$ allows us to represent
+    $G$ as a group of matrices.
+  \end{rem}
+\end{defn}
 \begin{defn}
   Define the \emph{Stokes group}
   \[
@@ -480,7 +506,7 @@ relations:
     \SSto_d(A^0)= \left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
       q_j \underset{\theta,\max}{\prec} q_l \right\}
   \]
-  which will arise as faithfull representation of $\Sto_\theta(A^0)$.
+  which will arise as faithful representation of $\Sto_\theta(A^0)$.
   \begin{rem}
     For $\theta\notin\A$ the group $\Sto_\theta(A^0)$ is trivial, since no flat
     isotropy has maximal decay, but the identity.
@@ -490,7 +516,7 @@ For every representation $\tilde\theta$ of $\theta$ there is an isomorphism
 \[
   \rho_{\tilde\theta}:\Sto_\theta(A^0)\to\SSto_\theta(A^0)
 \]
-which maps a germ of $\Sto_\theta(A^0)$ to its faithfull representation. This
+which maps a germ of $\Sto_\theta(A^0)$ to its faithful representation. This
 process, in the case when $\theta\in\A$, is described as follows:
 \begin{itemize}
   \item[] given
@@ -521,7 +547,7 @@ into
     c_{(1,1)} & c_{(1,2)} & \cdots &\\
     c_{(2,1} & \ddots\\
     \vdots \\
-    & & & c_{(n,n)}
+    & & & c_{(r,r)}
   \end{pmatrix}
 \\&=
   \underset{C_{\tilde\theta}^{(1,1)}}{\underbrace{%
@@ -542,12 +568,12 @@ into
     \end{pmatrix}
   }}
   +\cdots+
-  \underset{C_{\tilde\theta}^{(n,n)}}{\underbrace{%
+  \underset{C_{\tilde\theta}^{(r,r)}}{\underbrace{%
     \begin{pmatrix}
       &\\
       & & & \vdots\\
       & & & 0\\
-      & \cdots & 0 & c_{(n,n)}
+      & \cdots & 0 & c_{(r,r)}
     \end{pmatrix}
   }}
 \\&=\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}
@@ -684,6 +710,38 @@ Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.
   \end{prop}
   \subsubsection{Leading directions \dots}
 \end{comment}
+
+\begin{comment}
+  \subsubsection{The inclusions}
+  \marginnote{\cite[871]{Loday1994}}
+  We have the canonical inclusions
+  \begin{itemize}
+    \item $\cA^k\hookrightarrow \cA^{\leq k}$ and
+    \item $\cA^{<k}\hookrightarrow \cA^{\leq k}$.
+  \end{itemize}
+
+  \begin{enumerate}
+    \item 
+      \begin{align*}
+        \sigma^k:\Gamma(\dot\cU^k;\Lambda^k(A^0))
+        &\to \Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))
+        \\\dot f=(\dot f_\theta)_{\theta\in\A^k}
+        &\mapsto \sigma^k(\dot f)=(\dot F_\theta){\theta\in\A^{\leq k}}
+      \end{align*}
+      where
+      \begin{itemize}
+        \item $\dot F_\theta\begin{cases}
+            \dot f_\alpha \dots
+            \\1\dots
+          \end{cases}$
+      \end{itemize}
+    \item
+      \begin{align*}
+        \tau^k:
+      \end{align*}
+  \end{enumerate}
+\end{comment}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The theorem}
@@ -842,8 +900,8 @@ First we will look at the case of a unique level. This means that
   \TODO{}
 \end{proof}
 \subsubsection{Composing functions to obtain $h$}
-Thus, we are now able to create the function $h$ by composition of bijective
-maps.
+Thus, we are now able to create the function $h$ from
+theoreme~\ref{thm:mainThm2} by composition of bijective maps.
 \begin{proof}[Proof of theoreme~\ref{thm:mainThm2}]
   Let us denote the composition
   \[
@@ -867,7 +925,7 @@ maps.
   \[
     \cT\circ\mathfrak{T}:
     \prod_{\theta\in\cA}\Sto_\theta(A^0)
-    to
+    \to
     H^1(\cU;\Lambda(A^0))
   \]
   as the map $h$.
