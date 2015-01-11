@@ -122,12 +122,9 @@ Let $(\cM,\nabla,\hat f)$ be defined on\dots
   \label{thm:mainThm1}
   The homomorphism
   \[
-    g:\cH\to\St(A^0)=H^1(S^1;\Lambda^{<0}(A^0))
+    \exp:\cH\to\St(A^0)=H^1(S^1;\Lambda^{<0}(A^0))
   \]
   is an isomorphism of pointed \TODO[which maps \TODO{} to \TODO{}] sets.
-  \begin{rem}
-    $g$ is just the letter before $h$, which is the next important isomorphism.
-  \end{rem}
 \end{tthm}
 \TODO[\cite{sabbah2007isomonodromic} cor II.6.4.]
 \begin{comment}
@@ -137,7 +134,7 @@ Let $(\cM,\nabla,\hat f)$ be defined on\dots
     are conjugated via $\Phi$.
     We get the following commutative diagram:
     \[ \begin{tikzcd}
-        G\backslash\hat G(A^1) \rar{\cdot\Phi}\dar{\exp} 
+        G\backslash\hat G(A^1) \rar{\cdot\Phi}\dar{\exp}
         & G\backslash\hat G(A^0) \dar{\exp}
         & \hat F \arrow[|->]{r}\arrow[|->]{d}
         & \hat F\Phi \arrow[|->]{d}
@@ -164,7 +161,7 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
   Consider the two elements $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$
   of $\cH$ which map to same element
   \[
-    g((\cM,\nabla,\hat f))=\lambda=g((\cM',\nabla',\hat f'))
+    \exp((\cM,\nabla,\hat f))=\lambda=\exp((\cM',\nabla',\hat f'))
       \in H^1(S^1;\Lambda^{<0}(A^0)) \,.
   \]
   Since \TODO{}, it is then possible to find a finite covering
@@ -188,14 +185,13 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
   $H^1(S^1,\Lambda^{<0}(A^0))$
   \TODO[$\Lambda^{<0}(A^0)\hat{=}\Aut^{<0}(\tilde\cM^{good})$ or
   $\Aut^{<0}(\cM^{good})$?]
-  to come from an object 
+  to come from an object
   $(\cM,\nabla,\hat f)\in\cH$:
   \begin{itemize}
-    \item[] This is the case if and only if its image in the set
-      $H^1(S^1,\Aut_{\cA}(\cM^{good}))$ (which contains only the $\cA$-linear
-      automorphisms) is the identity.
-      \TODO[$H^1(S^1,\Aut_{\cA}(\cM^{good}))$ or
-      $H^1(S^1,\Aut_{\cA}(\tilde\cM^{good}))$?]
+    \item[] This is the case if and only if the image of
+      $\lambda\in\Aut^{<0}(\cM^{good})$ in the set
+      $H^1(S^1,\Aut_{\cA}(\tilde\cM^{good}))$ (which contains only the
+      $\cA$-linear automorphisms) is the identity.
   \end{itemize}
   \begin{proof}
     \textbf{``\Rightarrow{}'':}
@@ -214,7 +210,8 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
     \TODO
   \end{proof}
 
-  Thus, the proof is a consequence of the following Malgrange-Sibuya Theoreme.
+  Thus, the proof of~\ref{thm:mainThm1} is a consequence of the following
+  Malgrange-Sibuya Theoreme.
   \begin{thm}[Malgrange-Sbuya]
     \marginnote{\cite{sabbah2007isomonodromic} Thm II.6.10}
     The image of the mapping
@@ -222,11 +219,11 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
       H^1(S^1,\Gl_d^{<0}(\cA_{\tilde D}))
       \to
       H^1(H^1,\Gl_d(\cA_{\tilde D}))
-    \] 
+    \]
     is the identity.
   \end{thm}
   \begin{proof}
-     For which we refer to 
+     For which we refer to
      \cite[Th.A.1]{Malgrange1983},
      \cite[Th.6.4.1]{sibuya1990Linear},
      \cite{babbitt1989local}
@@ -310,6 +307,7 @@ by $\Gamma(\dot U^k;\Lambda^k(A^0))$ and so on.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Choice of $\log$ / Determination $\tilde\theta$ of $\theta$}
+\textbf{Universal cover:}
 \[
   \R\to S^1; \nu \mapsto e^{i\nu}
 \]
@@ -356,7 +354,9 @@ by $\Gamma(\dot U^k;\Lambda^k(A^0))$ and so on.
   \end{tikzpicture}
 \end{center}
 
-\dots{}determination of a function\dots
+\textbf{$q$-sheet cover:}
+
+\textbf{determination of a function:}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Stokes directions / \dots}
@@ -433,7 +433,7 @@ relations:
 \end{defn}
 \begin{rem}
   In the unramified case these relations do not depend on the determination
-  $\tilde\theta$ of $\theta$. As a consequence we will only write 
+  $\tilde\theta$ of $\theta$. As a consequence we will only write
   $\underset{\theta}{\prec}$ and $\underset{\theta,\max}{\prec}$.
 \end{rem}
 
@@ -442,7 +442,7 @@ relations:
   %   \cite[Def.3.2]{boalch}}
   \begin{enumerate}
     \item $\theta$ is an \emph{anti-Stokes direction} if there is at least one
-      pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies 
+      pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies
       $q_j \underset{\theta,\max}{\prec} q_l$.
       \begin{itemize}
         \item Let $\A=\{\alpha_1,\dots,\alpha_{\nu}\}$ denote the set of all
@@ -470,6 +470,13 @@ relations:
 \cite[Def.4.1]{hall2003lie} says the following about faithful
 representations:
 \begin{defn}
+  \begin{comment}
+    See:
+    \begin{itemize}
+      \item \cite[Def.4.1]{hall2003lie}
+      \item \url{http://nlab.mathforge.org/nlab/show/faithful+representation}
+    \end{itemize}
+  \end{comment}
   Let $G$ bi a matrix Lie group. Then a \emph{(finite-dimensional complex)
   representation} of $G$ is a Lie group homomorphism
   \[
@@ -541,7 +548,7 @@ Some little reshaping results in the following equation
   =t^\Lambda e^{Q(t^{-1})}(1_n+C_{\tilde\theta})e^{-Q(t^{-1})}t^{-\Lambda}
 \]
 and after decomposing \TODO[Fitting the structure of $Q$] $C_{\tilde\theta}$
-into 
+into
 \begin{align*}
   C_{\tilde\theta}&=\begin{pmatrix}
     c_{(1,1)} & c_{(1,2)} & \cdots &\\
@@ -603,7 +610,7 @@ In particular we get, that
   \item for $j=l$ are the (diagonal) blocks $C_{\tilde\theta}^{(l,j)}$ are zero
     since $q_l-q_j=0$ and
   \item if $e^{q_j-q_l}$ has has maximal decay, then $e^{q_l-q_j}$. Thus if
-    $C_{\tilde\theta}^{(l,j)}$ is not equal to zero, the block 
+    $C_{\tilde\theta}^{(l,j)}$ is not equal to zero, the block
     $C_{\tilde\theta}^{(j,l)}$ is necessarily zero.
 \end{itemize}
 This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent.
@@ -615,7 +622,7 @@ Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.
   \marginnote{\cite[Def.I.4.12]{Loday1994}}
   A germ $\phi_\theta\in\Lambda_\theta(A^0)$ is a Stokes germ, i.e.\ an element
   in $\Sto_\theta(A^0)$ if and only if for some, hence all determination
-  $\tilde\theta$, it has a representation $C_{\tilde\theta}$ of the form 
+  $\tilde\theta$, it has a representation $C_{\tilde\theta}$ of the form
   $ C_{\tilde\theta}=\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}$.
 \end{lem}
 \begin{proof}
@@ -663,34 +670,52 @@ Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.
       the set of levels \emph{beared by $\theta\in\A$}.
   \end{itemize}
 \end{notations}
+\begin{rem}
+  We clearly have the canonical inclusions
+  \begin{itemize}
+    \item $\cA^k\hookrightarrow \cA^{\leq k}$ and
+    \item $\cA^{<k}\hookrightarrow \cA^{\leq k}$.
+  \end{itemize}
+\end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Filtration of \TODO{} by levels}
+\marginnote{See \cite[I.5]{Loday1994} (See [LR91])}
+\begin{prop}
+  \marginnote{\cite[Prop.I.5.1]{Loday1994}}
+  For any level $k\in\cK$ one has
+  \begin{enumerate}
+    \item $\Lambda^{k}(A^0)$, $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$
+      are sheaves of subgroups of $\Lambda(A^0)$;
+    \item $\Lambda^k(A^0)$ is normal in $\Lambda^{\leq k}(A^0)$;
+    \item the exact sequence of sheaves
+      \[
+        1\to\Lambda^k(A^0)
+        \overset{i}\to\Lambda^{\leq k}(A^0)
+        \overset{p}\to\Lambda^{<k}(A^0)
+        \to 1
+      \]
+      splits.
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  \begin{enumerate}
+    \item \TODO{}
+    \item \TODO{}
+    \item This is clear, since we have the canonical inclusion
+      $\Lambda^{<k}(A^0)\hookrightarrow\Lambda^{\leq k}(A^0)$.
+  \end{enumerate}
+\end{proof}
 \begin{comment}
-  \subsubsection{Filtration of \TODO{} by levels}
-  \marginnote{See \cite[I.5]{Loday1994} (See [LR91])}
-  \begin{prop}
-    \cite[Prop.I.5.1]{Loday1994} says:\\
-    For any level $k\in\cK$ one has
-    \begin{enumerate}
-      \item $\Lambda^{k}(A^0)$, $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$
-        are sheaves of subgroups of $\Lambda(A^0)$;
-      \item $\Lambda^k(A^0)$ is normal in $\Lambda^{\leq k}(A^0)$;
-      \item the exact sequence of sheaves
-        \[
-          1\to\Lambda^k(A^0)
-          \overset{i}\to\Lambda^{\leq k}(A^0)
-          \overset{p}\to\Lambda{<k}(A^0)
-          \to 1
-        \]
-        splits.
-    \end{enumerate}
-  \end{prop}
   \begin{cor}
     \cite[Cor.I.5.2]{Loday1994} says:\\
   \end{cor}
   \begin{prop}
     \cite[Prop.I.5.3]{Loday1994} says:\\
   \end{prop}
+  \begin{proof}
+    \TODO{}
+  \end{proof}
   \begin{cor}
     \cite[Cor.I.5.4]{Loday1994} says:\\
     \TODO
@@ -699,49 +724,22 @@ Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.
     \]
     taken in arbitrary order.
   \end{cor}
+  \begin{proof}
+    \TODO{}
+  \end{proof}
   \begin{prop}
     \cite[Prop.I.5.5]{Loday1994} says:\\
     The results can be restricted to the Stokes groups. Thus, for
-    $\theta\in\A$, one has 
+    $\theta\in\A$, one has
     \[
       \Sto_\theta(A^0)\cong\underset{k\in\cK_\theta}\ltimes\Sto_\theta^k(A^0)
     \]
     the semi-direct product being taken in an arbitrary order.
   \end{prop}
-  \subsubsection{Leading directions \dots}
+  \begin{proof}
+    \TODO{}
+  \end{proof}
 \end{comment}
-
-\begin{comment}
-  \subsubsection{The inclusions}
-  \marginnote{\cite[871]{Loday1994}}
-  We have the canonical inclusions
-  \begin{itemize}
-    \item $\cA^k\hookrightarrow \cA^{\leq k}$ and
-    \item $\cA^{<k}\hookrightarrow \cA^{\leq k}$.
-  \end{itemize}
-
-  \begin{enumerate}
-    \item 
-      \begin{align*}
-        \sigma^k:\Gamma(\dot\cU^k;\Lambda^k(A^0))
-        &\to \Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))
-        \\\dot f=(\dot f_\theta)_{\theta\in\A^k}
-        &\mapsto \sigma^k(\dot f)=(\dot F_\theta){\theta\in\A^{\leq k}}
-      \end{align*}
-      where
-      \begin{itemize}
-        \item $\dot F_\theta\begin{cases}
-            \dot f_\alpha \dots
-            \\1\dots
-          \end{cases}$
-      \end{itemize}
-    \item
-      \begin{align*}
-        \tau^k:
-      \end{align*}
-  \end{enumerate}
-\end{comment}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The theorem}
@@ -779,15 +777,18 @@ is welldefined.
     \end{comment}
   \end{rem}
 \end{tthm}
+From theorem~\ref{thm:mainThm2} and \TODO{} we get the following corollary.
 \begin{cor}
   \[
-    \prod_{\alpha\in\A}\SSto_\alpha(A^0)\cong\St(A^0)
+    \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
   \]
+  and thus has complex dimension \TODO{}
 \end{cor}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Proof}
-We will only look at the unramified case, the proof in the ramified case can be
-found in \cite{Loday1994} section II.4.
+We will only look at the unramified case, for which we refer to
+\cite[Sec.II.3]{Loday1994}.
+The proof in the ramified case can be found in \cite[Sec.II.4]{Loday1994}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{The case of a unique level}
@@ -801,10 +802,20 @@ First we will look at the case of a unique level. This means that
       \item $\Lambda(A^0)=\Lambda^k(A^0)$ and
       \item $\Sto_\theta(A^0)=\Sto_\theta^k(A^0)$.
     \end{itemize}
-  \item Or we restrict to a given level $k$.
+  \item Or we restrict to a given level $k\in\cK$.
 \end{itemize}
 \begin{lem}
-  Let $k\in\cK$. Then
+  Let $k\in\cK$.
+  The canonical injective map
+  \[
+    i^k:\underset{\theta\in\A}\prod\Sto_\theta^k(A^0) \to
+    \Gamma(\dot\cU^k;\Lambda^k(A^0))
+  \]
+  and the canonical surjective map
+  \[
+    s^k:\Gamma(\dot\cU^k;\Lambda^k(A^0))\to H^1(S^1;\Lambda^k(A^0))
+  \]
+  are bijective and thus
   \[
     \underset{\theta\in\A}\prod\Sto_\theta^k(A^0)
     \underset{\sim}{\overset{i^k}{\longrightarrow}}
@@ -812,11 +823,14 @@ First we will look at the case of a unique level. This means that
     \underset{\sim}{\overset{s^k}{\longrightarrow}}
     H^1(S^1;\Lambda^k(A^0))
   \]
-  where $i^k$ is the canonical injective map and $s^k$ is the canonical
-  surjective map.
+  is a bijection.
 \end{lem}
 \begin{proof}
-  \TODO{}
+  \begin{enumerate}
+    \item The map $i^k$ is the canonical extension of germs to their natural
+      arc of definition and thus a group isomorphism.
+    \item The map $s^k$ is the quotient map. \TODO{}
+  \end{enumerate}
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -824,25 +838,70 @@ First we will look at the case of a unique level. This means that
 \begin{comment}
   \cite[II.3.3]{Loday1994}
 \end{comment}
+\begin{defn}
+  We want to define a \emph{product map of cocycles} $\mathfrak{S}^{\leq k}$.
+  This map will be composed from the following injective maps:
+  \begin{enumerate}
+    \item The first map is defined as
+      \begin{align*}
+        \sigma^k:\Gamma(\dot\cU^k;\Lambda^k(A^0))
+        &\to \Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))
+      \\\dot f=(\dot f_\theta)_{\theta\in\A^k}
+        &\mapsto (\dot G_\theta)_{\theta\in\A^{\leq k}}
+      \end{align*}
+      where
+      \begin{itemize}
+        \item $\dot G_\theta=\begin{cases}
+            \dot f_\alpha \text{~restricted to } \dot U_\theta^{\leq k}
+            \text{~and seen as being in } \Lambda^{\leq k}(A^0)
+            & \text{~when } \theta\in\A^k
+          \\1 \text{~(the identity) }
+            & \text{~when } \theta\notin\A^k
+          \end{cases}$
+      \end{itemize}
+    \item and the second map
+      \begin{align*}
+        \sigma^{<k}:\Gamma(\dot\cU^{<k};\Lambda^{<k}(A^0))
+        &\to \Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))
+      \\\dot f=(\dot f_\theta)_{\theta\in\A^{<k}}
+        &\mapsto (\dot F_\theta)_{\theta\in\A^{\leq k}}
+      \end{align*}
+      is defined in a similar way as
+      \begin{itemize}
+        \item $\dot G_\theta=\begin{cases}
+            \dot f_\alpha \text{~restricted to } \dot U_\theta^{\leq k}
+            \text{~and seen as being in } \Lambda^{\leq k}(A^0)
+            & \text{~when } \theta\in\A^{<k}
+          \\1 \text{~(the identity) }
+            & \text{~when } \theta\notin\A^{<k}
+          \end{cases}$
+      \end{itemize}
+  \end{enumerate}
+  Thus we can define
+  \begin{align*}
+    \mathfrak{S}^{\leq k}:
+    \Gamma(\dot\cU^{<k};\Lambda^{<k}(A^0))
+    \times
+    \Gamma(\dot\cU^{k};\Lambda^{k}(A^0))
+    &\to
+    \Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))
+  \\(\dot f, \dot g)
+    &\mapsto
+    (\dot F_\theta\dot G_\theta)_{\theta\in\A^{\leq k}}
+  \end{align*}
+  where $(\dot F_\theta)_{\theta\in\A^{\leq k}}=\sigma^{<k}(\dot f)$ and
+  $(\dot G_\theta)_{\theta\in\A^{\leq k}}=\sigma^{<k}(\dot g)$ as defined
+  above.
+  \begin{rem}
+    This map is injective, since injectivity for germs implies injectivity for
+    sections.
+  \end{rem}
+\end{defn}
+
 \begin{lem}
   \marginnote{\cite[Lem.II.3.3]{Loday1994}}
   Let $k\in\cK$.
   \begin{enumerate}
-    \item The \emph{product map of cocycles}
-      \begin{align*}
-        \mathfrak{S}^{\leq k}:
-        \Gamma(\dot\cU^{<k};\Lambda^{<k}(A^0))
-        \times
-        \Gamma(\dot\cU^{k};\Lambda^{k}(A^0))
-        &\to
-        \Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))
-      \\(\dot f, \dot g)
-        &\mapsto
-        (\dot F_\theta\dot G_\theta)_{\theta\in\A^{\leq k}}
-      \end{align*}
-      where $(\dot F_\theta)_{\theta\in\A^{\leq k}}=\sigma^{<k}(\dot f)$ and
-      $(\dot G_\theta)_{\theta\in\A^{\leq k}}=\sigma^{<k}(\dot g)$, is
-      injective.
     \item If the cocycles $\mathfrak{S}^{\leq k}(\dot f,\dot g)$ and
       $\mathfrak{S}^{\leq k}(\dot f',\dot g')$ are cohomologous in
       $\Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))$
@@ -857,7 +916,6 @@ First we will look at the case of a unique level. This means that
     See \cite[Lem.II.3.3]{Loday1994}.
   \end{comment}
   \begin{enumerate}
-    \item \TODO{}
     \item
       Denote by $\theta^+$ the nearest anti-Stokes direction in $\A^{\leq k}$
       on the right\footnote{In clockwise direction.} of $\theta$.
@@ -866,35 +924,55 @@ First we will look at the case of a unique level. This means that
   \end{enumerate}
   \TODO{}
 \end{proof}
-\begin{cor}
+\begin{defn}
+  Define the injective map
+  \begin{align}
+    \tau^k:\Gamma(\dot\cU^k;\Lambda^k(A^0)) &\to \Gamma(\dot\cU;\Lambda(A^0))
+  \\\dot f=(\dot f_\theta)_{\theta\in\A^k} &\mapsto
+    (\dot F_\theta)_{\theta\in\A}
+  \end{align}
+  where
+  \[
+    \dot F_\theta=\begin{cases}
+      \dot f_\alpha \text{~restricted to } \dot U_\theta
+      \text{~and seen as being in } \Lambda(A^0)
+      & \text{~when } \theta\in\A^k
+    \\1 \text{~(the identity) }
+      & \text{~when } \theta\notin\A^k
+    \end{cases} \,.
+  \]
   \marginnote{\cite[Prop.II.3.4]{Loday1994}}
-  \begin{enumerate}
-    \item The \emph{product map of single-leveled cocycles}
-      \begin{align*}
-        \tau:\prod_{k\in\cK}\Gamma(\dot \cU^k;\Lambda^k(A^0))
-        &\to
-        \Gamma(\dot\cU;\Lambda(A^0))
-      \\(\dot f^k)_{k\in\cK}i
-        &\mapsto
-        \prod_{k\in\cK}\tau^k(\dot f^k)
-      \end{align*}
-      following an ascending order of levels is injective.
-      \begin{rem}
-        It can be extended to an arbitrary order of levels.
-      \end{rem}
-    \item The product map of single-leveled cocycles induces on the cohomology
-      a bijective and natural map
-      \[
-        \cT:
-        \underset{\underset{k\in\cK}\prod H^1(S^1;\Lambda^k(A^0))}{%
-          \underset{\text{\rotatebox[origin=c]{-90}{$\cong$}}}{%
-            \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))}}
-        \longrightarrow
-        \underset{H^1(S^1;\Lambda(A^0))}{%
-          \underset{\text{\rotatebox[origin=c]{-90}{$\cong$}}}{%
-            H^1(\cU;\Lambda(A^0))}}\,.
-      \]
-  \end{enumerate}
+  The \emph{product map of single-leveled cocycles} is then defined as
+  \begin{align*}
+    \tau:\prod_{k\in\cK}\Gamma(\dot \cU^k;\Lambda^k(A^0))
+    &\to
+    \Gamma(\dot\cU;\Lambda(A^0))
+  \\(\dot f^k)_{k\in\cK}i
+    &\mapsto
+    \prod_{k\in\cK}\tau^k(\dot f^k)
+  \end{align*}
+  following an ascending order of levels.
+  \begin{rem}
+    \begin{enumerate}
+      \item This map, again, is injective.
+        \TODO[proof?]
+      \item It can be extended to an arbitrary order of levels.
+    \end{enumerate}
+  \end{rem}
+\end{defn}
+\begin{cor}
+  The product map of single-leveled cocycles induces on the cohomology
+  a bijective and natural map
+  \[
+    \cT:
+    \underset{\underset{k\in\cK}\prod H^1(S^1;\Lambda^k(A^0))}{%
+      \underset{\text{\rotatebox[origin=c]{-90}{$\cong$}}}{%
+        \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))}}
+    \longrightarrow
+    \underset{H^1(S^1;\Lambda(A^0))}{%
+      \underset{\text{\rotatebox[origin=c]{-90}{$\cong$}}}{%
+        H^1(\cU;\Lambda(A^0))}}\,.
+  \]
 \end{cor}
 \begin{proof}
   \TODO{}

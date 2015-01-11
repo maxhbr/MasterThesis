@@ -392,24 +392,27 @@ if there is a (formal) solution of $[A,B]$.
       columns are $n$ $\C$-linearly independent solutions of the system
       $[A^0]$.} $\mathcal{Y}_0$ has the form
       \[
-        \mathcal{Y}_0(t)=t^L e^{Q(1/t)}
+        \mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}
       \]
       with
       \begin{itemize}
         \item
-          $Q(1/t)=\underset{j=1}{\overset{r}{\bigoplus}}\phi_j(t^{-1})1_{r_j}$
+          $Q(t^{-1})=\underset{j=1}{\overset{r}{\bigoplus}}q_j(t^{-1})1_{r_j}$
           \begin{itemize}
-            \item $\sum r_i=n$
-            \item i.e.  $Q=\diag(\underset{r_1\text{-times}}{\underbrace{%
-              \phi_1,\dots,\phi_1}},\phi_2,\dots,\phi_r)$
+            \item $q_j$ is the function, such that $q_j(t^{-1})=\phi_j(t)$
+              \TODO[replace all $q$ by $\phi$?]
+            \item the $r_j$ are \TODO and satisfy therefore $\sum r_j=n$.
           \end{itemize}
+          This means, that $Q=\diag(\underset{r_1\text{-times}}{\underbrace{%
+            q_1,\dots,q_1}},q_2,\dots,q_r)$.
           \TODO[ramified case]
         \item $L\in\gl_n(\C)$ constant matrix called the \emph{matrix of
           formal monodromy}. ($t^L$ means $e^{L\ln t}$.)
       \end{itemize}
       The matrix $\mathcal{Y}_0$ is called a \emph{normal solution}.
-    \item The matrix $A^0=dQ+L\frac{dt}{t}$ is a connection matrix for
+    \item The matrix ${A^0}':=dQ+L\frac{dt}{t}$ is a connection matrix for
       $(\cM,\nabla)$.
+      \TODO[Therefore it is obtained from $A^0$ via an isotropy?]
     \item If $(\cM',\nabla')$ is obtained from $(\cM,\nabla)$ via the formal
       meromophic transformation $\hat F$, then is
       \[
@@ -421,6 +424,10 @@ if there is a (formal) solution of $[A,B]$.
 \begin{proof}
   \TODO{}
 \end{proof}
+We will denote
+\[
+  \cQ_{[A^0]}:=\left\{q_1(t^{-1}),\dots,q_n(t^{-1})\right\} \,.
+\]
 
 The important theoreme here is the Levelt-Turittin theoreme.
 \begin{thm}[Levelt-Turittin]
