@@ -52,9 +52,10 @@ connections.
 Let $M$ be a riemanian surface and let $Z=k_1(a_1)+\cdots+k_m(a_m)>0$ be an
 effective divisor\footnote{The $a_i$ are distinct points and the $k_i$ are
 positive integers.} on $M$.
-It is sufficient to think $M=\P^1$.
+It is sufficient to think $M=\P^1$, since we will only be interested in local
+information.
 
-Let $\sM$ be a holomorphic Bundle i.e.\ a locally free $\cO_m$-module of rank
+Let $\sM$ be a holomorphic Bundle i.e.\ a locally free $\cO_M$-module of rank
 $n$.
 
 A meromorphic connection is then defined as follows.
@@ -108,9 +109,11 @@ A meromorphic connection is then defined as follows.
       d\omega + \omega \wedge \omega = 0.
     \]
   \end{prop}
-  We will say that a connection on a meromorphic bundle is \emph{integrable} or
-  \emph{flat} if its restriction to $M\backslash Z$ is an integrable connection
-  on the holomorphic bundle $\sM_{|M\backslash Z}$.
+  \begin{comment}
+    We will say that a connection on a meromorphic bundle is \emph{integrable}
+    or \emph{flat} if its restriction to $M\backslash Z$ is an integrable
+    connection on the holomorphic bundle $\sM_{|M\backslash Z}$.
+  \end{comment}
 \end{defn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -124,12 +127,15 @@ A meromorphic connection is then defined as follows.
     \item \cite{babbitt1989local} p. 11
   \end{itemize}
 \end{comment}
-We will usually be interested in local information of a meromorphic connection.
-This means, that we look at a connection in a neighbourhood of $0$ and  allow
-only one singularity at $0$.
+We will usually\TODO[only?] be interested in local information of a meromorphic
+connection.  This means, that we look at a connection in a neighbourhood of $0$
+and allow only one singularity at $0$.
 There are many ways of expressing the local information, we will either talk
 about germs of meromorphic connections or systems, which is coordinate-
 and trivialization-dependent.
+
+A germ $\cM,\nabla)$ of a meromophic connection $(\sM,\nabla)$ is just the
+sheaf-theoretic germ, this means that \TODO
 
 \begin{paracol}{2}\sloppy
 \switchcolumn[0]\noindent

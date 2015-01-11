@@ -1,4 +1,4 @@
-\chapter{Stokes Structures}
+echapter{Stokes Structures}
 \begin{comment}
   Matrizen Sicht:
   \begin{itemize}
@@ -250,60 +250,6 @@ The goal in this section is to prove, that
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Definitions}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Coverings / Stokes cocycle}
-\begin{comment}
-  \begin{itemize}
-    \item \cite{Loday1994} Section II.1
-    \item \cite{Loday1994} Section II.3.1
-  \end{itemize}
-\end{comment}
-A covering $\cV$ is said to \emph{refine} a covering $\cU$ if, to each open set
-$V\in\cV$ there is at least one $U\in\cU$ with $V\subset U$.
-\begin{defn}
-  A covering $\cU=\{U_j;j\in J\}$ is called \emph{cyclic covering} if
-  \begin{enumerate}
-    \item the set $J$ is finite and cyclic $J=\Z/\nu\Z$;
-    \item the $U_j$ and, if $\#J>2$, the $U_j\cap U_{j+1}$ are connected arcs on
-      $S^1$;
-    \item the bisecting directions of the $U_j$ are in ascending order with
-      respect to the clockwise orientation of $S^1$;
-    \item the $U_j$ are not encased, this means that the arcs
-      $U_j\backslash U_l$ are connected arcsz for all $j,l\in J$.
-  \end{enumerate}
-\end{defn}
-\begin{defn}
-  The \emph{nerve} of a cyclic covering $\cU=\{U_j;j\in J\}$ is the family
-  $\dot\cU=\{\dot U_j;j\in J\}$ defined by:
-  \begin{itemize}
-    \item $U_j=U_j\cap U_{j+1}$ when $\#J>2$,
-    \item $\dot U_1$ and $\dot U_2$ the connected components of $U_1\cap U_2$
-      when $\#J=2$.
-  \end{itemize}
-\end{defn}
-The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
-\begin{prop}
-  \marginnote{\cite{Loday1994} Prop II.1.3}
-  \dots $\cV$ refines $\cU$ when each $\dot U_j$ contains at least one
-  $\dot V_l$.
-\end{prop}
-
-\begin{defn}
-  A covering $\cU$ beyond which the inductive limit\TODO[which] is stationary
-  is said to be \emph{adequate} to describe $H^1(S^1;\Lambda(A^0))$ (or
-  \emph{adequate} to $\Lambda(A^0)$).
-\end{defn}
-
-\TODO[\dots]
-
-\begin{defn}
-  \marginnote{\cite{Loday1994} Defn II.1.8}
-  \dots{} \emph{Stokes cocycle} \dots{}
-\end{defn}
-
-We denote the product
-$\prod_{\theta\in\A^k}\Gamma(\dot U_\theta^k;\Lambda^k(A^0))$
-by $\Gamma(\dot U^k;\Lambda^k(A^0))$ and so on.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Choice of $\log$ / Determination $\tilde\theta$ of $\theta$}
@@ -409,6 +355,12 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
   \end{rem}
 \end{defn}
 
+\begin{defn}
+  A function is \emph{of maximal decay}, if \TODO{}
+
+  A function is \emph{flat}, if \TODO{}
+\end{defn}
+
 On the elements of $\cQ(A^0)$ we define the following (partial) order
 relations:
 \begin{defn}
@@ -419,23 +371,21 @@ relations:
     \item $\boldmath q_j \underset{\tilde\theta}{\prec} q_l$
       :\Leftrightarrow{} $\Re(a_{ij}e^{-ik\theta})<0$
     \\\Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is
-      flat\footnote{\TODO[define?]} at $0$ in a neighbourhood of the direction
-      $\tilde\theta$.
+      flat at $0$ in a neighbourhood of the direction $\tilde\theta$.
     \item $\boldmath q_j \underset{\tilde\theta,\max}{\prec} q_l$
       :\Leftrightarrow{} $a_{ij}e^{-ik\tilde\theta}$ is a real negative number.
       \\\Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is of maximal
-      decay\footnote{\TODO[define?]} in the
-      direction $\tilde\theta$.
+      decay in the direction $\tilde\theta$.
       \begin{comment}
         \Leftrightarrow{} $q_{ij}(t^{-1})\in\R_{<0}$ along $\tilde\theta$.
       \end{comment}
   \end{itemize}
+  \begin{rem}
+    In the unramified case these relations do not depend on the determination
+    $\tilde\theta$ of $\theta$. As a consequence we will only write
+    $\underset{\theta}{\prec}$ and $\underset{\theta,\max}{\prec}$.
+  \end{rem}
 \end{defn}
-\begin{rem}
-  In the unramified case these relations do not depend on the determination
-  $\tilde\theta$ of $\theta$. As a consequence we will only write
-  $\underset{\theta}{\prec}$ and $\underset{\theta,\max}{\prec}$.
-\end{rem}
 
 \begin{defn}
   % \marginnote{See \cite[Def.I.4.5]{Loday1994}(for the ramified case)
@@ -463,7 +413,10 @@ relations:
   \end{enumerate}
 \end{defn}
 
-\TODO
+\begin{comment}
+  In the case with only one level, the stokes directions are rotational
+  symetric.
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Stokes group $\Sto_\theta(A^0)$}
@@ -513,42 +466,39 @@ representations:
     \SSto_d(A^0)= \left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
       q_j \underset{\theta,\max}{\prec} q_l \right\}
   \]
-  which will arise as faithful representation of $\Sto_\theta(A^0)$.
+  which will arise as a faithful representation of $\Sto_\theta(A^0)$.
   \begin{rem}
     For $\theta\notin\A$ the group $\Sto_\theta(A^0)$ is trivial, since no flat
     isotropy has maximal decay, but the identity.
   \end{rem}
 \end{defn}
-For every representation $\tilde\theta$ of $\theta$ there is an isomorphism
-\[
-  \rho_{\tilde\theta}:\Sto_\theta(A^0)\to\SSto_\theta(A^0)
-\]
-which maps a germ of $\Sto_\theta(A^0)$ to its faithful representation. This
-process, in the case when $\theta\in\A$, is described as follows:
-\begin{itemize}
-  \item[] given
-    \begin{itemize}
-      \item a normal solution $X_0=t^\Lambda e^{Q(t^{-1})}$ and
-      \item a determination $\tilde\theta$ of $\theta$.
-    \end{itemize}
-    Then denote by $X_{0,\tilde\theta}$ the function defined by $X_0$ with that
-    determination of the argument near the direction $\theta$.
-\end{itemize}
-An element $\phi_\theta(t)\in\Sto_\theta(A^0)$ is thus a flat transformation
-such that
-\[
-  \phi_\theta(t)X_{0,\tilde\theta}(t)
-  =X_{0,\tilde\theta}(t)(1_n+C_{\tilde\theta})
-\]
-for a unique constant invertible matrix of the form $1_n+C_{\tilde\theta}$,
-which we will call the \emph{representation of $\phi_\theta$}.
-Some little reshaping results in the following equation
+Let $X_0=t^L e^{Q(t^{-1})}$ be a normal solution.
+For every determination $\tilde\theta$ of $\theta$ we denote by
+$X_{0,\tilde\theta}$ the function defined by $X_0$ with that determination of
+the argument near the direction $\theta$.
+
+\begin{prop}
+  \marginnote{\cite[Def.I.4.7]{Loday1994},~\cite[78f]{Loday2014}}
+  In this situation there is an isomorphism
+  \[
+    \rho_{\tilde\theta}:\Sto_\theta(A^0)\to\SSto_\theta(A^0)
+  \]
+  which maps a germ of $\Sto_\theta(A^0)$ to the unique matrix
+  $1+C_{\tilde\theta}$ such that 
+  \begin{equation} \label{eq:representation}
+    \phi_\theta(t)X_{0,\tilde\theta}(t)
+    =X_{0,\tilde\theta}(t)(1_n+C_{\tilde\theta})
+  \end{equation}
+  near $\theta$.  We call $1+C_{\tilde\theta}$ a \emph{representation of
+  $\phi_\theta$}.
+\end{prop}
+From (\ref{eq:representation}) we deduce
 \[
   \phi_\theta(t)
-  =t^\Lambda e^{Q(t^{-1})}(1_n+C_{\tilde\theta})e^{-Q(t^{-1})}t^{-\Lambda}
+  =t^L e^{Q(t^{-1})}(1_n+C_{\tilde\theta})e^{-Q(t^{-1})}t^{-L}
 \]
-and after decomposing \TODO[Fitting the structure of $Q$] $C_{\tilde\theta}$
-into
+with the given choice of the argument near $\theta$.
+After decomposing \TODO[Fitting the structure of $Q$] $C_{\tilde\theta}$ into
 \begin{align*}
   C_{\tilde\theta}&=\begin{pmatrix}
     c_{(1,1)} & c_{(1,2)} & \cdots &\\
@@ -585,32 +535,25 @@ into
   }}
 \\&=\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}
 \end{align*}
-we get
+where the $c_{(j,l)}$ are blocks of size $r_j\times r_l$ which correspond to
+the structure of $Q$, we get
 \[
   \phi_\theta=
-    t^\Lambda\left(
+    t^L\left(
       1_n+\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}e^{(q_l-q_j)(t^{-1})}
-    \right)t^{-\Lambda} \,.
+    \right)t^{-L} \,.
 \]
+Thus, for $\phi_{\tilde\theta}$ to be flat in direction $\theta$, it is
+necessary and sufficient that if $e^{(q_l-q_j)(t^{-1})}$ does not have
+maximal decay in direction $\tilde\theta$ the corresponding
+block $C_{\tilde\theta}^{(l,j)}$ vanishes.
 
-\begin{paracol}{2}
-\switchcolumn[0]\noindent
-  Thus $\phi_\theta$ is flat in direction $\theta$ if and only if, as soon as
-  $e^{(q_l-q_j)(t^{-1})}$ does not have maximal decay in direction
-  $\tilde\theta$ the corresponding block $C_{\tilde\theta}^{(l,j)}$ is zero.
-\switchcolumn[1]\noindent
-  Thus, for $\phi_{\tilde\theta}$ to be flat in direction $\theta$, it is
-  necessary and sufficient that if $e^{(q_l-q_j)(t^{-1})}$ does not have
-  maximal decay in direction $\tilde\theta$ the corresponding
-  block\footnote{\cite{Loday1994} talks about blocks, which correspond to the
-  structure of $Q$.} $C_{\tilde\theta}^{(l,j)}$ vanishes.
-\end{paracol}
 In particular we get, that
 \begin{itemize}
   \item for $j=l$ are the (diagonal) blocks $C_{\tilde\theta}^{(l,j)}$ are zero
     since $q_l-q_j=0$ and
-  \item if $e^{q_j-q_l}$ has has maximal decay, then $e^{q_l-q_j}$. Thus if
-    $C_{\tilde\theta}^{(l,j)}$ is not equal to zero, the block
+  \item if $e^{q_j-q_l}$ has has maximal decay, then $e^{q_l-q_j}$ has not.
+    Thus if $C_{\tilde\theta}^{(l,j)}$ is not equal to zero, the block
     $C_{\tilde\theta}^{(j,l)}$ is necessarily zero.
 \end{itemize}
 This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent.
@@ -622,8 +565,11 @@ Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.
   \marginnote{\cite[Def.I.4.12]{Loday1994}}
   A germ $\phi_\theta\in\Lambda_\theta(A^0)$ is a Stokes germ, i.e.\ an element
   in $\Sto_\theta(A^0)$ if and only if for some, hence all determination
-  $\tilde\theta$, it has a representation $C_{\tilde\theta}$ of the form
-  $ C_{\tilde\theta}=\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}$.
+  $\tilde\theta$, it has a representation $1+C_{\tilde\theta}$ where
+  \[
+    C_{\tilde\theta}=\sum_{(l,j)\mid q_j\underset{\tilde\theta,\max}{\prec}q_l}
+    C_{\tilde\theta}^{(l,j)}\,.
+  \]
 \end{lem}
 \begin{proof}
   See \cite[Def.I.4.12]{Loday1994}.
@@ -678,6 +624,80 @@ Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.
   \end{itemize}
 \end{rem}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Coverings}
+\begin{comment}
+  \begin{itemize}
+    \item \cite{Loday1994} Section II.1
+    \item \cite{Loday1994} Section II.3.1
+  \end{itemize}
+\end{comment}
+A covering $\cV$ is said to \emph{refine} a covering $\cU$ if, to each open set
+$V\in\cV$ there is at least one $U\in\cU$ with $V\subset U$.
+\begin{defn}
+  A covering $\cU=\{U_j;j\in J\}$ is called \emph{cyclic covering} if
+  \begin{enumerate}
+    \item the set $J$ is finite and cyclic $J=\Z/\nu\Z$;
+    \item the $U_j$ and, if $\#J>2$, the $U_j\cap U_{j+1}$ are connected arcs on
+      $S^1$;
+    \item the bisecting directions of the $U_j$ are in ascending order with
+      respect to the clockwise orientation of $S^1$;
+    \item the $U_j$ are not encased, this means that the arcs
+      $U_j\backslash U_l$ are connected arcsz for all $j,l\in J$.
+  \end{enumerate}
+\end{defn}
+\begin{defn}
+  The \emph{nerve} of a cyclic covering $\cU=\{U_j;j\in J\}$ is the family
+  $\dot\cU=\{\dot U_j;j\in J\}$ defined by:
+  \begin{itemize}
+    \item $U_j=U_j\cap U_{j+1}$ when $\#J>2$,
+    \item $\dot U_1$ and $\dot U_2$ the connected components of $U_1\cap U_2$
+      when $\#J=2$.
+  \end{itemize}
+\end{defn}
+The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
+\begin{prop}
+  \marginnote{\cite[Prop.II.1.3]{Loday1994}}
+  \dots $\cV$ refines $\cU$ when each $\dot U_j$ contains at least one
+  $\dot V_l$.
+\end{prop}
+
+\begin{defn}
+  A covering $\cU$ beyond which the inductive limit\TODO[which] is stationary
+  is said to be \emph{adequate} to describe $H^1(S^1;\Lambda(A^0))$ (or
+  \emph{adequate} to $\Lambda(A^0)$).
+  One also defines
+  \begin{itemize}
+    \item $\cU^{k}$ \emph{adequate} to $\Lambda^{k}(A^0)$,
+    \item $\cU^{\leq k}$ \emph{adequate} to $\Lambda^{\leq k}(A^0)$ and
+    \item $\cU^{<k}$ \emph{adequate} to $\Lambda^{<k}(A^0)$
+  \end{itemize}
+  in a similar way.
+\end{defn}
+
+\begin{defn}
+  Let $\theta\in\A$ and $k\in\cK_\theta$. An arc
+  $\mathfrak{s}_{\theta-\frac{\pi}{2k},\theta+\frac{\pi}{2k}}$, which is (for a
+  sufficiently small radius) a sector with opening $\frac{\pi}{k}$ and is
+  bisected by $\theta$, is called a \emph{Stokes arc of level $k$ at $\theta$}.
+\end{defn}
+
+\begin{prop}
+  \marginnote{\cite[Prop.II.1.7]{Loday1994}}
+  A cyclic covering $\cU=(U_j)_{j\in J}$, which satisfies
+  \begin{itemize}
+    \item[] each Stokes arc of level $k$, of level $\leq k$ or of any level
+      contains at least one arc $\dot U_j$ from the nerve $\dot\cU$ of $\cU$
+  \end{itemize}
+  is adequate to $\lambda^k(A^0)$, $\lambda^{\leq k}$ or to $\lambda(A^0)$.
+\end{prop}
+\begin{proof}
+  \TODO{}
+\end{proof}
+
+We denote the product
+$\prod_{\theta\in\A^\star}\Gamma(\dot U_\theta^\star;\Lambda^\star(A^0))$ by 
+$\Gamma(\dot U^\star;\Lambda^\star(A^0))$ for $\star\in\{k,<k,\leq k,\dots\}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Filtration of \TODO{} by levels}
 \marginnote{See \cite[I.5]{Loday1994} (See [LR91])}
@@ -823,13 +843,32 @@ First we will look at the case of a unique level. This means that
     \underset{\sim}{\overset{s^k}{\longrightarrow}}
     H^1(S^1;\Lambda^k(A^0))
   \]
-  is a bijection.
+  is a bijection. \TODO[naturality?]
 \end{lem}
 \begin{proof}
   \begin{enumerate}
-    \item The map $i^k$ is the canonical extension of germs to their natural
+    \item The map
+      \[
+        i^k: \underset{\theta\in\A}\prod\Sto_\theta^k(A^0)
+        \to
+        \overset{\Gamma(\dot\cU^k;\Lambda^k(A^0))}{%
+          \overset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+            \prod_{\theta\in\A^k}\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))
+        }}
+      \]
+      is the canonical extension of germs to their natural
       arc of definition and thus a group isomorphism.
-    \item The map $s^k$ is the quotient map. \TODO{}
+    \item The second map 
+      \[
+        s^k:
+        \overset{\Gamma(\dot\cU^k;\Lambda^k(A^0))}{%
+          \overset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+            \prod_{\theta\in\A^k}\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))
+        }}
+        \to
+        H^1(S^1;\Lambda^k(A^0))
+      \]
+      is the quotient map. \TODO{}
   \end{enumerate}
 \end{proof}
 
