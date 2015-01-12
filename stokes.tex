@@ -1,4 +1,4 @@
-echapter{Stokes Structures}
+\chapter{Stokes Structures}
 \begin{comment}
   Matrizen Sicht:
   \begin{itemize}
@@ -430,7 +430,7 @@ the argument near the direction $\theta$.
     \rho_{\tilde\theta}:\Sto_\theta(A^0)\to\SSto_\theta(A^0)
   \]
   which maps a germ of $\Sto_\theta(A^0)$ to the unique matrix
-  $1+C_{\tilde\theta}$ such that 
+  $1+C_{\tilde\theta}$ such that
   \begin{equation} \label{eq:representation}
     \phi_\theta(t)X_{0,\tilde\theta}(t)
     =X_{0,\tilde\theta}(t)(1_n+C_{\tilde\theta})
@@ -547,20 +547,70 @@ We denote the set of levels of the germ $\phi_{\theta}$ by
     \item $\A^{\leq k}:=\underset{k'\leq k}\bigcup\A^{k'}$ (resp.
       $\A^{<k}:=\underset{k'<k}\bigcup\A^{k'}$);
     \item $\cK_\theta:=\left\{k\in\cK\mid\Sto_\theta^k(A^0)\neq\{1\}\right\}$
-      the set of levels \emph{beared by $\theta\in\A$}.
+      the set of levels \emph{beared by $\theta\in\A$}, and
+      $K_\theta=\max\cK_\theta$ the \emph{maximal level beared by $\theta$}.
   \end{itemize}
 \end{notations}
 \begin{rem}
   We clearly have the canonical inclusions
   \begin{itemize}
-    \item $\cA^k\hookrightarrow \cA^{\leq k}$ and
-    \item $\cA^{<k}\hookrightarrow \cA^{\leq k}$.
+    \item $\A^k\hookrightarrow\A^{\leq k}$ and
+    \item $\A^{<k}\hookrightarrow\A^{\leq k}$.
   \end{itemize}
 \end{rem}
 
 We denote the product
-$\prod_{\theta\in\A^\star}\Gamma(\dot U_\theta^\star;\Lambda^\star(A^0))$ by 
+$\prod_{\theta\in\A^\star}\Gamma(\dot U_\theta^\star;\Lambda^\star(A^0))$ by
 $\Gamma(\dot U^\star;\Lambda^\star(A^0))$ for $\star\in\{k,<k,\leq k,\dots\}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The theorem}
+\marginnote{\cite[868]{Loday1994}}
+Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
+$\dot\phi=(\dot\phi_{\theta_j})_{j\in J}\in\prod_{j\in J}\Lambda_{\theta_j}(A^0)$
+be a finite family of germs.
+In the following way, one can associate a cohomology class to any $\dot\phi$:
+let $\dot\phi_j$ be the function representing the germ $\dot\phi_{\theta_j}$ on
+its maximal arc of definition $\Omega_j$ around $\theta_j$.
+When a cyclic covering $\cU=\{U_j;j\in J\}$ satisfies
+$\dot U_j\subset \Omega_j$ for all $j\in J$ one can define the $1$-cocycle
+$(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
+To a differente $\cU$ this construction yields a cohomologous
+$1$-cocycle\TODO[Proof], thus the resulting map, in the case
+$\{\theta_j\mid j\in J\}=\A$,
+\[
+  h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to
+  H^1(A^1;\Lambda(A^0))=\St(A^0)
+\]
+is welldefined.
+\begin{tthm}
+  \label{thm:mainThm2}
+  The map
+  \[
+    h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0)
+  \]
+  is a bijection and natural.
+  \begin{rem}
+    \marginnote{\cite[869]{Loday1994}}
+    Natural means that $h$ commutes to isomorphisms and constructions over
+    systems or connections they represent.
+    \begin{comment}
+      See \cite{Loday1994} Section III.3.3
+    \end{comment}
+  \end{rem}
+\end{tthm}
+From theorem~\ref{thm:mainThm2} and \TODO{} we get the following corollary.
+\begin{cor}
+  \[
+    \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
+  \]
+  and thus has complex dimension \TODO{}
+\end{cor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Proof}
+We will only look at the unramified case, for which we refer to
+\cite[Sec.II.3]{Loday1994}.
+The proof in the ramified case can be found in \cite[Sec.II.4]{Loday1994}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Filtration of \TODO{} by levels}
@@ -667,23 +717,14 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
   $\underset{\cU}{\underrightarrow{\lim}}H^1(\cU,\lambda(A^0))$ is stationary
   is said to be \emph{adequate} to describe $H^1(S^1;\Lambda(A^0))$ (or
   \emph{adequate} to $\Lambda(A^0)$).
-  One also defines
-  \begin{itemize}
-    \item $\cU^{k}$ \emph{adequate} to $\Lambda^{k}(A^0)$,
-    \item $\cU^{\leq k}$ \emph{adequate} to $\Lambda^{\leq k}(A^0)$ and
-    \item $\cU^{<k}$ \emph{adequate} to $\Lambda^{<k}(A^0)$
-  \end{itemize}
-  in a similar way.
 \end{defn}
 
 \begin{prop}
   \marginnote{\cite[Prop.II.1.7]{Loday1994}}
   Let $\theta\in\A$ and $k\in\cK_\theta$.
   \begin{defn}
-    An arc $\mathfrak{s}_{\theta-\frac{\pi}{2k},\theta+\frac{\pi}{2k}}$, which
-    is (for a sufficiently small radius) a sector with opening $\frac{\pi}{k}$
-    bisected by $\theta$, is called a \emph{Stokes arc of level $k$ at
-    $\theta$}.
+    An arc $U(\theta,\frac{\pi}{k})$ is called a \emph{Stokes arc of level $k$
+    at $\theta$}.
   \end{defn}
   A cyclic covering $\cU=(U_j)_{j\in J}$, which satisfies
   \begin{itemize}
@@ -697,53 +738,75 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The theorem}
-\marginnote{\cite[868]{Loday1994}}
-Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
-$\dot\phi=(\dot\phi_{\theta_j})_{j\in J}\in\prod_{j\in J}\Lambda_{\theta_j}(A^0)$
-be a finite family of germs.
-In the following way, one can associate a cohomology class to any $\dot\phi$:
-let $\dot\phi_j$ be the function representing the germ $\dot\phi_{\theta_j}$ on
-its maximal arc of definition $\Omega_j$ around $\theta_j$.
-When a cyclic covering $\cU=\{U_j;j\in J\}$ satisfies
-$\dot U_j\subset \Omega_j$ for all $j\in J$ one can define the $1$-cocycle
-$(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
-To a differente $\cU$ this construction yields a cohomologous
-$1$-cocycle\TODO[Proof], thus the resulting map, in the case
-$\{\theta_j\mid j\in J\}=\A$,
+\subsubsection{Adequate coverings}
+Let $k\in\cK$.
+Here we want to define the three cyclic coverings $\cU^{k}$, $\cU^{\leq k}$ and
+$\cU^{<k}$ which will be adequate to $\Lambda^k(A^0)$, $\Lambda^{\leq k}(A^0)$
+and $\Lambda^{<k}(A^0)$. Furthermore are the coverings comparable at the
+different levels.
+
+\begin{enumerate}
+  \item The first covering $\cU^{k}=\{\dot U_\theta^k\mid\theta\in\A^k\}$
+    is the cyclic covering with nerve
+    \[
+      \dot\cU^k:=
+      \left\{\dot U_\theta^k=U(\theta,\frac{\pi}{k})\mid\theta\in\A^k\right\}
+    \]
+    consisting of all Stokes arcs for anti-Stokes directions bearing the level
+    $k$.
+\end{enumerate}
+
+If we extend to several levels, the set 
+$\bigcup_k\left\{U(\theta,\frac{\pi}{k})\mid\theta\in\A^{k}\right\}$ is no
+longer a nerve.
+Denote by
 \[
-  h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to
-  H^1(A^1;\Lambda(A^0))=\St(A^0)
+  \left\{K_1<\cdots<K_s=k\right\}
+  =\left\{\max\left(\cK_\theta\cap[0,k]\right)\mid\theta\in\A^{\leq k}\right\}
 \]
-is welldefined.
-\begin{tthm}
-  \label{thm:mainThm2}
-  The map
-  \[
-    h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0)
-  \]
-  is a bijection and natural.
-  \begin{rem}
-    \marginnote{\cite[869]{Loday1994}}
-    Natural means that $h$ commutes to isomorphisms and constructions over
-    systems or connections they represent.
-    \begin{comment}
-      See \cite{Loday1994} Section III.3.3
-    \end{comment}
-  \end{rem}
-\end{tthm}
-From theorem~\ref{thm:mainThm2} and \TODO{} we get the following corollary.
-\begin{cor}
-  \[
-    \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
-  \]
-  and thus has complex dimension \TODO{}
-\end{cor}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Proof}
-We will only look at the unramified case, for which we refer to
-\cite[Sec.II.3]{Loday1994}.
-The proof in the ramified case can be found in \cite[Sec.II.4]{Loday1994}.
+the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
+\begin{enumerate}
+  \setcounter{enumi}{1}
+  \item The cyclic covering
+    $\cU^{\leq k}=\left\{U_\theta^{\leq k}\mid\theta\in\A^{\leq k}\right\}$
+    will be defined by induction.
+    \\\textbf{\boldmath Let us assume, that $\dot U_\theta^{\leq k}$ are
+    defined for all $\theta\in\A^{\leq k}$ with $k$-maximum level greater then
+    $K_i$ such that their complete family is a nerve.}
+    Let
+    \begin{itemize}
+      \item $\theta$ be a anti-Stokes direction with $k$-maximum level $K_i$
+        and
+      \item $\theta^-$ (resp.\ $\theta^+$) be the next anti-Stokes direction
+        with $k$-maximum level greater then $K_i$ on the left (resp.\ on the
+        right) and define $U_{\theta^-,\theta^+}$ as the clockwise hull of the
+        arcs $\dot U_{\theta^-}^{\leq k}$ and $\dot U_{\theta^+}^{\leq k}$.
+        If there are no anti-Stokes directions with $k$-maximum level greater
+        then $K_i$ we set $\dot U_{\theta^-,\theta^+}=S^1$.
+    \end{itemize}
+    We then set
+    \[
+      \dot U_\theta^{\leq k}
+        :=U\left(\theta,\frac{\pi}{K_i}\right)\cap U_{\theta^-,\theta^+}
+    \]
+    and the family of all $\dot U_\theta^{\leq k}$ is a nerve.\TODO[proof!]
+\end{enumerate}
+\begin{rem}
+  If $\theta$ has a $k$-maximum level equal to $k$ then is
+  $\dot U_\theta^{\leq k}$ equal to the Stokes arc
+  $U\left(\theta,\frac{\pi}{k}\right)=\dot U_\theta^k$.
+  \begin{comment}
+    end then no $0$-cochain with level $k$ or $\geq k$ can exists on the
+    covering $\cU\leq{k}$.
+  \end{comment}
+\end{rem}
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+\item The last cyclic covering,
+  $\cU^{<k}=\left\{U_{\theta}^k\mid\theta\in\A^{<k}\right\}$, is defined as
+  $\cU^{<k}:=\cU{\leq k'}$ where $k':=\max{k''\in K\mid k''<k}$.
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{The case of a unique level}
@@ -793,7 +856,7 @@ First we will look at the case of a unique level. This means that
       \]
       is the canonical extension of germs to their natural
       arc of definition and thus a group isomorphism.
-    \item The second map 
+    \item The second map
       \[
         s^k:
         \overset{\Gamma(\dot\cU^k;\Lambda^k(A^0))}{%
