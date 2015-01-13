@@ -231,28 +231,16 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Stokes Structures: Matrix version}
+\section{The Stokes group}
 \begin{comment}
   See
   \begin{itemize}
     \item \cite{Loday1994}
-    \item \cite{boalch} and \cite{thboalch}
-    \item \cite{babbitt1989local}
   \end{itemize}
 \end{comment}
-The goal in this section is to prove, that
-\begin{itemize}
-  \item[] there is a bijective and natural map
-    \[
-      h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0) \,.
-    \]
-\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Definitions}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Stokes directions / \dots}
+\subsection{Stokes directions / \dots}
 \begin{comment}
   \cite[I.4]{Loday1994}
 \end{comment}
@@ -287,7 +275,8 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
         is taken from \cite{Loday1994}, because \TODO
       \item In \cite[Def.4.3.6]{Loday2014} $a_{(j,l)}$ gets a negative sign to
         be consistend with calculations at $\infty$. Here this is not
-        necessary, since we use then clockwise ordering.
+        necessary, since we use the clockwise ordering of points on $S^1$
+        (cf.~\ref{defn:antiStokesDir}).
     \end{enumerate}
   \end{rem}
   The degrees of the elements in $\cQ_{[\End A^0]}$ are the
@@ -335,6 +324,7 @@ relations:
 \end{defn}
 
 \begin{defn}
+  \label{defn:antiStokesDir}
   % \marginnote{See \cite[Def.I.4.5]{Loday1994}(for the ramified case)
   %   \cite[Def.3.2]{boalch}}
   \begin{enumerate}
@@ -349,6 +339,7 @@ relations:
           a counterclockwise ordering. \cite{boalch} and \cite{thboalch} use the
           inverse ordering, but look also at $0$.}. For a uniform notation
           later, define $\A$ to contain a single, arbitrary direction if $k=0$.
+          \TODO[make all Stokes dirs $\alpha$ instead of $\theta$?]
       \end{itemize}
     \item $\theta$ is an \emph{Stokes direction} when there is at least one
       pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies neither
@@ -366,7 +357,7 @@ relations:
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Stokes group $\Sto_\theta(A^0)$}
+\subsection{Stokes group $\Sto_\theta(A^0)$}
 \cite[Def.4.1]{hall2003lie} says the following about faithful representations:
 \begin{defn}
   \begin{comment}
@@ -522,8 +513,8 @@ positions, characterizes a unique element of $\Sto_\theta(A^0)$.
 
 We denote the set of levels of the germ $\phi_{\theta}$ by
 \[
-  \cK(\phi_\theta):= \{\deg(q_j-q_l)\mid C_{\tilde\theta}^{(l,j)}\neq0
-    \text{ in some representation of }\phi_\theta\}
+  \cK(\phi_\theta):= \left\{\deg(q_j-q_l)\mid C_{\tilde\theta}^{(l,j)}\neq0
+    \text{ in some representation of }\phi_\theta\right\}
 \]
 \begin{defn}
   A germ $\phi_\theta$ is a \emph{$k$-germ} when
@@ -559,61 +550,8 @@ We denote the set of levels of the germ $\phi_{\theta}$ by
   \end{itemize}
 \end{rem}
 
-We denote the product
-$\prod_{\theta\in\A^\star}\Gamma(\dot U_\theta^\star;\Lambda^\star(A^0))$ by
-$\Gamma(\dot U^\star;\Lambda^\star(A^0))$ for $\star\in\{k,<k,\leq k,\dots\}$.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The theorem}
-\marginnote{\cite[868]{Loday1994}}
-Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
-$\dot\phi=(\dot\phi_{\theta_j})_{j\in J}\in\prod_{j\in J}\Lambda_{\theta_j}(A^0)$
-be a finite family of germs.
-In the following way, one can associate a cohomology class to any $\dot\phi$:
-let $\dot\phi_j$ be the function representing the germ $\dot\phi_{\theta_j}$ on
-its maximal arc of definition $\Omega_j$ around $\theta_j$.
-When a cyclic covering $\cU=\{U_j;j\in J\}$ satisfies
-$\dot U_j\subset \Omega_j$ for all $j\in J$ one can define the $1$-cocycle
-$(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
-To a differente $\cU$ this construction yields a cohomologous
-$1$-cocycle\TODO[Proof], thus the resulting map, in the case
-$\{\theta_j\mid j\in J\}=\A$,
-\[
-  h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to
-  H^1(A^1;\Lambda(A^0))=\St(A^0)
-\]
-is welldefined.
-\begin{tthm}
-  \label{thm:mainThm2}
-  The map
-  \[
-    h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0)
-  \]
-  is a bijection and natural.
-  \begin{rem}
-    \marginnote{\cite[869]{Loday1994}}
-    Natural means that $h$ commutes to isomorphisms and constructions over
-    systems or connections they represent.
-    \begin{comment}
-      See \cite{Loday1994} Section III.3.3
-    \end{comment}
-  \end{rem}
-\end{tthm}
-From theorem~\ref{thm:mainThm2} and \TODO{} we get the following corollary.
-\begin{cor}
-  \[
-    \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
-  \]
-  and thus has complex dimension \TODO{}
-\end{cor}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Proof}
-We will only look at the unramified case, for which we refer to
-\cite[Sec.II.3]{Loday1994}.
-The proof in the ramified case can be found in \cite[Sec.II.4]{Loday1994}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Filtration of \TODO{} by levels}
+\subsection{Filtration of \TODO{} by levels}
 \marginnote{See \cite[I.5]{Loday1994} (See [LR91])}
 \begin{prop}
   \marginnote{\cite[Prop.I.5.1]{Loday1994}}
@@ -676,6 +614,77 @@ The proof in the ramified case can be found in \cite[Sec.II.4]{Loday1994}.
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Stokes Structures: Matrix version}
+\begin{comment}
+  See
+  \begin{itemize}
+    \item \cite{Loday1994}
+    \item \cite{boalch} and \cite{thboalch}
+    \item \cite{babbitt1989local}
+  \end{itemize}
+\end{comment}
+The goal in this section is to prove, that
+\begin{itemize}
+  \item[] there is a bijective and natural map
+    \[
+      h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0) \,.
+    \]
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The theorem}
+\marginnote{\cite[868]{Loday1994}}
+Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
+$\dot\phi=(\dot\phi_{\theta_j})_{j\in J}\in\prod_{j\in J}\Lambda_{\theta_j}(A^0)$
+be a finite family of germs.
+In the following way, one can associate a cohomology class to any $\dot\phi$:
+\begin{itemize}
+  \item[] let $\dot\phi_j$ be the function representing the germ
+    $\dot\phi_{\theta_j}$ on its maximal arc of definition $\Omega_j$ around
+    $\theta_j$.
+    Then, for every cyclic covering $\cU=\{U_j;j\in J\}$ which satisfies
+    $\dot U_j\subset \Omega_j$ for all $j\in J$, one can define the $1$-cocycle
+    $(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
+\end{itemize}
+To a different $\cU$ this construction yields a cohomologous
+$1$-cocycle\TODO[Proof], thus the resulting map, in the case
+$\{\theta_j\mid j\in J\}=\A$,
+\[
+  h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to
+  H^1(A^1;\Lambda(A^0))=\St(A^0)
+\]
+is welldefined.
+\begin{tthm}
+  \label{thm:mainThm2}
+  The map
+  \[
+    h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0)
+  \]
+  is a bijection and natural.
+  \begin{rem}
+    \marginnote{\cite[869]{Loday1994}}
+    Natural means that $h$ commutes to isomorphisms and constructions over
+    systems or connections they represent.
+    \begin{comment}
+      See \cite{Loday1994} Section III.3.3
+    \end{comment}
+  \end{rem}
+\end{tthm}
+From theorem~\ref{thm:mainThm2} and \TODO{} we get the following corollary.
+\begin{cor}
+  \[
+    \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
+  \]
+  and thus has complex dimension \TODO{}
+\end{cor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Proof}
+We will only look at the unramified case, for which we refer to
+\cite[Sec.II.3]{Loday1994}.
+The proof in the ramified case can be found in \cite[Sec.II.4]{Loday1994}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Coverings}
 \begin{comment}
   \begin{itemize}
@@ -695,7 +704,7 @@ $V\in\cV$ there is at least one $U\in\cU$ with $V\subset U$.
         \item the bisecting directions of the $U_j$ are in ascending order with
           respect to the clockwise orientation of $S^1$;
         \item the $U_j$ are not encased, this means that the arcs
-          $U_j\backslash U_l$ are connected arcsz for all $j,l\in J$.
+          $U_j\backslash U_l$ are connected arcs for all $j,l\in J$.
       \end{enumerate}
     \item The \emph{nerve} of a cyclic covering $\cU=\{U_j;j\in J\}$ is the
       family $\dot\cU=\{\dot U_j;j\in J\}$ defined by:
@@ -740,7 +749,7 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Adequate coverings}
 Let $k\in\cK$.
-Here we want to define the three cyclic coverings $\cU^{k}$, $\cU^{\leq k}$ and
+We want to define the three cyclic coverings $\cU^{k}$, $\cU^{\leq k}$ and
 $\cU^{<k}$ which will be adequate to $\Lambda^k(A^0)$, $\Lambda^{\leq k}(A^0)$
 and $\Lambda^{<k}(A^0)$. Furthermore are the coverings comparable at the
 different levels.
@@ -808,6 +817,30 @@ the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
   $\cU^{<k}:=\cU{\leq k'}$ where $k':=\max{k''\in K\mid k''<k}$.
 \end{enumerate}
 
+\begin{rem}
+  The coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ depend only on
+  $\cQ_{[\End A^0]}$.
+\end{rem}
+\begin{prop}
+  \marginnote{\cite[Prop.II.3.1]{Loday1994}}
+  Let $k\in\cK$, then
+  \begin{enumerate}
+    \item $\cU^{\leq k}$ refines $\cU^{k}$ and $\cU^{<k}$;
+    \item the coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ are adequate
+      to $\Lambda^k(A^0)$, $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$;
+    \item on 
+      \begin{itemize}
+        \item $\cU^k$ there exists no $0$-cochain in $\Lambda^k(A^0)$;
+        \item $\cU^{\leq k}$ there exists no $0$-cochain in
+          $\Lambda^{\leq k}(A^0)$
+      \end{itemize}
+  \end{enumerate}
+\end{prop}
+We denote the product
+$\prod_{\theta\in\A^\star}\Gamma(\dot U_\theta^\star;\Lambda^\star(A^0))$ by
+$\Gamma(\dot U^\star;\Lambda^\star(A^0))$ for $\star\in\{k,<k,\leq k,\dots\}$.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{The case of a unique level}
 \begin{comment}
@@ -868,6 +901,7 @@ First we will look at the case of a unique level. This means that
       \]
       is the quotient map. \TODO{}
   \end{enumerate}
+  \TODO[Show, that this is the correct $h$]
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1045,4 +1079,5 @@ theoreme~\ref{thm:mainThm2} by composition of bijective maps.
   \]
   as the map $h$.
   \TODO[naturality (is obvious?)]
+  \TODO[Show, that this is the correct $h$]
 \end{proof}
