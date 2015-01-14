@@ -64,11 +64,11 @@ $A^0$.
     \draw[thick,double] (mat) -- (mat2);
 
     \draw[->,green!40!black] (modSpcSheaf) -- (sheaf);
-    \draw[->,blue,dashed] (modSpcMat) -- (mat);
-    \draw[->,blue,dashed] (class) -- (mat);
+    \draw[->,blue] (modSpcMat) -- (mat);
+    \draw[->,blue] (class) -- (mat);
     \draw[->,blue] (mat) -- (mat');
     \draw[->,purple,dashed] (class) -- (sheaf2);
-    \draw[->,purple,dashed] (class) -- (mat2);
+    % \draw[->,purple,dashed] (class) -- (mat2);
     \draw[->,purple] (mat2) -- (sheaf2);
     \draw[->,purple,dashed] (sheaf2) edge[bend right=20] (mat2);
 
@@ -358,164 +358,24 @@ relations:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Stokes group $\Sto_\theta(A^0)$}
-\cite[Def.4.1]{hall2003lie} says the following about faithful representations:
-\begin{defn}
-  \begin{comment}
-    See:
-    \begin{itemize}
-      \item \cite[Def.4.1]{hall2003lie}
-      \item \url{http://nlab.mathforge.org/nlab/show/faithful+representation}
-    \end{itemize}
-  \end{comment}
-  Let $G$ bi a matrix Lie group. Then a \emph{(finite-dimensional complex)
-  representation} of $G$ is a Lie group homomorphism
-  \[
-    \rho:G\to\Gl(V)
-  \]
-  where
-  \begin{itemize}
-    \item $V$ is a finite-dimensional complex vector space.
-  \end{itemize}
-  If $\rho$ is a one-to-one homomorphism, then the representation is called
-  \emph{faithful}.
-  \begin{comment}
-    \textbf{Other criterion:}
-    If the associated homomorphism $G\to\Aut(V)$ is injective, then the
-    representation is \emph{faithful}.
-  \end{comment}
-  \begin{rem}
-    If a representation $\rho$ is a faithful representation of a matrix Lie
-    group $G$ then $\{\rho(A)\mid A\in G\}$ is a group of matrices that is
-    isomorphic to the original group $G$. Thus, $\rho$ allows us to represent
-    $G$ as a group of matrices.
-  \end{rem}
-\end{defn}
 \begin{defn}
   Define the \emph{Stokes group}
   \[
     \Sto_\theta(A^0)=
     \left\{\phi_\theta\in\Lambda_\theta^{<0}(A^0)
       \mid \phi_\theta \text{ has maximal decay at } \theta
-    \right\}
+    \right\} \,.
   \]
-  and the group
-  \[
-    \SSto_d(A^0)= \left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
-      q_j \underset{\theta,\max}{\prec} q_l \right\}
-  \]
-  which will arise as a faithful representation of $\Sto_\theta(A^0)$.
   \begin{rem}
     For $\theta\notin\A$ the group $\Sto_\theta(A^0)$ is trivial, since no flat
     isotropy has maximal decay, but the identity.
   \end{rem}
 \end{defn}
-Let $X_0=t^L e^{Q(t^{-1})}$ be a normal solution.
-For every determination $\tilde\theta$ of $\theta$ we denote by
-$X_{0,\tilde\theta}$ the function defined by $X_0$ with that determination of
-the argument near the direction $\theta$.
-
-\begin{prop}
-  \marginnote{\cite[Def.I.4.7]{Loday1994},~\cite[78f]{Loday2014}}
-  In this situation there is an isomorphism
-  \[
-    \rho_{\tilde\theta}:\Sto_\theta(A^0)\to\SSto_\theta(A^0)
-  \]
-  which maps a germ of $\Sto_\theta(A^0)$ to the unique matrix
-  $1+C_{\tilde\theta}$ such that
-  \begin{equation} \label{eq:representation}
-    \phi_\theta(t)X_{0,\tilde\theta}(t)
-    =X_{0,\tilde\theta}(t)(1_n+C_{\tilde\theta})
-  \end{equation}
-  near $\theta$.  We call $1+C_{\tilde\theta}$ a \emph{representation of
-  $\phi_\theta$}.
-\end{prop}
-From (\ref{eq:representation}) we deduce
-\[
-  \phi_\theta(t)
-  =t^L e^{Q(t^{-1})}(1_n+C_{\tilde\theta})e^{-Q(t^{-1})}t^{-L}
-\]
-with the given choice of the argument near $\theta$.
-After decomposing \TODO[Fitting the structure of $Q$] $C_{\tilde\theta}$ into
-\TODO[r is already In use]
-\begin{align*}
-  C_{\tilde\theta}&=\begin{pmatrix}
-    c_{(1,1)} & c_{(1,2)} & \cdots &\\
-    c_{(2,1} & \ddots\\
-    \vdots \\
-    & & & c_{(r,r)}
-  \end{pmatrix}
-\\&=
-  \underset{C_{\tilde\theta}^{(1,1)}}{\underbrace{%
-    \begin{pmatrix}
-      c_{(1,1)} & 0 & \cdots &\\
-      0\\
-      \vdots&\\
-      &
-    \end{pmatrix}
-  }}
-  +
-  \underset{C_{\tilde\theta}^{(1,2)}}{\underbrace{%
-    \begin{pmatrix}
-      0 & c_{(1,2)} & 0 & \cdots\\
-      & 0 &\\
-      &\vdots\\
-      &
-    \end{pmatrix}
-  }}
-  +\cdots+
-  \underset{C_{\tilde\theta}^{(r,r)}}{\underbrace{%
-    \begin{pmatrix}
-      &\\
-      & & & \vdots\\
-      & & & 0\\
-      & \cdots & 0 & c_{(r,r)}
-    \end{pmatrix}
-  }}
-\\&=\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}
-\end{align*}
-where the $c_{(j,l)}$ are blocks of size $r_j\times r_l$ which correspond to
-the structure of $Q$, we get
-\[
-  \phi_\theta=
-    t^L\left(
-      1_n+\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}e^{(q_l-q_j)(t^{-1})}
-    \right)t^{-L} \,.
-\]
-Thus, for $\phi_{\tilde\theta}$ to be flat in direction $\theta$, it is
-necessary and sufficient that if $e^{(q_l-q_j)(t^{-1})}$ does not have
-maximal decay in direction $\tilde\theta$ the corresponding
-block $C_{\tilde\theta}^{(l,j)}$ vanishes.
-
-In particular we get, that
-\begin{itemize}
-  \item for $j=l$ are the (diagonal) blocks $C_{\tilde\theta}^{(l,j)}$ are zero
-    since $q_l-q_j=0$ and
-  \item if $e^{q_j-q_l}$ has has maximal decay, then $e^{q_l-q_j}$ has not.
-    Thus if $C_{\tilde\theta}^{(l,j)}$ is not equal to zero, the block
-    $C_{\tilde\theta}^{(j,l)}$ is necessarily zero.
-\end{itemize}
-This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent.
-On the other hand, every constant unipotent Matrix, with zeros at the necessary
-positions, characterizes a unique element of $\Sto_\theta(A^0)$.
-
-\begin{lem}
-  \marginnote{\cite[Def.I.4.12]{Loday1994}}
-  A germ $\phi_\theta\in\Lambda_\theta(A^0)$ is a Stokes germ, i.e.\ an element
-  in $\Sto_\theta(A^0)$ if and only if for some, hence all determination
-  $\tilde\theta$, it has a representation $1+C_{\tilde\theta}$ where
-  \[
-    C_{\tilde\theta}=\sum_{(l,j)\mid q_j\underset{\tilde\theta,\max}{\prec}q_l}
-    C_{\tilde\theta}^{(l,j)}
-  \]
-  and $C_{\tilde\theta}^{(l,j)}$ has the necessary block structure.
-\end{lem}
-
-\TODO[Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.]
 
 We denote the set of levels of the germ $\phi_{\theta}$ by
 \[
   \cK(\phi_\theta):= \left\{\deg(q_j-q_l)\mid C_{\tilde\theta}^{(l,j)}\neq0
-    \text{ in some representation of }\phi_\theta\right\}
+    \text{ in some determination of }\phi_\theta\right\}
 \]
 \begin{defn}
   A germ $\phi_\theta$ is a \emph{$k$-germ} when
@@ -552,21 +412,25 @@ We denote the set of levels of the germ $\phi_{\theta}$ by
 \end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Filtration of \TODO{} by levels}
-\marginnote{See \cite[I.5]{Loday1994} (See [LR91])}
+\subsection{Filtration of the Stokes group by levels}
+\begin{comment}
+  See \cite[I.5]{Loday1994} on p.\ 861f (See [LR91])
+\end{comment}
+We will look at the filtration of $\Lambda(A^0)$, wich will be restricted to
+$\Sto_\theta(A^0)$ and defines there the filtration.
 \begin{prop}
   \marginnote{\cite[Prop.I.5.1]{Loday1994}}
   For any level $k\in\cK$ one has
   \begin{enumerate}
     \item $\Lambda^{k}(A^0)$, $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$
       are sheaves of subgroups of $\Lambda(A^0)$;
-    \item $\Lambda^k(A^0)$ is normal in $\Lambda^{\leq k}(A^0)$;
+    \item the sheaf $\Lambda^k(A^0)$ is normal in $\Lambda^{\leq k}(A^0)$;
     \item the exact sequence of sheaves
       \[
         1\longrightarrow\Lambda^k(A^0)
         \overset{i}\longrightarrow\Lambda^{\leq k}(A^0)
         \overset{p}\longrightarrow\Lambda^{<k}(A^0)
-        \longrightarrow 1
+        \longrightarrow 1 \,,
       \]
       where $i$ and $p$ are the canonical maps, splits.
   \end{enumerate}
@@ -579,40 +443,242 @@ We denote the set of levels of the germ $\phi_{\theta}$ by
       $\Lambda^{<k}(A^0)\hookrightarrow\Lambda^{\leq k}(A^0)$.
   \end{enumerate}
 \end{proof}
+\begin{cor}
+  \marginnote{\cite[Cor.I.5.2]{Loday1994}}
+  \begin{enumerate}
+    \item For any $k\in\cK$ there are the two following ways of factoring
+      $\Lambda^{\leq k}$ in a semi-direct product:
+      \begin{align*}
+        \Lambda^{\leq k}&\cong \Lambda^{<k}\ltimes\Lambda^{k}
+      \\                &\cong \Lambda^{k}\ltimes\Lambda^{<k} \,.
+      \end{align*}
+      Thus any germ $f^{\leq k}\in\Lambda^{\leq k}$ can be uniquely factored in
+      \begin{itemize}
+        \item $f^{\leq k}=f^{<k}g^k$, where $f^{<k}\in\Lambda^{<k}$ and
+          $g^k\in\Lambda^k$, or
+        \item $f^{\leq k}=f^kf^{<k}$, where $f^k\in\Lambda^k$ and
+          $f^{<k}\in\Lambda^{<k}$.
+      \end{itemize}
+      \begin{rem}
+        A factorization algorithm could be:
+        \begin{itemize}
+          \item[] the factor $f^{<k}$ common to both factorizations is the
+            truncation of $f^{\leq k}$ to terms of level $k$\footnote{in any
+            representation $1+\sum C_{\tilde\theta}^{(j,l)}$ of $f^{\leq k}$
+            keep only the terms $(j,l)$ such that $\deg(q_j-q_l)<k$}. Then
+            $g^k=(f^{<k})^{-1}f^{\leq k}$ and $f^k=f^{\leq k}(f^{<k})^{-1}$.
+        \end{itemize}
+      \end{rem}
+    \item This decomposition in semi-direct product can be extended to all
+      levels. Thus
+      \[
+        \Lambda(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Lambda^k(A^0)
+      \]
+      where the semi-direct product is taken in an ascending or descending
+      order of levels $k$.
+  \end{enumerate}
+\end{cor}
+\begin{prop}
+  \marginnote{\cite[Prop.I.5.3]{Loday1994}}
+  For any levels $k$,$k'\in\cK$ with $k'<k$ one has:
+  \begin{enumerate}
+    \item the sheaf $\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k'}(A^0)$ is
+      normal in $\Lambda^{\leq k}(A^0)$;
+    \item the exact sequence of sheaves
+      \[
+        1\longrightarrow\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k'}(A^0)
+        \overset{i}\longrightarrow\Lambda^{\leq k}(A^0)
+        \overset{p}\longrightarrow\Lambda^{<k'}(A^0)
+        \longrightarrow 1 \,,
+      \]
+      where $i$ and $p$ are the canonical maps, splits.
+  \end{enumerate}
+  \TODO[is $\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k}(A^0)=\Lambda^k(A^0)$ and
+    thus the first proposition a corollary of this?]
+\end{prop}
+\begin{proof}
+  \TODO{}
+\end{proof}
+\begin{cor}
+  \marginnote{\cite[Cor.I.5.4]{Loday1994}}
+  \TODO
+  \[
+    \Lambda(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Lambda^k(A^0)
+  \]
+  taken in arbitrary order.
+\end{cor}
+\begin{proof}
+  \TODO{}
+\end{proof}
+\begin{prop}
+  \marginnote{\cite[Prop.I.5.5]{Loday1994}}
+  The results can be restricted to the Stokes groups. Thus, for
+  $\theta\in\A$, one has
+  \[
+    \Sto_\theta(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Sto_\theta^k(A^0)
+  \]
+  the semi-direct product being taken in an arbitrary order.
+\end{prop}
+\begin{proof}
+  \TODO{}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Faithful representation of the Stokes group}
 \begin{comment}
-  \begin{cor}
-    \cite[Cor.I.5.2]{Loday1994} says:\\
-  \end{cor}
-  \begin{prop}
-    \cite[Prop.I.5.3]{Loday1994} says:\\
-  \end{prop}
-  \begin{proof}
-    \TODO{}
-  \end{proof}
-  \begin{cor}
-    \cite[Cor.I.5.4]{Loday1994} says:\\
-    \TODO
-    \[
-      \Lambda(A^0)\cong\underset{k\in\cK_\theta}\ltimes\Lambda^k(A^0)
-    \]
-    taken in arbitrary order.
-  \end{cor}
-  \begin{proof}
-    \TODO{}
-  \end{proof}
-  \begin{prop}
-    \cite[Prop.I.5.5]{Loday1994} says:\\
-    The results can be restricted to the Stokes groups. Thus, for
-    $\theta\in\A$, one has
-    \[
-      \Sto_\theta(A^0)\cong\underset{k\in\cK_\theta}\ltimes\Sto_\theta^k(A^0)
-    \]
-    the semi-direct product being taken in an arbitrary order.
-  \end{prop}
-  \begin{proof}
-    \TODO{}
-  \end{proof}
+  See
+  \begin{itemize}
+    \item \cite[9f]{thboalch}
+    \item \cite[??]{Loday1994}
+  \end{itemize}
 \end{comment}
+\cite[Def.4.1]{hall2003lie} says the following about faithful representations:
+\begin{defn}
+  \begin{comment}
+    See:
+    \begin{itemize}
+      \item \cite[Def.4.1]{hall2003lie}
+      \item \url{http://nlab.mathforge.org/nlab/show/faithful+representation}
+    \end{itemize}
+  \end{comment}
+  Let $G$ bi a matrix Lie group. Then a \emph{(finite-dimensional complex)
+  representation} of $G$ is a Lie group homomorphism
+  \[
+    \rho:G\to\Gl(V)
+  \]
+  where
+  \begin{itemize}
+    \item $V$ is a finite-dimensional complex vector space.
+  \end{itemize}
+  If $\rho$ is a one-to-one homomorphism, then the representation is called
+  \emph{faithful}.
+  \begin{comment}
+    \textbf{Other criterion:}
+    If the associated homomorphism $G\to\Aut(V)$ is injective, then the
+    representation is \emph{faithful}.
+  \end{comment}
+  \begin{rem}
+    If a representation $\rho$ is a faithful representation of a matrix Lie
+    group $G$ then $\{\rho(A)\mid A\in G\}$ is a group of matrices that is
+    isomorphic to the original group $G$. Thus, $\rho$ allows us to represent
+    $G$ as a group of matrices.
+  \end{rem}
+\end{defn}
+\begin{defn}
+  Define the group
+  \[
+    \SSto_d(A^0)= \left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
+      q_j \underset{\theta,\max}{\prec} q_l \right\}
+  \]
+  which will arise as a faithful representation of $\Sto_\theta(A^0)$.
+\end{defn}
+Let $X_0=t^L e^{Q(t^{-1})}$ be a normal solution.
+For every determination $\tilde\theta$ of $\theta$ we denote by
+$X_{0,\tilde\theta}$ the function defined by $X_0$ with that determination of
+the argument near the direction $\theta$.
+
+\begin{prop} \label{prop:representation}
+  \marginnote{\cite[Def.I.4.7]{Loday1994},~\cite[78f]{Loday2014}}
+  In this situation the morphism
+  \begin{align*}
+    \rho_{\tilde\theta}:\Sto_\theta(A^0)&\to\SSto_\theta(A^0)
+  \\\phi_\theta&\mapsto e^{-Q(t^{-1})}t^{-L} \phi_\theta t^L e^{Q(t^{-1})}
+  \end{align*}
+  is an isomorphism which maps a germ of $\Sto_\theta(A^0)$ to the unique
+  matrix $1+C_{\tilde\theta}$ such that
+  \begin{equation} \label{eq:representation}
+    \phi_\theta(t)X_{0,\tilde\theta}(t)
+    =X_{0,\tilde\theta}(t)(1_n+C_{\tilde\theta})
+  \end{equation}
+  near $\theta$.  We call $1+C_{\tilde\theta}$ a \emph{representation of
+  $\phi_\theta$}.
+  \begin{rem}
+    \marginnote{\cite[10]{thboalch}}
+    $\rho$ relates solutions $\phi_\theta$ of $[A^0,A^0]$ to solutions of
+    $[0,0]$ which are the constant matrices $\End(E)$.
+  \end{rem}
+\end{prop}
+From (\ref{eq:representation}) we deduce
+\[
+  \phi_\theta(t)
+  =t^L e^{Q(t^{-1})}(1_n+C_{\tilde\theta})e^{-Q(t^{-1})}t^{-L}
+\]
+with the given choice of the argument near $\theta$.
+After decomposing $C_{\tilde\theta}$ into
+\begin{align*}
+  C_{\tilde\theta}&=\begin{pmatrix}
+    c_{(1,1)} & c_{(1,2)} & \cdots &\\
+    c_{(2,1} & \ddots\\
+    \vdots \\
+    & & & c_{(s,s)}
+  \end{pmatrix}
+\\&=
+  \underset{C_{\tilde\theta}^{(1,1)}}{\underbrace{%
+    \begin{pmatrix}
+      c_{(1,1)} & 0 & \cdots &\\
+      0\\
+      \vdots&\\
+      &
+    \end{pmatrix}
+  }}
+  +
+  \underset{C_{\tilde\theta}^{(1,2)}}{\underbrace{%
+    \begin{pmatrix}
+      0 & c_{(1,2)} & 0 & \cdots\\
+      & 0 &\\
+      &\vdots\\
+      &
+    \end{pmatrix}
+  }}
+  +\cdots+
+  \underset{C_{\tilde\theta}^{(s,s)}}{\underbrace{%
+    \begin{pmatrix}
+      &\\
+      & & & \vdots\\
+      & & & 0\\
+      & \cdots & 0 & c_{(s,s)}
+    \end{pmatrix}
+  }}
+\\&=\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}
+\end{align*}
+where the $c_{(j,l)}$ are blocks of size $n_j\times n_l$ which correspond to
+the structure of $Q$, we get
+\[
+  \phi_\theta=
+    t^L\left(
+      1_n+\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}e^{(q_l-q_j)(t^{-1})}
+    \right)t^{-L} \,.
+\]
+Thus, for $\phi_{\tilde\theta}$ to be flat in direction $\theta$, it is
+necessary and sufficient that if $e^{(q_l-q_j)(t^{-1})}$ does not have
+maximal decay in direction $\tilde\theta$ the corresponding
+block $C_{\tilde\theta}^{(l,j)}$ vanishes.
+
+In particular we get, that
+\begin{itemize}
+  \item for $j=l$ are the (diagonal) blocks $C_{\tilde\theta}^{(l,j)}$ vanish
+    since $q_l-q_j=0$ and
+  \item if $e^{q_j-q_l}$ has has maximal decay, then $e^{q_l-q_j}$ has not.
+    Thus if $C_{\tilde\theta}^{(l,j)}$ is not equal to zero, the block
+    $C_{\tilde\theta}^{(j,l)}$ is necessarily zero.
+\end{itemize}
+This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent.
+On the other hand, every constant unipotent Matrix, with zeros at the necessary
+positions, characterizes a unique element of $\Sto_\theta(A^0)$.
+
+\begin{lem}
+  \marginnote{\cite[Def.I.4.12]{Loday1994}}
+  A germ $\phi_\theta\in\Lambda_\theta(A^0)$ is a Stokes germ, i.e.\ an element
+  in $\Sto_\theta(A^0)$ if and only if for some, hence all determination
+  $\tilde\theta$, it has a representation $1+C_{\tilde\theta}$ where
+  \[
+    C_{\tilde\theta}=\sum_{(l,j)\mid q_j\underset{\tilde\theta,\max}{\prec}q_l}
+    C_{\tilde\theta}^{(l,j)}
+  \]
+  and $C_{\tilde\theta}^{(l,j)}$ has the necessary block structure.
+\end{lem}
+
+\TODO[Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes Structures: Matrix version}
@@ -648,7 +714,7 @@ In the following way, one can associate a cohomology class to any $\dot\phi$:
     $(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
 \end{itemize}
 To a different $\cU$ this construction yields a cohomologous
-$1$-cocycle\TODO[Proof], thus the resulting map, in the case
+$1$-cocycle\TODO[Proof], thus the induced map, in the case
 $\{\theta_j\mid j\in J\}=\A$,
 \[
   h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to
@@ -671,7 +737,8 @@ is welldefined.
     \end{comment}
   \end{rem}
 \end{tthm}
-From theorem~\ref{thm:mainThm2} and \TODO{} we get the following corollary.
+From theorem~\ref{thm:mainThm2} and Proposition~\ref{prop:representation} we
+get the following corollary.
 \begin{cor}
   \[
     \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
@@ -984,13 +1051,9 @@ First we will look at the case of a unique level. This means that
   \end{enumerate}
 \end{lem}
 \begin{proof}
-  \begin{comment}
-    See \cite[Lem.II.3.3]{Loday1994}.
-  \end{comment}
   \begin{enumerate}
-    \item
-      Denote by $\theta^+$ the nearest anti-Stokes direction in $\A^{\leq k}$
-      on the right\footnote{In clockwise direction.} of $\theta$.
+    \item Denote by $\theta^+$ the nearest anti-Stokes direction in
+      $\A^{\leq k}$ on the right\footnote{In clockwise direction.} of $\theta$.
       \TODO{}
     \item \TODO{}
   \end{enumerate}
@@ -1050,7 +1113,7 @@ First we will look at the case of a unique level. This means that
   \TODO{}
 \end{proof}
 \subsubsection{Composing functions to obtain $h$}
-Thus, we are now able to create the function $h$ from
+Thus, we are now able to optain the function $h$ from
 theoreme~\ref{thm:mainThm2} by composition of bijective maps.
 \begin{proof}[Proof of theoreme~\ref{thm:mainThm2}]
   Let us denote the composition
@@ -1082,3 +1145,15 @@ theoreme~\ref{thm:mainThm2} by composition of bijective maps.
   \TODO[naturality (is obvious?)]
   \TODO[Show, that this is the correct $h$]
 \end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algorithm \cite[II.3.4]{Loday1994}}
+This algorithm takes a cocycle over a arbitrary cyclic covering $\cV$ and
+outputs a Stokes cocycle, which corresponds to our coverings.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Leading directions of \TODO[\dots]}
+\begin{comment}
+  See \cite[863ff]{Loday1994}
+\end{comment}
+
