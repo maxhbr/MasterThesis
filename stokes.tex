@@ -52,19 +52,21 @@ $A^0$.
     \node[green!40!black] (modSpcSheaf) at (0,0.3) {$\sH(\sM^{good})$};
     \node[blue] (modSpcMat) at (0,-0.3) {$\cH(A^0)$};
     \node[purple] (class) at (0.8,0) {$\G\backslash\tilde\G(B_0)$};
+    \node[purple] (class2) at (-0.8,0) {$\St(A^0)$};
     \node[green!40!black] (sheaf) at (3,1.3) {$\St(\sM^{good})$};
     \node[purple] (sheaf2) at (4,1) {$H^1(S^1;\Lambda^{<0}(B_0)$};
     \node[blue] (mat) at (3,-1.3) {$\prod_{d\in\A}\Sto_d(A^0)$};
     \node[blue] (mat') at (3,-2) {$(U_+\times U_-)^{k-1}$};
     \node[purple] (mat2) at (4,-1) {$\prod_{\alpha\in\mathfrak{A}}\Sto_\alpha(B_0)$};
 
-    \draw[thick,double] (modSpcMat) -- (modSpcSheaf) -- (class);
+    \draw[thick,double] (modSpcMat) -- (modSpcSheaf) -- (class) -- (class2) --
+      (modSpcMat);
     \draw[thick,double,blue] (modSpcMat) -- (class);
     \draw[thick,double] (sheaf) -- (sheaf2);
     \draw[thick,double] (mat) -- (mat2);
 
     \draw[->,green!40!black] (modSpcSheaf) -- (sheaf);
-    \draw[->,blue] (modSpcMat) -- (mat);
+    \draw[->,blue,dashed] (modSpcMat) -- (mat);
     \draw[->,blue] (class) -- (mat);
     \draw[->,blue] (mat) -- (mat');
     \draw[->,purple,dashed] (class) -- (sheaf2);
@@ -541,7 +543,7 @@ $\Sto_\theta(A^0)$ and defines there the filtration.
       \item \url{http://nlab.mathforge.org/nlab/show/faithful+representation}
     \end{itemize}
   \end{comment}
-  Let $G$ bi a matrix Lie group. Then a \emph{(finite-dimensional complex)
+  Let $G$ be a matrix Lie group. Then a \emph{(finite-dimensional complex)
   representation} of $G$ is a Lie group homomorphism
   \[
     \rho:G\to\Gl(V)
@@ -649,6 +651,23 @@ the structure of $Q$, we get
       1_n+\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}e^{(q_l-q_j)(t^{-1})}
     \right)t^{-L} \,.
 \]
+\begin{comment}
+  \begin{align*}
+    \phi_\theta(t)
+    &=t^Le^{Q(t^{-1})}\left(
+      1_n+C_{\tilde\theta}
+    \right)e^{-Q(t^{-1})}t^{-L}
+  \\&=t^Le^{Q(t^{-1})}\left(
+      1_n+\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}
+    \right)e^{-Q(t^{-1})}t^{-L}
+  \\&=t^L\left(
+      1_n+\sum_{(l,j)}e^{Q(t^{-1})}C_{\tilde\theta}^{(l,j)}e^{-Q(t^{-1})}
+    \right)t^{-L}
+  \\&=t^L\left(
+        1_n+\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}e^{(q_l-q_j)(t^{-1})}
+      \right)t^{-L} \,.
+  \end{align*}
+\end{comment}
 Thus, for $\phi_{\tilde\theta}$ to be flat in direction $\theta$, it is
 necessary and sufficient that if $e^{(q_l-q_j)(t^{-1})}$ does not have
 maximal decay in direction $\tilde\theta$ the corresponding
@@ -675,7 +694,7 @@ positions, characterizes a unique element of $\Sto_\theta(A^0)$.
     C_{\tilde\theta}=\sum_{(l,j)\mid q_j\underset{\tilde\theta,\max}{\prec}q_l}
     C_{\tilde\theta}^{(l,j)}
   \]
-  and $C_{\tilde\theta}^{(l,j)}$ has the necessary block structure.
+  and $C_{\tilde\theta}^{(l,j)}$ have the necessary block structure.
 \end{lem}
 
 \TODO[Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.]
@@ -1155,5 +1174,11 @@ outputs a Stokes cocycle, which corresponds to our coverings.
 \subsection{Leading directions of \TODO[\dots]}
 \begin{comment}
   See \cite[863ff]{Loday1994}
+\end{comment}
+
+\section{The map
+  $\G\backslash\tilde\G(B_0)\to\prod_{\theta\in\A}\Sto_\theta(A^0)$}
+\begin{comment}
+  see \cite[9f]{thboalch}
 \end{comment}
 

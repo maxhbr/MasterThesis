@@ -75,7 +75,7 @@ A meromorphic connection is then defined as follows.
     \]
   for $\mys\textcolor{blue!60!black}{\in\Gamma(\myU,\sM)}$ and
   $\myf\textcolor{red!60!black}{\in\cO_M(\myU)}$.
-
+  \TODO[Define rank of meromophic connection]
 \end{defn}
 \begin{rem}
   \begin{enumerate}
@@ -220,26 +220,27 @@ $A=A'dt$.
 \begin{notations}
   We will use the following notations
   \begin{itemize}
-    \item $G=\Gl_n(\C)$
-    \item $G[t]=\Gl_n(\C[t])$
-    \item $G\{t\}=\Gl_n(\C\{t\})$ analytic tranformations
-    \item $G(\!\{t\}\!)=\Gl_n(\C\{t\}[t^{-1}])$ meromorphic transformations
+    \item $G=\Gl_n(\C)$;
+    \item $G[t]=\Gl_n(\C[t])$;
+    \item $G\{t\}=\Gl_n(\C\{t\})$ analytic tranformations;
+    \item $G(\!\{t\}\!)=\Gl_n(\C\{t\}[t^{-1}])$ meromorphic transformations;
     \item $G\llbracket t\rrbracket=\Gl_n(\C\llbracket t\rrbracket)$
-      (maby not applicable) formal tranformations
+      (maby not applicable) formal tranformations;
     \item $G(\!(t)\!)=\Gl_n(\C\llbracket t\rrbracket[t^{-1}])$
-      (maby not applicable) formal meromorphic tranformations
+      (maby not applicable) formal meromorphic tranformations;
   \end{itemize}
 \end{notations}
-By \emph{transformation} (or \emph{meromorphic transformation}) of a connection
-matrix $A$ we mean a linear change of the trivialization. Such a change is given
-by a matrix $F\in G(\!\{t\}\!)$ and the transformed matrix ${}^F\!A$ is
-obtained through
+By \emph{transformation} (or \emph{meromorphic transformation}) of a system we
+mean a linear change of the trivialization.
+Such a change is given by a matrix $F\in G(\!\{t\}\!)$ and the transformed
+connection matrix ${}^F\!A$ is obtained through
 \[
   {}^F\!A=(dF)F^{-1} + FAF^{-1} \,.
 \]
-If $F$ is formal i.e. $F\in G(\!(t)\!)$, it will usually be denoted by
-$\hat F$. The transformation of $A$ by $\hat F$ is not guaranteed to have
-convergent entries.
+If $F$ is formal i.e.\ $F\in G(\!(t)\!)$, it will usually be denoted by
+$\hat F$.
+The transformation of $A$ by $\hat F$ is not guaranteed to have convergent
+entries.
 We denote by $\hat G(A)$ the set of all \emph{(applicable) formal
 transformations}
 \[
@@ -264,10 +265,11 @@ transformations}
       which is denoted by $[\myA,\myB]$.
   \end{itemize}
 \end{rem}
-We define the (formal) equivalence relation on the connection matrices as $A$
-is (formally) equivalent to $B$ if and only if $B$ is obtained from $A$ by
-(formal) transformation. Thus $B$ is (formally) equivalent to $B$ if and only
-if there is a (formal) solution of $[A,B]$.
+We define the (formal) equivalence relation on the connection matrices as
+\textbf{\boldmath$A$ is (formally) equivalent to $B$} if and only if
+\textbf{\boldmath$B$ is obtained from $A$ by (formal) transformation}.
+Thus $A$ is (formally) equivalent to $B$ if and only if there is a (formal)
+solution of $[A,B]$.
 
 \begin{defn}
   \TODO[is this a proposition]
@@ -296,10 +298,12 @@ if there is a (formal) solution of $[A,B]$.
   meromorphic connection of special form, which we will call models. They are
   not unique but all of them lie in the same convergent equivalence class.
 
-  On the other hand, the Levelt-Turittin theoreme says, that  each meromorphic
-  connection is, after potentially needed ramification, formally isomorphic to
-  such a model, that means, that in each formal class there are some models.
+  On the other hand\TODO[same direction?], the Levelt-Turittin theoreme says,
+  that  each meromorphic connection is, after potentially needed ramification,
+  formally isomorphic to such a model, that means, that in each formal class
+  there are some models.
   \TODO[Problems with ramification??]
+  This solves the formal classificaton problem.
 \end{paracol}
 \begin{defn}
   \begin{itemize}
