@@ -208,8 +208,23 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
     \TODO{} shows, that $(\lambda_{jl})$ is a coboundary of
     $\Aut_\cA(\tilde\cM^{good})$.
 
-    \textbf{``\Leftarrow{}":}
-    \TODO
+    \textbf{``\Leftarrow{}'':}
+    If for some suitable covering $(I_j)$ the cocycle $(\lambda_{jl})$ is a
+    coboundary with values in $\Aut_\cA(\tilde\cM^{good})$, i.e.,
+    $\lambda_{jl}=f_lf_j^{-1}$, we define a new connection $\nabla$ on
+    $\tilde\cM^{good}$ by conjugating $\nabla^{good}$ by $f_j$ on $I_j$.
+
+    \TODO{}
+
+    Moreover $\hat f_j=\hat f_l$ on $I_j\cap I_l$, so that the formal
+    isomorphisms 
+    \[
+      \hat f_j:(\hat \cM^{good},\nabla)
+      \overset{\sim}{\longrightarrow}
+      (\hat\cM^{good},\nabla^{good})
+    \]
+    can be glued in an isomorphism $\hat f:(\hat \cM^{good},\nabla)
+    \overset{\sim}{\longrightarrow}(\hat\cM^{good},\nabla^{good})$.
   \end{proof}
 
   Thus, the proof of~\ref{thm:mainThm1} is a consequence of the following
@@ -1166,7 +1181,7 @@ theoreme~\ref{thm:mainThm2} by composition of bijective maps.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Algorithm \cite[II.3.4]{Loday1994}}
+\section{Algorithm~\cite[II.3.4]{Loday1994}}
 This algorithm takes a cocycle over a arbitrary cyclic covering $\cV$ and
 outputs a Stokes cocycle, which corresponds to our coverings.
 
@@ -1181,4 +1196,15 @@ outputs a Stokes cocycle, which corresponds to our coverings.
 \begin{comment}
   see \cite[9f]{thboalch}
 \end{comment}
+Choose a element $\hat F\in\hat G(A^0)$ representing an element of
+$G\{t\}\backslash\hat G(A^0)$ and an element $\theta\in\A$.
+Via the Borel-Ritt lemma, we obtain functions $F_\theta^-$ and $F_\theta^+$ on
+the adjacent sectors to $\theta$, which may be canonically continued across
+$\theta$. They will generally be different on the overlap. Thus to each
+anti-Stokes direction $\theta$ there is an associated automorphisms
+\[
+  \kappa_\theta:=\left(F_\theta^+\right)^{-1}F_\theta^-
+  \in\Sto_\theta(A^0)
+\]
+describing how the \TODO{} differ on both sides of $\theta$.
 

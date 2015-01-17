@@ -1,22 +1,25 @@
 \chapter{Asymptotic expansion}
 \begin{comment}
-  ´classical'
-  \begin{itemize}
-    \item \cite[60]{sabbah_cimpa90} Chapter II.2.2
-      \begin{itemize}
-        \item \cite{sabbah2000equations}
-      \end{itemize}
-    \item \textbf{\textcolor{blue}{Van der Put:
-          \cite[Chapter 7]{van2003galois}: Exact Asymptotics}}
-    \item \cite{majima1984asymptotic}
-    \item \cite{Balser2000Formal}
-    \item \cite{Loday1994}
-    \item \textbf{\textcolor{blue}{\cite{Loday2014} Chapter 2}}
-  \end{itemize}
-  ´sheafical'
-  \begin{itemize}
-    \item \textbf{\textcolor{red}{\cite[II.5]{sabbah2007isomonodromic}}}
-  \end{itemize}
+  \begin{multicols}{2}
+    ´classical'
+    \begin{itemize}
+      \item \cite[60]{sabbah_cimpa90} Chapter II.2.2
+        \begin{itemize}
+          \item \cite{sabbah2000equations}
+        \end{itemize}
+      \item \textbf{\textcolor{blue}{Van der Put:
+            \cite[Chapter 7]{van2003galois}: Exact Asymptotics}}
+      \item \cite{majima1984asymptotic}
+      \item \cite{Balser2000Formal}
+      \item \cite{Loday1994}
+      \item \textbf{\textcolor{blue}{\cite{Loday2014} Chapter 2}}
+    \end{itemize}
+    \columnbreak
+    ´sheafical'
+    \begin{itemize}
+      \item \textbf{\textcolor{red}{\cite[II.5]{sabbah2007isomonodromic}}}
+    \end{itemize}
+  \end{multicols}
   \TODO:
   \begin{itemize}
     \item \cite{sibuya1990Linear} Appendix A.3
@@ -41,7 +44,8 @@ We introduce the following notations:
         \mathfrak{s}_{a,b}(r):=\left\{t\in\C \mid a<\arg(t)<b, 0<|t|<r\right\}
       \]
       of all points $t\in\C$ satisfying $a<\arg(t)<b$ and $0<|t|<r$;
-    \item $\mathfrak{s}_{I}(r)=\mathfrak{s}_{a,b}(r)$ for $I=(a,b)$;
+    \item $\mathfrak{s}_{I}(r)=\mathfrak{s}_{a,b}(r)$ for
+      $I=(a,b)$\footnote{i.e.\ an open interval of $S^1$} an open arc;
     \item $\bar{\mathfrak{s}}=\bar{\mathfrak{s}}_{a,b}(r)$ the closure of
       $\mathfrak{s}_{a,b}(r)$ in $\C^*:=\C\backslash\{0\}$.
   \end{itemize}
@@ -77,6 +81,7 @@ We introduce the following notations:
       \fill (zero) circle (.7pt);
     \end{tikzpicture}
   \end{center}
+  \TODO[Sectors on the Riemann surface of the logarithm]
 \end{notations}
 \begin{rem}
   \begin{itemize}
@@ -150,22 +155,11 @@ We introduce the following notations:
 If $f$ has $\hat g$ as asymptotic expansion on the sector $\mathfrak{s}$ (or on
 the interval $I\subset S^1$, or in the direction $\theta$), we denote that by
 $f\sim_{\mathfrak{s}}\hat g$ (or $f\sim_{I}\hat g$, or $f\sim_{\theta}\hat g$).
-\begin{notations}
-  \begin{itemize}
+\begin{defn}
+  \begin{enumerate}
     \item Define $\cA(\mathfrak{s})$ as the set of holomorphic functions
       $f\in\cO(\mathfrak{s})$ which admit an asymptotic expansion at $0$ on
       $\mathfrak{s}$.
-    \item One writes
-      \[
-        T_{\mathfrak{s}}:\cA(\mathfrak{s})\to\C(\!(t)\!)
-      \]
-      for the mapping, which associates to each
-      function $f\in\cA(\mathfrak{s})$ its asymptotic expansion.
-    \item A function $f$ with $T_{\mathfrak{s}}(f)=\id_{\mathfrak{s}}$ is
-      called \emph{flat (on $\mathfrak{s}$)}
-    \item Denote by $\cA^{<0}(\mathfrak{s})$ the set
-      $\ker(T_{\mathfrak{s}})\subset\cA(\mathfrak{s})$ of functions asymptotic
-      to zero at $0$.
     \item Define $\cA(a,b)\!\!\overset{(a,b)=I}{=}\!\!\cA(I)$
       as the limit
       $\underset{r\to0}{\underrightarrow{\lim}}\cA(\mathfrak{s}_{a,b}(r))$.
@@ -177,23 +171,9 @@ $f\sim_{\mathfrak{s}}\hat g$ (or $f\sim_{I}\hat g$, or $f\sim_{\theta}\hat g$).
           if there is a pair $(f_3,\mathfrak{s}_{a,b}(r_3))$ such that
           $r_3<\min(r_1,r_2)$ and $f_3=f_1=f_2$ on $\mathfrak{s}_{a,b}(r_3)$.
       \end{itemize}
-      Analogous $\cA^{<0}(I)$ is defined.
-  \end{itemize}
-\end{notations}
-\begin{rem}
-  One can also define 
-  \begin{itemize}
-    \item $\cA(I)$ and $\cA(\theta)$,
-    \item $T_I$ and $T_\theta$,
-    \item $\cA^{<0}(I)$ and $\cA^{<0}(\theta)$.
-  \end{itemize}
-\end{rem}
+  \end{enumerate}
+\end{defn}
 It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
-\begin{comment}
-  \begin{rem}
-    $\cA_\theta=\cA(\theta)$ and $\cA^{<0}_\theta=\cA^{<0}(\theta)$.
-  \end{rem}
-\end{comment}
 \begin{itemize}
     \marginnote[194]{\cite{van2003galois}}
   \item $\cA(S^1)=$\TODO
@@ -201,11 +181,29 @@ It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
 \end{itemize}
 
 \TODO[Properties,Examples,\dots]
+\begin{defn}
+  \begin{itemize}
+    \item One writes
+      \[
+        T_{I}:\cA(I)\to\C(\!(t)\!)
+        \qquad\left(\text{resp.}\qquad
+        T_{\mathfrak{s}}:\cA(\mathfrak{s})\to\C(\!(t)\!)\qquad\right)
+      \]
+      for the mapping, called \emph{Taylor map}, which associates to each
+      function $f\in\cA(I)$ (resp.\ $f\in\cA(\mathfrak{s})$) its asymptotic
+      expansion.
+    \item A function $f$ with $T_{\mathfrak{s}}(f)=\id_{\mathfrak{s}}$ is
+      called \emph{flat (on $\mathfrak{s}$)}. \TODO[resp]
+    \item Denote by $\cA^{<0}(I)$ (resp.\ $\cA^{<0}(\mathfrak{s})$) the set
+      $\ker(T_{I})\subset\cA(I)$ (resp.\
+      $\ker(T_{\mathfrak{s}})\subset\cA(\mathfrak{s})$) of functions asymptotic
+      to zero at $0$.
+  \end{itemize}
+\end{defn}
 \begin{thm}[Borel-Ritt]
-  Let $\mathfrak{s}$ be an open sector with a opening less than $2\pi$.
-  Then the Taylor map
+  Let $I$ be an open arc with a opening less than $2\pi$. Then the Taylor map
   \[
-    T_{\mathfrak{s}}:\cA(\mathfrak{s})\to\C(\!(t)\!)
+    T_{I}:\cA(I)\to\C(\!(t)\!)
   \]
   is onto.
 \end{thm}
@@ -213,12 +211,81 @@ It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
   \begin{comment}
     \begin{itemize}
       \item \cite[Lem.II.2.2.5]{sabbah_cimpa90}: $T_I$
-      \item \cite[Th.7.3]{van2003galois}: $T_I=T_{(a,b)}$
+      \item \textbf{\cite[Th.7.3]{van2003galois}}: $T_I=T_{(a,b)}$
       \item \cite[Th.2.4.1]{Loday2014}: $T_{\mathfrak{s}}$
     \end{itemize}
   \end{comment}
-  See \cite[Lem.II.2.2.5]{sabbah_cimpa90}, \cite[Th.7.3]{van2003galois} and
-  \cite[Th.2.4.1]{Loday2014}.
+  Let $I:=(-\pi,\pi)$ and $R\in\R_{>0}$
+  We will prove this for the sector
+  \[
+    \mathfrak{s}:=\mathfrak{s}_{I}(R)=\left\{
+      t\in\C\mid |\arg(t)|<\pi, 0<|t|<R
+    \right\}
+  \]
+  in which, after rotation and for large enough $R$, every sector
+  $\mathfrak{s}''\subsetneq\C^*$ lies.
+  Let $\sum a_nz^n$ be a formal Laurent series. We look for a function
+  $f\in\cA(I)$ with Taylor series $T_{I}f=\sum a_nz^n$.
+  By subtracting the principal part\TODO[?] we may assume, that this series has
+  no terms with negative degree.
+  Let $b_n$ be a sequence, which satisfies
+  \begin{itemize}
+    \item[] the series $\sum |a_n|b_nR^{n-\frac{1}{2}}$ is convergent.
+  \end{itemize}
+  For example, one may set
+  \[
+    b_n=\begin{cases}
+      0                 & \text{when~} n=0
+      \\\frac{1}{n!}|a_n| & \text{when~} n>0
+    \end{cases}
+  \]
+  Let $\sqrt{t}$ be the branch of the square root function, that satisfies
+  $|\arg(\sqrt{t})|<\frac{\pi}{2}$\footnote{For $t=re^{i\phi}$ is
+  $\sqrt{t}=\sqrt{r}e^{i\frac{\phi}{2}}$ with $-\pi<\phi<\pi$.} for all
+  $t\in\mathfrak{s}$.
+  For any real number $b_n$, the function
+  $\beta_n(t):=1-e^{-\frac{b_n}{\sqrt{t}}}$ satisfies
+  \begin{enumerate}
+    \item[(a)] $|\beta_n(t)|\leq\frac{b_n}{\sqrt{|t|}}$ since
+      $1-e^t=-\int_0^te^s\,ds$ implies that $|1-e^t|<|t|$ for $\Re(t)<0$ and
+    \item[(b)] $\beta_n$ has asymptotic expansion $1$ on $\mathfrak{s}$ (thus
+      $\beta_n-1$ has asymptotic expansion $0$ on $\mathfrak{s}$).
+  \end{enumerate}
+  Define $f(t)=\sum a_n\beta_n(t)t^n$.
+  Since 
+  \[
+    |a_n\beta_n(t)t^n|
+    \leq|a_n|b_n|z|^{n-\frac{1}{2}}
+    \leq|a_n|b_nR^{n-\frac{1}{2}},
+  \]
+  the series
+  $\sum a_n\beta_n(t)t^n$ converges and its sum $f(t)$ is in
+  $\cO(\mathfrak{s})$.
+
+  Consider a propper sub-sector $\mathfrak{s}'\Subset\mathfrak{s}$ and
+  $t\in\mathfrak{s}'$. Then, for every $N>0$
+  \begin{align*}
+    \left|f(t)-\sum_{n=0}^{N-1} a_nt^n\right| 
+    &\leq \left| \sum_{n=0}^{N-1}a_n(\beta_n(t)-1)t^n \right|
+      +|t|^N\sum_{n\geq N}\left| a_n\beta_n(t)t^{n-N} \right|
+  \\&= \left| \sum_{n=0}^{N-1}a_ne^{-\frac{b_n}{\sqrt{t}}}t^n \right|
+      +|t|^N\sum_{n\geq N}\left| a_n\beta_n(t)t^{n-N} \right|
+  \end{align*}
+  The first summand is a finite sum of terms, which are all asymptotic to $0$
+  and then, is majorized by $C'|t|^N$ for a convenient constant $C'$.
+  The second summand is majorized by
+  \[
+    |t|^N\left(2|a_n|+\sum_{n\geq N+1}|a_n|b_nR^{n-\frac{1}{2}-N}\right).
+  \]
+  By setting $C=C'+2|a_n|+\sum_{n\geq N+1}|a_n|b_nR^{n-\frac{1}{2}-N}$ we
+  obtain a positive constant $C$, which depends on $N$ and the radius of
+  $\mathfrak{s}'<R$, such that 
+  \[
+    \left|f(t)-\sum_{n=0}^{N-1} a_nt^n\right| \leq C|t|^N
+    \qquad\text{ for all } t\in\mathfrak{s}' \,.
+  \]
+
+  \TODO[The GENERAL CASE: see \cite{Loday2014} page 28]
 \end{proof}
 
 \begin{comment}

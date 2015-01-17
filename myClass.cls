@@ -122,8 +122,8 @@
   \newtheorem{defn}[thm]{Definition}
   \newtheorem*{notations}{Notations}
   \newtheorem{conj}[thm]{Conjecture}
-  \newtheorem{exmp}[thm]{Beispiel}
-  \newtheorem{bsp}[thm]{Beispiel}
+  \newtheorem{exmp}[thm]{Example}
+  \newtheorem{bsp}[thm]{Example}
 
   \theoremstyle{remark}
   \newtheorem{rem}[thm]{Remark}
@@ -203,8 +203,11 @@
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{notations}[conj]{Conjecture}
-  \newtheorem{exmp}[thm]{Beispiel}
-  \newtheorem{bsp}[thm]{Beispiel}
+  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+            ,leftmargin=\parindent
+            ,skipabove=\medskipamount, skipbelow=\medskipamount
+            ]{exmp}[thm]{Example}
+  \newtheorem{bsp}[thm]{Example}
 
   \theoremstyle{remark}
   \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
