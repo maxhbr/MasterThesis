@@ -269,7 +269,7 @@ determination of $x^{\frac{1}{2}}$.
   to its Taylor series at $0$ on $D^*=D\backslash\{0\}$. Reciprocally, if $f$
   is an analysis on $D^*$ that has an asymptotic expansion at $0$ on $D^*$
   then, $f$ is bounded near $0$ and according to the removable singularity
-  theoreme, $f$ is analytic on $D$.
+  theorem, $f$ is analytic on $D$.
 \end{exmp}
 For more examples see Loday-Richauds book \cite{Loday2014}
 \cite[Exmp.2.2.4]{Loday2014}, \cite[Exmp.2.2.5]{Loday2014},
@@ -329,6 +329,15 @@ For more examples see Loday-Richauds book \cite{Loday2014}
 \end{rem}
 
 \subsection{Borel-Ritt Lemma}
+\begin{comment}
+  \begin{itemize}
+    \item \cite[Lem.II.2.2.5]{sabbah_cimpa90}: $T_I$
+    \item \textbf{\cite[Th.7.3]{van2003galois}}: $T_I=T_{(a,b)}$
+    \item \cite[Th.2.4.1]{Loday2014}: $T_{\mathfrak{s}}$
+    \item \cite[4.4.Thm.16]{Balser2000Formal}
+  \end{itemize}
+\end{comment}
+The most important theorem here is the Borel-Ritt lemma.
 \begin{thm}[Borel-Ritt]
   \label{thm:borel-ritt}
   Let $I$ be an open arc with a opening less than $2\pi$. Then the Taylor map
@@ -341,13 +350,6 @@ There are multiple approaches to obtain a function $f\in\cA(I)$ asymptotic to a
 given function $\hat f\in\C(\!(t)\!)$ in a canonical way. For example
 (multi-)multisummability which is detailed described in~\cite{Loday2014}.
 \begin{proof}[Proof of thm~\ref{thm:borel-ritt}]
-  \begin{comment}
-    \begin{itemize}
-      \item \cite[Lem.II.2.2.5]{sabbah_cimpa90}: $T_I$
-      \item \textbf{\cite[Th.7.3]{van2003galois}}: $T_I=T_{(a,b)}$
-      \item \cite[Th.2.4.1]{Loday2014}: $T_{\mathfrak{s}}$
-    \end{itemize}
-  \end{comment}
   Let $I:=(-\pi,\pi)$ and $R\in\R_{>0}$.
   We will prove this for the sector
   \[
