@@ -439,7 +439,8 @@ We will denote
   \cQ_{[A^0]}:=\left\{q_1(t^{-1}),\dots,q_n(t^{-1})\right\} \,.
 \]
 
-The important theorem here is the Levelt-Turittin theorem.
+The important theorem here is the Levelt-Turittin theorem, which solves the
+formal classification problem.
 \begin{thm}[Levelt-Turittin]
   To each germ $(\cM,\nabla)$ of a meromorphic connection there exists, after
   potentially needed \textcolor{blue!60!black}{pullback by some suitable
@@ -450,13 +451,11 @@ The important theorem here is the Levelt-Turittin theorem.
     \textcolor{blue!60!black}{\pi^{+}}
     \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}}
     \overset{\cong}\longrightarrow
-    \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}^{good}}
-    :=\textcolor{green!30!black}{\hat\cO_M\otimes}\cM^{good}
+    \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}^{model}}
+    :=\textcolor{green!30!black}{\hat\cO_M\otimes}\cM^{model}
   \]
-  to a model $\cM^{good}$\footnote{The word `good' only means, that it is a
-  model. In \cite{sabbah2007isomonodromic} it means good-model,
-  which\dots\TODO}.
-  We then call $\cM^{good}$ a \emph{formal decomposition} or \emph{formal
+  to a model $\cM^{model}$.
+  We then call $\cM^{model}$ a \emph{formal decomposition} or \emph{formal
   model} of $\cM$.
 \end{thm}
 \begin{proof}
@@ -513,6 +512,8 @@ The important theorem here is the Levelt-Turittin theorem.
     \end{itemize}
   \end{multicols}
 \end{comment}
+Here we want to state the main asymptotic existence theorem (or often M.A.E.T.)
+which is essentially a deduction from the Borel-Ritt lemma.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Meromorphic / formal transformation II}
@@ -550,20 +551,20 @@ We want to understand the Set $\{[(\cM,\nabla)]\}$ of the (convergent)
 isomorphism classes of all meromorphic connections. Since we have also the
 formal classification and we know, that all elements in a convergent
 isomorphism class lie in the same formal isomorphism class, we can reduce the
-problem by fixing a model $(\cM^{good},\nabla^{good})$ with the corresponding
+problem by fixing a model $(\cM^{model},\nabla^{model})$ with the corresponding
 connection matrix $A^0$. Thus we can restrict ourself to the subset
 \begin{align*}
-  {}^0C(\cM^{good},\nabla^{good})=\left\{
+  {}^0C(\cM^{model},\nabla^{model})=\left\{
     \left[(\cM,\nabla)\right]
       \mid \text{there exists a formal isomorphism }
       \hat f:(\hat\cM,\hat\nabla)
         \overset{\sim}\longrightarrow
-        (\hat\cM^{good},\hat\nabla^{good})
+        (\hat\cM^{model},\hat\nabla^{model})
   \right\}
 \end{align*}
 of all isomorphism classes of
 meromorphic connections, which are formally isomorphic to
-$(\cM^{good},\nabla^{good})$. This is the set, that we will be calling the
+$(\cM^{model},\nabla^{model})$. This is the set, that we will be calling the
 \emph{classifying set}.
 \begin{comment}
   \begin{itemize}
@@ -578,12 +579,12 @@ $(\cM^{good},\nabla^{good})$. This is the set, that we will be calling the
 
 It is convenient to look at the slightly larger space of \emph{marked pairs}
 \[
-  \cH=\cH(\cM^{good},\nabla^{good})=\left\{
+  \cH=\cH(\cM^{model},\nabla^{model})=\left\{
     \left[(\cM,\nabla,\hat f)\right]
       \mid
       \hat f:(\hat\cM,\hat\nabla)
         \overset{\sim}\longrightarrow
-        (\hat\cM^{good},\hat\nabla^{good})
+        (\hat\cM^{model},\hat\nabla^{model})
   \right\}
 \]
 in which we also keep the additional information, of the formal isomorphism, by
@@ -607,11 +608,11 @@ Equivalently, one can talk in terms of systems. We then denote by
 \]
 the set of systems formally meromorphic equivalent to $A^0$\footnote{Since we
 use meromorphic equivalences we denote that by the subscript ${}_m$.}.
-Thus ${}^0C(\cM^{good},\nabla^{good})$ corresponds to
+Thus ${}^0C(\cM^{model},\nabla^{model})$ corresponds to
 the set ${}^0C(A^0):=\Syst_m(A^0)/G(\!\{t\}\!)$ of meromorphic classes which
 are formally equivalent to $A^0$.
 \TODO[\cite{thboalch} p. 3: In the logarithmic case\dots]
-Analogous, $\cH(\cM^{good},\nabla^{good})$ corresponds to the set $\cH(A^0)$ of
+Analogous, $\cH(\cM^{model},\nabla^{model})$ corresponds to the set $\cH(A^0)$ of
 equivalence classes in
 \[
   \hat\Syst_m(A^0):=\{(A,\hat F)

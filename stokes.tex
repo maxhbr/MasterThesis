@@ -55,24 +55,22 @@ $A^0$.
     \node[purple] (class2) at (-0.8,0) {$\St(A^0)$};
     \node[green!40!black] (sheaf) at (3,1.3) {$\St(\sM^{good})$};
     \node[purple] (sheaf2) at (4,1) {$H^1(S^1;\Lambda^{<0}(B_0)$};
-    \node[blue] (mat) at (3,-1.3) {$\prod_{d\in\A}\Sto_d(A^0)$};
+    \node[blue] (mat) at (3,-1.3) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
     \node[blue] (mat') at (3,-2) {$(U_+\times U_-)^{k-1}$};
-    \node[purple] (mat2) at (4,-1) {$\prod_{\alpha\in\mathfrak{A}}\Sto_\alpha(B_0)$};
 
     \draw[thick,double] (modSpcMat) -- (modSpcSheaf) -- (class) -- (class2) --
       (modSpcMat);
     \draw[thick,double,blue] (modSpcMat) -- (class);
     \draw[thick,double] (sheaf) -- (sheaf2);
-    \draw[thick,double] (mat) -- (mat2);
 
     \draw[->,green!40!black] (modSpcSheaf) -- (sheaf);
     \draw[->,blue,dashed] (modSpcMat) -- (mat);
     \draw[->,blue] (class) -- (mat);
     \draw[->,blue] (mat) -- (mat');
     \draw[->,purple,dashed] (class) -- (sheaf2);
-    % \draw[->,purple,dashed] (class) -- (mat2);
-    \draw[->,purple] (mat2) -- (sheaf2);
-    \draw[->,purple,dashed] (sheaf2) edge[bend right=20] (mat2);
+    % \draw[->,purple,dashed] (class) -- (mat);
+    \draw[->,purple] (mat) -- (sheaf2);
+    \draw[->,purple,dashed] (sheaf2) edge[bend right=20] (mat);
 
     \node[green!40!black] at (1,1) {\cite{sabbah2007isomonodromic}};
     \node[blue] at (2.3,-1.6) {\cite{thboalch},\cite{boalch}};
@@ -1191,6 +1189,7 @@ outputs a Stokes cocycle, which corresponds to our coverings.
   See \cite[863ff]{Loday1994}
 \end{comment}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The map
   $\G\backslash\tilde\G(B_0)\to\prod_{\theta\in\A}\Sto_\theta(A^0)$}
 \begin{comment}
@@ -1208,3 +1207,28 @@ anti-Stokes direction $\theta$ there is an associated automorphisms
 \]
 describing how the \TODO{} differ on both sides of $\theta$.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The main question}
+Here we want to answer the following question:
+\begin{itemize}
+  \item[] Which information is needed to describe the stokes structure of a
+    unramified multileveled meromorphic connection?
+\end{itemize}
+To be more precise: we are interested in the representation of an element from
+$\prod_{\theta\in\A}\Sto_\theta(A^0)$ and how the information about the
+different levels is stored.
+
+\begin{comment}
+  Ideas:
+  \begin{enumerate}
+    \item see algorithm~\cite[II.3.4]{Loday1994}
+    \item search in \cite{Loday2014}
+    \item generalize the ideas from \cite{boalch} and \cite{thboalch}.
+  \end{enumerate}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The single-level case}
+\begin{comment}
+  See \cite{boalch} and \cite{thboalch}.
+\end{comment}

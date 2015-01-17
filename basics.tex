@@ -218,6 +218,12 @@ $f\sim_{\mathfrak{s}}\hat g$ (or $f\sim_{I}\hat g$, or $f\sim_{\theta}\hat g$).
     \item Define $\cA(\mathfrak{s})$ as the set of holomorphic functions
       $f\in\cO(\mathfrak{s})$ which admit an asymptotic expansion at $0$ on
       $\mathfrak{s}$.
+      \begin{rem}
+        \begin{enumerate}
+          \item $\cA(\mathfrak{s})$ is a subring of $\cO(\mathfrak{s})$.
+          \item $\cA(\mathfrak{s})$ contains $\C(\!\{t\}\!)$ as a subfield.
+        \end{enumerate}
+      \end{rem}
     \item Define $\cA(a,b)\!\!\overset{(a,b)=I}{=}\!\!\cA(I)$
       as the limit
       $\underset{r\to0}{\underrightarrow{\lim}}\cA(\mathfrak{s}_{a,b}(r))$.
@@ -232,11 +238,6 @@ $f\sim_{\mathfrak{s}}\hat g$ (or $f\sim_{I}\hat g$, or $f\sim_{\theta}\hat g$).
   \end{enumerate}
 \end{defn}
 It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
-\begin{itemize}
-    \marginnote[194]{\cite{van2003galois}}
-  \item $\cA(S^1)=$\TODO
-  \item\dots
-\end{itemize}
 
 \TODO[Properties,Examples,\dots]
 \begin{defn}
@@ -258,8 +259,8 @@ It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
       to zero at $0$.
   \end{itemize}
 \end{defn}
-The kernel $\cA^{<0}(I)$ is not zero. Let
-$I=\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, then $\cA^{<0}(I)$ has the
+The kernel $\cA^{<0}(I)$ is not zero.
+Let $I=\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, then $\cA^{<0}(I)$ has the
 element $e^{-\frac{1}{\sqrt{t}}}$ where $\sqrt{t}$ stands for the principal
 determination of $x^{\frac{1}{2}}$.
 
@@ -270,6 +271,9 @@ determination of $x^{\frac{1}{2}}$.
   is an analysis on $D^*$ that has an asymptotic expansion at $0$ on $D^*$
   then, $f$ is bounded near $0$ and according to the removable singularity
   theorem, $f$ is analytic on $D$.
+  \begin{rem}
+    This implies, that $\cA(S^1)\cong\C(\!\{t\}\!)$.
+  \end{rem}
 \end{exmp}
 For more examples see Loday-Richauds book \cite{Loday2014}
 \cite[Exmp.2.2.4]{Loday2014}, \cite[Exmp.2.2.5]{Loday2014},
@@ -307,26 +311,55 @@ For more examples see Loday-Richauds book \cite{Loday2014}
 \end{comment}
 
 \begin{rem}
+  Let $I\subset S^1$ be a arc.
+  Let $f$, $f_1$ and $f_2$ be functions which satisfy $f\sim_I\hat f$,
+  $f_1\sim_I\hat f_1$ and $f_2\sim_I\hat f_2$.
   We have the rules:
   \begin{enumerate}
-    \item
-      \cite[Thm.4.5.13]{Balser2000Formal}:
-      $f_1(t)+f_2(t)$ is asymptotic to $\hat f_1(t)+\hat f_2(t)$.
-    \item 
-      \cite[Thm.4.5.14]{Balser2000Formal}:
-      $f_1(t)f_2(t)$ is asymptotic to $\hat f_1(t)\hat f_2(t)$.
-    \item 
-      \cite[Thm.4.5.20]{Balser2000Formal}:
+    \item \cite[4.5.Thm.13]{Balser2000Formal}:
+      $f_1(t)+f_2(t)$ is on $I$ asymptotic to $\hat f_1(t)+\hat f_2(t)$.
+    \item \cite[4.5.Thm.14]{Balser2000Formal}:
+      $f_1(t)f_2(t)$ is on $I$ asymptotic to $\hat f_1(t)\hat f_2(t)$.
+    \item \cite[4.5.Thm.20]{Balser2000Formal}:
       \begin{enumerate}
-        \item $f'(t)$ is asymptotic to $\hat f'(t)$.
-        \item $\int_0^tf(s)\,ds$ is asymptotic to $\int_0^t\hat f(t)\,ds$.
+        \item $f'(t)$ is on $I$ asymptotic to $\hat f'(t)$.
+        \item $\int_0^tf(s)\,ds$ is on $I$ asymptotic to $\int_0^t\hat f(t)\,ds$.
       \end{enumerate}
-    \item 
-      \cite[Thm.4.5.21]{Balser2000Formal}:
-      $f^{-1}(t)$ is asymptotic to $\hat f^{-1}(t)$.
+    \item \cite[4.5.Thm.21]{Balser2000Formal}:
+      \marginnote{\cite[II.2.2.4]{sabbah_cimpa90}}
+      if $f\in\cA(I)\backslash\cA^{<0}(I)$ then
+      $f^{-1}(t)$ is on $I$ asymptotic to $\hat f^{-1}(t)$.
   \end{enumerate}
   \TODO[Better source/proofs?]
 \end{rem}
+\begin{lem}
+  $\cA(I)$ is stable under derivation.
+\end{lem}
+\begin{proof}
+  Let $f\in\cA(I)$ with asymptotic expansion $\hat f=\sum_{-n_0\leq n}a_nx^n$
+  its asymptotic expansion where we assume that $n_0=0$.
+  One has for each $m\geq0$
+  \[
+    f(t)=\sum_{n=0}^ma_nt^n+R_m(t)t^m
+  \]
+  with $\underset{\substack{t\to0\\t\in\mathfrak{s}_I(r)}}{\lim}R_m(t)=0$.
+  This implies that $R_m$ is holomorphic in $\mathfrak{s}_I(r)$.
+  Thus one has
+  \[
+    f'(t)=\sum_{n=0}^mna_nt^{n-1}+mR_m(t)t^{m-1}+R_m'(t)t^m
+  \]
+  Let $C_{x,\rho}$ be the circle at $x$ with radius $\rho$ contained in
+  $\mathfrak{s}_I(r)$. The Cauchy theorem implies then, that
+  \[
+    |R_m'(t)|\leq\frac{1}{\rho}\max_{s\in\C_{x,\rho}}|R(s)| \,.
+  \]
+  Let $J$ be a relativly compact open set in $I$, then there exists a positive
+  number $\alpha$ such that for all $x\in\mathfrak{s}_I(r)$ one has
+  $C_{x,\alpha|x|}\subset\mathfrak{s}_I(r)$.
+  \TODO{}
+  This proves that $\hat{f'}$ is an asymptotic expansion for $f'$ in
+  $\mathfrak{s}_I(r)$.
+\end{proof}
 
 \subsection{Borel-Ritt Lemma}
 \begin{comment}
