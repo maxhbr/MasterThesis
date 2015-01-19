@@ -2,6 +2,15 @@
 \def\ifundefined#1{\expandafter\ifx\csname#1\endcsname\relax}
 \ifundefined{myDevelopVariable}\xdef\myDevelopVariable{1}\fi
 
+\usepackage[table]{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  global variables  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{myColor1}{RGB}{0,51,128}
+\definecolor{myheadLineColor}{RGB}{0,51,128}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \LoadClassWithOptions{scrbook}
 
 %%%% General
@@ -23,13 +32,22 @@
 \usepackage{latexsym}
 \usepackage{enumerate}
 \usepackage{graphicx}
-\usepackage[table]{xcolor}
 
 \usepackage{url} % URLS in bibtex
 
 \usepackage[german]{varioref}
 \usepackage{hyperref}
-\hypersetup{ colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black }
+\hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  tikz  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{matrix, arrows, calc, decorations.pathmorphing,%
+  decorations.pathreplacing, fadings, 3d, decorations.markings, positioning}
+\usepackage{tikzpagenodes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%  Design / Style  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -38,8 +56,58 @@
 \usepackage{paracol}
 
 %%%% Headline styles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage{scrpage2}
 \usepackage[automark]{scrpage2}
+% \pagestyle{scrheadings}
+\addtokomafont{pagenumber}{\sffamily\color{gray!50!black}}
+\addtokomafont{pagehead}{\sffamily\upshape\color{gray!50!black}}
+%\setheadwidth[0pt]{textwithmarginpar}}
 \pagestyle{scrheadings}
+\clearscrheadfoot
+\setheadsepline{0pt}
+\chead{\headmark}
+\ohead[\myheadcmdempty]{\myheadcmd}
+\ofoot{}
+\def\myheadcmd{\tikz[remember picture]{
+  \node[outer xsep=1pt, outer ysep=3pt, inner ysep=0pt,
+    inner xsep=5pt, font=\sffamily] (a) {\pagemark};}%
+    \tikz[remember picture, overlay]{
+    \ifthenelse{\isodd{\thepage}}{
+    % \ifthispageodd{
+      \draw[myColor1,line width=1pt]
+        ($(a.north west)+(0pt,0)$) |- ($(a.south east)+(-3pt,-3pt)$);
+      \draw[myColor1] ($(a.south west)+(0pt,0pt)$)  -- 
+        (a.south west -| current page text area.north west);
+    }{%
+      \draw[myColor1,line width=1pt]
+        ($(a.north east)+(0pt,0)$) |- ($(a.south west)+(3pt,-3pt)$);
+      \draw[myColor1] ($(a.south east)+(0pt,0pt)$)-- 
+        (a.south east -| current page text area.north east);
+    }%
+  }%
+}
+\makeatletter
+\def\myheadcmdempty{
+  \if@mainmatter
+  \else
+    \tikz[remember picture]{
+    \node[outer xsep=1pt, outer ysep=3pt, inner ysep=0pt,
+      inner xsep=5pt, font=\sffamily] (a) {\pagemark};}%
+      \tikz[remember picture, overlay]{
+      \ifthenelse{\isodd{\thepage}}{
+      % \ifthispageodd{
+        \draw[myColor1,line width=1pt]
+          ($(a.north west)+(0pt,0)$) |- ($(a.south east)+(-3pt,-3pt)$);
+      }{
+        \draw[myColor1,line width=1pt]
+          ($(a.north east)+(0pt,0)$) |- ($(a.south west)+(3pt,-3pt)$);
+      }
+    }
+  \fi
+}
+% \else
+%   \def\myheadcmdempty{}
+\makeatother
 
 %%%%  Layout  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[scale=0.75]{geometry}
@@ -60,11 +128,9 @@
 
 
 \iftrue %Horizontale Linien
-  %\definecolor{myheadLineColor}{RGB}{0,51,128}
-  % \definecolor{myheadLineColor}{RGB}{0,0,0}
-  \definecolor{myheadLineColor}{RGB}{0,51,128}
   \usepackage{sectsty}
   \chapterfont{%
+    \vspace{1cm}
     \color{myheadLineColor}
     \sectionrule{0pt}{0pt}{-5pt}{2pt}
     }
@@ -96,7 +162,6 @@
 
 %%%%  Theoreme Styles  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[framemethod=TikZ]{mdframed}
-\definecolor{myVLineColor}{RGB}{0,51,128}
 \makeatletter
 
 \theoremstyle{plain}% default
@@ -135,50 +200,50 @@
   \newtheorem{try}{Versuch}
   \newtheorem{case}{Fall}
 \else
-  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=2pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{thm}{Theorem}[chapter]
-  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=2pt ,linecolor=myColor1
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{tthm}{Theorem}[chapter]
-  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=2pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{lem}[thm]{Lemma}
-  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=2pt ,linecolor=myColor1
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{llem}[thm]{Lemma}
-  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=2pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{lemdef}[thm]{Lemma/Definition}
-  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=2pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{lemdef}[thm]{Lemma/Corollary}
-  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=2pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{lemdef}[thm]{Definition/Corollary}
-  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=2pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{cor}[thm]{Corollary}
-  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=2pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{kor}[thm]{Corollary}
-  \mdtheorem[linewidth=2pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=2pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
@@ -189,38 +254,38 @@
   \newtheorem*{dazu}{Dazu}
 
   \theoremstyle{definition}
-  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=1pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{defn}[thm]{Definition}
-  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=1pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{notations}[thm]{Notations}
-  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=1pt ,linecolor=myColor1
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{notations}[conj]{Conjecture}
-  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=1pt ,linecolor=myColor1
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{exmp}[thm]{Example}
   \newtheorem{bsp}[thm]{Example}
 
   \theoremstyle{remark}
-  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=1pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{rem}[thm]{Remark}
-  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=1pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
             ]{bem}[thm]{Remark}
-  \mdtheorem[linewidth=1pt ,linecolor=myVLineColor
+  \mdtheorem[linewidth=1pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
             ,leftmargin=\parindent
             ,skipabove=\medskipamount, skipbelow=\medskipamount
@@ -232,7 +297,7 @@
   \newtheorem{try}{Versuch}
   \newtheorem{case}{Fall}
 
-  \surroundwithmdframed[linecolor=myVLineColor
+  \surroundwithmdframed[linecolor=myColor1
                        ,topline=false
                        ,rightline=false
                        ,bottomline=false
@@ -246,11 +311,6 @@
 \numberwithin{figure}{chapter}
 %\numberwithin{figure}{thm}
 
-%%%%  Ploting  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{tikz}
-\usepackage{tikz-cd}
-\usetikzlibrary{matrix, arrows, calc, decorations.pathmorphing,%
-  decorations.pathreplacing, fadings, 3d, decorations.markings}
 
 %%%%  figures  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{float}
@@ -333,6 +393,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{verbatim}
 \newcommand{\comm}[1] {}
+\newcommand{\toTranslate}[1] {#1}
 \newcommand{\ccite}[2][\empty] {}
 \newcommand{\TODO}[1][\empty] {}
 
@@ -359,9 +420,14 @@
     \renewcommand{\comm}[1] {%
       \sethlcolor{commentShadeColor}%
       {\texthl{#1}}}
+    \renewcommand{\toTranslate}[1] {%
+      \sethlcolor{green!40!white}%
+      {\texthl{#1}}}
   \else
     \renewcommand{\comm}[1] {%
       \color{commentTextColor}{#1}}
+    \renewcommand{\toTranslate}[1] {%
+      \color{green}{#1}}
   \fi
 
   \usepackage{ifthen}

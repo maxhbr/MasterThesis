@@ -9,7 +9,7 @@
     ,openany
     ,DIV=10
     ,fleqn % mv align to left
-    ,oneside
+    % ,oneside
     %,titelpage % unused
     %,biblography=totoc  % unused
     %,landscape,twocolumn
@@ -25,7 +25,7 @@
     ,openany
     ,DIV=10
     ,fleqn % mv align to left
-    ,oneside
+    % ,oneside
     %,titelpage % unused
     %,biblography=totoc  % unused
     %,landscape,twocolumn
@@ -103,10 +103,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
 \appendix
+\makeatletter
+\@mainmatterfalse
+\makeatother
 \addcontentsline{toc}{chapter}{Anhang}
 
 \ifnum\myDevelopVariable=1
-  \input{TODO.tex}
   % \input{introVortrag/notes.tex}
   % \input{notes.tex}
   % % \input{aufgaben.tex}

@@ -47,34 +47,33 @@ A great overview of this topic is given in
 \section{Situation}
 Let $\cM^{good}$ be a fixed model with the corresponding connection matrix
 $A^0$.
+We have the following commutative diagram of isomorphisms.
 \begin{center}
   \begin{tikzpicture}[scale=3]
-    \node[green!40!black] (modSpcSheaf) at (0,0.3) {$\sH(\sM^{good})$};
-    \node[blue] (modSpcMat) at (0,-0.3) {$\cH(A^0)$};
-    \node[purple] (class) at (0.8,0) {$\G\backslash\tilde\G(B_0)$};
-    \node[purple] (class2) at (-0.8,0) {$\St(A^0)$};
-    \node[green!40!black] (sheaf) at (3,1.3) {$\St(\sM^{good})$};
-    \node[purple] (sheaf2) at (4,1) {$H^1(S^1;\Lambda^{<0}(B_0)$};
-    \node[blue] (mat) at (3,-1.3) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
-    \node[blue] (mat') at (3,-2) {$(U_+\times U_-)^{k-1}$};
+    \node[] (modSpcMat) at (0,0) {$\cH(A^0)$};
+    \node[purple] (class) at (1,0) {$G\backslash\hat G(A^0)$};
+    \node[green!40!black] (sheaf) at (2,1) {$\St(\cM^{good})$};
+    \node[purple] (sheaf2) at (3,1) {$H^1(S^1;\Lambda^{<0}(A^0))$};
+    \node[blue] (mat) at (3,-1) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
+    \node[blue] (mat') at (3.5,-1.5) {$(U_+\times U_-)^{k-1}$};
 
-    \draw[thick,double] (modSpcMat) -- (modSpcSheaf) -- (class) -- (class2) --
-      (modSpcMat);
+    % \draw[thick,double] (modSpcMat) -- (modSpcSheaf) -- (class) -- (class2) --
+    %   (modSpcMat);
     \draw[thick,double,blue] (modSpcMat) -- (class);
-    \draw[thick,double] (sheaf) -- (sheaf2);
+    \draw[thick,double] (sheaf) -- (sheaf2) node[midway,above] {\tiny def.};
 
-    \draw[->,green!40!black] (modSpcSheaf) -- (sheaf);
-    \draw[->,blue,dashed] (modSpcMat) -- (mat);
+    \draw[->,green!40!black] (modSpcMat) -- (sheaf);
+    \draw[->,blue,dashed] (modSpcMat) edge[bend right=20] (mat);
     \draw[->,blue] (class) -- (mat);
-    \draw[->,blue] (mat) -- (mat');
+    \draw[->,blue,dotted] (mat) -- (mat') node[midway,right] {$\cK=\{k-1\}$};
     \draw[->,purple,dashed] (class) -- (sheaf2);
     % \draw[->,purple,dashed] (class) -- (mat);
     \draw[->,purple] (mat) -- (sheaf2);
     \draw[->,purple,dashed] (sheaf2) edge[bend right=20] (mat);
 
-    \node[green!40!black] at (1,1) {\cite{sabbah2007isomonodromic}};
-    \node[blue] at (2.3,-1.6) {\cite{thboalch},\cite{boalch}};
-    \node[purple] at (4.5,0) {\cite{Loday1994}{\footnotesize(\cite{Loday2014})}};
+    \node[green!40!black] at (1,0.7) {\cite{sabbah2007isomonodromic}};
+    \node[blue] at (2.3,-1.3) {\cite{thboalch},\cite{boalch}};
+    \node[purple] at (3.5,0) {\cite{Loday1994}{\footnotesize(\cite{Loday2014})}};
   \end{tikzpicture}
 \end{center}
 
@@ -92,10 +91,12 @@ isomorphic \TODO[as\dots] to the first non abelian cohomology set
 $H^1(S^1;\Lambda^{<0}(A^0))=:\St(A^0)$.
 
 \subsection{Definitions}
-\begin{itemize}
-  \item $D=$\dots
-  \item $\tilde D=$\dots
-\end{itemize}
+\begin{comment}
+  \begin{itemize}
+    \item $D=$\dots
+    \item $\tilde D=$\dots
+  \end{itemize}
+\end{comment}
 
 Let us now define a Stokes sheaf on $S^1$, as the sheaf of flat
 isotropies\TODO[\dots]
