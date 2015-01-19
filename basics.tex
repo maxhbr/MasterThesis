@@ -56,7 +56,7 @@
 \TODO[principal determination of $x^{1/2}$]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Asymptotic expansion}
+\section{Asymptotic analysis}
 \begin{comment}
   \begin{multicols}{2}
     ´classical'
@@ -164,7 +164,7 @@ We introduce the following notations:
   \begin{rem}
     $\mathfrak{s}_{a',b'}(r')\Subset\mathfrak{s}_{a,b}(r)$ if and only if
     \begin{itemize}
-      \item $a<a'<b'<b$ and $r'<r$.
+      \item[] $a<a'<b'<b$ and $r'<r$.
     \end{itemize}
   \end{rem}
 \end{defn}
@@ -181,16 +181,8 @@ We introduce the following notations:
     \item all $\myN\in\N$,
   \end{itemize}
   there exists a constant
-  $\myConst$ such that the following estimate holds
-  \[
-    \left|
-      f(x)-\sum_{n_0\leq n\leq \myN-1}c_nt^n
-    \right|
-    \leq \myConst|t|^{\myN} \qquad \text{ for all }t\in \mySect \,.
-  \]
-  \begin{rem}
-    Sometimes, for example in \cite{sabbah_cimpa90}, this condition is written
-    as
+  $\myConst$ such that the following estimate\footnote{Sometimes, for example
+    in \cite{sabbah_cimpa90}, this condition is written as
     \[
       \lim_{z\to0,z\in{\mySect}}
       |t|^{-(\myN-1)}
@@ -198,8 +190,13 @@ We introduce the following notations:
         f(x)-\sum_{n_0\leq n\leq \myN-1}c_nt^n
       \right|=0
       \qquad \text{ for all } t\in \mySect \,.
-    \]
-  \end{rem}
+    \]} holds
+  \[
+    \left|
+      f(x)-\sum_{n_0\leq n\leq \myN-1}c_nt^n
+    \right|
+    \leq \myConst|t|^{\myN} \qquad \text{ for all }t\in \mySect \,.
+  \]
   \begin{enumerate}
     \item We will say, that \emph{$f$ has the formal Laurent series $\hat g$ as
       asymptotic expansion on the interval $I\subset S^1$} if there exists a

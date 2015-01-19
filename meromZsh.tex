@@ -163,9 +163,9 @@ and trivialization-dependent.
   A germ $(\cM,\nabla)$ of a meromorphic connection $(\sM,\nabla)$ is just the
   sheaf-theoretic germ, thus has the form $(\cM,\nabla)$ where
   \begin{itemize}
-    \item $\cM$ is a $\C(\!\{t\}\!)$-vectorspace of dimension $n$, since the
-      ring of germs of meromorphic functions with poles at $0$ is the ring
-      $\C(\!\{t\}\!)$, and
+    \item $\cM$ is the germ at $0$ of the holomorphic bundle $\sM$ and thus a
+      $\C(\!\{t\}\!)$-vectorspace of dimension $n$, since the ring of germs of
+      meromorphic functions with poles at $0$ is the ring $\C(\!\{t\}\!)$, and
     \item $\nabla:\cM\to \cM$ is a additive map, which satisfies the
       \emph{Leibniz rule}
       \[
@@ -647,13 +647,13 @@ isomorphism class lie in the same formal isomorphism class, we can reduce the
 problem by fixing a model $(\cM^{model},\nabla^{model})$ with the corresponding
 connection matrix $A^0$. Thus we can restrict ourself to the subset
 \begin{align*}
-  {}^0C(\cM^{model},\nabla^{model})=\left\{
+  {}^0C(\cM^{model},\nabla^{model})=\big\{
     \left[(\cM,\nabla)\right]
-      \mid \text{there exists a formal isomorphism }
-      \hat f:(\hat\cM,\hat\nabla)
-        \overset{\sim}\longrightarrow
-        (\hat\cM^{model},\hat\nabla^{model})
-  \right\}
+    &\mid \text{there exists a formal isomorphism }
+  \\&\qquad\hat f:(\hat\cM,\hat\nabla)
+      \overset{\sim}\longrightarrow
+      (\hat\cM^{model},\hat\nabla^{model})
+  \big\}
 \end{align*}
 of all isomorphism classes of
 meromorphic connections, which are formally isomorphic to
@@ -699,8 +699,9 @@ Equivalently, one can talk in terms of systems. We then denote by
   \Syst_m(A^0):=\{d-A
     \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\}
 \]
-the set of systems formally meromorphic equivalent to $A^0$\footnote{Since we
-use meromorphic equivalences we denote that by the subscript ${}_m$.}.
+the set of systems formally meromorphic equivalent to $A^0$.
+Since we use meromorphic equivalences, in contrast to \cite{boalch,thboalch},
+we denote that in $\Syst_m$ by the subscript ${}_m$.
 Thus ${}^0C(\cM^{model},\nabla^{model})$ corresponds to
 the set ${}^0C(A^0):=\Syst_m(A^0)/G(\!\{t\}\!)$ of meromorphic classes which
 are formally equivalent to $A^0$.
