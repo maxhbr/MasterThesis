@@ -32,6 +32,7 @@
   \begin{itemize}
     \item \cite{LodayRichaud2004}
     \item \cite{Loday2014}
+    \item \cite{Remy2014} (\textbf{3 explicit} examples! \TODO{})
   \end{itemize}
   See also:
   \begin{itemize}
@@ -45,14 +46,14 @@ A great overview of this topic is given in
 \cite{Varadarajan96linearmeromorphic}.
 
 \section{Situation}
-Let $\cM^{good}$ be a fixed model with the corresponding connection matrix
+Let $\cM^{model}$ be a fixed model with the corresponding connection matrix
 $A^0$.
 We have the following commutative diagram of isomorphisms.
 \begin{center}
   \begin{tikzpicture}[scale=3]
     \node[] (modSpcMat) at (0,0) {$\cH(A^0)$};
     \node[purple] (class) at (1,0) {$G\backslash\hat G(A^0)$};
-    \node[green!40!black] (sheaf) at (2,1) {$\St(\cM^{good})$};
+    \node[green!40!black] (sheaf) at (2,1) {$\St(\cM^{model})$};
     \node[purple] (sheaf2) at (3,1) {$H^1(S^1;\Lambda^{<0}(A^0))$};
     \node[blue] (mat) at (3,-1) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
     \node[blue] (mat') at (3.5,-1.5) {$(U_+\times U_-)^{k-1}$};
@@ -111,7 +112,7 @@ isotropies\TODO[\dots]
     \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
   \end{enumerate}
   \begin{rem}
-    $\Lambda(A^0)$ is the same as $\Aut^{<0}(\tilde\cM^{good})$
+    $\Lambda(A^0)$ is the same as $\Aut^{<0}(\tilde\cM^{model})$
     in~\cite{sabbah2007isomonodromic} which is defined as follows \TODO
   \end{rem}
 \end{defn}
@@ -125,7 +126,7 @@ Let $(\cM,\nabla,\hat f)$ be defined on\dots
   \[
     \exp:\cH\to\St(A^0)=H^1(S^1;\Lambda^{<0}(A^0))
   \]
-  is an isomorphism of pointed \TODO[which maps \TODO{} to \TODO{}] sets.
+  is an isomorphism of pointed\footnote{which maps \TODO{} to \TODO{}} sets.
 \end{tthm}
 \TODO[\cite{sabbah2007isomonodromic} cor II.6.4.]
 \begin{comment}
@@ -170,7 +171,7 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
   cocycles $(f_lf_j^{-1})$ and $(f_l',f_j'^{-1})$, where $f_j$,$f_j'$ are
   defined on $U_j$.
   Then there exists \TODO{} a $0$-cochain $(g_j)$ of the sheaf
-  $\Aut^{<0}(\tilde\cM^{good})$ relative to the covering $(I_j)$, such that
+  $\Aut^{<0}(\tilde\cM^{model})$ relative to the covering $(I_j)$, such that
   \[
     f_l'f_j'^{-1}=g_lf_lf_j^{-1}g_j^{-1} \text{ on } I_j\cap I_l.
   \]
@@ -184,14 +185,14 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
   \cite{Malgrange1983}} we will start this part of the proof by giving a
   necessary and sufficient condition for a class $\lambda$ in
   $H^1(S^1,\Lambda^{<0}(A^0))$
-  \TODO[$\Lambda^{<0}(A^0)\hat{=}\Aut^{<0}(\tilde\cM^{good})$ or
-  $\Aut^{<0}(\cM^{good})$?]
+  \TODO[$\Lambda^{<0}(A^0)\hat{=}\Aut^{<0}(\tilde\cM^{model})$ or
+  $\Aut^{<0}(\cM^{model})$?]
   to come from an object
   $(\cM,\nabla,\hat f)\in\cH$:
   \begin{itemize}
     \item[] This is the case if and only if the image of
-      $\lambda\in\Aut^{<0}(\cM^{good})$ in the set
-      $H^1(S^1,\Aut_{\cA}(\tilde\cM^{good}))$ (which contains only the
+      $\lambda\in\Aut^{<0}(\cM^{model})$ in the set
+      $H^1(S^1,\Aut_{\cA}(\tilde\cM^{model}))$ (which contains only the
       $\cA$-linear automorphisms) is the identity.
   \end{itemize}
   \begin{proof}
@@ -199,31 +200,31 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
     If $\lambda$ is the image of some $(\cM,\nabla,\hat f)$ then there exists
     \begin{itemize}
       \item a covering $(I_{j})$ of $S^1$ and
-      \item isomorphisms $f_j:\tilde\cM\overset{\sim}\to\tilde\cM^{good}$
+      \item isomorphisms $f_j:\tilde\cM\overset{\sim}\to\tilde\cM^{model}$
         inducing $\hat f$
     \end{itemize}
     such that $\lambda$ comes from a cocycle $(\lambda_{j,l})=(f_lf_j^{-1})$ on
     $I_j\cap I_l$.
     \TODO{} shows, that $(\lambda_{jl})$ is a coboundary of
-    $\Aut_\cA(\tilde\cM^{good})$.
+    $\Aut_\cA(\tilde\cM^{model})$.
 
     \textbf{``\Leftarrow{}'':}
     If for some suitable covering $(I_j)$ the cocycle $(\lambda_{jl})$ is a
-    coboundary with values in $\Aut_\cA(\tilde\cM^{good})$, i.e.,
+    coboundary with values in $\Aut_\cA(\tilde\cM^{model})$, i.e.,
     $\lambda_{jl}=f_lf_j^{-1}$, we define a new connection $\nabla$ on
-    $\tilde\cM^{good}$ by conjugating $\nabla^{good}$ by $f_j$ on $I_j$.
+    $\tilde\cM^{model}$ by conjugating $\nabla^{model}$ by $f_j$ on $I_j$.
 
     \TODO{}
 
     Moreover $\hat f_j=\hat f_l$ on $I_j\cap I_l$, so that the formal
     isomorphisms 
     \[
-      \hat f_j:(\hat \cM^{good},\nabla)
+      \hat f_j:(\hat \cM^{model},\nabla)
       \overset{\sim}{\longrightarrow}
-      (\hat\cM^{good},\nabla^{good})
+      (\hat\cM^{model},\nabla^{model})
     \]
-    can be glued in an isomorphism $\hat f:(\hat \cM^{good},\nabla)
-    \overset{\sim}{\longrightarrow}(\hat\cM^{good},\nabla^{good})$.
+    can be glued in an isomorphism $\hat f:(\hat \cM^{model},\nabla)
+    \overset{\sim}{\longrightarrow}(\hat\cM^{model},\nabla^{model})$.
   \end{proof}
 
   Thus, the proof of~\ref{thm:mainThm1} is a consequence of the following

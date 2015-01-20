@@ -184,6 +184,12 @@ and trivialization-dependent.
     \end{rem}
   \end{comment}
 \end{prop}
+\begin{defn}
+  A \emph{(iso-)\,morphism of systems} $\Phi:(\cM,\nabla)\to(\cM',\nabla')$
+  is a (iso-)\,morphism of vectorspaces $\Phi:\cM\to\cM'$ which commutes with the
+  connections.
+  \TODO[Category of systems!]
+\end{defn}
 \marginnote{\cite[65]{Loday2014}}
 \begin{paracol}{2}\sloppy
 \switchcolumn[0]\noindent
@@ -227,14 +233,21 @@ naturally associate the differential operator $\nabla=[A]=d-A$, which has order
 one and dimension $n$. This means that the connection $\nabla$ is fully
 determined by the matrix $A$ and thus is fully determined by $A'$.
 \begin{defn}
-  This matrix $A$ is called the \emph{connection matrix} of $(\cM,\nabla)$.
+  \begin{enumerate}
+    \item This matrix $A$ is called a \emph{connection matrix} of
+      $(\cM,\nabla)$. It depends on the choice of the $\C(\!\{t\}\!)$-basis.
+    \item A \emph{germ of a meromorphic linear differential system} of rank
+      $n$, or just a \emph{system}, is a germ of a meromorphic connection on
+      the trivial vector bundle \textbf{with a chosen trivialization} of the
+      fiber $E\cong\C^n$.
+      \begin{prop}
+        Thus, the set of systems is isomorphic to the set
+        $G(\!\{t\}\!)$ of all connection matrices.
+      \end{prop}
+      It well be denoted by $[A]$ where $A$ is the connection matrix.
+  \end{enumerate}
 \end{defn}
-\begin{defn}
-  A \emph{(iso-)\,morphism of systems} $\Phi:(\cM,\nabla)\to(\cM',\nabla')$
-  is a (iso-)\,morphism of vectorspaces $\Phi:\cM\to\cM'$ which commutes with the
-  connections.
-  \TODO[Category of systems!]
-\end{defn}
+
 \begin{comment}
   \cite{boalch} wants \textbf{generic} meromorphic connections
   \begin{itemize}
@@ -243,24 +256,41 @@ determined by the matrix $A$ and thus is fully determined by $A'$.
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Systems}
-By choosing a trivialization, we obtain the following coordinate dependent
-equivalent objects.
-\begin{defn}
-  A \emph{germ of a meromorphic linear differential system} of rank $n$, or
-  just a \emph{system}, is a germ of a meromorphic connection on the trivial
-  vector bundle with a chosen trivialization and fiber $E=\C^n$.
-\end{defn}
-\begin{rem}
-  The set of systems is, via the Taylor expansion\TODO{}, isomorphic to
-  $\End(E)\otimes\C(\!\{t\}\!)$.
-\end{rem}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Connection matrix \rightarrow{} connection}
+\subsubsection{System \rightarrow{} germ of a meromorphic connection}
 \begin{comment}
   There is a thm in \cite{sabbah2007isomonodromic}
 \end{comment}
+\begin{prop}
+  If we start with a system $[A]$ we get a germ of a meromorphic connection via
+  \[
+    (\cM,\nabla)=(\C(\!\{t\}\!))^n,d-A)
+  \]
+  and $A$ is a connection matrix for $(\cM,\nabla)$.
+\end{prop}
+\begin{proof}
+  \TODO{}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Local \rightarrow{} global}
+\begin{comment}
+  Quelle?
+  \begin{itemize}
+    \item \cite{sabbah2007isomonodromic}???
+  \end{itemize}
+\end{comment}
+\begin{thm}
+  If we start with a germ at $0$ of a meromorphic connection $(\cM,\nabla)$
+  there is a unique meromorphic connection $(\sM,\nabla)$ such that
+  \begin{itemize}
+    \item $(\sM,\nabla)$ has only singularities at $0$ and $\infty$
+    \item the singularity at $\infty$ is only \TODO{} and
+    \item $(\cM,\nabla)$ is the germ at $0$ of $(\sM,\nabla)$.
+  \end{itemize}
+\end{thm}
+\begin{proof}
+  \TODO{}
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Meromorphic / formal transformation}
@@ -314,7 +344,8 @@ We denote by $\hat G(A)$ the set of all \emph{(applicable) formal
 transformations}
 \[
   \hat G(A):=\left\{\hat F\in G(\!(t)\!)
-    \mid {}^{\hat F}\!A \text{ has convergent entries}
+    \mid {}^{\hat F}\!A \text{ has convergent entries i.e.\ } 
+    {}^{\hat F}\!A\in G(\!\{t\}\!)
   \right\}\,.
 \]
 \begin{rem}
@@ -511,6 +542,8 @@ solution of $[A,B]$.
           \TODO[ramified case]
         \item $L\in\gl_n(\C)$ constant matrix called the \emph{matrix of
           formal monodromy}. ($t^L$ means $e^{L\ln t}$.)
+          \marginnote{in \cite[1]{Remy2014} $L$ is just a Jordan normal form.
+          Is this generic enough?}
       \end{itemize}
       The matrix $\mathcal{Y}_0$ is called a \emph{normal solution}.
     \item The matrix ${A^0}':=dQ+L\frac{dt}{t}$ is a connection matrix for
