@@ -7,7 +7,7 @@
     %,headsepline
     ,parskip=half*
     ,openany
-    ,DIV=10
+    ,DIV=11
     ,fleqn % mv align to left
     % ,oneside
     %,titelpage % unused
@@ -23,7 +23,7 @@
     %,headsepline
     ,parskip=half*
     ,openany
-    ,DIV=10
+    ,DIV=11
     ,fleqn % mv align to left
     % ,oneside
     %,titelpage % unused
@@ -103,10 +103,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagebreak
 \appendix
-\makeatletter
-\@mainmatterfalse
-\makeatother
-\addcontentsline{toc}{chapter}{Anhang}
+\addcontentsline{toc}{chapter}{Appendix}
 
 \ifnum\myDevelopVariable=1
   % \input{introVortrag/notes.tex}
@@ -114,7 +111,7 @@
   % % \input{aufgaben.tex}
 \fi
 
-%\input{anhang1.tex}
+\input{appendix.tex}
 
 % \input{literatur.tex}
 
@@ -123,6 +120,9 @@
 %\def\btxandlong{und}
 %\bibliography{main}
 
+\makeatletter
+\@mainmatterfalse
+\makeatother
 \addcontentsline{toc}{chapter}{Bibliography}
 \printbibliography[keyword={prim},title={Bibliography}]
 \printbibliography[notkeyword={prim},title={Additional references}]

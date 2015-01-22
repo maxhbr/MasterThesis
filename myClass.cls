@@ -94,8 +94,8 @@
     \node[outer xsep=1pt, outer ysep=3pt, inner ysep=0pt,
       inner xsep=5pt, font=\sffamily] (a) {\pagemark};}%
       \tikz[remember picture, overlay]{
-      \ifthenelse{\isodd{\thepage}}{
-      % \ifthispageodd{
+      % \ifthenelse{\isodd{\thepage}}{
+      \ifthispageodd{
         \draw[myColor1,line width=1pt]
           ($(a.north west)+(0pt,0)$) |- ($(a.south east)+(-3pt,-3pt)$);
       }{
@@ -110,7 +110,7 @@
 \makeatother
 
 %%%%  Layout  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[scale=0.75]{geometry}
+% \usepackage[scale=0.75]{geometry}
 \setlength{\unitlength}{1mm}
 %\emergencystretch 2em
 %\usepackage{multicol}
@@ -393,7 +393,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{verbatim}
 \newcommand{\comm}[1] {}
-\newcommand{\toTranslate}[1] {#1}
+\newcommand{\rewrite}[1] {#1}
 \newcommand{\ccite}[2][\empty] {}
 \newcommand{\TODO}[1][\empty] {}
 
@@ -406,6 +406,7 @@
   %\definecolor{commentShadeColor}{rgb}{.6,.6,.6}
   \definecolor{commentTextColor}{rgb}{.2,.2,.2}
   \definecolor{CommentFrameColor}{rgb}{.3,.3,.3}%
+  \definecolor{rewriteColor}{rgb}{.6,1,.9}
 
   \renewcommand{\comment}{\color{commentTextColor}%
     \def\FrameCommand{\fcolorbox{CommentFrameColor}{commentShadeColor}}%
@@ -420,13 +421,13 @@
     \renewcommand{\comm}[1] {%
       \sethlcolor{commentShadeColor}%
       {\texthl{#1}}}
-    \renewcommand{\toTranslate}[1] {%
-      \sethlcolor{green!40!white}%
+    \renewcommand{\rewrite}[1] {%
+      \sethlcolor{rewriteColor}%
       {\texthl{#1}}}
   \else
     \renewcommand{\comm}[1] {%
       \color{commentTextColor}{#1}}
-    \renewcommand{\toTranslate}[1] {%
+    \renewcommand{\rewrite}[1] {%
       \color{green}{#1}}
   \fi
 

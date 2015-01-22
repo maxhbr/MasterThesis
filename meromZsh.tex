@@ -280,8 +280,8 @@ determined by the matrix $A$ and thus is fully determined by $A'$.
   \end{itemize}
 \end{comment}
 \begin{thm}
-  If we start with a germ at $0$ of a meromorphic connection $(\cM,\nabla)$
-  there is a unique meromorphic connection $(\sM,\nabla)$ such that
+  If we start with a germ $(\cM,\nabla)$ of a meromorphic connection there is a
+  unique meromorphic connection $(\sM,\nabla)$ such that
   \begin{itemize}
     \item $(\sM,\nabla)$ has only singularities at $0$ and $\infty$
     \item the singularity at $\infty$ is only \TODO{} and
@@ -309,11 +309,11 @@ determined by the matrix $A$ and thus is fully determined by $A'$.
         classes, modulo analytic equivalence},
     \end{itemize}
     as is done in the older literature.  The fact is that the sets equivalence
-    classes are the same in both cases. It is important for us to work with
-    analytic, rather than meromorphic gauge transformations, because then the
-    $\C^\infty$ viewpoint in Chapter 3 is cleaner. This distinction relates to
-    the difference between \textbf{‘regular singular’} connections and
-    \textbf{‘logarithmic’} connections.
+    classes are the same in both cases. \comm{It is important for us to work
+      with analytic, rather than meromorphic gauge transformations, because
+    then the $\C^\infty$ viewpoint in Chapter 3 is cleaner.} This distinction
+    relates to the difference between \textbf{‘regular singular’} connections
+    and \textbf{‘logarithmic’} connections.
   \end{rem}
 \end{comment}
 \begin{notations}
@@ -385,6 +385,10 @@ solution of $[A,B]$.
   there exists a konvergent transformation, by which $A$ is obtained from a
   matrix with at most a simple pole at $t=0$.
   Otherwise, the singularity is called \emph{irregular}.
+  \begin{rem}
+    This implies that, if $A$ has irregular/regular singularity, the also all
+    meromorphic equivalent matrices ${}^{F}\!A$ have.
+  \end{rem}
 \end{defn}
 \begin{thm}
   \marginnote{\cite[Thm.II.2.8]{sabbah2007isomonodromic}}
@@ -411,13 +415,13 @@ solution of $[A,B]$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Models and formal decomposition of a germ / formal classification}
-\begin{paracol}{2}
-\switchcolumn[0]\noindent
-  \textcolor{gray}{As something like building blocks of some meromorphic
-    connections we introduce the elementary irregular models. Into which
-    meromorphic connections, after potentially needed pullback, decompose.
-    \\The building blocks of these building blocks are defined as follows.}
-\switchcolumn[1]\noindent
+% \begin{paracol}{2}
+% \switchcolumn[0]\noindent
+%   \textcolor{gray}{As something like building blocks of some meromorphic
+%     connections we introduce the elementary irregular models. Into which
+%     meromorphic connections, after potentially needed pullback, decompose.
+%     \\The building blocks of these building blocks are defined as follows.}
+% \switchcolumn[1]\noindent
   In every formal equivalence class of meromorphic connections, there are some
   meromorphic connection of special form, which we will call models. They are
   not unique but all of them lie in the same convergent equivalence class.
@@ -428,7 +432,7 @@ solution of $[A,B]$.
   there are some models.
   \TODO[Problems with ramification??]
   This solves the formal classificaton problem.
-\end{paracol}
+% \end{paracol}
 \begin{defn}
   \begin{itemize}
     \item For a $\phi\in\C\{t\}[t^{-1}]$ we use $\cE^{\phi}$ to denote the germ
@@ -471,17 +475,17 @@ solution of $[A,B]$.
   \end{enumerate}
 \end{prop}
 \begin{proof}
-  See~\cite{sabbah2007isomonodromic} Proposition II.5.1.
+  See~\cite[Prop.II.5.1]{sabbah2007isomonodromic}
 \end{proof}
 \begin{defn}
-  \marginnote{\cite{sabbah2007isomonodromic} Definition II.5.2}
+  \marginnote{\cite[Def.II.5.2]{sabbah2007isomonodromic}}
   A Germ $(\cM,\nabla)$ is called \emph{elementary} if it is isomorphic to
   some germ $(\cE^\phi,\nabla)\otimes(\cR,\nabla)$ where
   \begin{itemize}
     \item $(\cR,\nabla)$ has regular singularity at $\{0\}$ but has not to be
       of rank $1$.
   \end{itemize}
-  \marginnote{\cite{sabbah2007isomonodromic} II.2.f}
+  \marginnote{\cite[II.2.f]{sabbah2007isomonodromic}}
 \end{defn}
 \begin{defn}
   \def\myPhi{\textcolor{red!60!black}{\phi}}

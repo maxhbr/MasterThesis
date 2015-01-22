@@ -1,0 +1,79 @@
+\chapter{More basics}
+\section{Semidirect products}
+\begin{comment}
+  see
+  \begin{itemize}
+    \item \url{http://nlab.mathforge.org/nlab/show/semidirect+product+group}
+    \item \url{http://en.wikipedia.org/wiki/Semidirect_product}
+    \item \cite{Robinson2003An}
+  \end{itemize}
+\end{comment}
+We will refer to \cite[75]{Robinson2003An} for semidirect products.
+Let $G$ be a group with a normal subgroup $N$ ($N\vartriangleleft G$) and a
+subgroup $H$ such that 
+\[
+  G=NH\qquad\text{and}\qquad N\cap H=1.
+\]
+Then $G$ is said to be the \emph{(internal) semidirect product} of $N$ and $H$,
+$G=N\rtimes H$.
+\begin{rem}
+  \begin{enumerate}
+    \item Each element $g\in G$ has a unique decomposition $g=nh$ with $n\in N$
+      and $h\in H$. Since
+      \begin{itemize}
+        \item[] for $g=n'h'$ another such expression, then
+          $(n')^{-1}n=h'h^{-1}\in N\cap H=1$ such that $n=n'$ and $h=h'$.
+      \end{itemize}
+    \item Conjugation in $N$ by an element $h\in H$ defines an automorphism of
+      $N$, say $\rho(h)$ which satisfies for $h_i\in H$
+      \[
+        \rho(h_1,h_2)=\rho(h_1)\rho(h_2)
+      \]
+      and thus $\rho:H\to\Aut(N)$ is a homomorphism.
+  \end{enumerate}
+\end{rem}
+In the other direction, one can get from $N$, $H$ and a given homomorphism 
+$\rho:H\to\Aut(N)$ the same structure back. This will be the so-called
+\emph{external semidirect product}. It is defined by the underlying group
+\[
+  G:=\left\{(n,h)\mid n\in N,h\in H\right\}
+\]
+together with the multiplication
+\begin{align*}
+  G\times G&\to G
+\\\left((n_1,h_1),(n_2,h_2)\right)&\mapsto(n_1\rho(h_1)(n_2),h_1h_2)
+\end{align*}
+with the identity element $(1_N,1_H)$ and the inverse of $(n,h)$ given by
+$(\rho(h^{-1})(n^-1),h^-1)$. In $G$ there are the natural subgroups
+\[
+  \bar N=\{(n,1_H)\mid n\in N)\}
+  \qquad\text{and}\qquad
+  \bar H=\{(1_N,h)\mid h\in H)\}
+\]
+which are canonically isomorphic to $N$ and $H$ respectively. For $n\in N$ and
+$h\in H$ we have
+\[
+  (n,1_H)(1_N,h)=(n\underset{\id_N}{\underbrace{\rho(1_H)}}(1_N),h)
+  =(n,h)\in \bar N\bar H \,.
+\]
+It follows that $G=\bar N\bar H$ and $\bar N\cap\bar H=1$. To check that
+$G=\bar N\rtimes\bar H$ we only have to show that $\bar N$ is normal in $G$.
+Let $n,n'\in N$ and $h\in H$ then
+\begin{align*}
+  (n,h)(n',1_H)(n,h)^{-1}
+  &=(n,h)(n',1_H)(\rho(h^{-1})(n^{-1}),h^{-1})
+  \\&=(n\rho(h)(n'),h)(\rho(h^{-1})(n^{-1}),h^{-1})
+  \\&=(n\rho(h)(n')\rho(h)\rho(h^{-1})(n^{-1}),1_H)
+  \\&=(n\rho(h)(n')n^{-1},1_H) \in \bar N \,.
+\end{align*}
+
+In the case, where $\rho$ is the trivial homomorphism
+\begin{align}
+  \rho:H&\to\Aut(N)
+\\h=&\mapsto \id_N
+\end{align}
+the elements of $\bar N$ and $\bar H$ commute, so that $G$ becomes the direct
+product $N\times H$. Thus the semidirect product is a generalization of the
+direct product of two groups.
+
+aeuie
