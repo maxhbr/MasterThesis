@@ -47,6 +47,9 @@ connections.
       \item \cite{Loday2014}
     \end{itemize}
   \end{multicols}
+  \begin{center}
+    \cite[Chap.5]{hotta2008}
+  \end{center}
 \end{comment}
 
 Let $M$ be a riemanian surface and let $Z=k_1(a_1)+\cdots+k_m(a_m)>0$ be an
@@ -166,8 +169,8 @@ and trivialization-dependent.
     \item $\cM$ is the germ at $0$ of the holomorphic bundle $\sM$ and thus a
       $\C(\!\{t\}\!)$-vectorspace of dimension $n$, since the ring of germs of
       meromorphic functions with poles at $0$ is the ring $\C(\!\{t\}\!)$, and
-    \item $\nabla:\cM\to \cM$ is a additive map, which satisfies the
-      \emph{Leibniz rule}
+    \item $\nabla:\cM\to \cM$ \TODO[one forms?] is a additive map, which
+      satisfies the \emph{Leibniz rule}
       \[
         \nabla(fm)=\partial f\cdot m + f\nabla(m)
       \]
@@ -191,25 +194,25 @@ and trivialization-dependent.
   \TODO[Category of systems!]
 \end{defn}
 \marginnote{\cite[65]{Loday2014}}
-\begin{paracol}{2}\sloppy
-\switchcolumn[0]\noindent
-  % Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$
-  % and let $A\in\End(E)\otimes\C(\!\{t\}\!)$\TODO[In one forms? $A=A'dt$?] be a
-  % matrix, such that
-  % \[
-  %   (\epsilon_1,\epsilon_2,\dots,\epsilon_n)=-(e_1,e_2,\dots,e_n)A
-  % \]
-  % is the image of $\nabla$.
-  \textcolor{gray}{Choose a $\C(\!\{t\}\!)$-basis
-    $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.  Let $A'$ be a $n\times n$
-    matrix with entries in $\C(\!\{t\}\!)$ such that
-    \[
-      \nabla\left(e_1,\dots,e_n\right)
-      =
-      -(e_1,e_2,\dots,e_n)A'
-    \]
-    and let $A=A'dt$.}
-\switchcolumn[1]\noindent
+% \begin{paracol}{2}\sloppy
+% \switchcolumn[0]\noindent
+%   % Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$
+%   % and let $A\in\End(E)\otimes\C(\!\{t\}\!)$\TODO[In one forms? $A=A'dt$?] be a
+%   % matrix, such that
+%   % \[
+%   %   (\epsilon_1,\epsilon_2,\dots,\epsilon_n)=-(e_1,e_2,\dots,e_n)A
+%   % \]
+%   % is the image of $\nabla$.
+%   \textcolor{gray}{Choose a $\C(\!\{t\}\!)$-basis
+%     $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.  Let $A'$ be a $n\times n$
+%     matrix with entries in $\C(\!\{t\}\!)$ such that
+%     \[
+%       \nabla\left(e_1,\dots,e_n\right)
+%       =
+%       -(e_1,e_2,\dots,e_n)A'
+%     \]
+%     and let $A=A'dt$.}
+% \switchcolumn[1]\noindent
   Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
   Let $A'$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$ such that
   the matrix $A=A'dt$ describes the action of $\nabla$:
@@ -218,7 +221,7 @@ and trivialization-dependent.
     =
     -(e_1,e_2,\dots,e_n)A \,.
   \]
-\end{paracol}
+% \end{paracol}
 Let $x=\sum_{0\leq j\leq n}x_je_j$ be an arbitrary element of $\cM$ which is in
 matrix notation described as $x=\underline{e}X$ with the column matrix
 $X={}^t\!(x_1,x_2 ,\dots,x_n)$.
@@ -401,6 +404,24 @@ solution of $[A,B]$.
   \]
   with a constant matrix $B'\in G$.
 \end{thm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{System of ordinary differential equations}
+Let $A=A'dt$ be a connection matrix. Then defines
+\[
+  \frac{d}{dt}v=A'v
+\]
+a $n$-dimensional system of order one differential equations. From the theory
+of ordinary differential equations we know that there is a equivalent ordinary
+differential equation of order $n$ which can be written as
+\[
+  \underset{=:P}{\underbrace{%
+      (a_n\partial_t^n+a_{n-1}\partial_t^{n-1}+\cdots a_{1}\partial_t+a_{0})
+  }} \cdot v=0
+\]
+where $a_i\in\C(\!\{t\}\!)$. \TODO{}
+
+In the other direction there is the lemma of the cyclic vector. \TODO{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fundamental solution}
