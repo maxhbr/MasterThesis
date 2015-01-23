@@ -200,6 +200,8 @@
   %\usepackage{thmbox}
   \newtheorem{try}{Versuch}
   \newtheorem{case}{Fall}
+
+  \newenvironment{einr}{}{}
 \else
   \mdtheorem[linewidth=2pt ,linecolor=myColor1
             ,topline=false, rightline=false, bottomline=false
@@ -299,13 +301,23 @@
   \newtheorem{case}{Fall}
 
   \surroundwithmdframed[linecolor=myColor1
-                       ,topline=false
-                       ,rightline=false
-                       ,bottomline=false
+                       ,topline=false ,rightline=false ,bottomline=false
                        ,leftmargin=\parindent
-                       ,skipabove=\medskipamount
-                       ,skipbelow=\medskipamount
+                       ,skipabove=\medskipamount ,skipbelow=\medskipamount
                        ]{proof}
+
+  \newenvironment{einr}{%
+      \begin{itemize}
+        \item[]
+          \begin{mdframed}[linewidth=1pt ,linecolor=myColor1
+              ,topline=false, rightline=false, bottomline=false
+              ,leftmargin=\parindent
+              ,skipabove=\medskipamount, skipbelow=\medskipamount]
+
+    }{%
+          \end{mdframed}
+      \end{itemize}
+    }
 \fi
 
 \numberwithin{equation}{chapter}
@@ -453,7 +465,7 @@
   }}}
 
   %Zeilenhöhe, für bessere lesbarkeit
-  \linespread{1.3}
+  % \linesprcad{1.3}
 
   % \cfoot{-\thepage-\\\today}
 

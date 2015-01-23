@@ -88,11 +88,10 @@ We have the following commutative diagram of isomorphisms.
   \end{itemize}
 \end{comment}
 Here we will look at the classifying set and we will proof, that it is
-isomorphic \TODO[as\dots] to the first non abelian cohomology set
+isomorphic \TODO[as\dots] to the first non abelian cohomology \rewrite{set}
 $H^1(S^1;\Lambda^{<0}(A^0))=:\St(A^0)$.
 
-\subsection{Definitions}
-Let us now define a Stokes sheaf on $S^1$, as the sheaf of flat
+Let us first define a Stokes sheaf on $S^1$, as the sheaf of flat
 isotropies\TODO[\dots]
 \begin{defn}
   The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is the sheaf of groups defined on
@@ -111,7 +110,25 @@ isotropies\TODO[\dots]
 \end{defn}
 
 \subsection{The theorem}
-Let $(\cM,\nabla,\hat f)$ be defined on\dots
+\begin{comment}
+  \TODO[See \cite{thboalch} for sheaf-less definition]
+\end{comment}
+Let $(\cM,\nabla,\hat f)$ be a germ of a  meromorphic connection.
+There exists an open covering $\cU=(U_j)_j$ and for every open set an
+isomorphism
+\[
+  f_j:(\tilde\cM,\tilde\nabla)_{|U_j}
+  \to(\tilde\cM^{model},\tilde\nabla^{model})_{|U_j}
+\]
+such that $\hat f_j=f$. By $(f_kf_j^{-1})_{jk}$ is then a cocycle of the
+sheaf $\St(A^0)$, relative to the covering $\cU$, defined.
+For other lifts $f_j'$ of $\hat f$ on $W_j$, $(f_j'f_j^{-1})$ is a $0$-cochain
+of $\Sto(A^0)$ relative to $\cU$. Thus the associated cochians to $(f_j)$ and
+$(f_j')$ are equivalent. One can also check that, if $(\cM,\nabla,\hat f)$ and
+$(\cM',\nabla',\hat f')$ are isomorphic, the corresponding cocycles define the
+same cohomology class. This defines a mapping of pointed sets $\cH\to\St(A^0)$,
+which sends the class of $(\cM^{model},\nabla^{model},\hat\id)$ to that of
+$\id$.
 
 \begin{tthm}[Malgrange-Sbuya]
   \label{thm:mainThm1}
@@ -119,7 +136,8 @@ Let $(\cM,\nabla,\hat f)$ be defined on\dots
   \[
     \exp:\cH\to\St(A^0)=H^1(S^1;\Lambda^{<0}(A^0))
   \]
-  is an isomorphism of pointed\footnote{which maps \TODO{} to \TODO{}} sets.
+  is an isomorphism of pointed\footnote{Which maps the class of
+    $(\cM^{model},\nabla^{model},\hat\id)$ to that of $\id$.} sets.
 \end{tthm}
 \TODO[\cite{sabbah2007isomonodromic} cor II.6.4.]
 \begin{comment}
@@ -183,12 +201,12 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
   $\Aut^{<0}(\cM^{model})$?]
   to come from an object
   $(\cM,\nabla,\hat f)\in\cH$:
-  \begin{itemize}
-    \item[] This is the case if and only if the image of
-      $\lambda\in\Aut^{<0}(\cM^{model})$ in the set
-      $H^1(S^1,\Aut_{\cA}(\tilde\cM^{model}))$ (which contains only the
-      $\cA$-linear automorphisms) is the identity.
-  \end{itemize}
+  \begin{einr}
+    This is the case if and only if the image of
+    $\lambda\in\Aut^{<0}(\cM^{model})$ in the set
+    $H^1(S^1,\Aut_{\cA}(\tilde\cM^{model}))$ (which contains only the
+    $\cA$-linear automorphisms) is the identity.
+  \end{einr}
   \begin{proof}
     \textbf{``\Rightarrow{}'':}
     If $\lambda$ is the image of some $(\cM,\nabla,\hat f)$ then there exists
@@ -670,13 +688,13 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
       \end{itemize}
       \begin{rem}
         A factorization algorithm could be:
-        \begin{itemize}
-          \item[] the factor $f^{<k}$ common to both factorizations is the
-            truncation of $f^{\leq k}$ to terms of level $k$\footnote{In any
-            representation $1+\sum C_{\tilde\theta}^{(j,l)}$ of $f^{\leq k}$
-            keep only the terms $(j,l)$ such that $\deg(q_j-q_l)<k$.}. Then
-            $g^k=(f^{<k})^{-1}f^{\leq k}$ and $f^k=f^{\leq k}(f^{<k})^{-1}$.
-        \end{itemize}
+        \begin{einr}
+          the factor $f^{<k}$ common to both factorizations is the truncation
+          of $f^{\leq k}$ to terms of level $k$\footnote{In any representation
+          $1+\sum C_{\tilde\theta}^{(j,l)}$ of $f^{\leq k}$ keep only the terms
+          $(j,l)$ such that $\deg(q_j-q_l)<k$.}. Then
+          $g^k=(f^{<k})^{-1}f^{\leq k}$ and $f^k=f^{\leq k}(f^{<k})^{-1}$.
+        \end{einr}
       \end{rem}
     \item This decomposition in semi-direct product can be extended to all
       levels. Thus
@@ -743,12 +761,12 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
   \end{itemize}
 \end{comment}
 The goal in this section is to prove, that
-\begin{itemize}
-  \item[] there is a bijective and natural map
+\begin{einr}
+    there is a bijective and natural map
     \[
       h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0) \,.
     \]
-\end{itemize}
+\end{einr}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The theorem}
@@ -757,14 +775,14 @@ Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
 $\dot\phi=(\dot\phi_{\theta_j})_{j\in J}\in\prod_{j\in J}\Lambda_{\theta_j}(A^0)$
 be a finite family of germs.
 In the following way, one can associate a cohomology class to any $\dot\phi$:
-\begin{itemize}
-  \item[] let $\dot\phi_j$ be the function representing the germ
-    $\dot\phi_{\theta_j}$ on its maximal arc of definition $\Omega_j$ around
-    $\theta_j$.
-    Then, for every cyclic covering $\cU=\{U_j;j\in J\}$ which satisfies
-    $\dot U_j\subset \Omega_j$ for all $j\in J$, one can define the $1$-cocycle
-    $(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
-\end{itemize}
+\begin{einr}
+  let $\dot\phi_j$ be the function representing the germ
+  $\dot\phi_{\theta_j}$ on its maximal arc of definition $\Omega_j$ around
+  $\theta_j$.
+  Then, for every cyclic covering $\cU=\{U_j;j\in J\}$ which satisfies
+  $\dot U_j\subset \Omega_j$ for all $j\in J$, one can define the $1$-cocycle
+  $(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
+\end{einr}
 To a different $\cU$ this construction yields a cohomologous
 $1$-cocycle\TODO[Proof], thus the induced map, in the case
 $\{\theta_j\mid j\in J\}=\A$,
@@ -856,10 +874,10 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
     at $\theta$}.
   \end{defn}
   A cyclic covering $\cU=(U_j)_{j\in J}$, which satisfies
-  \begin{itemize}
-    \item[] each Stokes arc of level $k$, of level $\leq k$ or of any level
-      contains at least one arc $\dot U_j$ from the nerve $\dot\cU$ of $\cU$
-  \end{itemize}
+  \begin{einr}
+    each Stokes arc of level $k$, of level $\leq k$ or of any level
+    contains at least one arc $\dot U_j$ from the nerve $\dot\cU$ of $\cU$
+  \end{einr}
   is adequate to $\lambda^k(A^0)$, $\lambda^{\leq k}$ or to $\lambda(A^0)$.
 \end{prop}
 \begin{proof}
@@ -900,11 +918,11 @@ the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
     $\cU^{\leq k}=\left\{U_\theta^{\leq k}\mid\theta\in\A^{\leq k}\right\}$
     will be defined by induction.
     Let us assume, that
-    \begin{itemize}
-      \item[] the $\dot U_\theta^{\leq k}$ are defined for all
-        $\theta\in\A^{\leq k}$ with $k$-maximum level greater than $K_i$ such
-        that their complete family is a nerve.
-    \end{itemize}
+    \begin{einr}
+      the $\dot U_\theta^{\leq k}$ are defined for all $\theta\in\A^{\leq k}$
+      with $k$-maximum level greater than $K_i$ such that their complete family
+      is a nerve.
+    \end{einr}
     Let
     \begin{itemize}
       \item $\theta$ be a anti-Stokes direction with $k$-maximum level $K_i$
@@ -1241,10 +1259,10 @@ describing how the \TODO{} differ on both sides of $\theta$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The main question}
 Here we want to answer the following question:
-\begin{itemize}
-  \item[] Which information is needed to describe the stokes structure of a
-    unramified multileveled meromorphic connection?
-\end{itemize}
+\begin{einr}
+  Which information is needed to describe the stokes structure of a unramified
+  multileveled meromorphic connection?
+\end{einr}
 To be more precise: we are interested in the representation of an element from
 $\prod_{\theta\in\A}\Sto_\theta(A^0)$ and how the information about the
 different levels is stored.

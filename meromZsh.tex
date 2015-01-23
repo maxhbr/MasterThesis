@@ -124,14 +124,9 @@ A meromorphic connection is then defined as follows.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Local expression of meromorphic connections}
-\TODO[Germ of a meromorphic Connection / Connection matrices
-  / systems]
 \begin{comment}
-  \begin{itemize}
-    \item \cite{sabbah2007isomonodromic} p.28
-    \item \cite{thboalch} p.2
-    \item \cite{babbitt1989local} p. 11
-  \end{itemize}
+  \cite[28]{sabbah2007isomonodromic}, \cite[2]{thboalch} and
+  \cite[11]{babbitt1989local}
 \end{comment}
 We will usually\TODO[only?] be interested in local information of a meromorphic
 connection.  This means, that we look at a connection in a neighbourhood of $0$
@@ -139,34 +134,10 @@ and allow only one singularity at $0$.
 There are many ways of expressing the local information, we will either talk
 about germs of meromorphic connections or systems, which is coordinate-
 and trivialization-dependent.
-
-\begin{comment}
-  \begin{paracol}{2}\sloppy
-  \switchcolumn[0]\noindent
-    Let $U$ be a trivializing open set for $M$ and let
-    $\textbf{e}=(e_1,\dots,e_n)$ be a basis of $\Gamma(U,\sM)$.
-    There exists then a $n\times n$ matrix $A$ of meromorphic 1-forms such
-    that\dots
-    \begin{defn}
-      This matrix is called \emph{connection matrix} for $(\sM,\nabla)$.
-    \end{defn}
-  \switchcolumn[1]\noindent
-    Let $U$ be a neighbourhood of $0$ and $t$ a coordinate on $U$ vanishing at
-    $0$.
-  \end{paracol}
-\end{comment}
-\begin{comment}
-  Some Literature like \cite{sabbah_cimpa90} always talks about germs\dots
-\end{comment}
 \begin{prop}
   \begin{comment}
-    See 
-    \begin{itemize}
-      \item \textbf{\cite[Rem.5.2.4]{hotta2008}}
-      \item \cite[Def.4.2.1]{Loday2014}
-    \end{itemize}
+    See \textbf{\cite[Rem.5.2.4]{hotta2008}} and \cite[Def.4.2.1]{Loday2014}
   \end{comment}
-
   A germ $(\cM,\nabla)$ of a meromorphic connection $(\sM,\nabla)$ is just the
   sheaf-theoretic germ, thus has the form $(\cM,\nabla)$ where
   \begin{itemize}
@@ -251,7 +222,7 @@ Hence the condition $\nabla x=0$ is equivalent to the system of ODEs
 such that horizontal sections of $(\cM,\nabla)$ correspond to solutions of
 (\ref{eq:ode}).
 Thus, with the connection $\nabla$ and the $K$-basis $\underline{e}$ is
-naturally associate \rewrite{the differential operator $\nabla=[A]=d-A$}, which
+naturally associate \rewrite{the differential operator $\triangle=d-A$}, which
 has order one and dimension $n$. \TODO[possibly multivalued
   solutions ($\tilde K$)?~\cite{hotta2008} on page 128]
 
@@ -263,6 +234,10 @@ has order one and dimension $n$. \TODO[possibly multivalued
   \begin{enumerate}
     \item This matrix $A$ is called a \emph{connection matrix} of
       $(\cM,\nabla)$. It depends on the choice of the $\C(\!\{t\}\!)$-basis.
+      \begin{rem}
+        We have seen, that a connection is fully determined by its connection
+        matrix.
+      \end{rem}
     \item A \emph{germ of a meromorphic linear differential system} of rank
       $n$, or just a \emph{system}, is a germ of a meromorphic connection on
       the trivial vector bundle \textbf{with a chosen trivialization} of the
@@ -271,10 +246,8 @@ has order one and dimension $n$. \TODO[possibly multivalued
         Thus, the set of systems is isomorphic to the set
         $G(\!\{t\}\!)$ of all connection matrices.
       \end{prop}
-      It well be denoted by $[A]$ where $A$ is the connection matrix.
-      \begin{comment}
-        \cite{Loday1994} and \cite{Loday2014} calls them differential modules?
-      \end{comment}
+      It well be denoted by $[A]=d-A$ where $A$ is the connection matrix in the
+      chosen trivialization.
   \end{enumerate}
 \end{defn}
 
@@ -320,6 +293,11 @@ has order one and dimension $n$. \TODO[possibly multivalued
   \TODO{}
 \end{proof}
 
+\subsubsection{Formalisieren}
+Let $(\cM,\nabla)$ be a meromorphic connection. The connection $\nabla$
+naturally extends to $\hat\cM:=\cM\otimes\C(\!(t)\!)$ and
+$\tilde\cM_\theta:=\cM\otimes\cA_\theta$. \TODO[]
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Meromorphic / formal transformation}
 \begin{comment}\footnotesize
@@ -356,8 +334,10 @@ has order one and dimension $n$. \TODO[possibly multivalued
     \item $G(\!(t)\!)=\Gl_n(\C\llbracket t\rrbracket[t^{-1}])$
       (maby not applicable) formal meromorphic tranformations.
   \end{itemize}
-  We will always use the meromorphic ones, in contrast
-  to~\cite{boalch,thboalch} where formal classification is used.
+  \begin{comment}
+    We will always use the meromorphic ones, in contrast
+    to~\cite{boalch,thboalch} where analytic classification is used.
+  \end{comment}
 \end{notations}
 By \emph{transformation} (or \emph{meromorphic transformation}) of a system we
 mean a linear change of the trivialization.
@@ -450,9 +430,16 @@ $n$ which can be written as
 where $a_i\in\C(\!\{t\}\!)$. \TODO{}
 
 In the other direction there is the lemma of the cyclic vector. \TODO{}
+\begin{comment}
+  \begin{itemize}
+    \item \cite[Rem.4.2.6]{Loday2014}
+  \end{itemize}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Fundamental solution}
+\subsubsection{Fundamental solution}
+Fundamental solutions beschreiben also systems of ordinary differential
+equations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{As differential operator}
@@ -648,19 +635,17 @@ formal classification problem.
 \begin{prop}
   \marginnote{This condition \textbf{might be} equivalent to the
     condition of being \textbf{nice} in~\cite{thboalch}.}
-  Let $(\cM,\nabla)$ be a germ,
+  Let $(\cM,\nabla)$ be a germ, equipped with a basis in which the matrix $A$
+  takes the form
+  \[
+    A=t^{-r}A(t)\frac{dt}{t}
+  \]
+  with
   \begin{itemize}
-    \item equipped with a basis in which the matrix $A$ takes the form
-      \[
-        A=t^{-r}A(t)\frac{dt}{t}
-      \]
-      with
-      \begin{itemize}
-        \item $r\geq1$,
-        \item $A$ has holomorphic entries, and
-        \item $A_0:=A(0)$ being regular semisimple\footnote{i.e.\ with
-          pairwise distinct eigenvalues.}.
-      \end{itemize}
+    \item $r\geq1$,
+    \item $A$ has holomorphic entries, and
+    \item $A_0:=A(0)$ being regular semisimple\footnote{i.e.\ with
+      pairwise distinct eigenvalues.}.
   \end{itemize}
   Then there is no ramification needed, to apply the Levelt-Turittin-theorem.
   \begin{comment}
@@ -692,6 +677,36 @@ formal classification problem.
 \end{comment}
 Here we want to state the main asymptotic existence theorem (or often M.A.E.T.)
 which is essentially a deduction from the Borel-Ritt lemma. \TODO{}
+\begin{comment}
+  We set 
+  \[
+    \hat\cM=\hat\cO\otimes \cM
+  \]
+  and for each $e^{i\theta^0}\in S^1$ we set
+  \[
+    \tilde\cM_{\theta^0}=\cA_{\theta^0}\otimes\cM\,.
+  \]
+  \begin{thm}[Sectorial decomposition]
+    \marginnote{\cite[Thm.II.5.12]{sabbah2007isomonodromic}}
+    Let $(\cM,\nabla)$ be a meromorphic connection and let us assume that there
+    exist a model $\cM^{model}$ together with an isomorphism
+    $\hat\lambda:\hat\cM\to\hat\cM^{model}$. There exists then, for any
+    $e^{i\theta^0}\in S^1$, an isomorphism $\tilde\lambda_{\theta^0}:
+    \tilde\cM_{\theta^0}\to\tilde\cM_{\theta^0}^{model}$
+    lifting $\hat\lambda$, that is, such that the following diagram
+    \[ \begin{tikzcd}
+        \tilde\cM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
+        \tilde\cM^{model}_{\theta^o} \dar
+        \\\hat\cM \rar{\hat\lambda} &
+        \hat\cM^{model}
+    \end{tikzcd} \]
+    commutes
+  \end{thm}
+  \begin{proof}
+    This is clear, since the tensor is right exact and we have the Borel-Ritt
+    Lemma.
+  \end{proof}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Meromorphic / formal transformation II}
@@ -702,11 +717,11 @@ which is essentially a deduction from the Borel-Ritt lemma. \TODO{}
       Thus, the isotropies are the solutions of the system
       $[\End A^0]:=[A^0,A^0]$.
       \marginnote{\cite[853]{Loday1994}}
+    \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
       \begin{rem}
         They are, a priori, formal transformations. Actually $G(A^0)$ is a
         subgroup of $\Gl_n(\C[1/x,x])$.
       \end{rem}
-    \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
       \begin{comment}
         In the nice case this is only $T$?
       \end{comment}
@@ -725,25 +740,25 @@ which is essentially a deduction from the Borel-Ritt lemma. \TODO{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The classifying set}
-We want to understand the Set $\{[(\cM,\nabla)]\}$ of the (convergent)
+We want to understand the Set 
+$\bigg\{\Big[(\cM,\nabla)\Big]\bigg\}$ of the (convergent)
 isomorphism classes of all meromorphic connections. Since we have also the
 formal classification and we know, that all elements in a convergent
 isomorphism class lie in the same formal isomorphism class, we can reduce the
 problem by fixing a model $(\cM^{model},\nabla^{model})$ with the corresponding
 connection matrix $A^0$. Thus we can restrict ourself to the subset
-\begin{align*}
-  {}^0C(\cM^{model},\nabla^{model})=\big\{
-    \left[(\cM,\nabla)\right]
-    &\mid \text{there exists a formal isomorphism }
-  \\&\qquad\hat f:(\hat\cM,\hat\nabla)
+\begin{multline*}
+  {}^0C(\cM^{model},\nabla^{model})=\bigg\{
+    \Big[(\cM,\nabla)\Big]
+    \mid \text{there exists a formal isomorphism }
+  \\\qquad\hat f:(\hat\cM,\hat\nabla)
       \overset{\sim}\longrightarrow
       (\hat\cM^{model},\hat\nabla^{model})
-  \big\}
-\end{align*}
-of all isomorphism classes of
-meromorphic connections, which are formally isomorphic to
-$(\cM^{model},\nabla^{model})$. This is the set, that we will be calling the
-\emph{classifying set}.
+  \bigg\}
+\end{multline*}
+of all isomorphism classes of meromorphic connections, which are formally
+isomorphic to $(\cM^{model},\nabla^{model})$. This is the set, that we will be
+calling the \emph{classifying set} and we will also denote it ${}^0C(A^0)$.
 \begin{comment}
   \begin{itemize}
     \item \cite{thboalch} p.6
