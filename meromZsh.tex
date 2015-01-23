@@ -30,26 +30,23 @@ or $\cD$-modules\TODO[local] which are coordinate independent. Coordinate
 dependent alternatives are (local) systems and connection matrices. Also, one
 can use the fundamental solutions to describe local informations of meromorphic
 connections.
+
 \begin{comment}
   Siehe:
   \begin{multicols}{3}
     \begin{itemize}
       \item \cite{boalch} and \cite{thboalch}
       \item \cite{sabbah2007isomonodromic}
-    \end{itemize}
-    \columnbreak
-    \begin{itemize}
       \item \cite{Varadarajan96linearmeromorphic}
+      \item \textbf{\cite[Chap.5]{hotta2008}}
     \end{itemize}
     \columnbreak
+    Differential modules:
     \begin{itemize}
       \item \cite{Loday1994}
       \item \cite{Loday2014}
     \end{itemize}
   \end{multicols}
-  \begin{center}
-    \cite[Chap.5]{hotta2008}
-  \end{center}
 \end{comment}
 
 Let $M$ be a riemanian surface and let $Z=k_1(a_1)+\cdots+k_m(a_m)>0$ be an
@@ -116,7 +113,7 @@ A meromorphic connection is then defined as follows.
     \]
   \end{prop}
   \begin{rem}
-    Here are all connections flat, since \TODO{}
+    Here are all connections flat, since \TODO[dim $1$?]
   \end{rem}
   \begin{comment}
     We will say that a connection on a meromorphic bundle is \emph{integrable}
@@ -162,7 +159,14 @@ and trivialization-dependent.
   Some Literature like \cite{sabbah_cimpa90} always talks about germs\dots
 \end{comment}
 \begin{prop}
-  \marginnote{\cite[Def.4.2.1]{Loday2014}}
+  \begin{comment}
+    See 
+    \begin{itemize}
+      \item \textbf{\cite[Rem.5.2.4]{hotta2008}}
+      \item \cite[Def.4.2.1]{Loday2014}
+    \end{itemize}
+  \end{comment}
+
   A germ $(\cM,\nabla)$ of a meromorphic connection $(\sM,\nabla)$ is just the
   sheaf-theoretic germ, thus has the form $(\cM,\nabla)$ where
   \begin{itemize}
@@ -188,14 +192,14 @@ and trivialization-dependent.
   \end{comment}
 \end{prop}
 \begin{defn}
-  A \emph{(iso-)\,morphism of systems} $\Phi:(\cM,\nabla)\to(\cM',\nabla')$
-  is a (iso-)\,morphism of vectorspaces $\Phi:\cM\to\cM'$ which commutes with the
+  A \emph{(iso-)\,morphism of meromorphic connections}
+  $\Phi:(\cM,\nabla)\to(\cM',\nabla')$ is a (iso-)\,morphism of
+  $\C(\!\{t\}\!)$-vectorspaces $\Phi:\cM\to\cM'$ which commutes with the
   connections.
   \TODO[Category of systems!]
 \end{defn}
 \marginnote{\cite[65]{Loday2014}}
-% \begin{paracol}{2}\sloppy
-% \switchcolumn[0]\noindent
+\begin{paracol}{2}\sloppy
 %   % Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$
 %   % and let $A\in\End(E)\otimes\C(\!\{t\}\!)$\TODO[In one forms? $A=A'dt$?] be a
 %   % matrix, such that
@@ -212,16 +216,25 @@ and trivialization-dependent.
 %       -(e_1,e_2,\dots,e_n)A'
 %     \]
 %     and let $A=A'dt$.}
-% \switchcolumn[1]\noindent
+\switchcolumn[0]\noindent
   Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
-  Let $A'$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$ such that
-  the matrix $A=A'dt$ describes the action of $\nabla$:
+  Let $A'$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$
+  \rewrite{such that the matrix $A=A'dt$ describes the action of $\nabla$:}
   \[
     \nabla\left(e_1,\dots,e_n\right)
     =
     -(e_1,e_2,\dots,e_n)A \,.
   \]
-% \end{paracol}
+\switchcolumn[1]\noindent
+  Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
+  Let $A=(a_{jk})$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$
+  \rewrite{such that the it describes the action of $\nabla$:}
+  \[
+    \nabla e_k
+    =
+    -\sum_{1\leq j\leq n} a_{jk}(t)e_j \,.
+  \]
+\end{paracol}
 Let $x=\sum_{0\leq j\leq n}x_je_j$ be an arbitrary element of $\cM$ which is in
 matrix notation described as $x=\underline{e}X$ with the column matrix
 $X={}^t\!(x_1,x_2 ,\dots,x_n)$.
@@ -231,10 +244,21 @@ Then, applying the Leibniz rule, yields
   \\&=\underline{e} \cdot dX - \underline{e}\cdot \nabla X
   \\&=\underline{e}\left(dX-AX\right).
 \end{align*}
+Hence the condition $\nabla x=0$ is equivalent to the system of ODEs
+\begin{equation} \label{eq:ode}
+  \frac{d}{dt}x=Ax
+\end{equation}
+such that horizontal sections of $(\cM,\nabla)$ correspond to solutions of
+(\ref{eq:ode}).
 Thus, with the connection $\nabla$ and the $K$-basis $\underline{e}$ is
-naturally associate the differential operator $\nabla=[A]=d-A$, which has order
-one and dimension $n$. This means that the connection $\nabla$ is fully
-determined by the matrix $A$ and thus is fully determined by $A'$.
+naturally associate \rewrite{the differential operator $\nabla=[A]=d-A$}, which
+has order one and dimension $n$. \TODO[possibly multivalued
+  solutions ($\tilde K$)?~\cite{hotta2008} on page 128]
+
+\begin{comment}
+  This means that the connection $\nabla$ is fully determined by the matrix $A$
+  and thus is fully determined by $A'$.
+\end{comment}
 \begin{defn}
   \begin{enumerate}
     \item This matrix $A$ is called a \emph{connection matrix} of
@@ -248,6 +272,9 @@ determined by the matrix $A$ and thus is fully determined by $A'$.
         $G(\!\{t\}\!)$ of all connection matrices.
       \end{prop}
       It well be denoted by $[A]$ where $A$ is the connection matrix.
+      \begin{comment}
+        \cite{Loday1994} and \cite{Loday2014} calls them differential modules?
+      \end{comment}
   \end{enumerate}
 \end{defn}
 
@@ -260,13 +287,11 @@ determined by the matrix $A$ and thus is fully determined by $A'$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{System \rightarrow{} germ of a meromorphic connection}
-\begin{comment}
-  There is a thm in \cite{sabbah2007isomonodromic}
-\end{comment}
 \begin{prop}
-  If we start with a system $[A]$ we get a germ of a meromorphic connection via
+  If we start with a system $[A]$ of rank $n$ we get a germ of a
+  meromorphic connection via
   \[
-    (\cM,\nabla)=(\C(\!\{t\}\!))^n,d-A)
+    (\cM_A,\nabla_A)=(\C(\!\{t\}\!))^n,d-A)
   \]
   and $A$ is a connection matrix for $(\cM,\nabla)$.
 \end{prop}
@@ -276,13 +301,13 @@ determined by the matrix $A$ and thus is fully determined by $A'$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Local \rightarrow{} global}
-\begin{comment}
-  Quelle?
-  \begin{itemize}
-    \item \cite{sabbah2007isomonodromic}???
-  \end{itemize}
-\end{comment}
 \begin{thm}
+  \begin{comment}
+    Quelle?
+    \begin{itemize}
+      \item \cite{sabbah2007isomonodromic}???
+    \end{itemize}
+  \end{comment}
   If we start with a germ $(\cM,\nabla)$ of a meromorphic connection there is a
   unique meromorphic connection $(\sM,\nabla)$ such that
   \begin{itemize}
@@ -329,8 +354,10 @@ determined by the matrix $A$ and thus is fully determined by $A'$.
     \item $G\llbracket t\rrbracket=\Gl_n(\C\llbracket t\rrbracket)$
       (maby not applicable) formal tranformations;
     \item $G(\!(t)\!)=\Gl_n(\C\llbracket t\rrbracket[t^{-1}])$
-      (maby not applicable) formal meromorphic tranformations;
+      (maby not applicable) formal meromorphic tranformations.
   \end{itemize}
+  We will always use the meromorphic ones, in contrast
+  to~\cite{boalch,thboalch} where formal classification is used.
 \end{notations}
 By \emph{transformation} (or \emph{meromorphic transformation}) of a system we
 mean a linear change of the trivialization.
@@ -374,11 +401,13 @@ We define the (formal) equivalence relation on the connection matrices as
 Thus $A$ is (formally) equivalent to $B$ if and only if there is a (formal)
 solution of $[A,B]$.
 
-\begin{defn}
-  \TODO[is this a proposition]
+\begin{prop}
   Two germs of meromorphic connections are (formally) isomorphic if and only if
   their corresponding connection matrices are (formally) equivalent.
-\end{defn}
+\end{prop}
+\begin{proof}
+  \TODO{}
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Regular / irregular singularities}
@@ -389,31 +418,30 @@ solution of $[A,B]$.
   matrix with at most a simple pole at $t=0$.
   Otherwise, the singularity is called \emph{irregular}.
   \begin{rem}
-    This implies that, if $A$ has irregular/regular singularity, the also all
-    meromorphic equivalent matrices ${}^{F}\!A$ have.
+    This implies that, if $A$ has irregular/regular singularity, then also all
+    meromorphic equivalent matrices ${}^{F}\!A$ have irregular/regular
+    singularity.
   \end{rem}
 \end{defn}
 \begin{thm}
-  \marginnote{\cite[Thm.II.2.8]{sabbah2007isomonodromic}}
+  \begin{comment}
+    see
+    \begin{itemize}
+      \item \cite[Thm.II.2.8]{sabbah2007isomonodromic}
+      \item \cite[5.1.2]{hotta2008}
+    \end{itemize}
+  \end{comment}
   Let $(\cM,\nabla)$ be a regular singular meromorphic connection and $A$ its
   connection matrix.
   Then there exists a matrix $F\in G(\!\{t\}\!)$ such that after transformation
-  by $F$ the matrix $B={}^F\!A$ takes the form
-  \[
-    B=B'dt
-  \]
-  with a constant matrix $B'\in G$.
+  by $F$ the matrix $B={}^F\!A$ is constant i.e.\ $B\in G$.
 \end{thm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{System of ordinary differential equations}
-Let $A=A'dt$ be a connection matrix. Then defines
-\[
-  \frac{d}{dt}v=A'v
-\]
-a $n$-dimensional system of order one differential equations. From the theory
-of ordinary differential equations we know that there is a equivalent ordinary
-differential equation of order $n$ which can be written as
+From the theory of ordinary differential equations we know that to
+(\ref{eq:ode}) there is a equivalent ordinary differential equation of order
+$n$ which can be written as
 \[
   \underset{=:P}{\underbrace{%
       (a_n\partial_t^n+a_{n-1}\partial_t^{n-1}+\cdots a_{1}\partial_t+a_{0})
@@ -435,25 +463,18 @@ In the other direction there is the lemma of the cyclic vector. \TODO{}
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Models and formal decomposition of a germ / formal classification}
-% \begin{paracol}{2}
-% \switchcolumn[0]\noindent
-%   \textcolor{gray}{As something like building blocks of some meromorphic
-%     connections we introduce the elementary irregular models. Into which
-%     meromorphic connections, after potentially needed pullback, decompose.
-%     \\The building blocks of these building blocks are defined as follows.}
-% \switchcolumn[1]\noindent
-  In every formal equivalence class of meromorphic connections, there are some
-  meromorphic connection of special form, which we will call models. They are
-  not unique but all of them lie in the same convergent equivalence class.
+\section{Models / formal decomposition of a germ / formal classification}
+In every formal equivalence class of meromorphic connections, there are some
+meromorphic connection of special form, which we will call models. They are not
+unique but all of them lie in the same convergent equivalence class.
 
-  On the other hand\TODO[same direction?], the Levelt-Turittin theorem says,
-  that  each meromorphic connection is, after potentially needed ramification,
-  formally isomorphic to such a model, that means, that in each formal class
-  there are some models.
-  \TODO[Problems with ramification??]
-  This solves the formal classificaton problem.
-% \end{paracol}
+On the other hand\TODO[same direction?], the Levelt-Turittin theorem says, that
+each meromorphic connection is, after potentially needed ramification, formally
+isomorphic to such a model, that means, that in each formal class there are
+some models.
+\TODO[Problems with ramification??]
+Thus the Levelt-Turittin theorem solves the \emph{formal classification
+problem}.
 \begin{defn}
   \begin{itemize}
     \item For a $\phi\in\C\{t\}[t^{-1}]$ we use $\cE^{\phi}$ to denote the germ
@@ -464,28 +485,33 @@ In the other direction there is the lemma of the cyclic vector. \TODO{}
       \begin{cor}
         $\cE^\phi$ is determined by the class of $\phi$ in
         $\C\{t\}[t^{-1}]/\C\{t\}=t^{-1}\C[t^{-1}]$. In the following, we will
-        only consider the unique element $\phi$ in each class which has no
+        only consider the unique ambassador $\phi$ in each class which has no
         holomorphic part.
       \end{cor}
-    \item For $\alpha\in\C$, define $\cN_{\alpha,0}$ as the germ
+    \item For $\alpha\in\C$, define the \emph{elementary regular meromorphic
+      connection} $\cN_{\alpha,0}$ as the germ
       \[
         (\cN_{\alpha,0},\nabla)=(\C\{t\}[t^{-1}],d+\alpha dt/t)\,.
       \]
-      This is the system satisfied by \TODO{}.
+      This is the system satisfied by $t^\alpha$\TODO[?].
   \end{itemize}
 \end{defn}
 \begin{prop}
   \begin{enumerate}
     \item Every regular germ of a meromorphic connection is isomorphic to some
-      \TODO{}
+      direct sum
+      \[
+        (\cR,\nabla)=\bigoplus_\alpha(\cN_{\alpha,0},\nabla)\,.
+      \]
       \begin{rem}
         For a detailed analysis of regular meromorphic connections
-        see~\cite{sabbah2007isomonodromic} chapter II.2.
+        see~\cite[Sec.II.2]{sabbah2007isomonodromic} or
+        \cite[Sec.5.2]{hotta2008}.
       \end{rem}
     \item Every germ of a meromorphic connection of rank one is isomorphic to
       some germ
       \[
-        \cE^\phi\otimes\cN_{\alpha,0} \,.
+        (\cE^\phi,\nabla)\otimes(\cN_{\alpha,0},\nabla) \,.
       \]
     \item Two such germs corresponding to $(\phi_1,\alpha_1)$ and
       $(\phi_2,\alpha_2)$ are isomorphic if and only if
@@ -504,7 +530,8 @@ In the other direction there is the lemma of the cyclic vector. \TODO{}
   some germ $(\cE^\phi,\nabla)\otimes(\cR,\nabla)$ where
   \begin{itemize}
     \item $(\cR,\nabla)$ has regular singularity at $\{0\}$ but has not to be
-      of rank $1$.
+      of rank $1$, i.e., is isomorphic to a direct sum of regular elementary
+      meromorphic connections.
   \end{itemize}
   \marginnote{\cite[II.2.f]{sabbah2007isomonodromic}}
 \end{defn}
@@ -664,7 +691,7 @@ formal classification problem.
   \end{multicols}
 \end{comment}
 Here we want to state the main asymptotic existence theorem (or often M.A.E.T.)
-which is essentially a deduction from the Borel-Ritt lemma.
+which is essentially a deduction from the Borel-Ritt lemma. \TODO{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Meromorphic / formal transformation II}
