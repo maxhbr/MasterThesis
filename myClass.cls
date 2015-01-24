@@ -193,9 +193,6 @@
 
   \theoremstyle{remark}
   \newtheorem{rem}[thm]{Remark}
-  \newtheorem{bem}[thm]{Remark}
-  \newtheorem{beo}[thm]{Beobachtung}
-  \newtheorem{note}[thm]{Notiz}
 
   %\usepackage{thmbox}
   \newtheorem{try}{Versuch}
@@ -203,96 +200,55 @@
 
   \newenvironment{einr}{}{}
 \else
-  \mdtheorem[linewidth=2pt ,linecolor=myColor1
-            ,topline=false, rightline=false, bottomline=false
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{thm}{Theorem}[chapter]
-  \mdtheorem[linewidth=2pt ,linecolor=myColor1
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{tthm}{Theorem}[chapter]
-  \mdtheorem[linewidth=2pt ,linecolor=myColor1
-            ,topline=false, rightline=false, bottomline=false
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{lem}[thm]{Lemma}
-  \mdtheorem[linewidth=2pt ,linecolor=myColor1
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{llem}[thm]{Lemma}
-  \mdtheorem[linewidth=2pt ,linecolor=myColor1
-            ,topline=false, rightline=false, bottomline=false
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{lemdef}[thm]{Lemma/Definition}
-  \mdtheorem[linewidth=2pt ,linecolor=myColor1
-            ,topline=false, rightline=false, bottomline=false
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{lemdef}[thm]{Lemma/Corollary}
-  \mdtheorem[linewidth=2pt ,linecolor=myColor1
-            ,topline=false, rightline=false, bottomline=false
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{lemdef}[thm]{Definition/Corollary}
-  \mdtheorem[linewidth=2pt ,linecolor=myColor1
-            ,topline=false, rightline=false, bottomline=false
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{cor}[thm]{Corollary}
-  \mdtheorem[linewidth=2pt ,linecolor=myColor1
-            ,topline=false, rightline=false, bottomline=false
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{kor}[thm]{Corollary}
-  \mdtheorem[linewidth=2pt ,linecolor=myColor1
-            ,topline=false, rightline=false, bottomline=false
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{prop}[thm]{Proposition}
+% Styles:
+  \mdfdefinestyle{thin}{linewidth=1pt ,linecolor=myColor1
+    ,topline=false, rightline=false, bottomline=false
+    ,leftmargin=\parindent ,innerbottommargin=0pt, innerrightmargin=0pt
+    ,skipabove=\medskipamount, skipbelow=\medskipamount}
+  \mdfdefinestyle{thinn}{linewidth=1pt ,linecolor=myColor1
+    ,leftmargin=\parindent
+    ,skipabove=\medskipamount, skipbelow=\medskipamount}
+  \mdfdefinestyle{thick}{linewidth=2pt ,linecolor=myColor1
+    ,topline=false, rightline=false, bottomline=false
+    ,leftmargin=\parindent ,innerbottommargin=0pt, innerrightmargin=0pt
+    ,skipabove=\medskipamount, skipbelow=\medskipamount}
+  \mdfdefinestyle{thickk}{linewidth=2pt ,linecolor=myColor1
+    ,leftmargin=\parindent
+    ,skipabove=\medskipamount, skipbelow=\medskipamount}
+
+% Theorems:
+  \mdtheorem[style=thick]{thm}{Theorem}[chapter]
+  \mdtheorem[style=thickk]{tthm}[thm]{Theorem}
+  \mdtheorem[style=thick]{lem}[thm]{Lemma}
+    \mdtheorem[style=thin]{r-lem}{Lemma}[thm]
+  \mdtheorem[style=thickk]{llem}[thm]{Lemma}
+  \mdtheorem[style=thick]{lemdef}[thm]{Lemma/Definition}
+  \mdtheorem[style=thick]{lemdef}[thm]{Lemma/Corollary}
+  \mdtheorem[style=thick]{lemdef}[thm]{Definition/Corollary}
+  \mdtheorem[style=thick]{cor}[thm]{Corollary}
+    \mdtheorem[style=thick]{s-cor}{Corollary}[thm]
+  \mdtheorem[style=thick]{kor}[thm]{Corollary}
+    \mdtheorem[style=thick]{s-kor}{Corollary}[thm]
+  \mdtheorem[style=thick]{prop}[thm]{Proposition}
+    \mdtheorem[style=thick]{s-prop}{Proposition}[thm]
 
   \newtheorem{ex}{Aufgabe}[chapter]
   \newtheorem*{beh}{Behauptung}
   \newtheorem*{dazu}{Dazu}
 
   \theoremstyle{definition}
-  \mdtheorem[linewidth=1pt ,linecolor=myColor1
-            ,topline=false, rightline=false, bottomline=false
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{defn}[thm]{Definition}
-  \mdtheorem[linewidth=1pt ,linecolor=myColor1
-            ,topline=false, rightline=false, bottomline=false
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{notations}[thm]{Notations}
-  \mdtheorem[linewidth=1pt ,linecolor=myColor1
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{notations}[conj]{Conjecture}
-  \mdtheorem[linewidth=1pt ,linecolor=myColor1
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{exmp}[thm]{Example}
+  \mdtheorem[style=thin]{defn}[thm]{Definition}
+    \mdtheorem[style=thin]{s-defn}{Definition}[thm]
+  \mdtheorem[style=thin]{notations}[thm]{Notations}
+  \mdtheorem[style=thinn]{notations}[conj]{Conjecture}
+  \mdtheorem[style=thinn]{exmp}[thm]{Example}
   \newtheorem{bsp}[thm]{Example}
 
   \theoremstyle{remark}
-  \mdtheorem[linewidth=1pt ,linecolor=myColor1
-            ,topline=false, rightline=false, bottomline=false
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{rem}[thm]{Remark}
-  \mdtheorem[linewidth=1pt ,linecolor=myColor1
-            ,topline=false, rightline=false, bottomline=false
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{bem}[thm]{Remark}
-  \mdtheorem[linewidth=1pt ,linecolor=myColor1
-            ,topline=false, rightline=false, bottomline=false
-            ,leftmargin=\parindent
-            ,skipabove=\medskipamount, skipbelow=\medskipamount
-            ]{note}[thm]{Note}
+  \mdtheorem[style=thin]{rem}[thm]{Remark}
+    \mdtheorem[style=thin]{s-rem}{Remark}[thm]
+  \mdtheorem[style=thin]{bem}[thm]{Remark}
+  \mdtheorem[style=thin]{note}[thm]{Note}
 
   \newtheorem{beo}[thm]{Beobachtung}
 
@@ -300,24 +256,26 @@
   \newtheorem{try}{Versuch}
   \newtheorem{case}{Fall}
 
-  \surroundwithmdframed[linecolor=myColor1
-                       ,topline=false ,rightline=false ,bottomline=false
-                       ,leftmargin=\parindent
-                       ,skipabove=\medskipamount ,skipbelow=\medskipamount
-                       ]{proof}
+  \surroundwithmdframed[style=thin]{proof}
 
-  \newenvironment{einr}{%
-      \begin{itemize}
-        \item[]
-          \begin{mdframed}[linewidth=1pt ,linecolor=myColor1
-              ,topline=false, rightline=false, bottomline=false
-              ,leftmargin=\parindent
-              ,skipabove=\medskipamount, skipbelow=\medskipamount]
-
-    }{%
-          \end{mdframed}
-      \end{itemize}
-    }
+  \iffalse
+    \newenvironment{einr}{%
+      \begin{flushright}
+        \begin{minipage}{0.94\textwidth}
+      }{%
+        \end{minipage}
+      \end{flushright}
+      }
+    \else
+    \newenvironment{einr}{%
+        \begin{itemize}
+          \item[]
+            % \begin{mdframed}[style=thick]
+      }{%
+            % \end{mdframed}
+        \end{itemize}
+      }
+    \fi
 \fi
 
 \numberwithin{equation}{chapter}

@@ -105,16 +105,17 @@ A meromorphic connection is then defined as follows.
         is a $\cO_M$-linear morphism.
     \end{itemize}
   \end{itemize}
-  \begin{prop}[0.12.4]
+  \begin{s-prop}
+    \marginnote{\cite[0.12.4]{sabbah2007isomonodromic}}
     The connection $\nabla$ is flat if and only if, in any local basis $e$ of
     $\cM$, the connection matrix $\Omega$ satisfies
     \[
       d\omega + \omega \wedge \omega = 0.
     \]
-  \end{prop}
-  \begin{rem}
+  \end{s-prop}
+  \begin{s-rem}
     Here are all connections flat, since \TODO[dim $1$?]
-  \end{rem}
+  \end{s-rem}
   \begin{comment}
     We will say that a connection on a meromorphic bundle is \emph{integrable}
     or \emph{flat} if its restriction to $M\backslash Z$ is an integrable
@@ -151,15 +152,15 @@ and trivialization-dependent.
       \]
       for all $f\in\C(\!\{t\}\!)$ and $m\in \cM$.
   \end{itemize}
-  \begin{rem}
+  \begin{s-rem}
     \marginnote{\cite{sabbah2007isomonodromic}}
     It is a $(\C(\!\{t\}\!),\nabla)$-vectorspace.
-  \end{rem}
+  \end{s-rem}
   \begin{comment}
-    \begin{rem}
+    \begin{s-rem}
       Loday-Richaud calls this in \cite[Def.4.2.1]{Loday2014} a
       \emph{differential module}.
-    \end{rem}
+    \end{s-rem}
   \end{comment}
 \end{prop}
 \begin{defn}
@@ -234,18 +235,18 @@ has order one and dimension $n$. \TODO[possibly multivalued
   \begin{enumerate}
     \item This matrix $A$ is called a \emph{connection matrix} of
       $(\cM,\nabla)$. It depends on the choice of the $\C(\!\{t\}\!)$-basis.
-      \begin{rem}
+      \begin{s-rem}
         We have seen, that a connection is fully determined by its connection
         matrix.
-      \end{rem}
+      \end{s-rem}
     \item A \emph{germ of a meromorphic linear differential system} of rank
       $n$, or just a \emph{system}, is a germ of a meromorphic connection on
       the trivial vector bundle \textbf{with a chosen trivialization} of the
       fiber $E\cong\C^n$.
-      \begin{prop}
+      \begin{s-prop}
         Thus, the set of systems is isomorphic to the set
         $G(\!\{t\}\!)$ of all connection matrices.
-      \end{prop}
+      \end{s-prop}
       It well be denoted by $[A]=d-A$ where $A$ is the connection matrix in the
       chosen trivialization.
   \end{enumerate}
@@ -339,8 +340,8 @@ $\tilde\cM_\theta:=\cM\otimes\cA_\theta$. \TODO[]
     to~\cite{boalch,thboalch} where analytic classification is used.
   \end{comment}
 \end{notations}
-By \emph{transformation} (or \emph{meromorphic transformation}) of a system we
-mean a linear change of the trivialization.
+By \emph{meromorphic transformation}, or just \emph{transformation}, of a
+system we mean a $\C(\!\{t\}\!)$-linear change of the trivialization.
 Such a change is given by a matrix $F\in G(\!\{t\}\!)$ and the transformed
 connection matrix ${}^F\!A$ is obtained through
 \[
@@ -393,15 +394,18 @@ solution of $[A,B]$.
 \subsubsection{Regular / irregular singularities}
 \begin{defn}
   \marginnote{\cite[86]{sabbah2007isomonodromic}}
-  A connection defined by a matrix $A$ has \emph{regular singularity} at $0$ if
-  there exists a konvergent transformation, by which $A$ is obtained from a
+  A connection with connection matrix $A$ has \emph{regular singularity} at $0$
+  if there exists a konvergent transformation, by which $A$ is obtained from a
   matrix with at most a simple pole at $t=0$.
   Otherwise, the singularity is called \emph{irregular}.
-  \begin{rem}
-    This implies that, if $A$ has irregular/regular singularity, then also all
-    meromorphic equivalent matrices ${}^{F}\!A$ have irregular/regular
+  \begin{s-rem}
+    This implies that, if $A$ has 
+    $\left\{\substack{\text{irregular}\\\text{regular}}\right\}$
+    singularity, then also all
+    meromorphic equivalent matrices ${}^{F}\!A$ have
+    $\left\{\substack{\text{irregular}\\\text{regular}}\right\}$
     singularity.
-  \end{rem}
+  \end{s-rem}
 \end{defn}
 \begin{thm}
   \begin{comment}
@@ -438,8 +442,8 @@ In the other direction there is the lemma of the cyclic vector. \TODO{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Fundamental solution}
-Fundamental solutions beschreiben also systems of ordinary differential
-equations.
+Fundamental solutions \rewrite{beschreiben} also systems of ordinary
+differential equations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{As differential operator}
@@ -453,12 +457,12 @@ equations.
 \section{Models / formal decomposition of a germ / formal classification}
 In every formal equivalence class of meromorphic connections, there are some
 meromorphic connection of special form, which we will call models. They are not
-unique but all of them lie in the same convergent equivalence class.
+unique but all of them, which are formally isomorphic to a given meromorphic
+connection, lie in the same convergent equivalence class.
 
-On the other hand\TODO[same direction?], the Levelt-Turittin theorem says, that
+The first part is given by the Levelt-Turittin theorem, which says, that
 each meromorphic connection is, after potentially needed ramification, formally
-isomorphic to such a model, that means, that in each formal class there are
-some models.
+isomorphic to such a model.
 \TODO[Problems with ramification??]
 Thus the Levelt-Turittin theorem solves the \emph{formal classification
 problem}.
@@ -469,12 +473,12 @@ problem}.
         (\cE^{\phi},\nabla)=(\C\{t\},d-d\phi)\,.
       \]
       This is the system satisfied by the function $e^\phi$.
-      \begin{cor}
+      \begin{s-cor}
         $\cE^\phi$ is determined by the class of $\phi$ in
         $\C\{t\}[t^{-1}]/\C\{t\}=t^{-1}\C[t^{-1}]$. In the following, we will
         only consider the unique ambassador $\phi$ in each class which has no
         holomorphic part.
-      \end{cor}
+      \end{s-cor}
     \item For $\alpha\in\C$, define the \emph{elementary regular meromorphic
       connection} $\cN_{\alpha,0}$ as the germ
       \[
@@ -490,11 +494,11 @@ problem}.
       \[
         (\cR,\nabla)=\bigoplus_\alpha(\cN_{\alpha,0},\nabla)\,.
       \]
-      \begin{rem}
+      \begin{s-rem}
         For a detailed analysis of regular meromorphic connections
         see~\cite[Sec.II.2]{sabbah2007isomonodromic} or
         \cite[Sec.5.2]{hotta2008}.
-      \end{rem}
+      \end{s-rem}
     \item Every germ of a meromorphic connection of rank one is isomorphic to
       some germ
       \[
@@ -718,10 +722,10 @@ which is essentially a deduction from the Borel-Ritt lemma. \TODO{}
       $[\End A^0]:=[A^0,A^0]$.
       \marginnote{\cite[853]{Loday1994}}
     \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
-      \begin{rem}
+      \begin{s-rem}
         They are, a priori, formal transformations. Actually $G(A^0)$ is a
         subgroup of $\Gl_n(\C[1/x,x])$.
-      \end{rem}
+      \end{s-rem}
       \begin{comment}
         In the nice case this is only $T$?
       \end{comment}
@@ -818,7 +822,7 @@ equivalence classes in
   \[
     \Syst_m(A^0)\cong \hat G(A^0)/G_0(A^0) \,.
   \]
-  \begin{cor}
+  \begin{s-cor}
     Thus the \emph{set of meromorphic classas of systems formally equivalent
       to $A^0$} are just the orbits of $G\{t\}$, that is
     \[
@@ -826,7 +830,7 @@ equivalence classes in
     \]
     whereas the \emph{set of meromorphic classes of transformations of $[A^0]$}
     is represented by the left quotient $G\backslash\hat G(A^0)$.
-  \end{cor}
+  \end{s-cor}
 \end{lem}
 \begin{proof}
   See

@@ -81,18 +81,14 @@
   \TODO[\cite{sibuya1990Linear} Appendix A.3]
 \end{comment}
 In this chapter, we want to look at asymptotic expansions at $t_0$.
-There are various references for Poincarè asymptotic expansions, or for short,
-asymptotic expansions.
+There are various literature references for Poincarè asymptotic expansions, or
+for short, asymptotic expansions.
 We will mostly refer to \cite[chapter 2]{Loday2014} and
 \cite[chapter 7]{van2003galois}.
-\TODO[For the second definition we will also use
-\cite{sabbah2007isomonodromic}.]
 We will assume, that $t_0=0$ and this is without loss of generality, since
 asymptotic expansions at $t_0\in\C$ reduce to asymptotic expansions at $0$
 after the change of variable $t\mapsto s=t-t_0$ and asymptotic expansions at
-$x_0=\infty$ are obtained via $t\mapsto s=\frac{1}{t}$.
-
-\TODO[Define Sect command]
+$t_0=\infty$ are obtained by $t\mapsto s=\frac{1}{t}$.
 
 We introduce the following notations:
 \begin{notations} We denote by
@@ -104,7 +100,7 @@ We introduce the following notations:
       \]
       of all points $t\in\C$ satisfying $a<\arg(t)<b$ and $0<|t|<r$;
     \item $\mathfrak{s}_{I}(r)=\mathfrak{s}_{a,b}(r)$ for
-      $I=(a,b)$\footnote{i.e.\ an open interval of $S^1$} an open arc;
+      $I=(a,b)$ an open arc\footnote{i.e.\ an open interval of $S^1$};
     \item $\bar{\mathfrak{s}}=\bar{\mathfrak{s}}_{a,b}(r)$ the closure of
       $\mathfrak{s}_{a,b}(r)$ in $\C^*:=\C\backslash\{0\}$.
   \end{itemize}
@@ -161,12 +157,10 @@ We introduce the following notations:
   sector $\mathfrak{s}_{a,b}(r)$,
   $\mathfrak{s}_{a',b'}(r')\Subset\mathfrak{s}_{a,b}(r)$, if its closure
   $\bar{\mathfrak{s}}_{a',b'}(r')$ is included in $\mathfrak{s}_{a,b}(r)$.
-  \begin{rem}
+  \begin{s-rem}
     $\mathfrak{s}_{a',b'}(r')\Subset\mathfrak{s}_{a,b}(r)$ if and only if
-    \begin{itemize}
-      \item[] $a<a'<b'<b$ and $r'<r$.
-    \end{itemize}
-  \end{rem}
+    $a<a'<b'<b$ and $r'<r$.
+  \end{s-rem}
 \end{defn}
 
 \begin{defn}
@@ -216,12 +210,12 @@ $f\sim_{\mathfrak{s}}\hat g$ (or $f\sim_{I}\hat g$, or $f\sim_{\theta}\hat g$).
     \item Define $\cA(\mathfrak{s})$ as the set of holomorphic functions
       $f\in\cO(\mathfrak{s})$ which admit an asymptotic expansion at $0$ on
       $\mathfrak{s}$.
-      \begin{rem}
+      \begin{s-rem}
         \begin{enumerate}
           \item $\cA(\mathfrak{s})$ is a subring of $\cO(\mathfrak{s})$.
           \item $\cA(\mathfrak{s})$ contains $\C(\!\{t\}\!)$ as a subfield.
         \end{enumerate}
-      \end{rem}
+      \end{s-rem}
     \item Define $\cA(a,b)\!\!\overset{(a,b)=I}{=}\!\!\cA(I)$
       as the limit $\underset{r\to0}{\underrightarrow{\lim}}
       \cA(\mathfrak{s}_{a,b}(r))$\footnote{In more detail this means that the
@@ -255,20 +249,20 @@ It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
   \end{itemize}
 \end{defn}
 The kernel $\cA^{<0}(I)$ is not zero.
-Let $I=\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, then $\cA^{<0}(I)$ has the
-element $e^{-\frac{1}{\sqrt{t}}}$ where $\sqrt{t}$ stands for the principal
+Let $I=\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, then $\cA^{<0}(I)$ contains
+the element $e^{-\frac{1}{\sqrt{t}}}$ where $\sqrt{t}$ stands for the principal
 determination of $x^{\frac{1}{2}}$.
 
 \begin{exmp}[Trivial example]
   \marginnote{\cite[Exmp.2.2.3]{Loday2014}}
   If $f$ is an analytic function on $D=\{t\mid |t|<r\}$ then $f$ is asymptotic
-  to its Taylor series at $0$ on $D^*=D\backslash\{0\}$. Reciprocally, if $f$
-  is an analysis on $D^*$ that has an asymptotic expansion at $0$ on $D^*$
-  then, $f$ is bounded near $0$ and according to the removable singularity
-  theorem, $f$ is analytic on $D$.
-  \begin{rem}
+  to its Taylor series at $0$ on $D^*=D\backslash\{0\}$.
+  Reciprocally, if $f$ is analytic on $D^*$ and has an asymptotic expansion at
+  $0$ on $D^*$ then, $f$ is bounded near $0$ and according to the removable
+  singularity theorem, $f$ is analytic on $D$.
+  \begin{s-rem}
     This implies, that $\cA(S^1)\cong\C(\!\{t\}\!)$.
-  \end{rem}
+  \end{s-rem}
 \end{exmp}
 For more examples see Loday-Richauds book \cite{Loday2014}
 \cite[Exmp.2.2.4]{Loday2014}, \cite[Exmp.2.2.5]{Loday2014},
@@ -318,6 +312,9 @@ For more examples see Loday-Richauds book \cite{Loday2014}
     \item \cite[4.5.Thm.20]{Balser2000Formal}:
       \begin{enumerate}
         \item $f'(t)$ is on $I$ asymptotic to $\hat f'(t)$.
+          \begin{r-lem} \label{lem:sableDeriv}
+            $\cA(I)$ is stable under derivation.
+          \end{r-lem}
         \item $\int_0^tf(s)\,ds$ is on $I$ asymptotic to $\int_0^t\hat f(t)\,ds$.
       \end{enumerate}
     \item \cite[4.5.Thm.21]{Balser2000Formal}:
@@ -327,10 +324,7 @@ For more examples see Loday-Richauds book \cite{Loday2014}
   \end{enumerate}
   \TODO[Better source/proofs?]
 \end{rem}
-\begin{lem}
-  $\cA(I)$ is stable under derivation.
-\end{lem}
-\begin{proof}
+\begin{proof}[Proof of lemma~\ref{lem:sableDeriv}]
   Let $f\in\cA(I)$ with asymptotic expansion $\hat f=\sum_{-n_0\leq n}a_nx^n$
   its asymptotic expansion where we assume that $n_0=0$.
   One has for each $m\geq0$

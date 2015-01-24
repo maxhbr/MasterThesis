@@ -81,11 +81,8 @@ We have the following commutative diagram of isomorphisms.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes Structures: Malgrange-Sibuya isomorphism}
 \begin{comment}
-  \begin{itemize}
-    \item \cite{Loday1994} Thm I.2.1
-    \item \cite{Loday2014} Thm. 4.3.9, on p. 78
-    \item \cite{sabbah2007isomonodromic} Thm II.6.2
-  \end{itemize}
+  \cite[Thm.I.2.1]{Loday1994}, \cite[Thm.4.3.9]{Loday2014} and
+  \cite[Thm.II.6.2]{sabbah2007isomonodromic}
 \end{comment}
 Here we will look at the classifying set and we will proof, that it is
 isomorphic \TODO[as\dots] to the first non abelian cohomology \rewrite{set}
@@ -103,10 +100,10 @@ isotropies\TODO[\dots]
       and $f\sim_{\mathfrak{s}} 1$;
     \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
   \end{enumerate}
-  \begin{rem}
+  \begin{s-rem}
     $\Lambda(A^0)$ is the same as $\Aut^{<0}(\tilde\cM^{model})$
     in~\cite{sabbah2007isomonodromic} which is defined as follows \TODO
-  \end{rem}
+  \end{s-rem}
 \end{defn}
 
 \subsection{The theorem}
@@ -126,15 +123,18 @@ For other lifts $f_j'$ of $\hat f$ on $W_j$, $(f_j'f_j^{-1})$ is a $0$-cochain
 of $\Sto(A^0)$ relative to $\cU$. Thus the associated cochians to $(f_j)$ and
 $(f_j')$ are equivalent. One can also check that, if $(\cM,\nabla,\hat f)$ and
 $(\cM',\nabla',\hat f')$ are isomorphic, the corresponding cocycles define the
-same cohomology class. This defines a mapping of pointed sets $\cH\to\St(A^0)$,
+same cohomology class. This defines a mapping of pointed sets
+to the first non abelian cohomology of $\Lambda^{<0}(A^0)$
+\[
+  \cH\to H^1(S^1;\Lambda^{<0}(A^0)) \,,
+\]
 which sends the class of $(\cM^{model},\nabla^{model},\hat\id)$ to that of
 $\id$.
 
-\begin{tthm}[Malgrange-Sbuya]
-  \label{thm:mainThm1}
+\begin{tthm}[Malgrange-Sbuya] \label{thm:mainThm1}
   The homomorphism
   \[
-    \exp:\cH\to\St(A^0)=H^1(S^1;\Lambda^{<0}(A^0))
+    \exp:\cH\to\St(A^0):=H^1(S^1;\Lambda^{<0}(A^0))
   \]
   is an isomorphism of pointed\footnote{Which maps the class of
     $(\cM^{model},\nabla^{model},\hat\id)$ to that of $\id$.} sets.
@@ -162,7 +162,7 @@ $\id$.
 
 \subsection{Proof}
 We will mainly refer to \cite[section 6.d]{sabbah2007isomonodromic}, where a
-more complicated case, with deformation space, is proofen. Our proof is
+slightly more complicated case, with deformation space, is proofen. Our proof is
 obtained by choosing $X=\{0\}$ as the trivial deformation space.
 \begin{comment}
   See also \cite{BJL1979Birkhoff} and \cite{babbitt1989local} although the proof
@@ -297,7 +297,7 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
   \[
     q_j-q_l\in\left\{ \frac{a_{(j,l)}}{t^k}+h \mid h \in o(t^{-k})\right\} \,.
   \]
-  \begin{rem}
+  \begin{s-rem}
     \begin{enumerate}
       \item In \cite{boalch} and \cite{thboalch} the $k$ is always an integer
         and is incremented by one. We will prefer the other definition, which
@@ -307,25 +307,22 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
         necessary, since we use the clockwise ordering of points on $S^1$
         (cf.~\ref{defn:antiStokesDir}).
     \end{enumerate}
-  \end{rem}
+  \end{s-rem}
   The degrees of the elements in $\cQ_{[\End A^0]}$ are the
   \emph{levels} of $A^0$.
   The set of all levels of $A^0$ will be denoted by
   \[
     \cK=\{k_1<\dots<k_r\} \subset \Q \,.
   \]
-  \begin{rem}
+  \begin{s-rem}
     $A^0$ is unramified if and only if $\cK\subset\Z$. Since we only look at
     the unramified case, this will be always the case.
-  \end{rem}
+  \end{s-rem}
 \end{defn}
 
 \begin{defn}
   \begin{comment}
-    See
-    \begin{itemize}
-      \item \cite{hotta2008}
-    \end{itemize}
+    See \cite{hotta2008}
   \end{comment}
   A function is \emph{of maximal decay}, if \TODO{}
 
@@ -351,11 +348,11 @@ relations:
         \Leftrightarrow{} $q_{ij}(t^{-1})\in\R_{<0}$ along $\tilde\theta$.
       \end{comment}
   \end{itemize}
-  \begin{rem}
+  \begin{s-rem}
     In the unramified case these relations do not depend on the determination
     $\tilde\theta$ of $\theta$. As a consequence we will only write
     $\underset{\theta}{\prec}$ and $\underset{\theta,\max}{\prec}$.
-  \end{rem}
+  \end{s-rem}
 \end{defn}
 
 \begin{defn}
@@ -401,20 +398,16 @@ relations:
       \mid \phi_\theta \text{ has maximal decay at } \theta
     \right\} \,.
   \]
-  \begin{rem}
+  \begin{s-rem}
     For $\theta\notin\A$ the group $\Sto_\theta(A^0)$ is trivial, since no flat
     isotropy has maximal decay, but the identity.
-  \end{rem}
+  \end{s-rem}
 \end{defn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Faithful representation of the Stokes group}
 \begin{comment}
-  See
-  \begin{itemize}
-    \item \cite[9f]{thboalch}
-    \item \cite[??]{Loday1994}
-  \end{itemize}
+  See \cite[9f]{thboalch} and \cite[??]{Loday1994}
 \end{comment}
 \cite[Def.4.1]{hall2003lie} says the following about faithful representations:
 \begin{defn}
@@ -441,12 +434,12 @@ relations:
     If the associated homomorphism $G\to\Aut(V)$ is injective, then the
     representation is \emph{faithful}.
   \end{comment}
-  \begin{rem}
+  \begin{s-rem}
     If a representation $\rho$ is a faithful representation of a matrix Lie
     group $G$ then $\{\rho(A)\mid A\in G\}$ is a group of matrices that is
     isomorphic to the original group $G$. Thus, $\rho$ allows us to represent
     $G$ as a group of matrices.
-  \end{rem}
+  \end{s-rem}
 \end{defn}
 \begin{defn}
   Define the group
@@ -476,11 +469,11 @@ the argument near the direction $\theta$.
   \end{equation}
   near $\theta$.  We call $1+C_{\tilde\theta}$ a \emph{representation of
   $\phi_\theta$}.
-  \begin{rem}
+  \begin{s-rem}
     \marginnote{\cite[10]{thboalch}}
     $\rho$ relates solutions $\phi_\theta$ of $[A^0,A^0]$ to solutions of
     $[0,0]$ which are the constant matrices $\End(E)$.
-  \end{rem}
+  \end{s-rem}
 \end{prop}
 From (\ref{eq:representation}) we deduce
 \[
@@ -620,11 +613,11 @@ $\phi_{\theta}\in\Sto_\theta(A^0)$ by
       set of anti-Stokes directions \emph{bearing the level $k$};
     \item $\A^{\leq k}:=\underset{k'\leq k}\bigcup\A^{k'}$ (resp.
       $\A^{<k}:=\underset{k'<k}\bigcup\A^{k'}$);
-      \begin{rem}
+      \begin{s-rem}
         We clearly have the canonical inclusions
         $\A^k\hookrightarrow\A^{\leq k}$ and
         $\A^{<k}\hookrightarrow\A^{\leq k}$.
-      \end{rem}
+      \end{s-rem}
     \item $\cK_\theta:=\left\{k\in\cK\mid\Sto_\theta^k(A^0)\neq\{1\}\right\}$
       the set of levels \emph{beared by $\theta\in\A$}, and
       $K_\theta=\max\cK_\theta$ the \emph{maximal level beared by $\theta$}.
@@ -686,7 +679,7 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
         \item $f^{\leq k}=f^kf^{<k}$, where $f^k\in\Lambda^k$ and
           $f^{<k}\in\Lambda^{<k}$.
       \end{itemize}
-      \begin{rem}
+      \begin{s-rem}
         A factorization algorithm could be:
         \begin{einr}
           the factor $f^{<k}$ common to both factorizations is the truncation
@@ -695,7 +688,7 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
           $(j,l)$ such that $\deg(q_j-q_l)<k$.}. Then
           $g^k=(f^{<k})^{-1}f^{\leq k}$ and $f^k=f^{\leq k}(f^{<k})^{-1}$.
         \end{einr}
-      \end{rem}
+      \end{s-rem}
     \item This decomposition in semi-direct product can be extended to all
       levels. Thus
       \[
@@ -753,12 +746,7 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes Structures: Matrix version}
 \begin{comment}
-  See
-  \begin{itemize}
-    \item \cite{Loday1994}
-    \item \cite{boalch} and \cite{thboalch}
-    \item \cite{babbitt1989local}
-  \end{itemize}
+  See \cite{Loday1994}, \cite{boalch,thboalch} and \cite{babbitt1989local}.
 \end{comment}
 The goal in this section is to prove, that
 \begin{einr}
@@ -798,14 +786,14 @@ is welldefined.
     h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0)
   \]
   is a bijection and natural.
-  \begin{rem}
+  \begin{s-rem}
     \marginnote{\cite[869]{Loday1994}}
     Natural means that $h$ commutes to isomorphisms and constructions over
     systems or connections they represent.
     \begin{comment}
       See \cite{Loday1994} Section III.3.3
     \end{comment}
-  \end{rem}
+  \end{s-rem}
 \end{tthm}
 From theorem~\ref{thm:mainThm2} and Proposition~\ref{prop:representation} we
 get the following corollary.
@@ -825,10 +813,7 @@ The proof in the ramified case can be found in \cite[Sec.II.4]{Loday1994}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Coverings}
 \begin{comment}
-  \begin{itemize}
-    \item \cite{Loday1994} Section II.1
-    \item \cite{Loday1994} Section II.3.1
-  \end{itemize}
+  \cite[Sec.II.1]{Loday1994} and \cite[Sec.II.3.1]{Loday1994}
 \end{comment}
 A covering $\cV$ is said to \emph{refine} a covering $\cU$ if, to each open set
 $V\in\cV$ there is at least one $U\in\cU$ with $V\subset U$.
@@ -869,10 +854,10 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
 \begin{prop}
   \marginnote{\cite[Prop.II.1.7]{Loday1994}}
   Let $\theta\in\A$ and $k\in\cK_\theta$.
-  \begin{defn}
+  \begin{s-defn}
     An arc $U(\theta,\frac{\pi}{k})$ is called a \emph{Stokes arc of level $k$
     at $\theta$}.
-  \end{defn}
+  \end{s-defn}
   A cyclic covering $\cU=(U_j)_{j\in J}$, which satisfies
   \begin{einr}
     each Stokes arc of level $k$, of level $\leq k$ or of any level
@@ -1112,10 +1097,10 @@ This means that
   where $(\dot F_\theta)_{\theta\in\A^{\leq k}}=\sigma^{<k}(\dot f)$ and
   $(\dot G_\theta)_{\theta\in\A^{\leq k}}=\sigma^{<k}(\dot g)$ as defined
   above.
-  \begin{rem}
+  \begin{s-rem}
     This map is injective, since injectivity for germs implies injectivity for
     sections.
-  \end{rem}
+  \end{s-rem}
 \end{defn}
 
 \begin{lem}
@@ -1168,13 +1153,13 @@ This means that
     \prod_{k\in\cK}\tau^k(\dot f^k)
   \end{align*}
   following an ascending order of levels.
-  \begin{rem}
+  \begin{s-rem}
     \begin{enumerate}
       \item This map, again, is injective.
         \TODO[proof?]
       \item It can be extended to an arbitrary order of levels.
     \end{enumerate}
-  \end{rem}
+  \end{s-rem}
 \end{defn}
 \begin{cor}
   The product map of single-leveled cocycles induces on the cohomology
