@@ -215,12 +215,16 @@
   \mdfdefinestyle{thickk}{linewidth=2pt ,linecolor=myColor1
     ,leftmargin=\parindent
     ,skipabove=\medskipamount, skipbelow=\medskipamount}
+  \mdfdefinestyle{thiin}{linewidth=1pt ,linecolor=myColor1
+    ,topline=false, rightline=false, bottomline=false}
+
+  \newcounter{subNr}
 
 % Theorems:
   \mdtheorem[style=thick]{thm}{Theorem}[chapter]
   \mdtheorem[style=thickk]{tthm}[thm]{Theorem}
   \mdtheorem[style=thick]{lem}[thm]{Lemma}
-    \mdtheorem[style=thin]{r-lem}{Lemma}[thm]
+    \mdtheorem[style=thin]{s-lem}{Lemma}[thm]
   \mdtheorem[style=thickk]{llem}[thm]{Lemma}
   \mdtheorem[style=thick]{lemdef}[thm]{Lemma/Definition}
   \mdtheorem[style=thick]{lemdef}[thm]{Lemma/Corollary}
@@ -237,11 +241,11 @@
   \newtheorem*{dazu}{Dazu}
 
   \theoremstyle{definition}
-  \mdtheorem[style=thin]{defn}[thm]{Definition}
+  \mdtheorem[style=thin]{defn}[thm]{Definition}[subNr]
     \mdtheorem[style=thin]{s-defn}{Definition}[thm]
   \mdtheorem[style=thin]{notations}[thm]{Notations}
   \mdtheorem[style=thinn]{notations}[conj]{Conjecture}
-  \mdtheorem[style=thinn]{exmp}[thm]{Example}
+  \mdtheorem[style=thinn]{exmp}[thm]{Example}[exmp]
   \newtheorem{bsp}[thm]{Example}
 
   \theoremstyle{remark}
@@ -266,14 +270,19 @@
         \end{minipage}
       \end{flushright}
       }
-    \else
+  \else
+    \newenvironment{einrPrime}{}{}
+    \surroundwithmdframed[style=thiin]{einrPrime}
     \newenvironment{einr}{%
-        \begin{itemize}
-          \item[]
+        \vspace{\medskipamount}
+        % \begin{itemize}
+        %   \item[]
+            \begin{einrPrime}
             % \begin{mdframed}[style=thick]
       }{%
             % \end{mdframed}
-        \end{itemize}
+            \end{einrPrime}
+        % \end{itemize}
       }
     \fi
 \fi
@@ -308,6 +317,9 @@
   %\end{mdframed}
 %\end{figure}
 %}
+
+\usepackage{caption}
+\usepackage{subcaption}
 
 %%%%  Zeichen  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{nicefrac}
