@@ -609,7 +609,7 @@ $\phi_{\theta}\in\Sto_\theta(A^0)$ by
   % \end{itemize}
   We define also
   \begin{itemize}
-    \item $\A^k:=\left\{\theta\in\A\mid\Sto_\theta^k(A^0\neq\{1\})\right\}$ the
+    \item $\A^k:=\left\{\theta\in\A\mid\Sto_\theta^k(A^0)\neq\{1\}\right\}$ the
       set of anti-Stokes directions \emph{bearing the level $k$};
     \item $\A^{\leq k}:=\underset{k'\leq k}\bigcup\A^{k'}$ (resp.
       $\A^{<k}:=\underset{k'<k}\bigcup\A^{k'}$);
@@ -762,7 +762,8 @@ The goal in this section is to prove, that
 Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
 $\dot\phi=(\dot\phi_{\theta_j})_{j\in J}\in\prod_{j\in J}\Lambda_{\theta_j}(A^0)$
 be a finite family of germs.
-In the following way, one can associate a cohomology class to any $\dot\phi$:
+In the following way, one can associate a cohomology class $\in\St(A^0)$ to any
+$\dot\phi$:
 \begin{einr}
   let $\dot\phi_j$ be the function representing the germ
   $\dot\phi_{\theta_j}$ on its maximal arc of definition $\Omega_j$ around
@@ -846,7 +847,7 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
 
 \begin{defn}
   A covering $\cU$ beyond which the inductive limit
-  $\underset{\cU}{\underrightarrow{\lim}}H^1(\cU,\lambda(A^0))$ is stationary
+  $\underset{\cU}{\underrightarrow{\lim}}H^1(\cU,\Lambda(A^0))$ is stationary
   is said to be \emph{adequate} to describe $H^1(S^1;\Lambda(A^0))$ (or
   \emph{adequate} to $\Lambda(A^0)$).
 \end{defn}
@@ -863,7 +864,7 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
     each Stokes arc of level $k$, of level $\leq k$ or of any level
     contains at least one arc $\dot U_j$ from the nerve $\dot\cU$ of $\cU$
   \end{einr}
-  is adequate to $\lambda^k(A^0)$, $\lambda^{\leq k}$ or to $\lambda(A^0)$.
+  is adequate to $\lambda^k(A^0)$, $\lambda^{\leq k}(A^0)$ or to $\lambda(A^0)$.
 \end{prop}
 \begin{proof}
   \TODO{}
@@ -891,6 +892,8 @@ different levels.
 If we extend to several levels, the set
 $\bigcup_k\left\{U(\theta,\frac{\pi}{k})\mid\theta\in\A^{k}\right\}$ is no
 longer a nerve.
+Hence we have to define the coverings $\cU^{\leq k}$ and $\cU^{<k}$ in a
+different way, to obtain nerves.
 Denote by
 \[
   \left\{K_1<\cdots<K_s=k\right\}
@@ -940,7 +943,7 @@ the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
   \setcounter{enumi}{2}
 \item The last cyclic covering,
   $\cU^{<k}=\left\{U_{\theta}^k\mid\theta\in\A^{<k}\right\}$, is defined as
-  $\cU^{<k}:=\cU{\leq k'}$ where $k':=\max{k''\in K\mid k''<k}$.
+  $\cU^{<k}:=\cU^{\leq k'}$ where $k':=\max\{k''\in\cK\mid k''<k\}$.
 \end{enumerate}
 
 \begin{rem}
@@ -1033,7 +1036,7 @@ This means that
         \to
         H^1(S^1;\Lambda^k(A^0))
       \]
-      is the quotient map. \TODO{}
+      is the quotient map. It is also an isomorphism since \TODO{}
   \end{enumerate}
   \TODO[Show, that this is the correct $h$]
 \end{proof}
@@ -1071,9 +1074,9 @@ This means that
       \\\dot f=(\dot f_\theta)_{\theta\in\A^{<k}}
         &\mapsto (\dot F_\theta)_{\theta\in\A^{\leq k}}
       \end{align*}
-      is defined in a similar way as
+      is defined, in a similar way, as
       \begin{itemize}
-        \item $\dot G_\theta=\begin{cases}
+        \item $\dot F_\theta=\begin{cases}
             \dot f_\alpha \text{~restricted to } \dot U_\theta^{\leq k}
             \text{~and seen as being in } \Lambda^{\leq k}(A^0)
             & \text{~when } \theta\in\A^{<k}
@@ -1095,7 +1098,7 @@ This means that
     (\dot F_\theta\dot G_\theta)_{\theta\in\A^{\leq k}}
   \end{align*}
   where $(\dot F_\theta)_{\theta\in\A^{\leq k}}=\sigma^{<k}(\dot f)$ and
-  $(\dot G_\theta)_{\theta\in\A^{\leq k}}=\sigma^{<k}(\dot g)$ as defined
+  $(\dot G_\theta)_{\theta\in\A^{\leq k}}=\sigma^{<k}(\dot g)$ are defined as
   above.
   \begin{s-rem}
     This map is injective, since injectivity for germs implies injectivity for
@@ -1127,11 +1130,11 @@ This means that
 \end{proof}
 \begin{defn}
   Define the injective map
-  \begin{align}
+  \begin{align*}
     \tau^k:\Gamma(\dot\cU^k;\Lambda^k(A^0)) &\to \Gamma(\dot\cU;\Lambda(A^0))
   \\\dot f=(\dot f_\theta)_{\theta\in\A^k} &\mapsto
     (\dot F_\theta)_{\theta\in\A}
-  \end{align}
+  \end{align*}
   where
   \[
     \dot F_\theta=\begin{cases}
@@ -1148,7 +1151,7 @@ This means that
     \tau:\prod_{k\in\cK}\Gamma(\dot \cU^k;\Lambda^k(A^0))
     &\to
     \Gamma(\dot\cU;\Lambda(A^0))
-  \\(\dot f^k)_{k\in\cK}i
+  \\(\dot f^k)_{k\in\cK}
     &\mapsto
     \prod_{k\in\cK}\tau^k(\dot f^k)
   \end{align*}
@@ -1179,20 +1182,20 @@ This means that
   \TODO{}
 \end{proof}
 \subsubsection{Composing functions to obtain $h$}
-Thus, we are now able to optain the function $h$ from
+Thus, we have the ingredients to define the function $h$ from
 theorem~\ref{thm:mainThm2} by composition of bijective maps.
 \begin{proof}[Proof of theorem~\ref{thm:mainThm2}]
   Let us denote the composition
-  \[
-    \prod_{\theta\in\cA}\Sto_\theta(A^0)
-    \overset{\prod_{\theta\in\A}i_\theta}{\xrightarrow{\hspace*{1.2cm}}}
-    \prod_{\theta\in\cA}\prod_{k\in\cK}\Sto_\theta^k(A^0)
-    \equiv
-    \prod_{k\in\cK}\prod_{\theta\in\cA}\Sto_\theta^k(A^0)
-    \overset{\prod_{k\in\cK}i^k}{\xrightarrow{\hspace*{1.2cm}}}
-    \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
-    \,,
-  \]
+  \[ \begin{tikzcd}[column sep=1.8cm,row sep=0]
+      \displaystyle \prod_{\theta\in\cA}\Sto_\theta(A^0)
+      \rar{\prod_{\theta\in\A}i_\theta} &
+      \displaystyle \prod_{\theta\in\cA}\prod_{k\in\cK}\Sto_\theta^k(A^0)
+    \\&\text{\rotatebox[origin=c]{-90}{$\equiv$}}
+    \\&\displaystyle \prod_{k\in\cK}\prod_{\theta\in\cA}\Sto_\theta^k(A^0)
+      \rar{\prod_{k\in\cK}i^k}&
+      \displaystyle \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
+      \,,
+  \end{tikzcd} \]
   where
   \begin{itemize}
     \item $i_\theta:\Sto_\theta(A^0)\to\prod_{k\in\cK}\Sto_\theta^k(A^0)$ gives
@@ -1200,7 +1203,9 @@ theorem~\ref{thm:mainThm2} by composition of bijective maps.
     \item $i^k:\prod_{\theta\in\cA}\Sto_\theta^k(A^0)
       \to\Gamma(\dot\cU^k;\Lambda^k(A^0))$ is the canonical map,
   \end{itemize}
-  by $\mathfrak{T}$. Thus we obtain the bijection
+  by $\mathfrak{T}$.
+  \TODO[the map $\mathfrak{T}$ is bijective]
+  Thus we obtain the bijection
   \[
     \cT\circ\mathfrak{T}:
     \prod_{\theta\in\cA}\Sto_\theta(A^0)
@@ -1216,6 +1221,19 @@ theorem~\ref{thm:mainThm2} by composition of bijective maps.
 \section{Algorithm~\cite[II.3.4]{Loday1994}}
 This algorithm takes a cocycle over a arbitrary cyclic covering $\cV$ and
 outputs a Stokes cocycle, which corresponds to our coverings.
+\begin{comment}
+  \begin{defn}
+    \marginnote{\cite[Def.II.1.8]{Loday1994}}
+    \rewrite{A cocycle $\dot\phi=(\dot\phi_j)_{j\in J}$ on a cyclic covering
+      $\cU=(U_j)_{j\in J}$ is said to be a \emph{Stokes cocycle} when the
+      components $\dot\phi_j$, if non trivial, represent Stokes germs
+      $\dot\phi_{j,\alpha_j}\in\Sto_{\alpha_j}(A^0$ at anti-Stokes directions
+      $\alpha_j$ in a cyclic ascending ordering.}
+  \end{defn}
+\end{comment}
+\[
+  g_J:\prod_{\alpha\in J}\Sto_\alpha(A^0)\to\prod_{\alpha\in\A}\Sto_\alpha(A^0)
+\]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Leading directions of \TODO[\dots]}
@@ -1257,12 +1275,12 @@ different levels is stored.
   \begin{enumerate}
     \item see algorithm~\cite[II.3.4]{Loday1994}
     \item search in \cite{Loday2014}
-    \item generalize the ideas from \cite{boalch} and \cite{thboalch}.
+    \item generalize the ideas from \cite{boalch,thboalch}.
   \end{enumerate}
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The single-level case}
 \begin{comment}
-  See \cite{boalch} and \cite{thboalch}.
+  See \cite{boalch,thboalch}.
 \end{comment}

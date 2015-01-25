@@ -271,18 +271,18 @@
       \end{flushright}
       }
   \else
-    \newenvironment{einrPrime}{}{}
-    \surroundwithmdframed[style=thiin]{einrPrime}
+    % \newenvironment{einrPrime}{}{}
+    % \surroundwithmdframed[style=thiin]{einrPrime}
     \newenvironment{einr}{%
-        \vspace{\medskipamount}
-        % \begin{itemize}
-        %   \item[]
-            \begin{einrPrime}
+        % \vspace{\medskipamount}
+        \begin{itemize}
+          \item[]
+            % \begin{einrPrime}
             % \begin{mdframed}[style=thick]
       }{%
             % \end{mdframed}
-            \end{einrPrime}
-        % \end{itemize}
+            % \end{einrPrime}
+        \end{itemize}
       }
     \fi
 \fi
