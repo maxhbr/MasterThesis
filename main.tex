@@ -60,10 +60,8 @@
 
 \usepackage{paracol}
 \usepackage{multicol}
-\usepackage{marginnote}
 
 \usepackage{graphicx}
-
 \begin{document}
 
 \ifnum\myDevelopVariable=0
@@ -75,6 +73,9 @@
 \fi
 
 \tableofcontents{}
+\begin{comment}
+  \today
+\end{comment}
 
 %\ifnum\myDevelopVariable=0
   %\input{einleitung.tex}
@@ -105,11 +106,11 @@
 \appendix
 \addcontentsline{toc}{chapter}{Appendix}
 
-\ifnum\myDevelopVariable=1
-  % \input{introVortrag/notes.tex}
-  % \input{notes.tex}
-  % % \input{aufgaben.tex}
-\fi
+% \ifnum\myDevelopVariable=1
+%   % \input{introVortrag/notes.tex}
+%   \input{notes.tex}
+%   % \input{aufgaben.tex}
+% \fi
 
 \input{moreBasics.tex}
 

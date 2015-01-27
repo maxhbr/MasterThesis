@@ -39,7 +39,6 @@
 \usepackage{hyperref}
 \hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%  tikz  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -218,8 +217,6 @@
   \mdfdefinestyle{thiin}{linewidth=1pt ,linecolor=myColor1
     ,topline=false, rightline=false, bottomline=false}
 
-  \newcounter{subNr}
-
 % Theorems:
   \mdtheorem[style=thick]{thm}{Theorem}[chapter]
   \mdtheorem[style=thickk]{tthm}[thm]{Theorem}
@@ -241,7 +238,7 @@
   \newtheorem*{dazu}{Dazu}
 
   \theoremstyle{definition}
-  \mdtheorem[style=thin]{defn}[thm]{Definition}[subNr]
+  \mdtheorem[style=thin]{defn}[thm]{Definition}
     \mdtheorem[style=thin]{s-defn}{Definition}[thm]
   \mdtheorem[style=thin]{notations}[thm]{Notations}
   \mdtheorem[style=thinn]{notations}[conj]{Conjecture}
@@ -399,20 +396,13 @@
     }
   \renewcommand{\endcomment}{\endMakeFramed}
 
-  \iftrue
-    \usepackage{soul}
-    \renewcommand{\comm}[1] {%
-      \sethlcolor{commentShadeColor}%
-      {\texthl{#1}}}
-    \renewcommand{\rewrite}[1] {%
-      \sethlcolor{rewriteColor}%
-      {\texthl{#1}}}
-  \else
-    \renewcommand{\comm}[1] {%
-      \color{commentTextColor}{#1}}
-    \renewcommand{\rewrite}[1] {%
-      \color{green}{#1}}
-  \fi
+  \usepackage{soul}
+  \renewcommand{\comm}[1] {%
+    \sethlcolor{commentShadeColor}%
+    {\texthl{#1}}}
+  \renewcommand{\rewrite}[1] {%
+    \sethlcolor{rewriteColor}%
+    {\texthl{#1}}}
 
   \usepackage{ifthen}
   \makeatletter
@@ -441,6 +431,12 @@
 
   % einseitig, überschreibt KOMA
   %\setboolean{@twoside}{false}
+
+  \usepackage{marginnote}
+  \let\oldmarginnote\marginnote
+  \renewcommand{\marginnote}[1]{\oldmarginnote{\tiny #1}}
+\else
+  \newcommand{\marginnote}[1] {}
 \fi
 
 \ifnum\myDevelopVariable=2

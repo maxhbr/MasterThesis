@@ -1,8 +1,45 @@
 \chapter{Stokes Structures}
+A great overview of this topic is given in
+\cite{Varadarajan96linearmeromorphic}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Situation}
+Let $\cM^{model}$ be a fixed model with the corresponding connection matrix
+$A^0$.
+We have the following commutative diagram of isomorphisms.
+\begin{center}
+  \begin{tikzpicture}[scale=3]
+    \node[] (modSpcMat) at (0,0) {$\cH(A^0)$};
+    \node[purple] (class) at (1,0) {$G\backslash\hat G(A^0)$};
+    \node[green!40!black] (sheaf) at (3,1) {$\St(\cM^{model})$};
+    \node[] (sheaf2) at (2,1) {$H^1(S^1;\Lambda^{<0}(A^0))$};
+    \node[blue] (mat) at (3,-1) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
+    \node[blue] (mat') at (3.5,-1.5) {$(U_+\times U_-)^{k-1}$};
+
+    % \draw[thick,double] (modSpcMat) -- (modSpcSheaf) -- (class) -- (class2) --
+    %   (modSpcMat);
+    \draw[thick,double,blue] (modSpcMat) -- (class);
+    \draw[thick,double] (sheaf) -- (sheaf2) node[midway,above] {\tiny def.};
+
+    \draw[->,green!40!black] (modSpcMat) -- (sheaf);
+    \draw[->,blue,dashed] (modSpcMat) edge[bend right=20] (mat);
+    \draw[->,blue] (class) -- (mat);
+    \draw[->,blue,dotted] (mat) -- (mat') node[midway,right] {$\cK=\{k-1\}$};
+    \draw[->,purple,dashed] (class) -- (sheaf);
+    % \draw[->,purple,dashed] (class) -- (mat);
+    \draw[->,purple] (mat) -- (sheaf);
+    \draw[->,purple,dashed] (sheaf) edge[bend right=20] (mat);
+
+    \node[green!40!black] at (1,0.7) {\cite{sabbah2007isomonodromic}};
+    \node[blue] at (2.3,-1.3) {\cite{thboalch},\cite{boalch}};
+    \node[purple] at (3.5,0) {\cite{Loday1994}{\footnotesize(\cite{Loday2014})}};
+  \end{tikzpicture}
+\end{center}
+
 \begin{comment}
   Matrizen Sicht:
   \begin{itemize}
-    \item \cite[Chapter 3]{boalch}
+    \item \cite{thboalch} and \cite[Chapter 3]{boalch}
       \\ largely following:
       \begin{itemize}
         \item[\textbf{8}] D.G. Babbitt and V.S. Varadarajan.
@@ -17,66 +54,33 @@
         \item[\textbf{50}] J. Martinet and J.P. Ramis.
         \textbf{Elementary acceleration and multisummability.}
       \end{itemize}
-    \item \cite{thboalch}
     \item \cite{van2003galois}
     \item Marius van der Put, Kyoshi Saito => Diff.Galois Theory
   \end{itemize}
   Moderne Sicht (sheaf-view):
-  \begin{itemize}
-    \item Malgrange
-    \item \cite{sabbah_cimpa90} and
-    \item \cite{sabbah2007isomonodromic}
-    \item \cite{sabbah2009introduction} and \cite{sabbah2013introduction}
-  \end{itemize}
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item Malgrange
+      \item \cite{sabbah_cimpa90}, \cite{sabbah2007isomonodromic} and
+        \cite{sabbah2009introduction,sabbah2013introduction}
+    \end{itemize}
+  \end{multicols}
   and
-  \begin{itemize}
-    \item \cite{LodayRichaud2004}
-    \item \cite{Loday2014}
-    \item \cite{Remy2014} (\textbf{3 explicit} examples! \TODO{})
-  \end{itemize}
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item \cite{LodayRichaud2004,Loday2014}
+      \item \cite{Remy2014} (\textbf{3 explicit} examples! \TODO{})
+    \end{itemize}
+  \end{multicols}
   See also:
-  \begin{itemize}
-    \item \cite{Loday1994} for \textbf{Sheaf $\to$ Matrix}
-    \item \cite{Varadarajan96linearmeromorphic} for \textbf{overview of both}
-    \item \cite{sibuya1990Linear} looks at $\infty$
-    \item \cite{BJL1979Birkhoff} looks at $\infty$
-  \end{itemize}
+  \begin{multicols}{3}
+    \begin{itemize}
+      \item \cite{Loday1994} for \textbf{Sheaf $\to$ Matrix}
+      \item \cite{Varadarajan96linearmeromorphic} for \textbf{overview of both}
+      \item looks at $\infty$: \cite{sibuya1990Linear,BJL1979Birkhoff}
+    \end{itemize}
+  \end{multicols}
 \end{comment}
-A great overview of this topic is given in
-\cite{Varadarajan96linearmeromorphic}.
-
-\section{Situation}
-Let $\cM^{model}$ be a fixed model with the corresponding connection matrix
-$A^0$.
-We have the following commutative diagram of isomorphisms.
-\begin{center}
-  \begin{tikzpicture}[scale=3]
-    \node[] (modSpcMat) at (0,0) {$\cH(A^0)$};
-    \node[purple] (class) at (1,0) {$G\backslash\hat G(A^0)$};
-    \node[green!40!black] (sheaf) at (2,1) {$\St(\cM^{model})$};
-    \node[purple] (sheaf2) at (3,1) {$H^1(S^1;\Lambda^{<0}(A^0))$};
-    \node[blue] (mat) at (3,-1) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
-    \node[blue] (mat') at (3.5,-1.5) {$(U_+\times U_-)^{k-1}$};
-
-    % \draw[thick,double] (modSpcMat) -- (modSpcSheaf) -- (class) -- (class2) --
-    %   (modSpcMat);
-    \draw[thick,double,blue] (modSpcMat) -- (class);
-    \draw[thick,double] (sheaf) -- (sheaf2) node[midway,above] {\tiny def.};
-
-    \draw[->,green!40!black] (modSpcMat) -- (sheaf);
-    \draw[->,blue,dashed] (modSpcMat) edge[bend right=20] (mat);
-    \draw[->,blue] (class) -- (mat);
-    \draw[->,blue,dotted] (mat) -- (mat') node[midway,right] {$\cK=\{k-1\}$};
-    \draw[->,purple,dashed] (class) -- (sheaf2);
-    % \draw[->,purple,dashed] (class) -- (mat);
-    \draw[->,purple] (mat) -- (sheaf2);
-    \draw[->,purple,dashed] (sheaf2) edge[bend right=20] (mat);
-
-    \node[green!40!black] at (1,0.7) {\cite{sabbah2007isomonodromic}};
-    \node[blue] at (2.3,-1.3) {\cite{thboalch},\cite{boalch}};
-    \node[purple] at (3.5,0) {\cite{Loday1994}{\footnotesize(\cite{Loday2014})}};
-  \end{tikzpicture}
-\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes Structures: Malgrange-Sibuya isomorphism}
@@ -242,7 +246,7 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
   Thus, the proof of~\ref{thm:mainThm1} is a consequence of the following
   Malgrange-Sibuya theorem.
   \begin{thm}[Malgrange-Sbuya]
-    \marginnote{\cite{sabbah2007isomonodromic} Thm II.6.10}
+    \marginnote{\cite[Thm.II.6.10]{sabbah2007isomonodromic}}
     The image of the mapping
     \[
       H^1(S^1,\Gl_d^{<0}(\cA_{\tilde D}))
@@ -262,10 +266,7 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Stokes group}
 \begin{comment}
-  See
-  \begin{itemize}
-    \item \cite{Loday1994}
-  \end{itemize}
+  See \cite{Loday1994}
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -275,9 +276,15 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
 \end{comment}
 We denote
 \[
-  \cQ_{[A^0]}:=\left\{q_1(t^{-1}),\dots,q_n(t^{-1})\right\}
+  \cQ_{[A^0]}
+  :=
+  \left\{q_1(t^{-1}),\dots,q_s(t^{-1})\right\}
+  \,,
 \]
-the set of the determining polynomials of $[A^0]$
+where the $q_i$ are the diagonal elements of $Q$\footnote{$Q=\diag(
+\underset{n_1\text{-times}}{\underbrace{q_1,\dots,q_1}},q_2,\dots ,q_s)$}
+from \TODO{},
+the set of the determining polynomials of $[A^0]$ and
 \[
   \cQ_{[\End A^0]}:=\left\{\left(q_i-q_l\right)(t^{-1})
     \mid q_i \neq q_l \in\cQ_{[A^0]}
@@ -287,15 +294,15 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
 \begin{defn}
   We call
   \begin{itemize}
-    \item $a_{(j,l)}\in\C\backslash\{0\}$ the \emph{leading factor},
-    \item $\frac{a_{(j,l)}}{t^k}=:q_{(j,l)}(t^{-1})$ the \emph{leading
+    \item $a_{jl}\in\C\backslash\{0\}$ the \emph{leading factor},
+    \item $\frac{a_{jl}}{t^k}=:q_{(j,l)}(t^{-1})$ the \emph{leading
       coefficient} and
     \item $k$ the \emph{degree} $\deg(q_j-q_l)$ of $(q_j-q_l)$ or a
       \emph{level} of $A^0$
   \end{itemize}
   of $q_j-q_l\in\cQ_{[\End A^0]}$ if
   \[
-    q_j-q_l\in\left\{ \frac{a_{(j,l)}}{t^k}+h \mid h \in o(t^{-k})\right\} \,.
+    q_j-q_l\in\left\{ \frac{a_{jl}}{t^k}+h \mid h \in o(t^{-k})\right\} \,.
   \]
   \begin{s-rem}
     \begin{enumerate}
@@ -306,6 +313,10 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
         be consistend with calculations at $\infty$. Here this is not
         necessary, since we use the clockwise ordering of points on $S^1$
         (cf.~\ref{defn:antiStokesDir}).
+        \begin{comment}
+          Does that mean, that, to be consistend with \cite{boalch}, one has to
+          invert the permutation matrix?
+        \end{comment}
     \end{enumerate}
   \end{s-rem}
   The degrees of the elements in $\cQ_{[\End A^0]}$ are the
@@ -386,6 +397,7 @@ relations:
 \begin{comment}
   In the case with only one level, the stokes directions are rotational
   symetric.
+  \\The stokes direction, beared by level $k$ have the rotational symmetry.
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -444,7 +456,7 @@ relations:
 \begin{defn}
   Define the group
   \[
-    \SSto_d(A^0)= \left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
+    \SSto_\theta(A^0)= \left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
       q_j \underset{\theta,\max}{\prec} q_l \right\}
   \]
   which will arise as a faithful representation of $\Sto_\theta(A^0)$.
@@ -455,11 +467,13 @@ $X_{0,\tilde\theta}$ the function defined by $X_0$ with that determination of
 the argument near the direction $\theta$.
 
 \begin{prop} \label{prop:representation}
-  \marginnote{\cite[Def.I.4.7]{Loday1994},~\cite[78f]{Loday2014}}
+  \marginnote{\cite[Def.I.4.7]{Loday1994}\\\cite[78f]{Loday2014}}
   In this situation the morphism
   \begin{align*}
     \rho_{\tilde\theta}:\Sto_\theta(A^0)&\to\SSto_\theta(A^0)
-  \\\phi_\theta&\mapsto e^{-Q(t^{-1})}t^{-L} \phi_\theta t^L e^{Q(t^{-1})}
+    \\\phi_\theta
+    &\mapsto 1+C_{\tilde\theta}
+    :=e^{-Q(t^{-1})}t^{-L} \phi_\theta t^L e^{Q(t^{-1})}
   \end{align*}
   is an isomorphism which maps a germ of $\Sto_\theta(A^0)$ to the unique
   matrix $1+C_{\tilde\theta}$ such that
@@ -471,92 +485,102 @@ the argument near the direction $\theta$.
   $\phi_\theta$}.
   \begin{s-rem}
     \marginnote{\cite[10]{thboalch}}
-    $\rho$ relates solutions $\phi_\theta$ of $[A^0,A^0]$ to solutions of
-    $[0,0]$ which are the constant matrices $\End(E)$.
+    The morphism $\rho_{\tilde\theta}$ relates solutions $\phi_\theta$ of
+    $[\End(A^0)]=[A^0,A^0]$ to solutions of $[0,0]$ which are the constant
+    matrices $G$.
   \end{s-rem}
 \end{prop}
-From (\ref{eq:representation}) we deduce
-\[
-  \phi_\theta(t)
-  =t^L e^{Q(t^{-1})}(1_n+C_{\tilde\theta})e^{-Q(t^{-1})}t^{-L}
-\]
-with the given choice of the argument near $\theta$.
-After decomposing $C_{\tilde\theta}$ into
-\begin{align*}
-  C_{\tilde\theta}&=\begin{pmatrix}
-    c_{(1,1)} & c_{(1,2)} & \cdots &\\
-    c_{(2,1} & \ddots\\
-    \vdots \\
-    & & & c_{(s,s)}
-  \end{pmatrix}
-\\&=
-  \underset{C_{\tilde\theta}^{(1,1)}}{\underbrace{%
-    \begin{pmatrix}
-      c_{(1,1)} & 0 & \cdots &\\
-      0\\
-      \vdots&\\
-      &
-    \end{pmatrix}
-  }}
-  +
-  \underset{C_{\tilde\theta}^{(1,2)}}{\underbrace{%
-    \begin{pmatrix}
-      0 & c_{(1,2)} & 0 & \cdots\\
-      & 0 &\\
-      &\vdots\\
-      &
-    \end{pmatrix}
-  }}
-  +\cdots+
-  \underset{C_{\tilde\theta}^{(s,s)}}{\underbrace{%
-    \begin{pmatrix}
-      &\\
-      & & & \vdots\\
-      & & & 0\\
-      & \cdots & 0 & c_{(s,s)}
-    \end{pmatrix}
-  }}
-\\&=\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}
-\end{align*}
-where the $c_{(j,l)}$ are blocks of size $n_j\times n_l$ which correspond to
-the structure of $Q$, we get
-\[
-  \phi_\theta=
-    t^L\left(
-      1_n+\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}e^{(q_l-q_j)(t^{-1})}
-    \right)t^{-L} \,.
-\]
-\begin{comment}
-  \begin{align*}
+\begin{proof}
+  \TODO[proof uniqueness?]
+  In general, the map $\rho_{\tilde\theta}$ maps to the $G$ since \TODO{} by
+  the fundamental solution yields a constant matrix. To see that the obtained
+  matrix has the necessary zeros, to lie in $\SSto_{\theta}(A^0)$ we look at
+  equation (\ref{eq:representation}) and deduce
+  \[
     \phi_\theta(t)
-    &=t^Le^{Q(t^{-1})}\left(
-      1_n+C_{\tilde\theta}
-    \right)e^{-Q(t^{-1})}t^{-L}
-  \\&=t^Le^{Q(t^{-1})}\left(
-      1_n+\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}
-    \right)e^{-Q(t^{-1})}t^{-L}
-  \\&=t^L\left(
-      1_n+\sum_{(l,j)}e^{Q(t^{-1})}C_{\tilde\theta}^{(l,j)}e^{-Q(t^{-1})}
-    \right)t^{-L}
-  \\&=t^L\left(
+    =t^L e^{Q(t^{-1})}(1_n+C_{\tilde\theta})e^{-Q(t^{-1})}t^{-L}
+  \]
+  with the given choice of the argument near $\theta$.
+  After decomposing $C_{\tilde\theta}$ into
+  \begin{align*}
+    C_{\tilde\theta}&=\begin{pmatrix}
+      c_{(1,1)} & c_{(1,2)} & \cdots &\\
+      c_{(2,1} & \ddots\\
+      \vdots \\
+      & & & c_{(s,s)}
+    \end{pmatrix}
+  \\&=
+    \underset{C_{\tilde\theta}^{(1,1)}}{\underbrace{%
+      \begin{pmatrix}
+        c_{(1,1)} & 0 & \cdots &\\
+        0\\
+        \vdots&\\
+        &
+      \end{pmatrix}
+    }}
+    +
+    \underset{C_{\tilde\theta}^{(1,2)}}{\underbrace{%
+      \begin{pmatrix}
+        0 & c_{(1,2)} & 0 & \cdots\\
+        & 0 &\\
+        &\vdots\\
+        &
+      \end{pmatrix}
+    }}
+    +\cdots+
+    \underset{C_{\tilde\theta}^{(s,s)}}{\underbrace{%
+      \begin{pmatrix}
+        &\\
+        & & & \vdots\\
+        & & & 0\\
+        & \cdots & 0 & c_{(s,s)}
+      \end{pmatrix}
+    }}
+  \\&=\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}
+  \end{align*}
+  where the $c_{(j,l)}$ are blocks of size $n_j\times n_l$ which correspond to
+  the structure of $Q$, we get
+  \[
+    \phi_\theta=
+      t^L\left(
         1_n+\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}e^{(q_l-q_j)(t^{-1})}
       \right)t^{-L} \,.
-  \end{align*}
-\end{comment}
-Thus, for $\phi_{\tilde\theta}$ to be flat in direction $\theta$, it is
-necessary and sufficient that if $e^{(q_l-q_j)(t^{-1})}$ does not have
-maximal decay in direction $\tilde\theta$ the corresponding
-block $C_{\tilde\theta}^{(l,j)}$ vanishes.
+  \]
+  \begin{comment}
+    \begin{align*}
+      \phi_\theta(t)
+      &=t^Le^{Q(t^{-1})}\left(
+        1_n+C_{\tilde\theta}
+      \right)e^{-Q(t^{-1})}t^{-L}
+    \\&=t^Le^{Q(t^{-1})}\left(
+        1_n+\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}
+      \right)e^{-Q(t^{-1})}t^{-L}
+    \\&=t^L\left(
+        1_n+\sum_{(l,j)}e^{Q(t^{-1})}C_{\tilde\theta}^{(l,j)}e^{-Q(t^{-1})}
+      \right)t^{-L}
+    \\&=t^L\left(
+          1_n+\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}e^{(q_l-q_j)(t^{-1})}
+        \right)t^{-L} \,.
+    \end{align*}
+  \end{comment}
+  Thus, for $\phi_{\theta}$ to be flat in direction $\theta$, it is
+  necessary and sufficient that if $e^{(q_l-q_j)(t^{-1})}$ does not have
+  maximal decay in direction $\tilde\theta$ the corresponding
+  block $C_{\tilde\theta}^{(l,j)}$ vanishes.
+\end{proof}
 
 In particular we get, that
 \begin{itemize}
   \item for $j=l$ are the (diagonal) blocks $C_{\tilde\theta}^{(l,j)}$ vanish
-    since $q_l-q_j=0$ and
+    since $q_l-q_j=0$ does not have maximal decay and
   \item if $e^{q_j-q_l}$ has has maximal decay, then $e^{q_l-q_j}$ has not.
     Thus if $C_{\tilde\theta}^{(l,j)}$ is not equal to zero, the block
     $C_{\tilde\theta}^{(j,l)}$ is necessarily zero.
 \end{itemize}
-This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent.
+\begin{rem}
+  This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent.
+  \TODO[Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.]
+\end{rem}
 On the other hand, every constant unipotent Matrix, with zeros at the necessary
 positions, characterizes a unique element of $\Sto_\theta(A^0)$.
 
@@ -571,8 +595,6 @@ positions, characterizes a unique element of $\Sto_\theta(A^0)$.
   \]
   and $C_{\tilde\theta}^{(l,j)}$ have the necessary block structure.
 \end{lem}
-
-\TODO[Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filtration of the Stokes group by levels}
@@ -621,6 +643,30 @@ $\phi_{\theta}\in\Sto_\theta(A^0)$ by
     \item $\cK_\theta:=\left\{k\in\cK\mid\Sto_\theta^k(A^0)\neq\{1\}\right\}$
       the set of levels \emph{beared by $\theta\in\A$}, and
       $K_\theta=\max\cK_\theta$ the \emph{maximal level beared by $\theta$}.
+      \begin{s-rem}
+        \marginnote{\cite[8]{thboalch}}
+        Let $\theta\in S^1$ and $k\in\cK_\theta$. Then there is a pair $(j,l)$
+        such that $q_{jl}$ has degree $k$ and
+        $a_{jl}e^{-ik\tilde\theta}\in\R_{<0}$. Hence, for $n\in\N$,
+        \begin{align*}
+          a_{jl}e^{-ik\left(\tilde\theta+n\frac{\pi}{k}\right)}
+          &=a_{jl}e^{-ik\tilde\theta}e^{-in\pi}
+          = \begin{cases}
+            a_{jl}e^{-ik\tilde\theta} & \text{, if $n$ is even}
+          \\-a_{jl}e^{-ik\tilde\theta} & \text{, if $n$ is uneven}
+        \end{cases}
+        \end{align*}
+        is, in the case when $n$ is even, also real and negative. In the other
+        case, when $n$ is uneven, we have that $a_{jl}=-a_{lj}$ and thus
+        $a_{lj}e^{-ik\left(\tilde\theta+n\frac{\pi}{k}\right)}\in\R_{<0}$.
+
+        Therefore is $k\in\cK_{\theta+n\frac{\pi}{k}}$, which implies that
+        $\Sto_{\theta+n\frac{\pi}{k}}$ is not trivial, i.e.,
+        $\theta+n\frac{\pi}{k}$ is a anti-Stokes direction.
+
+        In the case, when $\cK=\{k\}$ the set $\cA$ has
+        $\frac{\pi}{k}$-rotational symmetry.
+      \end{s-rem}
   \end{itemize}
 \end{notations}
 
@@ -660,7 +706,7 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
     \item \TODO{}
     \item Splitting is clear, since we have the canonical inclusion
       $\Lambda^{<k}(A^0)\hookrightarrow\Lambda^{\leq k}(A^0)$ and
-      $p\circ\overset{\text{the}}{\text{inclusion}}=\id_{\Lambda^{<k}(A^0)}$.
+      $p\circ\substack{\text{the}\\\text{inclusion}}=\id_{\Lambda^{<k}(A^0)}$.
   \end{enumerate}
 \end{proof}
 \begin{cor}
@@ -685,7 +731,7 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
           the factor $f^{<k}$ common to both factorizations is the truncation
           of $f^{\leq k}$ to terms of level $k$\footnote{In any representation
           $1+\sum C_{\tilde\theta}^{(j,l)}$ of $f^{\leq k}$ keep only the terms
-          $(j,l)$ such that $\deg(q_j-q_l)<k$.}. Then
+          $C_{\tilde\theta}^{(j,l)}$ such that $\deg(q_j-q_l)<k$.}. Then
           $g^k=(f^{<k})^{-1}f^{\leq k}$ and $f^k=f^{\leq k}(f^{<k})^{-1}$.
         \end{einr}
       \end{s-rem}
@@ -748,13 +794,17 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
 \begin{comment}
   See \cite{Loday1994}, \cite{boalch,thboalch} and \cite{babbitt1989local}.
 \end{comment}
-The goal in this section is to prove, that
-\begin{einr}
-    there is a bijective and natural map
-    \[
-      h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0) \,.
-    \]
-\end{einr}
+The goal in this section is to prove, that there is a bijective and natural map
+\[
+  h:\prod_{\theta\in\A}\Sto_\theta(A^0)\to\St(A^0) \,.
+\]
+And since $\Sto_\theta(A^0)$ has a faithful representation $\SSto_\theta(A^0)$
+we also get
+\[
+  \prod_{\theta\in\A}\SSto_\theta(A^0)\cong\St(A^0)
+\]
+as a corollary.
+\TODO[This goes back to \cite{BJL1979Birkhoff}?]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The theorem}
@@ -948,7 +998,7 @@ the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
 
 \begin{rem}
   The coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ depend only on
-  $\cQ_{[\End A^0]}$.
+  $\cQ_{[\End A^0]}$. Hence they depend only on $\cQ_{[A^0]}$.
 \end{rem}
 \begin{prop}
   \marginnote{\cite[Prop.II.3.1]{Loday1994}}
@@ -966,7 +1016,11 @@ the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
   \end{enumerate}
 \end{prop}
 \begin{proof}
-  \TODO{}
+  \begin{enumerate}
+    \item \TODO{}
+    \item \TODO{}
+    \item \TODO{}
+  \end{enumerate}
 \end{proof}
 We denote the product
 $\prod_{\theta\in\A^\star}\Gamma(\dot U_\theta^\star;\Lambda^\star(A^0))$ by
@@ -1165,7 +1219,7 @@ This means that
   \end{s-rem}
 \end{defn}
 \begin{cor}
-  The product map of single-leveled cocycles induces on the cohomology
+  The product map of single-leveled cocycles $\tau$ induces on the cohomology
   a bijective and natural map
   \[
     \cT:
