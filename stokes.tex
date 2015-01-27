@@ -596,6 +596,12 @@ positions, characterizes a unique element of $\Sto_\theta(A^0)$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filtration of the Stokes group by levels}
+\begin{comment}
+  See
+  \cite{Loday1994}
+  and
+  \cite[362ff]{Martinet1991}
+\end{comment}
 We denote the set of \emph{levels of the germ}
 $\phi_{\theta}\in\Sto_\theta(A^0)$ by
 \[
@@ -608,7 +614,7 @@ $\phi_{\theta}\in\Sto_\theta(A^0)$ by
 \end{defn}
 
 \begin{notations}
-  \marginnote{\cite[Not.I.4.15]{Loday1994}}
+  \marginnote{\cite[Not.I.4.15]{Loday1994},\\\cite[362]{Martinet1991}}
   For $k\in\cK$ and $\theta\in\A$ we set:
   \begin{itemize}
     \item $\Lambda^{k}(A^0):=$ the subsheaf of $\Lambda(A^0)$ of all germs,
@@ -695,7 +701,8 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
           gng^{-1}\in N ,.
         \]
       \end{comment}
-    \item the exact sequence of sheaves
+    \item \marginnote{\cite[Proposition 10]{Martinet1991}}
+      the exact sequence of sheaves
       \[
         1\longrightarrow\Lambda^k(A^0)
         \overset{i}\longrightarrow\Lambda^{\leq k}(A^0)
@@ -755,7 +762,8 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
   \begin{enumerate}
     \item the sheaf $\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k'}(A^0)$ is
       normal in $\Lambda^{\leq k}(A^0)$;
-    \item the exact sequence of sheaves
+    \item \marginnote{\cite[Proposition 10]{Martinet1991}}
+      the exact sequence of sheaves
       \[
         1\longrightarrow\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k'}(A^0)
         \overset{i}\longrightarrow\Lambda^{\leq k}(A^0)
@@ -1326,25 +1334,36 @@ outputs a Stokes cocycle, which corresponds to our coverings.
 \section{The map
   $\G\backslash\tilde\G(B_0)\to\prod_{\theta\in\A}\Sto_\theta(A^0)$}
 \begin{comment}
-  see \cite[9f]{thboalch}
+  see \cite[9f]{thboalch} and \cite[III.2.1]{Loday1994}
 \end{comment}
-Choose a element $\hat F\in\hat G(A^0)$ representing an element of
-$G\{t\}\backslash\hat G(A^0)$ and an element $\theta\in\A$.
-Via the Borel-Ritt lemma, we obtain functions $F_\theta^-$ and $F_\theta^+$ on
-the adjacent sectors to $\theta$, which may be canonically continued across
-$\theta$. They will generally be different on the overlap. Thus to each
-anti-Stokes direction $\theta$ there is an associated automorphisms
-\[
-  \kappa_\theta:=\left(F_\theta^+\right)^{-1}F_\theta^-
-  \in\Sto_\theta(A^0)
-\]
-describing how the \TODO{} differ on both sides of $\theta$.
+
+\begin{paracol}{2}\sloppy
+\switchcolumn[0]\noindent
+  \begin{comment}
+    see \cite[9f]{thboalch}
+  \end{comment}
+  Choose a element $\hat F\in\hat G(A^0)$ representing an element of
+  $G\{t\}\backslash\hat G(A^0)$ and an element $\theta\in\A$.
+  Via the Borel-Ritt lemma, we obtain functions $F_\theta^-$ and $F_\theta^+$ on
+  the adjacent sectors to $\theta$, which may be canonically continued across
+  $\theta$. They will generally be different on the overlap. Thus to each
+  anti-Stokes direction $\theta$ there is an associated automorphisms
+  \[
+    \kappa_\theta:=\left(F_\theta^+\right)^{-1}F_\theta^-
+    \in\Sto_\theta(A^0)
+  \]
+  describing how the \TODO{} differ on both sides of $\theta$.
+\switchcolumn[1]\noindent
+  \begin{comment}
+    see \cite[III.2.1]{Loday1994}
+  \end{comment}
+\end{paracol}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The main question}
 Here we want to answer the following question:
 \begin{einr}
-  Which information is needed to describe the stokes structure of a unramified
+  Which information is needed to describe the Stokes structure of a unramified
   multileveled meromorphic connection?
 \end{einr}
 To be more precise: we are interested in the representation of an element from
