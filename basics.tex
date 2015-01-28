@@ -113,7 +113,25 @@
 \]
 \TODO{}
 
-\paragraph{multivalued functions:}
+\paragraph{Multivalued functions:}
+\begin{defn}
+  \marginnote{\cite[227]{Balser2000Formal}}
+  A function $f$, \rewrite{defined on some domain $G$ considered on th eRiemann
+  surface}, is called to be \emph{single-valued} if
+  \[
+    f(t)=f(t\exp(2\pi i)) \qquad\text{whenever both sides are defined.}
+  \]
+  \begin{s-rem}
+    \begin{itemize}
+      \item This is nothing else but saying that we may consider the function
+        on the projection to the plane.
+      \item The condition might be nowhere defined.
+    \end{itemize}
+  \end{s-rem}
+  \begin{s-exmp}
+    The function $t\to t^\alpha$ is single-valued whenever $\alpha\in\Z$.
+  \end{s-exmp}
+\end{defn}
 \TODO{}
 
 \paragraph{determination of a function:}
@@ -268,9 +286,9 @@ We introduce the following notations:
       $\hat g$ as asymptotic expansion on the interval $I$.
   \end{enumerate}
 \end{defn}
-If $f$ has $\hat g$ as asymptotic expansion on the sector $\mathfrak{s}$ (or on
+If $f$ has $\hat f$ as asymptotic expansion on the sector $\mathfrak{s}$ (or on
 the interval $I\subset S^1$, or in the direction $\theta$), we denote that by
-$f\sim_{\mathfrak{s}}\hat g$ (or $f\sim_{I}\hat g$, or $f\sim_{\theta}\hat g$).
+$f\sim_{\mathfrak{s}}\hat f$ (or $f\sim_{I}\hat f$, or $f\sim_{\theta}\hat f$).
 \begin{defn}
   \begin{enumerate}
     \item Define $\cA(\mathfrak{s})$ as the set of holomorphic functions
@@ -278,8 +296,12 @@ $f\sim_{\mathfrak{s}}\hat g$ (or $f\sim_{I}\hat g$, or $f\sim_{\theta}\hat g$).
       $\mathfrak{s}$.
       \begin{s-rem}
         \begin{enumerate}
-          \item $\cA(\mathfrak{s})$ is a subring of $\cO(\mathfrak{s})$.
-          \item $\cA(\mathfrak{s})$ contains $\C(\!\{t\}\!)$ as a subfield.
+          \item
+            \marginnote{\cite[II.2.2.4]{sabbah_cimpa90}}
+            $\cA(\mathfrak{s})$ is a subring of $\cO(\mathfrak{s})$.
+          \item
+            \marginnote{\cite[II.2.2.4]{sabbah_cimpa90}}
+            $\cA(\mathfrak{s})$ contains $\C(\!\{t\}\!)$ as a subfield.
         \end{enumerate}
       \end{s-rem}
     \item Define $\cA(a,b)\!\!\overset{(a,b)=I}{=}\!\!\cA(I)$
@@ -298,16 +320,17 @@ It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
 \begin{defn}
   \begin{itemize}
     \item One writes
-      \[
-        T_{I}:\cA(I)\to\C(\!(t)\!)
+      \begin{align*}
+        T_{I}:\cA(I)&\to\C(\!(t)\!)
         \qquad\left(\text{resp.}\qquad
         T_{\mathfrak{s}}:\cA(\mathfrak{s})\to\C(\!(t)\!)\qquad\right)
-      \]
+      \\f&\mapsto\hat f
+      \end{align*}
       for the mapping, called \emph{Taylor map}, which associates to each
       function $f\in\cA(I)$ (resp.\ $f\in\cA(\mathfrak{s})$) its asymptotic
       expansion.
-    \item A function $f$ with $T_{\mathfrak{s}}(f)=\id_{\mathfrak{s}}$ is
-      called \emph{flat (on $\mathfrak{s}$)}. \TODO[resp]
+    \item A function $f$ with $T_{\mathfrak{s}}(f)=\hat f=\id_{\mathfrak{s}}$
+      is called \emph{flat (on $\mathfrak{s}$)}. \TODO[resp]
     \item Denote by $\cA^{<0}(I)$ (resp.\ $\cA^{<0}(\mathfrak{s})$) the set
       $\ker(T_{I})\subset\cA(I)$ (resp.\
       $\ker(T_{\mathfrak{s}})\subset\cA(\mathfrak{s})$) of functions asymptotic
@@ -379,6 +402,7 @@ For more examples see Loday-Richauds book \cite{Loday2014}
       \begin{enumerate}
         \item $f'(t)$ is on $I$ asymptotic to $\hat f'(t)$.
           \begin{s-lem} \label{lem:sableDeriv}
+            \marginnote{\cite[II.2.2.4]{sabbah_cimpa90}}
             $\cA(I)$ is stable under derivation.
           \end{s-lem}
         \item $\int_0^tf(s)\,ds$ is on $I$ asymptotic to $\int_0^t\hat f(t)\,ds$.
@@ -510,6 +534,11 @@ given function $\hat f\in\C(\!(t)\!)$ in a canonical way. For example
 
   \TODO[The GENERAL CASE: see \cite{Loday2014} page 28]
 \end{proof}
+
+\begin{comment}
+  \subsection{Gevrey Asymptotics}
+  \marginnote{\cite[Sec.4.5]{Balser2000Formal},\\\cite{van2003galois}}
+\end{comment}
 
 \begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

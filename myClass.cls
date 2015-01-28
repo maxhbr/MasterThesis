@@ -243,6 +243,7 @@
   \mdtheorem[style=thin]{notations}[thm]{Notations}
   \mdtheorem[style=thinn]{notations}[conj]{Conjecture}
   \mdtheorem[style=thinn]{exmp}[thm]{Example}[exmp]
+    \mdtheorem[style=thinn]{s-exmp}{Example}[thm]
   \newtheorem{bsp}[thm]{Example}
 
   \theoremstyle{remark}

@@ -276,24 +276,34 @@ one and dimension $n$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Local \rightarrow{} global}
-\begin{thm}
-  \begin{comment}
-    Quelle?
+\begin{paracol}{2}\sloppy
+\switchcolumn[0]\noindent
+  \begin{thm}
+    \begin{comment}
+      \cite[Thm.3.3.1]{sibuya1990Linear}: G. D. Birkhoff
+    \end{comment}
+    \rewrite{Given an integer $k$ and a matrix $A(\zeta)$\dots}
+  \end{thm}
+\switchcolumn[1]\noindent
+  \begin{thm}
+    \begin{comment}
+      Quelle?
+      \begin{itemize}
+        \item \cite{sabbah2007isomonodromic}???
+      \end{itemize}
+    \end{comment}
+    If we start with a germ $(\cM,\nabla)$ of a meromorphic connection there is
+    a unique meromorphic connection $(\sM,\nabla)$ such that
     \begin{itemize}
-      \item \cite{sabbah2007isomonodromic}???
+      \item $(\sM,\nabla)$ has only singularities at $0$ and $\infty$
+      \item the singularity at $\infty$ is only \TODO{} and
+      \item $(\cM,\nabla)$ is the germ at $0$ of $(\sM,\nabla)$.
     \end{itemize}
-  \end{comment}
-  If we start with a germ $(\cM,\nabla)$ of a meromorphic connection there is a
-  unique meromorphic connection $(\sM,\nabla)$ such that
-  \begin{itemize}
-    \item $(\sM,\nabla)$ has only singularities at $0$ and $\infty$
-    \item the singularity at $\infty$ is only \TODO{} and
-    \item $(\cM,\nabla)$ is the germ at $0$ of $(\sM,\nabla)$.
-  \end{itemize}
-\end{thm}
-\begin{proof}
-  \TODO{}
-\end{proof}
+  \end{thm}
+  \begin{proof}
+    \TODO{}
+  \end{proof}
+\end{paracol}
 
 \subsubsection{Formalisieren}
 Let $(\cM,\nabla)$ be a meromorphic connection. The connection $\nabla$
@@ -681,6 +691,7 @@ formal classification problem.
       \item \cite[Thm.7.10]{van2003galois}{\tiny\cite[Thm.7.12]{van2003galois}}
       \item \cite[Thm.12.1]{wasow2002asymptotic}
       \item \cite[5.3.Thm.1]{Varadarajan96linearmeromorphic}
+      \item \cite[207]{Balser2000Formal}: Some historical remarks
     \end{itemize}
   \columnbreak
     \textbf{Sheafical:}
@@ -690,36 +701,59 @@ formal classification problem.
   \end{multicols}
 \end{comment}
 Here we want to state the main asymptotic existence theorem (or often M.A.E.T.)
-which is essentially a deduction from the Borel-Ritt lemma. \TODO{}
+which is essentially a deduction from the Borel-Ritt lemma. 
+\marginnote{\cite[207]{Balser2000Formal}}
+It states that to every formal solution of a system of meromorphic differential
+equations, and every sector with sufficiently small opening, one can find a
+solution of the system having the formal one as its asymptotic expansion.
+\TODO{}
 \begin{comment}
-  We set 
-  \[
-    \hat\cM=\hat\cO\otimes \cM
-  \]
-  and for each $e^{i\theta^0}\in S^1$ we set
-  \[
-    \tilde\cM_{\theta^0}=\cA_{\theta^0}\otimes\cM\,.
-  \]
-  \begin{thm}[Sectorial decomposition]
-    \marginnote{\cite[Thm.II.5.12]{sabbah2007isomonodromic}}
-    Let $(\cM,\nabla)$ be a meromorphic connection and let us assume that there
-    exist a model $\cM^{model}$ together with an isomorphism
-    $\hat\lambda:\hat\cM\to\hat\cM^{model}$. There exists then, for any
-    $e^{i\theta^0}\in S^1$, an isomorphism $\tilde\lambda_{\theta^0}:
-    \tilde\cM_{\theta^0}\to\tilde\cM_{\theta^0}^{model}$
-    lifting $\hat\lambda$, that is, such that the following diagram
-    \[ \begin{tikzcd}
-        \tilde\cM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
-        \tilde\cM^{model}_{\theta^o} \dar
-        \\\hat\cM \rar{\hat\lambda} &
-        \hat\cM^{model}
-    \end{tikzcd} \]
-    commutes
-  \end{thm}
-  \begin{proof}
-    This is clear, since the tensor is right exact and we have the Borel-Ritt
-    Lemma.
-  \end{proof}
+
+  \begin{multicols}{2}
+    \begin{thm}
+      \marginnote{\cite[Thm.II.2.3.1]{sabbah_cimpa90}}
+      \rewrite{Let $\cM_{K}$ be a meromorphic connection. There exists an
+        integer $q\geq 1$ such that, after the ramification $x=t^q$, one has,
+        for all $\theta\in S^1$ and each sufficiently small interval $V$
+        centered at $\theta$}
+      \[
+        \cA_L(V)\otimes_L\cM_L\cong\cA_L(V)\otimes_L
+        \left(\cF_L^R\otimes\cG_L\right)
+      \]
+    \end{thm}
+    \begin{proof}
+      See \cite[Sec.II.2.4]{sabbah_cimpa90}
+    \end{proof}
+  \columnbreak
+    We set 
+    \[
+      \hat\cM=\hat\cO\otimes \cM
+    \]
+    and for each $e^{i\theta^0}\in S^1$ we set
+    \[
+      \tilde\cM_{\theta^0}=\cA_{\theta^0}\otimes\cM\,.
+    \]
+    \begin{thm}[Sectorial decomposition]
+      \marginnote{\cite[Thm.II.5.12]{sabbah2007isomonodromic}}
+      Let $(\cM,\nabla)$ be a meromorphic connection and let us assume that
+      there exist a model $\cM^{model}$ together with an isomorphism
+      $\hat\lambda:\hat\cM\to\hat\cM^{model}$. There exists then, for any
+      $e^{i\theta^0}\in S^1$, an isomorphism $\tilde\lambda_{\theta^0}:
+      \tilde\cM_{\theta^0}\to\tilde\cM_{\theta^0}^{model}$
+      lifting $\hat\lambda$, that is, such that the following diagram
+      \[ \begin{tikzcd}
+          \tilde\cM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
+          \tilde\cM^{model}_{\theta^o} \dar
+          \\\hat\cM \rar{\hat\lambda} &
+          \hat\cM^{model}
+      \end{tikzcd} \]
+      commutes
+    \end{thm}
+    \begin{proof}
+      This is clear, since the tensor is right exact and we have the Borel-Ritt
+      Lemma.
+    \end{proof}
+  \end{multicols}
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
