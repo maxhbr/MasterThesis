@@ -136,9 +136,7 @@ There are many ways of expressing the local information, we will either talk
 about germs of meromorphic connections or systems, which is coordinate-
 and trivialization-dependent.
 \begin{prop}
-  \begin{comment}
-    See \textbf{\cite[Rem.5.2.4]{hotta2008}} and \cite[Def.4.2.1]{Loday2014}
-  \end{comment}
+  \marginnote{\textbf{\cite[Rem.5.2.4]{hotta2008}}\\\cite[Def.4.2.1]{Loday2014}}
   A germ $(\cM,\nabla)$ of a meromorphic connection $(\sM,\nabla)$ is just the
   sheaf-theoretic germ, thus has the form $(\cM,\nabla)$ where
   \begin{itemize}
@@ -171,7 +169,7 @@ and trivialization-dependent.
   \TODO[Category of systems!]
 \end{defn}
 \marginnote{\cite[65]{Loday2014}}
-\begin{paracol}{2}\sloppy
+\begin{multicols}{2}
 %   % Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$
 %   % and let $A\in\End(E)\otimes\C(\!\{t\}\!)$\TODO[In one forms? $A=A'dt$?] be a
 %   % matrix, such that
@@ -188,7 +186,6 @@ and trivialization-dependent.
 %       -(e_1,e_2,\dots,e_n)A'
 %     \]
 %     and let $A=A'dt$.}
-\switchcolumn[0]\noindent
   Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
   Let $A'$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$
   \rewrite{such that the matrix $A=A'dt$ describes the action of $\nabla$:}
@@ -197,7 +194,7 @@ and trivialization-dependent.
     =
     -(e_1,e_2,\dots,e_n)A \,.
   \]
-\switchcolumn[1]\noindent
+\columnbreak
   Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
   Let $A=(a_{jk})$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$
   \rewrite{such that the it describes the action of $\nabla$:}
@@ -206,9 +203,9 @@ and trivialization-dependent.
     =
     -\sum_{1\leq j\leq n} a_{jk}(t)e_j \,.
   \]
-\end{paracol}
+\end{multicols}
 Let $x=\sum_{0\leq j\leq n}x_je_j$ be an arbitrary element of $\cM$ which is in
-matrix notation described as $x=\underline{e}X$ with the column matrix
+matrix notation described as $x=\underline{e}\cdot X$ with the column matrix
 $X={}^t\!(x_1,x_2 ,\dots,x_n)$.
 Then, applying the Leibniz rule, yields
 \begin{align*}
@@ -246,7 +243,8 @@ one and dimension $n$.
       fiber $E\cong\C^n$.
       \begin{s-prop}
         Thus, the set of systems is isomorphic to the set
-        $G(\!\{t\}\!)$ of all connection matrices.
+        $A\in\End(E)\otimes\C(\!\{t\}\!)=\gl_n(\C(\!\{t\}\!))$ of all
+        connection matrices.
       \end{s-prop}
       It well be denoted by $[A]=d-A$ where $A$ is the connection matrix in the
       chosen trivialization.
@@ -263,10 +261,10 @@ one and dimension $n$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{System \rightarrow{} germ of a meromorphic connection}
 \begin{prop}
-  If we start with a system $[A]$ of rank $n$ we get a germ of a
-  meromorphic connection via
+  If we start with a system $[A]$ of rank $n$, or a connection matrix $A$, we
+  get a germ of a meromorphic connection via
   \[
-    (\cM_A,\nabla_A)=(\C(\!\{t\}\!))^n,d-A)
+    (\cM_A,\nabla_A)=(\C(\!\{t\}\!)^n,d-A)
   \]
   and $A$ is a connection matrix for $(\cM,\nabla)$.
 \end{prop}
@@ -305,10 +303,54 @@ one and dimension $n$.
   \end{proof}
 \end{paracol}
 
-\subsubsection{Formalisieren}
-Let $(\cM,\nabla)$ be a meromorphic connection. The connection $\nabla$
-naturally extends to $\hat\cM:=\cM\otimes\C(\!(t)\!)$ and
-$\tilde\cM_\theta:=\cM\otimes\cA_\theta$. \TODO[]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Formalization}
+\begin{multicols}{2}
+  Let $[A]$ be a system. We \rewrite{view it as a formal system, by} allowing
+  formal solutions.
+  \TODO{}
+\columnbreak
+  Let $(\cM,\nabla)$ be a meromorphic connection. The connection $\nabla$
+  naturally extends to $\hat\cM:=\cM\otimes\C(\!(t)\!)$ and
+  $\tilde\cM_\theta:=\cM\otimes\cA_\theta$.
+  \TODO{}
+\end{multicols}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Fundamental solution}
+Fundamental solutions \rewrite{beschreiben} also systems of ordinary
+differential equations.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{As differential operator}
+\begin{comment}
+  \begin{itemize}
+    \item \cite[Sec.4.2]{Loday2014}
+  \end{itemize}
+\end{comment}
+
+From the theory of ordinary differential equations we know that to
+(\ref{eq:ode}) there is a equivalent ordinary differential equation of order
+$n$ which can be written as
+\[
+  \underset{=:P}{\underbrace{%
+      (a_n\partial_t^n+a_{n-1}\partial_t^{n-1}+\cdots a_{1}\partial_t+a_{0})
+  }} \cdot v=0
+\]
+where $a_i\in\C(\!\{t\}\!)$. \TODO{}
+
+In the other direction there is the lemma of the cyclic vector. \TODO{}
+\begin{comment}
+  \begin{itemize}
+    \item \cite[Rem.4.2.6]{Loday2014}
+  \end{itemize}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{As $\cD$-Module}
+\begin{comment}
+  \cite[Sec.4.2.2]{Loday2014}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Transformation of systems}
@@ -340,10 +382,11 @@ $\tilde\cM_\theta:=\cM\otimes\cA_\theta$. \TODO[]
     \item $G=\Gl_n(\C)$;
     \item $G[t]=\Gl_n(\C[t])$;
     \item $G\{t\}=\Gl_n(\C\{t\})$ analytic tranformations;
-    \item $G(\!\{t\}\!)=\Gl_n(\C\{t\}[t^{-1}])$ meromorphic transformations;
-    \item $G\llbracket t\rrbracket=\Gl_n(\C\llbracket t\rrbracket)$
+    \item $G(\!\{t\}\!)=\Gl_n\left(\C\{t\}[t^{-1}]\right)$ meromorphic
+      transformations;
+    \item $G\llbracket t\rrbracket=\Gl_n\left(\C\llbracket t\rrbracket\right)$
       (maby not applicable) formal tranformations;
-    \item $G(\!(t)\!)=\Gl_n(\C\llbracket t\rrbracket[t^{-1}])$
+    \item $G(\!(t)\!)=\Gl_n\left(\C\llbracket t\rrbracket[t^{-1}]\right)$
       (maby not applicable) formal meromorphic tranformations.
   \end{itemize}
   \begin{comment}
@@ -351,10 +394,13 @@ $\tilde\cM_\theta:=\cM\otimes\cA_\theta$. \TODO[]
     to~\cite{boalch,thboalch} where analytic classification is used.
   \end{comment}
 \end{notations}
-By \emph{meromorphic transformation}, or just \emph{transformation}, of a
-system we mean a $\C(\!\{t\}\!)$-linear change of the trivialization.
-Such a change is given by a matrix $F\in G(\!\{t\}\!)$ and the transformed
-connection matrix ${}^F\!A$ is obtained through
+\marginnote{\cite[Sec.4.3.1]{Loday2014}}
+By \emph{meromorphic\footnote{We use the term meromorphic in the sens of
+convergent meromorphic. Otherwise we specify formal meromorphic or simply
+formal.} transformation}, or just \emph{transformation}, of a system we mean a
+$\C(\!\{t\}\!)$-linear change of the trivialization.  Such a change is given by
+a matrix $F\in G(\!\{t\}\!)$ and the transformed connection matrix ${}^F\!A$ is
+obtained through
 \[
   {}^F\!A=(dF)F^{-1} + FAF^{-1} \,.
 \]
@@ -392,16 +438,60 @@ transformations}
     \end{s-rem}
   \end{comment}
 \end{rem}
-We define the (formal) equivalence relation on the connection matrices as
-\textbf{\boldmath$A$ is (formally) equivalent to $B$} if and only if
-\textbf{\boldmath$B$ is obtained from $A$ by (formal) transformation}.
-Thus $A$ is (formally) equivalent to $B$ if and only if there is a (formal)
-solution of $[A,B]$.
+\begin{defn}
+  We define the \emph{(formal) equivalence relation on the connection matrices}
+  as 
+  \begin{einr}
+    \textbf{\boldmath$A$ is (formally) equivalent to $B$}
+  \end{einr}
+  if and only if
+  \begin{einr}
+    \textbf{\boldmath$B$ is obtained from $A$ by (formal) transformation}.
+  \end{einr}
+  The \emph{class of a connection matrix} is the orbit under the gauge
+  transformation in $G(\!\{t\}\!)$. The \emph{formal class} ist the orbit in
+  $\hat G(A)$.
+  \begin{s-rem}
+    \begin{enumerate}
+      \item Thus $A$ is (formally) equivalent to $B$ if and only if there is a
+        (formal) solution of $[A,B]$.
+      \item This implies also a equivalence relation and a classification on
+        the systems.
+    \end{enumerate}
+  \end{s-rem}
+\end{defn}
 
 \begin{prop}
   Two germs of meromorphic connections are (formally) isomorphic if and only if
   their corresponding connection matrices are (formally) equivalent.
 \end{prop}
+\begin{proof}
+  \TODO{}
+\end{proof}
+
+\begin{defn}
+  \begin{itemize}
+    \item An \emph{isotropy} of $A^0$ is a transformation $\hat F$ which
+      satisfy ${}^{\hat F}\!A^0=A^0$.
+      Thus, the isotropies are the solutions of the system
+      $[\End A^0]:=[A^0,A^0]$.
+      \marginnote{\cite[853]{Loday1994}}
+    \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
+      \begin{s-rem}
+        They are, a priori, formal transformations. Actually $G(A^0)$ is a
+        subgroup of $\Gl_n(\C[1/x,x])$.
+      \end{s-rem}
+      \begin{comment}
+        In the nice case this is only $T$?
+      \end{comment}
+  \end{itemize}
+\end{defn}
+\begin{lem}
+  \marginnote{\cite[854]{Loday1994}}
+  Two formal transformations $\hat F_1$ and $\hat F_2$ take $A^0$ into
+  equivalent matrices ${}^{\hat F_1}\!A^0$ and  ${}^{\hat F_2}\!A^0$ if and
+  only if there exists $f_0\in G_0(A^0)$ such that $\hat F_1=\hat F_2f_0$.
+\end{lem}
 \begin{proof}
   \TODO{}
 \end{proof}
@@ -438,39 +528,8 @@ solution of $[A,B]$.
 \end{thm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{System of ordinary differential equations}
-From the theory of ordinary differential equations we know that to
-(\ref{eq:ode}) there is a equivalent ordinary differential equation of order
-$n$ which can be written as
-\[
-  \underset{=:P}{\underbrace{%
-      (a_n\partial_t^n+a_{n-1}\partial_t^{n-1}+\cdots a_{1}\partial_t+a_{0})
-  }} \cdot v=0
-\]
-where $a_i\in\C(\!\{t\}\!)$. \TODO{}
-
-In the other direction there is the lemma of the cyclic vector. \TODO{}
-\begin{comment}
-  \begin{itemize}
-    \item \cite[Rem.4.2.6]{Loday2014}
-  \end{itemize}
-\end{comment}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Fundamental solution}
-Fundamental solutions \rewrite{beschreiben} also systems of ordinary
-differential equations.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{As differential operator}
-\begin{comment}
-  \begin{itemize}
-    \item \cite[Sec.4.2]{Loday2014}
-  \end{itemize}
-\end{comment}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Models / formal decomposition of a germ / formal classification}
+\marginnote{\cite[Thm.4.3.1]{Loday2014}}
 In every formal equivalence class of meromorphic connections, there are some
 meromorphic connection of special form, which we will call models. They are not
 unique but all of them, which are formally isomorphic to a given meromorphic
@@ -537,7 +596,7 @@ problem}.
   some germ $(\cE^\phi,\nabla)\otimes(\cR,\nabla)$ where
   \begin{itemize}
     \item $(\cR,\nabla)$ has regular singularity at $\{0\}$ but has not to be
-      of rank $1$, i.e., is isomorphic to a direct sum of regular elementary
+      of rank $1$, i.e.\ is isomorphic to a direct sum of regular elementary
       meromorphic connections.
   \end{itemize}
   \marginnote{\cite[II.2.f]{sabbah2007isomonodromic}}
@@ -576,13 +635,14 @@ problem}.
   \end{multicols}
 \end{defn}
 \begin{lem}
-  Let $(\cM,\nabla)$ be a model of a meromorphic connection, which is
-  represented by the system $[A^0]$.
+  Let $(\cM^{model},\nabla^{model})$ be a model of a meromorphic connection,
+  which is represented by the system $[A^0]$.
   \begin{enumerate}
     \item 
-      If $(\cM,\nabla)$ is a model, if and only if there is a basis in which
-      the fundamental solution\footnote{A $n\times n$ matrix whose
-      columns are $n$ $\C$-linearly independent solutions of the system
+      \marginnote{\cite[Thm.4.3.1]{Loday2014}}
+      If $(\cM^{model},\nabla^{model})$ is a model, if and only if there is a
+      basis in which the fundamental solution\footnote{A $n\times n$ matrix
+      whose columns are $n$ $\C$-linearly independent solutions of the system
       $[A^0]$.} $\mathcal{Y}_0$ has the form
       \[
         \mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}
@@ -594,30 +654,48 @@ problem}.
           \begin{itemize}
             \item $q_j$ is the function, such that $q_j(t^{-1})=\phi_j(t)$
               \TODO[replace all $q$ by $\phi$?]
-            \item the $r_j$ are \TODO{} and satisfy therefore $\sum r_j=n$.
+            \item the $r_j$ are \TODO{} and satisfy therefore $\sum n_j=n$.
           \end{itemize}
-          This means, that $Q=\diag(\underset{r_1\text{-times}}{\underbrace{%
-            q_1,\dots,q_1}},q_2,\dots,q_r)$.
-          \TODO[ramified case]
+          This means, that $Q=\diag(\underset{n_1\text{-times}}{\underbrace{%
+            q_1,\dots,q_1}},q_2,\dots,q_s)$.
+          \TODO[\textbf{ramified case}]
         \item $L\in\gl_n(\C)$ constant matrix called the \emph{matrix of
           formal monodromy}. ($t^L$ means $e^{L\ln t}$.)
           \marginnote{in \cite[1]{Remy2014} $L$ is just a Jordan normal form.
           Is this generic enough?}
       \end{itemize}
-      The matrix $\mathcal{Y}_0$ is called a \emph{normal solution}.
+      The matrix $\mathcal{Y}_0$ is \rewrite{called a \emph{normal solution}.}
       \begin{s-rem}
-        In the unramified case $[Q,L]$, i.e., $Q$ and $L$ commute and $L$ can
+        In the unramified case $[Q,L]$, i.e.\ $Q$ and $L$ commute and $L$ can
         be supposed in Jordan form (cf.  \cite[Sec.4]{Martinet1991}).
       \end{s-rem}
+      \begin{s-prop}
+        A system $[A]$ is a model, if it has, up to meromorphic Abase change,
+        has a fundamental solution of the form $t^L e^{Q(t^{-1})}$, i.e.\ it
+        has a fundamental solution of the form
+        \[
+          Ft^L e^{Q(t^{-1})}
+        \]
+        with $F\in G(\!\{t\}\!)$.
+      \end{s-prop}
     \item The matrix ${A^0}':=dQ+L\frac{dt}{t}$ is a connection matrix for
       $(\cM,\nabla)$.
+      \TODO[\textbf{Only} in the unramified/simple case?]
       \TODO[Therefore it is obtained from $A^0$ via an isotropy?]
-    \item If $(\cM',\nabla')$ is obtained from $(\cM,\nabla)$ via the formal
-      meromorphic transformation $\hat F$, then is
+    \item If $(\cM',\nabla')$ is obtained from $(\cM^{model},\nabla^{model})$
+      via the formal meromorphic transformation $\hat F$, then is
       \[
-        \mathcal{Y}=\hat F t^L e^{Q(1/t)}
+        \mathcal{Y}=\hat F t^L e^{Q(t^{-1})}
       \]
       a fundamental solution for $Y'={}^{\hat F}\!A^0(t)Y$.
+      \begin{s-rem}
+        It is allways possible to permutate the collums of a fundamental
+        solution by 
+        \[
+          \mathcal{Y}=\hat F t^{P^{-1}LP} e^{P^{-1}Q(t^{-1})P}
+        \]
+        with a permutation matrix $P$.
+      \end{s-rem}
   \end{enumerate}
 \end{lem}
 \begin{proof}
@@ -625,7 +703,7 @@ problem}.
 \end{proof}
 We will denote
 \[
-  \cQ_{[A^0]}:=\left\{q_1(t^{-1}),\dots,q_n(t^{-1})\right\} \,.
+  \cQ_{[A^0]}:=\left\{q_1(t^{-1}),\dots,q_s(t^{-1})\right\} \,.
 \]
 
 The important theorem here is the Levelt-Turittin theorem, which solves the
@@ -678,11 +756,12 @@ formal classification problem.
   \end{comment}
 \end{prop}
 \begin{proof}
-  See~\cite{sabbah2007isomonodromic} theorem II.5.7.
+  See~\cite[Thm.II.5.7]{sabbah2007isomonodromic}.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The main asymptotic existence theorem}
+\TODO[move] \TODO[maby \textbf{not necessary}, since we have Borel-Ritt!]
 \begin{comment}
   \begin{multicols}{2}
     \textbf{Classical:}
@@ -706,9 +785,13 @@ which is essentially a deduction from the Borel-Ritt lemma.
 It states that to every formal solution of a system of meromorphic differential
 equations, and every sector with sufficiently small opening, one can find a
 solution of the system having the formal one as its asymptotic expansion.
+\begin{rem}
+  We will use this in the case, when $A$ ist via $\hat F$ formally equivalent
+  to $A^0$. We are then able to find a \rewrite{(cyclic)} covering of the $S^1$
+  of arcs such that on every arc there exists a lift $\tilde F$ of $\hat F$.
+\end{rem}
 \TODO{}
 \begin{comment}
-
   \begin{multicols}{2}
     \begin{thm}
       \marginnote{\cite[Thm.II.2.3.1]{sabbah_cimpa90}}
@@ -755,36 +838,6 @@ solution of the system having the formal one as its asymptotic expansion.
     \end{proof}
   \end{multicols}
 \end{comment}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Meromorphic / formal transformation II}
-\begin{defn}
-  \begin{itemize}
-    \item An \emph{isotropy} of $A^0$ is a transformation $\hat F$ which
-      satisfy ${}^{\hat F}\!A^0=A^0$.
-      Thus, the isotropies are the solutions of the system
-      $[\End A^0]:=[A^0,A^0]$.
-      \marginnote{\cite[853]{Loday1994}}
-    \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
-      \begin{s-rem}
-        They are, a priori, formal transformations. Actually $G(A^0)$ is a
-        subgroup of $\Gl_n(\C[1/x,x])$.
-      \end{s-rem}
-      \begin{comment}
-        In the nice case this is only $T$?
-      \end{comment}
-  \end{itemize}
-\end{defn}
-\begin{lem}
-  \marginnote{\cite[854]{Loday1994}}
-  Two formal transformations $\hat F_1$ and $\hat F_2$ take $A^0$ into
-  equivalent matrices ${}^{\hat F_1}\!A^0$ and  ${}^{\hat F_2}\!A^0$ if and
-  only if there exists $f_0\in G_0(A^0)$ such that $\hat F_1=\hat F_2f_0$.
-  \TODO[\Leftrightarrow{} $f_0$ is a isotropy?]
-\end{lem}
-\begin{proof}
-  \TODO{}
-\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The classifying set}
