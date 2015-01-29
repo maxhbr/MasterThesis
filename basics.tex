@@ -116,7 +116,7 @@
 \paragraph{Multivalued functions:}
 \begin{defn}
   \marginnote{\cite[227]{Balser2000Formal}}
-  A function $f$, \rewrite{defined on some domain $G$ considered on th eRiemann
+  A function $f$, \rewrite{defined on some domain $G$ considered on the Riemann
   surface}, is called to be \emph{single-valued} if
   \[
     f(t)=f(t\exp(2\pi i)) \qquad\text{whenever both sides are defined.}
@@ -150,7 +150,7 @@
       \item \textbf{\textcolor{blue}{Van der Put:
             \cite[Chapter 7]{van2003galois}: Exact Asymptotics}}
       \item \cite{majima1984asymptotic}
-      \item \cite{Balser2000Formal}
+      \item \cite[Sec.4.4]{Balser2000Formal}
       \item \cite{Loday1994}
       \item \textbf{\textcolor{blue}{\cite{Loday2014} Chapter 2}}
     \end{itemize}
@@ -163,8 +163,8 @@
   \TODO[\cite{sibuya1990Linear} Appendix A.3]
 \end{comment}
 In this chapter, we want to look at asymptotic expansions at $t_0$.
-There are various literature references for Poincarè asymptotic expansions, or
-for short, asymptotic expansions.
+There are \rewrite{various literature references} for Poincarè asymptotic
+expansions, or for short, asymptotic expansions.
 We will mostly refer to \cite[chapter 2]{Loday2014} and
 \cite[chapter 7]{van2003galois}.
 We will assume, that $t_0=0$ and this is without loss of generality, since
@@ -251,9 +251,11 @@ We introduce the following notations:
   \def\myN{\textbf{\textcolor{blue!40!black}{N}}}
   \def\mySect{\textcolor{red!40!black}{\mathfrak{s}'}}
   \def\myConst{\textcolor{green!40!black}{C(\myN,\mySect)}}
-  A function $f\in\cO(\mathfrak{s})$ is said to \emph{have the formal Laurent
-  series $\sum_{n\geq n_0}a_nt^n$ as asymptotic expansion} (or \emph{to be
-  asymptotic to the series}) on the sector $\mathfrak{s}$ if
+  A function $f\in\cO(\mathfrak{s})$ is said to \emph{have the
+  formal\footnote{The term ``formal'' emphasizes, that we do not restrict the
+  coefficients $a_n\in\C$ in any way.} Laurent series $\sum_{n\geq n_0}a_nt^n$
+  as asymptotic expansion} (or \emph{to be asymptotic to the series}) on the
+  sector $\mathfrak{s}$ \TODO[for $t\to0$ in $\mathfrak{s}$] if
   \begin{itemize}
     \item for all proper sub-sectors $\mySect\Subset\mathfrak{s}$ and
     \item all $\myN\in\N$,
@@ -538,6 +540,13 @@ given function $\hat f\in\C(\!(t)\!)$ in a canonical way. For example
 \begin{comment}
   \subsection{Gevrey Asymptotics}
   \marginnote{\cite[Sec.4.5]{Balser2000Formal},\\\cite{van2003galois}}
+  The map $T_I$ is highly surjective, even for large arcs $I$. To obtain an
+  injective map, we introduce Gevrey asymptotic expansions. The associated map
+  will be injective for wide arcs, but it will no longer (for large arcs) be
+  surjective.
+  \begin{prop}[Ritt's theorem for Gevrey Asymptotics]
+    \marginnote{\cite[Prop.4.10]{Balser2000Formal}}
+  \end{prop}
 \end{comment}
 
 \begin{comment}

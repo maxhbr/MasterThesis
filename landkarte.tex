@@ -9,7 +9,7 @@ effective divisor on $M$.
     ,line width=0.8pt
     ,mybox/.style={rectangle
                   ,draw
-                  ,fill=black!10
+                  ,fill=white
                   ,inner sep=5pt
                   ,text width=3cm
                   ,text badly centered
@@ -35,7 +35,7 @@ effective divisor on $M$.
 
 
     \node[mybox,dashed] (locDMod) at (-3,-1)
-      {\TODO[$\cD/D\cD$]\\$\cD$-Module};
+      {\TODO[$\cD/P\cD$]\\\rewrite{localized holonomic} $\cD$-modules};
     \node[mybox] (locMerCon) at (-1,-1)
       {$(\cM,\nabla)$\\germ of a meromorphic connection};
 
@@ -45,24 +45,27 @@ effective divisor on $M$.
       {$A$\\connection matrix};
 
     \node[mybox,dashed] (diffOp) at (-2,-2)
-      {$D\in\cD$\\differential operator};
+      {$P\in\cD$\\differential operator};
 
-    \draw[->,dashed] (globDMod) -- (locDMod)
+    \draw[->>,dashed] (globDMod) -- (locDMod)
       node [midway] {localize};
 
-    \draw[->] (merCon) -- (locMerCon)
+    \draw[->>] (merCon) -- (locMerCon)
       node [midway] {$\substack{\text{take}\\\text{germ}}$};
     \draw[->,dashed] (locMerCon) to[bend left] (merCon);
 
-    \draw[->] (globSyst) -- (locSyst)
+    \draw[->>] (globSyst) -- (locSyst)
       node [midway] {$\substack{\text{take}\\\text{germ}}$};
 
-    \draw[->] (locMerCon) to[bend left] (locSyst);
-    \draw[->] (locSyst) to[bend left] (locMerCon);
+    \draw[->] (locMerCon) to[bend angle=10,bend left] (locSyst);
+    \draw[->>] (locSyst) to[bend angle=10,bend left] (locMerCon);
     \draw[<->] (locSyst) -- (conMat) node [midway] {$1 - 1$};
 
-    \draw[->,dashed] (locSyst) to[bend left] (diffOp);
+    \draw[->,dashed] (locSyst) to[bend angle=25,bend left] (diffOp);
+    \draw[->,dashed] (diffOp) to[bend angle=20,bend right] (locSyst);
+
     \draw[->,dashed] (diffOp) to[bend left] (locDMod);
+
     \draw[->,dashed] (locDMod) to[bend left] (locMerCon);
   \end{tikzpicture}
 \end{center}

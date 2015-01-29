@@ -46,6 +46,7 @@
 \usepackage{tikz-cd}
 \usetikzlibrary{matrix, arrows, calc, decorations.pathmorphing,%
   decorations.pathreplacing, fadings, 3d, decorations.markings, positioning}
+\usetikzlibrary{external}
 \usepackage{tikzpagenodes}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
