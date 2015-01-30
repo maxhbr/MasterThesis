@@ -92,8 +92,8 @@ Here we will look at the classifying set and we will proof, that it is
 isomorphic \TODO[as\dots] to the first non abelian cohomology \rewrite{set}
 $H^1(S^1;\Lambda^{<0}(A^0))=:\St(A^0)$.
 
-Let us first define a Stokes sheaf on $S^1$, as the sheaf of flat
-isotropies\TODO[\dots]
+Let us first define a Stokes sheaf $\Lambda(A^0)$ on $S^1$, as the sheaf of
+flat isotropies.
 \begin{defn}
   The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is the sheaf of groups defined on
   $S^1$ whose stalk at any point $\theta\in S^1$ is the group of germs of
@@ -104,17 +104,19 @@ isotropies\TODO[\dots]
       and $f\sim_{\mathfrak{s}} 1$;
     \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
   \end{enumerate}
-  \begin{s-rem}
-    $\Lambda(A^0)$ is the same as $\Aut^{<0}(\tilde\cM^{model})$
-    in~\cite{sabbah2007isomonodromic} which is defined as follows \TODO
-  \end{s-rem}
+  \begin{comment}
+    \begin{s-rem}
+      $\Lambda(A^0)$ is the same as $\Aut^{<0}(\tilde\cM^{model})$
+      in~\cite{sabbah2007isomonodromic} which is defined as follows \TODO
+    \end{s-rem}
+  \end{comment}
 \end{defn}
 
 \subsection{The theorem}
 \begin{comment}
   \TODO[See \cite{thboalch} for sheaf-less definition]
 \end{comment}
-Let $(\cM,\nabla,\hat f)$ be a germ of a  meromorphic connection.
+Let $(\cM,\nabla,\hat f)$ be a marked germ of a  meromorphic connection.
 There exists an open covering $\cU=(U_j)_{j\in J}$ and for every open set an
 isomorphism
 \[
@@ -135,7 +137,7 @@ to the first non abelian cohomology of $\Lambda^{<0}(A^0)$
 which sends the class of $(\cM^{model},\nabla^{model},\hat\id)$ to that of
 $\id$.
 
-\begin{tthm}[Malgrange-Sbuya] \label{thm:mainThm1}
+\begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1}
   The homomorphism
   \[
     \exp:\cH\to\St(A^0):=H^1(S^1;\Lambda^{<0}(A^0))
@@ -164,6 +166,59 @@ $\id$.
     where $\exp_{\mu_0}(\hat F\Phi)=\Phi^{-1}\exp_{\mu_0}(\hat F)\Phi$.
   \end{rem}
 \end{comment}
+
+\subsubsection{The theorem (system version)}
+Is is easy to translate the Malgrange-Sibuya isomorphism to the language of
+systems.
+\begin{comment}
+  \begin{itemize}
+    \item \TODO[See \cite{thboalch} for sheaf-less definition]
+  \item \TODO{}: $[A,A^0]$ or $[A^0,A]$
+  \end{itemize}
+\end{comment}
+Let $(A,\hat F)$ be a marked pair, i.e. $\hat F$ solves $[A,A^0]$.
+There exists an open covering $\cU=(U_j)_{j\in J}$ and for every open set
+a lift $F_j\in\Gl_n(\cA(U_j))$ which solves $[A,A^0]$.
+By $(F_kF_j^{-1})_{jk}$ is then a cocycle of the sheaf $\St(A^0)$, relative to
+the covering $\cU$, defined.
+For other lifts $F_j'$ of $\hat F$ on $U_j$, $(F_j'F_j^{-1})$ is a $0$-cochain
+of $\Sto(A^0)$ relative to $\cU$.
+Thus the associated cochians to $(f_j)$ and $(f_j')$ are equivalent.
+One can also check that, if $(A,\hat F)$ and $(A',\hat F')$ are equivalent, the
+corresponding cocycles define the same cohomology class.
+This defines a mapping of pointed sets to the first non abelian cohomology of
+$\Lambda^{<0}(A^0)$
+\[
+  \cH\to H^1(S^1;\Lambda^{<0}(A^0)) \,,
+\]
+which we call $\exp$.
+
+\begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1}
+  The homomorphism
+  \[
+    \exp:\cH\to\St(A^0):=H^1(S^1;\Lambda^{<0}(A^0))
+  \]
+  is an isomorphism of pointed\footnote{Which maps the class of
+  $(A^0,\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology class.} sets.
+\end{tthm}
+\TODO[\cite{sabbah2007isomonodromic} cor II.6.4.]
+\begin{rem}
+  \marginnote{\cite{Loday1994} Remark I.2.2}
+  To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains which
+  are conjugated via $\Phi$.
+  We get the following commutative diagram:
+  \[ \begin{tikzcd}
+      G\backslash\hat G(A^1) \rar{\cdot\Phi}\dar{\exp}
+      & G\backslash\hat G(A^0) \dar{\exp}
+      & \hat F \arrow[|->]{r}\arrow[|->]{d}
+      & \hat F\Phi \arrow[|->]{d}
+    \\ H^1(S^1;\lambda(A^1)) \rar
+      & H^1(S^1;\lambda(A^0))
+      & \exp_{\mu_1}(\hat F) \arrow[|->]{r}
+      & \exp_{\mu_0}(\hat F\Phi)
+  \end{tikzcd} \]
+  where $\exp_{\mu_0}(\hat F\Phi)=\Phi^{-1}\exp_{\mu_0}(\hat F)\Phi$.
+\end{rem}
 
 \subsection{Proof}
 We will mainly refer to \cite[section 6.d]{sabbah2007isomonodromic}, where a
@@ -246,7 +301,7 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
 
   Thus, the proof of~\ref{thm:mainThm1} is a consequence of the following
   Malgrange-Sibuya theorem.
-  \begin{thm}[Malgrange-Sbuya]
+  \begin{thm}[Malgrange-Sibuya]
     \marginnote{\cite[Thm.II.6.10]{sabbah2007isomonodromic}}
     The image of the mapping
     \[
@@ -349,12 +404,42 @@ relations:
     \\\Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is
       flat at $0$ in a neighbourhood of the direction $\tilde\theta$.
     \item $\boldmath q_j \underset{\tilde\theta,\max}{\prec} q_l$
-      :\Leftrightarrow{} $a_{ij}e^{-ik\tilde\theta}$ is a real negative number.
+      :\Leftrightarrow{} $a_{ij}e^{-ik\tilde\theta}$ is a real negative number
+      (where $k$ is the degree of $q_j-q_l$).
       \\\Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is of maximal
       decay in the direction $\tilde\theta$.
       \begin{comment}
         \Leftrightarrow{} $q_{ij}(t^{-1})\in\R_{<0}$ along $\tilde\theta$.
       \end{comment}
+      \begin{s-rem} \label{rem:rotationalSym}
+        \marginnote{\cite[8]{thboalch}}
+        Let $\theta\in S^1$ with determination $\tilde\theta$.
+        Let $(j,l)$ be a pair such that 
+        $q_j \underset{\tilde\theta,\max}{\prec} q_l$, i.e.\ let
+        $a_{jl}e^{-ik\tilde\theta}\in\R_{<0}$.
+        Hence, for $n\in\N$,
+        \begin{align*}
+          a_{jl}e^{-ik\left(\tilde\theta+n\frac{\pi}{k}\right)}
+          &=a_{jl}e^{-ik\tilde\theta}e^{-in\pi}
+          = \begin{cases}
+            a_{jl}e^{-ik\tilde\theta} & \text{, if $n$ is even}
+          \\-a_{jl}e^{-ik\tilde\theta} & \text{, if $n$ is uneven}
+        \end{cases}
+        \end{align*}
+        is, in the case when $n$ is even, also real and negative. In the other
+        case, when $n$ is uneven, we have that $a_{jl}=-a_{lj}$ and thus
+        $a_{lj}e^{-ik\left(\tilde\theta+n\frac{\pi}{k}\right)}\in\R_{<0}$.
+
+        Thus we have
+        \[
+          \begin{cases}
+            q_j \underset{\tilde\theta+n\frac{\pi}{k},\max}{\prec} q_l
+            & \text{when $n$ is even}
+          \\q_l \underset{\tilde\theta+n\frac{\pi}{k},\max}{\prec} q_j
+            & \text{when $n$ is uneven}
+          \end{cases}
+        \]
+      \end{s-rem}
   \end{itemize}
   \begin{s-rem}
     In the unramified case these relations do not depend on the determination
@@ -381,6 +466,10 @@ relations:
           later, define $\A$ to contain a single, arbitrary direction if $k=0$.
           \TODO[make all Stokes dirs $\alpha$ instead of $\theta$?]
       \end{itemize}
+      \begin{s-rem}
+        From remark~\ref{rem:rotationalSym} follows, that in the case
+        $\cK=\{k\}$, the set $\cA$ has $\frac{\pi}{k}$-rotational symmetry.
+      \end{s-rem}
     \item $\theta$ is an \emph{Stokes direction} when there is at least one
       pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies neither
       $q_j\underset{\theta}{\prec} q_l$ nor $q_l\underset{\theta}{\prec} q_j$.
@@ -476,8 +565,8 @@ the argument near the direction $\theta$.
     \phi_\theta(t)X_{0,\tilde\theta}(t)
     =X_{0,\tilde\theta}(t)(1_n+C_{\tilde\theta})
   \end{equation}
-  near $\theta$.  We call $1+C_{\tilde\theta}$ a \emph{representation of
-  $\phi_\theta$}.
+  near $\theta$.  We call the matrux $1+C_{\tilde\theta}$ a
+  \emph{representation of $\phi_\theta$}.
   \begin{s-rem}
     \marginnote{\cite[10]{thboalch}}
     The morphism $\rho_{\tilde\theta}$ relates solutions $\phi_\theta$ of
@@ -574,7 +663,7 @@ In particular we get, that
 \end{itemize}
 \begin{rem}
   This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent.
-  \TODO[Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.]
+  \rewrite{Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.}
 \end{rem}
 On the other hand, every constant unipotent Matrix, with zeros at the necessary
 positions, characterizes a unique element of $\Sto_\theta(A^0)$.
@@ -651,29 +740,8 @@ $\phi_{\theta}\in\Sto_\theta(A^0)$ by
       the set of levels \emph{beared by $\theta\in\A$}, and
       $K_\theta=\max\cK_\theta$ the \emph{maximal level beared by $\theta$}.
       \begin{s-rem}
-        \TODO[move to anti-Stokes direction definition?]
-        \marginnote{\cite[8]{thboalch}}
-        Let $\theta\in S^1$ and $k\in\cK_\theta$. Then there is a pair $(j,l)$
-        such that $q_{jl}$ has degree $k$ and
-        $a_{jl}e^{-ik\tilde\theta}\in\R_{<0}$. Hence, for $n\in\N$,
-        \begin{align*}
-          a_{jl}e^{-ik\left(\tilde\theta+n\frac{\pi}{k}\right)}
-          &=a_{jl}e^{-ik\tilde\theta}e^{-in\pi}
-          = \begin{cases}
-            a_{jl}e^{-ik\tilde\theta} & \text{, if $n$ is even}
-          \\-a_{jl}e^{-ik\tilde\theta} & \text{, if $n$ is uneven}
-        \end{cases}
-        \end{align*}
-        is, in the case when $n$ is even, also real and negative. In the other
-        case, when $n$ is uneven, we have that $a_{jl}=-a_{lj}$ and thus
-        $a_{lj}e^{-ik\left(\tilde\theta+n\frac{\pi}{k}\right)}\in\R_{<0}$.
-
-        Therefore is $k\in\cK_{\theta+n\frac{\pi}{k}}$, which implies that
-        $\Sto_{\theta+n\frac{\pi}{k}}$ is not trivial, i.e.\
-        $\theta+n\frac{\pi}{k}$ is a anti-Stokes direction.
-
-        In the case, when $\cK=\{k\}$ the set $\cA$ has
-        $\frac{\pi}{k}$-rotational symmetry.
+        The remark~\ref{rem:rotationalSym} implies, that from $k\in\cK_{\theta}$
+        follows that $k\in\cK_{\theta+n\frac{\pi}{k}}$ for $n\in\N$.
       \end{s-rem}
   \end{itemize}
 \end{notations}
