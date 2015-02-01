@@ -27,9 +27,9 @@ connections. Firstly the languages of meromorphic connections, and also
 $\cD$-modules\TODO[global]. These two can be used to talk about global
 information. For local description one can use germs of meromorphic connections
 or $\cD$-modules\TODO[local] which are coordinate independent. Coordinate
-dependent alternatives are (local) systems and connection matrices. Also, one
-can use the fundamental solutions to describe local informations of meromorphic
-connections.
+dependent alternatives are (local) systems and connection matrices. Also,
+\rewrite{one can use the fundamental solutions to describe local informations
+of meromorphic connections.}
 
 \begin{comment}
   Siehe:
@@ -112,6 +112,10 @@ A meromorphic connection is then defined as follows.
     \[
       d\omega + \omega \wedge \omega = 0.
     \]
+    \begin{comment}
+      This condition is sufficient to assure the existence of local
+      fundamental solutions.
+    \end{comment}
   \end{s-prop}
   \begin{s-rem}
     Here are all connections flat, since \TODO[dim $1$?]
@@ -137,8 +141,8 @@ about germs of meromorphic connections or systems, which is coordinate-
 and trivialization-dependent.
 \begin{prop}
   \marginnote{\textbf{\cite[Rem.5.2.4]{hotta2008}}\\\cite[Def.4.2.1]{Loday2014}}
-  A germ $(\cM,\nabla)$ of a meromorphic connection $(\sM,\nabla)$ is just the
-  sheaf-theoretic germ, thus has the form $(\cM,\nabla)$ where
+  A germ of a meromorphic connection $(\sM,\nabla)$ is just the sheaf-theoretic
+  germ (at $t=0$), thus has the form $(\cM,\nabla)$ where
   \begin{itemize}
     \item $\cM$ is the germ at $0$ of the holomorphic bundle $\sM$ and thus a
       $\C(\!\{t\}\!)$-vectorspace of dimension $n$, since the ring of germs of
@@ -234,8 +238,8 @@ one and dimension $n$.
     \item This matrix $A$ is called a \emph{connection matrix} of
       $(\cM,\nabla)$. It depends on the choice of the $\C(\!\{t\}\!)$-basis.
       \begin{s-rem}
-        We have seen, that a connection is fully determined by its connection
-        matrix.
+        We have seen above, that a connection is fully determined by its
+        connection matrix.
       \end{s-rem}
     \item A \emph{germ of a meromorphic linear differential system} of rank
       $n$, or just a \emph{system}, is a germ of a meromorphic connection on
@@ -309,7 +313,9 @@ one and dimension $n$.
   Let $[A]$ be a system. We \rewrite{view it as a formal system, by} allowing
   formal solutions.
   \TODO{}
+
 \columnbreak
+
   Let $(\cM,\nabla)$ be a meromorphic connection. The connection $\nabla$
   naturally extends to $\hat\cM:=\cM\otimes\C(\!(t)\!)$ and
   $\tilde\cM_\theta:=\cM\otimes\cA_\theta$.
@@ -320,6 +326,21 @@ one and dimension $n$.
 \subsubsection{Fundamental solution}
 Fundamental solutions \rewrite{beschreiben} also systems of ordinary
 differential equations.
+
+\begin{defn}
+  A \emph{fundamental solution} $\cY$ of the system $[A]$ is a $n\times n$
+  matrix whose columns are $n$ $\C$-linearly independent solutions of the
+  system $[A]$.
+\end{defn}
+
+\begin{rem}
+  If the trivialization is changed by $F$ (resp.\ $\hat F$) the fundamental
+  solution $\cY\in G(\!\{t\}\!)$ changes to $F\cY$ (resp.\ $\hat F\cY$).
+\end{rem}
+
+\begin{comment}
+  Unique \textbf{up to permutation}?\ or up to basis change?
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{As differential operator}
@@ -339,17 +360,23 @@ $n$ which can be written as
 \]
 where $a_i\in\C(\!\{t\}\!)$. \TODO{}
 
-In the other direction there is the lemma of the cyclic vector. \TODO{}
+\begin{comment}
+  See \cite[Sec.1.4]{babbitt1983} for \textbf{ode of rank $n$} to
+  \textbf{system}.
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{As $\cD$-module}
+\begin{comment}
+  \cite[Sec.4.2.2]{Loday2014}
+\end{comment}
+
+In the other direction, from $\cD$-modules to meromorphic connections, there is
+the lemma of the cyclic vector. \TODO{}
 \begin{comment}
   \begin{itemize}
     \item \cite[Rem.4.2.6]{Loday2014}
   \end{itemize}
-\end{comment}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{As $\cD$-Module}
-\begin{comment}
-  \cite[Sec.4.2.2]{Loday2014}
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -412,7 +439,7 @@ We denote by $\hat G(A)$ the set of all \emph{(applicable) formal
 transformations}
 \[
   \hat G(A):=\left\{\hat F\in G(\!(t)\!)
-    \mid {}^{\hat F}\!A \text{ has convergent entries i.e.\ } 
+    \mid {}^{\hat F}\!A \text{ has convergent entries i.e.\ }
     {}^{\hat F}\!A\in G(\!\{t\}\!)
   \right\}\,.
 \]
@@ -440,7 +467,7 @@ transformations}
 \end{rem}
 \begin{defn}
   We define the \emph{(formal) equivalence relation on the connection matrices}
-  as 
+  as
   \begin{einr}
     \textbf{\boldmath$A$ is (formally) equivalent to $B$}
   \end{einr}
@@ -505,7 +532,7 @@ transformations}
   matrix with at most a simple pole at $t=0$.
   Otherwise, the singularity is called \emph{irregular}.
   \begin{s-rem}
-    This implies that, if $A$ has 
+    This implies that, if $A$ has
     $\left\{\substack{\text{irregular}\\\text{regular}}\right\}$
     singularity, then also all
     meromorphic equivalent matrices ${}^{F}\!A$ have
@@ -528,12 +555,20 @@ transformations}
 \end{thm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ramification}
+\begin{comment}
+  \cite[I.5.4.1]{sabbah_cimpa90}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Models / formal decomposition of a germ / formal classification}
 \marginnote{\cite[Thm.4.3.1]{Loday2014}}
 In every formal equivalence class of meromorphic connections, there are some
 meromorphic connection of special form, which we will call models. They are not
 unique but all of them, which are formally isomorphic to a given meromorphic
 connection, lie in the same convergent equivalence class.
+In fact, every element of this convergent equivalence class will be a model in
+our definition.
 
 The first part is given by the Levelt-Turittin theorem, which says, that
 each meromorphic connection is, after potentially needed ramification, formally
@@ -601,10 +636,20 @@ problem}.
   \end{itemize}
   \marginnote{\cite[II.2.f]{sabbah2007isomonodromic}}
 \end{defn}
-\begin{defn}
+\begin{defn} \label{defn:model}
   \def\myPhi{\textcolor{red!60!black}{\phi}}
   \def\myE{\textcolor{green!40!black}{\cE^{\myPhi}}}
-  A germ $(\cM,\nabla)$ is a \emph{model} if there exists a isomorphism
+  \begin{multicols}{2}
+    A germ $(\cM,\nabla)$ is a \emph{model} or \emph{normal form}\footnote{If
+    we talk about systems, we will prefer to use the term ``normal form''} if
+    there exists a isomorphism
+
+    \columnbreak{}
+
+    A germ $(\cM',\nabla')$ is a \emph{model} or \emph{normal form}\footnote{If
+    we talk about systems, we will prefer to use the term ``normal form''} if
+    there exists, after ramification $\cM=\pi^*\cM'$ by $\pi$, a isomorphism
+  \end{multicols}
   \begin{multicols}{2}
     \[
       \lambda:(\cM,\nabla)
@@ -634,78 +679,6 @@ problem}.
     \end{tikzpicture}
   \end{multicols}
 \end{defn}
-\begin{lem}
-  Let $(\cM^{model},\nabla^{model})$ be a model of a meromorphic connection,
-  which is represented by the system $[A^0]$.
-  \begin{enumerate}
-    \item 
-      \marginnote{\cite[Thm.4.3.1]{Loday2014}}
-      If $(\cM^{model},\nabla^{model})$ is a model, if and only if there is a
-      basis in which the fundamental solution\footnote{A $n\times n$ matrix
-      whose columns are $n$ $\C$-linearly independent solutions of the system
-      $[A^0]$.} $\mathcal{Y}_0$ has the form
-      \[
-        \mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}
-      \]
-      with
-      \begin{itemize}
-        \item
-          $Q(t^{-1})=\underset{j=1}{\overset{r}{\bigoplus}}q_j(t^{-1})1_{r_j}$
-          \begin{itemize}
-            \item $q_j$ is the function, such that $q_j(t^{-1})=\phi_j(t)$
-              \TODO[replace all $q$ by $\phi$?]
-            \item the $r_j$ are \TODO{} and satisfy therefore $\sum n_j=n$.
-          \end{itemize}
-          This means, that $Q=\diag(\underset{n_1\text{-times}}{\underbrace{%
-            q_1,\dots,q_1}},q_2,\dots,q_s)$.
-          \TODO[\textbf{ramified case}]
-        \item $L\in\gl_n(\C)$ constant matrix called the \emph{matrix of
-          formal monodromy}. ($t^L$ means $e^{L\ln t}$.)
-          \marginnote{in \cite[1]{Remy2014} $L$ is just a Jordan normal form.
-          Is this generic enough?}
-      \end{itemize}
-      The matrix $\mathcal{Y}_0$ is \rewrite{called a \emph{normal solution}.}
-      \begin{s-rem}
-        In the unramified case $[Q,L]$, i.e.\ $Q$ and $L$ commute and $L$ can
-        be supposed in Jordan form (cf.  \cite[Sec.4]{Martinet1991}).
-      \end{s-rem}
-      \begin{s-prop}
-        A system $[A]$ is a model, if it has, up to meromorphic Abase change,
-        has a fundamental solution of the form $t^L e^{Q(t^{-1})}$, i.e.\ it
-        has a fundamental solution of the form
-        \[
-          Ft^L e^{Q(t^{-1})}
-        \]
-        with $F\in G(\!\{t\}\!)$.
-      \end{s-prop}
-    \item The matrix ${A^0}':=dQ+L\frac{dt}{t}$ is a connection matrix for
-      $(\cM,\nabla)$.
-      \TODO[\textbf{Only} in the unramified/simple case?]
-      \TODO[Therefore it is obtained from $A^0$ via an isotropy?]
-    \item If $(\cM',\nabla')$ is obtained from $(\cM^{model},\nabla^{model})$
-      via the formal meromorphic transformation $\hat F$, then is
-      \[
-        \mathcal{Y}=\hat F t^L e^{Q(t^{-1})}
-      \]
-      a fundamental solution for $Y'={}^{\hat F}\!A^0(t)Y$.
-      \begin{s-rem}
-        It is allways possible to permutate the collums of a fundamental
-        solution by 
-        \[
-          \mathcal{Y}=\hat F t^{P^{-1}LP} e^{P^{-1}Q(t^{-1})P}
-        \]
-        with a permutation matrix $P$.
-      \end{s-rem}
-  \end{enumerate}
-\end{lem}
-\begin{proof}
-  \TODO{}
-\end{proof}
-We will denote
-\[
-  \cQ_{[A^0]}:=\left\{q_1(t^{-1}),\dots,q_s(t^{-1})\right\} \,.
-\]
-
 The important theorem here is the Levelt-Turittin theorem, which solves the
 formal classification problem.
 \begin{thm}[Levelt-Turittin]
@@ -715,7 +688,7 @@ formal classification problem.
   \textcolor{green!30!black}{\textbf{formal}} isomorphism
   \[
     \textcolor{green!30!black}{\hat{\textcolor{black}{\lambda}}}:
-    \textcolor{blue!60!black}{\pi^{+}}
+    \textcolor{blue!60!black}{\pi^{*}}
     \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}}
     \overset{\cong}\longrightarrow
     \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}^{model}}
@@ -728,12 +701,6 @@ formal classification problem.
 \begin{proof}
   See \TODO{}
 \end{proof}
-\begin{cor}
-  \marginnote{\cite[Thm.4.3.1]{Loday2014}}
-  To any system $[A]$ there exists a fundamental solution $\mathcal{Y}$ of the
-  form $\mathcal{Y}=\hat F t^\Lambda e^{Q(1/t)}$.
-\end{cor}
-
 \begin{prop}
   \marginnote{This condition \textbf{might be} equivalent to the
     condition of being \textbf{nice} in~\cite{thboalch}.}
@@ -760,6 +727,88 @@ formal classification problem.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{In the language of systems and fundamental solutions}
+\begin{lem} \label{lem:normSol}
+  % Let $(\cM^{model},\nabla^{model})$ be a model of a meromorphic connection,
+  % which is represented by the system $[A^0]$.
+
+  \marginnote{\cite[Thm.4.3.1]{Loday2014}}
+  The meromorphic connection $(\cM^{model},\nabla^{model})$ is a model, if and
+  only if there is a basis such that the defined system $[A^0]$ has a
+  fundamental solution $\mathcal{Y}_0$ of the form
+  \[
+    \mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}
+  \]
+  with
+  \begin{itemize}
+    \item \emph{irregular part} $e^{Q(t^{-1})}$ of $\mathcal{Y}_0$ defind by
+      \[
+        Q(t^{-1})=\underset{j=1}{\overset{s}{\bigoplus}}q_j(t^{-1})1_{n_j}
+          =\diag(\underset{n_1\text{-times}}{\underbrace{%
+          q_1,\dots,q_1}},q_2,\dots,q_s)
+      \]
+      where the $q_i$ are polynomials in $\frac{1}{t}$ or in a fractional power
+      $\frac{1}{s}=\frac{1}{t^{1/p}}$ of $\frac{1}{t}$ such that $q_j(0)=0$,
+      i.e.\ without constant term,
+    \item $L\in\gl_n(\C)$ constant matrix called the \emph{matrix of formal
+      monodromy}, where $t^L$ means $e^{L\ln t}$ and
+      \marginnote{in \cite[1]{Remy2014} $L$ is just a Jordan normal form.  Is
+      this generic enough?}
+  \end{itemize}
+  \begin{comment}
+    The models $(\cM^{model},\nabla^{model})$ only yield the unramified case?
+    See~\ref{rem:unramJordane}
+  \end{comment}
+  The fundamental solution, i.e.\ matrix $\mathcal{Y}_0$, is called a
+  \emph{normal solution}.
+  \begin{comment}
+    \begin{s-cor}
+      A system $[A]$ is a model, if it has, up to meromorphic base change, a
+      fundamental solution of the form $t^L e^{Q(t^{-1})}$, i.e.\ it has a
+      fundamental solution of the form $Ft^L e^{Q(t^{-1})}$ with
+      $F\in G(\!\{t\}\!)$.
+    \end{s-cor}
+  \end{comment}
+\end{lem}
+\begin{proof}
+  \TODO{}
+\end{proof}
+\begin{rem}
+  Let $[A^0]$ be a normal form with normal solution 
+  $\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}$.
+  \begin{enumerate}
+    \item In the unramified case are the $q_i$ the $\phi_i$ from
+      definition~\ref{defn:model}.
+      \TODO[???]
+    \item In the unramified case 
+      $[Q,L]=0$, i.e.\ $Q$ and $L$ commute and $L$
+      can be supposed in Jordan form (cf.  \cite[Sec.4]{Martinet1991}).
+    \item If $A'={}^{\hat F}\!A^0$ is obtained from $A^0$ via the formal
+      meromorphic transformation $\hat F$ then is
+      \[
+        \mathcal{Y}=\hat F t^L e^{Q(t^{-1})}
+      \]
+      a fundamental solution for $[A']$.
+    \item \marginnote{\cite[73]{Loday2014}}
+      It is allways possible to permutate the collums of a fundamental
+      solution by
+      \[
+        P^{-1}\mathcal{Y}P=\hat F t^{P^{-1}LP} e^{P^{-1}Q(t^{-1})P}
+      \]
+      with a permutation matrix $P$.
+  \end{enumerate}
+\end{rem}
+\begin{comment}
+  \begin{lem}
+    Let $\triangle$ be a system with fundamental solution
+    $\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}$ then is the matrix
+    ${A^0}:=dQ+L\frac{dt}{t}$ is a connection matrix for $\triangle$.
+  \TODO[\textbf{Only} in the unramified/simple case?]
+  \TODO[Therefore it is obtained from $A^0$ via an isotropy?]
+  \end{lem}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The main asymptotic existence theorem}
 \TODO[move] \TODO[maby \textbf{not necessary}, since we have Borel-Ritt!]
 \begin{comment}
@@ -780,7 +829,7 @@ formal classification problem.
   \end{multicols}
 \end{comment}
 Here we want to state the main asymptotic existence theorem (or often M.A.E.T.)
-which is essentially a deduction from the Borel-Ritt lemma. 
+which is essentially a deduction from the Borel-Ritt lemma.
 \marginnote{\cite[207]{Balser2000Formal}}
 It states that to every formal solution of a system of meromorphic differential
 equations, and every sector with sufficiently small opening, one can find a
@@ -808,7 +857,7 @@ solution of the system having the formal one as its asymptotic expansion.
       See \cite[Sec.II.2.4]{sabbah_cimpa90}
     \end{proof}
   \columnbreak
-    We set 
+    We set
     \[
       \hat\cM=\hat\cO\otimes \cM
     \]
@@ -841,7 +890,7 @@ solution of the system having the formal one as its asymptotic expansion.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The classifying set}
-We want to understand the Set 
+We want to understand the Set
 $\bigg\{\Big[(\cM,\nabla)\Big]\bigg\}$ of the (convergent)
 isomorphism classes of all meromorphic connections. Since we have also the
 formal classification and we know, that all elements in a convergent
@@ -868,6 +917,7 @@ calling the \emph{classifying set} and we will also denote it ${}^0C(A^0)$.
       \end{itemize}
     \item \cite{Loday1994} p.852
     \item \cite{sabbah2007isomonodromic} p.111
+    \item \cite{babbitt1983}
   \end{itemize}
 \end{comment}
 
@@ -920,6 +970,7 @@ equivalence classes in
     \Syst_m(A^0)\cong \hat G(A^0)/G_0(A^0) \,.
   \]
   \begin{s-cor}
+    \marginnote{\cite[Eq.1.9b]{babbitt1983}}
     Thus the \emph{set of meromorphic classas of systems formally equivalent
       to $A^0$} are just the orbits of $G\{t\}$, that is
     \[

@@ -94,7 +94,7 @@ $H^1(S^1;\Lambda^{<0}(A^0))=:\St(A^0)$.
 
 Let us first define a Stokes sheaf $\Lambda(A^0)$ on $S^1$, as the sheaf of
 flat isotropies.
-\begin{defn}
+\begin{defn} \label{defn:StokesSheaf}
   The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is the sheaf of groups defined on
   $S^1$ whose stalk at any point $\theta\in S^1$ is the group of germs of
   $f\in\Gl_n(\cO(\mathfrak{s}))$, $\mathfrak{s}$ a sector containing $\theta$, satisfying
@@ -168,8 +168,9 @@ $\id$.
 \end{comment}
 
 \subsubsection{The theorem (system version)}
-Is is easy to translate the Malgrange-Sibuya isomorphism to the language of
-systems.
+Since the language of meromorphic connections is equivalent to the one of
+systems, there is also the translated version of the Malgrange-Sibuya
+isomorphism to the language of systems.
 \begin{comment}
   \begin{itemize}
     \item \TODO[See \cite{thboalch} for sheaf-less definition]
@@ -347,21 +348,23 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
   We call
   \begin{itemize}
     \item $a_{jl}\in\C\backslash\{0\}$ the \emph{leading factor},
-    \item $\frac{a_{jl}}{t^k}=:q_{(j,l)}(t^{-1})$ the \emph{leading
+    \item $\frac{a_{jl}}{t^{k}}=:q_{jl}(t^{-1})$ the \emph{leading
       coefficient} and
-    \item $k$ the \emph{degree} $\deg(q_j-q_l)$ of $(q_j-q_l)$ or a
+    \item $k=k_{jl}$ the \emph{degree} $\deg(q_j-q_l)$ of $(q_j-q_l)$ or a
       \emph{level} of $A^0$
   \end{itemize}
   of $q_j-q_l\in\cQ_{[\End A^0]}$ if
   \[
-    q_j-q_l\in\left\{ \frac{a_{jl}}{t^k}+h \mid h \in o(t^{-k})\right\} \,.
+    q_j-q_l\in\left\{\frac{a_{jl}}{t^{k}}+h \mid h \in o(t^{-k})\right\}\,.
   \]
   \begin{s-rem}
     \begin{enumerate}
+      \item It is obvious, that $k_{jl}=k_{lj}$ and
+        $q_{jl}(t^{-1})=-q_{lj}(t^{-1})$.
       \item In \cite{boalch} and \cite{thboalch} the $k$ is always an integer
         and is incremented by one. We will prefer the other definition, which
         is taken from \cite{Loday1994}, because \TODO
-      \item In \cite[Def.4.3.6]{Loday2014} $a_{(j,l)}$ gets a negative sign to
+      \item In \cite[Def.4.3.6]{Loday2014} $a_{jl}$ gets a negative sign to
         be consistend with calculations at $\infty$. Here this is not
         necessary, since we use the clockwise ordering of points on $S^1$
         (cf.~\ref{defn:antiStokesDir}).
@@ -400,42 +403,45 @@ relations:
   We define the relations
   \begin{itemize}
     \item $\boldmath q_j \underset{\tilde\theta}{\prec} q_l$
-      :\Leftrightarrow{} $\Re(a_{ij}e^{-ik\theta})<0$
+      :\Leftrightarrow{} $\Re(a_{jl}e^{-ik_{jl}\tilde\theta})<0$
     \\\Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is
       flat at $0$ in a neighbourhood of the direction $\tilde\theta$.
     \item $\boldmath q_j \underset{\tilde\theta,\max}{\prec} q_l$
-      :\Leftrightarrow{} $a_{ij}e^{-ik\tilde\theta}$ is a real negative number
-      (where $k$ is the degree of $q_j-q_l$).
+      :\Leftrightarrow{} $a_{jl}e^{-ik_{jl}\tilde\theta}$ is a real negative
+      number, i.e.\ $q_j \underset{\tilde\theta}{\prec} q_l$ and
+      $\Im(a_{jl}e^{-ik_{jl}\theta})=0$.
       \\\Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is of maximal
       decay in the direction $\tilde\theta$.
       \begin{comment}
-        \Leftrightarrow{} $q_{ij}(t^{-1})\in\R_{<0}$ along $\tilde\theta$.
+        \Leftrightarrow{} $q_{jl}(t^{-1})\in\R_{<0}$ along $\tilde\theta$.
       \end{comment}
       \begin{s-rem} \label{rem:rotationalSym}
         \marginnote{\cite[8]{thboalch}}
         Let $\theta\in S^1$ with determination $\tilde\theta$.
-        Let $(j,l)$ be a pair such that 
-        $q_j \underset{\tilde\theta,\max}{\prec} q_l$, i.e.\ let
-        $a_{jl}e^{-ik\tilde\theta}\in\R_{<0}$.
+        Let $(j,l)$ be a pair such that
+        $q_j \underset{\tilde\theta,\max}{\prec} q_l$, i.e.\ such that
+        $a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}$.
         Hence, for $n\in\N$,
         \begin{align*}
-          a_{jl}e^{-ik\left(\tilde\theta+n\frac{\pi}{k}\right)}
-          &=a_{jl}e^{-ik\tilde\theta}e^{-in\pi}
+          a_{jl}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{jl}}\right)}
+          &=a_{jl}e^{-ik_{jl}\tilde\theta}e^{-in\pi}
           = \begin{cases}
-            a_{jl}e^{-ik\tilde\theta} & \text{, if $n$ is even}
-          \\-a_{jl}e^{-ik\tilde\theta} & \text{, if $n$ is uneven}
-        \end{cases}
+            a_{jl}e^{-ik_{jl}\tilde\theta} & \text{, if $n$ is even}
+          \\-a_{jl}e^{-ik_{jl}\tilde\theta} & \text{, if $n$ is uneven}
+          \end{cases}
         \end{align*}
         is, in the case when $n$ is even, also real and negative. In the other
-        case, when $n$ is uneven, we have that $a_{jl}=-a_{lj}$ and thus
-        $a_{lj}e^{-ik\left(\tilde\theta+n\frac{\pi}{k}\right)}\in\R_{<0}$.
+        case, when $n$ is uneven, we use that $a_{jl}=-a_{lj}$ and obtain
+        $a_{lj}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{jl}}\right)}
+        \in\R_{<0}$.
 
-        Thus we have
+        Thus, for $\tilde\theta'=\tilde\theta+n\frac{\pi}{k_{jl}}$ as
+        determination of $\theta'=\theta+n\frac{\pi}{k_{jl}}$, we have
         \[
           \begin{cases}
-            q_j \underset{\tilde\theta+n\frac{\pi}{k},\max}{\prec} q_l
+            q_j \underset{\tilde\theta',\max}{\prec} q_l
             & \text{when $n$ is even}
-          \\q_l \underset{\tilde\theta+n\frac{\pi}{k},\max}{\prec} q_j
+          \\q_l \underset{\tilde\theta',\max}{\prec} q_j
             & \text{when $n$ is uneven}
           \end{cases}
         \]
@@ -457,19 +463,26 @@ relations:
       pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies
       $q_j \underset{\theta,\max}{\prec} q_l$.
       \begin{itemize}
-        \item Let $\A=\{\alpha_1,\dots,\alpha_{\nu}\}$ denote the set of all
-          anti-Stokes directions in a clockwise ordering\footnote{In
-          \cite{Loday1994} this ordering is chosen, since the calculations are
-          then compatible with the calculations, which look at $\infty$ and take
-          a counterclockwise ordering. \cite{boalch} and \cite{thboalch} use the
-          inverse ordering, but look also at $0$.}. For a uniform notation
-          later, define $\A$ to contain a single, arbitrary direction if $k=0$.
+        \item Let $\A=\{\theta_1,\dots,\theta_{\nu}\}$ denote the set of all
+          anti-Stokes directions in a clockwise ordering. For a uniform
+          notation later, define $\A$ to contain a single, arbitrary direction
+          if $\cK=\{0\}$.
           \TODO[make all Stokes dirs $\alpha$ instead of $\theta$?]
+          \begin{s-rem} \label{rem:rotationalSymPrime}
+            \begin{enumerate}
+              \item From remark~\ref{rem:rotationalSym} follows, that in the
+                case $\cK=\{k\}$, the set $\A$ has $\frac{\pi}{k}$-rotational
+                symmetry.
+              \item The clockwise ordering is chosen, similar to
+                \cite{Loday1994}, since the calculations are then compatible
+                with the calculations, which look at $\infty$ and take a
+                counterclockwise ordering. \cite{boalch} and \cite{thboalch}
+                use the inverse ordering, but look also at $0$.
+                In \cite{Loday2014} this problem is solved by an additional
+                minus sign\comm{~to $a_{ij}$}.
+            \end{enumerate}
+          \end{s-rem}
       \end{itemize}
-      \begin{s-rem}
-        From remark~\ref{rem:rotationalSym} follows, that in the case
-        $\cK=\{k\}$, the set $\cA$ has $\frac{\pi}{k}$-rotational symmetry.
-      \end{s-rem}
     \item $\theta$ is an \emph{Stokes direction} when there is at least one
       pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies neither
       $q_j\underset{\theta}{\prec} q_l$ nor $q_l\underset{\theta}{\prec} q_j$.
@@ -486,17 +499,23 @@ relations:
   \\The stokes direction, beared by level $k$ have the rotational symmetry.
 \end{comment}
 
+As a \rewrite{subgroup of the stalk at $\theta$} of the in
+definition~\ref{defn:StokesSheaf} defined Stokes sheaf $\Lambda^{<0}(A^0)$ we
+define the Stoken group as follows.
 \begin{defn}
   Define the \emph{Stokes group}
   \[
-    \Sto_\theta(A^0)=
+    \Sto_\theta(A^0):=
     \left\{\phi_\theta\in\Lambda_\theta^{<0}(A^0)
       \mid \phi_\theta \text{ has maximal decay at } \theta
     \right\} \,.
   \]
   \begin{s-rem}
-    For $\theta\notin\A$ the group $\Sto_\theta(A^0)$ is trivial, since no flat
-    isotropy has maximal decay, but the identity.
+    \begin{enumerate}
+      \item For $\theta\notin\A$ the group $\Sto_\theta(A^0)$ is trivial, since
+        no flat isotropy has maximal decay, but the identity.
+      \item This is in fact a group, since \TODO{}
+    \end{enumerate}
   \end{s-rem}
 \end{defn}
 
@@ -505,47 +524,17 @@ relations:
 \begin{comment}
   See \cite[9f]{thboalch} and \cite[??]{Loday1994}
 \end{comment}
-\cite[Def.4.1]{hall2003lie} says the following about faithful representations:
-\begin{defn}
-  \begin{comment}
-    See:
-    \begin{itemize}
-      \item \cite[Def.4.1]{hall2003lie}
-      \item \url{http://nlab.mathforge.org/nlab/show/faithful+representation}
-    \end{itemize}
-  \end{comment}
-  Let $G$ be a matrix\TODO[??] Lie group. Then a \emph{(finite-dimensional
-  complex) representation} of $G$ is a Lie group homomorphism
-  \[
-    \rho:G\to\Gl(V)
-  \]
-  where
-  \begin{itemize}
-    \item $V$ is a finite-dimensional complex vector space.
-  \end{itemize}
-  If $\rho$ is a one-to-one homomorphism, then the representation is called
-  \emph{faithful}.
-  \begin{comment}
-    \textbf{Other criterion:}
-    If the associated homomorphism $G\to\Aut(V)$ is injective, then the
-    representation is \emph{faithful}.
-  \end{comment}
-  \begin{s-rem}
-    If a representation $\rho$ is a faithful representation of a matrix Lie
-    group $G$ then $\{\rho(A)\mid A\in G\}$ is a group of matrices that is
-    isomorphic to the original group $G$. Thus, $\rho$ allows us to represent
-    $G$ as a group of matrices.
-  \end{s-rem}
-\end{defn}
 \begin{defn}
   Define the group
   \[
     \SSto_\theta(A^0)= \left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
       q_j \underset{\theta,\max}{\prec} q_l \right\}
   \]
-  which will arise as a faithful representation of $\Sto_\theta(A^0)$.
+  which will arise as a faithful representation (cf.\
+  section~\ref{sec:faithRepre}) of $\Sto_\theta(A^0)$.
 \end{defn}
-Let $X_0=t^L e^{Q(t^{-1})}$ be a normal solution.
+Let $X_0=t^L e^{Q(t^{-1})}$ be \rewrite{the normal solution corresponding to
+$A^0$} (cf.\ lemma~\ref{lem:normSol}).
 For every determination $\tilde\theta$ of $\theta$ we denote by
 $X_{0,\tilde\theta}$ the function defined by $X_0$ with that determination of
 the argument near the direction $\theta$.
@@ -576,10 +565,11 @@ the argument near the direction $\theta$.
 \end{prop}
 \begin{proof}
   \TODO[proof uniqueness?]
-  In general, the map $\rho_{\tilde\theta}$ maps to the $G$ since \TODO{} by
-  the fundamental solution yields a constant matrix. To see that the obtained
-  matrix has the necessary zeros, to lie in $\SSto_{\theta}(A^0)$ we look at
-  equation (\ref{eq:representation}) and deduce
+  In general, the map $\rho_{\tilde\theta}$ maps to the $G$ since
+  \rewrite{conjugation} by the fundamental solution yields a constant matrix.
+  To see that the obtained matrix has the necessary zeros, to lie in
+  $\SSto_{\theta}(A^0)$ we look at equation (\ref{eq:representation}) and
+  deduce
   \[
     \phi_\theta(t)
     =t^L e^{Q(t^{-1})}(1_n+C_{\tilde\theta})e^{-Q(t^{-1})}t^{-L}
@@ -669,6 +659,7 @@ On the other hand, every constant unipotent Matrix, with zeros at the necessary
 positions, characterizes a unique element of $\Sto_\theta(A^0)$.
 
 \begin{lem}
+  \TODO[lemma or corollary?]
   \marginnote{\cite[Def.I.4.12]{Loday1994}}
   A germ $\phi_\theta\in\Lambda_\theta(A^0)$ is a Stokes germ, i.e.\ an element
   in $\Sto_\theta(A^0)$ if and only if for some, hence all determination
@@ -790,12 +781,13 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
   \marginnote{\cite[Cor.I.5.2]{Loday1994}}
   \begin{enumerate}
     \item For any $k\in\cK$ there are the two following ways of factoring
-      $\Lambda^{\leq k}$ in a semi-direct product:
+      $\Lambda^{\leq k}(A^0)$ in a semi-direct product:
       \begin{align*}
-        \Lambda^{\leq k}&\cong \Lambda^{<k}\ltimes\Lambda^{k}
-      \\                &\cong \Lambda^{k}\ltimes\Lambda^{<k} \,.
+        \Lambda^{\leq k}(A^0)&\cong \Lambda^{<k}(A^0)\ltimes\Lambda^{k}(A^0)
+      \\                     &\cong \Lambda^{k}(A^0)\ltimes\Lambda^{<k}(A^0)\,.
       \end{align*}
-      Thus any germ $f^{\leq k}\in\Lambda^{\leq k}$ can be uniquely factored in
+      Thus any germ $f^{\leq k}\in\Lambda^{\leq k}(A^0)$ can be uniquely
+      factored in
       \begin{itemize}
         \item $f^{\leq k}=f^{<k}g^k$, where $f^{<k}\in\Lambda^{<k}$ and
           $g^k\in\Lambda^k$, or
@@ -850,7 +842,7 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
   \marginnote{\cite[Cor.I.5.4]{Loday1994}}
   $\cK=\{k_1<\cdots<k_r\}$
   \begin{enumerate}
-    \item 
+    \item
       The filtration
       \[
         \Lambda^{k_r}(A^0)
@@ -1433,7 +1425,7 @@ outputs a Stokes cocycle, which corresponds to our coverings.
 Here we want to answer the following question:
 \begin{einr}
   Which information is needed to describe the Stokes structure of a unramified
-  multileveled meromorphic connection?
+  \textbf{multileveled} meromorphic connection?
 \end{einr}
 To be more precise: we are interested in the representation of an element from
 $\prod_{\theta\in\A}\Sto_\theta(A^0)$ and how the information about the
@@ -1453,3 +1445,12 @@ different levels is stored.
 \begin{comment}
   See \cite{boalch,thboalch}.
 \end{comment}
+Here we will look at the case, when $\cK=\{k\}$ \comm{and when the connection
+is \textbf{simple}}.
+\begin{comment}
+  \textbf{simple} means that all $q_i$'s are different.
+\end{comment}
+In this case has the set $\A$ a $\frac{\pi}{k}$-rotational symmetry (cf.\
+remark~\ref{rem:rotationalSymPrime}).
+This means, that in every arc of width $\frac{\pi}{k}$ are
+

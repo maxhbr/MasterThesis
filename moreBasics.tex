@@ -1,4 +1,10 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{More basics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Čech cohomology}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Semidirect products}
 \begin{comment}
   see
@@ -77,3 +83,38 @@ product $N\times H$. Thus the semidirect product is a generalization of the
 direct product of two groups.
 
 \TODO[from splitting exact sequence]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Faithful representations} \label{sec:faithRepre}
+\cite[Def.4.1]{hall2003lie} says the following about faithful representations:
+\begin{defn}
+  \begin{comment}
+    See:
+    \begin{itemize}
+      \item \cite[Def.4.1]{hall2003lie}
+      \item \url{http://nlab.mathforge.org/nlab/show/faithful+representation}
+    \end{itemize}
+  \end{comment}
+  Let $G$ be a matrix\TODO[??] Lie group. Then a \emph{(finite-dimensional
+  complex) representation} of $G$ is a Lie group homomorphism
+  \[
+    \rho:G\to\Gl(V)
+  \]
+  where
+  \begin{itemize}
+    \item $V$ is a finite-dimensional complex vector space.
+  \end{itemize}
+  If $\rho$ is a one-to-one homomorphism, then the representation is called
+  \emph{faithful}.
+  \begin{comment}
+    \textbf{Other criterion:}
+    If the associated homomorphism $G\to\Aut(V)$ is injective, then the
+    representation is \emph{faithful}.
+  \end{comment}
+  \begin{s-rem}
+    If a representation $\rho$ is a faithful representation of a matrix Lie
+    group $G$ then $\{\rho(A)\mid A\in G\}$ is a group of matrices that is
+    isomorphic to the original group $G$. Thus, $\rho$ allows us to represent
+    $G$ as a group of matrices.
+  \end{s-rem}
+\end{defn}

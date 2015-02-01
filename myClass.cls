@@ -423,7 +423,6 @@
       \ifthenelse{\equal{#1}{\empty}}
         {\tiny T\!O\!D\!O}
         {\tiny T\!O\!D\!O: #1} % {TODO: #1}
-      
   }}}
 
   %Zeilenhöhe, für bessere lesbarkeit

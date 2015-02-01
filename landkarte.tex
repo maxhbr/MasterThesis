@@ -16,56 +16,82 @@ effective divisor on $M$.
                   ,minimum height=1.2cm
                   ,font=\bfseries\footnotesize\sffamily}] 
 
-    \fill[blue!5] (-4,1.5) -- (2,1.5) -- (2,0.25) -- (-4,0.25) -- cycle;
-    \fill[purple!5] (-4,-2.5) -- (2,-2.5) -- (2,-0.25) -- (-4,-0.25) -- cycle;
+    \fill[blue!5] (-4,1.5)
+                -- (2,1.5)
+                -- (2,0.25)
+                -- (-4,0.25)
+                -- cycle;
+    \fill[purple!5] (-4,-3.5)
+                  -- (2,-3.5)
+                  -- (2,-0.25)
+                  -- (-4,-0.25)
+                  -- cycle;
     \node[blue,anchor=west] at (-4,1.5) {\Huge global:};
     \node[purple,anchor=west] at (-4,-0.25) {\Huge local:};
 
-    \draw[black!50,ultra thick,dotted] (0.15,1.75) -- (1.85,1.75) -- (1.85,-2.35) -- (0.15,-2.35) -- cycle;
-    \node[black!50,anchor=north west] at (0.15,1.75) {\large coordinate dependent:};
+    \draw[green!50!black,ultra thick,dotted] (0.1,1.75)
+                                          -- (1.9,1.75)
+                                          -- (1.9,-3.4)
+                                          -- (0.1,-3.4)
+                                          -- cycle;
+    \node[green!50!black,anchor=north west] at (0.1,1.75)
+      {\large coordinate dependent:};
 
     \node[mybox,dashed] (globDMod) at (-3,1)
       {$\sD$-Module};
 
     \node[mybox] (merCon) at (-1,1)
-      {$(\sM,\nabla)$\\(global) meromorphic connection};
+      {$(\sM,\nabla)$\\meromorphic connection
+        \\{\mdseries (global)}};
 
     \node[mybox,dashed] (globSyst) at (1,1)
-      {(global) system};
+      {{\mdseries (global)} system};
 
 
-    \node[mybox,dashed] (locDMod) at (-3,-1)
+    \node[mybox] (locDMod) at (-3,-1)
       {\TODO[$\cD/P\cD$]\\\rewrite{localized holonomic} $\cD$-modules};
     \node[mybox] (locMerCon) at (-1,-1)
       {$(\cM,\nabla)$\\germ of a meromorphic connection};
 
     \node[mybox] (locSyst) at (1,-1)
-      {$[A]=\triangle=d-A$\\germ of a system};
+      {$[A]=\triangle=d-A$
+        \\germ of a system
+        \\{\mdseries or}
+        \\differential operator
+        \\{\mdseries of dim $n$ and rank $1$}};
     \node[mybox] (conMat) at (1,-2)
       {$A$\\connection matrix};
 
-    \node[mybox,dashed] (diffOp) at (-2,-2)
-      {$P\in\cD$\\differential operator};
+    \node[mybox] (fundSol) at (1,-3)
+      {\textcolor{gray}{$\cY$\\fundamental solution\TODO[???]}};
+
+    \node[mybox] (diffOp) at (-3,-2)
+    {$P\in\cD$
+      \\differential operator
+      \\{\mdseries of dim $1$ and rank $n$}};
 
     \draw[->>,dashed] (globDMod) -- (locDMod)
       node [midway] {localize};
 
     \draw[->>] (merCon) -- (locMerCon)
       node [midway] {$\substack{\text{take}\\\text{germ}}$};
-    \draw[->,dashed] (locMerCon) to[bend left] (merCon);
+    \draw[->] (locMerCon) to[bend angle=10,bend left] (merCon);
 
-    \draw[->>] (globSyst) -- (locSyst)
+    \draw[->>,dashed] (globSyst) -- (locSyst)
       node [midway] {$\substack{\text{take}\\\text{germ}}$};
 
     \draw[->] (locMerCon) to[bend angle=10,bend left] (locSyst);
-    \draw[->>] (locSyst) to[bend angle=10,bend left] (locMerCon);
-    \draw[<->] (locSyst) -- (conMat) node [midway] {$1 - 1$};
+    \draw[->] (locSyst) to[bend angle=10,bend left] (locMerCon);
+    \draw[<->] (locSyst) -- (conMat);
 
-    \draw[->,dashed] (locSyst) to[bend angle=25,bend left] (diffOp);
-    \draw[->,dashed] (diffOp) to[bend angle=20,bend right] (locSyst);
+    \draw[<->] (locSyst) to[bend angle=10,bend left] (diffOp);
 
-    \draw[->,dashed] (diffOp) to[bend left] (locDMod);
+    \draw[->] (diffOp) -- (locDMod);
+    \draw[->,dashed] (locDMod) to[bend angle=10,bend left] (diffOp);
 
-    \draw[->,dashed] (locDMod) to[bend left] (locMerCon);
+    \draw[<->,dashed] (locDMod) -- (locMerCon);
+
+    \draw[->] (locSyst) to[bend angle=52,bend left] (fundSol);
+    \draw[->,black!20] (fundSol) to[bend angle=52,bend left] (locSyst);
   \end{tikzpicture}
 \end{center}
