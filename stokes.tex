@@ -4,14 +4,14 @@ A great overview of this topic is given in
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Situation}
-Let $\cM^{model}$ be a fixed model with the corresponding connection matrix
+Let $\cM^{nf}$ be a fixed model with the corresponding connection matrix
 $A^0$.
 We have the following commutative diagram of isomorphisms.
 \begin{center}
   \begin{tikzpicture}[scale=3]
     \node[] (modSpcMat) at (0,0) {$\cH(A^0)$};
     \node[purple] (class) at (1,0) {$G\backslash\hat G(A^0)$};
-    \node[green!40!black] (sheaf) at (3,1) {$\St(\cM^{model})$};
+    \node[green!40!black] (sheaf) at (3,1) {$\St(\cM^{nf})$};
     \node[] (sheaf2) at (2,1) {$H^1(S^1;\Lambda^{<0}(A^0))$};
     \node[blue] (mat) at (3,-1) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
     \node[blue] (mat') at (3.5,-1.5) {$(U_+\times U_-)^{k-1}$};
@@ -106,7 +106,7 @@ flat isotropies.
   \end{enumerate}
   \begin{comment}
     \begin{s-rem}
-      $\Lambda(A^0)$ is the same as $\Aut^{<0}(\tilde\cM^{model})$
+      $\Lambda(A^0)$ is the same as $\Aut^{<0}(\tilde\cM^{nf})$
       in~\cite{sabbah2007isomonodromic} which is defined as follows \TODO
     \end{s-rem}
   \end{comment}
@@ -121,7 +121,7 @@ There exists an open covering $\cU=(U_j)_{j\in J}$ and for every open set an
 isomorphism
 \[
   f_j:(\tilde\cM,\tilde\nabla)_{|U_j}
-  \to(\tilde\cM^{model},\tilde\nabla^{model})_{|U_j}
+  \to(\tilde\cM^{nf},\tilde\nabla^{nf})_{|U_j}
 \]
 such that $\hat f_j=f$. By $(f_kf_j^{-1})_{jk}$ is then a cocycle of the
 sheaf $\St(A^0)$, relative to the covering $\cU$, defined.
@@ -134,7 +134,7 @@ to the first non abelian cohomology of $\Lambda^{<0}(A^0)$
 \[
   \cH\to H^1(S^1;\Lambda^{<0}(A^0)) \,,
 \]
-which sends the class of $(\cM^{model},\nabla^{model},\hat\id)$ to that of
+which sends the class of $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of
 $\id$.
 
 \begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1}
@@ -143,7 +143,7 @@ $\id$.
     \exp:\cH\to\St(A^0):=H^1(S^1;\Lambda^{<0}(A^0))
   \]
   is an isomorphism of pointed\footnote{Which maps the class of
-  $(\cM^{model},\nabla^{model},\hat\id)$ to that of $\id$, i.e.\ the trivial
+  $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$, i.e.\ the trivial
   cohomology class.} sets.
 \end{tthm}
 \TODO[\cite{sabbah2007isomonodromic} cor II.6.4.]
@@ -244,7 +244,7 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
   cocycles $(f_lf_j^{-1})$ and $(f_l',f_j'^{-1})$, where $f_j$,$f_j'$ are
   defined on $U_j$.
   Then there exists \TODO{} a $0$-cochain $(g_j)$ of the sheaf
-  $\Aut^{<0}(\tilde\cM^{model})$ relative to the covering $(I_j)$, such that
+  $\Aut^{<0}(\tilde\cM^{nf})$ relative to the covering $(I_j)$, such that
   \[
     f_l'f_j'^{-1}=g_lf_lf_j^{-1}g_j^{-1} \text{ on } I_j\cap I_l.
   \]
@@ -258,14 +258,14 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
   \cite{Malgrange1983}} we will start this part of the proof by giving a
   necessary and sufficient condition for a class $\lambda$ in
   $H^1(S^1,\Lambda^{<0}(A^0))$
-  \TODO[$\Lambda^{<0}(A^0)\hat{=}\Aut^{<0}(\tilde\cM^{model})$ or
-  $\Aut^{<0}(\cM^{model})$?]
+  \TODO[$\Lambda^{<0}(A^0)\hat{=}\Aut^{<0}(\tilde\cM^{nf})$ or
+  $\Aut^{<0}(\cM^{nf})$?]
   to come from an object
   $(\cM,\nabla,\hat f)\in\cH$:
   \begin{einr}
     This is the case if and only if the image of
-    $\lambda\in\Aut^{<0}(\cM^{model})$ in the set
-    $H^1(S^1,\Aut_{\cA}(\tilde\cM^{model}))$ (which contains only the
+    $\lambda\in\Aut^{<0}(\cM^{nf})$ in the set
+    $H^1(S^1,\Aut_{\cA}(\tilde\cM^{nf}))$ (which contains only the
     $\cA$-linear automorphisms) is the identity.
   \end{einr}
   \begin{proof}
@@ -273,31 +273,31 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
     If $\lambda$ is the image of some $(\cM,\nabla,\hat f)$ then there exists
     \begin{itemize}
       \item a covering $(I_{j})$ of $S^1$ and
-      \item isomorphisms $f_j:\tilde\cM\overset{\sim}\to\tilde\cM^{model}$
+      \item isomorphisms $f_j:\tilde\cM\overset{\sim}\to\tilde\cM^{nf}$
         inducing $\hat f$
     \end{itemize}
     such that $\lambda$ comes from a cocycle $(\lambda_{j,l})=(f_lf_j^{-1})$ on
     $I_j\cap I_l$.
     \TODO{} shows, that $(\lambda_{jl})$ is a coboundary of
-    $\Aut_\cA(\tilde\cM^{model})$.
+    $\Aut_\cA(\tilde\cM^{nf})$.
 
     \textbf{``\Leftarrow{}'':}
     If for some suitable covering $(I_j)$ the cocycle $(\lambda_{jl})$ is a
-    coboundary with values in $\Aut_\cA(\tilde\cM^{model})$, i.e.\
+    coboundary with values in $\Aut_\cA(\tilde\cM^{nf})$, i.e.\
     $\lambda_{jl}=f_lf_j^{-1}$, we define a new connection $\nabla$ on
-    $\tilde\cM^{model}$ by conjugating $\nabla^{model}$ by $f_j$ on $I_j$.
+    $\tilde\cM^{nf}$ by conjugating $\nabla^{nf}$ by $f_j$ on $I_j$.
 
     \TODO{}
 
     Moreover $\hat f_j=\hat f_l$ on $I_j\cap I_l$, so that the formal
     isomorphisms
     \[
-      \hat f_j:(\hat \cM^{model},\nabla)
+      \hat f_j:(\hat \cM^{nf},\nabla)
       \overset{\sim}{\longrightarrow}
-      (\hat\cM^{model},\nabla^{model})
+      (\hat\cM^{nf},\nabla^{nf})
     \]
-    can be glued in an isomorphism $\hat f:(\hat \cM^{model},\nabla)
-    \overset{\sim}{\longrightarrow}(\hat\cM^{model},\nabla^{model})$.
+    can be glued in an isomorphism $\hat f:(\hat \cM^{nf},\nabla)
+    \overset{\sim}{\longrightarrow}(\hat\cM^{nf},\nabla^{nf})$.
   \end{proof}
 
   Thus, the proof of~\ref{thm:mainThm1} is a consequence of the following
@@ -426,25 +426,26 @@ relations:
           a_{jl}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{jl}}\right)}
           &=a_{jl}e^{-ik_{jl}\tilde\theta}e^{-in\pi}
           = \begin{cases}
-            a_{jl}e^{-ik_{jl}\tilde\theta} & \text{, if $n$ is even}
-          \\-a_{jl}e^{-ik_{jl}\tilde\theta} & \text{, if $n$ is uneven}
+            a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0} 
+              & \text{, if $n$ is even}
+          \\-a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{>0} 
+              & \text{, if $n$ is uneven}
           \end{cases}
         \end{align*}
         is, in the case when $n$ is even, also real and negative. In the other
-        case, when $n$ is uneven, we use that $a_{jl}=-a_{lj}$ and obtain
-        $a_{lj}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{jl}}\right)}
+        case, when $n$ is uneven, we use that $a_{jl}=-a_{lj}$ and
+        $k_{jl}=k_{lj}$ to obtain
+        $a_{lj}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{lj}}\right)}
         \in\R_{<0}$.
 
         Thus, for $\tilde\theta'=\tilde\theta+n\frac{\pi}{k_{jl}}$ as
         determination of $\theta'=\theta+n\frac{\pi}{k_{jl}}$, we have
-        \[
-          \begin{cases}
-            q_j \underset{\tilde\theta',\max}{\prec} q_l
-            & \text{when $n$ is even}
-          \\q_l \underset{\tilde\theta',\max}{\prec} q_j
-            & \text{when $n$ is uneven}
-          \end{cases}
-        \]
+        \begin{itemize}
+          \item $q_j \underset{\tilde\theta',\max}{\prec} q_l$ when $n$ is even
+            or
+          \item $q_l \underset{\tilde\theta',\max}{\prec} q_j$ when $n$ is
+            uneven.
+        \end{itemize}
       \end{s-rem}
   \end{itemize}
   \begin{s-rem}
@@ -465,8 +466,8 @@ relations:
       \begin{itemize}
         \item Let $\A=\{\theta_1,\dots,\theta_{\nu}\}$ denote the set of all
           anti-Stokes directions in a clockwise ordering. For a uniform
-          notation later, define $\A$ to contain a single, arbitrary direction
-          if $\cK=\{0\}$.
+          notation later, \rewrite{define $\A$ to contain a single, arbitrary
+          direction if $\cK=\{0\}$.}
           \TODO[make all Stokes dirs $\alpha$ instead of $\theta$?]
           \begin{s-rem} \label{rem:rotationalSymPrime}
             \begin{enumerate}
@@ -557,14 +558,17 @@ the argument near the direction $\theta$.
   near $\theta$.  We call the matrux $1+C_{\tilde\theta}$ a
   \emph{representation of $\phi_\theta$}.
   \begin{s-rem}
-    \marginnote{\cite[10]{thboalch}}
-    The morphism $\rho_{\tilde\theta}$ relates solutions $\phi_\theta$ of
-    $[\End(A^0)]=[A^0,A^0]$ to solutions of $[0,0]$ which are the constant
-    matrices $G$.
+    \begin{enumerate}
+      \item \marginnote{\cite[10]{thboalch}}
+        The morphism $\rho_{\tilde\theta}$ relates solutions $\phi_\theta$ of
+        $[\End(A^0)]=[A^0,A^0]$ to solutions of $[0,0]$ which are the constant
+        matrices $G$.
+      \item This morphism depends on the choice of the determination
+        $\tilde\theta$ of $\theta$.
+    \end{enumerate}
   \end{s-rem}
 \end{prop}
 \begin{proof}
-  \TODO[proof uniqueness?]
   In general, the map $\rho_{\tilde\theta}$ maps to the $G$ since
   \rewrite{conjugation} by the fundamental solution yields a constant matrix.
   To see that the obtained matrix has the necessary zeros, to lie in
@@ -641,6 +645,11 @@ the argument near the direction $\theta$.
   necessary and sufficient that if $e^{(q_l-q_j)(t^{-1})}$ does not have
   maximal decay in direction $\tilde\theta$ the corresponding
   block $C_{\tilde\theta}^{(l,j)}$ vanishes.
+
+  \TODO[Proof isom? faithfulness?]
+  \rewrite{It is clearly a bijection, since the
+  conjungation by the inverse of the fundamental solution is a inverse
+  morphism.}
 \end{proof}
 
 In particular we get, that
@@ -884,7 +893,8 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes structures: Matrix version}
 \begin{comment}
-  See \cite{Loday1994}, \cite{boalch,thboalch} and \cite{babbitt1989local}.
+  See \cite{Loday1994}, \cite[Thm.4.3.11]{Loday2014}, \cite{boalch,thboalch}
+  and \cite{babbitt1989local}.
 \end{comment}
 The goal in this section is to prove, that there is a bijective and natural map
 \[
@@ -919,8 +929,8 @@ $\dot\phi$:
   $(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
 \end{einr}
 To a different $\cU$ this construction yields a cohomologous
-$1$-cocycle\TODO[Proof], thus the induced map, in the case
-$\{\theta_j\mid j\in J\}=\A$,
+$1$-cocycle\TODO[Proof]. Thus the, in the case $\{\theta_j\mid j\in J\}=\A$,
+induced map
 \[
   h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to
   H^1(A^1;\Lambda(A^0))=\St(A^0)
@@ -949,6 +959,17 @@ get the following corollary.
     \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
   \]
   and thus has complex dimension \TODO{}
+  \begin{s-rem}
+    \TODO[Move to the main theorem?]
+    The representation as $\prod_{\alpha\in\A}\SSto_\alpha(A^0)$ has some bad
+    properties, when small deformations are applied to $[A^0]$, since under
+    arbitrary small changes, one Stokes ray can split into two. Boalch
+    (cf.~\cite{boalch,thboalch}) solves this in the single-leveled case by
+    \rewrite{calling our Stokes matrices Stokes factors} and introducing new
+    Stokes matrices which are build by the product of consecutive Stokes
+    factors. He uses the rotational symmetry of the single-leveled case thus
+    his method is not simply applicable to the multi-leveled case.
+  \end{s-rem}
 \end{cor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1419,6 +1440,8 @@ outputs a Stokes cocycle, which corresponds to our coverings.
     see \cite[III.2.1]{Loday1994}
   \end{comment}
 \end{paracol}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The composition of the maps yields $\exp$!}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The main question}

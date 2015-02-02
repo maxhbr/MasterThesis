@@ -324,6 +324,9 @@ one and dimension $n$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Fundamental solution}
+\begin{comment}
+  See \cite[Sec.4.3.2]{Loday2014}
+\end{comment}
 Fundamental solutions \rewrite{beschreiben} also systems of ordinary
 differential equations.
 
@@ -408,13 +411,13 @@ the lemma of the cyclic vector. \TODO{}
   \begin{itemize}
     \item $G=\Gl_n(\C)$;
     \item $G[t]=\Gl_n(\C[t])$;
-    \item $G\{t\}=\Gl_n(\C\{t\})$ analytic tranformations;
+    \item $G\{t\}=\Gl_n(\C\{t\})$ analytic transformations;
     \item $G(\!\{t\}\!)=\Gl_n\left(\C\{t\}[t^{-1}]\right)$ meromorphic
       transformations;
     \item $G\llbracket t\rrbracket=\Gl_n\left(\C\llbracket t\rrbracket\right)$
-      (maby not applicable) formal tranformations;
+      (maybe not applicable) formal transformations;
     \item $G(\!(t)\!)=\Gl_n\left(\C\llbracket t\rrbracket[t^{-1}]\right)$
-      (maby not applicable) formal meromorphic tranformations.
+      (maybe not applicable) formal meromorphic transformations.
   \end{itemize}
   \begin{comment}
     We will always use the meromorphic ones, in contrast
@@ -691,16 +694,17 @@ formal classification problem.
     \textcolor{blue!60!black}{\pi^{*}}
     \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}}
     \overset{\cong}\longrightarrow
-    \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}^{model}}
-    :=\textcolor{green!30!black}{\hat\cO_M\otimes}\cM^{model}
+    \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}^{nf}}
+    :=\textcolor{green!30!black}{\hat\cO_M\otimes}\cM^{nf}
   \]
-  to a model $\cM^{model}$.
-  We then call $\cM^{model}$ a \emph{formal decomposition} or \emph{formal
+  to a model $\cM^{nf}$.
+  We then call $\cM^{nf}$ a \emph{formal decomposition} or \emph{formal
   model} of $\cM$.
 \end{thm}
 \begin{proof}
   See \TODO{}
 \end{proof}
+\TODO[Full set of formal invariants]
 \begin{prop}
   \marginnote{This condition \textbf{might be} equivalent to the
     condition of being \textbf{nice} in~\cite{thboalch}.}
@@ -728,12 +732,17 @@ formal classification problem.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{In the language of systems and fundamental solutions}
+There is also another way of classifying normal forms, namely by fundamental
+solutions. The normal forms are then the systems $[A^0]$, with a fundamental
+solution $\cY$ in a special form and from the Levelt-Turittin we then can
+deduce that every system $[{}^{\hat F}\!A^0]$, with $\hat F\in G(\!(t)\!)$, has
+a fundamental solution in the form $\hat F\cY$.
 \begin{lem} \label{lem:normSol}
-  % Let $(\cM^{model},\nabla^{model})$ be a model of a meromorphic connection,
+  % Let $(\cM^{nf},\nabla^{nf})$ be a model of a meromorphic connection,
   % which is represented by the system $[A^0]$.
 
   \marginnote{\cite[Thm.4.3.1]{Loday2014}}
-  The meromorphic connection $(\cM^{model},\nabla^{model})$ is a model, if and
+  The meromorphic connection $(\cM^{nf},\nabla^{nf})$ is a model, if and
   only if there is a basis such that the defined system $[A^0]$ has a
   fundamental solution $\mathcal{Y}_0$ of the form
   \[
@@ -756,8 +765,7 @@ formal classification problem.
       this generic enough?}
   \end{itemize}
   \begin{comment}
-    The models $(\cM^{model},\nabla^{model})$ only yield the unramified case?
-    See~\ref{rem:unramJordane}
+    The models $(\cM^{nf},\nabla^{nf})$ only yield the unramified case!
   \end{comment}
   The fundamental solution, i.e.\ matrix $\mathcal{Y}_0$, is called a
   \emph{normal solution}.
@@ -774,13 +782,13 @@ formal classification problem.
   \TODO{}
 \end{proof}
 \begin{rem}
-  Let $[A^0]$ be a normal form with normal solution 
+  Let $[A^0]$ be a normal form with normal solution
   $\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}$.
   \begin{enumerate}
     \item In the unramified case are the $q_i$ the $\phi_i$ from
       definition~\ref{defn:model}.
-      \TODO[???]
-    \item In the unramified case 
+      \TODO[Why/realy?]
+    \item In the unramified case
       $[Q,L]=0$, i.e.\ $Q$ and $L$ commute and $L$
       can be supposed in Jordan form (cf.  \cite[Sec.4]{Martinet1991}).
     \item If $A'={}^{\hat F}\!A^0$ is obtained from $A^0$ via the formal
@@ -789,13 +797,15 @@ formal classification problem.
         \mathcal{Y}=\hat F t^L e^{Q(t^{-1})}
       \]
       a fundamental solution for $[A']$.
+      \TODO[Why?]
     \item \marginnote{\cite[73]{Loday2014}}
-      It is allways possible to permutate the collums of a fundamental
+      It is always possible to permutate the columns of a fundamental
       solution by
       \[
         P^{-1}\mathcal{Y}P=\hat F t^{P^{-1}LP} e^{P^{-1}Q(t^{-1})P}
       \]
-      with a permutation matrix $P$.
+      with a permutation matrix $P$ and \rewrite{obtain another fundamental
+      solution for the same system.}
   \end{enumerate}
 \end{rem}
 \begin{comment}
@@ -810,7 +820,7 @@ formal classification problem.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The main asymptotic existence theorem}
-\TODO[move] \TODO[maby \textbf{not necessary}, since we have Borel-Ritt!]
+\TODO[move] \TODO[maybe \textbf{not necessary}, since we have Borel-Ritt!]
 \begin{comment}
   \begin{multicols}{2}
     \textbf{Classical:}
@@ -835,9 +845,9 @@ It states that to every formal solution of a system of meromorphic differential
 equations, and every sector with sufficiently small opening, one can find a
 solution of the system having the formal one as its asymptotic expansion.
 \begin{rem}
-  We will use this in the case, when $A$ ist via $\hat F$ formally equivalent
-  to $A^0$. We are then able to find a \rewrite{(cyclic)} covering of the $S^1$
-  of arcs such that on every arc there exists a lift $\tilde F$ of $\hat F$.
+  We will use this in the case, when $A$ is via $\hat F$ formally equivalent to
+  $A^0$. We are then able to find a \rewrite{(cyclic)} covering of the $S^1$ of
+  arcs such that on every arc there exists a lift $\tilde F$ of $\hat F$.
 \end{rem}
 \TODO{}
 \begin{comment}
@@ -868,16 +878,16 @@ solution of the system having the formal one as its asymptotic expansion.
     \begin{thm}[Sectorial decomposition]
       \marginnote{\cite[Thm.II.5.12]{sabbah2007isomonodromic}}
       Let $(\cM,\nabla)$ be a meromorphic connection and let us assume that
-      there exist a model $\cM^{model}$ together with an isomorphism
-      $\hat\lambda:\hat\cM\to\hat\cM^{model}$. There exists then, for any
+      there exist a model $\cM^{nf}$ together with an isomorphism
+      $\hat\lambda:\hat\cM\to\hat\cM^{nf}$. There exists then, for any
       $e^{i\theta^0}\in S^1$, an isomorphism $\tilde\lambda_{\theta^0}:
-      \tilde\cM_{\theta^0}\to\tilde\cM_{\theta^0}^{model}$
+      \tilde\cM_{\theta^0}\to\tilde\cM_{\theta^0}^{nf}$
       lifting $\hat\lambda$, that is, such that the following diagram
       \[ \begin{tikzcd}
           \tilde\cM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
-          \tilde\cM^{model}_{\theta^o} \dar
+          \tilde\cM^{nf}_{\theta^o} \dar
           \\\hat\cM \rar{\hat\lambda} &
-          \hat\cM^{model}
+          \hat\cM^{nf}
       \end{tikzcd} \]
       commutes
     \end{thm}
@@ -895,19 +905,19 @@ $\bigg\{\Big[(\cM,\nabla)\Big]\bigg\}$ of the (convergent)
 isomorphism classes of all meromorphic connections. Since we have also the
 formal classification and we know, that all elements in a convergent
 isomorphism class lie in the same formal isomorphism class, we can reduce the
-problem by fixing a model $(\cM^{model},\nabla^{model})$ with the corresponding
+problem by fixing a model $(\cM^{nf},\nabla^{nf})$ with the corresponding
 connection matrix $A^0$. Thus we can restrict ourself to the subset
 \begin{multline*}
-  {}^0C(\cM^{model},\nabla^{model})=\bigg\{
+  {}^0C(\cM^{nf},\nabla^{nf})=\bigg\{
     \Big[(\cM,\nabla)\Big]
     \mid \text{there exists a formal isomorphism }
   \\\qquad\hat f:(\hat\cM,\hat\nabla)
       \overset{\sim}\longrightarrow
-      (\hat\cM^{model},\hat\nabla^{model})
+      (\hat\cM^{nf},\hat\nabla^{nf})
   \bigg\}
 \end{multline*}
 of all isomorphism classes of meromorphic connections, which are formally
-isomorphic to $(\cM^{model},\nabla^{model})$. This is the set, that we will be
+isomorphic to $(\cM^{nf},\nabla^{nf})$. This is the set, that we will be
 calling the \emph{classifying set} and we will also denote it ${}^0C(A^0)$.
 \begin{comment}
   \begin{itemize}
@@ -923,12 +933,12 @@ calling the \emph{classifying set} and we will also denote it ${}^0C(A^0)$.
 
 It is convenient to look at the slightly larger space of \emph{marked pairs}
 \[
-  \cH=\cH(\cM^{model},\nabla^{model})=\left\{
+  \cH=\cH(\cM^{nf},\nabla^{nf})=\left\{
     \left[(\cM,\nabla,\hat f)\right]
       \mid
       \hat f:(\hat\cM,\hat\nabla)
         \overset{\sim}\longrightarrow
-        (\hat\cM^{model},\hat\nabla^{model})
+        (\hat\cM^{nf},\hat\nabla^{nf})
   \right\}
 \]
 in which we also keep the additional information, of the formal isomorphism, by
@@ -953,11 +963,11 @@ Equivalently, one can talk in terms of systems. We then denote by
 the set of systems formally meromorphic equivalent to $A^0$.
 Since we use meromorphic equivalences, in contrast to \cite{boalch,thboalch},
 we denote that in $\Syst_m$ by the subscript ${}_m$.
-Thus ${}^0C(\cM^{model},\nabla^{model})$ corresponds to
+Thus ${}^0C(\cM^{nf},\nabla^{nf})$ corresponds to
 the set ${}^0C(A^0):=\Syst_m(A^0)/G(\!\{t\}\!)$ of meromorphic classes which
 are formally equivalent to $A^0$.
 \TODO[\cite{thboalch} p. 3: In the logarithmic case\dots]
-Analogous, $\cH(\cM^{model},\nabla^{model})$ corresponds to the set $\cH(A^0)$ of
+Analogous, $\cH(\cM^{nf},\nabla^{nf})$ corresponds to the set $\cH(A^0)$ of
 equivalence classes in
 \[
   \hat\Syst_m(A^0):=\{(A,\hat F)
