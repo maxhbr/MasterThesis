@@ -82,6 +82,14 @@ A meromorphic connection is then defined as follows.
     Some authors use the factors $k_i$ of the divisor $Z$ to limit the pole
     orders at the points $a_i$. Since we do not need this restriction, we allow
     arbitrary pole orders. Denoted is this by the $*$ in $\Omega_M^1(*Z)$.
+    A definition of $\Omega_M^1(*Z)$ of $\cO_M(*Z)$ can be found in
+    \cite[Sec.0.8]{sabbah2007isomonodromic} and 
+    $\Omega_M^1(*Z)$ is then defined as
+    \[
+      \Omega_M^1(*Z):=\cO_M(*Z)\underset{\cO_M}\otimes\Omega_M^1
+    \]
+    the \emph{sheaf of differential $1$-forms} (cf.\
+    \cite[Sec.0.9.b]{sabbah2007isomonodromic}).
   \end{s-rem}
 \end{defn}
 \begin{rem}
@@ -196,15 +204,19 @@ and trivialization-dependent.
 %       -(e_1,e_2,\dots,e_n)A'
 %     \]
 %     and let $A=A'dt$.}
-  Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
-  Let $A'$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$
-  \rewrite{such that the matrix $A=A'dt$ describes the action of $\nabla$:}
-  \[
-    \nabla\left(e_1,\dots,e_n\right)
-    =
-    -(e_1,e_2,\dots,e_n)A \,.
-  \]
+  \textcolor{gray}{%
+    Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
+    Let $A'$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$
+    \rewrite{such that the matrix $A=A'dt$ describes the action of $\nabla$:}
+    \[
+      \nabla\left(e_1,\dots,e_n\right)
+      =
+      -(e_1,e_2,\dots,e_n)A \,.
+    \]
+  }
+
 \columnbreak
+
   Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
   Let $A=(a_{jk})$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$
   \rewrite{such that the it describes the action of $\nabla$:}
@@ -249,8 +261,8 @@ one and dimension $n$.
       \end{s-rem}
     \item A \emph{germ of a meromorphic linear differential system} of rank
       $n$, or just a \emph{system}, is a germ of a meromorphic connection on
-      the trivial vector bundle \textbf{with a chosen trivialization} of the
-      fiber $E\cong\C^n$.
+      the trivial vector bundle \textbf{with a chosen trivialization}
+      \rewrite{of the fiber $E\cong\C^n$}.
       \begin{s-prop}
         Thus, the set of systems is isomorphic to the set
         $A\in\End(E)\otimes\C(\!\{t\}\!)=\gl_n(\C(\!\{t\}\!))$ of all
@@ -284,34 +296,27 @@ one and dimension $n$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Local \rightarrow{} global}
-\begin{paracol}{2}\sloppy
-\switchcolumn[0]\noindent
-  \begin{thm}
-    \begin{comment}
-      \cite[Thm.3.3.1]{sibuya1990Linear}: G. D. Birkhoff
-    \end{comment}
-    \rewrite{Given an integer $k$ and a matrix $A(\zeta)$\dots}
-  \end{thm}
-\switchcolumn[1]\noindent
-  \begin{thm}
-    \begin{comment}
-      Quelle?
-      \begin{itemize}
-        \item \cite{sabbah2007isomonodromic}???
-      \end{itemize}
-    \end{comment}
-    If we start with a germ $(\cM,\nabla)$ of a meromorphic connection there is
-    a unique meromorphic connection $(\sM,\nabla)$ such that
+\begin{comment}
+  Maybe see: \cite[Thm.3.3.1]{sibuya1990Linear}: G. D. Birkhoff
+\end{comment}
+\begin{thm}
+  \begin{comment}
+    Quelle?
     \begin{itemize}
-      \item $(\sM,\nabla)$ has only singularities at $0$ and $\infty$
-      \item the singularity at $\infty$ is only \TODO{} and
-      \item $(\cM,\nabla)$ is the germ at $0$ of $(\sM,\nabla)$.
+      \item \cite{sabbah2007isomonodromic}???
     \end{itemize}
-  \end{thm}
-  \begin{proof}
-    \TODO{}
-  \end{proof}
-\end{paracol}
+  \end{comment}
+  If we start with a germ $(\cM,\nabla)$ of a meromorphic connection there is
+  a unique meromorphic connection $(\sM,\nabla)$ such that
+  \begin{itemize}
+    \item $(\sM,\nabla)$ has only singularities at $0$ and $\infty$
+    \item the singularity at $\infty$ is only \TODO{} and
+    \item $(\cM,\nabla)$ is the germ at $0$ of $(\sM,\nabla)$.
+  \end{itemize}
+\end{thm}
+\begin{proof}
+  \TODO{}
+\end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Formalization}
@@ -338,8 +343,8 @@ differential equations.
 
 \begin{defn}
   A \emph{fundamental solution} $\cY$ of the system $[A]$ is a $n\times n$
-  matrix whose columns are $n$ $\C$-linearly independent solutions of the
-  system $[A]$.
+  matrix \comm{with entries in \TODO{}} whose columns are $n$ $\C$-linearly
+  independent solutions of the system $[A]$.
 \end{defn}
 
 \begin{rem}
@@ -636,7 +641,7 @@ problem}.
 \end{proof}
 \begin{defn}
   \marginnote{\cite[Def.II.5.2]{sabbah2007isomonodromic}}
-  A Germ $(\cM,\nabla)$ is called \emph{elementary} if it is isomorphic to
+  A germ $(\cM,\nabla)$ is called \emph{elementary} if it is isomorphic to
   some germ $(\cE^\phi,\nabla)\otimes(\cR,\nabla)$ where
   \begin{itemize}
     \item $(\cR,\nabla)$ has regular singularity at $\{0\}$ but has not to be
@@ -649,9 +654,9 @@ problem}.
   \def\myPhi{\textcolor{red!60!black}{\phi}}
   \def\myE{\textcolor{green!40!black}{\cE^{\myPhi}}}
   \begin{multicols}{2}
-    A germ $(\cM,\nabla)$ is a \emph{model} or \emph{normal form}\footnote{If
-    we talk about systems, we will prefer to use the term ``normal form''} if
-    there exists a isomorphism
+    \textcolor{gray}{%
+      A germ $(\cM,\nabla)$ is a \emph{model} or \emph{normal form} if there
+      exists a isomorphism}
 
     \columnbreak{}
 
@@ -704,8 +709,8 @@ formal classification problem.
     :=\textcolor{green!30!black}{\hat\cO_M\otimes}\cM^{nf}
   \]
   to a model $\cM^{nf}$.
-  We then call $\cM^{nf}$ a \emph{formal decomposition} or \emph{formal
-  model} of $\cM$.
+  We then call $\cM^{nf}$ a \emph{formal decomposition}, \emph{formal model} or
+  \emph{formal normal form} of $\cM$.
 \end{thm}
 \begin{proof}
   See \TODO{}
@@ -791,7 +796,7 @@ a fundamental solution in the form $\hat F\cY$.
   Let $[A^0]$ be a normal form with normal solution
   $\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}$.
   \begin{enumerate}
-    \item In the unramified case are the $q_i$ the $\phi_i$ from
+    \item In the unramified case are the $q_i(t^{-1})$ the $\phi_i(t)$ from
       definition~\ref{defn:model}.
       \TODO[Why/realy?]
     \item In the unramified case
