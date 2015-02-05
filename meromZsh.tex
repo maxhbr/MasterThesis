@@ -660,9 +660,8 @@ problem}.
 
     \columnbreak{}
 
-    A germ $(\cM',\nabla')$ is a \emph{model} or \emph{normal form}\footnote{If
-    we talk about systems, we will prefer to use the term ``normal form''} if
-    there exists, after ramification $\cM=\pi^*\cM'$ by $\pi$, a isomorphism
+    A germ $(\cM',\nabla')$ is a \emph{model} if there exists, after
+    ramification $\cM=\pi^*\cM'$ by $\pi$, a isomorphism
   \end{multicols}
   \begin{multicols}{2}
     \[
@@ -709,8 +708,8 @@ formal classification problem.
     :=\textcolor{green!30!black}{\hat\cO_M\otimes}\cM^{nf}
   \]
   to a model $\cM^{nf}$.
-  We then call $\cM^{nf}$ a \emph{formal decomposition}, \emph{formal model} or
-  \emph{formal normal form} of $\cM$.
+  We then call $\cM^{nf}$ a \emph{formal decomposition} or \emph{formal model}
+  of $\cM$.
   \begin{rem}
     There, in general is \textbf{no} lift of the isomorphism $\hat\lambda$,
     i.e.\ there is \textbf{no} isomorphism making the diagram
@@ -752,22 +751,18 @@ formal classification problem.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{In the language of systems and fundamental solutions}
-There is also another way of classifying normal forms, namely by fundamental
-solutions. The normal forms are then the systems $[A^0]$, with a fundamental
-solution $\cY$ in a special form and from the Levelt-Turittin we then can
-deduce that every system $[{}^{\hat F}\!A^0]$, with $\hat F\in G(\!(t)\!)$, has
-a fundamental solution in the form $\hat F\cY$.
-\begin{lem}\label{lem:normSol}
-  % Let $(\cM^{nf},\nabla^{nf})$ be a model of a meromorphic connection,
-  % which is represented by the system $[A^0]$.
+\subsection{In the language of systems: normal forms}
+In the language of system, the equivalent of models are normal forms, which are
+characterizes by the structure of their fundamental solutions.
 
-  \marginnote{\cite[Thm.4.3.1]{Loday2014}}
-  The meromorphic connection $(\cM^{nf},\nabla^{nf})$ is a model, if and
-  only if there is a basis such that the defined system $[A^0]$ has a
-  fundamental solution $\mathcal{Y}_0$ of the form
+The normal forms are then the systems $[A^0]$, with a fundamental solution
+$\cY$ in a special form and from the Levelt-Turittin we then can deduce that
+every system $[{}^{\hat F}\!A^0]$, with $\hat F\in G(\!(t)\!)$, has a
+fundamental solution in the form $\hat F\cY$.
+\begin{defn}\label{defn:normSol}
+  Let $[A]$ be a system. If its fundamental solution has the form
   \[
-    \mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}
+    \mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}
   \]
   with
   \begin{itemize}
@@ -784,24 +779,45 @@ a fundamental solution in the form $\hat F\cY$.
       monodromy}, where $t^L$ means $e^{L\ln t}$ and
       \marginnote{in \cite[1]{Remy2014} $L$ is just a Jordan normal form.  Is
       this generic enough?}
+    \item $F$ a transformation,
   \end{itemize}
-  \begin{comment}
-    The models $(\cM^{nf},\nabla^{nf})$ only yield the unramified case!
-  \end{comment}
-  The fundamental solution, i.e.\ matrix $\mathcal{Y}_0$, is called a
-  \emph{normal solution}.
-  \begin{comment}
-    \begin{s-cor}
-      A system $[A]$ is a model, if it has, up to meromorphic base change, a
-      fundamental solution of the form $t^L e^{Q(t^{-1})}$, i.e.\ it has a
-      fundamental solution of the form $Ft^L e^{Q(t^{-1})}$ with
-      $F\in G(\!\{t\}\!)$.
-    \end{s-cor}
-  \end{comment}
-\end{lem}
+  will be called a \emph{normal form}. The normal forms will often be
+  denoted $A^0$.
+  The fundamental solution $F t^L e^{Q(t^{-1})}$ will, in this case, be called
+  \emph{normal solution} and will often be denoted by $\cY_0$.
+  \begin{s-rem}
+    By changing the basis via $F^{-1}$ wo obtain from $[A^0]$ the equivalent
+    system $[{}^{F^{-1}}\!A^0]$ with the normal solution
+  \[
+    F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})} \,.
+  \]
+  Thus it is always possible to assume, that the transformation matrix $F$ is
+  trivial.
+  \end{s-rem}
+\end{defn}
+\begin{thm}\label{thm:modelEqNormalForm}
+  A meromorphic connection $(\cM,\nabla)$ is a model if and only if its
+  connection matrix $A$ defines a normal form $[A]$.
+  \begin{s-rem}
+    This allows us, to say that a model $(\cM^{nf},\nabla^{nf})$ is a normal
+    form and \rewrite{vice versa}.
+    \rewrite{This} explains, why we mark models with ${}^{nf}$.
+  \end{s-rem}
+\end{thm}
 \begin{proof}
   \TODO{}
 \end{proof}
+\begin{cor}
+  From the Levelt-Turittin theorem\comm{, the fundamental solution
+  transformation rules} and theorem~\ref{thm:modelEqNormalForm} we
+  deduce that every system $[A]$ with normal form $[A^0]$ and normal solution
+  $t^L e^{Q(t^{-1})}$, has the fundamental solution
+  \[
+    \mathcal{Y}=\hat F t^L e^{Q(t^{-1})}
+  \]
+  where $\hat F$ is a solution of $[A^0,A]$.
+\end{cor}
+
 \begin{rem}
   Let $[A^0]$ be a normal form with normal solution
   $\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}$.
@@ -812,21 +828,13 @@ a fundamental solution in the form $\hat F\cY$.
     \item In the unramified case
       $[Q,L]=0$, i.e.\ $Q$ and $L$ commute and $L$
       can be supposed in Jordan form (cf.  \cite[Sec.4]{Martinet1991}).
-    \item If $A'={}^{\hat F}\!A^0$ is obtained from $A^0$ via the formal
-      meromorphic transformation $\hat F$ then is
-      \[
-        \mathcal{Y}=\hat F t^L e^{Q(t^{-1})}
-      \]
-      a fundamental solution for $[A']$.
-      \TODO[Why?]
-    \item \marginnote{\cite[73]{Loday2014}}
-      It is always possible to permutate the columns of a fundamental
+    \item It is always possible to permutate the columns of a fundamental
       solution by
       \[
         P^{-1}\mathcal{Y}P=\hat F t^{P^{-1}LP} e^{P^{-1}Q(t^{-1})P}
       \]
       with a permutation matrix $P$ and \rewrite{obtain another fundamental
-      solution for the same system.}
+      solution for the same system} (cf.\ \cite[73]{Loday2014}).
   \end{enumerate}
 \end{rem}
 \begin{comment}
@@ -870,16 +878,16 @@ Look at the situation, where $A$ is via $\hat F$ formally equivalent to $A^0$.
 
 \begin{defn}
   \marginnote{\cite[855]{Loday1994}}
-  We call $F$ a \emph{representation of $\hat F$ on $I\subset S^1$} if
+  We call $F$ a \emph{lift of $\hat F$ on $I\subset S^1$} if
   \begin{itemize}
     \item $F\sim_I\hat F$ and
     \item $F$ satisfies the same system $[A^0,A]$ as $\hat F$.
   \end{itemize}
 \end{defn}
 The main asymptotic existence theorem states
-\begin{thm}\label{thm:meat}
-  To every arc $I\subsetneq S^1$ there exists to every $\hat F\in G(\!(t)\t)$ a
-  representation $F$ on $I$.
+\begin{thm}[M.E.A.T]\label{thm:meat}
+  To every arc $I\subsetneq S^1$ there exists to every $\hat F\in G(\!(t)\!)$ a
+  lift $F$ on $I$.
 \end{thm}
 \begin{proof}
   \TODO{}
@@ -913,9 +921,9 @@ becomes the following.
   commutes
 \end{thm}
 \begin{proof}
-  This is clear, since the tensor is right exact and we have the Borel-Ritt
-  Lemma.
-  A proof can be found in~\cite[Thm.II.2.3.1]{sabbah_cimpa90}.
+  \rewrite{This is clear,} since the tensor is right exact and we have the
+  Borel-Ritt Lemma.
+  A proof can be found in~\cite[Sec.II.2.4]{sabbah_cimpa90}.
 \end{proof}
 
 \begin{comment}
@@ -946,7 +954,7 @@ isomorphism classes of all meromorphic connections. Since we have also the
 formal classification and we know, that all elements in a convergent
 isomorphism class lie in the same formal isomorphism class, we can reduce the
 problem by fixing a model $(\cM^{nf},\nabla^{nf})$ with the corresponding
-connection matrix $A^0$. Thus we can restrict ourself to the subset
+normal form $A^0$. Thus we can restrict ourself to the subset
 \begin{multline*}
   {}^0C(\cM^{nf},\nabla^{nf})=\bigg\{
     \Big[(\cM,\nabla)\Big]
@@ -1008,7 +1016,7 @@ the set ${}^0C(A^0):=\Syst_m(A^0)/G(\!\{t\}\!)$ of meromorphic classes which
 are formally equivalent to $A^0$.
 \TODO[\cite{thboalch} p. 3: In the logarithmic case\dots]
 Analogous, $\cH(\cM^{nf},\nabla^{nf})$ corresponds to the set $\cH(A^0)$ of
-equivalence classes in
+equivalence classes\rewrite{, i.e. orbits of $G(\!\{t\}\!)$,} in
 \[
   \hat\Syst_m(A^0):=\{(A,\hat F)
     \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\} \,.
@@ -1024,10 +1032,11 @@ equivalence classes in
     Thus the \emph{set of meromorphic classas of systems formally equivalent
       to $A^0$} are just the orbits of $G\{t\}$, that is
     \[
-      {}^0C(A^0)\cong G\{t\}\backslash\hat G(A^0)/G_0(A^0)
+      {}^0C(A^0)\cong G(\!\{t\}\!)\backslash\hat G(A^0)/G_0(A^0)
     \]
-    whereas the \emph{set of meromorphic classes of transformations of $[A^0]$}
-    is represented by the left quotient $G\backslash\hat G(A^0)$.
+    whereas the \emph{set of meromorphic classes of transformations $\cH(A^0)$
+    of $[A^0]$} is canonically isomorphic to the left quotient
+    $G(\!\{t\}\!)\backslash\hat G(A^0)$ (cf.\ \cite[Lem.1.17]{thboalch}).
   \end{s-cor}
 \end{lem}
 \begin{proof}
@@ -1040,12 +1049,4 @@ equivalence classes in
 The group $G_0(A^0)$ is easy to compute and is often trivial. In fact, the
 elements are block-diagonal, see~\cite[77]{Loday2014}.
 Thus the structure of ${}^0C(A^0)$ is easily deduced from the structure of
-$G\backslash\hat G(A^0)$.
-
-\begin{lem}
-  The set $G\backslash\hat G(A^0)$ is canonically isomorphic to $\cH(A^0)$.
-\end{lem}
-\begin{proof}
-  See~\cite{thboalch}: Lemma 1.17
-\end{proof}
-
+$G(\!\{t\}\!)\backslash\hat G(A^0)$.
