@@ -82,9 +82,9 @@ A meromorphic connection is then defined as follows.
     Some authors use the factors $k_i$ of the divisor $Z$ to limit the pole
     orders at the points $a_i$. Since we do not need this restriction, we allow
     arbitrary pole orders. Denoted is this by the $*$ in $\Omega_M^1(*Z)$.
-    A definition of $\Omega_M^1(*Z)$ of $\cO_M(*Z)$ can be found in
-    \cite[Sec.0.8]{sabbah2007isomonodromic} and 
-    $\Omega_M^1(*Z)$ is then defined as
+    a definition of $\cO_M(*Z)$ can be found
+    in~\cite[Sec.0.8]{sabbah2007isomonodromic} and $\Omega_M^1(*Z)$ is then
+    defined as
     \[
       \Omega_M^1(*Z):=\cO_M(*Z)\underset{\cO_M}\otimes\Omega_M^1
     \]
@@ -236,7 +236,7 @@ Then, applying the Leibniz rule, yields
   \\&=\underline{e}\left(dX-AX\right).
 \end{align*}
 Hence the condition $\nabla x=0$ is equivalent to the system of ODEs
-\begin{equation} \label{eq:ode}
+\begin{equation}\label{eq:ode}
   \frac{d}{dt}x=Ax
 \end{equation}
 such that horizontal sections of $(\cM,\nabla)$ correspond to solutions of
@@ -650,7 +650,7 @@ problem}.
   \end{itemize}
   \marginnote{\cite[II.2.f]{sabbah2007isomonodromic}}
 \end{defn}
-\begin{defn} \label{defn:model}
+\begin{defn}\label{defn:model}
   \def\myPhi{\textcolor{red!60!black}{\phi}}
   \def\myE{\textcolor{green!40!black}{\cE^{\myPhi}}}
   \begin{multicols}{2}
@@ -695,7 +695,7 @@ problem}.
 \end{defn}
 The important theorem here is the Levelt-Turittin theorem, which solves the
 formal classification problem.
-\begin{thm}[Levelt-Turittin]
+\begin{thm}[Levelt-Turittin]\label{thm:leveltTurittin}
   To each germ $(\cM,\nabla)$ of a meromorphic connection there exists, after
   potentially needed \textcolor{blue!60!black}{pullback by some suitable
   ramification $t=z^q$ of order $q\geq1$}, a
@@ -711,6 +711,16 @@ formal classification problem.
   to a model $\cM^{nf}$.
   We then call $\cM^{nf}$ a \emph{formal decomposition}, \emph{formal model} or
   \emph{formal normal form} of $\cM$.
+  \begin{rem}
+    There, in general is \textbf{no} lift of the isomorphism $\hat\lambda$,
+    i.e.\ there is \textbf{no} isomorphism making the diagram
+    \[ \begin{tikzcd}
+        \cM \dar \arrow[dotted]{r}[description]{?} & \cM^{nf} \dar
+        \\\hat\cM \rar{\hat\lambda} & \hat\cM^{nf}
+    \end{tikzcd} \]
+    kommutative. But sectorwise, there are lifts given by the main asymptotic
+    existence theorem (cf.\ \ref{thm:meat}).
+  \end{rem}
 \end{thm}
 \begin{proof}
   See \TODO{}
@@ -748,7 +758,7 @@ solutions. The normal forms are then the systems $[A^0]$, with a fundamental
 solution $\cY$ in a special form and from the Levelt-Turittin we then can
 deduce that every system $[{}^{\hat F}\!A^0]$, with $\hat F\in G(\!(t)\!)$, has
 a fundamental solution in the form $\hat F\cY$.
-\begin{lem} \label{lem:normSol}
+\begin{lem}\label{lem:normSol}
   % Let $(\cM^{nf},\nabla^{nf})$ be a model of a meromorphic connection,
   % which is represented by the system $[A^0]$.
 
@@ -855,12 +865,59 @@ which is essentially a deduction from the Borel-Ritt lemma.
 It states that to every formal solution of a system of meromorphic differential
 equations, and every sector with sufficiently small opening, one can find a
 solution of the system having the formal one as its asymptotic expansion.
-\begin{rem}
-  We will use this in the case, when $A$ is via $\hat F$ formally equivalent to
-  $A^0$. We are then able to find a \rewrite{(cyclic)} covering of the $S^1$ of
-  arcs such that on every arc there exists a lift $\tilde F$ of $\hat F$.
-\end{rem}
+
+Look at the situation, where $A$ is via $\hat F$ formally equivalent to $A^0$.
+
+\begin{defn}
+  \marginnote{\cite[855]{Loday1994}}
+  We call $F$ a \emph{representation of $\hat F$ on $I\subset S^1$} if
+  \begin{itemize}
+    \item $F\sim_I\hat F$ and
+    \item $F$ satisfies the same system $[A^0,A]$ as $\hat F$.
+  \end{itemize}
+\end{defn}
+The main asymptotic existence theorem states
+\begin{thm}\label{thm:meat}
+  To every arc $I\subsetneq S^1$ there exists to every $\hat F\in G(\!(t)\t)$ a
+  representation $F$ on $I$.
+\end{thm}
+\begin{proof}
+  \TODO{}
+\end{proof}
+
+\begin{comment}
+  \begin{rem}
+    We are then able to find a \rewrite{(cyclic)} covering of the $S^1$ of
+    arcs such that on every arc there exists a lift $\tilde F$ of $\hat F$.
+  \end{rem}
+\end{comment}
 \TODO{}
+
+Translated to the language of meromorphic connection the theorem~\ref{thm:meat}
+becomes the following.
+\begin{thm}[Sectorial decomposition]
+  \marginnote{\cite[Thm.II.5.12]{sabbah2007isomonodromic}}
+  Let $(\cM,\nabla)$ be a meromorphic connection and let
+  $\hat\lambda:\hat\cM\to\hat\cM^{nf}$ be the isomorphism given by
+  theorem~\ref{thm:leveltTurittin} together with the model $\cM^{nf}$.
+  There exists then, for any $e^{i\theta^0}\in S^1$, an isomorphism
+  $\tilde\lambda_{\theta^0}:
+  \tilde\cM_{\theta^0}=\cA_{\theta^0}\otimes\cM\to\tilde\cM_{\theta^0}^{nf}$
+  lifting $\hat\lambda$, that is, such that the following diagram
+  \[ \begin{tikzcd}
+      \tilde\cM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
+      \tilde\cM^{nf}_{\theta^o} \dar
+      \\\hat\cM \rar{\hat\lambda} &
+      \hat\cM^{nf}
+  \end{tikzcd} \]
+  commutes
+\end{thm}
+\begin{proof}
+  This is clear, since the tensor is right exact and we have the Borel-Ritt
+  Lemma.
+  A proof can be found in~\cite[Thm.II.2.3.1]{sabbah_cimpa90}.
+\end{proof}
+
 \begin{comment}
   \begin{multicols}{2}
     \begin{thm}
@@ -878,34 +935,6 @@ solution of the system having the formal one as its asymptotic expansion.
       See \cite[Sec.II.2.4]{sabbah_cimpa90}
     \end{proof}
   \columnbreak
-    We set
-    \[
-      \hat\cM=\hat\cO\otimes \cM
-    \]
-    and for each $e^{i\theta^0}\in S^1$ we set
-    \[
-      \tilde\cM_{\theta^0}=\cA_{\theta^0}\otimes\cM\,.
-    \]
-    \begin{thm}[Sectorial decomposition]
-      \marginnote{\cite[Thm.II.5.12]{sabbah2007isomonodromic}}
-      Let $(\cM,\nabla)$ be a meromorphic connection and let us assume that
-      there exist a model $\cM^{nf}$ together with an isomorphism
-      $\hat\lambda:\hat\cM\to\hat\cM^{nf}$. There exists then, for any
-      $e^{i\theta^0}\in S^1$, an isomorphism $\tilde\lambda_{\theta^0}:
-      \tilde\cM_{\theta^0}\to\tilde\cM_{\theta^0}^{nf}$
-      lifting $\hat\lambda$, that is, such that the following diagram
-      \[ \begin{tikzcd}
-          \tilde\cM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
-          \tilde\cM^{nf}_{\theta^o} \dar
-          \\\hat\cM \rar{\hat\lambda} &
-          \hat\cM^{nf}
-      \end{tikzcd} \]
-      commutes
-    \end{thm}
-    \begin{proof}
-      This is clear, since the tensor is right exact and we have the Borel-Ritt
-      Lemma.
-    \end{proof}
   \end{multicols}
 \end{comment}
 
