@@ -2,6 +2,9 @@
 A great overview of this topic is given in
 \cite{Varadarajan96linearmeromorphic}.
 
+Stokes structures are the \rewrite{necessary information} for meromorphic
+classification.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Situation}
 Let $\cM^{nf}$ be a fixed model with the corresponding connection matrix
@@ -146,7 +149,6 @@ $\id$.
   $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$, i.e.\ the trivial
   cohomology class.} sets.
 \end{tthm}
-\TODO[\cite{sabbah2007isomonodromic} cor II.6.4.]
 \begin{comment}
   \begin{rem}
     \marginnote{\cite{Loday1994} Remark I.2.2}
@@ -201,7 +203,6 @@ which we call $\exp$.
   is an isomorphism of pointed\footnote{Which maps the class of
   $(A^0,\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology class.} sets.
 \end{tthm}
-\TODO[\cite{sabbah2007isomonodromic} cor II.6.4.]
 \begin{rem}
   \marginnote{\cite{Loday1994} Remark I.2.2}
   To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains which
@@ -1397,12 +1398,12 @@ outputs a Stokes cocycle, which corresponds to our coverings.
     \rewrite{A cocycle $\dot\phi=(\dot\phi_j)_{j\in J}$ on a cyclic covering
       $\cU=(U_j)_{j\in J}$ is said to be a \emph{Stokes cocycle} when the
       components $\dot\phi_j$, if non trivial, represent Stokes germs
-      $\dot\phi_{j,\alpha_j}\in\Sto_{\alpha_j}(A^0$ at anti-Stokes directions
-      $\alpha_j$ in a cyclic ascending ordering.}
+      $\dot\phi_{j,\theta_j}\in\Sto_{\theta_j}(A^0$ at anti-Stokes directions
+      $\theta_j$ in a cyclic ascending ordering.}
   \end{defn}
 \end{comment}
 \[
-  g_J:\prod_{\alpha\in J}\Sto_\alpha(A^0)\to\prod_{\alpha\in\A}\Sto_\alpha(A^0)
+  g_J:\prod_{\theta\in J}\Sto_\theta(A^0)\to\prod_{\theta\in\A}\Sto_\theta(A^0)
 \]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1446,8 +1447,8 @@ outputs a Stokes cocycle, which corresponds to our coverings.
 \section{The main question}
 Here we want to answer the following question:
 \begin{einr}
-  Which information is needed to describe the Stokes structure of a unramified
-  \textbf{multileveled} meromorphic connection?
+  Which information is needed to describe the Stokes structure of a
+  (unramified) \textbf{multileveled} meromorphic connection?
 \end{einr}
 To be more precise: we are interested in the representation of an element from
 $\prod_{\theta\in\A}\Sto_\theta(A^0)$ and how the information about the
@@ -1472,7 +1473,236 @@ is \textbf{simple}}.
 \begin{comment}
   \textbf{simple} means that all $q_i$'s are different.
 \end{comment}
+
+One can view the anti-Stokes directions as the directions, which help to
+distinguish between the elements of $\cQ_{[A^0]}$, since they mark the
+directions, where the differences of two such elements \TODO{}
+
 In this case has the set $\A$ a $\frac{\pi}{k}$-rotational symmetry (cf.\
 remark~\ref{rem:rotationalSymPrime}).
 This means, that in every arc of width $\frac{\pi}{k}$ are
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The multi-level case}
+\begin{figure}[!htbp] %{{{
+  \centering
+  \begin{subfigure}[b]{0.33\textwidth}
+    \begin{tikzpicture}[scale=1.9]
+      \node (zero) at (0,0) {};
+      \draw (zero) circle (1cm);
+
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%  Purple
+      \foreach \w in {10}
+      % {\foreach \sep in {0,45,90,135,180,225,270,315}
+      {\foreach \sep in {0,36,72,108,144,180,216,252,288,324}
+       {%\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+
+        \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
+        \draw[ultra thick,purple] ({cos( \w + \sep )},{sin( \w + \sep )})
+          -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+
+        \draw[thick,purple] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
+          arc ({\w + \sep - 18}:{\w + \sep +18}:\r);
+
+        \draw[dotted,purple] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
+          -- ({cos( \w + \sep -18) * 1},{sin( \w + \sep -18) * 1});
+        \draw[dotted,purple] ({cos( \w + \sep +18) * \r},{sin( \w + \sep +18) * \r})
+          -- ({cos( \w + \sep +18) * 1},{sin( \w + \sep +18) * 1});
+        }};
+
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%  Blue
+      \foreach \w in {10}
+      {\foreach \sep in {0,60,120,180,240,300}
+       {%\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});
+     
+        \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,120)/720}}
+
+        \draw[ultra thick,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
+          -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+        \draw[thick,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
+          arc ({\w + \sep - 30}:{\w + \sep +30}:\r);
+
+
+        \draw[dotted,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
+          -- ({cos( \w + \sep -30) * 1},{sin( \w + \sep -30) * 1});
+        \draw[dotted,blue] ({cos( \w + \sep +30) * \r},{sin( \w + \sep +30) * \r})
+          -- ({cos( \w + \sep +30) * 1},{sin( \w + \sep +30) * 1});
+      }};
+
+
+      % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      % %%%%  Green
+      % \foreach \w in {10}
+      % {\foreach \sep in {0,90,180,270}
+      %  {%\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});
+     
+      %   \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,180)/900}}
+
+      %   \draw[ultra thick,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
+      %     -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+      %   \draw[thick,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
+      %     arc ({\w + \sep - 45}:{\w + \sep +45}:\r);
+
+
+      %   \draw[dotted,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
+      %     -- ({cos( \w + \sep -45) * 1},{sin( \w + \sep -45) * 1});
+      %   \draw[dotted,green!60!black] ({cos( \w + \sep +45) * \r},{sin( \w + \sep +45) * \r})
+      %     -- ({cos( \w + \sep +45) * 1},{sin( \w + \sep +45) * 1});
+     
+      % }};
+
+      \fill[white] (zero) circle (1.5pt);
+      \fill (zero) circle (.7pt);
+    \end{tikzpicture}
+    \caption{$\cK=\{\textcolor{purple}{5},\textcolor{blue}{3}\}$}
+  \end{subfigure}%
+  \begin{subfigure}[b]{0.33\textwidth}
+    \begin{tikzpicture}[scale=1.9]
+      \node (zero) at (0,0) {};
+      \draw (zero) circle (1cm);
+
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%  Purple
+      \foreach \w in {10}
+      % {\foreach \sep in {0,45,90,135,180,225,270,315}
+      {\foreach \sep in {0,36,72,108,144,180,216,252,288,324}
+       {%\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+
+        \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
+        \draw[ultra thick,purple] ({cos( \w + \sep )},{sin( \w + \sep )})
+          -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+
+        \draw[thick,purple] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
+          arc ({\w + \sep - 18}:{\w + \sep +18}:\r);
+
+        \draw[dotted,purple] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
+          -- ({cos( \w + \sep -18) * 1},{sin( \w + \sep -18) * 1});
+        \draw[dotted,purple] ({cos( \w + \sep +18) * \r},{sin( \w + \sep +18) * \r})
+          -- ({cos( \w + \sep +18) * 1},{sin( \w + \sep +18) * 1});
+        }};
+
+      % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      % %%%%  Blue
+      % \foreach \w in {10}
+      % {\foreach \sep in {0,60,120,180,240,300}
+      %  {%\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});
+     
+      %   \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,120)/720}}
+
+      %   \draw[ultra thick,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
+      %     -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+      %   \draw[thick,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
+      %     arc ({\w + \sep - 30}:{\w + \sep +30}:\r);
+
+
+      %   \draw[dotted,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
+      %     -- ({cos( \w + \sep -30) * 1},{sin( \w + \sep -30) * 1});
+      %   \draw[dotted,blue] ({cos( \w + \sep +30) * \r},{sin( \w + \sep +30) * \r})
+      %     -- ({cos( \w + \sep +30) * 1},{sin( \w + \sep +30) * 1});
+      % }};
+
+
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%  Green
+      \foreach \w in {10}
+      {\foreach \sep in {0,90,180,270}
+       {%\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});
+     
+        \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,180)/900}}
+
+        \draw[ultra thick,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
+          -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+        \draw[thick,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
+          arc ({\w + \sep - 45}:{\w + \sep +45}:\r);
+
+
+        \draw[dotted,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
+          -- ({cos( \w + \sep -45) * 1},{sin( \w + \sep -45) * 1});
+        \draw[dotted,green!60!black] ({cos( \w + \sep +45) * \r},{sin( \w + \sep +45) * \r})
+          -- ({cos( \w + \sep +45) * 1},{sin( \w + \sep +45) * 1});
+     
+      }};
+
+      \fill[white] (zero) circle (1.5pt);
+      \fill (zero) circle (.7pt);
+    \end{tikzpicture}
+    \caption{$\cK=\{\textcolor{purple}{5},\textcolor{green!60!black}{2}\}$}
+  \end{subfigure}%
+  \begin{subfigure}[b]{0.33\textwidth}
+    \begin{tikzpicture}[scale=1.9]
+      \node (zero) at (0,0) {};
+      \draw (zero) circle (1cm);
+
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%  Purple
+      % \foreach \w in {10}
+      % % {\foreach \sep in {0,45,90,135,180,225,270,315}
+      % {\foreach \sep in {0,36,72,108,144,180,216,252,288,324}
+      %  {%\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+
+      %   \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
+      %   \draw[ultra thick,purple] ({cos( \w + \sep )},{sin( \w + \sep )})
+      %     -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+
+      %   \draw[thick,purple] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
+      %     arc ({\w + \sep - 18}:{\w + \sep +18}:\r);
+
+      %   \draw[dotted,purple] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
+      %     -- ({cos( \w + \sep -18) * 1},{sin( \w + \sep -18) * 1});
+      %   \draw[dotted,purple] ({cos( \w + \sep +18) * \r},{sin( \w + \sep +18) * \r})
+      %     -- ({cos( \w + \sep +18) * 1},{sin( \w + \sep +18) * 1});
+      %   }};
+
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%  Blue
+      \foreach \w in {10}
+      {\foreach \sep in {0,60,120,180,240,300}
+       {%\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});
+     
+        \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,120)/720}}
+
+        \draw[ultra thick,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
+          -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+        \draw[thick,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
+          arc ({\w + \sep - 30}:{\w + \sep +30}:\r);
+
+
+        \draw[dotted,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
+          -- ({cos( \w + \sep -30) * 1},{sin( \w + \sep -30) * 1});
+        \draw[dotted,blue] ({cos( \w + \sep +30) * \r},{sin( \w + \sep +30) * \r})
+          -- ({cos( \w + \sep +30) * 1},{sin( \w + \sep +30) * 1});
+      }};
+
+
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%  Green
+      \foreach \w in {10}
+      {\foreach \sep in {0,90,180,270}
+       {%\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});
+     
+        \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,180)/900}}
+
+        \draw[ultra thick,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
+          -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+        \draw[thick,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
+          arc ({\w + \sep - 45}:{\w + \sep +45}:\r);
+
+
+        \draw[dotted,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
+          -- ({cos( \w + \sep -45) * 1},{sin( \w + \sep -45) * 1});
+        \draw[dotted,green!60!black] ({cos( \w + \sep +45) * \r},{sin( \w + \sep +45) * \r})
+          -- ({cos( \w + \sep +45) * 1},{sin( \w + \sep +45) * 1});
+     
+      }};
+
+      \fill[white] (zero) circle (1.5pt);
+      \fill (zero) circle (.7pt);
+    \end{tikzpicture}
+    \caption{$\cK=\{\textcolor{blue}{3},\textcolor{green!60!black}{2}\}$}
+  \end{subfigure}
+  \caption{Ideas for examples with two levels.}
+\end{figure} %}}}
+
 

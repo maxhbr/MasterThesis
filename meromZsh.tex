@@ -60,7 +60,7 @@ Let $\sM$ be a holomorphic Bundle over $M$ i.e.\ a locally free $\cO_M$-module
 of rank $n$.
 
 A meromorphic connection is then defined as follows.
-\begin{defn}
+\begin{defn}\label{defn:mercon}
   \def\myU{\textcolor{green!30!black}{U}}
   \def\mys{\textcolor{blue!60!black}{s}}
   \def\myf{\textcolor{red!60!black}{f}}
@@ -179,12 +179,19 @@ and trivialization-dependent.
     \end{s-rem}
   \end{comment}
 \end{prop}
+\begin{rem}
+  From now on we will mostly talk about \textbf{germs of} meromorphic
+  connections $(\cM,\nabla)$ and we will call them meromorphic connection. If
+  we want to talk about meromorphic connections in the sense of
+  definition~\ref{defn:mercon} we will emphasize this by the word `global' or
+  by talking about a meromorphic connection on $M$.
+\end{rem}
 \begin{defn}
   A \emph{(iso-)\,morphism of meromorphic connections}
-  $\Phi:(\cM,\nabla)\to(\cM',\nabla')$ is a (iso-)\,morphism of
-  $\C(\!\{t\}\!)$-vectorspaces $\Phi:\cM\to\cM'$ which commutes with the
-  connections.
-  \TODO[Category of systems!]
+  $\Phi:(\cM,\nabla)\overset{\sim}\to(\cM',\nabla')$ is a (iso-)\,morphism of
+  $\C(\!\{t\}\!)$-vectorspaces $\Phi:\cM\overset{\sim}\to\cM'$ which commutes
+  with the connections.
+  \TODO[Category of meromorphic connections!]
 \end{defn}
 \marginnote{\cite[65]{Loday2014}}
 \begin{multicols}{2}
@@ -270,6 +277,7 @@ one and dimension $n$.
       \end{s-prop}
       It well be denoted by $[A]=d-A$ where $A$ is the connection matrix in the
       chosen trivialization.
+      \TODO[Category of systems!]
   \end{enumerate}
 \end{defn}
 
@@ -303,7 +311,7 @@ one and dimension $n$.
   \begin{comment}
     Quelle?
     \begin{itemize}
-      \item \cite{sabbah2007isomonodromic}???
+      \item \cite[Cor.II.6.4]{sabbah2007isomonodromic}
     \end{itemize}
   \end{comment}
   If we start with a germ $(\cM,\nabla)$ of a meromorphic connection there is
@@ -333,28 +341,6 @@ one and dimension $n$.
   \TODO{}
 \end{multicols}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Fundamental solution}
-\begin{comment}
-  See \cite[Sec.4.3.2]{Loday2014}
-\end{comment}
-Fundamental solutions \rewrite{beschreiben} also systems of ordinary
-differential equations.
-
-\begin{defn}
-  A \emph{fundamental solution} $\cY$ of the system $[A]$ is a $n\times n$
-  matrix \comm{with entries in \TODO{}} whose columns are $n$ $\C$-linearly
-  independent solutions of the system $[A]$.
-\end{defn}
-
-\begin{rem}
-  If the trivialization is changed by $F$ (resp.\ $\hat F$) the fundamental
-  solution $\cY\in G(\!\{t\}\!)$ changes to $F\cY$ (resp.\ $\hat F\cY$).
-\end{rem}
-
-\begin{comment}
-  Unique \textbf{up to permutation}?\ or up to basis change?
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{As differential operator}
@@ -539,6 +525,9 @@ transformations}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Regular / irregular singularities}
+\begin{comment}
+  see \cite[defn.5.1.6]{hotta2008}
+\end{comment}
 \begin{defn}
   \marginnote{\cite[86]{sabbah2007isomonodromic}}
   A connection with connection matrix $A$ has \emph{regular singularity} at $0$
@@ -554,6 +543,15 @@ transformations}
     singularity.
   \end{s-rem}
 \end{defn}
+\begin{comment}
+  \begin{rem}
+    \marginnote{\cite[150]{van2003galois}}
+    One can express this notion of regular singular also in terms of
+    $\delta:=t\frac{d}{dt}$. A system has regular singularity if it is
+    equivalent to an equation $\delta-A$ where $A$ has entries in  holomorphic
+    functions in a neighbourhood of $z=0$.
+  \end{rem}
+\end{comment}
 \begin{thm}
   \begin{comment}
     see
@@ -569,13 +567,79 @@ transformations}
 \end{thm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Fundamental solutions and monodromy of a system}
+\begin{comment}
+  See \cite[Sec.4.3.2]{Loday2014}
+\end{comment}
+\marginnote{\cite[130]{hotta2008}}
+It is well known in the theory of linear ODEs that the set of solutions to
+(\ref{eq:ode}) forms a vector space of dimension $n$ over $\C$, i.e.\ if
+$x_0(t)$ and $x_{00}(t)$ are two solution of (\ref{eq:ode}) and $C_1$,
+$C_2\in\C$ are two constants, then is also $C_1x_0(t)+C_2x_{00}(t)$ a solution.
+
+\begin{defn}
+  A \emph{fundamental solution} $\cY$ of the system $[A]$ is a $n\times n$
+  matrix \comm{with entries in \TODO{}} whose columns are $n$ $\C$-linearly
+  independent solutions of the system $[A]$.
+  \begin{comment}
+    \begin{s-rem}
+      This means, that $\cY$ is a solution of the \emph{matrix differential
+      equation}
+      \[
+        dY=AY
+      \]
+      \comm{where the matrix $Y$ has entries in possibly multivalued functions
+      }and $\det(\cY)\neq0$.
+    \end{s-rem}
+  \end{comment}
+\end{defn}
+
+\begin{lem}
+  Fundamental solutions \rewrite{beschreiben} also systems of ordinary
+  differential equations.
+\end{lem}
+\begin{proof}
+  \TODO{}
+\end{proof}
+
+\begin{rem}
+  If the trivialization is changed by $F$ (resp.\ $\hat F$) the fundamental
+  solution $\cY\in G(\!\{t\}\!)$ changes to $F\cY$ (resp.\ $\hat F\cY$).
+\end{rem}
+
+\begin{comment}
+  Unique \textbf{up to permutation}?\ or up to basis change?\ in the ramified
+  case up to \TODO{}
+\end{comment}
+
+\begin{comment}
+  for \textbf{monodromy} see \cite[130]{hotta2008}
+\end{comment}
+\marginnote{\cite[6]{heu2010}}
+We can choose a fundamental solution $\cY$. Then analytic continuation along a
+closed path $\gamma$ in $M\backslash Z$ provides another fundamental solution
+$\cY'=\rho^{-1}(\gamma)\cY$ where $\rho(\gamma)$ is called the \emph{monodromy
+along the path $\gamma$}.
+\begin{defn}
+  Let $[A]$ be a system with fundamental solution $\cY$.
+  The analyic continuation of $\cY$ along a circle around $t=0$ yields the
+  fundamental solution
+  \[
+    \lim_{s\to2\pi}\cY(e^{\sqrt{-1}s}t)=\cY(t)\Lambda
+  \]
+  where $\Lambda\in G$ is called the \emph{monodromy matrix} of $[A]$.
+\end{defn}
+
+\TODO[monodromy representation] \TODO[Riemann hilbert korrespondenz]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Ramification}
 \begin{comment}
   \cite[I.5.4.1]{sabbah_cimpa90}
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Models / formal decomposition of a germ / formal classification}
+\section{Formal classification}
 \marginnote{\cite[Thm.4.3.1]{Loday2014}}
 In every formal equivalence class of meromorphic connections, there are some
 meromorphic connection of special form, which we will call models. They are not
@@ -760,7 +824,9 @@ $\cY$ in a special form and from the Levelt-Turittin we then can deduce that
 every system $[{}^{\hat F}\!A^0]$, with $\hat F\in G(\!(t)\!)$, has a
 fundamental solution in the form $\hat F\cY$.
 \begin{defn}\label{defn:normSol}
-  Let $[A]$ be a system. If its fundamental solution has the form
+  Let $[A]$ be a system.
+  We call $[A]$ (or $A$) a \emph{normal form} if its fundamental solution can
+  be written as
   \[
     \mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}
   \]
@@ -779,20 +845,27 @@ fundamental solution in the form $\hat F\cY$.
       monodromy}, where $t^L$ means $e^{L\ln t}$ and
       \marginnote{in \cite[1]{Remy2014} $L$ is just a Jordan normal form.  Is
       this generic enough?}
-    \item $F$ a transformation,
+    \item $F\in G(\!\{t\}\!)$ a transformation.
   \end{itemize}
-  will be called a \emph{normal form}. The normal forms will often be
-  denoted $A^0$.
-  The fundamental solution $F t^L e^{Q(t^{-1})}$ will, in this case, be called
-  \emph{normal solution} and will often be denoted by $\cY_0$.
+  The normal forms will often be denoted $A^0$.
+  If $A$ is formally equivalent to a normal form $A^0$ we say, that $A^0$
+  \emph{is a normal form for} $A$.
+
+  The fundamental solution $F t^L e^{Q(t^{-1})}$ of a normal form will be
+  called \emph{normal solution} and will often be denoted by $\cY_0$.
   \begin{s-rem}
-    By changing the basis via $F^{-1}$ wo obtain from $[A^0]$ the equivalent
-    system $[{}^{F^{-1}}\!A^0]$ with the normal solution
-  \[
-    F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})} \,.
-  \]
-  Thus it is always possible to assume, that the transformation matrix $F$ is
-  trivial.
+    \begin{enumerate}
+      \item The system $[A^0]$ has the same monodromy as $t^L$. \comm{In fact,
+        every formally equivalent system has the same monodromy.}
+      \item \TODO[Cor from base change for fundamental solutions]
+        By changing the basis via $F^{-1}$ wo obtain from $[A^0]$ the
+        equivalent system $[{}^{F^{-1}}\!A^0]$ with the normal solution
+        \[
+          F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})} \,.
+        \]
+        Thus it is always possible to assume, that the transformation matrix
+        $F$ is trivial.
+    \end{enumerate}
   \end{s-rem}
 \end{defn}
 \begin{thm}\label{thm:modelEqNormalForm}
@@ -822,8 +895,8 @@ fundamental solution in the form $\hat F\cY$.
   Let $[A^0]$ be a normal form with normal solution
   $\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}$.
   \begin{enumerate}
-    \item In the unramified case are the $q_i(t^{-1})$ the $\phi_i(t)$ from
-      definition~\ref{defn:model}.
+    \item In the unramified case are \rewrite{the $q_i(t^{-1})$ the
+      $\phi_i(t)$} from definition~\ref{defn:model}.
       \TODO[Why/realy?]
     \item In the unramified case
       $[Q,L]=0$, i.e.\ $Q$ and $L$ commute and $L$

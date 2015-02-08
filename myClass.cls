@@ -283,7 +283,7 @@
             % \end{einrPrime}
         \end{itemize}
       }
-    \fi
+  \fi
 \fi
 
 \numberwithin{equation}{chapter}
