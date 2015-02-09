@@ -40,7 +40,7 @@
       {\large coordinate dependent:};
 
     \node[mybox,dashed] (globDMod) at (-3,1)
-      {holonomic $\sD$-Modules};
+      {holonomic $\sD$-Module};
 
     \node[mybox] (merCon) at (-1,1)
       {$(\sM,\nabla)$\\meromorphic connection
@@ -50,8 +50,10 @@
       {{\mdseries (global)} system};
 
 
-    \node[mybox] (locDMod) at (-3,-1)
-      {\rewrite{$\cD/P\cD$}\\\rewrite{localized holonomic} $\cD$-modules};
+    \node[mybox] (locDMod) at (-2,-2)
+      {\rewrite{$\cD/P\cD$}\\\rewrite{localized holonomic} $\cD$-module};
+    \node[mybox] (germDMod) at (-3,-1)
+      {$D/I$\\germ of holonomic $\cD$-module};
     \node[mybox] (locMerCon) at (-1,-1)
       {$(\cM,\nabla)$\\germ of a meromorphic connection};
 
@@ -67,33 +69,36 @@
     \node[mybox] (fundSol) at (1,-3)
       {\textcolor{gray}{$\cY$\\fundamental solution}};
 
-    \node[mybox] (diffOp) at (-3,-2)
+    \node[mybox] (diffOp) at (-2,-3)
     {$P\in\cD$
       \\differential operator
       \\{\mdseries of dim $1$ and rank $n$}};
 
-    \draw[->>,dashed] (globDMod) -- (locDMod)
-      node [midway] {localize};
+    \draw[->>,dashed] (globDMod) -- (germDMod)
+      node [midway] {$\substack{\text{take}\\\text{germ}}$};
+    \draw[->] (locDMod) -- (germDMod)
+      node [midway] {$\hookrightarrow$};
 
     \draw[->>] (merCon) -- (locMerCon)
       node [midway] {$\substack{\text{take}\\\text{germ}}$};
-    \draw[->] (locMerCon) to[bend angle=10,bend left] (merCon);
+    \draw[dotted,->] (locMerCon) to[bend angle=10,bend left] (merCon);
 
     \draw[->>,dashed] (globSyst) -- (locSyst)
       node [midway] {$\substack{\text{take}\\\text{germ}}$};
 
-    \draw[->] (locMerCon) to[bend angle=10,bend left] (locSyst);
-    \draw[->] (locSyst) to[bend angle=10,bend left] (locMerCon);
+    \draw[->] (locMerCon) -- (locSyst)
+      node [midway] {$\substack{\text{basis}\\\text{choice}}$};
+    \draw[dotted,->] (locSyst) to[bend angle=10,bend left] (locMerCon);
     \draw[<->] (locSyst) -- (conMat);
 
-    \draw[<->] (locSyst) to[bend angle=10,bend left] (diffOp);
+    \draw[<->] (locSyst) -- (diffOp)
+      node [midway] {??};
 
-    \draw[->] (diffOp) -- (locDMod);
-    \draw[->,dashed] (locDMod) to[bend angle=10,bend left] (diffOp);
+    \draw[<-] (diffOp) -- (locDMod)
+      node [midway] {??};
 
-    \draw[<->,dashed] (locDMod) -- (locMerCon);
+    \draw[<->] (locDMod) -- (locMerCon);
 
     \draw[->] (locSyst) to[bend angle=52,bend left] (fundSol);
-    \draw[->,black!20] (fundSol) to[bend angle=52,bend left] (locSyst);
   \end{tikzpicture}
 \end{center}
