@@ -275,36 +275,50 @@ where
 thus our system has the levels $\cK=\{k_1<k_2<\cdots<k_r\}=\{l_1,\dots,l_n\}$.
 We then construct the connection matrix by
 \[
-  A^0=e^{Q(t^{-1})}+t^L
+  A^0=dQ(t^{-1})+L
 \]
 where
 \begin{itemize}
   \item $Q(t^{-1})=\diag(q_1(t^{-1}),q_2(t^{-1}),\dots,q_n(t^{-1}))$
     and
-  \item $L$ is konstant\comm{~and in jordan normalform/diagonal}.
+  \item $L$ is constant invertible\comm{~and in jordan normalform/diagonal}.
 \end{itemize}
 
 \begin{lem}
+  \TODO[move to fund-sol-defn]
   The matrix $\cY_0:=t^Le^{Q(t^{-1})}$ is then a fundamental solution of
   $[A^0]$.
 \end{lem}
 \begin{proof}
-  It is sufficient to show that $\cY\in G(\!\{t\}\!)$ and
+  It is sufficient to show that $\cY\in G(\!\{t\}\!)$ and that its columns are
+  solutions.
+
+  From the theory of matrix exponentials \TODO[quelle?] we know
   \[
-    \frac{d}{dt}\cY_0=A\cY_0 \,.
+    \frac{d}{dt}e^{X(t)}=
+    \int_0^1e^{\alpha X(t)}\frac{dX(t)}{dt}e^{(1-\alpha)X(t)}d\alpha
   \]
-  \rewrite{The right hand side}
+  such, that 
   \begin{align*}
-    A\cY_0
-    &=\left(e^{Q(t^{-1})}+t^L\right)t^Le^{Q(t^{-1})}
-  \\&=e^{Q(t^{-1})}t^Le^{Q(t^{-1})}+t^Lt^Le^{Q(t^{-1})}
+    \frac{d}{dt}e^{Q(t^{-1})}
+    &\overset{\TODO{}}{=}
+  \\&=dQ(t^{-1})e^{Q(t^{-1})}
   \end{align*}
-  and \rewrite{the left hand side}
+  The function $t^L$ is defined as $e^{L\ln t}$ and thus we have
+  \begin{align*}
+    \frac{d}{dt}t^L&=\frac{d}{dt}e^{L\ln t}
+  \\&\overset{\TODO{}}{=}Le^{L\ln t}
+  \\&=Lt^L
+  \end{align*}
+
   \begin{align*}
     \frac{d}{dt}\cY_0
     &=\frac{d}{dt}\left(t^Le^{Q(t^{-1})}\right)
-  \\&=\frac{d}{dt}\left(e^{L\ln t}e^{Q(t^{-1})}\right)
-  \\&=\frac{d}{dt}e^{L\ln t}e^{Q(t^{-1})}+e^{L\ln t}\frac{d}{dt}e^{Q(t^{-1})}
+  \\&=\frac{d}{dt}t^Le^{Q(t^{-1})}+t^L\frac{d}{dt}e^{Q(t^{-1})}
+  \\&=\frac{d}{dt}e^{L\ln t}e^{Q(t^{-1})}+t^L\frac{d}{dt}e^{Q(t^{-1})}
+  \\&\overset{\TODO{}}{=}Lt^Le^{Q(t^{-1})}+t^LdQ(t^{-1})e^{Q(t^{-1})}
+  \\&\overset{\TODO{}}{=}Lt^Le^{Q(t^{-1})}+dQ(t^{-1})t^Le^{Q(t^{-1})}
+  \\&=\left(dQ(t^{-1})+L\right)t^Le^{Q(t^{-1})}=\frac{d}{dt}\cY_0
   \end{align*}
   \TODO{}
 \end{proof}
