@@ -297,6 +297,11 @@ one and dimension $n$.
     (\cM_A,\nabla_A)=(\C(\!\{t\}\!)^n,d-A)
   \]
   and $A$ is a connection matrix for $(\cM,\nabla)$.
+  \begin{s-rem}
+    Since systems are meromorphic connections together with a base choice, we
+    could alternatively forget the base choice. This yields clearly an
+    isomorphic meromorphic connection.
+  \end{s-rem}
 \end{prop}
 \begin{proof}
   \TODO{}
@@ -459,6 +464,26 @@ transformations}
       \]
       which is denoted by $[\myA,\myB]$.
   \end{itemize}
+  \begin{s-rem}
+    If we start with a isomorphism
+    $\Phi:(\cM,\nabla)\overset{\sim}\to(\cM',\nabla')$ and two basis choices
+    $\cM\overset{\sim}\to\C^n$ and $\cM'\overset{\sim}\to\C^n$ we have the
+    following commutative diagram:
+    \[ \begin{tikzcd}
+        \C^n \arrow{rrrr}{F}\arrow{ddd}{d-A}&&&& \C^n\arrow{ddd}{d-B}
+        \\ & \cM \dar{\nabla}\arrow{rr}{\Phi}\ular&& \cM'\dar{\nabla'}\urar
+        \\ & \cM \arrow{rr}{\Phi}\dlar&& \cM'\drar
+        \\ \C^n \arrow{rrrr}{F}&&&& \C^n
+    \end{tikzcd} \]
+    Thus the commutation property is given by
+    \[
+      (d-A)F=F(d-B)
+    \]
+    which is equivalent \TODO[really] to
+      \[
+        \frac{dF}{dt}=BF-FA.
+      \]
+  \end{s-rem}
   \begin{comment}
     \begin{s-rem}
       $[A]=[0,A]$ \TODO[korrekt?]

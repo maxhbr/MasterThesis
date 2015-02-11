@@ -39,6 +39,7 @@ different levels is stored.
 \begin{figure}[!htbp] %{{{
   \centering
   \begin{subfigure}[b]{0.33\textwidth}
+    \caption{$\cK=\{\textcolor{brown}{5},\textcolor{blue}{3}\}$}
     \begin{tikzpicture}[scale=1.9]
       \node (zero) at (0,0) {};
       \draw (zero) circle (1cm);
@@ -51,15 +52,15 @@ different levels is stored.
        {%\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
 
         \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
-        \draw[ultra thick,purple] ({cos( \w + \sep )},{sin( \w + \sep )})
+        \draw[ultra thick,brown] ({cos( \w + \sep )},{sin( \w + \sep )})
           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
 
-        \draw[thick,purple] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
+        \draw[thick,brown] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
           arc ({\w + \sep - 18}:{\w + \sep +18}:\r);
 
-        \draw[dotted,purple] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
+        \draw[dotted,brown] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
           -- ({cos( \w + \sep -18) * 1},{sin( \w + \sep -18) * 1});
-        \draw[dotted,purple] ({cos( \w + \sep +18) * \r},{sin( \w + \sep +18) * \r})
+        \draw[dotted,brown] ({cos( \w + \sep +18) * \r},{sin( \w + \sep +18) * \r})
           -- ({cos( \w + \sep +18) * 1},{sin( \w + \sep +18) * 1});
         }};
 
@@ -68,7 +69,7 @@ different levels is stored.
       \foreach \w in {10}
       {\foreach \sep in {0,60,120,180,240,300}
        {%\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});
-     
+
         \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,120)/720}}
 
         \draw[ultra thick,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
@@ -89,7 +90,7 @@ different levels is stored.
       % \foreach \w in {10}
       % {\foreach \sep in {0,90,180,270}
       %  {%\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});
-     
+
       %   \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,180)/900}}
 
       %   \draw[ultra thick,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
@@ -102,15 +103,15 @@ different levels is stored.
       %     -- ({cos( \w + \sep -45) * 1},{sin( \w + \sep -45) * 1});
       %   \draw[dotted,green!60!black] ({cos( \w + \sep +45) * \r},{sin( \w + \sep +45) * \r})
       %     -- ({cos( \w + \sep +45) * 1},{sin( \w + \sep +45) * 1});
-     
+
       % }};
 
       \fill[white] (zero) circle (1.5pt);
       \fill (zero) circle (.7pt);
     \end{tikzpicture}
-    \caption{$\cK=\{\textcolor{purple}{5},\textcolor{blue}{3}\}$}
   \end{subfigure}%
   \begin{subfigure}[b]{0.33\textwidth}
+    \caption{$\cK=\{\textcolor{purple}{5},\textcolor{green!60!black}{2}\}$}
     \begin{tikzpicture}[scale=1.9]
       \node (zero) at (0,0) {};
       \draw (zero) circle (1cm);
@@ -140,7 +141,7 @@ different levels is stored.
       % \foreach \w in {10}
       % {\foreach \sep in {0,60,120,180,240,300}
       %  {%\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});
-     
+
       %   \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,120)/720}}
 
       %   \draw[ultra thick,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
@@ -161,7 +162,7 @@ different levels is stored.
       \foreach \w in {10}
       {\foreach \sep in {0,90,180,270}
        {%\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});
-     
+
         \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,180)/900}}
 
         \draw[ultra thick,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
@@ -174,15 +175,15 @@ different levels is stored.
           -- ({cos( \w + \sep -45) * 1},{sin( \w + \sep -45) * 1});
         \draw[dotted,green!60!black] ({cos( \w + \sep +45) * \r},{sin( \w + \sep +45) * \r})
           -- ({cos( \w + \sep +45) * 1},{sin( \w + \sep +45) * 1});
-     
+
       }};
 
       \fill[white] (zero) circle (1.5pt);
       \fill (zero) circle (.7pt);
     \end{tikzpicture}
-    \caption{$\cK=\{\textcolor{purple}{5},\textcolor{green!60!black}{2}\}$}
   \end{subfigure}%
   \begin{subfigure}[b]{0.33\textwidth}
+    \caption{$\cK=\{\textcolor{blue}{3},\textcolor{green!60!black}{2}\}$}
     \begin{tikzpicture}[scale=1.9]
       \node (zero) at (0,0) {};
       \draw (zero) circle (1cm);
@@ -212,7 +213,7 @@ different levels is stored.
       \foreach \w in {10}
       {\foreach \sep in {0,60,120,180,240,300}
        {%\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});
-     
+
         \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,120)/720}}
 
         \draw[ultra thick,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
@@ -233,7 +234,7 @@ different levels is stored.
       \foreach \w in {10}
       {\foreach \sep in {0,90,180,270}
        {%\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});
-     
+
         \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,180)/900}}
 
         \draw[ultra thick,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
@@ -246,13 +247,118 @@ different levels is stored.
           -- ({cos( \w + \sep -45) * 1},{sin( \w + \sep -45) * 1});
         \draw[dotted,green!60!black] ({cos( \w + \sep +45) * \r},{sin( \w + \sep +45) * \r})
           -- ({cos( \w + \sep +45) * 1},{sin( \w + \sep +45) * 1});
-     
+
       }};
 
       \fill[white] (zero) circle (1.5pt);
       \fill (zero) circle (.7pt);
     \end{tikzpicture}
-    \caption{$\cK=\{\textcolor{blue}{3},\textcolor{green!60!black}{2}\}$}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.33\textwidth}
+    \caption{$\cK=\{\textcolor{orange}{6},\textcolor{green!60!black}{2}\}$}
+    \begin{tikzpicture}[scale=1.9]
+      \node (zero) at (0,0) {};
+      \draw (zero) circle (1cm);
+
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%  Purple
+      \foreach \w in {10}
+      % {\foreach \sep in {0,45,90,135,180,225,270,315}
+      {\foreach \sep in
+        {0,30,60,90,120,150,180,210,240,270,300,330}
+       {%\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+
+        \pgfmathsetmacro\hangle{15}
+
+        \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
+        \draw[ultra thick,orange] ({cos( \w + \sep )},{sin( \w + \sep )})
+          -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+
+        \draw[thick,orange] ({cos( \w + \sep -\hangle) * \r},{sin( \w + \sep -\hangle) * \r})
+          arc ({\w + \sep - \hangle}:{\w + \sep +\hangle}:\r);
+
+        \draw[dotted,orange] ({cos( \w + \sep -\hangle) * \r},{sin( \w + \sep -\hangle) * \r})
+          -- ({cos( \w + \sep -\hangle) * 1},{sin( \w + \sep -\hangle) * 1});
+        \draw[dotted,orange] ({cos( \w + \sep +\hangle) * \r},{sin( \w + \sep +\hangle) * \r})
+          -- ({cos( \w + \sep +\hangle) * 1},{sin( \w + \sep +\hangle) * 1});
+        }};
+
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%  Green
+      \foreach \w in {10}
+      {\foreach \sep in {0,90,180,270}
+       {%\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});
+      
+        \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,180)/900}}
+
+        \draw[ultra thick,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
+          -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+        \draw[thick,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
+          arc ({\w + \sep - 45}:{\w + \sep +45}:\r);
+
+
+        \draw[dotted,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
+          -- ({cos( \w + \sep -45) * 1},{sin( \w + \sep -45) * 1});
+        \draw[dotted,green!60!black] ({cos( \w + \sep +45) * \r},{sin( \w + \sep +45) * \r})
+          -- ({cos( \w + \sep +45) * 1},{sin( \w + \sep +45) * 1});
+
+      }};
+
+      \fill[white] (zero) circle (1.5pt);
+      \fill (zero) circle (.7pt);
+    \end{tikzpicture}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.33\textwidth}
+    \caption{$\cK=\{\textcolor{purple}{7},\textcolor{green!60!black}{2}\}$}
+    \begin{tikzpicture}[scale=1.9]
+      \node (zero) at (0,0) {};
+      \draw (zero) circle (1cm);
+
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%  Purple
+      \foreach \w in {10}
+      % {\foreach \sep in {0,45,90,135,180,225,270,315}
+      {\foreach \sep in
+        {0,25.7,51.4,77.1,102.8,128.5,154.2,179.9,205.6,231.3,257.0,282.7,308.4,334.1}
+       {%\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+
+        \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
+        \draw[ultra thick,purple] ({cos( \w + \sep )},{sin( \w + \sep )})
+          -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+
+        \draw[thick,purple] ({cos( \w + \sep -12.8) * \r},{sin( \w + \sep -12.8) * \r})
+          arc ({\w + \sep - 12.8}:{\w + \sep +12.8}:\r);
+
+        \draw[dotted,purple] ({cos( \w + \sep -12.8) * \r},{sin( \w + \sep -12.8) * \r})
+          -- ({cos( \w + \sep -12.8) * 1},{sin( \w + \sep -12.8) * 1});
+        \draw[dotted,purple] ({cos( \w + \sep +12.8) * \r},{sin( \w + \sep +12.8) * \r})
+          -- ({cos( \w + \sep +12.8) * 1},{sin( \w + \sep +12.8) * 1});
+        }};
+
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %%%%  Green
+      \foreach \w in {10}
+      {\foreach \sep in {0,90,180,270}
+       {%\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});
+      
+        \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,180)/900}}
+
+        \draw[ultra thick,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
+          -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
+        \draw[thick,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
+          arc ({\w + \sep - 45}:{\w + \sep +45}:\r);
+
+
+        \draw[dotted,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
+          -- ({cos( \w + \sep -45) * 1},{sin( \w + \sep -45) * 1});
+        \draw[dotted,green!60!black] ({cos( \w + \sep +45) * \r},{sin( \w + \sep +45) * \r})
+          -- ({cos( \w + \sep +45) * 1},{sin( \w + \sep +45) * 1});
+
+      }};
+
+      \fill[white] (zero) circle (1.5pt);
+      \fill (zero) circle (.7pt);
+    \end{tikzpicture}
   \end{subfigure}
   \caption{Ideas for examples with two levels.}
 \end{figure} %}}}
@@ -260,13 +366,13 @@ different levels is stored.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Building our example}
 We want to have a unramified connection with more than one level. Two levels
-might be enough. 
+might be enough.
 
 Let us start by defining the determining polynomials
 \[
   q_j(t^{-1})=\frac{a_j}{t^{l_j}}+h_j
 \]
-where 
+where
 \begin{itemize}
   \item $a_j\in\C\backslash\{0\}$,
   \item $l_j\in\Z$ (since we want to be unramified) and
@@ -298,10 +404,10 @@ where
     \frac{d}{dt}e^{X(t)}=
     \int_0^1e^{\alpha X(t)}\frac{dX(t)}{dt}e^{(1-\alpha)X(t)}d\alpha
   \]
-  such, that 
+  such, that
   \begin{align*}
     \frac{d}{dt}e^{Q(t^{-1})}
-    &\overset{\TODO{}}{=}
+    &\overset{\TODO{}}{=}\dots
   \\&=dQ(t^{-1})e^{Q(t^{-1})}
   \end{align*}
   The function $t^L$ is defined as $e^{L\ln t}$ and thus we have
@@ -311,6 +417,7 @@ where
   \\&=Lt^L
   \end{align*}
 
+  This helps us to achieve
   \begin{align*}
     \frac{d}{dt}\cY_0
     &=\frac{d}{dt}\left(t^Le^{Q(t^{-1})}\right)
@@ -318,13 +425,10 @@ where
   \\&=\frac{d}{dt}e^{L\ln t}e^{Q(t^{-1})}+t^L\frac{d}{dt}e^{Q(t^{-1})}
   \\&\overset{\TODO{}}{=}Lt^Le^{Q(t^{-1})}+t^LdQ(t^{-1})e^{Q(t^{-1})}
   \\&\overset{\TODO{}}{=}Lt^Le^{Q(t^{-1})}+dQ(t^{-1})t^Le^{Q(t^{-1})}
-  \\&=\left(dQ(t^{-1})+L\right)t^Le^{Q(t^{-1})}=\frac{d}{dt}\cY_0
+  \\&=\left(dQ(t^{-1})+L\right)t^Le^{Q(t^{-1})}=A^0\cY_0
   \end{align*}
   \TODO{}
 \end{proof}
 
-
-
-
-
-
+Choose a formal transformation $\hat F\in\hat G(A^0)$ and thus a connection
+matrix ${}^{\hat F}\!A^0$ and a fundamental solution $\cY=\hat F\cY_0$.
