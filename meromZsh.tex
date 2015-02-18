@@ -380,6 +380,7 @@ In the other direction, from $\cD$-modules to meromorphic connections, there is
 the lemma of the cyclic vector. \TODO{}
 \begin{comment}
   \begin{itemize}
+    \item \textbf{\cite[Prop.4.2.5]{Loday2014}}
     \item \cite[Rem.4.2.6]{Loday2014}
   \end{itemize}
 \end{comment}
@@ -448,6 +449,14 @@ transformations}
     {}^{\hat F}\!A\in G(\!\{t\}\!)
   \right\}\,.
 \]
+Let $\hat{F'}\in\hat G(A^0)$ and $A':={}^{\hat{F'}}\!A$, then are sets $\hat
+G(A)$ and $\hat G(A')$ are related by
+\[
+  \hat G(A')=\hat G(A)\hat{F'}^{-1}=\left\{
+    \hat F\in\G(\!\{t\}\!) \mid \hat F\hat{F'}\in\hat G(A)
+  \right\} \,.
+\]
+
 \begin{rem}
   \def\myB{\textcolor{blue!60!black}{B}}
   \def\myA{\textcolor{green!30!black}{A}}
@@ -489,6 +498,31 @@ transformations}
       $[A]=[0,A]$ \TODO[korrekt?]
     \end{s-rem}
   \end{comment}
+\end{rem}
+\begin{rem}
+  \[
+    {}^{(F_2F_1)}\!A =
+    {}^{F_2}\!\left({}^{F_1}\!A\right)
+  \]
+  \rewrite{since}
+  \begin{align*}
+    {}^{F_2F_1}\!A^0
+    &= d(F_2F_1)(F_2F_1)^{-1}+F_2F_1 A(F_2F_1)^{-1}
+  \\&=\left(
+      \left(dF_2\right)̂F_1
+      +F_2\left(dF_1\right)̂
+    \right) F_1^{̀-1} F_2^{̀-1}
+    +F_2F_1 A F_1^{̀-1}F_2^{̀-1}
+  \\&= \left(dF_2\right)̂F_2^{-1}
+     +F_2\left(dF_1\right)̂ F_1^{̀-1} F_2^{̀-1}
+     +F_2
+     \left(
+       {}^{F_1}\!A-\left(dF_1\right)F^{-1}
+     \right)
+     F_2^{̀-1}
+  \\&= \left(dF_2\right)̂F_2^{-1} +F_2 {}^{F_1}\!A F_2^{̀-1}
+  \\&= {}^{F_2}\!\left({}^{F_1}\!A\right)
+  \end{align*}
 \end{rem}
 \begin{defn}
   We define the \emph{(formal) equivalence relation on the connection matrices}
@@ -603,20 +637,14 @@ $x_0(t)$ and $x_{00}(t)$ are two solution of (\ref{eq:ode}) and $C_1$,
 $C_2\in\C$ are two constants, then is also $C_1x_0(t)+C_2x_{00}(t)$ a solution.
 
 \begin{defn}
-  A \emph{fundamental solution} $\cY$ of the system $[A]$ is a $n\times n$
-  matrix \comm{with entries in \TODO{}} whose columns are $n$ $\C$-linearly
-  independent solutions of the system $[A]$.
-  \begin{comment}
-    \begin{s-rem}
-      This means, that $\cY$ is a solution of the \emph{matrix differential
-      equation}
-      \[
-        dY=AY
-      \]
-      \comm{where the matrix $Y$ has entries in possibly multivalued functions
-      }and $\det(\cY)\neq0$.
-    \end{s-rem}
-  \end{comment}
+  \marginnote{\cite[4f]{thboalch}}
+  A \emph{fundamental solution} $\cY$ of the system $[A]$ is an invertible
+  solution of $[0,A^0]$.
+  \begin{s-rem}
+    this means, that $\cY$ is a $n\times n$ matrix \comm{with entries in
+    \TODO{}} whose columns are $n$ $\C$-linearly independent solutions of the
+    system $[A]$.
+  \end{s-rem}
 \end{defn}
 
 \begin{rem}
@@ -957,7 +985,7 @@ fundamental solution in the form $\hat F\cY$.
     \end{itemize}
   \end{multicols}
 \end{comment}
-Here we want to state the main asymptotic existence theorem (or often M.A.E.T.)
+Here we want to state the main asymptotic expansion theorem (or often M.A.E.T.)
 which is essentially a deduction from the Borel-Ritt lemma.
 \marginnote{\cite[207]{Balser2000Formal}}
 It states that to every formal solution of a system of meromorphic differential

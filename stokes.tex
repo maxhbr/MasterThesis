@@ -14,8 +14,9 @@ We have the following commutative diagram of isomorphisms.
   \begin{tikzpicture}[scale=3]
     \node[] (modSpcMat) at (0,0) {$\cH(A^0)$};
     \node[purple] (class) at (1,0) {$G\backslash\hat G(A^0)$};
-    \node[green!40!black] (sheaf) at (3,1) {$\St(\cM^{nf})$};
     \node[] (sheaf2) at (2,1) {$H^1(S^1;\Lambda^{<0}(A^0))$};
+    \node[green!40!black] (sheaf) at (3,1) {$\St(\cM^{nf})$};
+    \node[] (sheaf3) at (3,0.7) {\textcolor{purple}{$\St(A^0)$}};
     \node[blue] (mat) at (3,-1) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
     \node[blue] (mat') at (3.5,-1.5) {$(U_+\times U_-)^{k-1}$};
 
@@ -23,19 +24,20 @@ We have the following commutative diagram of isomorphisms.
     %   (modSpcMat);
     \draw[thick,double,blue] (modSpcMat) -- (class);
     \draw[thick,double] (sheaf) -- (sheaf2) node[midway,above] {\tiny def.};
+    \draw[purple,thick,double] (sheaf) -- (sheaf3) node[midway,right] {\tiny def.};
 
     \draw[->,green!40!black] (modSpcMat) -- (sheaf);
     \draw[->,blue,dashed] (modSpcMat) edge[bend right=20] (mat);
     \draw[->,blue] (class) -- (mat);
     \draw[->,blue,dotted] (mat) -- (mat') node[midway,right] {$\cK=\{k-1\}$};
-    \draw[->,purple,dashed] (class) -- (sheaf);
+    \draw[->,purple,dashed] (class) -- (sheaf3);
     % \draw[->,purple,dashed] (class) -- (mat);
-    \draw[->,purple] (mat) -- (sheaf);
-    \draw[->,purple,dashed] (sheaf) edge[bend right=20] (mat);
+    \draw[->,purple] (mat) -- (sheaf3);
+    \draw[->,purple,dashed] (sheaf3) edge[bend right=20] (mat);
 
     \node[green!40!black] at (1,0.7) {\cite{sabbah2007isomonodromic}};
     \node[blue] at (2.3,-1.3) {\cite{thboalch},\cite{boalch}};
-    \node[purple] at (3.5,0) {\cite{Loday1994}{\footnotesize(\cite{Loday2014})}};
+    \node[purple] at (4,0) {\cite{Loday1994}{\footnotesize(\cite{Loday2014})}};
   \end{tikzpicture}
 \end{center}
 
@@ -107,6 +109,9 @@ flat isotropies.
       and $f\sim_{\mathfrak{s}} 1$;
     \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
   \end{enumerate}
+  \begin{s-rem}
+    This definition makes also sense for systems wich are not in normal form.
+  \end{s-rem}
   \begin{comment}
     \begin{s-rem}
       $\Lambda(A^0)$ is the same as $\Aut^{<0}(\tilde\cM^{nf})$
@@ -344,7 +349,7 @@ the set of the determining polynomials of $[A^0]$ and
   \right\}
 \]
 the set of the determining polynomials of $[\End A^0]$ where\dots
-\begin{defn}
+\begin{defn}\label{defn:determiningPolysOfEndA}
   We call
   \begin{itemize}
     \item $a_{jl}\in\C\backslash\{0\}$ the \emph{leading factor},
@@ -382,8 +387,22 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
     \cK=\{k_1<\dots<k_r\} \subset \Q \,.
   \]
   \begin{s-rem}
-    $A^0$ is unramified if and only if $\cK\subset\Z$. Since we only look at
-    the unramified case, this will be always the case.
+    \begin{enumerate}
+      \item If we assume that all leading coefficients of $\cQ_{[A^0]}$ are
+        different, we know that the level of $q_j-q_l$ is given by
+        $k_{jl}=\max\{\deg(q_j),\deg(q_l)\}$ and thus
+        \[
+          \cK=\left\{
+            k_{1,2},
+            k_{1,3},\dots,
+            k_{1,n},
+            k_{2,3},\dots,
+            k_{n-1,n}
+          \right\}\,.
+        \]
+      \item $A^0$ is unramified if and only if $\cK\subset\Z$. Since we only
+        consider the unramified case, this will be always the case.
+    \end{enumerate}
   \end{s-rem}
 \end{defn}
 
@@ -665,7 +684,7 @@ In particular we get, that
   This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent.
   \rewrite{Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.}
 \end{rem}
-On the other hand, every constant unipotent Matrix, with zeros at the necessary
+On the other hand, every constant unipotent matrix, with zeros at the necessary
 positions, characterizes a unique element of $\Sto_\theta(A^0)$.
 
 \begin{lem}
@@ -787,7 +806,7 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
       $p\circ\substack{\text{the}\\\text{inclusion}}=\id_{\Lambda^{<k}(A^0)}$.
   \end{enumerate}
 \end{proof}
-\begin{cor}
+\begin{cor}\label{cor:factorStokesGerms}
   \marginnote{\cite[Cor.I.5.2]{Loday1994}}
   \begin{enumerate}
     \item For any $k\in\cK$ there are the two following ways of factoring
@@ -915,6 +934,22 @@ as a corollary.
   \cite[Thm.6.3.1]{sibuya1990Linear} says: if two differential equations have
   the same stokes phenomenon, they are analytically equivalent.
 \end{comment}
+\begin{defn}
+  \marginnote{\cite[Def.II.1.8]{Loday1994}, \cite[4.3.10]{Loday2014}}
+
+  A \emph{Stokes cocycle} is a cocycle
+  $(\phi_\theta)_{\theta\in\A}$ which is
+  \begin{itemize}
+    \item indexed by the set of anti-Stokes directions and
+    \item each component $\phi_\theta$ determines an element of
+      $\Sto_\theta(A^0)$.
+  \end{itemize}
+  \begin{s-rem}
+    The set of all Stokes cocycles can be identified with 
+    $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$.
+  \end{s-rem}
+\end{defn}
+
 \marginnote{\cite[868]{Loday1994}}
 Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
 $\dot\phi=(\dot\phi_{\theta_j})_{j\in J}
@@ -974,7 +1009,7 @@ get the following corollary.
 \end{cor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Proof}
+\subsection{Proof}\label{sec:proofOfMatrixThm}
 We will only look at the unramified case, for which we refer to
 \cite[Sec.II.3]{Loday1994}.
 The proof in the ramified case can be found in \cite[Sec.II.4]{Loday1994}.
@@ -1150,7 +1185,7 @@ $\Gamma(\dot U^\star;\Lambda^\star(A^0))$ for $\star\in\{k,<k,\leq k,\dots\}$.
 \begin{comment}
   \cite[II.3.2]{Loday1994}
 \end{comment}
-First we will proof theoreme~\ref{thm:mainThm2} in the case of a unique level.
+First we will proof theorem~\ref{thm:mainThm2} in the case of a unique level.
 This means that
 \begin{itemize}
   \item either $\Lambda(A^0)$ has only one level $k$, thus
@@ -1393,16 +1428,6 @@ theorem~\ref{thm:mainThm2} by composition of bijective maps.
 \section{Algorithm~\cite[II.3.4]{Loday1994}}
 This algorithm takes a cocycle over a arbitrary cyclic covering $\cV$ and
 outputs a Stokes cocycle, which corresponds to our coverings.
-\begin{comment}
-  \begin{defn}
-    \marginnote{\cite[Def.II.1.8]{Loday1994}}
-    \rewrite{A cocycle $\dot\phi=(\dot\phi_j)_{j\in J}$ on a cyclic covering
-      $\cU=(U_j)_{j\in J}$ is said to be a \emph{Stokes cocycle} when the
-      components $\dot\phi_j$, if non trivial, represent Stokes germs
-      $\dot\phi_{j,\theta_j}\in\Sto_{\theta_j}(A^0$ at anti-Stokes directions
-      $\theta_j$ in a cyclic ascending ordering.}
-  \end{defn}
-\end{comment}
 \[
   g_J:\prod_{\theta\in J}\Sto_\theta(A^0)\to\prod_{\theta\in\A}\Sto_\theta(A^0)
 \]

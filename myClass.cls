@@ -378,6 +378,8 @@
 \newcommand{\rewrite}[1] {#1}
 \newcommand{\ccite}[2][\empty] {}
 \newcommand{\TODO}[1][\empty] {}
+\newcommand{\NO} {}
+
 
 \ifnum\myDevelopVariable=1
   \usepackage{xcolor}
@@ -424,6 +426,8 @@
         {\tiny T\!O\!D\!O}
         {\tiny T\!O\!D\!O: #1} % {TODO: #1}
   }}}
+  \renewcommand{\NO}{{%
+    \fcolorbox{CommentFrameColor}{red!50!white}{\textbf{\tiny N\!O}}}}
 
   %Zeilenhöhe, für bessere lesbarkeit
   % \linesprcad{1.3}
