@@ -26,13 +26,15 @@ We have the following commutative diagram of isomorphisms.
     \draw[thick,double] (sheaf) -- (sheaf2) node[midway,above] {\tiny def.};
     \draw[purple,thick,double] (sheaf) -- (sheaf3) node[midway,right] {\tiny def.};
 
-    \draw[->,green!40!black] (modSpcMat) -- (sheaf);
+    \draw[->,green!40!black] (modSpcMat) -- (sheaf)
+      node[midway,above left] {$\exp$};
     \draw[->,blue,dashed] (modSpcMat) edge[bend right=20] (mat);
     \draw[->,blue] (class) -- (mat);
     \draw[->,blue,dotted] (mat) -- (mat') node[midway,right] {$\cK=\{k-1\}$};
-    \draw[->,purple,dashed] (class) -- (sheaf3);
+    \draw[->,purple,dashed] (class) -- (sheaf3)
+      node[midway,below right] {$\exp_{A^0}$};
     % \draw[->,purple,dashed] (class) -- (mat);
-    \draw[->,purple] (mat) -- (sheaf3);
+    \draw[->,purple] (mat) -- (sheaf3) node[midway, right] {$h$};
     \draw[->,purple,dashed] (sheaf3) edge[bend right=20] (mat);
 
     \node[green!40!black] at (1,0.7) {\cite{sabbah2007isomonodromic}};
@@ -203,27 +205,38 @@ which we call $\exp$.
 \begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1}
   The homomorphism
   \[
-    \exp:\cH\to\St(A^0):=H^1(S^1;\Lambda^{<0}(A^0))
+    \exp:\cH(A^0)\to\St(A^0):=H^1(S^1;\Lambda^{<0}(A^0))
   \]
   is an isomorphism of pointed\footnote{Which maps the class of
   $(A^0,\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology class.} sets.
 \end{tthm}
 \begin{rem}
-  \marginnote{\cite{Loday1994} Remark I.2.2}
-  To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains which
-  are conjugated via $\Phi$.
-  We get the following commutative diagram:
-  \[ \begin{tikzcd}
-      G\backslash\hat G(A^1) \rar{\cdot\Phi}\dar{\exp}
-      & G\backslash\hat G(A^0) \dar{\exp}
-      & \hat F \arrow[|->]{r}\arrow[|->]{d}
-      & \hat F\Phi \arrow[|->]{d}
-    \\ H^1(S^1;\lambda(A^1)) \rar
-      & H^1(S^1;\lambda(A^0))
-      & \exp_{\mu_1}(\hat F) \arrow[|->]{r}
-      & \exp_{\mu_0}(\hat F\Phi)
-  \end{tikzcd} \]
-  where $\exp_{\mu_0}(\hat F\Phi)=\Phi^{-1}\exp_{\mu_0}(\hat F)\Phi$.
+  \begin{s-defn}
+    Since the morphism $\exp$ depends on the choice of the normal form, we will
+    denote that, if it is not clear, by
+    $\exp_{A^0}=\exp$\footnote{In~\cite{Loday1994} this is denoted as
+    $\exp_{\mu_0}$}.
+  \end{s-defn}
+  \begin{enumerate}
+    \item \marginnote{\cite[883]{Loday1994}}
+      The isomorphism $\exp_A$ makes also sense, if $A$ is not in normal form.
+    \item \marginnote{\cite{Loday1994} Remark I.2.2}
+      To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains which
+      are conjugated via $\Phi$.
+      We get the following commutative diagram:
+      \[ \begin{tikzcd}
+          G\backslash\hat G(A^1) \rar{\cdot\Phi}\dar{\exp_{A^1}}
+          & G\backslash\hat G(A^0) \dar{\exp_{A^0}}
+          & \hat F \arrow[|->]{r}\arrow[|->]{d}
+          & \hat F\Phi \arrow[|->]{d}
+        \\ H^1(S^1;\lambda(A^1)) \rar
+          & H^1(S^1;\lambda(A^0))
+          & \exp_{A^1}(\hat F) \arrow[|->]{r}
+          & \exp_{A^0}(\hat F\Phi)
+      \end{tikzcd} \]
+      where $\exp_{A^0}(\hat F\Phi)=\Phi^{-1}\exp_{A^0}(\hat F)\Phi$.
+      \TODO[$\Phi\in G(\!(t)\!)$???]
+  \end{enumerate}
 \end{rem}
 
 \subsection{Proof}

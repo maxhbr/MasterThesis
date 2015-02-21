@@ -46,10 +46,10 @@ cyclic covering $\cU^{\leq k_r}=:\cU$ and $\dot\phi$ is in its Stokes form
 Let $\hat F_0\in\hat G(A^0)$ and $A^1={}^{\hat F_0}\!A^0$.
 Define
 \[
-  \exp_{\mu_1}(\hat F):G\backslash\hat G(A^1) \to H^1(S^1;\Lambda(A^1))
+  \exp_{A^1}(\hat F):G\backslash\hat G(A^1) \to H^1(S^1;\Lambda(A^1))
 \]
 as the Malgrange-Sibuya isomorphism in the case, where $A^1$ is not generally
-in normal form. \TODO[$\exp_{\mu_0}$?? generic definition?]
+in normal form. \TODO[$\exp_{A^0}$?? generic definition?]
 
 \marginnote{\cite[883]{Loday1994}}
 The definition of the subsheaf $\Lambda^{\geq k}(A^1)$ of $\Lambda(A^1)$
@@ -65,7 +65,7 @@ needs a few additional justifications: \TODO{}
     \item the opening of $\dot V_j$ is $\frac{\pi}{k}$.
   \end{enumerate}
   An element of $\hat F\in\hat G(A^1)$ is \emph{$k$-summable} when
-  $\exp_{\mu_1}(\hat F)$ contains a $k$-summable cocycle.
+  $\exp_{A^1}(\hat F)$ contains a $k$-summable cocycle.
 \end{defn}
 
 \marginnote{\cite[883]{Loday1994}}
@@ -94,7 +94,7 @@ $k$.
   \marginnote{\cite[Defn.III.2.4]{Loday1994}}
   Let $\hat F\in\hat G(A^1)$ be $k$-summable and $(\dot\phi_j)_{j\in
   J}\in\prod_{j\in J}\Gamma(\dot V_j;\Lambda(A^1))$ the corresponding
-  $k$-summable cocycle in $\exp_{\mu_1}(\hat F)$.
+  $k$-summable cocycle in $\exp_{A^1}(\hat F)$.
 
   To each $j\in J$ with a nontrivial $\dot\phi_j$ we define the bisecting
   direction of $\dot V_j$ as a \emph{singular direction for $\hat F$}.
@@ -118,7 +118,7 @@ $\dot f^{<k}\in\Gamma(\dot\cU^{\leq k};\Lambda^{<k}(A^0))$.
 Since the cohomology class of $\dot f^{<k}$ belongs to $H^1(S^1;\Lambda(A^0))$
 we know from the Malgrange-Sibuya theorem that there exists an, up to left
 meromorphic factor unique, element $\hat F^{<0}$ of $\hat G(A^0)$ such that
-$\dot f^{<k}$ belongs to $\exp_{\mu_0}(\hat F^{<k})$.
+$\dot f^{<k}$ belongs to $\exp_{A^0}(\hat F^{<k})$.
 
 Let $A^1:={}^{\hat F^{<k}}\!A^0$ and define $\hat F^k$ by
 $\hat F^k=\hat F(\hat F^{<k})^{-1}$.
@@ -150,7 +150,7 @@ $\hat F^k=\hat F(\hat F^{<k})^{-1}$.
 
   The property 3.\ results from the fact that we must have
   \[
-    \exp_{\mu_0}(\hat H^{<k})=\exp_{\mu_0}(\hat F^{<k}).
+    \exp_{A^0}(\hat H^{<k})=\exp_{A^0}(\hat F^{<k}).
   \]
 \end{proof}
 \begin{thm}\label{thm:summaFaktori}
@@ -174,7 +174,7 @@ $\hat F^k=\hat F(\hat F^{<k})^{-1}$.
 \begin{comment}
   \begin{cor}
     \marginnote{\cite[Cor.III.2.7]{Loday1994}}
-    Write the twisted cocyle $\dot\phi\in\exp_{\mu_1}(\hat F^k)$ in terms of
+    Write the twisted cocyle $\dot\phi\in\exp_{A^1}(\hat F^k)$ in terms of
     sums of $\hat F^k$ over $\cU^{\leq k}$:
     \[
       \dot \phi_\theta=S_\theta^-(\hat F^k)^{-1}S_\theta^+(\hat F^k)
