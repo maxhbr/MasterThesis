@@ -813,23 +813,27 @@ In the \textbf{first case}, we have either
 $q_2 \underset{\theta,\max}{\prec} q_3$ or
 $q_3 \underset{\theta,\max}{\prec} q_2$.
 This implies, that the \comm{representation of} $\kappa_\theta$ has the form
-\[
-  \begin{pmatrix}
+\begin{center}
+  \begin{tabular}{c|c}
+    $q_2 \underset{\theta,\max}{\prec} q_3$
+    &
+    $q_3 \underset{\theta,\max}{\prec} q_2$
+    \tabularnewline
+    \hline 
+  $\begin{pmatrix}
     1 & 0 & 0
   \\0 & 1 & 0
   \\0 & \star & 1
-  \end{pmatrix}
-  \qquad
-  \text{or}
-  \qquad
-  \begin{pmatrix}
+  \end{pmatrix}$
+  & 
+  $\begin{pmatrix}
     1 & 0 & 0
   \\0 & 1 & \star
   \\0 & 0 & 1
-  \end{pmatrix}
-  \,.
+  \end{pmatrix}$\tabularnewline
+  \end{tabular}
   \TODO[correct?]
-\]
+\end{center}
 
 In the \textbf{second case}, we have $q_1 \underset{\theta,\max}{\prec} q_2$
 and $q_1 \underset{\theta,\max}{\prec} q_3$ or
@@ -849,11 +853,14 @@ $q_1-q_3$ are the same.
     $\begin{pmatrix}1 & 0 & 0\\
     \star & 1 & 0\\
     \star & 0 & 1
-  \end{pmatrix}$ & $\begin{pmatrix}1 & \star & \star\\
+  \end{pmatrix}$
+  &
+  $\begin{pmatrix}1 & \star & \star\\
     0 & 1 & 0\\
     0 & 0 & 1
   \end{pmatrix}$\tabularnewline
   \end{tabular}
+  \TODO[correct?]
 \end{center}
 
 In the \textbf{last case} is a combination of the two previous cases, \dots
@@ -883,7 +890,63 @@ In the \textbf{last case} is a combination of the two previous cases, \dots
   0 & 0 & 1
   \end{pmatrix}$\tabularnewline
   \end{tabular}
+  \TODO[correct?]
 \end{center}
+
+\begin{comment}
+  Let $I\subset\{1,\dots,n\}^2\backslash\{(j,j)\mid j\in\{1,\dots,n\}\}$ which
+  satisfies
+  \begin{enumerate}
+    \item if $(a,b)\in I$ then $(b,a)\notin I$
+  \end{enumerate}
+  and let $I_1$ and $I_2$ be two disjoint subsets of $I$.
+  Let $K_1$ and $K_2$ be two matrices of the form
+  \[
+    K_i\in\left\{K\in G\mid K_{jl}=\partial_{jl}\text{ unless } (j,l)\in
+    I_i\right\}
+  \]
+  \begin{prop}
+    The matrices $A_1A_2$ and $A_2A_1$ are elements of
+  \[
+    \left\{K\in G\mid K_{jl}=\partial_{jl}\text{ unless } (j,l)\in I\right\}\,.
+  \]
+  \end{prop}
+  \begin{proof}
+    Denote by $(A_1A_2)_{jl}$ the entry at the position $(j,l)$ in the matrix
+    $A_1A_2$.
+
+    Define the set $\tilde I$ as
+    \[
+      \tilde I_{jl}:=\left\{
+        k\in\{1,\dots,n\}\mid (j,k)\in I_1 \text{~and~} (k,l)\in I_2
+      \right\}\,.
+    \]
+    
+    Then
+    \begin{align*}
+      (A_1A_2)_{jl}
+      &=\sum_{k\in\{1,\dots,n\}}(A_1)_{jk}(A_2)_{kl}
+    \\&= \begin{cases}
+    1 +\sum_{k\in\tilde I_{jl}}(A_1)_{jk}(A_2)_{kl}\overset{!}{=}1
+      & \text{, if } j=l
+    \\\sum_{k\in\tilde I_{jl}}(A_1)_{jk}(A_2)_{kl}
+      \overset{!}{=}0 & \text{, if } (j,l)\notin I \text{~and~}j\neq l
+    \\(A_1)_{jl}\cdot1
+      +1\cdot(A_2)_{jl}
+      +\sum_{k\in\tilde I_{jl}}(A_1)_{jk}(A_2)_{kl} = \star
+      & \text{, if } (j,l)\in I
+    \end{cases}
+    \end{align*}
+    Thus we have to proof that if $(j,l)\notin I$ then 
+    $\sum_{k\in\tilde I_{jl}}(A_1)_{jk}(A_2)_{kl}=0$ which is equivalent to
+    proof, that
+    \begin{einr}
+      $\forall k\in\tilde I_{jl}:\, (A_1)_{jk}(A_2)_{kl}=0$.
+    \end{einr}
+
+    \TODO{}
+  \end{proof}
+\end{comment}
 
 \section{The corresponding element in $\St(A^0)$}
 The map $h$ from theorem~\ref{thm:mainThm2} maps the element
