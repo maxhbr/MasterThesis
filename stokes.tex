@@ -567,10 +567,10 @@ define the Stoken group as follows.
   which will arise as a faithful representation (cf.\
   section~\ref{sec:faithRepre}) of $\Sto_\theta(A^0)$.
 \end{defn}
-Let $X_0=t^L e^{Q(t^{-1})}$ be \rewrite{the normal solution corresponding to
+Let $\cY_0=t^L e^{Q(t^{-1})}$ be \rewrite{the normal solution corresponding to
 $A^0$} (cf.\ definition~\ref{defn:normSol}).
 For every determination $\tilde\theta$ of $\theta$ we denote by
-$X_{0,\tilde\theta}$ the function defined by $X_0$ with that determination of
+$\cY_{0,\tilde\theta}$ the function defined by $\cY_0$ with that determination of
 the argument near the direction $\theta$.
 
 \begin{prop} \label{prop:representation}
@@ -579,16 +579,18 @@ the argument near the direction $\theta$.
   \begin{align*}
     \rho_{\tilde\theta}:\Sto_\theta(A^0)&\to\SSto_\theta(A^0)
     \\\phi_\theta
-    &\mapsto 1+C_{\tilde\theta}
+    &\mapsto
+    C_{\cY_{0,\tilde\theta}}
+    :=1+C_{\tilde\theta}
     :=e^{-Q(t^{-1})}t^{-L} \phi_\theta t^L e^{Q(t^{-1})}
   \end{align*}
   is an isomorphism which maps a germ of $\Sto_\theta(A^0)$ to the unique
   matrix $1+C_{\tilde\theta}$ such that
   \begin{equation} \label{eq:representation}
-    \phi_\theta(t)X_{0,\tilde\theta}(t)
-    =X_{0,\tilde\theta}(t)(1_n+C_{\tilde\theta})
+    \phi_\theta(t)\cY_{0,\tilde\theta}(t)
+    =\cY_{0,\tilde\theta}(t)(1_n+C_{\tilde\theta})
   \end{equation}
-  near $\theta$.  We call the matrux $1+C_{\tilde\theta}$ a
+  near $\theta$.  We call the matrix $1+C_{\tilde\theta}$ a
   \emph{representation of $\phi_\theta$}.
   \begin{s-rem}
     \begin{enumerate}
@@ -598,6 +600,15 @@ the argument near the direction $\theta$.
         matrices $G$.
       \item This morphism depends on the choice of the determination
         $\tilde\theta$ of $\theta$.
+      \item The inverse morphism of $\rho_{\tilde\theta}$ is given by
+        \begin{align*}
+          \rho_{\tilde\theta}^{-1}:
+          \SSto_\theta(A^0)
+          &\overset{\cong}\to
+          \Sto_\theta(A^0)
+          \\C_{\cY_{0,\tilde\theta}} &\mapsto
+          t^{L}e^{Q(t^{-1})}C_{\cY_{0,\tilde\theta}} e^{-Q(t^{-1})}t^{-L} \,.
+        \end{align*}
     \end{enumerate}
   \end{s-rem}
 \end{prop}

@@ -488,7 +488,7 @@ such that
     i.e.\ $\cK_{\theta_0}=\cK$.
 \end{enumerate}
 Let $l_j:=\deg(q_j)$ and use the notations from
-definition~\ref{defn:determiningPolysOfEndA}. Thus we have
+definition~\ref{defn:determiningPolysOfEndA}, e.g.\
 \begin{itemize}
   \item the leading factor $a_{jl}\in\C\backslash\{0\}$,
   \item the leading coefficient $\frac{a_{jl}}{t^{k_{jl}}}=q_{jl}(t^{-1})$ and
@@ -669,8 +669,16 @@ constant diagonal and invertible.
 \begin{lem}
   \marginnote{\cite[4f]{thboalch}}
   \TODO[move to fund-sol-defn]
-  The matrix $\cY_0:=t^Le^{Q(t^{-1})}$ is then a fundamental solution of
-  $[A^0]$.
+  The matrix
+  \[
+    \cY_0:=t^Le^{Q(t^{-1})}=\diag\left(
+      t^{L_{1,1}}e^{q_1(t^{-1})},
+      t^{L_{2,2}}e^{q_2(t^{-1})},\dots,
+      t^{L_{n,n}}e^{q_n(t^{-1})}
+    \right) \,,
+  \]
+  where $L_{j,j}$ denotes the \rewrite{$j$'th} diagonal element of $L$, is then
+  a fundamental solution of the system $[A^0]$.
 \end{lem}
 \begin{proof}
   It is sufficient to show that $\cY\in G(\!\{t\}\!)$, i.e.\ is invertible, and
@@ -743,27 +751,27 @@ where $\hat F_j\in\hat G(A^0)$ is
 
 We then get
 \[
-  (\kappa_{\theta_1},\dots,\kappa_{\theta_\nu})
+  (\phi_{\theta_1},\dots,\phi_{\theta_\nu})
   \in\prod_{\theta\in\A}\Sto_\theta(A^0)
 \]
-by setting $\kappa_\theta:=
+by setting $\phi_\theta:=
 S^-_\theta(\hat F)\left(S^+_\theta(\hat F)\right)̂^{̀-1}\in\Sto_\theta(A^0)$
 (cf.\ definition~\ref{defn:sumsLeftRight}).
 \begin{comment}
   \begin{rem}
     \TODO[Move to sec:Multisummability? Rewrite!]
-    For each $\theta\in\A$ is $\kappa_\theta$
+    For each $\theta\in\A$ is $\phi_\theta$
     \begin{enumerate}
       \item flat, since
         \begin{align*}
-          \hat\kappa_\theta
+          \hat\phi_\theta
           &=\hat{\left(F_\theta^+\right)̂^{̀-1}}\hat{F_\theta^-}
         \\&=\hat{F}^{̀-1}\hat{F}
         \\&=\id
         \end{align*}
       \item an isotropy, since
         \begin{align*}
-          {}^{\kappa_\theta}\!A^0
+          {}^{\phi_\theta}\!A^0
           &= {}^{\left(F_\theta^+\right)̂^{̀-1}F_\theta^-}\!A^0
         \\&= {}^{\left(F_\theta^+\right)̂^{̀-1}}\!\left({}^{F_\theta^-}\!A^0\right)
         \\&\overset{\TODO{}}{=}{}^{\left(F_\theta^+\right)̂^{̀-1}}\!A^1
@@ -771,13 +779,13 @@ S^-_\theta(\hat F)\left(S^+_\theta(\hat F)\right)̂^{̀-1}\in\Sto_\theta(A^0)$
         \end{align*}
         \begin{comment}
           \begin{align*}
-            {}^{\kappa_\theta}\!A^0
-            &= (d\kappa_\theta)\kappa_\theta^{-1}+\kappa_\theta A^0
-            \kappa_\theta^{-1}
+            {}^{\phi_\theta}\!A^0
+            &= (d\phi_\theta)\phi_\theta^{-1}+\phi_\theta A^0
+            \phi_\theta^{-1}
           \\&=\left(
               d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
               +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
-            \right)\kappa_\theta^{-1}+\kappa_\theta A^0\kappa_\theta^{-1}
+            \right)\phi_\theta^{-1}+\phi_\theta A^0\phi_\theta^{-1}
           \\&=\left(
               d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
               +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
@@ -799,8 +807,24 @@ S^-_\theta(\hat F)\left(S^+_\theta(\hat F)\right)̂^{̀-1}\in\Sto_\theta(A^0)$
   \end{rem}
 \end{comment}
 
-\subsection{How do the matrices $\kappa_\theta$ look like?}
-There are basically three cases
+\subsection{How do the Stokes germs $\phi_\theta$ look like?}
+Let $\theta\in S^1$ and let $\tilde\theta$ be a determination of $\theta$.
+From a matrix representation of a Stokes germ, we get a Stokes germ via
+\begin{align*}
+  \rho_{\tilde\theta}^{-1}:
+  \SSto_\theta(A^0)
+  &\overset{\cong}\to
+  \Sto_\theta(A^0)
+  \\C_{\cY_{0,\tilde\theta}} &\mapsto
+  t^{L}e^{Q(t^{-1})}C_{\cY_{0,\tilde\theta}} e^{-Q(t^{-1})}t^{-L} \,,
+\end{align*}
+which depends on the determination $\tilde\theta$ of $\theta$ \TODO[is this
+dependency only important, in the ramified case?]
+(cf.\ proposition~\ref{prop:representation}).
+
+\subsubsection{How do the representations $C_{\cY_{0,\tilde\theta}}$ of
+  $\phi_\theta$ look like?}
+There are three cases
 \begin{enumerate}
   \item $\cK_\theta=\{k_1\}$,
   \item $\cK_\theta=\{k_2\}$ and
@@ -812,147 +836,192 @@ There are basically three cases
 In the \textbf{first case}, we have either
 $q_2 \underset{\theta,\max}{\prec} q_3$ or
 $q_3 \underset{\theta,\max}{\prec} q_2$.
-This implies, that the \comm{representation of} $\kappa_\theta$ has the form
-\begin{center}
-  \begin{tabular}{c|c}
-    $q_2 \underset{\theta,\max}{\prec} q_3$
-    &
-    $q_3 \underset{\theta,\max}{\prec} q_2$
-    \tabularnewline
-    \hline 
-  $\begin{pmatrix}
-    1 & 0 & 0
-  \\0 & 1 & 0
-  \\0 & \star & 1
-  \end{pmatrix}$
-  & 
-  $\begin{pmatrix}
-    1 & 0 & 0
-  \\0 & 1 & \star
-  \\0 & 0 & 1
-  \end{pmatrix}$\tabularnewline
-  \end{tabular}
+This implies, that the representation of $C_{\cY_{0,\tilde\theta}}$ has the
+form
+\[
+  \begin{cases}
+    \begin{pmatrix}
+      1 & 0 & 0
+    \\0 & 1 & 0
+    \\0 & \star & 1
+    \end{pmatrix} & \text{,~if~}
+    q_2 \underset{\theta,\max}{\prec} q_3
+  \\\begin{pmatrix}
+      1 & 0 & 0
+    \\0 & 1 & \star
+    \\0 & 0 & 1
+    \end{pmatrix} & \text{,~if~}
+    q_3 \underset{\theta,\max}{\prec} q_2 \,.
+  \end{cases}
   \TODO[correct?]
-\end{center}
+\]
+\TODO[is isomorphic to $\C$]
 
 In the \textbf{second case}, we have $q_1 \underset{\theta,\max}{\prec} q_2$
 and $q_1 \underset{\theta,\max}{\prec} q_3$ or
 $q_2 \underset{\theta,\max}{\prec} q_1$ and
 $q_3 \underset{\theta,\max}{\prec} q_1$ since the leading term of $q_1-q_2$ and
-$q_1-q_3$ are the same.
+$q_1-q_3$ are the same.  \TODO[\dots]
+In the \textbf{last case} is a combination of the two previous cases.
 \TODO[\dots]
-\begin{center}
-  \begin{tabular}{c|c}
-    $q_1 \underset{\theta,\max}{\prec} q_2$ and
-    $q_1 \underset{\theta,\max}{\prec} q_3$
-    &
-    $q_2 \underset{\theta,\max}{\prec} q_1$ and
-    $q_3 \underset{\theta,\max}{\prec} q_1$
-    \tabularnewline
-    \hline 
-    $\begin{pmatrix}1 & 0 & 0\\
-    \star & 1 & 0\\
-    \star & 0 & 1
-  \end{pmatrix}$
-  &
-  $\begin{pmatrix}1 & \star & \star\\
-    0 & 1 & 0\\
-    0 & 0 & 1
-  \end{pmatrix}$\tabularnewline
-  \end{tabular}
-  \TODO[correct?]
-\end{center}
 
-In the \textbf{last case} is a combination of the two previous cases, \dots
 \begin{center}
-  \begin{tabular}{c|c|c}
-    \multicolumn{1}{c|}{} & 
-    $q_1 \underset{\theta,\max}{\prec} q_2$ and
-    $q_1 \underset{\theta,\max}{\prec} q_3$
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}r|c}
+  % \begin{tabular}{c|c}
+  $\cK_\theta=\{k_1\}$
+  &
+    \begin{tabular}{c|c}
+      $q_2 \underset{\theta,\max}{\prec} q_3$
+      &
+      $q_3 \underset{\theta,\max}{\prec} q_2$
+      \tabularnewline
+      \hline
+    $\begin{pmatrix}
+      1 & 0 & 0
+    \\0 & 1 & 0
+    \\0 & \star & 1
+    \end{pmatrix}$
     &
-    $q_2 \underset{\theta,\max}{\prec} q_1$ and
-    $q_3 \underset{\theta,\max}{\prec} q_1$
-    \tabularnewline
-    \hline 
-    $q_2 \underset{\theta,\max}{\prec} q_3$ & $\begin{pmatrix}1 & 0 & 0\\
-    \star & 1 & 0\\
-    \star & \star & 1
-  \end{pmatrix}$ & $\begin{pmatrix}1 & \star & \star\\
-    0 & 1 & 0\\
-    0 & \star & 1
-  \end{pmatrix}$\tabularnewline
-  \hline 
-  $q_3 \underset{\theta,\max}{\prec} q_2$ & $\begin{pmatrix}1 & 0 & 0\\
-  \star & 1 & \star\\
-  \star & 0 & 1
-  \end{pmatrix}$ & $\begin{pmatrix}1 & \star & \star\\
-  0 & 1 & \star\\
-  0 & 0 & 1
-  \end{pmatrix}$\tabularnewline
-  \end{tabular}
+    $\begin{pmatrix}
+      1 & 0 & 0
+    \\0 & 1 & \star
+    \\0 & 0 & 1
+    \end{pmatrix}$\tabularnewline
+    \end{tabular}
+  \tabularnewline
+  \hline
+  $\cK_\theta=\{k_2\}$
+  &
+    \begin{tabular}{c|c}
+      $q_1 \underset{\theta,\max}{\prec} q_2$ and
+      $q_1 \underset{\theta,\max}{\prec} q_3$
+      &
+      $q_2 \underset{\theta,\max}{\prec} q_1$ and
+      $q_3 \underset{\theta,\max}{\prec} q_1$
+      \tabularnewline
+      \hline
+      $\begin{pmatrix}1 & 0 & 0\\
+      \star & 1 & 0\\
+      \star & 0 & 1
+    \end{pmatrix}$
+    &
+    $\begin{pmatrix}1 & \star & \star\\
+      0 & 1 & 0\\
+      0 & 0 & 1
+    \end{pmatrix}$\tabularnewline
+    \end{tabular}
+  \tabularnewline
+  \hline
+  $\cK_\theta=\cK$
+  &
+    \begin{tabular}{c|c|c}
+      \multicolumn{1}{c|}{} &
+      $q_1 \underset{\theta,\max}{\prec} q_2$ and
+      $q_1 \underset{\theta,\max}{\prec} q_3$
+      &
+      $q_2 \underset{\theta,\max}{\prec} q_1$ and
+      $q_3 \underset{\theta,\max}{\prec} q_1$
+      \tabularnewline
+      \hline
+      $q_2 \underset{\theta,\max}{\prec} q_3$ & $\begin{pmatrix}1 & 0 & 0\\
+      \star & 1 & 0\\
+      \star & \star & 1
+    \end{pmatrix}$ & $\begin{pmatrix}1 & \star & \star\\
+      0 & 1 & 0\\
+      0 & \star & 1
+    \end{pmatrix}$\tabularnewline
+    \hline
+    $q_3 \underset{\theta,\max}{\prec} q_2$ & $\begin{pmatrix}1 & 0 & 0\\
+    \star & 1 & \star\\
+    \star & 0 & 1
+    \end{pmatrix}$ & $\begin{pmatrix}1 & \star & \star\\
+    0 & 1 & \star\\
+    0 & 0 & 1
+    \end{pmatrix}$\tabularnewline
+    \end{tabular}
+  \end{tabular*}
   \TODO[correct?]
 \end{center}
 
 \begin{comment}
-  Let $I\subset\{1,\dots,n\}^2\backslash\{(j,j)\mid j\in\{1,\dots,n\}\}$ which
-  satisfies
-  \begin{enumerate}
-    \item if $(a,b)\in I$ then $(b,a)\notin I$
-  \end{enumerate}
-  and let $I_1$ and $I_2$ be two disjoint subsets of $I$.
-  Let $K_1$ and $K_2$ be two matrices of the form
   \[
-    K_i\in\left\{K\in G\mid K_{jl}=\partial_{jl}\text{ unless } (j,l)\in
-    I_i\right\}
+    \begin{pmatrix}1 & 0 & 0\\
+    0 & 1 & 0\\
+    1 & 0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}1 & 1 & 0\\
+    0 & 1 & 0\\
+    1 & 0 & 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}1 & 1 & 0\\
+    0 & 1 & 0\\
+    1 & \textbf{1} & 1
+    \end{pmatrix}
   \]
-  \begin{prop}
-    The matrices $A_1A_2$ and $A_2A_1$ are elements of
-  \[
-    \left\{K\in G\mid K_{jl}=\partial_{jl}\text{ unless } (j,l)\in I\right\}\,.
-  \]
-  \end{prop}
-  \begin{proof}
-    Denote by $(A_1A_2)_{jl}$ the entry at the position $(j,l)$ in the matrix
-    $A_1A_2$.
-
-    Define the set $\tilde I$ as
-    \[
-      \tilde I_{jl}:=\left\{
-        k\in\{1,\dots,n\}\mid (j,k)\in I_1 \text{~and~} (k,l)\in I_2
-      \right\}\,.
-    \]
-    
-    Then
-    \begin{align*}
-      (A_1A_2)_{jl}
-      &=\sum_{k\in\{1,\dots,n\}}(A_1)_{jk}(A_2)_{kl}
-    \\&= \begin{cases}
-    1 +\sum_{k\in\tilde I_{jl}}(A_1)_{jk}(A_2)_{kl}\overset{!}{=}1
-      & \text{, if } j=l
-    \\\sum_{k\in\tilde I_{jl}}(A_1)_{jk}(A_2)_{kl}
-      \overset{!}{=}0 & \text{, if } (j,l)\notin I \text{~and~}j\neq l
-    \\(A_1)_{jl}\cdot1
-      +1\cdot(A_2)_{jl}
-      +\sum_{k\in\tilde I_{jl}}(A_1)_{jk}(A_2)_{kl} = \star
-      & \text{, if } (j,l)\in I
-    \end{cases}
-    \end{align*}
-    Thus we have to proof that if $(j,l)\notin I$ then 
-    $\sum_{k\in\tilde I_{jl}}(A_1)_{jk}(A_2)_{kl}=0$ which is equivalent to
-    proof, that
-    \begin{einr}
-      $\forall k\in\tilde I_{jl}:\, (A_1)_{jk}(A_2)_{kl}=0$.
-    \end{einr}
-
-    Let $k\in\tilde I_{jl}$ then,
-    \begin{einr}
-      $(A_1)_{jk}\neq 0$ \Rightarrow{} $(j,k)\in I_1\subset I$
-    \end{einr}
-
-    \TODO{}
-  \end{proof}
 \end{comment}
+
+\subsubsection{What follows for the Stokes germs $\phi_\theta$?}
+Look, as an example, at the case, where
+\begin{itemize}
+  \item $\cK_{\theta}=\cK$,
+  \item $q_2 \underset{\theta,\max}{\prec} q_1$,
+    $q_3 \underset{\theta,\max}{\prec} q_1$ and
+  \item $q_2 \underset{\theta,\max}{\prec} q_3$.
+\end{itemize}
+Then
+\[
+  C_{\cY_{0,\tilde\theta}}=
+  \begin{pmatrix}
+    1     & \star & \star
+  \\0     & 1     & 0
+  \\0     & \star & 1
+  \end{pmatrix}
+\]
+which gets, via $\rho_{\tilde\theta}^{-1}$, mapped to
+\begin{align*}
+  \rho_{\tilde\theta}^{-1} \left(C_{\cY_{0,\tilde\theta}}\right)
+  &=t^{L}e^{Q(t^{-1})}C_{\cY_{0,\tilde\theta}} e^{-Q(t^{-1})}t^{-L}
+\\&=t^{L}e^{Q(t^{-1})}
+  \begin{pmatrix}
+    1     & \star & \star
+  \\0     & 1     & 0
+  \\0     & \star & 1
+  \end{pmatrix}
+  e^{-Q(t^{-1})}t^{-L}
+\\&=
+  \begin{pmatrix}
+    1
+    & t^{L_{1,1}}e^{q_1(t^{-1})}\star t^{-L_{2,2}}e^{-q_2(t^{-1})}
+    & t^{L_{1,1}}e^{q_1(t^{-1})}\star t^{-L_{3,3}}e^{-q_3(t^{-1})}
+    \\0     & 1     & 0
+    \\0
+    & t^{L_{3,3}}e^{q_3(t^{-1})}\star t^{-L_{2,2}}e^{-q_2(t^{-1})}
+    & 1
+  \end{pmatrix}
+  \in\Sto_\theta(A^0)
+\end{align*}
+Thus, for every determination $\tilde\theta$ of $\theta$ we have an isomorphism
+\begin{align*}
+  \C^3 &\overset\cong\to \Sto_\theta(A^0)
+\\(c_1,c_2,c_3) &\mapsto
+  \begin{pmatrix}
+    1 & t^{L_{1,1}}e^{q_1(t^{-1})}c_1 t^{-L_{2,2}}e^{-q_2(t^{-1})}
+    & t^{L_{1,1}}e^{q_1(t^{-1})}c_2 t^{-L_{3,3}}e^{-q_3(t^{-1})}
+    \\0     & 1     & 0
+    \\0 & t^{L_{3,3}}e^{q_3(t^{-1})}c_3 t^{-L_{2,2}}e^{-q_2(t^{-1})} & 1
+  \end{pmatrix}
+\end{align*}
+
+\begin{prop}
+  \TODO{}
+  \[
+    \C^{2\cdot k_2 + k_1}
+    \overset\cong\to
+    (\phi_{\theta_1},\dots,\phi_{\theta_\nu})
+  \]
+\end{prop}
 
 \section{The corresponding element in $\St(A^0)$}
 The map $h$ from theorem~\ref{thm:mainThm2} maps the element
-$(\kappa_{\theta_1},\dots,\kappa_{\theta_\nu})$ to an element of $\St(A^0)$.
+$(\phi_{\theta_1},\dots,\phi_{\theta_\nu})$ to an element of $\St(A^0)$.
