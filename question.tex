@@ -739,6 +739,7 @@ where $\hat F_j\in\hat G(A^0)$ is
 \end{itemize}
 \TODO[build this way?]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Find corresponding element in $\prod_{\theta\in\A}\Sto_\theta(A^0)$}
 \begin{comment}
   needs \textbf{summability}?
@@ -777,36 +778,37 @@ S^-_\theta(\hat F)\left(S^+_\theta(\hat F)\right)̂^{̀-1}\in\Sto_\theta(A^0)$
         \\&\overset{\TODO{}}{=}{}^{\left(F_\theta^+\right)̂^{̀-1}}\!A^1
         \\&\overset{\TODO{}}{=}A^0
         \end{align*}
-        \begin{comment}
-          \begin{align*}
-            {}^{\phi_\theta}\!A^0
-            &= (d\phi_\theta)\phi_\theta^{-1}+\phi_\theta A^0
-            \phi_\theta^{-1}
-          \\&=\left(
-              d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
-              +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
-            \right)\phi_\theta^{-1}+\phi_\theta A^0\phi_\theta^{-1}
-          \\&=\left(
-              d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
-              +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
-            \right) \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-            +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
-             \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-          \\&=
-             d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^+
-             +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
-             \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-             +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
-             \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-          \\&=\TODO{}
-          \\&=A^0
-          \end{align*}
-        \end{comment}
+        % \begin{commentOUT}
+        %   \begin{align*}
+        %     {}^{\phi_\theta}\!A^0
+        %     &= (d\phi_\theta)\phi_\theta^{-1}+\phi_\theta A^0
+        %     \phi_\theta^{-1}
+        %   \\&=\left(
+        %       d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
+        %       +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
+        %     \right)\phi_\theta^{-1}+\phi_\theta A^0\phi_\theta^{-1}
+        %   \\&=\left(
+        %       d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
+        %       +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
+        %     \right) \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+        %     +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
+        %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+        %   \\&=
+        %      d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^+
+        %      +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
+        %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+        %      +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
+        %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+        %   \\&=\TODO{}
+        %   \\&=A^0
+        %   \end{align*}
+        % \end{commentOUT}
       \item of maximal decay, since \TODO{}
     \end{enumerate}
   \end{rem}
 \end{comment}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{How do the Stokes germs $\phi_\theta$ look like?}
 Let $\theta\in S^1$ and let $\tilde\theta$ be a determination of $\theta$.
 From a matrix representation of a Stokes germ, we get a Stokes germ via
@@ -822,6 +824,7 @@ which depends on the determination $\tilde\theta$ of $\theta$ \TODO[is this
 dependency only important, in the ramified case?]
 (cf.\ proposition~\ref{prop:representation}).
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{How do the representations $C_{\cY_{0,\tilde\theta}}$ of
   $\phi_\theta$ look like?}
 There are three cases
@@ -843,18 +846,19 @@ form
     \begin{pmatrix}
       1 & 0 & 0
     \\0 & 1 & 0
-    \\0 & \star & 1
+    \\0 & c_1 & 1
     \end{pmatrix} & \text{,~if~}
     q_2 \underset{\theta,\max}{\prec} q_3
   \\\begin{pmatrix}
       1 & 0 & 0
-    \\0 & 1 & \star
+    \\0 & 1 & c_1
     \\0 & 0 & 1
     \end{pmatrix} & \text{,~if~}
-    q_3 \underset{\theta,\max}{\prec} q_2 \,.
+    q_3 \underset{\theta,\max}{\prec} q_2
   \end{cases}
   \TODO[correct?]
 \]
+where $c_j\in\C$.
 \TODO[is isomorphic to $\C$]
 
 In the \textbf{second case}, we have $q_1 \underset{\theta,\max}{\prec} q_2$
@@ -879,12 +883,12 @@ In the \textbf{last case} is a combination of the two previous cases.
     $\begin{pmatrix}
       1 & 0 & 0
     \\0 & 1 & 0
-    \\0 & \star & 1
+    \\0 & c_1 & 1
     \end{pmatrix}$
     &
     $\begin{pmatrix}
       1 & 0 & 0
-    \\0 & 1 & \star
+    \\0 & 1 & c_1
     \\0 & 0 & 1
     \end{pmatrix}$\tabularnewline
     \end{tabular}
@@ -901,11 +905,11 @@ In the \textbf{last case} is a combination of the two previous cases.
       \tabularnewline
       \hline
       $\begin{pmatrix}1 & 0 & 0\\
-      \star & 1 & 0\\
-      \star & 0 & 1
+      c_1 & 1 & 0\\
+      c_2 & 0 & 1
     \end{pmatrix}$
     &
-    $\begin{pmatrix}1 & \star & \star\\
+    $\begin{pmatrix}1 & c_1 & c_2\\
       0 & 1 & 0\\
       0 & 0 & 1
     \end{pmatrix}$\tabularnewline
@@ -924,18 +928,18 @@ In the \textbf{last case} is a combination of the two previous cases.
       \tabularnewline
       \hline
       $q_2 \underset{\theta,\max}{\prec} q_3$ & $\begin{pmatrix}1 & 0 & 0\\
-      \star & 1 & 0\\
-      \star & \star & 1
-    \end{pmatrix}$ & $\begin{pmatrix}1 & \star & \star\\
+      c_1 & 1 & 0\\
+      c_2 & c_3 & 1
+    \end{pmatrix}$ & $\begin{pmatrix}1 & c_1 & c_2\\
       0 & 1 & 0\\
-      0 & \star & 1
+      0 & c_3 & 1
     \end{pmatrix}$\tabularnewline
     \hline
     $q_3 \underset{\theta,\max}{\prec} q_2$ & $\begin{pmatrix}1 & 0 & 0\\
-    \star & 1 & \star\\
-    \star & 0 & 1
-    \end{pmatrix}$ & $\begin{pmatrix}1 & \star & \star\\
-    0 & 1 & \star\\
+    c_1 & 1 & c_3\\
+    c_2 & 0 & 1
+    \end{pmatrix}$ & $\begin{pmatrix}1 & c_1 & c_2\\
+    0 & 1 & c_3\\
     0 & 0 & 1
     \end{pmatrix}$\tabularnewline
     \end{tabular}
@@ -961,56 +965,61 @@ In the \textbf{last case} is a combination of the two previous cases.
   \]
 \end{comment}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{What follows for the Stokes germs $\phi_\theta$?}
-Look, as an example, at the case, where
+Look as an example at an anti-Stokes direction $\theta$ where
 \begin{itemize}
   \item $\cK_{\theta}=\cK$,
   \item $q_2 \underset{\theta,\max}{\prec} q_1$,
     $q_3 \underset{\theta,\max}{\prec} q_1$ and
   \item $q_2 \underset{\theta,\max}{\prec} q_3$.
 \end{itemize}
-Then
-\[
-  C_{\cY_{0,\tilde\theta}}=
-  \begin{pmatrix}
-    1     & \star & \star
-  \\0     & 1     & 0
-  \\0     & \star & 1
-  \end{pmatrix}
-\]
-which gets, via $\rho_{\tilde\theta}^{-1}$, mapped to
+We then have an isomorphism
 \begin{align*}
-  \rho_{\tilde\theta}^{-1} \left(C_{\cY_{0,\tilde\theta}}\right)
-  &=t^{L}e^{Q(t^{-1})}C_{\cY_{0,\tilde\theta}} e^{-Q(t^{-1})}t^{-L}
-\\&=t^{L}e^{Q(t^{-1})}
+  \C^3 &\overset\cong\to \SSto_\theta(A^0)
+\\(c_1,c_2,c_3) &\mapsto
   \begin{pmatrix}
-    1     & \star & \star
+    1     & c_1 & c_2
   \\0     & 1     & 0
-  \\0     & \star & 1
+  \\0     & c_3 & 1
+  \end{pmatrix}
+\end{align*}
+which, concatenated with $\rho_{\tilde\theta}^{-1}$, yields for every
+determination $\tilde\theta$ of $\theta$ an isomorphism
+\[
+  \C^3\to\Sto_\theta(A^0)
+\]
+given by
+\begin{align*}
+  (c_1,c_2,c_3) &\mapsto
+  t^{L}e^{Q(t^{-1})}
+  \begin{pmatrix}
+    1     & c_1 & c_2
+  \\0     & 1     & 0
+  \\0     & c_3 & 1
   \end{pmatrix}
   e^{-Q(t^{-1})}t^{-L}
 \\&=
   \begin{pmatrix}
     1
-    & t^{L_{1,1}}e^{q_1(t^{-1})}\star t^{-L_{2,2}}e^{-q_2(t^{-1})}
-    & t^{L_{1,1}}e^{q_1(t^{-1})}\star t^{-L_{3,3}}e^{-q_3(t^{-1})}
+    & t^{L_{1,1}}e^{q_1(t^{-1})}c_1 e^{-q_2(t^{-1})}t^{-L_{2,2}}
+    & t^{L_{1,1}}e^{q_1(t^{-1})}c_2 e^{-q_3(t^{-1})}t^{-L_{3,3}}
     \\0     & 1     & 0
     \\0
-    & t^{L_{3,3}}e^{q_3(t^{-1})}\star t^{-L_{2,2}}e^{-q_2(t^{-1})}
+    & t^{L_{3,3}}e^{q_3(t^{-1})}c_3 e^{-q_2(t^{-1})}t^{-L_{2,2}}
+    & 1
+  \end{pmatrix}
+\\&=
+  \begin{pmatrix}
+    1
+    & c_1 t^{L_{1,1}-L_{2,2}}e^{q_1(t^{-1})-q_2(t^{-1})}
+    & c_2 t^{L_{1,1}-L_{3,3}}e^{q_1(t^{-1})-q_3(t^{-1})}
+    \\0     & 1     & 0
+    \\0
+    & c_3 t^{L_{3,3}-L_{2,2}}e^{q_3(t^{-1})-q_2(t^{-1})}
     & 1
   \end{pmatrix}
   \in\Sto_\theta(A^0)
-\end{align*}
-Thus, for every determination $\tilde\theta$ of $\theta$ we have an isomorphism
-\begin{align*}
-  \C^3 &\overset\cong\to \Sto_\theta(A^0)
-\\(c_1,c_2,c_3) &\mapsto
-  \begin{pmatrix}
-    1 & t^{L_{1,1}}e^{q_1(t^{-1})}c_1 t^{-L_{2,2}}e^{-q_2(t^{-1})}
-    & t^{L_{1,1}}e^{q_1(t^{-1})}c_2 t^{-L_{3,3}}e^{-q_3(t^{-1})}
-    \\0     & 1     & 0
-    \\0 & t^{L_{3,3}}e^{q_3(t^{-1})}c_3 t^{-L_{2,2}}e^{-q_2(t^{-1})} & 1
-  \end{pmatrix}
 \end{align*}
 
 \begin{prop}
@@ -1018,10 +1027,173 @@ Thus, for every determination $\tilde\theta$ of $\theta$ we have an isomorphism
   \[
     \C^{2\cdot k_2 + k_1}
     \overset\cong\to
-    (\phi_{\theta_1},\dots,\phi_{\theta_\nu})
+    \Sto_\theta(A^0)
   \]
 \end{prop}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Apply the decomposition from
+  proposition~\ref{prop:filtrationOfStokesGroup}}
+In proposition~\ref{prop:filtrationOfStokesGroup} we have defined a
+decomposition of the Stokes group $\Sto_\theta(A^0)$ in subgroups generated by
+$k$-germs for $k\in\cK$.
+This decomposition of an germ $\phi_\theta$ is trivial if
+$\#\cK(\phi_\theta)\leq1$.
+
+Let $\theta$ sucht that $\cK_{\theta}=\cK$, i.e.\ such that, a decomposition of
+an germ $\phi_\theta$ is able to be nontrivial.
+As an example choose
+\[
+  \phi_\theta=\begin{pmatrix}
+    1
+    & c_1 t^{L_{1,1}-L_{2,2}}e^{q_1(t^{-1})-q_2(t^{-1})}
+    & c_2 t^{L_{1,1}-L_{3,3}}e^{q_1(t^{-1})-q_3(t^{-1})}
+    \\0     & 1     & 0
+    \\0
+    & c_3 t^{L_{3,3}-L_{2,2}}e^{q_3(t^{-1})-q_2(t^{-1})}
+    & 1
+  \end{pmatrix}
+\]
+which we will decompose into
+\[
+  \phi_\theta=\phi_\theta^{k_2}\underset{=\phi_\theta^{k_1}}{
+  \underbrace{\phi_\theta^{<k_2}}}
+\]
+where $\phi_\theta^{k_2}\in\Sto_\theta^{k_2}(A^0)$ and 
+$\phi_\theta^{<k_2}\in\Sto_\theta^{<k_2}(A^0)=\Sto_\theta^{k_1}(A^0)$.
+The factor $\phi_\theta^{<k_2}$, generated by the $k_1$-germs, is simply given
+by 
+\[
+  \phi_\theta^{<k_2}=
+  t^{L}e^{Q(t^{-1})}
+  \begin{pmatrix}
+    1 & 0 & 0
+  \\0 & 1 & 0
+  \\0 & c_3 & 1
+  \end{pmatrix}
+  e^{-Q(t^{-1})}t^{-L}
+\]
+and its inverse is given by
+\[
+  \left(\phi_\theta^{<k_2}\right)^{-1}=
+  t^{L}e^{Q(t^{-1})}
+  \begin{pmatrix}
+    1 & 0 & 0
+  \\0 & 1 & 0
+  \\0 & -c_3 & 1
+  \end{pmatrix}
+  e^{-Q(t^{-1})}t^{-L}
+\]
+\begin{comment}
+  \[
+    \begin{pmatrix}
+      1 & 0 & 0
+      \\0 & 1 & 0
+      \\0 & c & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & 0 & 0
+      \\0 & 1 & 0
+      \\0 & -c & 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1 & 0 & 0
+      \\0 & 1 & 0
+      \\0 & c-c & 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1 & 0 & 0
+      \\0 & 1 & 0
+      \\0 & 0 & 1
+    \end{pmatrix}
+  \]
+\end{comment}
+The other factor $\phi_\theta^{k_2}$ is then obtained as
+\begin{align*}
+  \phi_\theta^{k_2}&= \phi_\theta^{k} \left(\phi_\theta^{<k_2}\right)^{-1}
+\\&=t^{L}e^{Q(t^{-1})}
+  \begin{pmatrix}
+    1     & c_1 & c_2
+  \\0     & 1     & 0
+  \\0     & c_3 & 1
+  \end{pmatrix}
+  e^{-Q(t^{-1})}t^{-L}
+  t^{L}e^{Q(t^{-1})}
+  \begin{pmatrix}
+    1     & 0    & 0
+  \\0     & 1    & 0
+  \\0     & -c_3 & 1
+  \end{pmatrix}
+  e^{-Q(t^{-1})}t^{-L}
+\\&=t^{L}e^{Q(t^{-1})}
+  \begin{pmatrix}
+    1     & c_1-c_2c_3 & c_2
+  \\0     & 1          & 0
+  \\0     & 0          & 1
+  \end{pmatrix}
+  e^{-Q(t^{-1})}t^{-L}
+\\&=\begin{pmatrix}
+    1 & (c_1-c_2c_3) t^{L_{1,1}-L_{2,2}}e^{q_1(t^{-1})-q_2(t^{-1})}
+    & c_2 t^{L_{1,1}-L_{3,3}}e^{q_1(t^{-1})-q_3(t^{-1})}
+    \\0     & 1     & 0
+    \\0 & 0 & 1
+  \end{pmatrix}
+  \,.
+\end{align*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The corresponding element in $\St(A^0)$}
 The map $h$ from theorem~\ref{thm:mainThm2} maps the element
 $(\phi_{\theta_1},\dots,\phi_{\theta_\nu})$ to an element of $\St(A^0)$.
+It was build by concatenation in the following way
+\bgroup
+\columnratio{0.3}
+\begin{paracol}{2}\sloppy
+\switchcolumn[0]\noindent
+  \vspace*{45mm}
+  \begin{itemize}
+    \item[] Step 1 \tikzmarkc{n1}{black}
+    \item[] Step 2 \tikzmarkc{n2}{black}
+    \item[] Step 3 \tikzmarkc{n3}{black}
+    \item[] Step 4 \tikzmarkc{n4}{black}
+  \end{itemize}
+\switchcolumn[1]\noindent
+  \[ \begin{tikzcd}[column sep=0,row sep=1.8cm]
+      \displaystyle \prod_{\theta\in\cA}\Sto_\theta(A^0)
+      \dar{\tikzmark{e1}\prod_{\theta\in\A}i_\theta}
+      \arrow[dddrrrr, out=0,in=90,"h"]
+    \\\displaystyle \prod_{\theta\in\cA}\prod_{k\in\cK}\Sto_\theta^k(A^0)
+    &\tikzmark{e2}\!\!\!\!\equiv
+    &\displaystyle \prod_{k\in\cK}\prod_{\theta\in\cA}\Sto_\theta^k(A^0)
+      \dar{\tikzmark{e3}\prod_{k\in\cK}i^k}
+    \\&&\displaystyle \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
+      \dar{\tikzmark{e4}\cT}
+    \\&&H^1(\cU;\Lambda(A^0))&=&\St(A^0)
+  \end{tikzcd} \]
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[->,black!50!white,thick] (n1) to[out=0,in=180] (e1);
+    \draw[->,black!50!white,thick] (n2) to[out=0,in=225] (e2);
+    \draw[->,black!50!white,thick] (n3) to[out=0,in=180] (e3);
+    \draw[->,black!50!white,thick] (n4) to[out=0,in=180] (e4);
+  \end{tikzpicture}
+\end{paracol}
+\egroup
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Step 1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Step 2}
+\begin{align*}
+  \prod_{\theta\in\cA}\prod_{k\in\cK}\Sto_\theta^k(A^0)
+  &\equiv \prod_{k\in\cK}\prod_{\theta\in\cA}\Sto_\theta^k(A^0)
+\\&= \prod_{k\in\cK} \prod_{j=1}^{2\cdot k}
+  \Sto_{\theta_0+\frac{\pi}{k}\cdot j}^k(A^0)
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Step 3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Step 4}
+
+

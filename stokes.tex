@@ -710,6 +710,7 @@ In particular we get, that
 \end{rem}
 On the other hand, every constant unipotent matrix, with zeros at the necessary
 positions, characterizes a unique element of $\Sto_\theta(A^0)$.
+\TODO[Isomorphic to $\C^{?}$?]
 
 \begin{lem}
   \TODO[lemma or corollary?]
@@ -921,7 +922,7 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
 \begin{proof}
   \TODO{}
 \end{proof}
-\begin{prop}
+\begin{prop}\label{prop:filtrationOfStokesGroup}
   \marginnote{\cite[Prop.I.5.5]{Loday1994}}
   The results can be restricted to the Stokes groups. Thus, for
   $\theta\in\A$, one has
@@ -1429,8 +1430,9 @@ theorem~\ref{thm:mainThm2} by composition of bijective maps.
   \end{tikzcd} \]
   where
   \begin{itemize}
-    \item $i_\theta:\Sto_\theta(A^0)\to\prod_{k\in\cK}\Sto_\theta^k(A^0)$ gives
-      \TODO{} and
+    \item $i_\theta:\Sto_\theta(A^0)\to\prod_{k\in\cK}\Sto_\theta^k(A^0)$ is
+      the map which corresponds to the filtration from 
+      proposition~\ref{prop:filtrationOfStokesGroup} and
     \item $i^k:\prod_{\theta\in\cA}\Sto_\theta^k(A^0)
       \to\Gamma(\dot\cU^k;\Lambda^k(A^0))$ is the canonical map,
   \end{itemize}
