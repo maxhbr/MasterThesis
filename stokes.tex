@@ -140,9 +140,9 @@ of $\Sto(A^0)$ relative to $\cU$. Thus the associated cochians to $(f_j)$ and
 $(f_j')$ are equivalent. One can also check that, if $(\cM,\nabla,\hat f)$ and
 $(\cM',\nabla',\hat f')$ are isomorphic, the corresponding cocycles define the
 same cohomology class. This defines a mapping of pointed sets
-to the first non abelian cohomology of $\Lambda^{<0}(A^0)$
+to the first non abelian cohomology of $\Lambda(A^0)$
 \[
-  \cH\to H^1(S^1;\Lambda^{<0}(A^0)) \,,
+  \cH\to H^1(S^1;\Lambda(A^0)) \,,
 \]
 which sends the class of $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of
 $\id$.
@@ -150,7 +150,7 @@ $\id$.
 \begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1}
   The homomorphism
   \[
-    \exp:\cH\to\St(A^0):=H^1(S^1;\Lambda^{<0}(A^0))
+    \exp:\cH\to\St(A^0):=H^1(S^1;\Lambda(A^0))
   \]
   is an isomorphism of pointed\footnote{Which maps the class of
   $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$, i.e.\ the trivial
@@ -196,16 +196,16 @@ Thus the associated cochians to $(f_j)$ and $(f_j')$ are equivalent.
 One can also check that, if $(A,\hat F)$ and $(A',\hat F')$ are equivalent, the
 corresponding cocycles define the same cohomology class.
 This defines a mapping of pointed sets to the first non abelian cohomology of
-$\Lambda^{<0}(A^0)$
+$\Lambda(A^0)$
 \[
-  \cH\to H^1(S^1;\Lambda^{<0}(A^0)) \,,
+  \cH\to H^1(S^1;\Lambda(A^0)) \,,
 \]
 which we call $\exp$.
 
 \begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1}
   The homomorphism
   \[
-    \exp:\cH(A^0)\to\St(A^0):=H^1(S^1;\Lambda^{<0}(A^0))
+    \exp:\cH(A^0)\to\St(A^0):=H^1(S^1;\Lambda(A^0))
   \]
   is an isomorphism of pointed\footnote{Which maps the class of
   $(A^0,\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology class.} sets.
@@ -255,7 +255,7 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
   of $\cH$ which map to same element
   \[
     \exp((\cM,\nabla,\hat f))=\lambda=\exp((\cM',\nabla',\hat f'))
-      \in H^1(S^1;\Lambda^{<0}(A^0)) \,.
+      \in H^1(S^1;\Lambda(A^0)) \,.
   \]
   Since \TODO{}, it is then possible to find a finite covering
   $\cU=\{U_j;j\in J\}$ of $S^1$ such that $\lambda$ is the class of the
@@ -275,8 +275,8 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
   Exactly as in \cite{sabbah2007isomonodromic}\marginnote{Which refers to
   \cite{Malgrange1983}} we will start this part of the proof by giving a
   necessary and sufficient condition for a class $\lambda$ in
-  $H^1(S^1,\Lambda^{<0}(A^0))$
-  \TODO[$\Lambda^{<0}(A^0)\hat{=}\Aut^{<0}(\tilde\cM^{nf})$ or
+  $H^1(S^1,\Lambda(A^0))$
+  \TODO[$\Lambda(A^0)\hat{=}\Aut^{<0}(\tilde\cM^{nf})$ or
   $\Aut^{<0}(\cM^{nf})$?]
   to come from an object
   $(\cM,\nabla,\hat f)\in\cH$:
@@ -534,13 +534,13 @@ relations:
 \end{comment}
 
 As a \rewrite{subgroup of the stalk at $\theta$} of the in
-definition~\ref{defn:StokesSheaf} defined Stokes sheaf $\Lambda^{<0}(A^0)$ we
+definition~\ref{defn:StokesSheaf} defined Stokes sheaf $\Lambda(A^0)$ we
 define the Stoken group as follows.
 \begin{defn}
   Define the \emph{Stokes group}
   \[
     \Sto_\theta(A^0):=
-    \left\{\phi_\theta\in\Lambda_\theta^{<0}(A^0)
+    \left\{\phi_\theta\in\Lambda_\theta(A^0)
       \mid \phi_\theta \text{ has maximal decay at } \theta
     \right\} \,.
   \]
@@ -848,7 +848,7 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
         \item $f^{\leq k}=f^kf^{<k}$, where $f^k\in\Lambda^k$ and
           $f^{<k}\in\Lambda^{<k}$.
       \end{itemize}
-      \begin{s-rem}
+      \begin{s-rem}\label{rem:algFactorization}
         A factorization algorithm could be:
         \begin{einr}
           the factor $f^{<k}$ common to both factorizations is the truncation
@@ -930,6 +930,16 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
     \Sto_\theta(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Sto_\theta^k(A^0)
   \]
   the semi-direct product being taken in an arbitrary order.
+  \begin{s-defn}
+    We will denote the map, wich gives the factors of this factorization by
+    \[
+      i_\theta:
+      \Sto_\theta(A^0)
+      \to
+      \prod_{k\in\cK_\theta}\Sto_\theta^k(A^0)\,,
+    \]
+    where the factorization is taken in ascending order.
+  \end{s-defn}
 \end{prop}
 \begin{proof}
   \TODO{}
