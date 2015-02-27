@@ -485,15 +485,16 @@ theorem~\ref{thm:mainThm2} to an element in $\St(A^0)$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Step 0: Building our example}
-We want to have a unramified connection with more than one level. Two levels
+We want to have an unramified connection with more than one level. Two levels
 might be enough. Our plan is as follows:
 \begin{enumerate}
   \item fix some determining polynomials, which define the levels and
     anti-Stokes directions;
   \item fix some exponent of formal monodromy $L$, which defines, together with
-    the determining polynomials and the order, our normal form $A^0$;
+    the determining polynomials and the order, our normal form $[A^0]$ and our
+    normal solution $\cY_0$;
   \item fix some formal transformation $\hat F$, which defines our system
-    $A:={}^{\hat F}\!A^0$.
+    $[A]:=[{}^{\hat F}\!A^0]$.
 \end{enumerate}
 
 \paragraph{Fix the determining polynomials}
@@ -665,8 +666,8 @@ our simple example sketched in the figure~\ref{fig:adequateCovering}.
     The anti-Stokes directions are marked by the \textcolor{red}{red} dots.
     The arcs of $\dot\cU^{\kOne}=\dot\cU^{\leq\kOne}$ are
     \textcolor{orange}{orange}, the arcs of $\dot\cU^{\kTwo}$ are
-    \textcolor{purple}{purple} and the arcs of $\dot\cU^{\leq\kOne}$ are
-    \textcolor{brown}{brown}.
+    \textcolor{purple}{purple} and the arcs of $\dot\cU^{\leq\kTwo}=\dot\cU$
+    are \textcolor{brown}{brown}.
   }\label{fig:adequateCovering}
 \end{figure}%}}}
 
@@ -869,135 +870,184 @@ dependency only important, in the ramified case?]
   \end{rem}
 \end{comment}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{How do the representations $C_{\cY_{0,\tilde\theta}}$ of
-  $\phi_\theta$ look like?}
-There are three cases
-\begin{enumerate}
-  \item $\cK_\theta=\{k_1\}$,
-  \item $\cK_\theta=\{k_2\}$ and
-  \item $\cK_\theta=\{k_1,k_2\}=\cK$.
-\end{enumerate}
-In the \textbf{first case}, we have either
-$q_2 \underset{\theta,\max}{\prec} q_3$ or
-$q_3 \underset{\theta,\max}{\prec} q_2$.
-This implies, that the representation of $C_{\cY_{0,\tilde\theta}}$ has the
-form
-\[
-  \begin{cases}
+We know the following about the structure of elements in $\SSto_\theta(A^0)$
+defined in definition~\ref{defn:groupOfFaithfullReps}:
+\begin{einr}
+  if, for example, $q_1 \underset{\theta,\max}{\prec} q_2$ than has the
+  representation the form
+  \[
     \begin{pmatrix}
-      1 & 0 & 0
-    \\0 & 1 & c_1
-    \\0 & 0 & 1
-    \end{pmatrix} & \text{,~if~}
-    q_2 \underset{\theta,\max}{\prec} q_3
-  \\\begin{pmatrix}
-      1 & 0 & 0
+      1 & c_1 & \star
+    \\0 & 1 & \star
+    \\\star & \star & 1
+    \end{pmatrix}\in G
+  \]
+  where $c_j\in\C$ and $\star\in\C$.
+  In \textbf{our case}, we also know, that
+  \begin{einr}
+    $q_1 \underset{\theta,\max}{\prec} q_2$
+    \Leftrightarrow{}
+    $q_1 \underset{\theta,\max}{\prec} q_3$
+    \qquad and \qquad
+    $q_2 \underset{\theta,\max}{\prec} q_1$
+    \Leftrightarrow{}
+    $q_3 \underset{\theta,\max}{\prec} q_1$
+  \end{einr}
+  since the leading terms of $q_1-q_2$ and $q_1-q_3$ are equal. Thus the
+  representation has the \rewrite{form}
+  \[
+    \begin{pmatrix}
+      1 & c_1 & c_2
+    \\0 & 1 & \star
+    \\0 & \star & 1
+    \end{pmatrix}\in G\,.
+  \]
+  If we also know, that neither $q_2 \underset{\theta,\max}{\prec} q_3$ nor
+  $q_3 \underset{\theta,\max}{\prec} q_2$ it has the \rewrite{form}
+  \[
+    \begin{pmatrix}
+      1 & c_1 & c_2
     \\0 & 1 & 0
-    \\0 & c_1 & 1
-    \end{pmatrix} & \text{,~if~}
-    q_3 \underset{\theta,\max}{\prec} q_2
-  \end{cases}
-\]
-where $c_j\in\C$.
-\TODO[is isomorphic to $\C$]
-
-In the \textbf{second case}, we have $q_1 \underset{\theta,\max}{\prec} q_2$
-and $q_1 \underset{\theta,\max}{\prec} q_3$ or
-$q_2 \underset{\theta,\max}{\prec} q_1$ and
-$q_3 \underset{\theta,\max}{\prec} q_1$ since the leading term of $q_1-q_2$ and
-$q_1-q_3$ are the same.  \TODO[\dots]
-In the \textbf{last case} is a combination of the two previous cases.
-\TODO[\dots]
-
+    \\0 & 0 & 1
+    \end{pmatrix}\in G\,.
+  \]
+  We also know, that every matrix of this \rewrite{form} is a representation to
+  some Stokes germ.
+\end{einr}
+In fact, we have the following $9$ cases 
 \begin{center}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}r|c}
-  % \begin{tabular}{c|c}
-  $\cK_\theta=\{k_1\}$
-  &
-    \begin{tabular}{c|c}
-      $q_2 \underset{\theta,\max}{\prec} q_3$
-      &
-      $q_3 \underset{\theta,\max}{\prec} q_2$
-      \tabularnewline
-      \hline
-    $\begin{pmatrix}
-      1 & 0 & 0
-    \\0 & 1 & c_1
-    \\0 & 0 & 1
-    \end{pmatrix}$
+  \def\arraystretch{1.3}
+  \setlength\tabcolsep{4mm}
+  \begin{tabular}{r|c|c|c}
+    & $q_2 \underset{\theta,\max}{\prec} q_3$
+    & $q_3 \underset{\theta,\max}{\prec} q_2$
+    & else
+    \tabularnewline
+    \hline
+    $q_1 \underset{\theta,\max}{\prec} q_2$ and 
+    $q_1 \underset{\theta,\max}{\prec} q_3$
+    & $\begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}$
+   \cellcolor{blue!15}
+    & $\begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & 0 \\0 & c_3 & 1 \end{pmatrix}$
+   \cellcolor{blue!15}
+    & $\begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}$
+   \cellcolor{green!15}
+    \tabularnewline
+    \hline
+    $q_2 \underset{\theta,\max}{\prec} q_1$ and
+    $q_3 \underset{\theta,\max}{\prec} q_1$
+    & $\begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & c_3 \\c_2 & 0 & 1 \end{pmatrix}$
+   \cellcolor{blue!15}
+    & $\begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & 0 \\c_2 & c_3 & 1 \end{pmatrix}$
+   \cellcolor{blue!15}
+    & $\begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & 0 \\c_2 & 0 & 1 \end{pmatrix}$
+   \cellcolor{green!15}
+    \tabularnewline
+    \hline
+    else
+    & $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}$
+   \cellcolor{purple!15}
+    & $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_3 & 1 \end{pmatrix}$
+   \cellcolor{purple!15}
+    & $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}$
+  \end{tabular}
+\end{center}
+In the \textcolor{blue!75!black}{blue} cases we have $\cK_\theta=\cK$ and
+$\C^3\cong\SSto_\theta(A^0)$.
+In the \textcolor{green!75!black}{green} cases $\cK_\theta=\{h_2\}$ and
+$\C^2\cong\SSto_\theta(A^0)$ as well as in the
+\textcolor{purple!75!black}{purple} cases $\cK_\theta=\{h_1\}$ and
+$\C^1\cong\SSto_\theta(A^0)$.
+
+\begin{comment}
+  \begin{center}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}r|c}
+    % \begin{tabular}{c|c}
+    $\cK_\theta=\{k_1\}$
     &
-    $\begin{pmatrix}
-      1 & 0 & 0
-    \\0 & 1 & 0
-    \\0 & c_1 & 1
-    \end{pmatrix}$\tabularnewline
-    \end{tabular}
-  \tabularnewline
-  \hline
-  $\cK_\theta=\{k_2\}$
-  &
-    \begin{tabular}{c|c}
-      $q_1 \underset{\theta,\max}{\prec} q_2$ and
-      $q_1 \underset{\theta,\max}{\prec} q_3$
+      \begin{tabular}{c|c}
+        $q_2 \underset{\theta,\max}{\prec} q_3$
+        &
+        $q_3 \underset{\theta,\max}{\prec} q_2$
+        \tabularnewline
+        \hline
+      $\begin{pmatrix}
+        1 & 0 & 0
+      \\0 & 1 & c_1
+      \\0 & 0 & 1
+      \end{pmatrix}$
       &
-      $q_2 \underset{\theta,\max}{\prec} q_1$ and
-      $q_3 \underset{\theta,\max}{\prec} q_1$
-      \tabularnewline
-      \hline
-    $\begin{pmatrix}1 & c_1 & c_2\\
-      0 & 1 & 0\\
+      $\begin{pmatrix}
+        1 & 0 & 0
+      \\0 & 1 & 0
+      \\0 & c_1 & 1
+      \end{pmatrix}$\tabularnewline
+      \end{tabular}
+    \tabularnewline
+    \hline
+    $\cK_\theta=\{k_2\}$
+    &
+      \begin{tabular}{c|c}
+        $q_1 \underset{\theta,\max}{\prec} q_2$ and
+        $q_1 \underset{\theta,\max}{\prec} q_3$
+        &
+        $q_2 \underset{\theta,\max}{\prec} q_1$ and
+        $q_3 \underset{\theta,\max}{\prec} q_1$
+        \tabularnewline
+        \hline
+      $\begin{pmatrix}1 & c_1 & c_2\\
+        0 & 1 & 0\\
+        0 & 0 & 1
+      \end{pmatrix}$
+      &
+        $\begin{pmatrix}1 & 0 & 0\\
+        c_1 & 1 & 0\\
+        c_2 & 0 & 1
+      \end{pmatrix}$\tabularnewline
+      \end{tabular}
+    \tabularnewline
+    \hline
+    $\cK_\theta=\cK$
+    &
+      \begin{tabular}{c|c|c}
+        \multicolumn{1}{c|}{} &
+        $q_1 \underset{\theta,\max}{\prec} q_2$ and
+        $q_1 \underset{\theta,\max}{\prec} q_3$
+        &
+        $q_2 \underset{\theta,\max}{\prec} q_1$ and
+        $q_3 \underset{\theta,\max}{\prec} q_1$
+        \tabularnewline
+        \hline
+        $q_2 \underset{\theta,\max}{\prec} q_3$ &
+        $\begin{pmatrix}
+          1 & c_1 & c_2\\
+      0 & 1 & c_3\\
       0 & 0 & 1
-    \end{pmatrix}$
-    &
-      $\begin{pmatrix}1 & 0 & 0\\
-      c_1 & 1 & 0\\
+      \end{pmatrix}$ & 
+        $\begin{pmatrix}
+        1 & 0 & 0\\
+      c_1 & 1 & c_3\\
       c_2 & 0 & 1
-    \end{pmatrix}$\tabularnewline
-    \end{tabular}
-  \tabularnewline
-  \hline
-  $\cK_\theta=\cK$
-  &
-    \begin{tabular}{c|c|c}
-      \multicolumn{1}{c|}{} &
-      $q_1 \underset{\theta,\max}{\prec} q_2$ and
-      $q_1 \underset{\theta,\max}{\prec} q_3$
-      &
-      $q_2 \underset{\theta,\max}{\prec} q_1$ and
-      $q_3 \underset{\theta,\max}{\prec} q_1$
-      \tabularnewline
+      \end{pmatrix}$\tabularnewline
       \hline
-      $q_2 \underset{\theta,\max}{\prec} q_3$ &
+      $q_3 \underset{\theta,\max}{\prec} q_2$ &
       $\begin{pmatrix}
         1 & c_1 & c_2\\
-    0 & 1 & c_3\\
-    0 & 0 & 1
-    \end{pmatrix}$ & 
-      $\begin{pmatrix}
-      1 & 0 & 0\\
-    c_1 & 1 & c_3\\
-    c_2 & 0 & 1
-    \end{pmatrix}$\tabularnewline
-    \hline
-    $q_3 \underset{\theta,\max}{\prec} q_2$ &
-    $\begin{pmatrix}
-      1 & c_1 & c_2\\
-      0 & 1 & 0\\
-      0 & c_3 & 1
-    \end{pmatrix}$ &
-      $\begin{pmatrix}
-        1 & 0 & 0\\
-      c_1 & 1 & 0\\
-      c_2 & c_3 & 1
-    \end{pmatrix}$\tabularnewline
-    \end{tabular}
-  \end{tabular*}
-  \TODO[correct?]
-\end{center}
+        0 & 1 & 0\\
+        0 & c_3 & 1
+      \end{pmatrix}$ &
+        $\begin{pmatrix}
+          1 & 0 & 0\\
+        c_1 & 1 & 0\\
+        c_2 & c_3 & 1
+      \end{pmatrix}$\tabularnewline
+      \end{tabular}
+    \end{tabular*}
+  \end{center}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{What follows for the Stokes germs $\phi_\theta$?}
+\paragraph{What follows for the Stokes germs $\phi_\theta$?}
 Look as an example at an anti-Stokes direction $\theta$ where
 \begin{itemize}
   \item $\cK_{\theta}=\cK$,
@@ -1007,8 +1057,8 @@ Look as an example at an anti-Stokes direction $\theta$ where
 \end{itemize}
 We then have an isomorphism
 \begin{align*}
-  \C^3 &\overset\cong\to \SSto_\theta(A^0)
-\\(c_1,c_2,c_3) &\mapsto
+  \C^3 &\overset\cong\longrightarrow \SSto_\theta(A^0)
+\\(c_1,c_2,c_3) &\longmapsto
   \begin{pmatrix}
     1     & c_1 & c_2
   \\0     & 1     & 0
@@ -1057,7 +1107,7 @@ given by
   \TODO{}
   \[
     \C^{2\cdot k_2 + k_1}
-    \overset\cong\to
+    \overset\cong\longrightarrow
     \prod_{\theta\in\A}\Sto_\theta(A^0)
   \]
 \end{prop}
@@ -1185,7 +1235,21 @@ The other factor $\phi_\theta^{k_2}$ is then obtained as
   e^{-Q(t^{-1})}t^{-L}
   \,.
 \end{align*}
-
+The four interesting cases are
+\begin{enumerate}
+  \item $\begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}$
+  \item $\begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & 0 \\0 & c_3 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_3 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}$
+  \item $\begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & c_3 \\c_2 & 0 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & 0 & 0 \\c_1 -c_2c_3& 1 & 0 \\c_2 & 0 & 1 \end{pmatrix}$
+  \item $\begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & 0 \\c_2 & c_3 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_3 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & 0 \\c_2-c_1c_3 & 0 & 1 \end{pmatrix}$
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Step 2.b}
@@ -1200,6 +1264,14 @@ have
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Step 2.c}
+\begin{comment}
+  \begin{itemize}
+    \item[\cite{Loday1994} p.872] \dots cononical extansion of germs to ther
+      natural arc of definition.
+      
+      \TODO[This is an isomorphism since we restrict to solutions?]
+  \end{itemize}
+\end{comment}
 Is the extension of germs to \TODO{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
