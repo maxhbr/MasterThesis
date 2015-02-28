@@ -1424,28 +1424,56 @@ This means that
   \TODO{}
 \end{proof}
 \subsubsection{Composing functions to obtain $h$}
+The expression $\prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))$ is an
+abbreviation for
+$\prod_{k\in\cK}\prod_{\theta\in\A}\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$
+thus an element of $\Gamma(\dot\cU^k;\Lambda^k(A^0))$ looks like
+\[
+  \left(f_\theta\right)_{\theta\in\A}
+\]
+where $f_\theta:\cU_\theta^k\to\C$\TODO[ is \textbf{holomorphic}/meromorphic?].
+Since sections in $\Lambda^k(A^0)$ are solution of the system $[A^0,A^0]$ we
+know from the theory of differential equations\TODO[source?], that an element
+$f_\theta\in\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$ is uniquely determined as
+the extension of its Stokes germ $\phi_\theta$ at $\theta$.
+\begin{comment}
+  ODE-Theory, says, that a germ defines a solution in a \textbf{neighbourhood},
+  why is
+  \[
+    \substack{the\\neighbourhood}=\cU_\theta^k \,?
+  \]
+  \begin{itemize}
+    \item[\cite{Loday1994} p.872] \dots cononical extansion of germs to their
+      natural arc of definition.
+  \end{itemize}
+\end{comment}
+We denote the isomorphism, defined by this construction as
+\begin{align*}
+  i^k: \prod_{\theta\in\A}\Sto_\theta^k(A^0)
+  &\overset{\cong}\longrightarrow \Gamma(\dot\cU^k;\Lambda^k(A^0))
+\\(\phi_\theta)_{\theta\in\A} &\longmapsto (f_\theta)_{\theta\in\A}
+  \,.
+\end{align*}
+
+
 Thus, we have the ingredients to define the function $h$ from
 theorem~\ref{thm:mainThm2} by composition of bijective maps.
 \begin{proof}[Proof of theorem~\ref{thm:mainThm2}]
-  Let us denote the composition
+  Let $i_\theta:\Sto_\theta(A^0)\to\prod_{k\in\cK}\Sto_\theta^k(A^0)$ be the
+  map which corresponds to the filtration from
+  proposition~\ref{prop:filtrationOfStokesGroup} and 
+  denote the composition
   \[ \begin{tikzcd}[column sep=1.8cm,row sep=0]
       \displaystyle \prod_{\theta\in\cA}\Sto_\theta(A^0)
-      \rar{\prod_{\theta\in\A}i_\theta} &
+      \rar{\prod_{\theta\in\A}i_\theta}
+      \arrow[ddrr, out=270,in=200,"\mathfrak{T}"]
+      &
       \displaystyle \prod_{\theta\in\cA}\prod_{k\in\cK}\Sto_\theta^k(A^0)
     \\&\text{\rotatebox[origin=c]{-90}{$\equiv$}}
     \\&\displaystyle \prod_{k\in\cK}\prod_{\theta\in\cA}\Sto_\theta^k(A^0)
       \rar{\prod_{k\in\cK}i^k}&
       \displaystyle \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
-      \,,
   \end{tikzcd} \]
-  where
-  \begin{itemize}
-    \item $i_\theta:\Sto_\theta(A^0)\to\prod_{k\in\cK}\Sto_\theta^k(A^0)$ is
-      the map which corresponds to the filtration from 
-      proposition~\ref{prop:filtrationOfStokesGroup} and
-    \item $i^k:\prod_{\theta\in\cA}\Sto_\theta^k(A^0)
-      \to\Gamma(\dot\cU^k;\Lambda^k(A^0))$ is the canonical map,
-  \end{itemize}
   by $\mathfrak{T}$.
   \TODO[the map $\mathfrak{T}$ is bijective]
   Thus we obtain the bijection
