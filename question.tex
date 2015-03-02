@@ -41,7 +41,7 @@ different levels is stored.
   \end{tikzpicture}
 \end{paracol}
 \egroup
-In the first step, we will associate to an ambassador $\hat F$ in
+In the step one, we will associate to an ambassador $\hat F$ in
 $G\backslash\hat G(A^0)$ an element $(\phi_{\theta_1},\dots,\phi_{\theta_\nu})$
 in $\prod_{\theta\in\cA}\Sto_\theta(A^0)$. We will also discuss \TODO[\dots]
 
@@ -779,6 +779,8 @@ where $\hat F_j\in\hat G(A^0)$ is
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Step 1: Find corresponding element in
   $\prod_{\theta\in\A}\Sto_\theta(A^0)$}
+Fix a set of determinations $\tilde\theta_1,\dots,\tilde\theta_\nu$ of
+$\theta_1 ,\dots,\theta_\nu$.
 \begin{comment}
   needs \textbf{summability}?
   \begin{itemize}
@@ -788,7 +790,8 @@ where $\hat F_j\in\hat G(A^0)$ is
   \end{itemize}
 \end{comment}
 
-We then get
+An element in $\prod_{\theta\in\A}\Sto_\theta(A^0)$ corresponding to $\hat F$
+is found as
 \[
   (\phi_{\theta_1},\dots,\phi_{\theta_\nu})
   \in\prod_{\theta\in\A}\Sto_\theta(A^0)
@@ -1119,15 +1122,14 @@ The map $h$ from theorem~\ref{thm:mainThm2} maps the element
 $(\phi_{\theta_1},\dots,\phi_{\theta_\nu})$ to an element of $\St(A^0)$.
 It was build by concatenation in the following way
 \bgroup
-\columnratio{0.3}
+\columnratio{0.35}
 \begin{paracol}{2}\sloppy
 \switchcolumn[0]\noindent
   \vspace*{40mm}
   \begin{itemize}
     \item[] Step 2.a \tikzmarkc{n1}{black}
-    \item[] Step 2.b \tikzmarkc{n2}{black}
-    \item[] Step 2.c \tikzmarkc{n3}{black}
-    \item[] Step 2.d \tikzmarkc{n4}{black}
+    \item[] \qquad Step 2.b \tikzmarkc{n3}{black}
+    \item[] \qquad \qquad Step 2.c \tikzmarkc{n4}{black}
   \end{itemize}
 \switchcolumn[1]\noindent
   \[ \begin{tikzcd}[column sep=0,row sep=1.8cm]
@@ -1144,7 +1146,7 @@ It was build by concatenation in the following way
   \end{tikzcd} \]
   \begin{tikzpicture}[remember picture,overlay]
     \draw[->,black!50!white,thick] (n1) to[out=0,in=180] (e1);
-    \draw[->,black!50!white,thick] (n2) to[out=0,in=225] (e2);
+    % \draw[->,black!50!white,thick] (n2) to[out=0,in=225] (e2);
     \draw[->,black!50!white,thick] (n3) to[out=0,in=180] (e3);
     \draw[->,black!50!white,thick] (n4) to[out=0,in=180] (e4);
   \end{tikzpicture}
@@ -1253,25 +1255,91 @@ The four interesting cases are
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Step 2.b}
-Since we know, that $\Sto_{\theta}^k$ is trivial, if $k\notin\cK_\theta$ we
-have
-\begin{align*}
-  \prod_{\theta\in\cA}\prod_{k\in\cK}\Sto_\theta^k(A^0)
-  &\equiv \prod_{k\in\cK}\prod_{\theta\in\cA}\Sto_\theta^k(A^0)
-\\&= \prod_{k\in\cK} \prod_{j=1}^{2\cdot k}
-  \Sto_{\theta_0+\frac{\pi}{k}\cdot j}^k(A^0)
-\end{align*}
+\begin{comment}
+  \begin{rem}
+    Since we know, that $\Sto_{\theta}^k$ is trivial, if $k\notin\cK_\theta$ we
+    can write
+    \begin{align*}
+      \prod_{\theta\in\cA}\prod_{k\in\cK}\Sto_\theta^k(A^0)
+      &\equiv \prod_{k\in\cK}\prod_{\theta\in\cA}\Sto_\theta^k(A^0)
+      \\&= \prod_{k\in\cK} \prod_{j=1}^{2\cdot k}
+     \Sto_{\theta_0+\frac{\pi}{k}\cdot j}^k(A^0) \,.
+    \end{align*}
+  \end{rem}
+\end{comment}
+
+Let $k\in\cK$.
+
+The sections of $\Lambda(A^0)$ are the flat isotropies (cf.\
+definition~\ref{defn:StokesSheaf}). The isotropy property for a stokes germ
+$\phi_\theta$ is in our case clear, since a constant matrix conjugated by a
+fundamental solution of $A^0$ is a solution of $[A^0,A^0]$. This property
+\rewrite{is preserved, when} we extend from the germ $\phi_\theta$ to the
+section $f_\theta\in\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$. From the theory
+of differential equations, we know, that \rewrite{this extension is unique}.
+\begin{comment}
+  The system $[A^0,A^0]$ is explicitly given by
+  \[
+    \frac{dF}{dt}=A^0F-FA^0
+  \]
+  where
+  \begin{itemize}
+    \item $F= t^Le^{Q(t^{-1})} C_{\cY_0,\tilde\theta} e^{-Q(t^{-1})}t^{-L}$ and
+    \item $A^0=Q'(t^{-1})+L\frac{1}{t}$
+  \end{itemize}
+  as defined above.
+  Thus
+  \begin{align*}
+    \frac{d}{dt}\left(
+      t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
+    \right) &=
+    \left(Q'(t^{-1})+L\frac{1}{t}\right)
+    t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
+  \\&\qquad-t^Le^{Q(t^-1)}C_{\cY_0,\tilde\theta}e^{-Q(t^-1)}t^{-L}
+    \left(Q'(t^{-1})+L\frac{1}{t}\right)
+  \end{align*}
+  The chain rule and expansion of the products yields
+  \begin{align*}
+    \frac{1}{t}Lt^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}+\qquad&
+  \\t^LQ'(t^{-1})e^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}+\qquad&
+  \\t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}(-Q'(t^{-1}))e^{-Q(t^{-1})}t^{-L}+\qquad&
+  \\t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}\frac{-1}{t}Lt^{-L}
+    &=
+    Q'(t^{-1})t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
+  \\&\qquad+L\frac{1}{t} t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
+  \\&\qquad-t^Le^{Q(t^-1)}C_{\cY_0,\tilde\theta}e^{-Q(t^-1)}t^{-L} Q'(t^{-1})
+  \\&\qquad-t^Le^{Q(t^-1)}C_{\cY_0,\tilde\theta}e^{-Q(t^-1)}t^{-L} L\frac{1}{t}
+  \end{align*}
+  which is trivial.
+\end{comment}
+The flatness property of an section $f_\theta$,
+i.e.\ $f_\theta\sim_{\mathfrak{s}_{\cU_\theta^k}}1$, is equivalent to
+\[
+  \left(f_\theta\right)_{j,l}\sim_{\mathfrak{s}_{\cU_\theta^k}}
+  \begin{cases}
+    1 & \text{,~if~} j=l
+  \\0 & \text{,~if~} j\neq l
+  \,.
+  \end{cases}
+\]
+This is clear in the cases
+\begin{enumerate}
+  \item $j=l$ and 
+  \item $(j,l)$ such that $q_j \underset{\theta,\max}{\not\prec}q_l$
+\end{enumerate}
+by construction.
+Let $(j,l)$ such that $q_j \underset{\theta,\max}{\prec}q_l$, we then
+\rewrite{have to proof}, that for every $c\in\C$
+\begin{einr}
+  $ c t^{L_{j,j}-L_{l,l}}e^{q_j(t^{-1})-q_l(t^{-1})}
+  \sim_{\mathfrak{s}_{\cU_\theta^k}}0$.
+\end{einr}
+For every $\theta'\in\cU_\theta^k$ we know, that 
+$q_j\underset{\theta'}{\prec}q_l$, i.e.\ $e^{q_j(t^{-1})-q_l(t^{-1})}$ is flat
+at $0$ in a neighbourhood of the direction $\theta'$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Step 2.c}
-The system $[A^0,A^0]$ is explicitly given by
-\[
-  \frac{dF}{dt}=A^0F-FA^0
-\]
-and thus, a solution is given by, \TODO{}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Step 2.d}
 Is induced by the inclusion \TODO{}
 
 
