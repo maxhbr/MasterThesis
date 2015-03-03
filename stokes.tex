@@ -198,7 +198,7 @@ corresponding cocycles define the same cohomology class.
 This defines a mapping of pointed sets to the first non abelian cohomology of
 $\Lambda(A^0)$
 \[
-  \cH\to H^1(S^1;\Lambda(A^0)) \,,
+  \cH(A^0)\to H^1(S^1;\Lambda(A^0)) \,,
 \]
 which we call $\exp$.
 
@@ -459,9 +459,9 @@ relations:
           a_{jl}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{jl}}\right)}
           &=a_{jl}e^{-ik_{jl}\tilde\theta}e^{-in\pi}
           = \begin{cases}
-            a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0} 
+            a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}
               & \text{, if $n$ is even}
-          \\-a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{>0} 
+          \\-a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{>0}
               & \text{, if $n$ is uneven}
           \end{cases}
         \end{align*}
@@ -471,8 +471,8 @@ relations:
         $a_{lj}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{lj}}\right)}
         \in\R_{<0}$.
 
-        Thus, for $\tilde\theta'=\tilde\theta+n\frac{\pi}{k_{jl}}$ as
-        determination of $\theta'=\theta+n\frac{\pi}{k_{jl}}$, we have
+        Thus, for $\tilde\theta':=\tilde\theta+n\frac{\pi}{k_{jl}}$ as
+        determination of $\theta':=\theta+n\frac{\pi}{k_{jl}}$, we have
         \begin{itemize}
           \item $q_j \underset{\tilde\theta',\max}{\prec} q_l$ when $n$ is even
             or
@@ -488,8 +488,7 @@ relations:
   \end{s-rem}
 \end{defn}
 
-\begin{defn}
-  \label{defn:antiStokesDir}
+\begin{defn}\label{defn:antiStokesDir}
   % \marginnote{See \cite[Def.I.4.5]{Loday1994}(for the ramified case)
   %   \cite[Def.3.2]{boalch}}
   \begin{enumerate}
@@ -573,7 +572,7 @@ For every determination $\tilde\theta$ of $\theta$ we denote by
 $\cY_{0,\tilde\theta}$ the function defined by $\cY_0$ with that determination of
 the argument near the direction $\theta$.
 
-\begin{prop} \label{prop:representation}
+\begin{prop}\label{prop:representation}
   \marginnote{\cite[Def.I.4.7]{Loday1994}\\\cite[78f]{Loday2014}}
   In this situation the morphism
   \begin{align*}
@@ -980,7 +979,7 @@ as a corollary.
       $\Sto_\theta(A^0)$.
   \end{itemize}
   \begin{s-rem}
-    The set of all Stokes cocycles can be identified with 
+    The set of all Stokes cocycles can be identified with
     $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$.
   \end{s-rem}
 \end{defn}
@@ -1030,18 +1029,19 @@ get the following corollary.
     \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
   \]
   and thus has complex dimension \TODO{}
-  \begin{s-rem}
-    \TODO[Move to the main theorem?]
-    The representation as $\prod_{\alpha\in\A}\SSto_\alpha(A^0)$ has some bad
-    properties, when small deformations are applied to $[A^0]$, since under
-    arbitrary small changes, one Stokes ray can split into two. Boalch
-    (cf.~\cite{boalch,thboalch}) solves this in the single-leveled case by
-    \rewrite{calling our Stokes matrices Stokes factors} and introducing new
-    Stokes matrices which are build by the product of consecutive Stokes
-    factors. He uses the rotational symmetry of the single-leveled case thus
-    his method is not simply applicable to the multi-leveled case.
-  \end{s-rem}
 \end{cor}
+\begin{rem}
+  \TODO[Move to the main theorem?]
+  The set $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ and thus
+  $\prod_{\alpha\in\A}\SSto_\alpha(A^0)$ has some bad properties, when small
+  deformations are applied to $[A^0]$, since under arbitrary small changes, one
+  Stokes ray can split into two. Boalch (cf.~\cite{boalch,thboalch}) solves
+  this in the single-leveled case by \rewrite{calling our Stokes matrices
+  Stokes factors} and introducing new Stokes matrices which are build by the
+  product of consecutive Stokes factors. He uses the rotational symmetry of the
+  single-leveled case thus this approach is not simply applicable to the
+  multi-leveled case.
+\end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Proof}\label{sec:proofOfMatrixThm}
@@ -1370,7 +1370,7 @@ This means that
   \end{enumerate}
   \TODO{}
 \end{proof}
-\begin{defn}
+\begin{defn}\label{defn:theMapTau}
   Define the injective map
   \begin{align*}
     \tau^k:\Gamma(\dot\cU^k;\Lambda^k(A^0)) &\to \Gamma(\dot\cU;\Lambda(A^0))
@@ -1461,7 +1461,7 @@ theorem~\ref{thm:mainThm2} by composition of bijective maps.
 \begin{proof}[Proof of theorem~\ref{thm:mainThm2}]
   Let $i_\theta:\Sto_\theta(A^0)\to\prod_{k\in\cK}\Sto_\theta^k(A^0)$ be the
   map which corresponds to the filtration from
-  proposition~\ref{prop:filtrationOfStokesGroup} and 
+  proposition~\ref{prop:filtrationOfStokesGroup} and
   denote the composition
   \[ \begin{tikzcd}[column sep=1.8cm,row sep=0]
       \displaystyle \prod_{\theta\in\cA}\Sto_\theta(A^0)

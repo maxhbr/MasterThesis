@@ -82,7 +82,7 @@ A meromorphic connection is then defined as follows.
     Some authors use the factors $k_i$ of the divisor $Z$ to limit the pole
     orders at the points $a_i$. Since we do not need this restriction, we allow
     arbitrary pole orders. Denoted is this by the $*$ in $\Omega_M^1(*Z)$.
-    a definition of $\cO_M(*Z)$ can be found
+    A definition of $\cO_M(*Z)$ can be found
     in~\cite[Sec.0.8]{sabbah2007isomonodromic} and $\Omega_M^1(*Z)$ is then
     defined as
     \[
@@ -149,7 +149,7 @@ A meromorphic connection is then defined as follows.
 \end{comment}
 We will usually\TODO[only?] be interested in local information of a meromorphic
 connection.  This means, that we look at a connection in a neighbourhood of $0$
-and allow only one singularity at $0$.
+\rewrite{and allow only one singularity at $0$}.
 There are many ways of expressing the local information, we will either talk
 about germs of meromorphic connections or systems, which are coordinate-
 and trivialization-dependent.
@@ -684,7 +684,7 @@ along the path $\gamma$}.
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Formal classification}
+\section{Formal classification}\label{sec:formalClassification}
 \marginnote{\cite[Thm.4.3.1]{Loday2014}}
 In every formal equivalence class of meromorphic connections, there are some
 meromorphic connection of special form, which we will call models. They are not
@@ -935,6 +935,14 @@ fundamental solution in the form $\hat F\cY$.
   \]
   where $\hat F$ is a solution of $[A^0,A]$.
 \end{cor}
+\begin{rem}
+  We will see in lemma~\ref{lem:formSolToMat} that the matrix
+  \[
+    A={}^{\hat F}\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)
+  \]
+  defines a system $[A]$ which has $\hat F t^L e^{Q(t^{-1})}$ as fundamental
+  solution.
+\end{rem}
 
 \begin{rem}
   Let $[A^0]$ be a normal form with normal solution
@@ -943,9 +951,8 @@ fundamental solution in the form $\hat F\cY$.
     \item In the unramified case are \rewrite{the $q_i(t^{-1})$ the
       $\phi_i(t)$} from definition~\ref{defn:model}.
       \TODO[Why/realy?]
-    \item In the unramified case
-      $[Q,L]=0$, i.e.\ $Q$ and $L$ commute and $L$
-      can be supposed in Jordan form (cf.  \cite[Sec.4]{Martinet1991}).
+    \item In the unramified case $Q$ and $L$ commute thus $L$ can be supposed
+      in Jordan form (cf.  \cite[Sec.4]{Martinet1991}).
     \item It is always possible to permutate the columns of a fundamental
       solution by
       \[
@@ -1004,6 +1011,7 @@ Look at the situation, where $A$ is via $\hat F$ formally equivalent to $A^0$.
 \end{defn}
 The main asymptotic existence theorem states
 \begin{thm}[M.E.A.T]\label{thm:meat}
+  \marginnote{\cite[Thm.3.1]{boalch}}
   To every arc $I\subsetneq S^1$ there exists to every $\hat F\in G(\!(t)\!)$ a
   lift $F$ on $I$.
 \end{thm}
@@ -1069,10 +1077,13 @@ becomes the following.
 We want to understand the Set
 $\bigg\{\Big[(\cM,\nabla)\Big]\bigg\}$ of the (convergent)
 isomorphism classes of all meromorphic connections. Since we have also the
-formal classification and we know, that all elements in a convergent
-isomorphism class lie in the same formal isomorphism class, we can reduce the
-problem by fixing a model $(\cM^{nf},\nabla^{nf})$ with the corresponding
-normal form $A^0$. Thus we can restrict ourself to the subset
+formal classification (cf.\ section~\ref{sec:formalClassification}) and we
+know, that all elements in a convergent isomorphism class lie in the same
+formal isomorphism class, i.e.\ the convergent classification is
+\rewrite{finer} than the formal classification, we can reduce the problem by
+fixing a model $(\cM^{nf},\nabla^{nf})$ with the corresponding normal form
+$A^0$.
+\rewrite{Thus we can} restrict ourself to the subset
 \begin{multline*}
   {}^0C(\cM^{nf},\nabla^{nf})=\bigg\{
     \Big[(\cM,\nabla)\Big]

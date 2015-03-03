@@ -308,7 +308,7 @@ $f\sim_{\mathfrak{s}}\hat f$ (or $f\sim_{I}\hat f$, or $f\sim_{\theta}\hat f$).
       \end{s-rem}
     \item Define $\cA(a,b)\!\!\overset{(a,b)=I}{=}\!\!\cA(I)$
       as the limit $\underset{r\to0}{\underrightarrow{\lim}}
-      \cA(\mathfrak{s}_{a,b}(r))$\footnote{In more detail this means that the
+      \cA(\mathfrak{s}_{a,b}(r))$\footnote{In more detail: the
         elements of $\cA(a,b)$ are pairs $(f,\mathfrak{s}_{a,b}(r))$ mit
         $f\in\cA(\mathfrak{s}_{a,b}(r))$. The equivalence relation is given by
         $(f_1,\mathfrak{s}_{a,b}(r_1))\sim(f_2,\mathfrak{s}_{a,b}(r_2))$ if
@@ -339,7 +339,7 @@ It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
       to zero at $0$.
   \end{itemize}
 \end{defn}
-The kernel $\cA^{<0}(I)$ is not zero.
+The kernel $\cA^{<0}(I)$ is not zero in general.
 Let $I=\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, then $\cA^{<0}(I)$ contains
 the element $e^{-\frac{1}{\sqrt{t}}}$ where $\sqrt{t}$ stands for the principal
 determination of $x^{\frac{1}{2}}$.
@@ -454,7 +454,7 @@ The most important theorem here is the Borel-Ritt lemma.
   \label{thm:borel-ritt}
   Let $I$ be an open arc with a opening less than $2\pi$. Then the Taylor map
   \[
-    T_{I}:\cA(I)\to\C(\!(t)\!)
+    T_{I}:\cA(I)\twoheadrightarrow\C(\!(t)\!)
   \]
   is onto.
   \TODO[Arcs on the universal cover of opening $>2\pi$?]
@@ -471,7 +471,7 @@ The most important theorem here is the Borel-Ritt lemma.
 \end{thm}
 There are multiple approaches to obtain a function $f\in\cA(I)$ asymptotic to a
 given function $\hat f\in\C(\!(t)\!)$ in a canonical way. For example
-(multi-)multisummability which is detailed described in~\cite{Loday2014}.
+(multi-)multisummability which is in depth described in~\cite{Loday2014}.
 \begin{proof}[Proof of thm~\ref{thm:borel-ritt}]
   Let $I:=(-\pi,\pi)$ and $R\in\R_{>0}$.
   We will prove this for the sector

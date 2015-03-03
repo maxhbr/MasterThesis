@@ -673,32 +673,32 @@ our simple example sketched in the figure~\ref{fig:adequateCovering}.
 
 \paragraph{Fix the exponent of formal monodromy}
 We then construct the connection matrix by
-% \begin{paracol}{2}\sloppy
-% \switchcolumn[0]\noindent
-  \[
-    A^0=Q'(t^{-1})+L\frac{1}{t} \in G(\!\{t\}\!)
-  \]
-% \switchcolumn[1]\noindent
-%   \[
-%     \textcolor{red}{\text{or~}A^0=dQ(t^{-1})+L\frac{dt}{d}}
-%   \]
-% \end{paracol}
+\[
+  A^0:=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t} \in G(\!\{t\}\!)
+\]
 where $Q(t^{-1})=\diag(q_1(t^{-1}),q_2(t^{-1}),\dots,q_n(t^{-1}))$ and $L$ is
-constant diagonal and invertible.
+constant and invertible. If we assume that $L$ is diagonal, we use the
+commutation of diagonal matrices to write $A^0:=Q'(t^{-1})+L\frac{1}{t}$.
 
-\begin{lem}
+\begin{lem}\label{lem:formSolToMat}
   \marginnote{\cite[4f]{thboalch}}
   \TODO[move to fund-sol-defn]
   The matrix
   \[
-    \cY_0:=t^Le^{Q(t^{-1})}=\diag\left(
-      t^{L_{1,1}}e^{q_1(t^{-1})},
-      t^{L_{2,2}}e^{q_2(t^{-1})},\dots,
-      t^{L_{n,n}}e^{q_n(t^{-1})}
-    \right) \,,
+    \cY_0:=t^Le^{Q(t^{-1})}
   \]
-  where $L_{j,j}$ denotes the \rewrite{$j$'th} diagonal element of $L$, is then
-  a fundamental solution of the system $[A^0]$.
+  is a fundamental solution of the system $[A^0]$.
+  \begin{s-rem}
+    If we assume that $L$ is diagonal, we can write
+    \[
+      \cY_0 =\diag\left(
+        t^{L_{1,1}}e^{q_1(t^{-1})},
+        t^{L_{2,2}}e^{q_2(t^{-1})},\dots,
+        t^{L_{n,n}}e^{q_n(t^{-1})}
+      \right) \,,
+    \]
+    where $L_{j,j}$ denotes the \rewrite{$j$'th} diagonal element of $L$.
+  \end{s-rem}
 \end{lem}
 \begin{proof}
   It is sufficient to show that $\cY\in G(\!\{t\}\!)$, i.e.\ is invertible, and
@@ -724,18 +724,17 @@ constant diagonal and invertible.
       =L\frac{1}{t}t^L \,.
     \end{align*}
   \end{comment}
-  Since we are dealing with diagonal matrices it is easy to see, that
+  It is easy to see, that
   $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$ and
-  $\frac{d}{dt}t^L=L\frac{1}{t}t^L$.
-
-  Thus we can prove, that $\cY_0$ is a matrix consisting of solutions:
+  $\frac{d}{dt}t^L=L\frac{1}{t}t^L$, thus we can prove, that $\cY_0$ is a
+  matrix consisting of solutions:
   \begin{align*}
     \frac{d}{dt}\cY_0
     &=\frac{d}{dt}\left(t^Le^{Q(t^{-1})}\right)
   \\&=\frac{d}{dt}t^Le^{Q(t^{-1})}+t^L\frac{d}{dt}e^{Q(t^{-1})}
   \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+t^LQ'(t^{-1})e^{Q(t^{-1})}
-  \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+Q'(t^{-1})t^Le^{Q(t^{-1})}
-  \\&=\left(Q'(t^{-1})+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
+  % \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+Q'(t^{-1})t^Le^{Q(t^{-1})}
+  \\&=\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
   \\&=A^0\cY_0
   \end{align*}
   The inevitability condition is clear.
@@ -957,9 +956,9 @@ In fact, we have the following $9$ cases
 \end{center}
 In the \textcolor{blue!75!black}{blue} cases we have $\cK_\theta=\cK$ and
 $\C^3\cong\SSto_\theta(A^0)$.
-In the \textcolor{green!75!black}{green} cases $\cK_\theta=\{h_2\}$ and
+In the \textcolor{green!75!black}{green} cases $\cK_\theta=\{k_2\}$ and
 $\C^2\cong\SSto_\theta(A^0)$ as well as in the
-\textcolor{purple!75!black}{purple} cases $\cK_\theta=\{h_1\}$ and
+\textcolor{purple!75!black}{purple} cases $\cK_\theta=\{k_1\}$ and
 $\C^1\cong\SSto_\theta(A^0)$.
 
 \begin{comment}
@@ -1274,9 +1273,9 @@ The sections of $\Lambda(A^0)$ are the flat isotropies (cf.\
 definition~\ref{defn:StokesSheaf}). The isotropy property for a stokes germ
 $\phi_\theta$ is in our case clear, since a constant matrix conjugated by a
 fundamental solution of $A^0$ is a solution of $[A^0,A^0]$. This property
-\rewrite{is preserved, when} we extend from the germ $\phi_\theta$ to the
-section $f_\theta\in\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$. From the theory
-of differential equations, we know, that \rewrite{this extension is unique}.
+\rewrite{is preserved, when} we extend the germ $\phi_\theta^k$ to the section
+$f_\theta^k\in\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$. From the theory of
+differential equations, we know, that \rewrite{this extension is unique}.
 \begin{comment}
   The system $[A^0,A^0]$ is explicitly given by
   \[
@@ -1312,10 +1311,10 @@ of differential equations, we know, that \rewrite{this extension is unique}.
   \end{align*}
   which is trivial.
 \end{comment}
-The flatness property of an section $f_\theta$,
-i.e.\ $f_\theta\sim_{\mathfrak{s}_{\cU_\theta^k}}1$, is equivalent to
+The flatness property of an section $f_\theta^k$,
+i.e.\ $f_\theta^k\sim_{\mathfrak{s}_{\cU_\theta^k}}1$, is equivalent to
 \[
-  \left(f_\theta\right)_{j,l}\sim_{\mathfrak{s}_{\cU_\theta^k}}
+  \left(f_\theta^k\right)_{j,l}\sim_{\mathfrak{s}_{\cU_\theta^k}}
   \begin{cases}
     1 & \text{,~if~} j=l
   \\0 & \text{,~if~} j\neq l
@@ -1340,6 +1339,19 @@ at $0$ in a neighbourhood of the direction $\theta'$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Step 2.c}
-Is induced by the inclusion \TODO{}
-
-
+The map $\cT$ is induced by the map
+$\tau:\prod_{k\in\cK}\Gamma(\dot \cU^k;\Lambda^k(A^0))
+\to\Gamma(\dot\cU;\Lambda(A^0))$ (cf.\ definition~\ref{defn:theMapTau}).
+\begin{comment}
+  For every $\theta\in\A$,
+  \begin{align*}
+    \tau_\theta:
+    \prod_{k\in\cK_\theta}\Gamma(\dot \cU^k;\Lambda^k(A^0))
+    &\to\Gamma(\dot\cU_\theta;\Lambda(A^0))
+  \\(f_\theta^{k})&\mapsto f_{\theta|\dot\cU_\theta}^{k}
+    &&\text{,~if~} \cK_\theta=\{k\}
+  \\(f_\theta^{k_1},f_\theta^{k_2})&\mapsto
+    f_{\theta|\dot\cU_\theta}^{k_1}\cdot f_{\theta|\dot\cU_\theta}^{k_2}
+    &&\text{,~if~} \cK_\theta=\{k_1,h_2\}
+  \end{align*}
+\end{comment}
