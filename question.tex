@@ -42,8 +42,9 @@ different levels is stored.
 \end{paracol}
 \egroup
 In the step one, we will associate to an ambassador $\hat F$ in
-$G\backslash\hat G(A^0)$ an element $(\phi_{\theta_1},\dots,\phi_{\theta_\nu})$
-in $\prod_{\theta\in\cA}\Sto_\theta(A^0)$. We will also discuss \TODO[\dots]
+$G\backslash\hat G(A^0)$ the corresponding element
+$(\phi_{\theta_1},\dots,\phi_{\theta_\nu})$ in
+$\prod_{\theta\in\cA}\Sto_\theta(A^0)$. \TODO[We will also discuss \dots]
 
 \rewrite{In the second step, we will} map
 $(\phi_{\theta_1},\dots,\phi_{\theta_\nu})$ via the isomorphism $h$ from
@@ -508,13 +509,8 @@ such that
     i.e.\ $\cK_{\theta_0}=\cK$.
 \end{enumerate}
 Let $l_j:=\deg(q_j)$ and use the notations from
-definition~\ref{defn:determiningPolysOfEndA}, e.g.\
-\begin{itemize}
-  \item the leading factor $a_{jl}\in\C\backslash\{0\}$,
-  \item the leading coefficient $\frac{a_{jl}}{t^{k_{jl}}}=q_{jl}(t^{-1})$ and
-  \item the degree $k_{jl}$
-\end{itemize}
-of $q_j-q_l\in\cQ_{[\End A^0]}$.
+definition~\ref{defn:determiningPolysOfEndA}, e.g.\ the degree $k_{jl}$ of
+$q_j-q_l\in\cQ_{[\End A^0]}$.
 \begin{rem}
   In this situation we know, that:
   \begin{enumerate}
@@ -534,19 +530,16 @@ of $q_j-q_l\in\cQ_{[\End A^0]}$.
       \]
   \end{enumerate}
 \end{rem}
-To keep the example as small as possible, we will choose $n=3$ and
-\begin{itemize}
-  \item $l_1=7$, $l_2=2$ and $l_3=0$
-    \begin{comment}
-      In the $\cK=\{2,7\}$ case is
-      \[
-        \cU^{k_2}=\cU^{\leq k_2}=\cU^{\leq k_1}
-      \]
-    \end{comment}
-    or
-  \item $l_1=11$, $l_2=5$ and $l_3=0$,
-  \item \textbf{\boldmath$l_1=10$, $l_2=7$ and $l_3=0$}.
-\end{itemize}
+To keep the example as small as possible, we will choose $n=3$ and assume, that
+all determining polynomials have different leading coefficients.
+\begin{comment}
+  \begin{itemize}
+    \item $l_1=7$, $l_2=2$ and $l_3=0$\TODO[In the $\cK=\{2,7\}$ case is
+        $\cU^{k_2}=\cU^{\leq k_2}=\cU^{\leq k_1}$],
+    \item $l_1=11$, $l_2=5$ and $l_3=0$ or
+    \item \textbf{\boldmath$l_1=10$, $l_2=7$ and $l_3=0$}.
+  \end{itemize}
+\end{comment}
 We will \rewrite{choose without restriction} $\theta_0=0$.
 The adequate coverings, defined in section~\ref{sec:proofOfMatrixThm}, are for
 our simple example sketched in the figure~\ref{fig:adequateCovering}.
@@ -672,36 +665,37 @@ our simple example sketched in the figure~\ref{fig:adequateCovering}.
 \end{figure}%}}}
 
 \paragraph{Fix the exponent of formal monodromy}
+The information of formal monodromy is given by an invertible constant matrix
+$L\in G$.
 We then construct the connection matrix by
 \[
   A^0:=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t} \in G(\!\{t\}\!)
 \]
-where $Q(t^{-1})=\diag(q_1(t^{-1}),q_2(t^{-1}),\dots,q_n(t^{-1}))$ and $L$ is
-constant and invertible. If we assume that $L$ is diagonal, we use the
-commutation of diagonal matrices to write $A^0:=Q'(t^{-1})+L\frac{1}{t}$.
+where $Q(t^{-1})=\diag(q_1(t^{-1}),q_2(t^{-1}),\dots,q_n(t^{-1}))$.
+If we assume that $L$ is diagonal, we can use the commutation of diagonal
+matrices to write $A^0:=Q'(t^{-1})+L\frac{1}{t}$.
 
 \begin{lem}\label{lem:formSolToMat}
   \marginnote{\cite[4f]{thboalch}}
+  The matrix $\cY_0:=t^Le^{Q(t^{-1})}$ is a fundamental solution of the system
+  $[A^0]$.
   \TODO[move to fund-sol-defn]
-  The matrix
-  \[
-    \cY_0:=t^Le^{Q(t^{-1})}
-  \]
-  is a fundamental solution of the system $[A^0]$.
-  \begin{s-rem}
-    If we assume that $L$ is diagonal, we can write
-    \[
-      \cY_0 =\diag\left(
-        t^{L_{1,1}}e^{q_1(t^{-1})},
-        t^{L_{2,2}}e^{q_2(t^{-1})},\dots,
-        t^{L_{n,n}}e^{q_n(t^{-1})}
-      \right) \,,
-    \]
-    where $L_{j,j}$ denotes the \rewrite{$j$'th} diagonal element of $L$.
-  \end{s-rem}
+  \begin{comment}
+    \begin{s-rem}
+      If we assume that $L$ is diagonal, we can write
+      \[
+        \cY_0 =\diag\left(
+          t^{L_{1,1}}e^{q_1(t^{-1})},
+          t^{L_{2,2}}e^{q_2(t^{-1})},\dots,
+          t^{L_{n,n}}e^{q_n(t^{-1})}
+        \right) \,,
+      \]
+      where $L_{j,j}$ denotes the \rewrite{$j$'th} diagonal element of $L$.
+    \end{s-rem}
+  \end{comment}
 \end{lem}
 \begin{proof}
-  It is sufficient to show that $\cY\in G(\!\{t\}\!)$, i.e.\ is invertible, and
+  It is sufficient to show that $\cY\in G(\!\{t\}\!)$, i.e.\ is invertible and
   that its columns are solutions.
 
   \begin{comment}
@@ -737,25 +731,8 @@ commutation of diagonal matrices to write $A^0:=Q'(t^{-1})+L\frac{1}{t}$.
   \\&=\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
   \\&=A^0\cY_0
   \end{align*}
-  The inevitability condition is clear.
+  The invertability condition is clear.
 \end{proof}
-\begin{comment}
-  \begin{rem}
-    The matrix
-    \[
-      \bar\cY_0:=
-      \begin{pmatrix}
-        t^{L_{1,1}}e^{q_1(t^{-1})} & 0 & 0 &\cdots
-      \\t^{L_{2,2}}e^{q_2(t^{-1})} & t^{L_{2,2}}e^{q_2(t^{-1})} & 0 & \cdots
-      \\\vdots & & \ddots
-      \\t^{L_{n,n}}e^{q_n(t^{-1})} & \cdots&\cdots & t^{L_{n,n}}e^{q_n(t^{-1})}
-      \end{pmatrix}
-    \]
-    is also a fundamental solution.
-    In fact is every matrix $\cY_0\cdot B$ with $B\in\G$ another fundamental
-    solution.
-  \end{rem}
-\end{comment}
 
 \paragraph{Fix the formal transformation}
 Choose a formal transformation $\hat F\in\hat G(A^0)$, i.e.\ an ambassador of
@@ -778,17 +755,13 @@ where $\hat F_j\in\hat G(A^0)$ is
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Step 1: Find corresponding element in
   $\prod_{\theta\in\A}\Sto_\theta(A^0)$}
+\begin{comment}
+  \textbf{summability:}
+  \cite[III.2]{Loday1994} \cite[78f]{Loday2014} (\cite[9]{thboalch} only
+  mentions multisummability)
+\end{comment}
 Fix a set of determinations $\tilde\theta_1,\dots,\tilde\theta_\nu$ of
 $\theta_1 ,\dots,\theta_\nu$.
-\begin{comment}
-  needs \textbf{summability}?
-  \begin{itemize}
-    \item \cite[9]{thboalch} (only mentions multisummability)
-    \item \cite[III.2]{Loday1994}
-    \item \cite{Loday2014}
-  \end{itemize}
-\end{comment}
-
 An element in $\prod_{\theta\in\A}\Sto_\theta(A^0)$ corresponding to $\hat F$
 is found as
 \[
@@ -800,24 +773,29 @@ by setting $\phi_\theta:=
 (cf.\ definition~\ref{defn:sumsLeftRight}).
 \begin{comment}
   \begin{rem}
+    \marginnote{\cite[Defn.3.6]{boalch}}
+    $S^+_\theta(\hat F)t^Le^{Q(t^{-1})}$ is 
+    $\left\{\substack{\text{a}\\\text{the canonical}}\right\}$ fundamental
+    solution of $[A]$ on the corresponding sector.
+    \TODO[ or $S^-_\theta(\hat F)t^Le^{Q(t^{-1})}$?  or
+      $t^Le^{Q(t^{-1})}S^+_\theta(\hat F)$?  or
+    $t^Le^{Q(t^{-1})}S^-_\theta(\hat F)$?]
+  \end{rem}
+\end{comment}
+\begin{comment}
+  \begin{rem}
     \TODO[Move to sec:Multisummability? Rewrite!]
     For each $\theta\in\A$ is $\phi_\theta$
     \begin{enumerate}
-      \item flat, since
-        \begin{align*}
-          \hat\phi_\theta
-          &=\hat{\left(F_\theta^+\right)̂^{̀-1}}\hat{F_\theta^-}
-        \\&=\hat{F}^{̀-1}\hat{F}
-        \\&=\id
-        \end{align*}
+      \item flat, since $\hat\phi_\theta
+           =\hat{\left(F_\theta^+\right)̂^{̀-1}}\hat{F_\theta^-}
+           =\hat{F}^{̀-1}\hat{F}=\id$
       \item an isotropy, since
-        \begin{align*}
-          {}^{\phi_\theta}\!A^0
-          &= {}^{\left(F_\theta^+\right)̂^{̀-1}F_\theta^-}\!A^0
-        \\&= {}^{\left(F_\theta^+\right)̂^{̀-1}}\!\left({}^{F_\theta^-}\!A^0\right)
-        \\&\overset{\TODO{}}{=}{}^{\left(F_\theta^+\right)̂^{̀-1}}\!A^1
-        \\&\overset{\TODO{}}{=}A^0
-        \end{align*}
+          ${}^{\phi_\theta}\!A^0
+           = {}^{\left(F_\theta^+\right)̂^{̀-1}F_\theta^-}\!A^0
+           = {}^{\left(F_\theta^+\right)̂^{̀-1}}\!\left({}^{F_\theta^-}\!A^0\right)
+           \overset{\TODO{}}{=}{}^{\left(F_\theta^+\right)̂^{̀-1}}\!A^1
+           \overset{\TODO{}}{=}A^0$
         % \begin{commentOUT}
         %   \begin{align*}
         %     {}^{\phi_\theta}\!A^0
@@ -864,58 +842,63 @@ via
 which depends on the determination $\tilde\theta$ of $\theta$ \TODO[is this
 dependency only important, in the ramified case?]
 (cf.\ proposition~\ref{prop:representation}).
-\begin{comment}
-  \begin{rem}
-    Since the normal solution $t^{L}e^{Q(t^{-1})}$ is diagonal in our case,
-    does the Stokes germ in $\Sto_\theta(A^0)$ also have the zeros of
-    $C_{\cY_{0,\tilde\theta}}$.
-  \end{rem}
-\end{comment}
 
-We know the following about the structure of elements in $\SSto_\theta(A^0)$
-defined in definition~\ref{defn:groupOfFaithfullReps}:
-\begin{einr}
-  if, for example, $q_1 \underset{\theta,\max}{\prec} q_2$ than has the
-  representation the form
+\begin{exmp}
+  Let $\theta\in\A$ be an anti Stokes direction.
+  From the definition of $\SSto_\theta(A^0)$ (cf.\
+  definition~\ref{defn:groupOfFaithfullReps}) we know that, if one has $q_1
+  \underset{\theta,\max}{\prec} q_2$, the representation has the form
   \[
     \begin{pmatrix}
-      1 & c_1 & \star
-    \\0 & 1 & \star
+      1 & \text{\boldmath$c_1$} & \star
+    \\\text{\boldmath$0$} & 1 & \star
     \\\star & \star & 1
-    \end{pmatrix}\in G
+    \end{pmatrix}
   \]
   where $c_j\in\C$ and $\star\in\C$.
-  In \textbf{our case}, we also know, that
-  \begin{einr}
-    $q_1 \underset{\theta,\max}{\prec} q_2$
-    \Leftrightarrow{}
-    $q_1 \underset{\theta,\max}{\prec} q_3$
-    \qquad and \qquad
-    $q_2 \underset{\theta,\max}{\prec} q_1$
-    \Leftrightarrow{}
-    $q_3 \underset{\theta,\max}{\prec} q_1$
-  \end{einr}
-  since the leading terms of $q_1-q_2$ and $q_1-q_3$ are equal. Thus the
-  representation has the \rewrite{form}
+  \begin{s-rem}
+    In our situation, we also know, that
+    \begin{einr}
+      $q_1 \underset{\theta,\max}{\prec} q_2$
+      \Leftrightarrow{}
+      $q_1 \underset{\theta,\max}{\prec} q_3$
+      \qquad \rewrite{respectively} \qquad
+      $q_2 \underset{\theta,\max}{\prec} q_1$
+      \Leftrightarrow{}
+      $q_3 \underset{\theta,\max}{\prec} q_1$
+    \end{einr}
+    since the leading terms of $q_1-q_2$ and $q_1-q_3$ are equal.
+  \end{s-rem}
+  Thus the representation has the \rewrite{form}
   \[
     \begin{pmatrix}
-      1 & c_1 & c_2
+      1 & c_1 & \text{\boldmath$c_2$}
     \\0 & 1 & \star
-    \\0 & \star & 1
-    \end{pmatrix}\in G\,.
+    \\\text{\boldmath$0$} & \star & 1
+    \end{pmatrix}\,.
   \]
   If we also know, that neither $q_2 \underset{\theta,\max}{\prec} q_3$ nor
   $q_3 \underset{\theta,\max}{\prec} q_2$ it has the \rewrite{form}
   \[
     \begin{pmatrix}
       1 & c_1 & c_2
-    \\0 & 1 & 0
-    \\0 & 0 & 1
-    \end{pmatrix}\in G\,.
+    \\0 & 1 & \text{\boldmath$0$}
+    \\0 & \text{\boldmath$0$} & 1
+    \end{pmatrix}\,.
   \]
   We also know, that every matrix of this \rewrite{form} is a representation to
   some Stokes germ.
-\end{einr}
+  Thus we have an isomorphism
+  \begin{align*}
+    \vartheta_\theta:\C^2 &\to \SSto_\theta(A^0)
+  \\(c_1,c_2)&\mapsto
+    \begin{pmatrix}
+      1 & c_1 & c_2
+    \\0 & 1 & 0
+    \\0 & 0 & 1
+    \end{pmatrix}
+  \end{align*}
+\end{exmp}
 In fact, we have the following $9$ cases
 \begin{center}
   \def\arraystretch{1.3}
@@ -955,165 +938,24 @@ In fact, we have the following $9$ cases
   \end{tabular}
 \end{center}
 In the \textcolor{blue!75!black}{blue} cases we have $\cK_\theta=\cK$ and
-$\C^3\cong\SSto_\theta(A^0)$.
+$\C^3\overset{\vartheta_\theta}{\underset{\cong}{\longrightarrow}}\SSto_\theta(A^0)$.
 In the \textcolor{green!75!black}{green} cases $\cK_\theta=\{k_2\}$ and
-$\C^2\cong\SSto_\theta(A^0)$ as well as in the
-\textcolor{purple!75!black}{purple} cases $\cK_\theta=\{k_1\}$ and
-$\C^1\cong\SSto_\theta(A^0)$.
-
-\begin{comment}
-  \begin{center}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}r|c}
-    % \begin{tabular}{c|c}
-    $\cK_\theta=\{k_1\}$
-    &
-      \begin{tabular}{c|c}
-        $q_2 \underset{\theta,\max}{\prec} q_3$
-        &
-        $q_3 \underset{\theta,\max}{\prec} q_2$
-        \tabularnewline
-        \hline
-      $\begin{pmatrix}
-        1 & 0 & 0
-      \\0 & 1 & c_1
-      \\0 & 0 & 1
-      \end{pmatrix}$
-      &
-      $\begin{pmatrix}
-        1 & 0 & 0
-      \\0 & 1 & 0
-      \\0 & c_1 & 1
-      \end{pmatrix}$\tabularnewline
-      \end{tabular}
-    \tabularnewline
-    \hline
-    $\cK_\theta=\{k_2\}$
-    &
-      \begin{tabular}{c|c}
-        $q_1 \underset{\theta,\max}{\prec} q_2$ and
-        $q_1 \underset{\theta,\max}{\prec} q_3$
-        &
-        $q_2 \underset{\theta,\max}{\prec} q_1$ and
-        $q_3 \underset{\theta,\max}{\prec} q_1$
-        \tabularnewline
-        \hline
-      $\begin{pmatrix}1 & c_1 & c_2\\
-        0 & 1 & 0\\
-        0 & 0 & 1
-      \end{pmatrix}$
-      &
-        $\begin{pmatrix}1 & 0 & 0\\
-        c_1 & 1 & 0\\
-        c_2 & 0 & 1
-      \end{pmatrix}$\tabularnewline
-      \end{tabular}
-    \tabularnewline
-    \hline
-    $\cK_\theta=\cK$
-    &
-      \begin{tabular}{c|c|c}
-        \multicolumn{1}{c|}{} &
-        $q_1 \underset{\theta,\max}{\prec} q_2$ and
-        $q_1 \underset{\theta,\max}{\prec} q_3$
-        &
-        $q_2 \underset{\theta,\max}{\prec} q_1$ and
-        $q_3 \underset{\theta,\max}{\prec} q_1$
-        \tabularnewline
-        \hline
-        $q_2 \underset{\theta,\max}{\prec} q_3$ &
-        $\begin{pmatrix}
-          1 & c_1 & c_2\\
-      0 & 1 & c_3\\
-      0 & 0 & 1
-      \end{pmatrix}$ &
-        $\begin{pmatrix}
-        1 & 0 & 0\\
-      c_1 & 1 & c_3\\
-      c_2 & 0 & 1
-      \end{pmatrix}$\tabularnewline
-      \hline
-      $q_3 \underset{\theta,\max}{\prec} q_2$ &
-      $\begin{pmatrix}
-        1 & c_1 & c_2\\
-        0 & 1 & 0\\
-        0 & c_3 & 1
-      \end{pmatrix}$ &
-        $\begin{pmatrix}
-          1 & 0 & 0\\
-        c_1 & 1 & 0\\
-        c_2 & c_3 & 1
-      \end{pmatrix}$\tabularnewline
-      \end{tabular}
-    \end{tabular*}
-  \end{center}
-\end{comment}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{What follows for the Stokes germs $\phi_\theta$?}
-Look as an example at an anti-Stokes direction $\theta$ where
-\begin{itemize}
-  \item $\cK_{\theta}=\cK$,
-  \item $q_1 \underset{\theta,\max}{\prec} q_2$,
-    $q_1 \underset{\theta,\max}{\prec} q_3$ and
-  \item $q_3 \underset{\theta,\max}{\prec} q_2$.
-\end{itemize}
-We then have an isomorphism
-\begin{align*}
-  \C^3 &\overset\cong\longrightarrow \SSto_\theta(A^0)
-\\(c_1,c_2,c_3) &\longmapsto
-  \begin{pmatrix}
-    1     & c_1 & c_2
-  \\0     & 1     & 0
-  \\0     & c_3 & 1
-  \end{pmatrix}
-\end{align*}
-which, concatenated with $\rho_{\tilde\theta}^{-1}$, yields for every
-determination $\tilde\theta$ of $\theta$ an isomorphism
-\[
-  \C^3\to\Sto_\theta(A^0)
-\]
-given by
-\begin{align*}
-  (c_1,c_2,c_3) &\mapsto
-  t^{L}e^{Q(t^{-1})}
-  \begin{pmatrix}
-    1     & c_1 & c_2
-  \\0     & 1     & 0
-  \\0     & c_3 & 1
-  \end{pmatrix}
-  e^{-Q(t^{-1})}t^{-L}
-\\&=
-  \begin{pmatrix}
-    1
-    & t^{L_{1,1}}e^{q_1(t^{-1})}c_1 e^{-q_2(t^{-1})}t^{-L_{2,2}}
-    & t^{L_{1,1}}e^{q_1(t^{-1})}c_2 e^{-q_3(t^{-1})}t^{-L_{3,3}}
-    \\0     & 1     & 0
-    \\0
-    & t^{L_{3,3}}e^{q_3(t^{-1})}c_3 e^{-q_2(t^{-1})}t^{-L_{2,2}}
-    & 1
-  \end{pmatrix}
-\\&=
-  \begin{pmatrix}
-    1
-    & c_1 t^{L_{1,1}-L_{2,2}}e^{q_1(t^{-1})-q_2(t^{-1})}
-    & c_2 t^{L_{1,1}-L_{3,3}}e^{q_1(t^{-1})-q_3(t^{-1})}
-    \\0     & 1     & 0
-    \\0
-    & c_3 t^{L_{3,3}-L_{2,2}}e^{q_3(t^{-1})-q_2(t^{-1})}
-    & 1
-  \end{pmatrix}
-  \in\Sto_\theta(A^0)
-\end{align*}
-
+$\C^2\overset{\vartheta_\theta}{\underset{\cong}{\longrightarrow}}\SSto_\theta(A^0)$ as
+well as in the \textcolor{purple!75!black}{purple} cases $\cK_\theta=\{k_1\}$
+and $\C^1\overset{\vartheta_\theta}{\underset{\cong}{\longrightarrow}}\SSto_\theta(A^0)$.
+Thus, for every $\theta\in\A$, we have an isomorphism
+$\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta$.
 \begin{prop}
-  \TODO{}
+  Fix for every $\theta\in\A$ a determination $\tilde\theta$.
+  By taking the product of all $\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta$
+  we obtain the isomorphism
   \[
+    \prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta:
     \C^{2\cdot k_2 + k_1}
     \overset\cong\longrightarrow
-    \prod_{\theta\in\A}\Sto_\theta(A^0)
+    \prod_{\theta\in\A}\Sto_\theta(A^0) \,.
   \]
 \end{prop}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Step 2: The image in $\St(A^0)$}
@@ -1171,72 +1013,76 @@ where $\phi_\theta^{k_1}\in\Sto_\theta^{k_1}(A^0)=\Sto_\theta^{<k_2}(A^0)$,
 $\phi_\theta^{k_2}\in\Sto_\theta^{k_2}(A^0)$  and $i_\theta$ is the map, wich
 gives the factors of this factorization in ascending order.
 
-Look at the example
-\[
-  \phi_\theta=
-  t^{L}e^{Q(t^{-1})}
-  \begin{pmatrix}
-    1 & 0 & 0
-  \\c_1 & 1 & 0
-  \\c_2 & c_3 & 1
-  \end{pmatrix}
-  e^{-Q(t^{-1})}t^{-L} \,.
-\]
-According to remark~\ref{rem:algFactorization} the factor $\phi_\theta^{k_1}$,
-generated by the $k_1$-germs, is given by
-\[
-  \phi_\theta^{k_1}=
-  t^{L}e^{Q(t^{-1})}
-  \begin{pmatrix}
-    1 & 0 & 0
-  \\\text{\boldmath $0$} & 1 & 0
-  \\\text{\boldmath $0$} & c_3 & 1
-  \end{pmatrix}
-  e^{-Q(t^{-1})}t^{-L} \,.
-\]
-The other factor $\phi_\theta^{k_2}$ is then obtained as
-\begin{align*}
-  \phi_\theta^{k_2}&=
-  \left(\phi_\theta^{k_1}\right)^{-1}
-  \phi_\theta^{k_2}
-\\&=t^{L}e^{Q(t^{-1})}
-  \begin{pmatrix}
-    1     & 0    & 0
-  \\0     & 1    & 0
-  \\0     & c_3 & 1
-  \end{pmatrix}^{-1}
-  \underset{=\id}{\underbrace{%
-      e^{-Q(t^{-1})}t^{-L}
-      t^{L}e^{Q(t^{-1})}
-  }}
-  \begin{pmatrix}
-    1     & 0 & 0
-  \\c_1     & 1     & 0
-  \\c_2     & c_3 & 1
-  \end{pmatrix}
-  e^{-Q(t^{-1})}t^{-L}
-\\&=t^{L}e^{Q(t^{-1})}
-  \begin{pmatrix}
-    1     & 0    & 0
-  \\0     & 1    & 0
-  \\0     & -c_3 & 1
-  \end{pmatrix}
-  \begin{pmatrix}
-    1     & 0 & 0
-  \\c_1     & 1     & 0
-  \\c_2     & c_3 & 1
-  \end{pmatrix}
-  e^{-Q(t^{-1})}t^{-L}
-\\&=t^{L}e^{Q(t^{-1})}
-  \begin{pmatrix}
-    1     & 0 & 0
-  \\c_1     & 1          & 0
-  \\c_2-c_1c_3     & 0          & 1
-  \end{pmatrix}
-  e^{-Q(t^{-1})}t^{-L}
-  \,.
-\end{align*}
-The four interesting cases are
+\begin{exmp}
+  Look at the example
+  \[
+    \vartheta_\theta(c_1,c_2,c_3)=
+    t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1 & 0 & 0
+    \\c_1 & 1 & 0
+    \\c_2 & c_3 & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L}
+    =\phi_\theta
+    \,.
+  \]
+  According to remark~\ref{rem:algFactorization} the factor
+  $\phi_\theta^{k_1}$, generated by the $k_1$-germs, is given by
+  \[
+    \phi_\theta^{k_1}=
+    t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1 & 0 & 0
+    \\\text{\boldmath $0$} & 1 & 0
+    \\\text{\boldmath $0$} & c_3 & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L} \,.
+  \]
+  The other factor $\phi_\theta^{k_2}$ is then obtained as
+  \begin{align*}
+    \phi_\theta^{k_2}&=
+    \left(\phi_\theta^{k_1}\right)^{-1}
+    \phi_\theta^{k_2}
+  \\&=t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1     & 0    & 0
+    \\0     & 1    & 0
+    \\0     & c_3 & 1
+    \end{pmatrix}^{-1}
+    \underset{=\id}{\underbrace{%
+        e^{-Q(t^{-1})}t^{-L}
+        t^{L}e^{Q(t^{-1})}
+    }}
+    \begin{pmatrix}
+      1     & 0 & 0
+    \\c_1     & 1     & 0
+    \\c_2     & c_3 & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L}
+  \\&=t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1     & 0    & 0
+    \\0     & 1    & 0
+    \\0     & -c_3 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1     & 0 & 0
+    \\c_1     & 1     & 0
+    \\c_2     & c_3 & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L}
+  \\&=t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1     & 0 & 0
+    \\c_1     & 1          & 0
+    \\c_2-c_1c_3     & 0          & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L}
+    \,.
+  \end{align*}
+\end{exmp}
+The four interesting decomposition, in our situation are given by
 \begin{enumerate}
   \item $\begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}
     = \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}
@@ -1284,7 +1130,7 @@ differential equations, we know, that \rewrite{this extension is unique}.
   where
   \begin{itemize}
     \item $F= t^Le^{Q(t^{-1})} C_{\cY_0,\tilde\theta} e^{-Q(t^{-1})}t^{-L}$ and
-    \item $A^0=Q'(t^{-1})+L\frac{1}{t}$
+    \item $A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}$
   \end{itemize}
   as defined above.
   Thus
@@ -1292,10 +1138,10 @@ differential equations, we know, that \rewrite{this extension is unique}.
     \frac{d}{dt}\left(
       t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
     \right) &=
-    \left(Q'(t^{-1})+L\frac{1}{t}\right)
+    \left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)
     t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
   \\&\qquad-t^Le^{Q(t^-1)}C_{\cY_0,\tilde\theta}e^{-Q(t^-1)}t^{-L}
-    \left(Q'(t^{-1})+L\frac{1}{t}\right)
+    \left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)
   \end{align*}
   The chain rule and expansion of the products yields
   \begin{align*}
@@ -1304,9 +1150,9 @@ differential equations, we know, that \rewrite{this extension is unique}.
   \\t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}(-Q'(t^{-1}))e^{-Q(t^{-1})}t^{-L}+\qquad&
   \\t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}\frac{-1}{t}Lt^{-L}
     &=
-    Q'(t^{-1})t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
+    t^LQ'(t^{-1})t^{-L}t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
   \\&\qquad+L\frac{1}{t} t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
-  \\&\qquad-t^Le^{Q(t^-1)}C_{\cY_0,\tilde\theta}e^{-Q(t^-1)}t^{-L} Q'(t^{-1})
+  \\&\qquad-t^Le^{Q(t^-1)}C_{\cY_0,\tilde\theta}e^{-Q(t^-1)}t^{-L} t^LQ'(t^{-1})t^{-L}
   \\&\qquad-t^Le^{Q(t^-1)}C_{\cY_0,\tilde\theta}e^{-Q(t^-1)}t^{-L} L\frac{1}{t}
   \end{align*}
   which is trivial.
@@ -1321,21 +1167,7 @@ i.e.\ $f_\theta^k\sim_{\mathfrak{s}_{\cU_\theta^k}}1$, is equivalent to
   \,.
   \end{cases}
 \]
-This is clear in the cases
-\begin{enumerate}
-  \item $j=l$ and 
-  \item $(j,l)$ such that $q_j \underset{\theta,\max}{\not\prec}q_l$
-\end{enumerate}
-by construction.
-Let $(j,l)$ such that $q_j \underset{\theta,\max}{\prec}q_l$, we then
-\rewrite{have to proof}, that for every $c\in\C$
-\begin{einr}
-  $ c t^{L_{j,j}-L_{l,l}}e^{q_j(t^{-1})-q_l(t^{-1})}
-  \sim_{\mathfrak{s}_{\cU_\theta^k}}0$.
-\end{einr}
-For every $\theta'\in\cU_\theta^k$ we know, that 
-$q_j\underset{\theta'}{\prec}q_l$, i.e.\ $e^{q_j(t^{-1})-q_l(t^{-1})}$ is flat
-at $0$ in a neighbourhood of the direction $\theta'$.
+\TODO{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Step 2.c}

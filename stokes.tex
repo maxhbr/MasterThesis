@@ -5,11 +5,16 @@ A great overview of this topic is given in
 Stokes structures are the \rewrite{necessary information} for meromorphic
 classification.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Situation}
-Let $\cM^{nf}$ be a fixed model with the corresponding connection matrix
-$A^0$.
-We have the following commutative diagram of isomorphisms.
+Let $\cM^{nf}$ be a fixed model with the corresponding connection matrix $A^0$.
+The first objective is to proof the Malgrange-Sibuya theorem
+in section~\ref{sec:mainThm1}. It states, that the classifying set $\cH(A^0)$
+is isomorphic, via $\exp$, to the first cohomology
+$H^1(S^1;\Lambda^{<0}(A^0))$.
+In section~\ref{sec:mainThm2} we will improve the Malgrange-Sibuya Theorem by
+showing, that each 1-cohomology class in $\St(A^0)$ contains a unique 1-cocycle
+of a special form called \emph{the Stokes cocycle}.
+
+We \rewrite{have the following} commutative diagram of isomorphisms.
 \begin{center}
   \begin{tikzpicture}[scale=3]
     \node[] (modSpcMat) at (0,0) {$\cH(A^0)$};
@@ -37,9 +42,10 @@ We have the following commutative diagram of isomorphisms.
     \draw[->,purple] (mat) -- (sheaf3) node[midway, right] {$h$};
     \draw[->,purple,dashed] (sheaf3) edge[bend right=20] (mat);
 
-    \node[green!40!black] at (1,0.7) {\cite{sabbah2007isomonodromic}};
-    \node[blue] at (2.3,-1.3) {\cite{thboalch},\cite{boalch}};
-    \node[purple] at (4,0) {\cite{Loday1994}{\footnotesize(\cite{Loday2014})}};
+    \node[green!40!black] at (1,0.7) {\TODO[\cite{sabbah2007isomonodromic}]};
+    \node[blue] at (2.3,-1.3) {\TODO[\cite{thboalch},\cite{boalch}]};
+    \node[purple] at (4,0)
+    {\TODO[\cite{Loday1994}{\footnotesize(\cite{Loday2014})}]};
   \end{tikzpicture}
 \end{center}
 
@@ -90,7 +96,7 @@ We have the following commutative diagram of isomorphisms.
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Stokes structures: Malgrange-Sibuya isomorphism}
+\section{Stokes structures: Malgrange-Sibuya isomorphism}\label{sec:mainThm1}
 \begin{comment}
   \cite[Thm.I.2.1]{Loday1994}, \cite[Thm.4.3.9]{Loday2014} and
   \cite[Thm.II.6.2]{sabbah2007isomonodromic}
@@ -123,9 +129,6 @@ flat isotropies.
 \end{defn}
 
 \subsection{The theorem}
-\begin{comment}
-  \TODO[See \cite{thboalch} for sheaf-less definition]
-\end{comment}
 Let $(\cM,\nabla,\hat f)$ be a marked germ of a  meromorphic connection.
 There exists an open covering $\cU=(U_j)_{j\in J}$ and for every open set an
 isomorphism
@@ -210,12 +213,12 @@ which we call $\exp$.
   is an isomorphism of pointed\footnote{Which maps the class of
   $(A^0,\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology class.} sets.
 \end{tthm}
-\begin{rem}
+\begin{rem}\label{rem:expNonNormalForm}
   \begin{s-defn}
     Since the morphism $\exp$ depends on the choice of the normal form, we will
     denote that, if it is not clear, by
     $\exp_{A^0}=\exp$\footnote{In~\cite{Loday1994} this is denoted as
-    $\exp_{\mu_0}$}.
+    $\exp_{\mu_0}$.}.
   \end{s-defn}
   \begin{enumerate}
     \item \marginnote{\cite[883]{Loday1994}}
@@ -421,9 +424,15 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
 
 \begin{defn}
   \begin{comment}
-    See \cite{hotta2008}
+    See \cite{hotta2008}, \cite[79]{Loday2014}
   \end{comment}
   A function is \emph{of maximal decay}, if \TODO{}
+  \begin{s-rem}
+    \marginnote{\cite[79]{Loday2014}}
+    An exponential $e^{q(1/t)}=e^{-\frac{a}{t^{k}}(x+o(t^{-k}))}$ has maximal
+    decay in a direction $\tilde\theta\in S^1$ if and only if
+    $-ae^{-ik\tilde\theta}$ is real negative.
+  \end{s-rem}
 
   A function is \emph{flat}, if \TODO{}
 \end{defn}
@@ -945,7 +954,7 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Stokes structures: Matrix version}
+\section{Stokes structures: Matrix version}\label{sec:mainThm2}
 \begin{comment}
   See \cite{Loday1994}, \cite[Thm.4.3.11]{Loday2014}, \cite{boalch,thboalch}
   and \cite{babbitt1989local}.
