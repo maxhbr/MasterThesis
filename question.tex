@@ -671,68 +671,13 @@ We then construct the connection matrix by
 \[
   A^0:=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t} \in G(\!\{t\}\!)
 \]
-where $Q(t^{-1})=\diag(q_1(t^{-1}),q_2(t^{-1}),\dots,q_n(t^{-1}))$.
-If we assume that $L$ is diagonal, we can use the commutation of diagonal
-matrices to write $A^0:=Q'(t^{-1})+L\frac{1}{t}$.
-
-\begin{lem}\label{lem:formSolToMat}
-  \marginnote{\cite[4f]{thboalch}}
-  The matrix $\cY_0:=t^Le^{Q(t^{-1})}$ is a fundamental solution of the system
-  $[A^0]$.
-  \TODO[move to fund-sol-defn]
-  \begin{comment}
-    \begin{s-rem}
-      If we assume that $L$ is diagonal, we can write
-      \[
-        \cY_0 =\diag\left(
-          t^{L_{1,1}}e^{q_1(t^{-1})},
-          t^{L_{2,2}}e^{q_2(t^{-1})},\dots,
-          t^{L_{n,n}}e^{q_n(t^{-1})}
-        \right) \,,
-      \]
-      where $L_{j,j}$ denotes the \rewrite{$j$'th} diagonal element of $L$.
-    \end{s-rem}
-  \end{comment}
-\end{lem}
-\begin{proof}
-  It is sufficient to show that $\cY\in G(\!\{t\}\!)$, i.e.\ is invertible and
-  that its columns are solutions.
-
-  \begin{comment}
-    Since we are dealing with diagonal matrices it is easy to see, that
-    \begin{align*}
-      \frac{d}{dt}e^{Q(t^{-1})}
-      &=\diag\left(\frac{d}{dt}e^{q_1(t^{-1})},\frac{d}{dt}e^{q_2(t^{-1})}
-        ,\dots,
-        \frac{d}{dt}e^{q_n(t^{-1})}\right)
-        \\&=\diag\left(\frac{d}{dt}q_1(t^{-1})e^{q_1(t^{-1})}
-                      ,\frac{d}{dt}q_1(t^{-1})e^{q_2(t^{-1})}
-                      ,\dots
-                      ,\frac{d}{dt}q_1(t^{-1})e^{q_n(t^{-1})}\right)
-    \\&=Q'(t^{-1})e^{Q(t^{-1})} \,.
-    \end{align*}
-    and, since the function $t^L$ is defined as $e^{L\ln t}$,
-    \begin{align*}
-      \frac{d}{dt}t^L&=\frac{d}{dt}e^{L\ln t}
-      =Le^{(L-\id)\ln t}
-      =L\frac{1}{t}t^L \,.
-    \end{align*}
-  \end{comment}
-  It is easy to see, that
-  $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$ and
-  $\frac{d}{dt}t^L=L\frac{1}{t}t^L$, thus we can prove, that $\cY_0$ is a
-  matrix consisting of solutions:
-  \begin{align*}
-    \frac{d}{dt}\cY_0
-    &=\frac{d}{dt}\left(t^Le^{Q(t^{-1})}\right)
-  \\&=\frac{d}{dt}t^Le^{Q(t^{-1})}+t^L\frac{d}{dt}e^{Q(t^{-1})}
-  \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+t^LQ'(t^{-1})e^{Q(t^{-1})}
-  % \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+Q'(t^{-1})t^Le^{Q(t^{-1})}
-  \\&=\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
-  \\&=A^0\cY_0
-  \end{align*}
-  The invertability condition is clear.
-\end{proof}
+where $Q(t^{-1})=\diag(q_1(t^{-1}),q_2(t^{-1}),\dots,q_n(t^{-1}))$ and
+a corresponding normal solution is given by $\cY_0:=t^Le^{Q(t^{-1})}$
+(cf.\ proposition~\ref{prop:fundSolBuilder}).
+\begin{comment}
+  If we assume that $L$ is diagonal, we can use the commutation of diagonal
+  matrices to write $A^0:=Q'(t^{-1})+L\frac{1}{t}$.
+\end{comment}
 
 \paragraph{Fix the formal transformation}
 Choose a formal transformation $\hat F\in\hat G(A^0)$, i.e.\ an ambassador of
@@ -1159,7 +1104,7 @@ differential equations, we know, that \rewrite{this extension is unique}.
   which is trivial.
 \end{comment}
 The flatness property of an section $f_\theta^k$,
-i.e.\ $f_\theta^k\sim_{\mathfrak{s}_{\cU_\theta^k}}1$, is equivalent to
+i.e.\ $f_\theta^k\sim_{\mathfrak{s}_{\cU_\theta^k}}\id$, is equivalent to
 \[
   \left(f_\theta^k\right)_{j,l}\sim_{\mathfrak{s}_{\cU_\theta^k}}
   \begin{cases}
@@ -1187,4 +1132,194 @@ $\tau:\prod_{k\in\cK}\Gamma(\dot \cU^k;\Lambda^k(A^0))
     f_{\theta|\dot\cU_\theta}^{k_1}\cdot f_{\theta|\dot\cU_\theta}^{k_2}
     &&\text{,~if~} \cK_\theta=\{k_1,h_2\}
   \end{align*}
+\end{comment}
+
+\section{Summary/}
+\begin{thm}
+  The set $\Sto(A^0)$, and thus the classifying set, is in our case isomorphic
+  to $\C^{k_1+2\cdot k_2}$.
+\end{thm}
+We compose this isomorphism as follows:
+\begin{enumerate}
+  \item Decompose $\C^{k_1+2\cdot k_2}\cong
+    \prod_{\theta\in\A^{k_1}} \C \times \prod_{\theta\in\A^{k_2}} \C^2$ and
+    define the isomorphism
+    \[
+      \C^{k_1+2\cdot k_2}\overset{\cong}\longrightarrow
+      \prod_{\theta\in\A^{k_1}} \SSto_{\theta}^{k_1}(A^0) \times
+      \prod_{\theta\in\A^{k_1}} \SSto_{\theta}^{k_1}(A^0)
+    \]
+    piecewise as
+    \begin{enumerate}
+      \item an element
+        $\left( (a_{\theta_{\nu_1}},b_{\theta_{\nu_1}})
+          ,(a_{\theta_{\nu_2}},b_{\theta_{\nu_2}})
+          ,\dots
+        \right)\in\prod_{\theta\in\A^{k_2}} \C^2$
+        gets mapped to
+        \[
+          \left.
+          \begin{cases}
+            \left(
+            \begin{pmatrix} 1 & a_{\theta_{\nu_1}} & b_{\theta_{\nu_1}} \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\a_{\theta_{\nu_2}} & 1 & 0 \\b_{\theta_{\nu_2}} & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & a_{\theta_{\nu_3}} & b_{\theta_{\nu_3}} \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}
+              ,\dots
+            \right)
+            & ,\substack{\text{~if~} q_1 \underset{\theta_0,\max}{\prec} q_2
+              \\\text{~and~} q_1 \underset{\theta_0,\max}{\prec} q_3}
+            \\\left(
+            \begin{pmatrix} 1 & 0 & 0 \\a_{\theta_{\nu_1}} & 1 & 0 \\b_{\theta_{\nu_1}} & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & a_{\theta_{\nu_2}} & b_{\theta_{\nu_2}} \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\a_{\theta_{\nu_3}} & 1 & 0 \\b_{\theta_{\nu_3}} & 0 & 1 \end{pmatrix}
+              ,\dots
+            \right)
+            & ,\substack{\text{~if~} q_2 \underset{\theta_0,\max}{\prec} q_1
+              \\\text{~and~} q_3 \underset{\theta_0,\max}{\prec} q_1}
+          \end{cases}
+          \right\}
+          =:\left(
+            C_{\theta_{\nu_1}}^{k_2}
+            ,C_{\theta_{\nu_2}}^{k_2}
+            ,\dots
+          \right)
+        \]
+      \item
+        $\left(
+          c_{\theta_{\mu_1}}
+          ,c_{\theta_{\mu_2}}
+          ,\dots
+        \right)\in\prod_{\theta\in\A^{k_1}} \C$
+        gets mapped to
+        \[
+          \left.
+          \begin{cases}
+            \left(
+            \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_{\theta_{\mu_1}} \\0 & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_{\theta_{\mu_2}} & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_{\theta_{\mu_3}} \\0 & 0 & 1 \end{pmatrix}
+              ,\dots
+            \right)
+            &\text{,~if~} q_2 \underset{\theta_0,\max}{\prec} q_3
+            \\\left(
+            \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_{\theta_{\mu_1}} & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_{\theta_{\mu_2}} \\0 & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_{\theta_{\mu_2}} & 1 \end{pmatrix}
+              ,\dots
+            \right)
+            &\text{,~if~} q_3 \underset{\theta_0,\max}{\prec} q_2
+          \end{cases}
+        \right\}
+        =:\left(
+          C_{\theta_{\mu_1}}^{k_1}
+          ,C_{\theta_{\mu_2}}^{k_1}
+          ,\dots
+        \right)
+        \]
+    \end{enumerate}
+  \item We use the inclusions $\A^k\hookrightarrow\A$ and the fact, that
+    $\SSto_\theta^k(A^0)=\{\id\}$ if $k\notin\cK_\theta$ to get an isomorphism
+    \begin{align*}
+      \prod_{\theta\in\A^{k}}\SSto_\theta^{k}(A^0)&\to
+      \prod_{\theta\in\A}\SSto_\theta^{k}(A^0)
+    \\\left(
+        C_{\theta_{\mu_1}}^{k_1}
+        ,C_{\theta_{\mu_2}}^{k_1}
+        ,\dots
+      \right)
+      &\mapsto
+      \left(
+        C_{\theta_{1}}^{k_1}
+        ,C_{\theta_{2}}^{k_1}
+        ,\dots
+      \right)
+    \\\left(
+        C_{\theta_{\mu_1}}^{k_2}
+        ,C_{\theta_{\mu_2}}^{k_2}
+        ,\dots
+      \right)
+      &\mapsto
+      \left(
+        C_{\theta_{1}}^{k_2}
+        ,C_{\theta_{2}}^{k_2}
+        ,\dots
+      \right)
+    \end{align*}
+    for every $k\in\cK$.
+  \item the next map is induced by the matrix product and given by
+    \begin{align*}
+      \prod_{\theta\in\A}\SSto_\theta^{k_1}(A^0)
+      \times
+      \prod_{\theta\in\A}\SSto_\theta^{k_2}(A^0)
+      &\to
+      \prod_{\theta\in\A}\SSto_\theta(A^0)
+    \\\left(\left(
+          C_{\theta_{1}}^{k_1}
+          ,C_{\theta_{2}}^{k_1}
+          ,\dots
+        \right),
+        \left(
+          C_{\theta_{1}}^{k_2}
+          ,C_{\theta_{2}}^{k_2}
+          ,\dots
+      \right)\right)
+      &\longmapsto
+        \left(
+          C_{\theta_{1}}^{k_1}\cdot C_{\theta_{1}}^{k_2}
+          ,C_{\theta_{2}}^{k_1}\cdot C_{\theta_{2}}^{k_2}
+          ,\dots
+      \right)
+    \end{align*}
+  \item The product of the maps
+    \begin{align*}
+      \rho_{\tilde\theta}^{-1}:
+      \SSto_\theta(A^0)
+      &\overset{\cong}\to
+      \Sto_\theta(A^0)
+      \\C_{\cY_{0,\tilde\theta}} &\mapsto
+      t^{L}e^{Q(t^{-1})}C_{\cY_{0,\tilde\theta}} e^{-Q(t^{-1})}t^{-L} \,,
+    \end{align*}
+    gives an isomorphism $\prod_{\theta\in\A}\SSto_\theta(A^0)
+    \overset{\cong}\to \prod_{\theta\in\A}\Sto_\theta(A^0)$.
+\end{enumerate}
+\begin{comment}
+\begin{tikzpicture} %{{{
+  [scale=2.5
+  ,auto
+  ,font=\footnotesize
+  ,line width=0.8pt
+  ,mybox/.style={rectangle
+                ,draw
+                ,fill=white
+                ,inner sep=5pt
+                ,text width=3cm
+                ,text badly centered
+                ,minimum height=1.2cm
+                ,font=\bfseries\footnotesize\sffamily}] 
+  \node (a1) at (0,0) {$\C^{k_1+2\cdot k_2}$};
+  \node (a2a) at (1,.3) {$\displaystyle\prod_{\theta\in\A^{k_2}} \C^2$};
+  \node (a2) at (1,0) {$\times$};
+  \node (a2b) at (1,-.3) {$\displaystyle\prod_{\theta\in\A^{k_1}} \C$};
+  \draw[right hook->] (a1) to[out=20, in=180] (a2a) {};
+  \draw[right hook->] (a1) to[out=-20, in=180] (a2b) {};
+  \node (a3a) at (2,.3) {$\displaystyle\prod_{\theta\in\A^{k_2}} \SSto_{\theta}^{k_2}(A^0)$};
+  \node (a3) at (2,0) {$\times$};
+  \node (a3b) at (2,-.3) {$\displaystyle\prod_{\theta\in\A^{k_1}} \SSto_{\theta}^{k_1}(A^0)$};
+  \draw[->] (a2a) -- (a3a) {};
+  \draw[->] (a2b) -- (a3b) {};
+  \node (a3a2) at (3.2,.3) {$\displaystyle\prod_{\theta\in\A} \SSto^{k_2}_{\theta}(A^0)$};
+  \node (a32) at (3.2,0) {$\times$};
+  \node (a3b2) at (3.2,-.3) {$\displaystyle\prod_{\theta\in\A} \SSto^{k_1}_{\theta}(A^0)$};
+  \draw[->] (a3a) -- (a3a2) {};
+  \draw[->] (a3b) -- (a3b2) {};
+  \node (a4a) at (4.8,.3) {$\displaystyle\prod_{\theta\in\A} \Sto^{k_2}_{\theta}(A^0)$};
+  \node (a4) at (4.8,0) {$\times$};
+  \node (a4b) at (4.8,-.3) {$\displaystyle\prod_{\theta\in\A} \Sto^{k_1}_{\theta}(A^0)$};
+  \draw[->] (a3a2) -- (a4a) node [midway] {$\displaystyle\prod_{\theta\in\A}\rho_{\theta}^{-1}$};
+  \draw[->] (a3b2) -- (a4b) node [midway] {$\displaystyle\prod_{\theta\in\A}\rho_{\theta}^{-1}$}; 
+  \draw [decorate,decoration={brace,amplitude=10pt,raise=4pt},yshift=0pt]
+    (5.2,.6) -- (5.2,-.6) node [black,midway,xshift=4pt] (a5) {};
+  \node (end) at (5.5,-1) {$\St(A^0)$};
+  \draw[->] (a5) to[out=0,in=90,"$\mathcal{T}\circ\prod_{k\in\cK}i^k$"] (end) node [midway] {};
+\end{tikzpicture} %}}}
 \end{comment}

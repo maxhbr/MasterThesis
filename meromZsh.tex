@@ -1,4 +1,4 @@
-\chapter{Meromorphic connections}
+\chapter{Basics: Meromorphic connections}
 \begin{comment}
   \begin{multicols}{2}
     \textbf{Global}
@@ -935,14 +935,52 @@ fundamental solution in the form $\hat F\cY$.
   \]
   where $\hat F$ is a solution of $[A^0,A]$.
 \end{cor}
-\begin{rem}
-  We will see in lemma~\ref{lem:formSolToMat} that the matrix
+\begin{prop}\label{prop:fundSolBuilder}
+  Let $\mathcal{Y}=\hat F t^L e^{Q(t^{-1})}$ be a fundamental solution.
+  The matrix
   \[
     A={}^{\hat F}\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)
   \]
-  defines a system $[A]$ which has $\hat F t^L e^{Q(t^{-1})}$ as fundamental
-  solution.
-\end{rem}
+  defines a system $[A]$ which has $\cY$ as fundamental solution.
+\end{prop}
+\begin{proof}
+  It is sufficient, to proof this in the case $\hat F=\id$, i.e.\ the case
+  where $\cY=\cY_0=t^L e^{Q(t^{-1})}$ is a normal solution.
+
+  \begin{comment}
+    Since we are dealing with diagonal matrices it is easy to see, that
+    \begin{align*}
+      \frac{d}{dt}e^{Q(t^{-1})}
+      &=\diag\left(\frac{d}{dt}e^{q_1(t^{-1})},\frac{d}{dt}e^{q_2(t^{-1})}
+        ,\dots,
+        \frac{d}{dt}e^{q_n(t^{-1})}\right)
+        \\&=\diag\left(\frac{d}{dt}q_1(t^{-1})e^{q_1(t^{-1})}
+                      ,\frac{d}{dt}q_1(t^{-1})e^{q_2(t^{-1})}
+                      ,\dots
+                      ,\frac{d}{dt}q_1(t^{-1})e^{q_n(t^{-1})}\right)
+    \\&=Q'(t^{-1})e^{Q(t^{-1})} \,.
+    \end{align*}
+    and, since the function $t^L$ is defined as $e^{L\ln t}$,
+    \begin{align*}
+      \frac{d}{dt}t^L&=\frac{d}{dt}e^{L\ln t}
+      =Le^{(L-\id)\ln t}
+      =L\frac{1}{t}t^L \,.
+    \end{align*}
+  \end{comment}
+  It is easy to see, that $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$
+  and $\frac{d}{dt}t^L=L\frac{1}{t}t^L$, thus we can prove, that $\cY_0$ is a
+  matrix consisting of solutions:
+  \begin{align*}
+    \frac{d}{dt}\cY_0
+    &=\frac{d}{dt}\left(t^Le^{Q(t^{-1})}\right)
+  \\&=\frac{d}{dt}t^Le^{Q(t^{-1})}+t^L\frac{d}{dt}e^{Q(t^{-1})}
+  \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+t^LQ'(t^{-1})e^{Q(t^{-1})}
+  % \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+Q'(t^{-1})t^Le^{Q(t^{-1})}
+  \\&=\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
+  \\&=A^0\cY_0 \,.
+  \end{align*}
+  The invertability condition is clear.
+\end{proof}
 
 \begin{rem}
   Let $[A^0]$ be a normal form with normal solution
@@ -962,15 +1000,6 @@ fundamental solution in the form $\hat F\cY$.
       solution for the same system} (cf.\ \cite[73]{Loday2014}).
   \end{enumerate}
 \end{rem}
-\begin{comment}
-  \begin{lem}
-    Let $\triangle$ be a system with fundamental solution
-    $\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}$ then is the matrix
-    ${A^0}:=dQ+L\frac{dt}{t}$ is a connection matrix for $\triangle$.
-  \TODO[\textbf{Only} in the unramified/simple case?]
-  \TODO[Therefore it is obtained from $A^0$ via an isotropy?]
-  \end{lem}
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The main asymptotic existence theorem}

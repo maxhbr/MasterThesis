@@ -1,25 +1,32 @@
 maArbeit
 ========
 
-## TODO:
-* Alles
+This repository contains the **tex**-files, for my master thesis.
 
-## Das Verzeichnis `_output`
-In diesem Verzeichnis sollen sich die (hofffentlich aktuellen) **PDF**s
-befinden.
+### Compiling:
+The code has to be compiled with **lualatex**.
 
-Über den Code
--------------
+without notes:
+--------------
 
-Er möchte mit **lualatex** compiliert werden, dazu ist das folgende in meiner 
-`.aliasrc`:
 ```bash
-mylualatexmk(){
-  grep -l '\\documentclass' *tex | \
-    xargs latexmk -pdflatex=lualatex -pdf -outdir=".lualatexmk_files" -pvc
-}
+latexmk -pdflatex=lualatex -pdf -pvc main-nonotes.tex
 ```
-Zum drucken als A5-Broschüre:
+
+with notes:
+-----------
+
+```bash
+latexmk -pdflatex=lualatex -pdf -pvc main.tex
+```
+
+## The folder `_output`
+In this folder there will be the generated **PDF**s.
+
+Tricks:
+-------
+
+Printing as booklet
 ```bash
 lprBook() {
   [[ -f $1 ]] && {
@@ -30,4 +37,4 @@ lprBook() {
   } || { echo "file not found"; }
 }
 ```
-für mehr, siehe [myconfig](https://github.com/maximilianhuber/myconfig)
+for more, look at [myconfig](https://github.com/maximilianhuber/myconfig)
