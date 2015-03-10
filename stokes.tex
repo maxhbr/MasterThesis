@@ -1640,3 +1640,442 @@ theorem~\ref{thm:mainThm2} by composition of bijective maps.
   \subsection{Leading directions of \TODO[\dots]}
   \marginnote{\cite[863ff]{Loday1994}}
 \end{comment}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{How does a Stokes cycle in $\prod_{\theta\in\A}\Sto_\theta(A^0)$ look
+  like?}
+Let $A^0$ be a normal form with dimension $n=3$ and two levels
+$\cK=\{k_1<k_2\}$, which satisfies, that there is at least one direction
+$\theta_0$ which is beared by both levels.
+Let $q_j(t^{-1})$ be the determining polynomials and let $k_{jl}$ be the
+degrees of $(q_j-q_l)(t^{-1})$.
+The only way to get two levels in dimension $3$ we have, up to permutation:
+$k_1=k_{1,2}=k_{1,3}$ and $k_2=k_{2,3}$.
+We know also, that the leading terms of $(q_1-q_2)(t^{-1})$ and
+$(q_1-q_3)(t^{-1})$ are equal and thus determine the same anti-Stokes
+directions.
+The set of all anti-Stokes directions is then given as
+\[
+  \A=\left\{\theta_0+\frac{\pi}{k}\cdot j\mid k\in\cK\text{, }j\in\N\right\}
+    =:\{\theta_1,\dots,\theta_\nu\}\,.
+\]
+
+Fix a set of determinations $\tilde\theta_1,\dots,\tilde\theta_\nu$ of the
+anti-Stokes directions $\theta_1,\dots,\theta_\nu$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{How do the Stokes germs $\phi_\theta$ look like?}
+\rewrite{First} we want to use the faithful matrix representations of Stokes
+germs, discussed in section~\ref{sec:matrixReps}, to \rewrite{obtain some
+statements} about the \rewrite{structure} of the Stokes germs in our situation.
+
+The proposition~\ref{prop:representation} states, that a matrix representation
+of a Stokes germ, i.e.\ an element of $\SSto_\theta(A^0)$, gets mapped to a
+Stokes germ via
+\begin{align*}
+  \rho_{\tilde\theta}^{-1}:
+  \SSto_\theta(A^0)
+  &\overset{\cong}\to
+  \Sto_\theta(A^0)
+  \\C_{\cY_{0,\tilde\theta}} &\mapsto
+  t^{L}e^{Q(t^{-1})}C_{\cY_{0,\tilde\theta}} e^{-Q(t^{-1})}t^{-L} \,,
+\end{align*}
+which depends on the determination $\tilde\theta$ of $\theta$ \TODO[is this
+dependency only important, in the ramified case?]
+(cf.\ proposition~\ref{prop:representation}).
+
+\paragraph{Using the structure of $\SSto_\theta(A^0)$}
+\begin{exmp}
+  Let $\theta\in\A$ be an anti-Stokes direction.
+  From the definition of $\SSto_\theta(A^0)$ (cf.\
+  definition~\ref{defn:groupOfFaithfullReps}) we know that, if one has $q_1
+  \underset{\theta,\max}{\prec} q_2$, the representation has the form
+  \[
+    \begin{pmatrix}
+      1 & \text{\boldmath$c_1$} & \star
+    \\\text{\boldmath$0$} & 1 & \star
+    \\\star & \star & 1
+    \end{pmatrix}
+  \]
+  where $c_j\in\C$ and $\star\in\C$.
+  \begin{s-rem}
+    In our situation, we also know, that
+    \begin{einr}
+      $q_1 \underset{\theta,\max}{\prec} q_2$
+      \Leftrightarrow{}
+      $q_1 \underset{\theta,\max}{\prec} q_3$
+      \qquad \rewrite{respectively} \qquad
+      $q_2 \underset{\theta,\max}{\prec} q_1$
+      \Leftrightarrow{}
+      $q_3 \underset{\theta,\max}{\prec} q_1$
+    \end{einr}
+    since the leading terms of $q_1-q_2$ and $q_1-q_3$ are equal.
+  \end{s-rem}
+  Thus the representation has the \rewrite{form}
+  \[
+    \begin{pmatrix}
+      1 & c_1 & \text{\boldmath$c_2$}
+    \\0 & 1 & \star
+    \\\text{\boldmath$0$} & \star & 1
+    \end{pmatrix}\,.
+  \]
+  If we also know, that neither $q_2 \underset{\theta,\max}{\prec} q_3$ nor
+  $q_3 \underset{\theta,\max}{\prec} q_2$ it has the \rewrite{form}
+  \[
+    \begin{pmatrix}
+      1 & c_1 & c_2
+    \\0 & 1 & \text{\boldmath$0$}
+    \\0 & \text{\boldmath$0$} & 1
+    \end{pmatrix}\,.
+  \]
+  We also know, that every matrix of this \rewrite{form} is a representation to
+  some Stokes germ.
+  Thus we have an isomorphism
+  \begin{align*}
+    \vartheta_\theta:\C^2 &\to \SSto_\theta(A^0)
+  \\(c_1,c_2)&\mapsto
+    \begin{pmatrix}
+      1 & c_1 & c_2
+    \\0 & 1 & 0
+    \\0 & 0 & 1
+    \end{pmatrix}
+  \end{align*}
+\end{exmp}
+In fact, we have the following $9$ cases 
+\begin{center}
+  \def\arraystretch{1.3}
+  \setlength\tabcolsep{4mm}
+  \begin{tabular}{r|c|c|c}
+    & $q_2 \underset{\theta,\max}{\prec} q_3$
+    & $q_3 \underset{\theta,\max}{\prec} q_2$
+    & else
+    \tabularnewline
+    \hline
+    $q_1 \underset{\theta,\max}{\prec} q_2$ and
+    $q_1 \underset{\theta,\max}{\prec} q_3$
+    & $\begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}$
+   \cellcolor{blue!15}
+    & $\begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & 0 \\0 & c_3 & 1 \end{pmatrix}$
+   \cellcolor{blue!15}
+    & $\begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}$
+   \cellcolor{green!15}
+    \tabularnewline
+    \hline
+    $q_2 \underset{\theta,\max}{\prec} q_1$ and
+    $q_3 \underset{\theta,\max}{\prec} q_1$
+    & $\begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & c_3 \\c_2 & 0 & 1 \end{pmatrix}$
+   \cellcolor{blue!15}
+    & $\begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & 0 \\c_2 & c_3 & 1 \end{pmatrix}$
+   \cellcolor{blue!15}
+    & $\begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & 0 \\c_2 & 0 & 1 \end{pmatrix}$
+   \cellcolor{green!15}
+    \tabularnewline
+    \hline
+    else
+    & $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}$
+   \cellcolor{purple!15}
+    & $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_3 & 1 \end{pmatrix}$
+   \cellcolor{purple!15}
+    & $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}$
+  \end{tabular}
+\end{center}
+In the \textcolor{blue!75!black}{blue} cases we have $\cK_\theta=\cK$ and
+$\C^3\overset{\vartheta_\theta}{\underset{\cong}{\longrightarrow}}\SSto_\theta(A^0)$.
+In the \textcolor{green!75!black}{green} cases $\cK_\theta=\{k_2\}$ and
+$\C^2\overset{\vartheta_\theta}{\underset{\cong}{\longrightarrow}}\SSto_\theta(A^0)$ as
+well as in the \textcolor{purple!75!black}{purple} cases $\cK_\theta=\{k_1\}$
+and $\C^1\overset{\vartheta_\theta}{\underset{\cong}{\longrightarrow}}\SSto_\theta(A^0)$.
+Thus, for every $\theta\in\A$, we have an isomorphism
+$\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta$.
+
+\paragraph{Decomposition by levels}
+In proposition~\ref{prop:filtrationOfStokesGroup} we have defined a
+decomposition of the Stokes group $\Sto_\theta(A^0)$ in subgroups generated by
+$k$-germs for $k\in\cK$.
+In our case, we have at most two level, such that this decomposition looks like
+\[
+  \phi_\theta=\phi_\theta^{k_1} \phi_\theta^{k_2}
+  \overset{i_\theta}\longmapsto
+    \left(\phi_\theta^{k_1},\phi_\theta^{k_2}\right)
+      \in\Sto_\theta^{k_1}(A^0)\times\Sto_\theta^{k_2}(A^0) \,,
+\]
+where $\phi_\theta^{k_1}\in\Sto_\theta^{k_1}(A^0)=\Sto_\theta^{<k_2}(A^0)$,
+$\phi_\theta^{k_2}\in\Sto_\theta^{k_2}(A^0)$  and $i_\theta$ is the map, wich
+gives the factors of this factorization in ascending order.
+
+This decomposition of a germ $\phi_\theta$ is trivial if
+$\#\cK(\phi_\theta)\leq1$, thus the interesting cases are the
+\textcolor{blue!75!black}{blue} cases.
+
+\begin{exmp}
+  Look at the example
+  \[
+    \vartheta_\theta(c_1,c_2,c_3)=
+    t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1 & 0 & 0
+    \\c_1 & 1 & 0
+    \\c_2 & c_3 & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L}
+    =\phi_\theta
+    \,.
+  \]
+  According to remark~\ref{rem:algFactorization} the factor
+  $\phi_\theta^{k_1}$, generated by the $k_1$-germs, is given by
+  \[
+    \phi_\theta^{k_1}=
+    t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1 & 0 & 0
+    \\\text{\boldmath $0$} & 1 & 0
+    \\\text{\boldmath $0$} & c_3 & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L} \,.
+  \]
+  The other factor $\phi_\theta^{k_2}$ is then obtained as
+  \begin{align*}
+    \phi_\theta^{k_2}&=
+    \left(\phi_\theta^{k_1}\right)^{-1}
+    \phi_\theta^{k_2}
+  \\&=t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1     & 0    & 0
+    \\0     & 1    & 0
+    \\0     & c_3 & 1
+    \end{pmatrix}^{-1}
+    \underset{=\id}{\underbrace{%
+        e^{-Q(t^{-1})}t^{-L}
+        t^{L}e^{Q(t^{-1})}
+    }}
+    \begin{pmatrix}
+      1     & 0 & 0
+    \\c_1     & 1     & 0
+    \\c_2     & c_3 & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L}
+  \\&=t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1     & 0    & 0
+    \\0     & 1    & 0
+    \\0     & -c_3 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1     & 0 & 0
+    \\c_1     & 1     & 0
+    \\c_2     & c_3 & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L}
+  \\&=t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1     & 0 & 0
+    \\c_1     & 1          & 0
+    \\c_2-c_1c_3     & 0          & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L}
+    \,.
+  \end{align*}
+\end{exmp}
+The four interesting decomposition, in our situation are given by
+\begin{enumerate}
+  \item $\begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}$
+  \item $\begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & 0 \\0 & c_3 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_3 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}$
+  \item $\begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & c_3 \\c_2 & 0 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & 0 & 0 \\c_1 -c_2c_3& 1 & 0 \\c_2 & 0 & 1 \end{pmatrix}$
+  \item $\begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & 0 \\c_2 & c_3 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_3 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & 0 \\c_2-c_1c_3 & 0 & 1 \end{pmatrix}$
+\end{enumerate}
+In the next section, we will use this decompositions in the other direction, to
+write the isomorphisms $\vartheta_\theta:\C^\star\to \SSto_\theta(A^0)$ as
+\[
+  \bar\vartheta_\theta:
+  \C^\star
+  \longrightarrow\SSto_\theta^{k_1}(A^0)\times\SSto_\theta^{k_2}(A^0)
+  \overset{i_\theta^{-1}}\longrightarrow\SSto_\theta(A^0)
+\]
+where $\star\in\{1,2,3\}$.
+
+\begin{comment}
+  \begin{rem}
+    Since we know, that $\Sto_{\theta}^k$ is trivial, if $k\notin\cK_\theta$ we
+    can write
+    \begin{align*}
+      \prod_{\theta\in\cA}\prod_{k\in\cK}\Sto_\theta^k(A^0)
+      &\equiv \prod_{k\in\cK}\prod_{\theta\in\cA}\Sto_\theta^k(A^0)
+      \\&= \prod_{k\in\cK} \prod_{j=1}^{2\cdot k}
+     \Sto_{\theta_0+\frac{\pi}{k}\cdot j}^k(A^0) \,.
+    \end{align*}
+  \end{rem}
+\end{comment}
+
+\subsection{The result}
+\begin{prop}
+  By taking the product of all $\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta$
+  we obtain the isomorphism
+  \[
+    \prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}\circ\bar\vartheta_\theta:
+    \C^{2\cdot k_2 + k_1}
+    \overset\cong\longrightarrow
+    \prod_{\theta\in\A}\Sto_\theta(A^0)
+  \]
+  which can be concatenated with $h$ to obtain an element in $\St(A^0)$.
+  \begin{s-rem}
+    If we are interested in $h\circ\prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}
+    \circ\bar\vartheta_\theta$ we can remove some \rewrite{steps}, in the
+    constructed function.
+  \end{s-rem}
+\end{prop}
+
+We compose this isomorphism as follows:
+\begin{enumerate}
+  \item Decompose $\C^{k_1+2\cdot k_2}\cong
+    \prod_{\theta\in\A^{k_1}} \C \times \prod_{\theta\in\A^{k_2}} \C^2$ and
+    define the isomorphism
+    \[
+      \C^{k_1+2\cdot k_2}\overset{\cong}\longrightarrow
+      \prod_{\theta\in\A^{k_1}} \SSto_{\theta}^{k_1}(A^0) \times
+      \prod_{\theta\in\A^{k_1}} \SSto_{\theta}^{k_1}(A^0)
+    \]
+    piecewise as
+    \begin{enumerate}
+      \item an element
+        $\left( (a_{\theta_{\nu_1}},b_{\theta_{\nu_1}})
+          ,(a_{\theta_{\nu_2}},b_{\theta_{\nu_2}})
+          ,\dots
+        \right)\in\prod_{\theta\in\A^{k_2}} \C^2$
+        gets mapped to
+        \[
+          \left.
+          \begin{cases}
+            \left(
+            \begin{pmatrix} 1 & a_{\theta_{\nu_1}} & b_{\theta_{\nu_1}} \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\a_{\theta_{\nu_2}} & 1 & 0 \\b_{\theta_{\nu_2}} & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & a_{\theta_{\nu_3}} & b_{\theta_{\nu_3}} \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}
+              ,\dots
+            \right)
+            & ,\substack{\text{~if~} q_1 \underset{\theta_0,\max}{\prec} q_2
+              \\\text{~and~} q_1 \underset{\theta_0,\max}{\prec} q_3}
+            \\\left(
+            \begin{pmatrix} 1 & 0 & 0 \\a_{\theta_{\nu_1}} & 1 & 0 \\b_{\theta_{\nu_1}} & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & a_{\theta_{\nu_2}} & b_{\theta_{\nu_2}} \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\a_{\theta_{\nu_3}} & 1 & 0 \\b_{\theta_{\nu_3}} & 0 & 1 \end{pmatrix}
+              ,\dots
+            \right)
+            & ,\substack{\text{~if~} q_2 \underset{\theta_0,\max}{\prec} q_1
+              \\\text{~and~} q_3 \underset{\theta_0,\max}{\prec} q_1}
+          \end{cases}
+          \right\}
+          =:\left(
+            C_{\theta_{\nu_1}}^{k_2}
+            ,C_{\theta_{\nu_2}}^{k_2}
+            ,\dots
+          \right)
+        \]
+      \item
+        $\left(
+          c_{\theta_{\mu_1}}
+          ,c_{\theta_{\mu_2}}
+          ,\dots
+        \right)\in\prod_{\theta\in\A^{k_1}} \C$
+        gets mapped to
+        \[
+          \left.
+          \begin{cases}
+            \left(
+            \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_{\theta_{\mu_1}} \\0 & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_{\theta_{\mu_2}} & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_{\theta_{\mu_3}} \\0 & 0 & 1 \end{pmatrix}
+              ,\dots
+            \right)
+            &\text{,~if~} q_2 \underset{\theta_0,\max}{\prec} q_3
+            \\\left(
+            \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_{\theta_{\mu_1}} & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_{\theta_{\mu_2}} \\0 & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_{\theta_{\mu_2}} & 1 \end{pmatrix}
+              ,\dots
+            \right)
+            &\text{,~if~} q_3 \underset{\theta_0,\max}{\prec} q_2
+          \end{cases}
+        \right\}
+        =:\left(
+          C_{\theta_{\mu_1}}^{k_1}
+          ,C_{\theta_{\mu_2}}^{k_1}
+          ,\dots
+        \right)
+        \]
+    \end{enumerate}
+  \item We use the inclusions $\A^k\hookrightarrow\A$ and the fact, that
+    $\SSto_\theta^k(A^0)=\{\id\}$ if $k\notin\cK_\theta$ to get an isomorphism
+    \begin{align*}
+      \prod_{\theta\in\A^{k}}\SSto_\theta^{k}(A^0)&\to
+      \prod_{\theta\in\A}\SSto_\theta^{k}(A^0)
+    \\\left(
+        C_{\theta_{\mu_1}}^{k_1}
+        ,C_{\theta_{\mu_2}}^{k_1}
+        ,\dots
+      \right)
+      &\mapsto
+      \left(
+        C_{\theta_{1}}^{k_1}
+        ,C_{\theta_{2}}^{k_1}
+        ,\dots
+      \right)
+    \\\left(
+        C_{\theta_{\mu_1}}^{k_2}
+        ,C_{\theta_{\mu_2}}^{k_2}
+        ,\dots
+      \right)
+      &\mapsto
+      \left(
+        C_{\theta_{1}}^{k_2}
+        ,C_{\theta_{2}}^{k_2}
+        ,\dots
+      \right)
+    \end{align*}
+    for every $k\in\cK$.
+  \item the next map is induced by the matrix product and given by
+    \begin{align*}
+      \prod_{\theta\in\A}\SSto_\theta^{k_1}(A^0)
+      \times
+      \prod_{\theta\in\A}\SSto_\theta^{k_2}(A^0)
+      &\to
+      \prod_{\theta\in\A}\SSto_\theta(A^0)
+    \\\left(\left(
+          C_{\theta_{1}}^{k_1}
+          ,C_{\theta_{2}}^{k_1}
+          ,\dots
+        \right),
+        \left(
+          C_{\theta_{1}}^{k_2}
+          ,C_{\theta_{2}}^{k_2}
+          ,\dots
+      \right)\right)
+      &\longmapsto
+        \left(
+          C_{\theta_{1}}^{k_1}\cdot C_{\theta_{1}}^{k_2}
+          ,C_{\theta_{2}}^{k_1}\cdot C_{\theta_{2}}^{k_2}
+          ,\dots
+      \right)
+    \end{align*}
+  \item The product of the maps
+    \begin{align*}
+      \rho_{\tilde\theta}^{-1}:
+      \SSto_\theta(A^0)
+      &\overset{\cong}\to
+      \Sto_\theta(A^0)
+      \\C_{\cY_{0,\tilde\theta}} &\mapsto
+      t^{L}e^{Q(t^{-1})}C_{\cY_{0,\tilde\theta}} e^{-Q(t^{-1})}t^{-L} \,,
+    \end{align*}
+    gives an isomorphism $\prod_{\theta\in\A}\SSto_\theta(A^0)
+    \overset{\cong}\to \prod_{\theta\in\A}\Sto_\theta(A^0)$.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Explicit example}
