@@ -1643,11 +1643,10 @@ theorem~\ref{thm:mainThm2} by composition of bijective maps.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{How does a Stokes cycle in $\prod_{\theta\in\A}\Sto_\theta(A^0)$ look
-  like?}
+\section{Which information is required to describe a Stokes germ?}
 Let $A^0$ be a normal form with dimension $n=3$ and two levels
-$\cK=\{k_1<k_2\}$, which satisfies, that there is at least one direction
-$\theta_0$ which is beared by both levels.
+$\cK=\{k_1<k_2\}$, which satisfies, that there is at least one anti-Stokes
+direction $\theta_0$ which is beared by both levels.
 Let $q_j(t^{-1})$ be the determining polynomials and let $k_{jl}$ be the
 degrees of $(q_j-q_l)(t^{-1})$.
 The only way to get two levels in dimension $3$ we have, up to permutation:
@@ -1902,21 +1901,8 @@ write the isomorphisms $\vartheta_\theta:\C^\star\to \SSto_\theta(A^0)$ as
 \]
 where $\star\in\{1,2,3\}$.
 
-\begin{comment}
-  \begin{rem}
-    Since we know, that $\Sto_{\theta}^k$ is trivial, if $k\notin\cK_\theta$ we
-    can write
-    \begin{align*}
-      \prod_{\theta\in\cA}\prod_{k\in\cK}\Sto_\theta^k(A^0)
-      &\equiv \prod_{k\in\cK}\prod_{\theta\in\cA}\Sto_\theta^k(A^0)
-      \\&= \prod_{k\in\cK} \prod_{j=1}^{2\cdot k}
-     \Sto_{\theta_0+\frac{\pi}{k}\cdot j}^k(A^0) \,.
-    \end{align*}
-  \end{rem}
-\end{comment}
-
 \subsection{The result}
-\begin{prop}
+\begin{prop}\label{prop:result1}
   By taking the product of all $\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta$
   we obtain the isomorphism
   \[
@@ -1926,11 +1912,6 @@ where $\star\in\{1,2,3\}$.
     \prod_{\theta\in\A}\Sto_\theta(A^0)
   \]
   which can be concatenated with $h$ to obtain an element in $\St(A^0)$.
-  \begin{s-rem}
-    If we are interested in $h\circ\prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}
-    \circ\bar\vartheta_\theta$ we can remove some \rewrite{steps}, in the
-    constructed function.
-  \end{s-rem}
 \end{prop}
 
 We compose this isomorphism as follows:
@@ -1941,9 +1922,9 @@ We compose this isomorphism as follows:
     \[
       \C^{k_1+2\cdot k_2}\overset{\cong}\longrightarrow
       \prod_{\theta\in\A^{k_1}} \SSto_{\theta}^{k_1}(A^0) \times
-      \prod_{\theta\in\A^{k_1}} \SSto_{\theta}^{k_1}(A^0)
+      \prod_{\theta\in\A^{k_2}} \SSto_{\theta}^{k_2}(A^0)
     \]
-    piecewise as
+    levelwise as
     \begin{enumerate}
       \item an element
         $\left( (a_{\theta_{\nu_1}},b_{\theta_{\nu_1}})
@@ -2077,5 +2058,50 @@ We compose this isomorphism as follows:
     \overset{\cong}\to \prod_{\theta\in\A}\Sto_\theta(A^0)$.
 \end{enumerate}
 
+\begin{prop}\label{prop:result2}
+  Similar to proposition~\ref{prop:result1} we can also define the isomorphism
+  \[
+    \C^{k_1+2\cdot k_2}\longrightarrow\St(A^0)
+  \]
+  which makes the following diagram commute.
+  \[ \begin{tikzcd}[column sep=2cm,row sep=3cm]
+      &\C^{k_1+2\cdot k_2} 
+      \dlar[blue]{\prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}\circ\bar\vartheta_\theta}
+      \arrow[dr,green!50!black]
+    \\\prod_{\theta\in\A}\Sto_\theta(A^0)
+      \arrow[rr,purple,"h"]
+      &&\St(A^0)
+  \end{tikzcd} \]
+\end{prop}
+We can rewrite this diagram as follows
+\[ \begin{tikzcd}
+    &\C^{k_1+2\cdot k_2}
+    \dar[xshift=-1pt,blue]
+    \dar[xshift=1pt,green!50!black]
+  \\&\prod_{k\in\{k_1,k_2\}}\prod_{\theta\in\A}\SSto_{\theta}^{k}(A^0)
+     \arrow[dl,blue]
+     \rar[green!50!black]
+    &\prod_{k\in\{k_1,k_2\}}\Sto_{\theta}^{k}(A^0)
+     \dar[green!50!black]{\prod_{k\in\{k_1,k_2\}}i^k}
+  \\\prod_{\theta\in\A} \SSto_{\theta}(A^0)
+    \dar[blue]{\prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}}
+    && 
+    \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
+    \dar[green!50!black]{\cT}
+  \\\prod_{\theta\in\A} \Sto_{\theta}(A^0)
+    \arrow[rr,purple,"h"]
+    && \St(A^0)
+\end{tikzcd} \]
+\begin{comment}
+  To define this isomorphism we use the steps one and two \rewrite{from the
+  definition of the isomorphism in proposition}~\ref{prop:result1}.
+\end{comment}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Explicit example}
+\def\kOne{1}
+\def\kTwo{3}
+Even more explicit, we can fix the levels $k_1=\kOne$ and $k_2=\kTwo$ together
+with $\theta_0=0$.
+The classification space is in this case isomorphic to
+$\C^{\kOne+2\cdot\kTwo}$.
