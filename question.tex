@@ -9,15 +9,6 @@ To be more precise: we are interested in the representation of an element from
 $\prod_{\theta\in\A}\Sto_\theta(A^0)$ and how the information about the
 different levels is stored.
 
-\begin{comment}
-  Ideas:
-  \begin{enumerate}
-    \item see algorithm~\cite[II.3.4]{Loday1994}
-    \item search in \cite{Loday2014}
-    \item generalize the ideas from \cite{boalch,thboalch}.
-  \end{enumerate}
-\end{comment}
-
 \bgroup
 \columnratio{0.3}
 \begin{paracol}{2}\sloppy
@@ -56,447 +47,10 @@ theorem~\ref{thm:mainThm2} to an element in $\St(A^0)$.
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{figure}[!htbp] %{{{
-%   \centering
-%   \begin{subfigure}[b]{0.33\textwidth}
-%     \caption{$\cK=\{\textcolor{brown}{5},\textcolor{blue}{3}\}$}
-%     \begin{tikzpicture}[scale=1.9]
-%       \node (zero) at (0,0) {};
-%       \draw (zero) circle (1cm);
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       \foreach \w in {10}
-%       % {\foreach \sep in {0,45,90,135,180,225,270,315}
-%       {\foreach \sep in {0,36,72,108,144,180,216,252,288,324}
-%        {%\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-
-%         \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
-%         \draw[ultra thick,brown] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-
-%         \draw[thick,brown] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
-%           arc ({\w + \sep - 18}:{\w + \sep +18}:\r);
-
-%         \draw[dotted,brown] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
-%           -- ({cos( \w + \sep -18) * 1},{sin( \w + \sep -18) * 1});
-%         \draw[dotted,brown] ({cos( \w + \sep +18) * \r},{sin( \w + \sep +18) * \r})
-%           -- ({cos( \w + \sep +18) * 1},{sin( \w + \sep +18) * 1});
-%         }};
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       %%%%  Blue
-%       \foreach \w in {10}
-%       {\foreach \sep in {0,60,120,180,240,300}
-%        {%\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});
-
-%         \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,120)/720}}
-
-%         \draw[ultra thick,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-%         \draw[thick,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
-%           arc ({\w + \sep - 30}:{\w + \sep +30}:\r);
-
-
-%         \draw[dotted,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
-%           -- ({cos( \w + \sep -30) * 1},{sin( \w + \sep -30) * 1});
-%         \draw[dotted,blue] ({cos( \w + \sep +30) * \r},{sin( \w + \sep +30) * \r})
-%           -- ({cos( \w + \sep +30) * 1},{sin( \w + \sep +30) * 1});
-%       }};
-
-
-%       % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       % %%%%  Green
-%       % \foreach \w in {10}
-%       % {\foreach \sep in {0,90,180,270}
-%       %  {%\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});
-
-%       %   \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,180)/900}}
-
-%       %   \draw[ultra thick,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
-%       %     -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-%       %   \draw[thick,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
-%       %     arc ({\w + \sep - 45}:{\w + \sep +45}:\r);
-
-
-%       %   \draw[dotted,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
-%       %     -- ({cos( \w + \sep -45) * 1},{sin( \w + \sep -45) * 1});
-%       %   \draw[dotted,green!60!black] ({cos( \w + \sep +45) * \r},{sin( \w + \sep +45) * \r})
-%       %     -- ({cos( \w + \sep +45) * 1},{sin( \w + \sep +45) * 1});
-
-%       % }};
-
-%       \fill[white] (zero) circle (1.5pt);
-%       \fill (zero) circle (.7pt);
-%     \end{tikzpicture}
-%   \end{subfigure}%
-%   \begin{subfigure}[b]{0.33\textwidth}
-%     \caption{$\cK=\{\textcolor{purple}{5},\textcolor{green!60!black}{2}\}$}
-%     \begin{tikzpicture}[scale=1.9]
-%       \node (zero) at (0,0) {};
-%       \draw (zero) circle (1cm);
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       %%%%  Purple
-%       \foreach \w in {10}
-%       % {\foreach \sep in {0,45,90,135,180,225,270,315}
-%       {\foreach \sep in {0,36,72,108,144,180,216,252,288,324}
-%        {%\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-
-%         \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
-%         \draw[ultra thick,purple] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-
-%         \draw[thick,purple] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
-%           arc ({\w + \sep - 18}:{\w + \sep +18}:\r);
-
-%         \draw[dotted,purple] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
-%           -- ({cos( \w + \sep -18) * 1},{sin( \w + \sep -18) * 1});
-%         \draw[dotted,purple] ({cos( \w + \sep +18) * \r},{sin( \w + \sep +18) * \r})
-%           -- ({cos( \w + \sep +18) * 1},{sin( \w + \sep +18) * 1});
-%         }};
-
-%       % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       % %%%%  Blue
-%       % \foreach \w in {10}
-%       % {\foreach \sep in {0,60,120,180,240,300}
-%       %  {%\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});
-
-%       %   \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,120)/720}}
-
-%       %   \draw[ultra thick,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
-%       %     -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-%       %   \draw[thick,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
-%       %     arc ({\w + \sep - 30}:{\w + \sep +30}:\r);
-
-
-%       %   \draw[dotted,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
-%       %     -- ({cos( \w + \sep -30) * 1},{sin( \w + \sep -30) * 1});
-%       %   \draw[dotted,blue] ({cos( \w + \sep +30) * \r},{sin( \w + \sep +30) * \r})
-%       %     -- ({cos( \w + \sep +30) * 1},{sin( \w + \sep +30) * 1});
-%       % }};
-
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       %%%%  Green
-%       \foreach \w in {10}
-%       {\foreach \sep in {0,90,180,270}
-%        {%\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});
-
-%         \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,180)/900}}
-
-%         \draw[ultra thick,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-%         \draw[thick,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
-%           arc ({\w + \sep - 45}:{\w + \sep +45}:\r);
-
-
-%         \draw[dotted,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
-%           -- ({cos( \w + \sep -45) * 1},{sin( \w + \sep -45) * 1});
-%         \draw[dotted,green!60!black] ({cos( \w + \sep +45) * \r},{sin( \w + \sep +45) * \r})
-%           -- ({cos( \w + \sep +45) * 1},{sin( \w + \sep +45) * 1});
-
-%       }};
-
-%       \fill[white] (zero) circle (1.5pt);
-%       \fill (zero) circle (.7pt);
-%     \end{tikzpicture}
-%   \end{subfigure}%
-%   \begin{subfigure}[b]{0.33\textwidth}
-%     \caption{$\cK=\{\textcolor{blue}{3},\textcolor{green!60!black}{2}\}$}
-%     \begin{tikzpicture}[scale=1.9]
-%       \node (zero) at (0,0) {};
-%       \draw (zero) circle (1cm);
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       %%%%  Purple
-%       % \foreach \w in {10}
-%       % % {\foreach \sep in {0,45,90,135,180,225,270,315}
-%       % {\foreach \sep in {0,36,72,108,144,180,216,252,288,324}
-%       %  {%\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-
-%       %   \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
-%       %   \draw[ultra thick,purple] ({cos( \w + \sep )},{sin( \w + \sep )})
-%       %     -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-
-%       %   \draw[thick,purple] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
-%       %     arc ({\w + \sep - 18}:{\w + \sep +18}:\r);
-
-%       %   \draw[dotted,purple] ({cos( \w + \sep -18) * \r},{sin( \w + \sep -18) * \r})
-%       %     -- ({cos( \w + \sep -18) * 1},{sin( \w + \sep -18) * 1});
-%       %   \draw[dotted,purple] ({cos( \w + \sep +18) * \r},{sin( \w + \sep +18) * \r})
-%       %     -- ({cos( \w + \sep +18) * 1},{sin( \w + \sep +18) * 1});
-%       %   }};
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       %%%%  Blue
-%       \foreach \w in {10}
-%       {\foreach \sep in {0,60,120,180,240,300}
-%        {%\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});
-
-%         \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,120)/720}}
-
-%         \draw[ultra thick,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-%         \draw[thick,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
-%           arc ({\w + \sep - 30}:{\w + \sep +30}:\r);
-
-
-%         \draw[dotted,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
-%           -- ({cos( \w + \sep -30) * 1},{sin( \w + \sep -30) * 1});
-%         \draw[dotted,blue] ({cos( \w + \sep +30) * \r},{sin( \w + \sep +30) * \r})
-%           -- ({cos( \w + \sep +30) * 1},{sin( \w + \sep +30) * 1});
-%       }};
-
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       %%%%  Green
-%       \foreach \w in {10}
-%       {\foreach \sep in {0,90,180,270}
-%        {%\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});
-
-%         \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,180)/900}}
-
-%         \draw[ultra thick,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-%         \draw[thick,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
-%           arc ({\w + \sep - 45}:{\w + \sep +45}:\r);
-
-
-%         \draw[dotted,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
-%           -- ({cos( \w + \sep -45) * 1},{sin( \w + \sep -45) * 1});
-%         \draw[dotted,green!60!black] ({cos( \w + \sep +45) * \r},{sin( \w + \sep +45) * \r})
-%           -- ({cos( \w + \sep +45) * 1},{sin( \w + \sep +45) * 1});
-
-%       }};
-
-%       \fill[white] (zero) circle (1.5pt);
-%       \fill (zero) circle (.7pt);
-%     \end{tikzpicture}
-%   \end{subfigure}
-%   \begin{subfigure}[b]{0.33\textwidth}
-%     \caption{$\cK=\{\textcolor{orange}{6},\textcolor{blue}{3}\}$}
-%     \begin{tikzpicture}[scale=1.9]
-%       \node (zero) at (0,0) {};
-%       \draw (zero) circle (1cm);
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       %%%%  Purple
-%       \foreach \w in {10}
-%       % {\foreach \sep in {0,45,90,135,180,225,270,315}
-%       {\foreach \sep in
-%         {0,30,60,90,120,150,180,210,240,270,300,330}
-%        {%\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-
-%         \pgfmathsetmacro\hangle{15}
-
-%         \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
-%         \draw[ultra thick,orange] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-
-%         \draw[thick,orange] ({cos( \w + \sep -\hangle) * \r},{sin( \w + \sep -\hangle) * \r})
-%           arc ({\w + \sep - \hangle}:{\w + \sep +\hangle}:\r);
-
-%         \draw[dotted,orange] ({cos( \w + \sep -\hangle) * \r},{sin( \w + \sep -\hangle) * \r})
-%           -- ({cos( \w + \sep -\hangle) * 1},{sin( \w + \sep -\hangle) * 1});
-%         \draw[dotted,orange] ({cos( \w + \sep +\hangle) * \r},{sin( \w + \sep +\hangle) * \r})
-%           -- ({cos( \w + \sep +\hangle) * 1},{sin( \w + \sep +\hangle) * 1});
-%         }};
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       \foreach \w in {10}
-%       {\foreach \sep in {0,60,120,180,240,300}
-%        {%\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});
-
-%         \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,120)/720}}
-
-%         \draw[ultra thick,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-%         \draw[thick,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
-%           arc ({\w + \sep - 30}:{\w + \sep +30}:\r);
-
-
-%         \draw[dotted,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
-%           -- ({cos( \w + \sep -30) * 1},{sin( \w + \sep -30) * 1});
-%         \draw[dotted,blue] ({cos( \w + \sep +30) * \r},{sin( \w + \sep +30) * \r})
-%           -- ({cos( \w + \sep +30) * 1},{sin( \w + \sep +30) * 1});
-%       }};
-
-%       \fill[white] (zero) circle (1.5pt);
-%       \fill (zero) circle (.7pt);
-%     \end{tikzpicture}
-%   \end{subfigure}
-%   \begin{subfigure}[b]{0.33\textwidth}
-%     \caption{$\cK=\{\textcolor{purple}{7},\textcolor{blue}{3}\}$}
-%     \begin{tikzpicture}[scale=1.9]
-%       \node (zero) at (0,0) {};
-%       \draw (zero) circle (1cm);
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       %%%%  Purple
-%       \foreach \w in {10}
-%       % {\foreach \sep in {0,45,90,135,180,225,270,315}
-%       {\foreach \sep in
-%         {0,25.7,51.4,77.1,102.8,128.5,154.2,179.9,205.6,231.3,257.0,282.7,308.4,334.1}
-%        {%\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-
-%         \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
-%         \draw[ultra thick,purple] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-
-%         \draw[thick,purple] ({cos( \w + \sep -12.8) * \r},{sin( \w + \sep -12.8) * \r})
-%           arc ({\w + \sep - 12.8}:{\w + \sep +12.8}:\r);
-
-%         \draw[dotted,purple] ({cos( \w + \sep -12.8) * \r},{sin( \w + \sep -12.8) * \r})
-%           -- ({cos( \w + \sep -12.8) * 1},{sin( \w + \sep -12.8) * 1});
-%         \draw[dotted,purple] ({cos( \w + \sep +12.8) * \r},{sin( \w + \sep +12.8) * \r})
-%           -- ({cos( \w + \sep +12.8) * 1},{sin( \w + \sep +12.8) * 1});
-%         }};
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       \foreach \w in {10}
-%       {\foreach \sep in {0,60,120,180,240,300}
-%        {%\draw[blue] (0,0) -- +({cos( \w + \sep ) * 0.9},{sin( \w + \sep ) * 0.9});
-
-%         \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,120)/720}}
-
-%         \draw[ultra thick,blue] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-%         \draw[thick,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
-%           arc ({\w + \sep - 30}:{\w + \sep +30}:\r);
-
-
-%         \draw[dotted,blue] ({cos( \w + \sep -30) * \r},{sin( \w + \sep -30) * \r})
-%           -- ({cos( \w + \sep -30) * 1},{sin( \w + \sep -30) * 1});
-%         \draw[dotted,blue] ({cos( \w + \sep +30) * \r},{sin( \w + \sep +30) * \r})
-%           -- ({cos( \w + \sep +30) * 1},{sin( \w + \sep +30) * 1});
-%       }};
-
-%       \fill[white] (zero) circle (1.5pt);
-%       \fill (zero) circle (.7pt);
-%     \end{tikzpicture}
-%   \end{subfigure}
-%   \begin{subfigure}[b]{0.33\textwidth}
-%     \caption{$\cK=\{\textcolor{orange}{6},\textcolor{green!60!black}{2}\}$}
-%     \begin{tikzpicture}[scale=1.9]
-%       \node (zero) at (0,0) {};
-%       \draw (zero) circle (1cm);
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       %%%%  Purple
-%       \foreach \w in {10}
-%       % {\foreach \sep in {0,45,90,135,180,225,270,315}
-%       {\foreach \sep in
-%         {0,30,60,90,120,150,180,210,240,270,300,330}
-%        {%\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-
-%         \pgfmathsetmacro\hangle{15}
-
-%         \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
-%         \draw[ultra thick,orange] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-
-%         \draw[thick,orange] ({cos( \w + \sep -\hangle) * \r},{sin( \w + \sep -\hangle) * \r})
-%           arc ({\w + \sep - \hangle}:{\w + \sep +\hangle}:\r);
-
-%         \draw[dotted,orange] ({cos( \w + \sep -\hangle) * \r},{sin( \w + \sep -\hangle) * \r})
-%           -- ({cos( \w + \sep -\hangle) * 1},{sin( \w + \sep -\hangle) * 1});
-%         \draw[dotted,orange] ({cos( \w + \sep +\hangle) * \r},{sin( \w + \sep +\hangle) * \r})
-%           -- ({cos( \w + \sep +\hangle) * 1},{sin( \w + \sep +\hangle) * 1});
-%         }};
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       %%%%  Green
-%       \foreach \w in {10}
-%       {\foreach \sep in {0,90,180,270}
-%        {%\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});
-
-%         \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,180)/900}}
-
-%         \draw[ultra thick,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-%         \draw[thick,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
-%           arc ({\w + \sep - 45}:{\w + \sep +45}:\r);
-
-
-%         \draw[dotted,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
-%           -- ({cos( \w + \sep -45) * 1},{sin( \w + \sep -45) * 1});
-%         \draw[dotted,green!60!black] ({cos( \w + \sep +45) * \r},{sin( \w + \sep +45) * \r})
-%           -- ({cos( \w + \sep +45) * 1},{sin( \w + \sep +45) * 1});
-
-%       }};
-
-%       \fill[white] (zero) circle (1.5pt);
-%       \fill (zero) circle (.7pt);
-%     \end{tikzpicture}
-%   \end{subfigure}
-%   \begin{subfigure}[b]{0.33\textwidth}
-%     \caption{$\cK=\{\textcolor{purple}{7},\textcolor{green!60!black}{2}\}$}
-%     \begin{tikzpicture}[scale=1.9]
-%       \node (zero) at (0,0) {};
-%       \draw (zero) circle (1cm);
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       %%%%  Purple
-%       \foreach \w in {10}
-%       % {\foreach \sep in {0,45,90,135,180,225,270,315}
-%       {\foreach \sep in
-%         {0,25.7,51.4,77.1,102.8,128.5,154.2,179.9,205.6,231.3,257.0,282.7,308.4,334.1}
-%        {%\draw[thick,purple] (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-
-%         \pgfmathsetmacro\r{{1.1 + mod(\w,10)/100 + mod(\sep,72)/360}}
-%         \draw[ultra thick,purple] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-
-%         \draw[thick,purple] ({cos( \w + \sep -12.8) * \r},{sin( \w + \sep -12.8) * \r})
-%           arc ({\w + \sep - 12.8}:{\w + \sep +12.8}:\r);
-
-%         \draw[dotted,purple] ({cos( \w + \sep -12.8) * \r},{sin( \w + \sep -12.8) * \r})
-%           -- ({cos( \w + \sep -12.8) * 1},{sin( \w + \sep -12.8) * 1});
-%         \draw[dotted,purple] ({cos( \w + \sep +12.8) * \r},{sin( \w + \sep +12.8) * \r})
-%           -- ({cos( \w + \sep +12.8) * 1},{sin( \w + \sep +12.8) * 1});
-%         }};
-
-%       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%       %%%%  Green
-%       \foreach \w in {10}
-%       {\foreach \sep in {0,90,180,270}
-%        {%\draw[green!60!black] (0,0) -- +({cos( \w + \sep ) * 0.8},{sin( \w + \sep) * 0.8});
-
-%         \pgfmathsetmacro\r{{0.8 + mod(\w,10)/100 + mod(\sep,180)/900}}
-
-%         \draw[ultra thick,green!60!black] ({cos( \w + \sep )},{sin( \w + \sep )})
-%           -- ({cos( \w + \sep) * \r},{sin( \w + \sep) * \r});
-%         \draw[thick,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
-%           arc ({\w + \sep - 45}:{\w + \sep +45}:\r);
-
-
-%         \draw[dotted,green!60!black] ({cos( \w + \sep -45) * \r},{sin( \w + \sep -45) * \r})
-%           -- ({cos( \w + \sep -45) * 1},{sin( \w + \sep -45) * 1});
-%         \draw[dotted,green!60!black] ({cos( \w + \sep +45) * \r},{sin( \w + \sep +45) * \r})
-%           -- ({cos( \w + \sep +45) * 1},{sin( \w + \sep +45) * 1});
-
-%       }};
-
-%       \fill[white] (zero) circle (1.5pt);
-%       \fill (zero) circle (.7pt);
-%     \end{tikzpicture}
-%   \end{subfigure}
-%   \caption{Ideas for examples with two levels.}
-% \end{figure} %}}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Step 0: Building our example}
-We want to have an unramified connection with more than one level. Two levels
-might be enough. Our plan is as follows:
-\begin{enumerate}
-  \item fix some determining polynomials, which define the levels and
-    anti-Stokes directions;
-  \item fix some exponent of formal monodromy $L$, which defines, together with
-    the determining polynomials and the order, our normal form $[A^0]$ and our
-    normal solution $\cY_0$;
-  \item fix some formal transformation $\hat F$, which defines our system
-    $[A]:=[{}^{\hat F}\!A^0]$.
-\end{enumerate}
+The aim of this section is to build, step by step, an unramified connection
+with more than one level.
+In fact we wont to have two levels, which might be enough.
 
 \paragraph{Fix the determining polynomials}
 Let us start by defining the determining polynomials $q_j(t^{-1})$ of $[A^0]$
@@ -508,21 +62,19 @@ such that
   \item all Stokes levels are beared by one direction $\theta_0\in S^1$,
     i.e.\ $\cK_{\theta_0}=\cK$.
 \end{enumerate}
-Let $l_j:=\deg(q_j)$ and use the notations from
-definition~\ref{defn:determiningPolysOfEndA}, e.g.\ the degree $k_{jl}$ of
-$q_j-q_l\in\cQ_{[\End A^0]}$.
 \begin{rem}
   In this situation we know, that:
   \begin{enumerate}
     \item
+      Let $l_j:=\deg(q_j)$.
       If we assume that all determining polynomials have different leading
       coefficients, we \rewrite{require} (up to permutation) that the first
       $n'$, $0<n'<n$, polynomials should have degree $l_j=k_2$.
       For $n'<j<n$ the polynomials $q_j$ should have degree $l_j\leq k_1$ and
       the last polynomial $q_n$ is allowed to be of degree $l_n\leq k_1$.
-    \item In dimension $n=3$
-      all anti-Stokes directions are determined by $k_1$, $k_2$ and $\theta_0$.
-      The set of all anti-Stokes directions is then given by
+    \item In dimension $n=3$ are all anti-Stokes directions determined by
+      $k_1$, $k_2$ and $\theta_0$.  The set of all anti-Stokes directions is
+      then given by
       \[
         \A=\left\{
             \theta_0+\frac{\pi}{k}\cdot j\mid k\in\cK\text{, } j\in\N
@@ -530,139 +82,8 @@ $q_j-q_l\in\cQ_{[\End A^0]}$.
       \]
   \end{enumerate}
 \end{rem}
-To keep the example as small as possible, we will choose $n=3$ and assume, that
-all determining polynomials have different leading coefficients.
-\begin{comment}
-  \begin{itemize}
-    \item $l_1=7$, $l_2=2$ and $l_3=0$\TODO[In the $\cK=\{2,7\}$ case is
-        $\cU^{k_2}=\cU^{\leq k_2}=\cU^{\leq k_1}$],
-    \item $l_1=11$, $l_2=5$ and $l_3=0$ or
-    \item \textbf{\boldmath$l_1=10$, $l_2=7$ and $l_3=0$}.
-  \end{itemize}
-\end{comment}
+To keep the example as small as possible, we will choose $n=3$.
 We will \rewrite{choose without restriction} $\theta_0=0$.
-The adequate coverings, defined in section~\ref{sec:proofOfMatrixThm}, are for
-our simple example sketched in the figure~\ref{fig:adequateCovering}.
-\begin{figure} %{{{
-  \centering
-
-  \def\kOne{7}
-  \def\kTwo{10}
-  \begin{tikzpicture}[scale=5] %{{{
-
-    \newcommand{\myDrawArcA}[4]{%{{{
-      % Parameter: radius , center , width , color
-      \pgfmathsetmacro\hwdth{#3 / 2}
-      \draw[ultra thick,#4]
-        ({cos( #2 )},{sin( #2 )})
-        --
-        ({cos( #2 ) * #1 },{sin( #2 ) * #1 });
-      \draw[thick,#4]
-        ({cos(#2 - \hwdth) * #1},{sin(#2 - \hwdth) * #1})
-        arc
-        ({#2 - \hwdth}:{#2 + \hwdth}:#1);
-      \draw[dotted,#4]
-        ({cos(#2 - \hwdth) * #1},{sin(#2 - \hwdth) * #1})
-        --
-        ({cos(#2 - \hwdth)},{sin(#2 - \hwdth)});
-      \draw[dotted,#4]
-        ({cos(#2 + \hwdth) * #1},{sin(#2 + \hwdth) * #1})
-        --
-        ({cos(#2 + \hwdth)},{sin(#2 + \hwdth)});
-      \filldraw[white] ({cos(#2)},{sin(#2)}) circle (0.5pt);
-      \filldraw[red] ({cos(#2)},{sin(#2)}) circle (0.2pt);
-    }%}}}
-    \newcommand{\myDrawArcB}[5]{%{{{
-      % Parameter: radius , center , start , stop , color
-      \draw[ultra thick,#5]
-        ({cos( #2 )},{sin( #2 )})
-        --
-        ({cos( #2 ) * #1 },{sin( #2 ) * #1 });
-      \draw[thick,#5]
-        ({cos( #3 ) * #1},{sin( #3 ) * #1})
-        arc
-        ({ #3 }:{ #4 }:#1);
-      \draw[dotted,#5]
-        ({cos( #3 ) * #1},{sin( #3 ) * #1})
-        --
-        ({cos( #3 )},{sin( #3 )});
-      \draw[dotted,#5]
-        ({cos( #4 ) * #1},{sin( #4 ) * #1})
-        --
-        ({cos( #4 )},{sin( #4 )});
-      \filldraw[white] ({cos(#2)},{sin(#2)}) circle (0.5pt);
-      \filldraw[red] ({cos(#2)},{sin(#2)}) circle (0.2pt);
-    }%}}}
-
-    \node (zero) at (0,0) {};
-    \draw (zero) circle (1cm);
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %% Inner:
-    \foreach \n/\mycol/\baseR in {\kOne/orange/0.8
-                                 ,\kTwo/purple/0.9}
-    {%{{{
-      \pgfmathsetmacro\wdth{180/\n}
-      \foreach \i in {1,2,...,\n}{%
-        \pgfmathsetmacro\r{{\baseR + mod(\i+1,2)*0.05}}
-        \pgfmathsetmacro\angl{\i* \wdth}
-        \myDrawArcA{\r}{\angl}{\wdth}{\mycol}
-
-        \pgfmathsetmacro\r{{\baseR + mod(\i + mod(\n+1,2),2)*0.05}}
-        \pgfmathsetmacro\angl{\i* \wdth+180}
-        \myDrawArcA{\r}{\angl}{\wdth}{\mycol}
-      }
-    }%}}}
-
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %% Outer:
-    \def\mycol{brown}
-    \pgfmathsetmacro{\wdth}{180/\kTwo}
-    \foreach \i in {1,2,...,\kTwo}{%
-      \pgfmathsetmacro\r{{1.05 + mod(\i+1,2)*0.05}}
-      \pgfmathsetmacro\angl{\i* \wdth}
-      \myDrawArcA{\r}{\angl}{\wdth}{\mycol}
-
-      \pgfmathsetmacro\r{{1.05 + mod(\i + mod(\kTwo+1,2),2)*0.05}}
-      \pgfmathsetmacro\angl{\i* \wdth+180}
-      \myDrawArcA{\r}{\angl}{\wdth}{\mycol}
-    }
-    \foreach \i in {1,2,...,\kOne}{%
-      \foreach \j in {1,...,\kTwo}{%
-        \pgfmathparse{\i/\kOne <= \j/\kTwo ? 0 : 1}
-        \ifnum\pgfmathresult=0{%
-          \pgfmathparse{\i/\kOne < \j/\kTwo ? 0 : 1}
-          \ifnum\pgfmathresult=0{%
-            \pgfmathsetmacro\r{{1.15 + mod(\i+1,2)*0.05}}
-            \pgfmathsetmacro\center{\i/\kOne*180}
-            \pgfmathsetmacro\start{(\i-0.5)*180/\kOne > (\j-1.5)*180/\kTwo
-              ? (\i-0.5)*180/\kOne : (\j-1.5)*180/\kTwo}
-            \pgfmathsetmacro\stop{(\i+0.5)*180/\kOne > (\j+0.5)*180/\kTwo
-              ? (\j+0.5)*180/\kTwo : (\i+0.5)*180/\kOne}
-            \myDrawArcB{\r}{\center}{\start}{\stop}{\mycol}
-
-            \pgfmathsetmacro\r{{1.15 + mod(\i,2)*0.05}}
-            \pgfmathsetmacro\center{\center+180}
-            \pgfmathsetmacro\start{\start+180}
-            \pgfmathsetmacro\stop{\stop+180}
-            \myDrawArcB{\r}{\center}{\start}{\stop}{\mycol}
-          }\fi
-          \breakforeach
-        }\fi
-      }
-    }
-
-    \fill[white] (zero) circle (1.5pt);
-    \fill (zero) circle (.7pt);
-  \end{tikzpicture} %}}}
-  \caption{The adequate coverings for $\cK=\{\kOne,\kTwo\}$.
-    The anti-Stokes directions are marked by the \textcolor{red}{red} dots.
-    The arcs of $\dot\cU^{\kOne}=\dot\cU^{\leq\kOne}$ are
-    \textcolor{orange}{orange}, the arcs of $\dot\cU^{\kTwo}$ are
-    \textcolor{purple}{purple} and the arcs of $\dot\cU^{\leq\kTwo}=\dot\cU$
-    are \textcolor{brown}{brown}.
-  }\label{fig:adequateCovering}
-\end{figure}%}}}
 
 \paragraph{Fix the exponent of formal monodromy}
 The information of formal monodromy is given by an invertible constant matrix
@@ -685,98 +106,40 @@ an class in $G\backslash\hat G(A^0)$, and thus a connection matrix
 ${}^{\hat F}\!A^0$ and the corresponding fundamental solution
 $\cY=\hat F\cY_0$.
 
-From the theorem~\ref{thm:summaFaktori} we know in our case, that $\hat F$ can
-be factored in
-\[
-  \hat F=\hat F_1 \hat F_2
-\]
-where $\hat F_j\in\hat G(A^0)$ is
-\begin{itemize}
-  \item $k_j$-summable and
-  \item with singular directions belonging to $\A^{k_j}$.
-\end{itemize}
-\TODO[build this way?]
+\begin{comment}
+  From the theorem~\ref{thm:summaFaktori} we know in our case, that $\hat F$
+  can be factored in
+  \[
+    \hat F=\hat F_1 \hat F_2
+  \]
+  where $\hat F_j\in\hat G(A^0)$ is
+  \begin{itemize}
+    \item $k_j$-summable and
+    \item with singular directions belonging to $\A^{k_j}$.
+  \end{itemize}
+  \TODO[build this way?]
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Step 1: Find corresponding element in
+\section{Step 1: The corresponding Stokes cycle in
   $\prod_{\theta\in\A}\Sto_\theta(A^0)$}
 \begin{comment}
   \textbf{summability:}
   \cite[III.2]{Loday1994} \cite[78f,80]{Loday2014} (\cite[9]{thboalch} only
   mentions multisummability)
 \end{comment}
-\marginnote{\cite[Thm.4.3.13]{Loday2014}}
-Fix a set of determinations $\tilde\theta_1,\dots,\tilde\theta_\nu$ of
-$\theta_1 ,\dots,\theta_\nu$.
-An element in $\prod_{\theta\in\A}\Sto_\theta(A^0)$ corresponding to $\hat F$
-is found as
-\[
-  (\phi_{\theta_1},\dots,\phi_{\theta_\nu})
-  \in\prod_{\theta\in\A}\Sto_\theta(A^0)
-\]
-by setting $\phi_\theta:=
-\left(S^-_\theta(\hat F)\right)̂^{̀-1}S^+_\theta(\hat F)\in\Sto_\theta(A^0)$
-(cf.\ definition~\ref{defn:sumsLeftRight}).
-\begin{comment}
-  \begin{rem}
-    \marginnote{\cite[Defn.3.6]{boalch}}
-    $S^+_\theta(\hat F)t^Le^{Q(t^{-1})}$ is 
-    $\left\{\substack{\text{a}\\\text{the canonical}}\right\}$ fundamental
-    solution of $[A]$ on the corresponding sector.
-    \TODO[ or $S^-_\theta(\hat F)t^Le^{Q(t^{-1})}$?  or
-      $t^Le^{Q(t^{-1})}S^+_\theta(\hat F)$?  or
-    $t^Le^{Q(t^{-1})}S^-_\theta(\hat F)$?]
-  \end{rem}
-\end{comment}
-\begin{comment}
-  \begin{rem}
-    \TODO[Move to sec:Multisummability? Rewrite!]
-    For each $\theta\in\A$ is $\phi_\theta$
-    \begin{enumerate}
-      \item flat, since $\hat\phi_\theta
-           =\hat{\left(F_\theta^+\right)̂^{̀-1}}\hat{F_\theta^-}
-           =\hat{F}^{̀-1}\hat{F}=\id$
-      \item an isotropy, since
-          ${}^{\phi_\theta}\!A^0
-           = {}^{\left(F_\theta^+\right)̂^{̀-1}F_\theta^-}\!A^0
-           = {}^{\left(F_\theta^+\right)̂^{̀-1}}\!\left({}^{F_\theta^-}\!A^0\right)
-           \overset{\TODO{}}{=}{}^{\left(F_\theta^+\right)̂^{̀-1}}\!A^1
-           \overset{\TODO{}}{=}A^0$
-        % \begin{commentOUT}
-        %   \begin{align*}
-        %     {}^{\phi_\theta}\!A^0
-        %     &= (d\phi_\theta)\phi_\theta^{-1}+\phi_\theta A^0
-        %     \phi_\theta^{-1}
-        %   \\&=\left(
-        %       d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
-        %       +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
-        %     \right)\phi_\theta^{-1}+\phi_\theta A^0\phi_\theta^{-1}
-        %   \\&=\left(
-        %       d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
-        %       +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
-        %     \right) \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-        %     +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
-        %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-        %   \\&=
-        %      d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^+
-        %      +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
-        %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-        %      +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
-        %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-        %   \\&=\TODO{}
-        %   \\&=A^0
-        %   \end{align*}
-        % \end{commentOUT}
-      \item of maximal decay, since \TODO{}
-    \end{enumerate}
-  \end{rem}
-\end{comment}
+Fix a set of determinations $\tilde\theta_1,\dots,\tilde\theta_\nu$ of the
+anti Stokes directions $\theta_1 ,\dots,\theta_\nu$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{How do the Stokes germs $\phi_\theta$ look like?}
-Let $\theta\in S^1$ and let $\tilde\theta$ be a determination of $\theta$.
-\rewrite{A matrix representation of a Stokes germ gets mapped to a Stokes germ}
-via
+Here we want to use the faithful matrix representations of Stokes germs,
+discussed in section~\ref{sec:matrixReps}, to \rewrite{obtain some statements}
+about the \rewrite{structure} of the Stokes germs in our situation.
+
+The proposition~\ref{prop:representation} states, that a matrix representation
+of a Stokes germ, i.e.\ an element of $\SSto_\theta(A^0)$, gets mapped to a
+Stokes germ via
 \begin{align*}
   \rho_{\tilde\theta}^{-1}:
   \SSto_\theta(A^0)
@@ -789,6 +152,7 @@ which depends on the determination $\tilde\theta$ of $\theta$ \TODO[is this
 dependency only important, in the ramified case?]
 (cf.\ proposition~\ref{prop:representation}).
 
+\paragraph{Using the structure of $\SSto_\theta(A^0)$}
 \begin{exmp}
   Let $\theta\in\A$ be an anti Stokes direction.
   From the definition of $\SSto_\theta(A^0)$ (cf.\
@@ -845,7 +209,7 @@ dependency only important, in the ramified case?]
     \end{pmatrix}
   \end{align*}
 \end{exmp}
-In fact, we have the following $9$ cases
+In fact, we have the following $9$ cases 
 \begin{center}
   \def\arraystretch{1.3}
   \setlength\tabcolsep{4mm}
@@ -891,18 +255,287 @@ well as in the \textcolor{purple!75!black}{purple} cases $\cK_\theta=\{k_1\}$
 and $\C^1\overset{\vartheta_\theta}{\underset{\cong}{\longrightarrow}}\SSto_\theta(A^0)$.
 Thus, for every $\theta\in\A$, we have an isomorphism
 $\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta$.
+
+\paragraph{Decomposition by levels}
+In proposition~\ref{prop:filtrationOfStokesGroup} we have defined a
+decomposition of the Stokes group $\Sto_\theta(A^0)$ in subgroups generated by
+$k$-germs for $k\in\cK$.
+In our case, we have at most two level, such that this decomposition looks like
+\[
+  \phi_\theta=\phi_\theta^{k_1} \phi_\theta^{k_2}
+  \overset{i_\theta}\longmapsto
+    \left(\phi_\theta^{k_1},\phi_\theta^{k_2}\right)
+      \in\Sto_\theta^{k_1}(A^0)\times\Sto_\theta^{k_2}(A^0) \,,
+\]
+where $\phi_\theta^{k_1}\in\Sto_\theta^{k_1}(A^0)=\Sto_\theta^{<k_2}(A^0)$,
+$\phi_\theta^{k_2}\in\Sto_\theta^{k_2}(A^0)$  and $i_\theta$ is the map, wich
+gives the factors of this factorization in ascending order.
+
+This decomposition of a germ $\phi_\theta$ is trivial if
+$\#\cK(\phi_\theta)\leq1$, thus the interesting cases are the
+\textcolor{blue!75!black}{blue} cases.
+
+\begin{exmp}
+  Look at the example
+  \[
+    \vartheta_\theta(c_1,c_2,c_3)=
+    t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1 & 0 & 0
+    \\c_1 & 1 & 0
+    \\c_2 & c_3 & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L}
+    =\phi_\theta
+    \,.
+  \]
+  According to remark~\ref{rem:algFactorization} the factor
+  $\phi_\theta^{k_1}$, generated by the $k_1$-germs, is given by
+  \[
+    \phi_\theta^{k_1}=
+    t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1 & 0 & 0
+    \\\text{\boldmath $0$} & 1 & 0
+    \\\text{\boldmath $0$} & c_3 & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L} \,.
+  \]
+  The other factor $\phi_\theta^{k_2}$ is then obtained as
+  \begin{align*}
+    \phi_\theta^{k_2}&=
+    \left(\phi_\theta^{k_1}\right)^{-1}
+    \phi_\theta^{k_2}
+  \\&=t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1     & 0    & 0
+    \\0     & 1    & 0
+    \\0     & c_3 & 1
+    \end{pmatrix}^{-1}
+    \underset{=\id}{\underbrace{%
+        e^{-Q(t^{-1})}t^{-L}
+        t^{L}e^{Q(t^{-1})}
+    }}
+    \begin{pmatrix}
+      1     & 0 & 0
+    \\c_1     & 1     & 0
+    \\c_2     & c_3 & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L}
+  \\&=t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1     & 0    & 0
+    \\0     & 1    & 0
+    \\0     & -c_3 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1     & 0 & 0
+    \\c_1     & 1     & 0
+    \\c_2     & c_3 & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L}
+  \\&=t^{L}e^{Q(t^{-1})}
+    \begin{pmatrix}
+      1     & 0 & 0
+    \\c_1     & 1          & 0
+    \\c_2-c_1c_3     & 0          & 1
+    \end{pmatrix}
+    e^{-Q(t^{-1})}t^{-L}
+    \,.
+  \end{align*}
+\end{exmp}
+The four interesting decomposition, in our situation are given by
+\begin{enumerate}
+  \item $\begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}$
+  \item $\begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & 0 \\0 & c_3 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_3 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & c_1 & c_2 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}$
+  \item $\begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & c_3 \\c_2 & 0 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_3 \\0 & 0 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & 0 & 0 \\c_1 -c_2c_3& 1 & 0 \\c_2 & 0 & 1 \end{pmatrix}$
+  \item $\begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & 0 \\c_2 & c_3 & 1 \end{pmatrix}
+    = \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_3 & 1 \end{pmatrix}
+    \begin{pmatrix} 1 & 0 & 0 \\c_1 & 1 & 0 \\c_2-c_1c_3 & 0 & 1 \end{pmatrix}$
+\end{enumerate}
+We will use this decompositions in the other direction, to write the
+isomorphisms $\vartheta_\theta:\C^\star\to \SSto_\theta(A^0)$ as
+\[
+  \bar\vartheta_\theta:
+  \C^\star
+  \longrightarrow\SSto_\theta^{k_1}(A^0)\times\SSto_\theta^{k_2}(A^0)
+  \overset{i_\theta^{-1}}\longrightarrow\SSto_\theta(A^0)
+\]
+where $\star\in\{1,2,3\}$.
+
 \begin{prop}
-  Fix for every $\theta\in\A$ a determination $\tilde\theta$.
   By taking the product of all $\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta$
   we obtain the isomorphism
   \[
-    \prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta:
+    \prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}\circ\bar\vartheta_\theta:
     \C^{2\cdot k_2 + k_1}
     \overset\cong\longrightarrow
     \prod_{\theta\in\A}\Sto_\theta(A^0) \,.
   \]
 \end{prop}
 
+\begin{comment}
+\begin{thm}
+  The set $\Sto(A^0)$, and thus the classifying set, is in our case isomorphic
+  to $\C^{k_1+2\cdot k_2}$.
+\end{thm}
+\end{comment}
+We compose this isomorphism as follows:
+\begin{enumerate}
+  \item Decompose $\C^{k_1+2\cdot k_2}\cong
+    \prod_{\theta\in\A^{k_1}} \C \times \prod_{\theta\in\A^{k_2}} \C^2$ and
+    define the isomorphism
+    \[
+      \C^{k_1+2\cdot k_2}\overset{\cong}\longrightarrow
+      \prod_{\theta\in\A^{k_1}} \SSto_{\theta}^{k_1}(A^0) \times
+      \prod_{\theta\in\A^{k_1}} \SSto_{\theta}^{k_1}(A^0)
+    \]
+    piecewise as
+    \begin{enumerate}
+      \item an element
+        $\left( (a_{\theta_{\nu_1}},b_{\theta_{\nu_1}})
+          ,(a_{\theta_{\nu_2}},b_{\theta_{\nu_2}})
+          ,\dots
+        \right)\in\prod_{\theta\in\A^{k_2}} \C^2$
+        gets mapped to
+        \[
+          \left.
+          \begin{cases}
+            \left(
+            \begin{pmatrix} 1 & a_{\theta_{\nu_1}} & b_{\theta_{\nu_1}} \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\a_{\theta_{\nu_2}} & 1 & 0 \\b_{\theta_{\nu_2}} & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & a_{\theta_{\nu_3}} & b_{\theta_{\nu_3}} \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}
+              ,\dots
+            \right)
+            & ,\substack{\text{~if~} q_1 \underset{\theta_0,\max}{\prec} q_2
+              \\\text{~and~} q_1 \underset{\theta_0,\max}{\prec} q_3}
+            \\\left(
+            \begin{pmatrix} 1 & 0 & 0 \\a_{\theta_{\nu_1}} & 1 & 0 \\b_{\theta_{\nu_1}} & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & a_{\theta_{\nu_2}} & b_{\theta_{\nu_2}} \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\a_{\theta_{\nu_3}} & 1 & 0 \\b_{\theta_{\nu_3}} & 0 & 1 \end{pmatrix}
+              ,\dots
+            \right)
+            & ,\substack{\text{~if~} q_2 \underset{\theta_0,\max}{\prec} q_1
+              \\\text{~and~} q_3 \underset{\theta_0,\max}{\prec} q_1}
+          \end{cases}
+          \right\}
+          =:\left(
+            C_{\theta_{\nu_1}}^{k_2}
+            ,C_{\theta_{\nu_2}}^{k_2}
+            ,\dots
+          \right)
+        \]
+      \item
+        $\left(
+          c_{\theta_{\mu_1}}
+          ,c_{\theta_{\mu_2}}
+          ,\dots
+        \right)\in\prod_{\theta\in\A^{k_1}} \C$
+        gets mapped to
+        \[
+          \left.
+          \begin{cases}
+            \left(
+            \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_{\theta_{\mu_1}} \\0 & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_{\theta_{\mu_2}} & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_{\theta_{\mu_3}} \\0 & 0 & 1 \end{pmatrix}
+              ,\dots
+            \right)
+            &\text{,~if~} q_2 \underset{\theta_0,\max}{\prec} q_3
+            \\\left(
+            \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_{\theta_{\mu_1}} & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_{\theta_{\mu_2}} \\0 & 0 & 1 \end{pmatrix}
+            ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_{\theta_{\mu_2}} & 1 \end{pmatrix}
+              ,\dots
+            \right)
+            &\text{,~if~} q_3 \underset{\theta_0,\max}{\prec} q_2
+          \end{cases}
+        \right\}
+        =:\left(
+          C_{\theta_{\mu_1}}^{k_1}
+          ,C_{\theta_{\mu_2}}^{k_1}
+          ,\dots
+        \right)
+        \]
+    \end{enumerate}
+  \item We use the inclusions $\A^k\hookrightarrow\A$ and the fact, that
+    $\SSto_\theta^k(A^0)=\{\id\}$ if $k\notin\cK_\theta$ to get an isomorphism
+    \begin{align*}
+      \prod_{\theta\in\A^{k}}\SSto_\theta^{k}(A^0)&\to
+      \prod_{\theta\in\A}\SSto_\theta^{k}(A^0)
+    \\\left(
+        C_{\theta_{\mu_1}}^{k_1}
+        ,C_{\theta_{\mu_2}}^{k_1}
+        ,\dots
+      \right)
+      &\mapsto
+      \left(
+        C_{\theta_{1}}^{k_1}
+        ,C_{\theta_{2}}^{k_1}
+        ,\dots
+      \right)
+    \\\left(
+        C_{\theta_{\mu_1}}^{k_2}
+        ,C_{\theta_{\mu_2}}^{k_2}
+        ,\dots
+      \right)
+      &\mapsto
+      \left(
+        C_{\theta_{1}}^{k_2}
+        ,C_{\theta_{2}}^{k_2}
+        ,\dots
+      \right)
+    \end{align*}
+    for every $k\in\cK$.
+  \item the next map is induced by the matrix product and given by
+    \begin{align*}
+      \prod_{\theta\in\A}\SSto_\theta^{k_1}(A^0)
+      \times
+      \prod_{\theta\in\A}\SSto_\theta^{k_2}(A^0)
+      &\to
+      \prod_{\theta\in\A}\SSto_\theta(A^0)
+    \\\left(\left(
+          C_{\theta_{1}}^{k_1}
+          ,C_{\theta_{2}}^{k_1}
+          ,\dots
+        \right),
+        \left(
+          C_{\theta_{1}}^{k_2}
+          ,C_{\theta_{2}}^{k_2}
+          ,\dots
+      \right)\right)
+      &\longmapsto
+        \left(
+          C_{\theta_{1}}^{k_1}\cdot C_{\theta_{1}}^{k_2}
+          ,C_{\theta_{2}}^{k_1}\cdot C_{\theta_{2}}^{k_2}
+          ,\dots
+      \right)
+    \end{align*}
+  \item The product of the maps
+    \begin{align*}
+      \rho_{\tilde\theta}^{-1}:
+      \SSto_\theta(A^0)
+      &\overset{\cong}\to
+      \Sto_\theta(A^0)
+      \\C_{\cY_{0,\tilde\theta}} &\mapsto
+      t^{L}e^{Q(t^{-1})}C_{\cY_{0,\tilde\theta}} e^{-Q(t^{-1})}t^{-L} \,,
+    \end{align*}
+    gives an isomorphism $\prod_{\theta\in\A}\SSto_\theta(A^0)
+    \overset{\cong}\to \prod_{\theta\in\A}\Sto_\theta(A^0)$.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Step 2: The image in $\St(A^0)$}
 The map $h$ from theorem~\ref{thm:mainThm2} maps the element
@@ -1062,48 +695,31 @@ The four interesting decomposition, in our situation are given by
 Let $k\in\cK$.
 
 The sections of $\Lambda(A^0)$ are the flat isotropies (cf.\
-definition~\ref{defn:StokesSheaf}). The isotropy property for a stokes germ
-$\phi_\theta$ is in our case clear, since a constant matrix conjugated by a
-fundamental solution of $A^0$ is a solution of $[A^0,A^0]$. This property
-\rewrite{is preserved, when} we extend the germ $\phi_\theta^k$ to the section
-$f_\theta^k\in\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$. From the theory of
-differential equations, we know, that \rewrite{this extension is unique}.
-\begin{comment}
-  The system $[A^0,A^0]$ is explicitly given by
-  \[
-    \frac{dF}{dt}=A^0F-FA^0
-  \]
-  where
-  \begin{itemize}
-    \item $F= t^Le^{Q(t^{-1})} C_{\cY_0,\tilde\theta} e^{-Q(t^{-1})}t^{-L}$ and
-    \item $A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}$
-  \end{itemize}
-  as defined above.
-  Thus
-  \begin{align*}
-    \frac{d}{dt}\left(
-      t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
-    \right) &=
-    \left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)
+definition~\ref{defn:StokesSheaf}). 
+The \textbf{isotropy property} for a stokes germ $\phi^k_\theta$ is in our case
+satisfied, since a constant matrix conjugated by a fundamental solution of
+$A^0$ is a solution of $[A^0,A^0]$:
+\begin{align*}
+\frac{d}{dt}\phi^k_\theta
+  &=\frac{d}{dt}\left(
     t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
-  \\&\qquad-t^Le^{Q(t^-1)}C_{\cY_0,\tilde\theta}e^{-Q(t^-1)}t^{-L}
-    \left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)
-  \end{align*}
-  The chain rule and expansion of the products yields
-  \begin{align*}
-    \frac{1}{t}Lt^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}+\qquad&
-  \\t^LQ'(t^{-1})e^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}+\qquad&
-  \\t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}(-Q'(t^{-1}))e^{-Q(t^{-1})}t^{-L}+\qquad&
-  \\t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}\frac{-1}{t}Lt^{-L}
-    &=
-    t^LQ'(t^{-1})t^{-L}t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
-  \\&\qquad+L\frac{1}{t} t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
-  \\&\qquad-t^Le^{Q(t^-1)}C_{\cY_0,\tilde\theta}e^{-Q(t^-1)}t^{-L} t^LQ'(t^{-1})t^{-L}
-  \\&\qquad-t^Le^{Q(t^-1)}C_{\cY_0,\tilde\theta}e^{-Q(t^-1)}t^{-L} L\frac{1}{t}
-  \end{align*}
-  which is trivial.
-\end{comment}
-The flatness property of an section $f_\theta^k$,
+  \right) 
+\\&=\frac{1}{t}Lt^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}i
+  + t^LQ'(t^{-1})e^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
+\\&\qquad+ t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}(-Q'(t^{-1}))e^{-Q(t^{-1})}t^{-L}
+  + t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}\frac{-1}{t}Lt^{-L}
+\\&= \left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)
+  t^Le^{Q(t^{-1})}C_{\cY_0,\tilde\theta}e^{-Q(t^{-1})}t^{-L}
+\\&\qquad-t^Le^{Q(t^-1)}C_{\cY_0,\tilde\theta}e^{-Q(t^-1)}t^{-L}
+  \left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)
+\\&=A^0 \phi^k_\theta-\phi^k_\theta A^0 \,.
+\end{align*}
+This property \rewrite{is preserved, when} we extend the germ $\phi_\theta^k$
+to the section $f_\theta^k\in\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$. From the
+theory of differential equations, we know, that \rewrite{this extension is
+unique}.
+
+The \textbf{flatness property} of an section $f_\theta^k$,
 i.e.\ $f_\theta^k\sim_{\mathfrak{s}_{\cU_\theta^k}}\id$, is equivalent to
 \[
   \left(f_\theta^k\right)_{j,l}\sim_{\mathfrak{s}_{\cU_\theta^k}}
@@ -1134,7 +750,8 @@ $\tau:\prod_{k\in\cK}\Gamma(\dot \cU^k;\Lambda^k(A^0))
   \end{align*}
 \end{comment}
 
-\section{Summary/}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Summary/\TODO{}}
 \begin{thm}
   The set $\Sto(A^0)$, and thus the classifying set, is in our case isomorphic
   to $\C^{k_1+2\cdot k_2}$.

@@ -11,8 +11,10 @@ in section~\ref{sec:mainThm1}. It states, that the classifying set $\cH(A^0)$
 is isomorphic, via $\exp$, to the first cohomology
 $H^1(S^1;\Lambda^{<0}(A^0))$.
 In section~\ref{sec:mainThm2} we will improve the Malgrange-Sibuya Theorem by
-showing, that each 1-cohomology class in $\St(A^0)$ contains a unique 1-cocycle
-of a special form called \emph{the Stokes cocycle}.
+showing, that each 1-cohomology class in $\St(A^0)$ contains a unique
+$1$-cocycle of a special form called \emph{the Stokes cocycle}.
+The morphism, which maps each Stokes cocyle to its corresponding $1$-cocycle
+will be denoted by $h$.
 
 We \rewrite{have the following} commutative diagram of isomorphisms.
 \begin{center}
@@ -34,7 +36,7 @@ We \rewrite{have the following} commutative diagram of isomorphisms.
     \draw[->,green!40!black] (modSpcMat) -- (sheaf)
       node[midway,above left] {$\exp$};
     \draw[->,blue,dashed] (modSpcMat) edge[bend right=20] (mat);
-    \draw[->,blue] (class) -- (mat);
+    \draw[->,blue] (class) -- (mat) node[midway,below left] {g};
     \draw[->,blue,dotted] (mat) -- (mat') node[midway,right] {$\cK=\{k-1\}$};
     \draw[->,purple,dashed] (class) -- (sheaf3)
       node[midway,below right] {$\exp_{A^0}$};
@@ -48,6 +50,9 @@ We \rewrite{have the following} commutative diagram of isomorphisms.
     {\TODO[\cite{Loday1994}{\footnotesize(\cite{Loday2014})}]};
   \end{tikzpicture}
 \end{center}
+The map $g$, which makes the diagram commute, is defined using the theory of
+summation, which will be roughly discussed in
+chapter~\ref{chap:multisummability}.
 
 \begin{comment}
   Matrizen Sicht:
@@ -562,7 +567,7 @@ define the Stoken group as follows.
 \end{defn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Faithful representation of the Stokes group}
+\subsection{Faithful representation of the Stokes group}\label{sec:matrixReps}
 \begin{comment}
   See \cite[9f]{thboalch} and \cite[??]{Loday1994}
 \end{comment}
@@ -1223,6 +1228,127 @@ We denote the product
 $\prod_{\theta\in\A^\star}\Gamma(\dot U_\theta^\star;\Lambda^\star(A^0))$ by
 $\Gamma(\dot U^\star;\Lambda^\star(A^0))$ for $\star\in\{k,<k,\leq k,\dots\}$.
 
+\begin{figure} %{{{
+  \centering
+
+  \def\kOne{7}
+  \def\kTwo{10}
+  \begin{tikzpicture}[scale=5] %{{{
+
+    \newcommand{\myDrawArcA}[4]{%{{{
+      % Parameter: radius , center , width , color
+      \pgfmathsetmacro\hwdth{#3 / 2}
+      \draw[ultra thick,#4]
+        ({cos( #2 )},{sin( #2 )})
+        --
+        ({cos( #2 ) * #1 },{sin( #2 ) * #1 });
+      \draw[thick,#4]
+        ({cos(#2 - \hwdth) * #1},{sin(#2 - \hwdth) * #1})
+        arc
+        ({#2 - \hwdth}:{#2 + \hwdth}:#1);
+      \draw[dotted,#4]
+        ({cos(#2 - \hwdth) * #1},{sin(#2 - \hwdth) * #1})
+        --
+        ({cos(#2 - \hwdth)},{sin(#2 - \hwdth)});
+      \draw[dotted,#4]
+        ({cos(#2 + \hwdth) * #1},{sin(#2 + \hwdth) * #1})
+        --
+        ({cos(#2 + \hwdth)},{sin(#2 + \hwdth)});
+      \filldraw[white] ({cos(#2)},{sin(#2)}) circle (0.5pt);
+      \filldraw[red] ({cos(#2)},{sin(#2)}) circle (0.2pt);
+    }%}}}
+    \newcommand{\myDrawArcB}[5]{%{{{
+      % Parameter: radius , center , start , stop , color
+      \draw[ultra thick,#5]
+        ({cos( #2 )},{sin( #2 )})
+        --
+        ({cos( #2 ) * #1 },{sin( #2 ) * #1 });
+      \draw[thick,#5]
+        ({cos( #3 ) * #1},{sin( #3 ) * #1})
+        arc
+        ({ #3 }:{ #4 }:#1);
+      \draw[dotted,#5]
+        ({cos( #3 ) * #1},{sin( #3 ) * #1})
+        --
+        ({cos( #3 )},{sin( #3 )});
+      \draw[dotted,#5]
+        ({cos( #4 ) * #1},{sin( #4 ) * #1})
+        --
+        ({cos( #4 )},{sin( #4 )});
+      \filldraw[white] ({cos(#2)},{sin(#2)}) circle (0.5pt);
+      \filldraw[red] ({cos(#2)},{sin(#2)}) circle (0.2pt);
+    }%}}}
+
+    \node (zero) at (0,0) {};
+    \draw (zero) circle (1cm);
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %% Inner:
+    \foreach \n/\mycol/\baseR in {\kOne/orange/0.8
+                                 ,\kTwo/purple/0.9}
+    {%{{{
+      \pgfmathsetmacro\wdth{180/\n}
+      \foreach \i in {1,2,...,\n}{%
+        \pgfmathsetmacro\r{{\baseR + mod(\i+1,2)*0.05}}
+        \pgfmathsetmacro\angl{\i* \wdth}
+        \myDrawArcA{\r}{\angl}{\wdth}{\mycol}
+
+        \pgfmathsetmacro\r{{\baseR + mod(\i + mod(\n+1,2),2)*0.05}}
+        \pgfmathsetmacro\angl{\i* \wdth+180}
+        \myDrawArcA{\r}{\angl}{\wdth}{\mycol}
+      }
+    }%}}}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %% Outer:
+    \def\mycol{brown}
+    \pgfmathsetmacro{\wdth}{180/\kTwo}
+    \foreach \i in {1,2,...,\kTwo}{%
+      \pgfmathsetmacro\r{{1.05 + mod(\i+1,2)*0.05}}
+      \pgfmathsetmacro\angl{\i* \wdth}
+      \myDrawArcA{\r}{\angl}{\wdth}{\mycol}
+
+      \pgfmathsetmacro\r{{1.05 + mod(\i + mod(\kTwo+1,2),2)*0.05}}
+      \pgfmathsetmacro\angl{\i* \wdth+180}
+      \myDrawArcA{\r}{\angl}{\wdth}{\mycol}
+    }
+    \foreach \i in {1,2,...,\kOne}{%
+      \foreach \j in {1,...,\kTwo}{%
+        \pgfmathparse{\i/\kOne <= \j/\kTwo ? 0 : 1}
+        \ifnum\pgfmathresult=0{%
+          \pgfmathparse{\i/\kOne < \j/\kTwo ? 0 : 1}
+          \ifnum\pgfmathresult=0{%
+            \pgfmathsetmacro\r{{1.15 + mod(\i+1,2)*0.05}}
+            \pgfmathsetmacro\center{\i/\kOne*180}
+            \pgfmathsetmacro\start{(\i-0.5)*180/\kOne > (\j-1.5)*180/\kTwo
+              ? (\i-0.5)*180/\kOne : (\j-1.5)*180/\kTwo}
+            \pgfmathsetmacro\stop{(\i+0.5)*180/\kOne > (\j+0.5)*180/\kTwo
+              ? (\j+0.5)*180/\kTwo : (\i+0.5)*180/\kOne}
+            \myDrawArcB{\r}{\center}{\start}{\stop}{\mycol}
+
+            \pgfmathsetmacro\r{{1.15 + mod(\i,2)*0.05}}
+            \pgfmathsetmacro\center{\center+180}
+            \pgfmathsetmacro\start{\start+180}
+            \pgfmathsetmacro\stop{\stop+180}
+            \myDrawArcB{\r}{\center}{\start}{\stop}{\mycol}
+          }\fi
+          \breakforeach
+        }\fi
+      }
+    }
+
+    \fill[white] (zero) circle (1.5pt);
+    \fill (zero) circle (.7pt);
+  \end{tikzpicture} %}}}
+  \caption{The adequate coverings for an example with $\cK=\{\kOne,\kTwo\}$ and
+    $\A=\left\{ \frac{j\cdot\pi}{k}\mid k\in\cK\text{, } j\in\N \right\}$.
+    The anti-Stokes directions are marked by the \textcolor{red}{red} dots.
+    The arcs of $\dot\cU^{\kOne}=\dot\cU^{\leq\kOne}$ are
+    \textcolor{orange}{orange}, the arcs of $\dot\cU^{\kTwo}$ are
+    \textcolor{purple}{purple} and the arcs of $\dot\cU^{\leq\kTwo}=\dot\cU$
+    are \textcolor{brown}{brown}.
+  }\label{fig:adequateCovering}
+\end{figure}%}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{The case of a unique level}
