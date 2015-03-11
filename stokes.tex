@@ -1907,7 +1907,7 @@ where $\star\in\{1,2,3\}$.
   we obtain the isomorphism
   \[
     \prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}\circ\bar\vartheta_\theta:
-    \C^{2\cdot k_2 + k_1}
+    \C^{k_1+2\cdot k_2}
     \overset\cong\longrightarrow
     \prod_{\theta\in\A}\Sto_\theta(A^0)
   \]
@@ -2061,7 +2061,9 @@ We compose this isomorphism as follows:
 \begin{prop}\label{prop:result2}
   Similar to proposition~\ref{prop:result1} we can also define the isomorphism
   \[
-    \C^{k_1+2\cdot k_2}\longrightarrow\St(A^0)
+    \C^{k_1+2\cdot k_2}
+    \textcolor{green!50!black}{\longrightarrow}
+    \St(A^0)
   \]
   which makes the following diagram commute.
   \[ \begin{tikzcd}[column sep=2cm,row sep=3cm]
@@ -2078,24 +2080,23 @@ We can rewrite this diagram as follows
     &\C^{k_1+2\cdot k_2}
     \dar[xshift=-1pt,blue]
     \dar[xshift=1pt,green!50!black]
-  \\&\prod_{k\in\{k_1,k_2\}}\prod_{\theta\in\A}\SSto_{\theta}^{k}(A^0)
-     \arrow[dl,blue]
-     \rar[green!50!black]
-    &\prod_{k\in\{k_1,k_2\}}\Sto_{\theta}^{k}(A^0)
-     \dar[green!50!black]{\prod_{k\in\{k_1,k_2\}}i^k}
-  \\\prod_{\theta\in\A} \SSto_{\theta}(A^0)
-    \dar[blue]{\prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}}
-    && 
-    \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
-    \dar[green!50!black]{\cT}
+  \\
+    \prod_{\theta\in\A} \SSto_{\theta}(A^0)
+      \dar[blue]{\prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}}
+    &\prod_{k\in\{k_1,k_2\}}\prod_{\theta\in\A}\SSto_{\theta}^{k}(A^0)
+     \arrow[l,blue]
+     \arrow[dr,green!50!black]
   \\\prod_{\theta\in\A} \Sto_{\theta}(A^0)
-    \arrow[rr,purple,"h"]
-    && \St(A^0)
+    \arrow[rr,purple,"\prod_{\theta\in\A}i_\theta"]
+    &&\prod_{k\in\{k_1,k_2\}}\prod_{\theta\in\A}\Sto_{\theta}^{k}(A^0)
+    \dar[xshift=-1pt,purple]
+    \dar[xshift=1pt,green!50!black]{\prod_{k\in\{k_1,k_2\}}i^k}
+  \\
+    && \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
+    \dar[xshift=-1pt,purple]
+    \dar[xshift=1pt,green!50!black]{\cT}
+  \\&& \St(A^0)
 \end{tikzcd} \]
-\begin{comment}
-  To define this isomorphism we use the steps one and two \rewrite{from the
-  definition of the isomorphism in proposition}~\ref{prop:result1}.
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Explicit example}
