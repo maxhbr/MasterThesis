@@ -23,14 +23,13 @@
   \end{multicols}
 \end{comment}
 There are multiple languages, which can be used for talking about meromorphic
-connections. \rewrite{Firstly} the languages of meromorphic connections, and also
-$\cD$-modules\TODO[global].
-These two can be used to talk about global information.
-For local description one can use germs of meromorphic connections or
-$\cD$-modules\TODO[local] which are coordinate independent. Coordinate
-dependent alternatives are (local) systems and connection matrices. Also,
-\rewrite{one can use the fundamental solutions to describe local informations
-of meromorphic connections.}
+connections.
+\rewrite{Firstly} the languages of meromorphic connections which can be used to
+talk about global information. Also there is an approach with $\cD$-modules.
+For local description one can use germs of meromorphic connections or the
+coordinate dependent (local) systems and connection matrices. 
+Also, there is the coordinate independent approach with localized holonomic
+$\cD$-modules.
 
 \begin{comment}
   Siehe:
@@ -132,7 +131,7 @@ A meromorphic connection is then defined as follows.
     \end{comment}
   \end{s-prop}
   \begin{s-rem}
-    Here are all connections flat, since \TODO[dim $1$?]
+    Here are all connections flat, since only look at Dimension one.
   \end{s-rem}
   \begin{comment}
     We will say that a connection on a meromorphic bundle is \emph{integrable}
@@ -194,45 +193,15 @@ and trivialization-dependent.
   \TODO[Category of meromorphic connections!]
 \end{defn}
 \marginnote{\cite[65]{Loday2014}}
-\begin{multicols}{2}
-%   % Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$
-%   % and let $A\in\End(E)\otimes\C(\!\{t\}\!)$\TODO[In one forms? $A=A'dt$?] be a
-%   % matrix, such that
-%   % \[
-%   %   (\epsilon_1,\epsilon_2,\dots,\epsilon_n)=-(e_1,e_2,\dots,e_n)A
-%   % \]
-%   % is the image of $\nabla$.
-%   \textcolor{gray}{Choose a $\C(\!\{t\}\!)$-basis
-%     $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.  Let $A'$ be a $n\times n$
-%     matrix with entries in $\C(\!\{t\}\!)$ such that
-%     \[
-%       \nabla\left(e_1,\dots,e_n\right)
-%       =
-%       -(e_1,e_2,\dots,e_n)A'
-%     \]
-%     and let $A=A'dt$.}
-  \textcolor{gray}{%
-    Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
-    Let $A'$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$
-    \rewrite{such that the matrix $A=A'dt$ describes the action of $\nabla$:}
-    \[
-      \nabla\left(e_1,\dots,e_n\right)
-      =
-      -(e_1,e_2,\dots,e_n)A \,.
-    \]
-  }
 
-\columnbreak
-
-  Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
-  Let $A=(a_{jk})$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$
-  \rewrite{such that the it describes the action of $\nabla$:}
-  \[
-    \nabla e_k
-    =
-    -\sum_{1\leq j\leq n} a_{jk}(t)e_j \,.
-  \]
-\end{multicols}
+Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
+Let $A=(a_{jk})$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$
+\rewrite{such that the it describes the action of $\nabla$:}
+\[
+  \nabla e_k
+  =
+  -\sum_{1\leq j\leq n} a_{jk}(t)e_j \,.
+\]
 Let $x=\sum_{0\leq j\leq n}x_je_j$ be an arbitrary element of $\cM$ which is in
 matrix notation described as $x=\underline{e}\cdot X$ with the column matrix
 $X={}^t\!(x_1,x_2 ,\dots,x_n)$.
@@ -272,25 +241,18 @@ one and dimension $n$.
       \rewrite{of the fiber $E\cong\C^n$}.
       \begin{s-prop}
         Thus, the set of systems is isomorphic to the set
-        $A\in\End(E)\otimes\C(\!\{t\}\!)=\gl_n(\C(\!\{t\}\!))$ of all
+        $\End(E)\otimes\C(\!\{t\}\!)=\gl_n(\C(\!\{t\}\!))$ of all
         connection matrices.
       \end{s-prop}
-      It well be denoted by $[A]=d-A$ where $A$ is the connection matrix in the
+      It will be denoted by $[A]=d-A$ where $A$ is the connection matrix in the
       chosen trivialization.
       \TODO[Category of systems!]
   \end{enumerate}
 \end{defn}
 
-\begin{comment}
-  \cite{boalch} wants \textbf{generic} meromorphic connections
-  \begin{itemize}
-    \item\dots simplest jet sufficient\dots
-  \end{itemize}
-\end{comment}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{System \rightarrow{} germ of a meromorphic connection}
-\begin{prop}
+\begin{prop}\label{prop:systToMeromConn}
   If we start with a system $[A]$ of rank $n$, or a connection matrix $A$, we
   get a germ of a meromorphic connection via
   \[
@@ -315,9 +277,6 @@ one and dimension $n$.
 \begin{thm}
   \begin{comment}
     Quelle?
-    \begin{itemize}
-      \item \cite[Cor.II.6.4]{sabbah2007isomonodromic}
-    \end{itemize}
   \end{comment}
   If we start with a germ $(\cM,\nabla)$ of a meromorphic connection there is
   a unique meromorphic connection $(\sM,\nabla)$ such that
@@ -363,52 +322,27 @@ $n$ which can be written as
       (a_n\partial_t^n+a_{n-1}\partial_t^{n-1}+\cdots a_{1}\partial_t+a_{0})
   }} \cdot v=0
 \]
-where $a_i\in\C(\!\{t\}\!)$. \TODO{}
+where $a_i\in\C(\!\{t\}\!)$.
+This leads to the theory of $\cD$-modules.
 
 \begin{comment}
   See \cite[Sec.1.4]{babbitt1983} for \textbf{ode of rank $n$} to
   \textbf{system}.
 \end{comment}
 
+\begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{As $\cD$-module}
-\begin{comment}
-  \cite[Sec.4.2.2]{Loday2014}
-\end{comment}
+\marginnote{\cite[Sec.4.2.2]{Loday2014}}
 
 In the other direction, from $\cD$-modules to meromorphic connections, there is
 the lemma of the cyclic vector. \TODO{}
-\begin{comment}
-  \begin{itemize}
-    \item \textbf{\cite[Prop.4.2.5]{Loday2014}}
-    \item \cite[Rem.4.2.6]{Loday2014}
-  \end{itemize}
+\marginnote{\textbf{\cite[Prop.4.2.5]{Loday2014}},
+  \cite[Rem.4.2.6]{Loday2014}}
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Transformation of systems}
-\begin{comment}\footnotesize
-  see \cite{thboalch} \textbf{Rem 1.41 on p. 16}:
-  \begin{rem}
-    Note that in most of the recent references we have used, Stokes matrices
-    are used to classify
-    \begin{itemize}
-      \item meromorphic connections within fixed \textbf{formal meromorphic
-        classes, modulo meromorphic equivalence}.
-    \end{itemize}
-    Whereas here we classify
-    \begin{itemize}
-      \item meromorphic connections within fixed \textbf{formal analytic
-        classes, modulo analytic equivalence},
-    \end{itemize}
-    as is done in the older literature.  The fact is that the sets equivalence
-    classes are the same in both cases. \comm{It is important for us to work
-      with analytic, rather than meromorphic gauge transformations, because
-    then the $\C^\infty$ viewpoint in Chapter 3 is cleaner.} This distinction
-    relates to the difference between \textbf{‘regular singular’} connections
-    and \textbf{‘logarithmic’} connections.
-  \end{rem}
-\end{comment}
 \begin{notations}
   We will use the following notations
   \begin{itemize}
@@ -535,19 +469,22 @@ G(A)$ and $\hat G(A')$ are related by
     \textbf{\boldmath$B$ is obtained from $A$ by (formal) transformation}.
   \end{einr}
   The \emph{class of a connection matrix} is the orbit under the gauge
-  transformation in $G(\!\{t\}\!)$. The \emph{formal class} ist the orbit in
-  $\hat G(A)$.
+  transformation \rewrite{in} $G(\!\{t\}\!)$. The \emph{formal class} ist the
+  orbit \rewrite{in} $\hat G(A)$.
   \begin{s-rem}
     \begin{enumerate}
       \item Thus $A$ is (formally) equivalent to $B$ if and only if there is a
         (formal) solution of $[A,B]$.
-      \item This implies also a equivalence relation and a classification on
+      \item This implies also an equivalence relation and a classification on
         the systems.
     \end{enumerate}
   \end{s-rem}
 \end{defn}
 
 \begin{prop}
+  \begin{comment}
+    or corollary?
+  \end{comment}
   Two germs of meromorphic connections are (formally) isomorphic if and only if
   their corresponding connection matrices are (formally) equivalent.
 \end{prop}
@@ -557,8 +494,8 @@ G(A)$ and $\hat G(A')$ are related by
 
 \begin{defn}
   \begin{itemize}
-    \item An \emph{isotropy} of $A^0$ is a transformation $\hat F$ which
-      satisfy ${}^{\hat F}\!A^0=A^0$.
+    \item An \emph{isotropy} of $A^0$ or of $[A^0]$ is a transformation $\hat
+      F$ which satisfy ${}^{\hat F}\!A^0=A^0$.
       Thus, the isotropies are the solutions of the system
       $[\End A^0]:=[A^0,A^0]$.
       \marginnote{\cite[853]{Loday1994}}
@@ -601,16 +538,16 @@ G(A)$ and $\hat G(A')$ are related by
     $\left\{\substack{\text{irregular}\\\text{regular}}\right\}$
     singularity.
   \end{s-rem}
+  \begin{comment}
+    \begin{s-rem}
+      \marginnote{\cite[150]{van2003galois}}
+      One can express this notion of regular singular also in terms of
+      $\delta:=t\frac{d}{dt}$. A system has regular singularity if it is
+      equivalent to an equation $\delta-A$ where $A$ has entries in
+      holomorphic functions in a neighbourhood of $z=0$.
+    \end{s-rem}
+  \end{comment}
 \end{defn}
-\begin{comment}
-  \begin{rem}
-    \marginnote{\cite[150]{van2003galois}}
-    One can express this notion of regular singular also in terms of
-    $\delta:=t\frac{d}{dt}$. A system has regular singularity if it is
-    equivalent to an equation $\delta-A$ where $A$ has entries in  holomorphic
-    functions in a neighbourhood of $z=0$.
-  \end{rem}
-\end{comment}
 \begin{thm}
   \begin{comment}
     see
@@ -622,7 +559,7 @@ G(A)$ and $\hat G(A')$ are related by
   Let $(\cM,\nabla)$ be a regular singular meromorphic connection and $A$ its
   connection matrix.
   Then there exists a matrix $F\in G(\!\{t\}\!)$ such that after transformation
-  by $F$ the matrix $B={}^F\!A$ is constant i.e.\ $B\in G$.
+  by $F$ the matrix $B={}^F\!A$ is constant i.e.\ ${}^F\!A\in G$.
 \end{thm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -677,26 +614,25 @@ along the path $\gamma$}.
 
 \TODO[monodromy representation] \TODO[Riemann hilbert korrespondenz]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Ramification}
 \begin{comment}
-  \cite[I.5.4.1]{sabbah_cimpa90}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \subsection{Ramification}
+  \marginnote{\cite[I.5.4.1]{sabbah_cimpa90}}
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Formal classification}\label{sec:formalClassification}
 \marginnote{\cite[Thm.4.3.1]{Loday2014}}
 In every formal equivalence class of meromorphic connections, there are some
-meromorphic connection of special form, which we will call models. They are not
-unique but all of them, which are formally isomorphic to a given meromorphic
-connection, lie in the same convergent equivalence class.
+meromorphic connections of special form, which we will call models. They are
+not unique but all of them, which are formally isomorphic to a given
+meromorphic connection, lie in the same convergent equivalence class.
 In fact, every element of this convergent equivalence class will be a model in
 our definition.
 
-The first part is given by the Levelt-Turittin theorem, which says, that
-each meromorphic connection is, after potentially needed ramification, formally
-isomorphic to such a model.
-\TODO[Problems with ramification??]
+\rewrite{The first part is given by} the Levelt-Turittin theorem, which says,
+that each meromorphic connection is, after potentially needed ramification,
+formally isomorphic to such a model.
 Thus the Levelt-Turittin theorem solves the \emph{formal classification
 problem}.
 \begin{defn}
@@ -923,6 +859,19 @@ fundamental solution in the form $\hat F\cY$.
   \end{s-rem}
 \end{thm}
 \begin{proof}
+  \textbf{``\Rightarrow{}'':}
+  \TODO{}
+
+  \textbf{``\Leftarrow{}'':}
+  Let $A^0$ be a normal form with $\mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}$ as a
+  normal solution. We use proposition~\ref{prop:fundSolBuilder} to write the
+  connection matrix as
+  \[
+    A=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
+  \]
+  and the proposition~\ref{prop:systToMeromConn} yields our meromorphic
+  connection $(\cM_A,\nabla_A)=(\C(\!\{t\}\!)^n,d-A)$ for \rewrite{which we
+  want to prove, to be} a model.
   \TODO{}
 \end{proof}
 \begin{cor}
@@ -1125,6 +1074,22 @@ $A^0$.
 of all isomorphism classes of meromorphic connections, which are formally
 isomorphic to $(\cM^{nf},\nabla^{nf})$. This is the set, that we will be
 calling the \emph{classifying set} and we will also denote it ${}^0C(A^0)$.
+\begin{rem}
+  Note that we classify
+  \begin{einr}
+    meromorphic connections within fixed \textbf{formal meromorphic classes,
+    modulo meromorphic equivalence}.
+  \end{einr}
+  Whereas in \cite{boalch} and \cite{thboalch}
+  \begin{einr}
+    meromorphic connections within fixed \textbf{formal analytic classes,
+    modulo analytic equivalence}
+  \end{einr}
+  are classified as is done in the older literature. \rewrite{The resulting
+  classifying sets are isomorphic.}
+  \\This distinction relates to the difference between \textbf{‘regular
+  singular’} connections and \textbf{‘logarithmic’} connections.
+\end{rem}
 \begin{comment}
   \begin{itemize}
     \item \cite{thboalch} p.6

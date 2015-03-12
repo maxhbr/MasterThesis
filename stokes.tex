@@ -532,8 +532,9 @@ define the Stoken group as follows.
     \SSto_\theta(A^0)= \left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
       q_j \underset{\theta,\max}{\prec} q_l \right\}
   \]
-  which will arise as a faithful representation (cf.\
-  section~\ref{sec:faithRepre}) of $\Sto_\theta(A^0)$.
+  of all \emph{Stokes matrices} of $A^0$ in the direction $\theta$.
+  They will arise as a faithful representation
+  (cf.\ section~\ref{sec:faithRepre}) of $\Sto_\theta(A^0)$.
 \end{defn}
 Let $\cY_0=t^L e^{Q(t^{-1})}$ be a normal solution corresponding to
 $A^0$ (cf.\ definition~\ref{defn:normSol}).
@@ -552,14 +553,14 @@ the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
     :=1+C_{\tilde\theta}
     :=\cY_{0,\tilde\theta}^{-1}\phi_\theta\cY_{0,\tilde\theta}
   \end{align*}
-  is an isomorphism which maps a germ of $\Sto_\theta(A^0)$ to the unique
-  matrix $1+C_{\tilde\theta}$ such that
+  is an isomorphism which maps a germ of $\Sto_\theta(A^0)$ to the 
+  corresponding Stokes matrix $C_{\cY_{0,\tilde\theta}}$ such that
   \begin{equation} \label{eq:representation}
     \phi_\theta(t)\cY_{0,\tilde\theta}(t)
-    =\cY_{0,\tilde\theta}(t)(1_n+C_{\tilde\theta})
+    =\cY_{0,\tilde\theta}(t)C_{\cY_{0,\tilde\theta}}
   \end{equation}
-  near $\theta$.  We call the matrix $1+C_{\tilde\theta}$ a
-  \emph{representation of $\phi_\theta$}.
+  near $\theta$.
+  The matrix $C_{\cY_{0,\tilde\theta}}$ is a representation of $\phi_\theta$.
   \begin{s-rem}
     \begin{enumerate}
       \item \marginnote{\cite[10]{thboalch}}
@@ -1662,9 +1663,9 @@ notation on page~\pageref{page:alreadyUsedDefn}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{How do the Stokes germs $\phi_\theta$ look like?}
-\rewrite{First} we want to use the faithful matrix representations of Stokes
-germs, discussed in section~\ref{sec:matrixReps}, to \rewrite{obtain some
-statements} about the \rewrite{structure} of the Stokes germs in our situation.
+\rewrite{First} we want to use the Stokes matrices of Stokes germs, discussed
+in section~\ref{sec:matrixReps}, to \rewrite{obtain some statements} about the
+\rewrite{structure} of the Stokes germs in our situation.
 
 The proposition~\ref{prop:representation} states, that every Stokes germ
 $\phi_\theta$ can be written as its matrix representation conjugated by the
@@ -1686,7 +1687,7 @@ mapped to the Stokes germ $\phi_\theta$.
   Let $\theta\in\A$ be an anti-Stokes direction.
   From the definition of $\SSto_\theta(A^0)$ (cf.\
   definition~\ref{defn:groupOfFaithfullReps}) we know that, if one has $q_1
-  \underset{\theta,\max}{\prec} q_2$, the representation has the form
+  \underset{\theta,\max}{\prec} q_2$, the Stokes matrix has the form
   \[
     \begin{pmatrix}
       1 & \text{\boldmath$c_1$} & \star
@@ -1738,7 +1739,7 @@ mapped to the Stokes germ $\phi_\theta$.
     \end{pmatrix}
   \end{align*}
 \end{exmp}
-In fact, we have the following $9$ cases 
+In fact, we have the following $9$ cases of Stokes matrices
 \begin{center}
   \def\arraystretch{1.3}
   \setlength\tabcolsep{4mm}
@@ -1748,8 +1749,8 @@ In fact, we have the following $9$ cases
     & else
     \tabularnewline
     \hline
-    $q_1 \underset{\theta,\max}{\prec} q_2$ and
-    $q_1 \underset{\theta,\max}{\prec} q_3$
+    $\substack{q_1 \underset{\theta,\max}{\prec} q_2\\\text{and}
+    \\q_1 \underset{\theta,\max}{\prec} q_3}$
     & $\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & c_1 \\0 & 0 & 1 \end{pmatrix}$
    \cellcolor{blue!15}
     & $\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & c_1 & 1 \end{pmatrix}$
@@ -1758,8 +1759,8 @@ In fact, we have the following $9$ cases
    \cellcolor{green!15}
     \tabularnewline
     \hline
-    $q_2 \underset{\theta,\max}{\prec} q_1$ and
-    $q_3 \underset{\theta,\max}{\prec} q_1$
+    $\substack{q_2 \underset{\theta,\max}{\prec} q_1\\\text{and}
+    \\q_3 \underset{\theta,\max}{\prec} q_1}$
     & $\begin{pmatrix} 1 & 0 & 0 \\c_2+c_1c_3 & 1 & c_1 \\c_3 & 0 & 1 \end{pmatrix}$
    \cellcolor{blue!15}
     & $\begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_1c_2+c_3 & c_1 & 1 \end{pmatrix}$
