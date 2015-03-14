@@ -186,10 +186,12 @@ and trivialization-dependent.
   by talking about a meromorphic connection on $M$.
 \end{rem}
 \begin{defn}
+  \marginnote{\cite[Def.5.2.1]{hotta2008}}
   A \emph{(iso-)\,morphism of meromorphic connections}
   $\Phi:(\cM,\nabla)\overset{\sim}\to(\cM',\nabla')$ is a (iso-)\,morphism of
   $\C(\!\{t\}\!)$-vectorspaces $\Phi:\cM\overset{\sim}\to\cM'$ which commutes
-  with the connections.
+  with the connections, i.e.\ which satisfies
+  $\nabla\circ\phi = (\id\otimes\phi)\circ\nabla$.
   \TODO[Category of meromorphic connections!]
 \end{defn}
 \marginnote{\cite[65]{Loday2014}}
@@ -215,7 +217,8 @@ Hence the condition $\nabla x=0$ is equivalent to the system of ODEs
 \begin{equation}\label{eq:ode}
   \frac{d}{dt}x=Ax
 \end{equation}
-such that horizontal sections of $(\cM,\nabla)$ correspond to solutions of
+such that horizontal sections\footnote{Horizontal sections, are the sections,
+which satisfy $\nabla s=0$} of $(\cM,\nabla)$ correspond to solutions of
 (\ref{eq:ode}).
 Thus, with the connection $\nabla$ and the $K$-basis $\underline{e}$ is
 naturally associate the differential operator $\triangle=d-A$, which has order
@@ -635,33 +638,48 @@ that each meromorphic connection is, after potentially needed ramification,
 formally isomorphic to such a model.
 Thus the Levelt-Turittin theorem solves the \emph{formal classification
 problem}.
-\begin{defn}
+\begin{defn}\label{defn:elemnMerConnBausteine}
   \begin{itemize}
-    \item For a $\phi\in\C\{t\}[t^{-1}]$ we use $\cE^{\phi}$ to denote the germ
+    \item For a $\phi\in\C(\!\{t\}\!)$ we use $\cE^{\phi}$ to denote the germ
       \[
-        (\cE^{\phi},\nabla)=(\C\{t\},d-d\phi)\,.
+        (\cE^{\phi},\nabla)=(\C(\!\{t\}\!),d-\phi')\,.
       \]
       This is the system satisfied by the function $e^\phi$.
       \begin{s-cor}
         $\cE^\phi$ is determined by the class of $\phi$ in
-        $\C\{t\}[t^{-1}]/\C\{t\}=t^{-1}\C[t^{-1}]$. In the following, we will
+        $\C(\!\{t\}\!)/\C\{t\}=t^{-1}\C[t^{-1}]$. In the following, we will
         only consider the unique ambassador $\phi$ in each class which has no
         holomorphic part.
       \end{s-cor}
     \item For $\alpha\in\C$, define the \emph{elementary regular meromorphic
-      connection} $\cN_{\alpha,0}$ as the germ
+      connection of rank one} $\cN_{\alpha,0}$ as the germ
       \[
-        (\cN_{\alpha,0},\nabla)=(\C\{t\}[t^{-1}],d+\alpha dt/t)\,.
+        (\cN_{\alpha,0},\nabla)=\left(\C(\!\{t\}\!),d+\frac{\alpha}{t}\right)
+        \,.
       \]
-      This is the system satisfied by $t^\alpha$\TODO[?].
+      This is the system satisfied by $t^{-\alpha}$.
+
+      \marginnote{\cite[Defn.II.2.5]{sabbah2007isomonodromic}}
+      An \emph{elementary regular model of arbitrary rank} is a meromorphic
+      connection which has a basis, in which the connection Matrix is written
+      as
+      \[
+        \frac{1}{t} (\alpha\id+N)
+      \]
+      where $N$ is a nilpotent matrix.
+      If \rewrite{$\id + N$} is a single Jordan Block, we denote it by
+      $\cN_{\alpha,d}$ where $d$ is the dimension.
   \end{itemize}
 \end{defn}
 \begin{prop}
   \begin{enumerate}
-    \item Every regular germ of a meromorphic connection is isomorphic to some
+    \item
+      \marginnote{\cite[Cor.II.2.9]{sabbah2007isomonodromic}}
+      Every regular germ of a meromorphic connection is isomorphic to some
       direct sum
       \[
         (\cR,\nabla)=\bigoplus_\alpha(\cN_{\alpha,0},\nabla)\,.
+        \TODO[not only of rank one]
       \]
       \begin{s-rem}
         For a detailed analysis of regular meromorphic connections
@@ -698,31 +716,18 @@ problem}.
 \begin{defn}\label{defn:model}
   \def\myPhi{\textcolor{red!60!black}{\phi}}
   \def\myE{\textcolor{green!40!black}{\cE^{\myPhi}}}
-  \begin{multicols}{2}
-    \textcolor{gray}{%
-      A germ $(\cM,\nabla)$ is a \emph{model} or \emph{normal form} if there
-      exists a isomorphism}
-
-    \columnbreak{}
-
-    A germ $(\cM',\nabla')$ is a \emph{model} if there exists, after
-    ramification $\cM=\pi^*\cM'$ by $\pi$, a isomorphism
-  \end{multicols}
+  A germ $(\cM',\nabla')$ is a \emph{model} if there exists, after ramification
+  $\cM=\pi^*\cM'$ by $\pi$, a isomorphism
   \begin{multicols}{2}
     \[
       \lambda:(\cM,\nabla)
       \overset{\cong}{\longrightarrow}
       % \cong
       \bigoplus_{~\tikzmark{e3}\!\!\myPhi}
-      \underset{\text{merom. Zus.}}{%
-        \underset{\text{elementare}}{%
-          \underbrace{%
-            \overset{\tikzmark{e2}}{\myE}
-            \otimes
-            \overset{\tikzmark{e1}}{\textcolor{blue!40!black}{\cR_{\myPhi}}}
-          }
-        }
-      }\,.
+      \overset{\tikzmark{e2}}{\myE}
+      \otimes
+      \overset{\tikzmark{e1}}{\textcolor{blue!40!black}{\cR_{\myPhi}}}
+      \,.
     \]
     \columnbreak{}
     \begin{itemize}
@@ -733,7 +738,7 @@ problem}.
     \begin{tikzpicture}[remember picture,overlay]
       \draw[->,blue!50!white,thick] (n1) to[out=180,in=70] (e1);
       \draw[->,green!40!black,thick] (n2) to[out=180,in=70] (e2);
-      \draw[->,red!50!white,thick] (n3) to[out=205,in=-70] (e3);
+      \draw[->,red!50!white,thick] (n3) to[out=205,in=-30] (e3);
     \end{tikzpicture}
   \end{multicols}
 \end{defn}
@@ -849,41 +854,6 @@ fundamental solution in the form $\hat F\cY$.
     \end{enumerate}
   \end{s-rem}
 \end{defn}
-\begin{thm}\label{thm:modelEqNormalForm}
-  A meromorphic connection $(\cM,\nabla)$ is a model if and only if its
-  connection matrix $A$ defines a normal form $[A]$.
-  \begin{s-rem}
-    This allows us, to say that a model $(\cM^{nf},\nabla^{nf})$ is a normal
-    form and \rewrite{vice versa}.
-    \rewrite{This} explains, why we mark models with ${}^{nf}$.
-  \end{s-rem}
-\end{thm}
-\begin{proof}
-  \textbf{``\Rightarrow{}'':}
-  \TODO{}
-
-  \textbf{``\Leftarrow{}'':}
-  Let $A^0$ be a normal form with $\mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}$ as a
-  normal solution. We use proposition~\ref{prop:fundSolBuilder} to write the
-  connection matrix as
-  \[
-    A=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
-  \]
-  and the proposition~\ref{prop:systToMeromConn} yields our meromorphic
-  connection $(\cM_A,\nabla_A)=(\C(\!\{t\}\!)^n,d-A)$ for \rewrite{which we
-  want to prove, to be} a model.
-  \TODO{}
-\end{proof}
-\begin{cor}
-  From the Levelt-Turittin theorem\comm{, the fundamental solution
-  transformation rules} and theorem~\ref{thm:modelEqNormalForm} we
-  deduce that every system $[A]$ with normal form $[A^0]$ and normal solution
-  $t^L e^{Q(t^{-1})}$, has the fundamental solution
-  \[
-    \mathcal{Y}=\hat F t^L e^{Q(t^{-1})}
-  \]
-  where $\hat F$ is a solution of $[A^0,A]$.
-\end{cor}
 \begin{prop}\label{prop:fundSolBuilder}
   Let $\mathcal{Y}=\hat F t^L e^{Q(t^{-1})}$ be a fundamental solution.
   The matrix
@@ -930,6 +900,81 @@ fundamental solution in the form $\hat F\cY$.
   \end{align*}
   The invertability condition is clear.
 \end{proof}
+\begin{thm}\label{thm:modelEqNormalForm}
+  A meromorphic connection $(\cM,\nabla)$ is a model if and only if its
+  connection matrix $A$ defines a normal form $[A]$.
+  \begin{s-rem}
+    This allows us, to say that a model $(\cM^{nf},\nabla^{nf})$ is a normal
+    form and \rewrite{vice versa}.
+    \rewrite{This} explains, why we mark models with ${}^{nf}$.
+  \end{s-rem}
+\end{thm}
+\begin{proof}
+  \textbf{``\Rightarrow{}'':}
+  Let $\cM=\bigoplus_{\phi}\cE^\phi\otimes\cR_\phi$ be a model and let us first
+  fix a $\phi$ and look at the connection $\cE^\phi\otimes\cR_\phi$.
+  We know that $\cR_\phi$ is a direct sum of regular elementary meromorphic
+  connections whose fundamental matrices are of the form
+  $\frac{1}{t}(\alpha\id+N)$ where $\alpha\in\C$ and $N$ is nilpotent
+  (cf.\ definition~\ref{defn:elemnMerConnBausteine}).
+  Thus the connection matrix for $\cR_\phi$ writes as
+  \[
+    \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+    \,.
+  \]
+  A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given by
+  \[
+    -\phi'\id + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right) \,.
+  \]
+  The connection matrix of $\cM$ thus writes as
+  \[
+    \bigoplus_\phi\left(
+      -\phi'\id + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+    \right)
+    =
+    \underset{Q'(t^{-1})}{
+      \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+        \underbrace{-\bigoplus_\phi \phi'\id}
+      }
+    }
+    +
+    \frac{1}{t}
+    \underset{L}{
+      \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+        \underbrace{%
+          \bigoplus_\phi\left(
+            \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+          \right)
+        }
+      }
+    }
+    \,.
+  \]
+
+  \TODO{}
+
+  \textbf{``\Leftarrow{}'':}
+  Let $A^0$ be a normal form with $\mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}$ as a
+  normal solution. We use proposition~\ref{prop:fundSolBuilder} to assume that
+  the connection matrix $A^0$ has the form
+  \[
+    A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
+  \]
+  and the proposition~\ref{prop:systToMeromConn} yields our meromorphic
+  connection $(\cM_{A^0},\nabla_{A^0})=(\C(\!\{t\}\!)^n,d-A^0)$ for
+  \rewrite{which we want to prove, to be} a model.
+  \TODO[Jordan-NF]
+\end{proof}
+\begin{cor}
+  From the Levelt-Turittin theorem\comm{, the fundamental solution
+  transformation rules} and theorem~\ref{thm:modelEqNormalForm} we
+  deduce that every system $[A]$ with normal form $[A^0]$ and normal solution
+  $t^L e^{Q(t^{-1})}$, has the fundamental solution
+  \[
+    \mathcal{Y}=\hat F t^L e^{Q(t^{-1})}
+  \]
+  where $\hat F$ is a solution of $[A^0,A]$.
+\end{cor}
 
 \begin{rem}
   Let $[A^0]$ be a normal form with normal solution
@@ -967,6 +1012,7 @@ fundamental solution in the form $\hat F\cY$.
     \textbf{Sheafical:}
     \begin{itemize}
       \item \cite[Thm.2.3.1]{sabbah_cimpa90}
+      \item \cite[Sec.4.4]{Loday2014}
     \end{itemize}
   \end{multicols}
 \end{comment}
@@ -989,9 +1035,9 @@ Look at the situation, where $A$ is via $\hat F$ formally equivalent to $A^0$.
 \end{defn}
 The main asymptotic existence theorem states
 \begin{thm}[M.E.A.T]\label{thm:meat}
-  \marginnote{\cite[Thm.3.1]{boalch}}
-  To every arc $I\subsetneq S^1$ there exists to every $\hat F\in G(\!(t)\!)$ a
-  lift $F$ on $I$.
+  \marginnote{\cite[Thm.3.1]{boalch}, \cite[Sec.4.4]{Loday2014}}
+  To every $\hat F\in G(\!(t)\!)$ and to every small enough arc
+  $I\subsetneq S^1$ there exists a lift $F$ on $I$.
 \end{thm}
 \begin{proof}
   \TODO{}
