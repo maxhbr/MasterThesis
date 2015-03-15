@@ -35,9 +35,17 @@
 
 \usepackage{url} % URLS in bibtex
 
+\usepackage{microtype}
+
 \usepackage[german]{varioref}
 \usepackage{hyperref}
-\hypersetup{colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black}
+\hypersetup{colorlinks
+           ,citecolor=black
+           ,filecolor=black
+           ,linkcolor=black
+           ,urlcolor=black}
+
+\usepackage{paracol}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%  tikz  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -53,7 +61,38 @@
 %%%%  Design / Style  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{paracol}
+%%%%  Typography  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setkomafont{sectioning}{\normalcolor\bfseries\boldmath}
+
+\iftrue
+  \usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
+\else % libertine
+  \usepackage{fontspec}
+  \iftrue
+    \usepackage{libertine}
+    \usepackage[libertine,cmbraces]{newtxmath} %,cmintegrals,vvarbb
+  \else
+    \setmainfont[Path           = Fonts/
+                ,Extension      = .otf
+                ,Ligatures      = TeX
+                ,BoldFont       = LinLibertine_RB
+                ,ItalicFont     = LinLibertine_RI
+                ,BoldItalicFont = LinLibertine_RBI]{LinLibertine_R}
+    % \usepackage{unicode-math}
+    % \setmathfont[Path      = Fonts/
+    %             ,Ligatures = TeX
+    %             ,Extension = .otf]{texgyrepagella-math.otf}
+    %             ,Extension = .otf]{texgyrepagellamath-regular.otf}
+  \fi
+\fi
+
+\iffalse %schrift enger:
+  \usepackage{mathptmx}
+  \usepackage[scaled=.92]{helvet}
+  \usepackage{courier}
+\fi
+
+%\linespread{1.5}
 
 %%%% Headline styles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \usepackage{scrpage2}
@@ -76,12 +115,12 @@
     % \ifthispageodd{
       \draw[myColor1,line width=1pt]
         ($(a.north west)+(0pt,0)$) |- ($(a.south east)+(-3pt,-3pt)$);
-      \draw[myColor1] ($(a.south west)+(0pt,0pt)$)  -- 
+      \draw[myColor1] ($(a.south west)+(0pt,0pt)$)  --
         (a.south west -| current page text area.north west);
     }{%
       \draw[myColor1,line width=1pt]
         ($(a.north east)+(0pt,0)$) |- ($(a.south west)+(3pt,-3pt)$);
-      \draw[myColor1] ($(a.south east)+(0pt,0pt)$)-- 
+      \draw[myColor1] ($(a.south east)+(0pt,0pt)$)--
         (a.south east -| current page text area.north east);
     }%
   }%
@@ -127,8 +166,7 @@
 
 \renewcommand*{\thefootnote}{[\arabic{footnote}]}
 
-
-\iftrue %Horizontale Linien
+\iftrue%Horizontale Linien
   \usepackage{sectsty}
   \chapterfont{%
     \vspace{1cm}
@@ -147,19 +185,29 @@
     \color{myheadLineColor}
     \sectionrule{0pt}{0pt}{-5pt}{0.4pt}
     }
+\else
+  \usepackage{titlesec}
+  % \titleformat{\chapter}[display]
+  %   {\bfseries\huge}
+  %   {\filleft\Huge\thechapter}
+  %   {3ex}
+  %   {\titlerule\vspace{1.5ex}\filright}
+  %   [\vspace{1ex}\titlerule]
+    % Style 1
+%\renewcommand{\thechapter}{\Roman{chapter}}
+  \titleformat{\chapter}[display]
+    {\bfseries\Large}
+    {\fontsize{120}{70}\selectfont\color{myColor1}\textbf{\thechapter}}
+    {-2ex}
+    {\fontsize{30}{70}\selectfont\scshape}
+    [\vspace{0ex}]
+  \titleformat{\section}[display]
+    {\bfseries\Large}
+    {}
+    {3ex}
+    {\titlerule\vspace{1.5ex}\filright\Large\thesection~}
+    [\vspace{1ex}\titlerule]
 \fi
-
-%%%%  Typography  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
-\setkomafont{sectioning}{\normalcolor\bfseries\boldmath}
-
-\iffalse %schrift enger:
-  \usepackage{mathptmx}
-  \usepackage[scaled=.92]{helvet}
-  \usepackage{courier}
-\fi
-
-%\linespread{1.5}
 
 %%%%  Theoreme Styles  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[framemethod=TikZ]{mdframed}
@@ -366,17 +414,6 @@
 %%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \usepackage[style=authoryear,natbib=true,backend=biber]{biblatex}
 \usepackage[style=alphabetic,natbib=true,backend=biber]{biblatex}
-\usepackage{fontspec}
-\makeatletter
-\setmainfont[
-  Path           = Fonts/,
-  Extension      = .otf,
-  Ligatures      = TeX,
-  BoldFont       = LinLibertine_RB,
-  ItalicFont     = LinLibertine_RI,
-  BoldItalicFont = LinLibertine_RBI
-]{LinLibertine_R}
-\makeatother
 \usepackage[babel]{csquotes}
 %\usepackage{filecontents}
 
@@ -406,7 +443,7 @@
     \def\FrameCommand{\fcolorbox{CommentFrameColor}{commentShadeColor}}%
     \MakeFramed {\FrameRestore}%
     \footnotesize%
-    %\textbf{\tiny Kommentar: } 
+    %\textbf{\tiny Kommentar: }
     }
   \renewcommand{\endcomment}{\endMakeFramed}
 

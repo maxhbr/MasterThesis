@@ -912,10 +912,10 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
     \]
     where the factorization is taken in ascending order.
   \end{s-defn}
-  \begin{s-rem}
+  \begin{s-rem}\label{rem:filtrationOfStokesMats}
     Write $\rho_{\tilde\theta}^k:\Sto^k_\theta(A^0)\to\SSto^k_\theta(A^0)$ for
     the \rewrite{restriction} of the map $\rho_{\tilde\theta}$.
-    \rewrite{Then, one can} denote this decomposition also by
+    \rewrite{Then, one can} denote the induced decomposition also by
     \[
       i_\theta:
       \SSto_\theta(A^0)
@@ -1185,36 +1185,6 @@ the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
   $\cU^{<k}:=\cU^{\leq k'}$ where $k':=\max\{k''\in\cK\mid k''<k\}$.
 \end{enumerate}
 
-\begin{rem}
-  The coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ depend only on
-  $\cQ_{[\End A^0]}$. Hence they depend only on $\cQ_{[A^0]}$.
-\end{rem}
-\begin{prop}
-  \marginnote{\cite[Prop.II.3.1]{Loday1994}}
-  Let $k\in\cK$, then
-  \begin{enumerate}
-    \item $\cU^{\leq k}$ refines $\cU^{k}$ and $\cU^{<k}$;
-    \item the coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ are adequate
-      to $\Lambda^k(A^0)$, $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$;
-    \item on
-      \begin{itemize}
-        \item $\cU^k$ there exists no $0$-cochain in $\Lambda^k(A^0)$;
-        \item $\cU^{\leq k}$ there exists no $0$-cochain in
-          $\Lambda^{\leq k}(A^0)$
-      \end{itemize}
-  \end{enumerate}
-\end{prop}
-\begin{proof}
-  \begin{enumerate}
-    \item \TODO{}
-    \item \TODO{}
-    \item \TODO{}
-  \end{enumerate}
-\end{proof}
-We denote the product
-$\prod_{\theta\in\A^\star}\Gamma(\dot U_\theta^\star;\Lambda^\star(A^0))$ by
-$\Gamma(\dot U^\star;\Lambda^\star(A^0))$ for $\star\in\{k,<k,\leq k,\dots\}$.
-
 \begin{figure} %{{{
   \centering
 
@@ -1336,6 +1306,36 @@ $\Gamma(\dot U^\star;\Lambda^\star(A^0))$ for $\star\in\{k,<k,\leq k,\dots\}$.
     are \textcolor{brown}{brown}.
   }\label{fig:adequateCovering}
 \end{figure}%}}}
+
+\begin{rem}
+  The coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ depend only on
+  $\cQ_{[\End A^0]}$. Hence they depend only on $\cQ_{[A^0]}$.
+\end{rem}
+\begin{prop}
+  \marginnote{\cite[Prop.II.3.1]{Loday1994}}
+  Let $k\in\cK$, then
+  \begin{enumerate}
+    \item $\cU^{\leq k}$ refines $\cU^{k}$ and $\cU^{<k}$;
+    \item the coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ are adequate
+      to $\Lambda^k(A^0)$, $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$;
+    \item on
+      \begin{itemize}
+        \item $\cU^k$ there exists no $0$-cochain in $\Lambda^k(A^0)$;
+        \item $\cU^{\leq k}$ there exists no $0$-cochain in
+          $\Lambda^{\leq k}(A^0)$
+      \end{itemize}
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  \begin{enumerate}
+    \item \TODO{}
+    \item \TODO{}
+    \item \TODO{}
+  \end{enumerate}
+\end{proof}
+We denote the product
+$\prod_{\theta\in\A^\star}\Gamma(\dot U_\theta^\star;\Lambda^\star(A^0))$ by
+$\Gamma(\dot U^\star;\Lambda^\star(A^0))$ for $\star\in\{k,<k,\leq k,\dots\}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{The case of a unique level}
@@ -1669,20 +1669,23 @@ in section~\ref{sec:matrixReps}, to \rewrite{obtain some statements} about the
 
 The proposition~\ref{prop:representation} states, that every Stokes germ
 $\phi_\theta$ can be written as its matrix representation conjugated by the
-normal solution. That means, that there is an element of $\SSto_\theta(A^0)$,
-which gets via
+normal solution. That means, that there is a Stokes matrix in
+$\SSto_\theta(A^0)$, which gets via
 \begin{align*}
   \rho_{\tilde\theta}^{-1}:
   \SSto_\theta(A^0)
-  &\overset{\cong}\to
+  &\overset{\cong}\longrightarrow
   \Sto_\theta(A^0)
-  \\C_{\cY_{0,\tilde\theta}} &\mapsto
+  \\C_{\cY_{0,\tilde\theta}} &\longmapsto
   \cY_{0,\tilde\theta} C_{\cY_{0,\tilde\theta}} \cY_{0,\tilde\theta}^{-1} \,,
 \end{align*}
 mapped to the Stokes germ $\phi_\theta$.
 \TODO[This depends on the determination $\tilde\theta$ of $\theta$]
 
 \paragraph{Using the structure of $\SSto_\theta(A^0)$}
+First look at an example in which we will explain, from which relations on the
+determining polynomials which restriction on the form of the Stokes matrices
+follows.
 \begin{exmp}
   Let $\theta\in\A$ be an anti-Stokes direction.
   From the definition of $\SSto_\theta(A^0)$ (cf.\
@@ -1730,8 +1733,8 @@ mapped to the Stokes germ $\phi_\theta$.
   some Stokes germ.
   Thus we have an isomorphism
   \begin{align*}
-    \vartheta_\theta:\C^2 &\to \SSto_\theta(A^0)
-  \\(c_1,c_2)&\mapsto
+    \vartheta_\theta:\C^2 &\longrightarrow \SSto_\theta(A^0)
+  \\(c_1,c_2)&\longmapsto
     \begin{pmatrix}
       1 & c_1 & c_2
     \\0 & 1 & 0
@@ -1739,7 +1742,7 @@ mapped to the Stokes germ $\phi_\theta$.
     \end{pmatrix}
   \end{align*}
 \end{exmp}
-In fact, we have the following $9$ cases of Stokes matrices
+In fact, the following $9$ cases of Stokes matrices can arise.
 \begin{center}
   \def\arraystretch{1.3}
   \setlength\tabcolsep{4mm}
@@ -1789,10 +1792,12 @@ Two of the cases are more complicated than necessary, to be consistent with
 the decomposition in the next part (cf.\ example~\ref{exmp:decompositionHere}).
 
 \paragraph{Decomposition by levels}
-In proposition~\ref{prop:filtrationOfStokesGroup} we have defined a
-decomposition of the Stokes group $\Sto_\theta(A^0)$ in subgroups generated by
-$k$-germs for $k\in\cK$.
-In our case, we have at most two level, such that this decomposition looks like
+In proposition~\ref{prop:filtrationOfStokesGroup} and especially
+remark~\ref{rem:filtrationOfStokesMats} we have defined a decomposition of the
+Stokes group $\Sto_\theta(A^0)$ in subgroups generated by $k$-germs for
+$k\in\cK$.
+In our case, we have at most two level, such that this decomposition is given
+by
 \[
   \phi_\theta=\phi_\theta^{k_1} \phi_\theta^{k_2}
   \overset{i_\theta}\longmapsto
