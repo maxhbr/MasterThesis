@@ -367,6 +367,16 @@
 % \usepackage[style=authoryear,natbib=true,backend=biber]{biblatex}
 \usepackage[style=alphabetic,natbib=true,backend=biber]{biblatex}
 \usepackage{fontspec}
+\makeatletter
+\setmainfont[
+  Path           = Fonts/,
+  Extension      = .otf,
+  Ligatures      = TeX,
+  BoldFont       = LinLibertine_RB,
+  ItalicFont     = LinLibertine_RI,
+  BoldItalicFont = LinLibertine_RBI
+]{LinLibertine_R}
+\makeatother
 \usepackage[babel]{csquotes}
 %\usepackage{filecontents}
 
