@@ -67,22 +67,15 @@
 \iftrue
   \usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
 \else % libertine
-  \usepackage{fontspec}
-  \iftrue
-    \usepackage{libertine}
+  \usepackage{libertine}
+  \iffalse
     \usepackage[libertine,cmbraces]{newtxmath} %,cmintegrals,vvarbb
   \else
-    \setmainfont[Path           = Fonts/
-                ,Extension      = .otf
-                ,Ligatures      = TeX
-                ,BoldFont       = LinLibertine_RB
-                ,ItalicFont     = LinLibertine_RI
-                ,BoldItalicFont = LinLibertine_RBI]{LinLibertine_R}
-    % \usepackage{unicode-math}
-    % \setmathfont[Path      = Fonts/
-    %             ,Ligatures = TeX
-    %             ,Extension = .otf]{texgyrepagella-math.otf}
-    %             ,Extension = .otf]{texgyrepagellamath-regular.otf}
+    \usepackage{fontspec}
+    \setromanfont[Ligatures=TeX]{TeX Gyre Pagella}
+    \usepackage{unicode-math}
+
+    \setmathfont[math-style=ISO,bold-style=ISO,vargreek-shape=TeX]{TeX Gyre Pagella Math}
   \fi
 \fi
 
