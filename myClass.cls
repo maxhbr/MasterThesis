@@ -161,11 +161,16 @@
 
 \iftrue%Horizontale Linien
   \usepackage{sectsty}
-  \chapterfont{%
-    \vspace{1cm}
-    \color{myheadLineColor}
-    \sectionrule{0pt}{0pt}{-5pt}{2pt}
-    }
+
+  \iffalse
+    \usepackage[Lenny]{fncychap}
+  \else
+    \chapterfont{%
+      \vspace{1cm}
+      \color{myheadLineColor}
+      \sectionrule{0pt}{0pt}{-5pt}{2pt}
+      }  
+  \fi
   \sectionfont{%
     \color{myheadLineColor}
     \sectionrule{0pt}{0pt}{-5pt}{0.8pt}
@@ -178,7 +183,9 @@
     \color{myheadLineColor}
     \sectionrule{0pt}{0pt}{-5pt}{0.4pt}
     }
-\else
+\fi
+
+\iffalse%titlesec varinte
   \usepackage{titlesec}
   % \titleformat{\chapter}[display]
   %   {\bfseries\huge}
@@ -200,6 +207,40 @@
     {3ex}
     {\titlerule\vspace{1.5ex}\filright\Large\thesection~}
     [\vspace{1ex}\titlerule]
+\fi
+
+\iffalse%tikz variante
+  \usepackage[explicit]{titlesec}
+  \usepackage{hyphenat}
+   
+  %define colors
+  \definecolor{lightgray}{gray}{0.95}
+  \definecolor{darkgray}{gray}{0.5}
+   
+  %define header image
+  \newcommand*\chapterlabel{}
+  \titleformat{\chapter}
+    {\gdef\chapterlabel{}
+     \normalfont\sffamily\Large\bfseries\scshape}
+    {\gdef\chapterlabel{\thechapter\ }}{0pt}
+    % begin the main image, shifted 5cm down from top
+    {\begin{tikzpicture}[remember picture,overlay]
+      % add grey filled bar, 4cm high, full page wide.
+      \node[yshift=-5cm] at (current page.north west)
+        {\begin{tikzpicture}[remember picture, overlay]
+          \draw[fill=darkgray]
+            (0,0) rectangle (\paperwidth,4cm);
+          % add the title, shifted to be centered in bar
+          \node[anchor=east,yshift=2cm
+               ,xshift=0.9\paperwidth
+               ,text width=1.05\textwidth]
+            {\color{lightgray}\nohyphens{\chapterlabel~\huge{#1}}} ;
+          % add rounded rectangle on top right, contains chapter number
+        \end{tikzpicture}};
+     \end{tikzpicture}
+    }
+  %adjust spacing for correct alignment of following text
+  \titlespacing*{\chapter}{0pt}{50pt}{-10pt}
 \fi
 
 %%%%  Theoreme Styles  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

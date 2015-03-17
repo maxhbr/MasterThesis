@@ -971,7 +971,6 @@ as a corollary.
 \end{comment}
 \begin{defn}
   \marginnote{\cite[Def.II.1.8]{Loday1994}, \cite[4.3.10]{Loday2014}}
-
   A \emph{Stokes cocycle} is a cocycle
   $(\phi_\theta)_{\theta\in\A}$ which is
   \begin{itemize}
@@ -1004,7 +1003,7 @@ $1$-cocycle\TODO[Proof]. Thus the, in the case $\{\theta_j\mid j\in J\}=\A$,
 induced map
 \[
   h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to
-  H^1(A^1;\Lambda(A^0))=\St(A^0)
+  H^1(S^1;\Lambda(A^0))=\St(A^0)
 \]
 is welldefined.
 \begin{tthm}
@@ -1037,11 +1036,11 @@ get the following corollary.
   $\prod_{\alpha\in\A}\SSto_\alpha(A^0)$ has some bad properties, when small
   deformations are applied to $[A^0]$, since under arbitrary small changes, one
   Stokes ray can split into two. Boalch (cf.~\cite{boalch,thboalch}) solves
-  this in the single-leveled case by \rewrite{calling our Stokes matrices
+  this in the single-leveled case by \rewrite{renaming our Stokes matrices as
   Stokes factors} and introducing new Stokes matrices which are build by the
   product of consecutive Stokes factors. He uses the rotational symmetry of the
-  single-leveled case thus this approach is not simply applicable to the
-  multi-leveled case.
+  single-leveled case \rewrite{thus this approach is not} simply applicable to
+  the multi-leveled case.
 \end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1052,9 +1051,7 @@ The proof in the ramified case can be found in \cite[Sec.II.4]{Loday1994}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Coverings}
-\begin{comment}
-  \cite[Sec.II.1]{Loday1994} and \cite[Sec.II.3.1]{Loday1994}
-\end{comment}
+\marginnote{\cite[Sec.II.1]{Loday1994} and \cite[Sec.II.3.1]{Loday1994}}
 A covering $\cV$ is said to \emph{refine} a covering $\cU$ if, to each open set
 $V\in\cV$ there is at least one $U\in\cU$ with $V\subset U$.
 \begin{defn}
@@ -1081,17 +1078,21 @@ $V\in\cV$ there is at least one $U\in\cU$ with $V\subset U$.
 The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
 \begin{prop}
   \marginnote{\cite[Prop.II.1.3]{Loday1994}}
-  \dots $\cV$ refines $\cU$ when \TODO{}
+  The covering $\cV$ refines $\cU$ if and only if the corresponding nerves 
+  $\dot\cU=\{\dot U_j\}$ and $\dot\cV=\{\dot V_l\}$ satisfy
+  \begin{einr}
+    each $\dot U_j$ contains at least one $\dot V_l$.
+  \end{einr}
 \end{prop}
 
 \begin{defn}
   A covering $\cU$ beyond which the inductive limit
-  $\underset{\cU}{\underrightarrow{\lim}}H^1(\cU,\Lambda(A^0))$ is stationary
+  $\underset{\cU}{\underrightarrow{\lim}}H^1(\cU;\Lambda(A^0))$ is stationary
   is said to be \emph{adequate} to describe $H^1(S^1;\Lambda(A^0))$ (or
   \emph{adequate} to $\Lambda(A^0)$).
 \end{defn}
 
-\begin{prop}
+\begin{prop}\label{prop:adeqCovCondition}
   \marginnote{\cite[Prop.II.1.7]{Loday1994}}
   Let $\theta\in\A$ and $k\in\cK_\theta$.
   \begin{s-defn}
@@ -1100,10 +1101,11 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
   \end{s-defn}
   A cyclic covering $\cU=(U_j)_{j\in J}$, which satisfies
   \begin{einr}
-    each Stokes arc of level $k$, of level $\leq k$ or of any level
+    each Stokes arc of level $k$ (resp.\ of level $\leq k$ or of any level)
     contains at least one arc $\dot U_j$ from the nerve $\dot\cU$ of $\cU$
   \end{einr}
-  is adequate to $\lambda^k(A^0)$, $\lambda^{\leq k}(A^0)$ or to $\lambda(A^0)$.
+  is adequate to $\Lambda^k(A^0)$ (resp.\ to $\Lambda^{\leq k}(A^0)$ or to
+  $\Lambda(A^0)$).
 \end{prop}
 \begin{proof}
   \TODO{}
@@ -1114,7 +1116,7 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
 Let $k\in\cK$.
 We want to define the three cyclic coverings $\cU^{k}$, $\cU^{\leq k}$ and
 $\cU^{<k}$ which will be adequate to $\Lambda^k(A^0)$, $\Lambda^{\leq k}(A^0)$
-and $\Lambda^{<k}(A^0)$. Furthermore are the coverings comparable at the
+and $\Lambda^{<k}(A^0)$. Furthermore will the coverings be comparable at the
 different levels.
 
 \begin{enumerate}
@@ -1173,7 +1175,7 @@ the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
       $U\left(\theta,\frac{\pi}{k}\right)=\dot U_\theta^k$.
       \begin{comment}
         and then no $0$-cochain with level $k$ or $\geq k$ can exists on the
-        covering $\cU\leq{k}$.
+        covering $\cU^{\leq{k}}$.
       \end{comment}
     \end{rem}
 \end{enumerate}
@@ -1311,7 +1313,7 @@ the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
   The coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ depend only on
   $\cQ_{[\End A^0]}$. Hence they depend only on $\cQ_{[A^0]}$.
 \end{rem}
-\begin{prop}
+\begin{prop}\label{prop:adequateProperties}
   \marginnote{\cite[Prop.II.3.1]{Loday1994}}
   Let $k\in\cK$, then
   \begin{enumerate}
@@ -1328,20 +1330,19 @@ the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
 \end{prop}
 \begin{proof}
   \begin{enumerate}
-    \item \TODO{}
-    \item \TODO{}
+    \item This statement is clear by construction.
+    \item This is clear, since the coverings are build to satisfy the
+      condition from proposition~\ref{prop:adeqCovCondition}.
     \item \TODO{}
   \end{enumerate}
 \end{proof}
-We denote the product
+To have a shorter notation, we denote the product
 $\prod_{\theta\in\A^\star}\Gamma(\dot U_\theta^\star;\Lambda^\star(A^0))$ by
 $\Gamma(\dot U^\star;\Lambda^\star(A^0))$ for $\star\in\{k,<k,\leq k,\dots\}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{The case of a unique level}
-\begin{comment}
-  \cite[II.3.2]{Loday1994}
-\end{comment}
+\marginnote{\cite[II.3.2]{Loday1994}}
 First we will proof theorem~\ref{thm:mainThm2} in the case of a unique level.
 This means that
 \begin{itemize}
@@ -1400,7 +1401,14 @@ This means that
         \to
         H^1(S^1;\Lambda^k(A^0))
       \]
-      is the quotient map. It is also an isomorphism since \TODO{}
+      is the quotient map. From proposition~\ref{prop:adequateProperties} we
+      know, that $s^k$ is
+      \begin{itemize}
+        \item \textbf{surjective}, since $\cU^k$ is adequate to
+          $\Lambda^k(A^0)$ and
+        \item \textbf{injective}, since on $\cU^k$ there is no $0$-cochain in 
+          $\Lambda^k(A^0)$.
+      \end{itemize}
   \end{enumerate}
   \TODO[Show, that this is the correct $h$]
 \end{proof}
@@ -1462,11 +1470,11 @@ This means that
     (\dot F_\theta\dot G_\theta)_{\theta\in\A^{\leq k}}
   \end{align*}
   where $(\dot F_\theta)_{\theta\in\A^{\leq k}}=\sigma^{<k}(\dot f)$ and
-  $(\dot G_\theta)_{\theta\in\A^{\leq k}}=\sigma^{<k}(\dot g)$ are defined as
+  $(\dot G_\theta)_{\theta\in\A^{\leq k}}=\sigma^k(\dot g)$ are defined as
   above.
   \begin{s-rem}
-    This map is injective, since injectivity for germs implies injectivity for
-    sections.
+    This map $\mathfrak{S}^{\leq k}$ is injective, since injectivity for germs
+    implies injectivity for sections.
   \end{s-rem}
 \end{defn}
 
@@ -1502,10 +1510,10 @@ This means that
   where
   \[
     \dot F_\theta=\begin{cases}
-      \dot f_\alpha \text{~restricted to } \dot U_\theta
+      \dot f_\theta \text{~restricted to } \dot U_\theta
       \text{~and seen as being in } \Lambda(A^0)
       & \text{~when } \theta\in\A^k
-    \\1 \text{~(the identity) }
+    \\1 \text{~(the identity on $\dot U_\theta$) }
       & \text{~when } \theta\notin\A^k
     \end{cases} \,.
   \]
@@ -1522,9 +1530,9 @@ This means that
   following an ascending order of levels.
   \begin{s-rem}
     \begin{enumerate}
-      \item This map, again, is injective.
+      \item This map, again, is injective and
         \TODO[proof?]
-      \item It can be extended to an arbitrary order of levels.
+      \item it can be extended to an arbitrary order of levels.
     \end{enumerate}
   \end{s-rem}
 \end{defn}
@@ -1545,7 +1553,7 @@ This means that
 \begin{proof}
   \TODO{}
 \end{proof}
-\subsubsection{Composing functions to obtain $h$}
+\paragraph{Composing functions to obtain $h$}
 The expression $\prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))$ is an
 abbreviation for
 $\prod_{k\in\cK}\prod_{\theta\in\A}\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$
@@ -1898,14 +1906,12 @@ where $\star\in\{1,2,3\}$.
   \[
     \prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta:
     \C^{k_1+2\cdot k_2}
-    \overset\cong\longrightarrow
-    \prod_{\theta\in\A}\SSto_\theta(A^0)
-    \overset\cong\longrightarrow
-    \prod_{\theta\in\A}\Sto_\theta(A^0)
+    \overset\cong\longrightarrow \prod_{\theta\in\A}\SSto_\theta(A^0)
+    \overset\cong\longrightarrow \prod_{\theta\in\A}\Sto_\theta(A^0)
   \]
   which can be concatenated with $h$ to obtain an element in $\St(A^0)$.
   We can also define the isomorphism
-  $\C^{k_1+2\cdot k_2} \textcolor{purple}{\longrightarrow} \St(A^0)$
+  $\C^{2\cdot(k_1+2\cdot k_2)}\textcolor{purple}{\longrightarrow} \St(A^0)$
   which makes the following diagram commute.
   \[ \begin{tikzcd}[column sep=1.5cm,row sep=2cm]
       &\C^{2\cdot(k_1+2\cdot k_2)} 
