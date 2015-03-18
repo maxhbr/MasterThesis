@@ -435,42 +435,38 @@ G(A)$ and $\hat G(A')$ are related by
   \def\myA{\textcolor{green!30!black}{A}}
   \def\myF{\textcolor{red!60!black}{F}}
   The condition
-  \begin{itemize}
-    \item[] $\myB$ is obtained from $\myA$ by transformation $\myF$
-  \end{itemize}
+  \begin{einr}
+    $\myB$ is obtained from $\myA$ by transformation $\myF$
+  \end{einr}
   is clearly equivalent to
-  \begin{itemize}
-    \item[]  $\myF$ solves the linear differential system
-      \[
-        \frac{d\myF}{dt}=\myB\myF-\myF\myA
-      \]
-      which is denoted by $[\myA,\myB]$.
-  \end{itemize}
+  \begin{einr}
+    $\myF$ solves the linear differential system
+    \[
+      \frac{d\myF}{dt}=\myB\myF-\myF\myA
+    \]
+    which is denoted by $[\myA,\myB]$.
+  \end{einr}
   \begin{s-rem}
     If we start with a isomorphism
-    $\Phi:(\cM,\nabla)\overset{\sim}\to(\cM',\nabla')$ and two basis choices
-    $\cM\overset{\sim}\to\C^n$ and $\cM'\overset{\sim}\to\C^n$ we have the
-    following commutative diagram:
+    $\Phi:(\cM,\nabla)\overset{\sim}\longrightarrow(\cM',\nabla')$ and two
+    basis choices $\cM\overset{\sim}\longrightarrow\C^n$ and
+    $\cM'\overset{\sim}\longrightarrow\C^n$ we have the following commutative
+    diagram:
     \[ \begin{tikzcd}
-        \C^n \arrow{rrrr}{F}\arrow{ddd}{d-A}&&&& \C^n\arrow{ddd}{d-B}
+        \C^n \arrow{rrrr}{F}\arrow{ddd}{d-B}&&&& \C^n\arrow{ddd}{d-A}
         \\ & \cM \dar{\nabla}\arrow{rr}{\Phi}\ular&& \cM'\dar{\nabla'}\urar
         \\ & \cM \arrow{rr}{\Phi}\dlar&& \cM'\drar
         \\ \C^n \arrow{rrrr}{F}&&&& \C^n
     \end{tikzcd} \]
     Thus the commutation property is given by
     \[
-      (d-A)F=F(d-B)
+      (d-B)\circ F=F\circ(d-A)
     \]
     which is equivalent \TODO[really] to
-      \[
-        \frac{dF}{dt}=BF-FA.
-      \]
+    \[
+      \frac{dF}{dt}=BF-FA.
+    \]
   \end{s-rem}
-  \begin{comment}
-    \begin{s-rem}
-      $[A]=[0,A]$ \TODO[korrekt?]
-    \end{s-rem}
-  \end{comment}
 \end{rem}
 \begin{rem}
   \[
@@ -543,9 +539,6 @@ G(A)$ and $\hat G(A')$ are related by
         They are, a priori, formal transformations. Actually $G(A^0)$ is a
         subgroup of $\Gl_n(\C[1/x,x])$ (cf. \TODO{}).
       \end{s-rem}
-      \begin{comment}
-        In the nice case this is only $T$?
-      \end{comment}
   \end{itemize}
 \end{defn}
 \begin{lem}
@@ -560,9 +553,7 @@ G(A)$ and $\hat G(A')$ are related by
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Regular / irregular singularities}
-\begin{comment}
-  see \cite[defn.5.1.6]{hotta2008}
-\end{comment}
+\marginnote{\cite[Defn.5.1.6]{hotta2008}}
 \begin{defn}
   \marginnote{\cite[86]{sabbah2007isomonodromic}}
   A connection with connection matrix $A$ has \emph{regular singularity} at $0$
@@ -588,13 +579,8 @@ G(A)$ and $\hat G(A')$ are related by
   \end{comment}
 \end{defn}
 \begin{thm}
-  \begin{comment}
-    see
-    \begin{itemize}
-      \item \cite[Thm.II.2.8]{sabbah2007isomonodromic}
-      \item \cite[5.1.2]{hotta2008}
-    \end{itemize}
-  \end{comment}
+  \marginnote{\cite[Thm.II.2.8]{sabbah2007isomonodromic},
+  \cite[5.1.2]{hotta2008}}
   Let $(\cM,\nabla)$ be a regular singular meromorphic connection and $A$ its
   connection matrix.
   Then there exists a matrix $F\in G(\!\{t\}\!)$ such that after transformation
@@ -603,9 +589,7 @@ G(A)$ and $\hat G(A')$ are related by
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Fundamental solutions and monodromy of a system}
-\begin{comment}
-  See \cite[Sec.4.3.2]{Loday2014}
-\end{comment}
+\marginnote{\cite[Sec.4.3.2]{Loday2014}}
 \marginnote{\cite[130]{hotta2008}}
 It is well known in the theory of linear ODEs that the set of solutions to
 (\ref{eq:ode}) forms a vector space of dimension $n$ over $\C$, i.e.\ if
@@ -615,7 +599,7 @@ $C_2\in\C$ are two constants, then is also $C_1x_0(t)+C_2x_{00}(t)$ a solution.
 \begin{defn}
   \marginnote{\cite[4f]{thboalch}}
   A \emph{fundamental solution} $\cY$ of the system $[A]$ is an invertible
-  solution of $[0,A^0]$.
+  solution of $[0,A]$.
   \begin{s-rem}
     this means, that $\cY$ is a $n\times n$ matrix \comm{with entries in
     \TODO{}} whose columns are $n$ $\C$-linearly independent solutions of the
@@ -633,12 +617,9 @@ $C_2\in\C$ are two constants, then is also $C_1x_0(t)+C_2x_{00}(t)$ a solution.
   case up to \TODO{}
 \end{comment}
 
-\begin{comment}
-  for \textbf{monodromy} see \cite[130]{hotta2008}
-\end{comment}
-\marginnote{\cite[6]{heu2010}}
-We can choose a fundamental solution $\cY$. Then analytic continuation along a
-closed path $\gamma$ in $M\backslash Z$ provides another fundamental solution
+\marginnote{\cite[130]{hotta2008}, \cite[6]{heu2010}}
+Choose a fundamental solution $\cY$. Then analytic continuation along a closed
+path $\gamma$ in $M\backslash Z$ provides another fundamental solution
 $\cY'=\rho^{-1}(\gamma)\cY$ where $\rho(\gamma)$ is called the \emph{monodromy
 along the path $\gamma$}.
 \begin{defn}
@@ -703,8 +684,9 @@ problem}.
         \frac{1}{t} (\alpha\id+N)
       \]
       where $N$ is a nilpotent matrix.
-      If \rewrite{$\id + N$} is a single Jordan Block, we denote it by
-      $\cN_{\alpha,d}$ where $d$ is the dimension.
+      If \rewrite{$\alpha\id + N$} is a single Jordan Block, we denote the
+      corresponding connection by $\cN_{\alpha,d}$ where $d$ is the dimension
+      \rewrite{minus one}.
   \end{itemize}
 \end{defn}
 \begin{prop}
@@ -714,7 +696,7 @@ problem}.
       Every regular germ of a meromorphic connection is isomorphic to some
       direct sum
       \[
-        (\cR,\nabla)=\bigoplus_\alpha(\cN_{\alpha,0},\nabla)\,.
+        (\cR,\nabla)=\bigoplus_{\alpha,d}(\cN_{\alpha,d},\nabla)\,.
         \TODO[not only of rank one]
       \]
       \begin{s-rem}
@@ -798,13 +780,14 @@ formal classification problem.
   of $\cM$.
   \begin{rem}
     There, in general is \textbf{no} lift of the isomorphism $\hat\lambda$,
-    i.e.\ there is \textbf{no} isomorphism making the diagram
+    i.e.\ there is no isomorphism making the diagram
     \[ \begin{tikzcd}
         \cM \dar \arrow[dotted]{r}[description]{?} & \cM^{nf} \dar
         \\\hat\cM \rar{\hat\lambda} & \hat\cM^{nf}
     \end{tikzcd} \]
-    kommutative. But sectorwise, there are lifts given by the main asymptotic
-    existence theorem (cf.\ \ref{thm:meat}).
+    kommutative.
+    But sectorwise, there are lifts given by the main asymptotic existence
+    theorem (cf.\ theorem~\ref{thm:meat}).
   \end{rem}
 \end{thm}
 \begin{proof}
@@ -823,8 +806,8 @@ formal classification problem.
   \begin{itemize}
     \item $r\geq1$,
     \item $A$ has holomorphic entries, and
-    \item $A_0:=A(0)$ being regular semisimple\footnote{i.e.\ with
-      pairwise distinct eigenvalues.}.
+    \item $A_0:=A(0)$ being regular semisimple, i.e.\ with pairwise distinct
+      eigenvalues.
   \end{itemize}
   Then there is no ramification needed, to apply the Levelt-Turittin-theorem.
   \begin{comment}
@@ -1065,7 +1048,8 @@ Look at the situation, where $A$ is via $\hat F$ formally equivalent to $A^0$.
   \marginnote{\cite[855]{Loday1994}}
   We call $F$ a \emph{lift of $\hat F$ on $I\subset S^1$} if
   \begin{itemize}
-    \item $F\sim_I\hat F$ and
+    \item $F\sim_I\hat F$
+      (cf.\ page~\pageref{page:notationForAsymptoticExpansion}) and
     \item $F$ satisfies the same system $[A^0,A]$ as $\hat F$.
   \end{itemize}
 \end{defn}
@@ -1185,18 +1169,11 @@ calling the \emph{classifying set} and we will also denote it ${}^0C(A^0)$.
   \\This distinction relates to the difference between \textbf{‘regular
   singular’} connections and \textbf{‘logarithmic’} connections.
 \end{rem}
-\begin{comment}
-  \begin{itemize}
-    \item \cite{thboalch} p.6
-      \begin{itemize}
-        \item \cite{boalch} p.19
-      \end{itemize}
-    \item \cite{Loday1994} p.852
-    \item \cite{sabbah2007isomonodromic} p.111
-    \item \cite{babbitt1983}
-  \end{itemize}
-\end{comment}
-
+\marginnote{\cite[6]{thboalch}
+  \\\tiny{(\cite[19]{boalch})}
+  \\\cite[852]{Loday1994}
+  \\\cite[111]{sabbah2007isomonodromic}
+  \\\cite{babbitt1983}}
 It is convenient to look at the slightly larger space of \emph{marked pairs}
 \[
   \cH=\cH(\cM^{nf},\nabla^{nf})=\left\{
@@ -1207,18 +1184,18 @@ It is convenient to look at the slightly larger space of \emph{marked pairs}
         (\hat\cM^{nf},\hat\nabla^{nf})
   \right\}
 \]
-in which we also keep the additional information, of the formal isomorphism, by
-which the meromorphic connection is formally isomorphic to the model.
+in which we also handle the additional information, of the formal isomorphism,
+by which the meromorphic connection is formally isomorphic to the model.
 Where the isomorphisms of marked pairs are defined as follows:
 \begin{defn}
   Two germs $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$ are
   isomorphic if there exists an isomorphism
   $g:(\cM,\nabla)\overset{\sim}\longrightarrow(\cM',\nabla')$ such that
   $\hat f=\hat f'\circ \hat g$.
-  \begin{comment}
-    \cite[111]{sabbah2007isomonodromic}:\dots it is important to remark that
-    such an isomorphism is then unique.
-  \end{comment}
+  \begin{s-rem}
+    \rewrite{Sabbah states in} \cite[111]{sabbah2007isomonodromic}, that such
+    an isomorphism is then unique.
+  \end{s-rem}
 \end{defn}
 
 Equivalently, one can talk in terms of systems. We then denote by

@@ -3,7 +3,8 @@ A great overview of this topic is given in
 \cite{Varadarajan96linearmeromorphic}.
 
 Stokes structures are the \rewrite{necessary information} for meromorphic
-classification.
+classification, i.e.\ with the Stokes structures we are able to construct a
+\rewrite{space}, which is isomorphic to the classifying \rewrite{set}.
 
 Let $\cM^{nf}$ be a fixed model with the corresponding connection matrix $A^0$.
 The first objective is to proof the Malgrange-Sibuya theorem
@@ -12,7 +13,8 @@ is isomorphic, via $\exp$, to the first cohomology
 $H^1(S^1;\Lambda^{<0}(A^0))$.
 In section~\ref{sec:mainThm2} we will improve the Malgrange-Sibuya Theorem by
 showing, that each 1-cohomology class in $\St(A^0)$ contains a unique
-$1$-cocycle of a special form called \emph{the Stokes cocycle}.
+$1$-cocycle of a special form called \emph{the Stokes cocycle}
+(cf.\ section~\ref{sec:StokesGroup}).
 The morphism, which maps each Stokes cocyle to its corresponding $1$-cocycle
 will be denoted by $h$.
 
@@ -301,7 +303,7 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Stokes group}
+\section{The Stokes group}\label{sec:StokesGroup}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Anti-Stokes directions and the Stokes group}
 \begin{comment}
@@ -523,9 +525,7 @@ define the Stoken group as follows.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Faithful representation of the Stokes group}\label{sec:matrixReps}
-\begin{comment}
-  See \cite[9f]{thboalch} and \cite[??]{Loday1994}
-\end{comment}
+\marginnote{\cite[9f]{thboalch}, \cite[??]{Loday1994}}
 \begin{defn}\label{defn:groupOfFaithfullReps}
   Define the group
   \[
@@ -660,16 +660,20 @@ the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
   maximal decay in direction $\tilde\theta$ the corresponding
   block $C_{\tilde\theta}^{(l,j)}$ vanishes.
 
-  \TODO[Proof isom? faithfulness?]
-  \rewrite{It is clearly a bijection, since the
-  conjungation by the inverse of the fundamental solution is a inverse
-  morphism.}
+  It is \textbf{injective}, and thus a faithful representation, since
+  conjugation by an invertible matrix defines an isomorphism to its
+  \rewrite{image}.
+
+  The \textbf{surcjectivity} can also \rewrite{be seen easily}, since every
+  constant (unipotent) matrix, with zeros at the necessary positions,
+  characterizes a unique element of $\Sto_\theta(A^0)$.
+  \TODO[Isomorphic to $\C^{?}$?]
 \end{proof}
 
 In particular we get, that
 \begin{itemize}
-  \item for $j=l$ are the (diagonal) blocks $C_{\tilde\theta}^{(l,j)}$ vanish
-    since $q_l-q_j=0$ does not have maximal decay and
+  \item for $j=l$ the (diagonal) blocks $C_{\tilde\theta}^{(l,j)}$ vanish since
+    $q_l-q_j=0$ does not have maximal decay and
   \item if $e^{q_j-q_l}$ has has maximal decay, then $e^{q_l-q_j}$ has not.
     Thus if $C_{\tilde\theta}^{(l,j)}$ is not equal to zero, the block
     $C_{\tilde\theta}^{(j,l)}$ is necessarily zero.
@@ -678,12 +682,8 @@ In particular we get, that
   This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent.
   \rewrite{Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.}
 \end{rem}
-On the other hand, every constant unipotent matrix, with zeros at the necessary
-positions, characterizes a unique element of $\Sto_\theta(A^0)$.
-\TODO[Isomorphic to $\C^{?}$?]
 
-\begin{lem}
-  \TODO[lemma or corollary?]
+\begin{cor}
   \marginnote{\cite[Def.I.4.12]{Loday1994}}
   A germ $\phi_\theta\in\Lambda_\theta(A^0)$ is a Stokes germ, i.e.\ an element
   in $\Sto_\theta(A^0)$ if and only if for some, hence all determination
@@ -693,7 +693,7 @@ positions, characterizes a unique element of $\Sto_\theta(A^0)$.
     C_{\tilde\theta}^{(l,j)}
   \]
   and $C_{\tilde\theta}^{(l,j)}$ have the necessary block structure.
-\end{lem}
+\end{cor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filtration of the Stokes group by levels}
