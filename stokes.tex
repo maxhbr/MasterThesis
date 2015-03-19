@@ -1,10 +1,17 @@
 \chapter{Stokes Structures}
-A great overview of this topic is given in
-\cite{Varadarajan96linearmeromorphic}.
-
 Stokes structures are the \rewrite{necessary information} for meromorphic
 classification, i.e.\ with the Stokes structures we are able to construct a
 \rewrite{space}, which is isomorphic to the classifying \rewrite{set}.
+
+A great overview of this topic is given in
+\cite{Varadarajan96linearmeromorphic}. Other resources we will use are for
+example \rewrite{Sabbah's} book \cite[section II]{sabbah2007isomonodromic} for
+section~\ref{sec:mainThm1}.
+\rewrite{Loday-Richaud's} paper \cite{Loday1994} and the book \cite{Loday2014}
+are also useful, especially in the sections~\ref{sec:StokesGroup}
+and~\ref{sec:mainThm2}.
+Also useful was \rewrite{Boalch's} paper \cite{boalch} (resp.\ his thesis
+\cite{thboalch}) which looks only at the single leveled case.
 
 Let $\cM^{nf}$ be a fixed model with the corresponding connection matrix $A^0$.
 The first objective is to proof the Malgrange-Sibuya theorem
@@ -27,7 +34,7 @@ We \rewrite{have the following} commutative diagram of isomorphisms.
     \node[green!40!black] (sheaf) at (3,1) {$\St(\cM^{nf})$};
     \node[] (sheaf3) at (3,0.7) {\textcolor{purple}{$\St(A^0)$}};
     \node[blue] (mat) at (3,-1) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
-    \node[blue] (mat') at (3.5,-1.5) {$(U_+\times U_-)^{k-1}$};
+    % \node[blue] (mat') at (3.5,-1.5) {$(U_+\times U_-)^{k-1}$};
 
     % \draw[thick,double] (modSpcMat) -- (modSpcSheaf) -- (class) -- (class2) --
     %   (modSpcMat);
@@ -39,17 +46,12 @@ We \rewrite{have the following} commutative diagram of isomorphisms.
       node[midway,above left] {$\exp$};
     \draw[->,blue,dashed] (modSpcMat) edge[bend right=20] (mat);
     \draw[->,blue] (class) -- (mat) node[midway,below left] {g};
-    \draw[->,blue,dotted] (mat) -- (mat') node[midway,right] {$\cK=\{k-1\}$};
+    % \draw[->,blue,dotted] (mat) -- (mat') node[midway,right] {$\cK=\{k-1\}$};
     \draw[->,purple,dashed] (class) -- (sheaf3)
       node[midway,below right] {$\exp_{A^0}$};
     % \draw[->,purple,dashed] (class) -- (mat);
     \draw[->,purple] (mat) -- (sheaf3) node[midway, right] {$h$};
     \draw[->,purple,dashed] (sheaf3) edge[bend right=20] (mat);
-
-    \node[green!40!black] at (1,0.7) {\TODO[\cite{sabbah2007isomonodromic}]};
-    \node[blue] at (2.3,-1.3) {\TODO[\cite{thboalch},\cite{boalch}]};
-    \node[purple] at (4,0)
-    {\TODO[\cite{Loday1994}{\footnotesize(\cite{Loday2014})}]};
   \end{tikzpicture}
 \end{center}
 The map $g$, which makes the diagram commute, is defined using the theory of
@@ -58,15 +60,13 @@ chapter~\ref{chap:multisummability}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes structures: Malgrange-Sibuya isomorphism}\label{sec:mainThm1}
-\begin{comment}
-  \cite[Thm.I.2.1]{Loday1994}, \cite[Thm.4.3.9]{Loday2014} and
-  \cite[Thm.II.6.2]{sabbah2007isomonodromic}
-\end{comment}
+\marginnote{\cite[Thm.I.2.1]{Loday1994}, \cite[Thm.4.3.9]{Loday2014},
+\cite[Thm.II.6.2]{sabbah2007isomonodromic}}
 Here we will look at the classifying set and we will proof, that it is
 isomorphic \TODO[as\dots] to the first non abelian cohomology \rewrite{set}
 $H^1(S^1;\Lambda^{<0}(A^0))=:\St(A^0)$.
 
-Let us first define a Stokes sheaf $\Lambda(A^0)$ on $S^1$, as the sheaf of
+Let us first define the Stokes sheaf $\Lambda(A^0)$ on $S^1$, as the sheaf of
 flat isotropies.
 \begin{defn} \label{defn:StokesSheaf}
   The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is the sheaf of groups defined on
@@ -81,12 +81,22 @@ flat isotropies.
   \begin{s-rem}
     This definition makes also sense for systems wich are not in normal form.
   \end{s-rem}
-  \begin{comment}
-    \begin{s-rem}
-      $\Lambda(A^0)$ is the same as $\Aut^{<0}(\tilde\cM^{nf})$
-      in~\cite{sabbah2007isomonodromic} which is defined as follows \TODO
-    \end{s-rem}
-  \end{comment}
+  \begin{s-rem}
+    \TODO[remove? need more defs]
+    Sabbah \cite[110]{sabbah2007isomonodromic} talks (global) about meromorphic
+    connections $\sM$ on a small disk $D$ around $0$ instead of germs of
+    meromorphic connections.
+
+    Define on $S^1$ the sheaf $\Aut^{<0}(\tilde\sM^{nf})$ of automorphisms of
+    $\tilde\sM^{nf}=\cA_D\otimes_{\cO_D}\sM^{nf}$ which
+    \begin{itemize}
+      \item are compatible with the connection and
+      \item are formally equal to the identity, i.e.\ induce the identity on 
+        $\hat\sM^{nf}=\hat\cO_D\otimes_{\cO_D}\sM^{nf}$
+    \end{itemize}
+
+    The sheaf $\Aut^{<0}(\tilde\sM^{nf})$ corresponds to our $\Lambda(A^0)$.
+  \end{s-rem}
 \end{defn}
 
 \subsection{The theorem}
@@ -120,25 +130,6 @@ $\id$.
   $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$, i.e.\ the trivial
   cohomology class.} sets.
 \end{tthm}
-\begin{comment}
-  \begin{rem}
-    \marginnote{\cite{Loday1994} Remark I.2.2}
-    To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains which
-    are conjugated via $\Phi$.
-    We get the following commutative diagram:
-    \[ \begin{tikzcd}
-        G\backslash\hat G(A^1) \rar{\cdot\Phi}\dar{\exp}
-        & G\backslash\hat G(A^0) \dar{\exp}
-        & \hat F \arrow[|->]{r}\arrow[|->]{d}
-        & \hat F\Phi \arrow[|->]{d}
-      \\ H^1(S^1;\lambda(A^1)) \rar
-        & H^1(S^1;\lambda(A^0))
-        & \exp_{\mu_1}(\hat F) \arrow[|->]{r}
-        & \exp_{\mu_0}(\hat F\Phi)
-    \end{tikzcd} \]
-    where $\exp_{\mu_0}(\hat F\Phi)=\Phi^{-1}\exp_{\mu_0}(\hat F)\Phi$.
-  \end{rem}
-\end{comment}
 
 \subsubsection{The theorem (system version)}
 Since the language of meromorphic connections is equivalent to the one of
@@ -207,11 +198,9 @@ which we call $\exp$.
 We will mainly refer to \cite[section 6.d]{sabbah2007isomonodromic}, where a
 slightly more complicated case, with deformation space, is proofen. Our proof is
 obtained by choosing $X=\{0\}$ as the trivial deformation space.
-\begin{comment}
-  See also \cite{BJL1979Birkhoff} and \cite{babbitt1989local} although the proof
-  goes back to work from Malgrange and Sibuya (see for example
-  \cite{sibuya1990Linear}).
-\end{comment}
+\marginnote{See also \cite{BJL1979Birkhoff} and \cite{babbitt1989local}
+  although the proof goes back to work from Malgrange and Sibuya (see for
+  example \cite{sibuya1990Linear}).}
 \TODO[Define $\tilde\cM$ or find other way!]
 \begin{proof}
   \textbf{First look at injectivity:}
@@ -697,12 +686,7 @@ In particular we get, that
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filtration of the Stokes group by levels}
-\begin{comment}
-  See
-  \cite{Loday1994}
-  and
-  \cite[362ff]{Martinet1991}
-\end{comment}
+\marginnote{\cite{Loday1994}, \cite[362ff]{Martinet1991}}
 We denote the set of \emph{levels of the germ}
 $\phi_{\theta}\in\Sto_\theta(A^0)$ by
 \[
@@ -1870,7 +1854,7 @@ $\#\cK(\phi_\theta)\leq1$, thus the interesting cases are the
     \,.
   \end{align*}
 \end{exmp}
-The four nontrivial decomposition, in our situation are given by
+The four nontrivial decomposition in our situation, are given by
 \begin{enumerate}
   \item $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_1 \\0 & 0 & 1 \end{pmatrix}
   \cdot\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}=
@@ -2036,9 +2020,9 @@ where $\star\in\{1,2,3\}$.
 
 Even more explicit, we can fix the levels $k_1=\kOne$ and $k_2=\kTwo$ together
 with $\theta_0=0$.
-Let $q_1 \underset{\theta_0,\max}{\prec} q_2$ and $q_1
-\underset{\theta_0,\max}{\prec} q_3$ as well as $q_2
-\underset{\theta_0,\max}{\prec} q_3$.
+Assume without any restriction, that $q_1 \underset{\theta_0,\max}{\prec} q_2$
+and $q_1 \underset{\theta_0,\max}{\prec} q_3$ as well as
+$q_2 \underset{\theta_0,\max}{\prec} q_3$.
 
 The classification space is in this case isomorphic to
 $\C^{2\cdot(\kOne+2\cdot\kTwo)}=\C^{\zkOnepzKtwo}$.
@@ -2058,18 +2042,15 @@ gets, via the morphism $\prod_{\theta\in\A}j_\theta$, mapped to
   \right.
 \\&\qquad\left(
   \left.
-    \begin{pmatrix} 1 & {}^1c_2 & {}^2c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
+    \begin{pmatrix} 1 & {}^1c_2 & {}^1c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
     \begin{pmatrix} 1 & 0 & 0 \\{}^2c_2 & 1 & 0 \\{}^2c_3 & 0 & 1 \end{pmatrix},
     \dots,
     \begin{pmatrix} 1 & 0 & 0 \\{}^{\zkTwo}c_2 & 1 & 0 \\{}^{\zkTwo}c_3 & 0 & 1 \end{pmatrix}
   \right)
   \right)
-  \in
-  \prod_{\theta\in\A^{\kOne}}\SSto_{\theta}^{\kOne}(A^0)
-  \times
-  \prod_{\theta\in\A^{\kTwo}}\SSto_{\theta}^{\kTwo}(A^0)
 \end{align*}
-and thus the element
+in $\prod_{\theta\in\A^{\kOne}}\SSto_{\theta}^{\kOne}(A^0) \times
+\prod_{\theta\in\A^{\kTwo}}\SSto_{\theta}^{\kTwo}(A^0)$ and thus the element
 \begin{align*}
   &\left(
   \left(
@@ -2081,23 +2062,23 @@ and thus the element
   \right.
 \\&\qquad\left(
   \left.
-    \begin{pmatrix} 1 & {}^1c_2 & {}^2c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
+    \begin{pmatrix} 1 & {}^1c_2 & {}^1c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
     \begin{pmatrix} 1 & 0 & 0 \\{}^2c_2 & 1 & 0 \\{}^2c_3 & 0 & 1 \end{pmatrix},
     \dots,
     \begin{pmatrix} 1 & 0 & 0 \\{}^{\zkTwo}c_2 & 1 & 0 \\{}^{\zkTwo}c_3 & 0 & 1 \end{pmatrix}
   \right)
   \right)
-  \in
-  \prod_{\theta\in\A}\SSto_{\theta}^{\kOne}(A^0)
-  \times
-  \prod_{\theta\in\A}\SSto_{\theta}^{\kTwo}(A^0)
 \end{align*}
-Using the morphism $\prod_{\theta\in\A}i_\theta^{-1}$ we get
+in 
+$\prod_{\theta\in\A}\SSto_{\theta}^{\kOne}(A^0) \times
+\prod_{\theta\in\A}\SSto_{\theta}^{\kTwo}(A^0)$.
+Using the morphism $\prod_{\theta\in\A}i_\theta^{-1}$ we get a complete set of
+Stokes matrices as
 \begin{align*}
   &\left(
-    \begin{pmatrix} 1 & {}^1c_2 & {}^2c_3 \\0 & 1 & {}^1c_1 \\0 & 0 & 1 \end{pmatrix},
+    \begin{pmatrix} 1 & {}^1c_2 & {}^1c_3 \\0 & 1 & {}^1c_1 \\0 & 0 & 1 \end{pmatrix},
     \begin{pmatrix} 1 & 0 & 0 \\{}^2c_2 & 1 & 0 \\{}^2c_3 & 0 & 1 \end{pmatrix},
-    \begin{pmatrix} 1 & {}^3c_2 & {}^2c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
+    \begin{pmatrix} 1 & {}^3c_2 & {}^3c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
   \right.
 \\&\qquad
   \left.
@@ -2108,3 +2089,4 @@ Using the morphism $\prod_{\theta\in\A}i_\theta^{-1}$ we get
   \in
   \prod_{\theta\in\A}\SSto_{\theta}(A^0)
 \end{align*}
+
