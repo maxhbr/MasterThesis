@@ -166,22 +166,22 @@
     \usepackage[Lenny]{fncychap}
   \else
     \chapterfont{%
-      \vspace{1cm}
+      % \vspace{1cm}
       \color{myheadLineColor}
-      \sectionrule{0pt}{0pt}{-5pt}{2pt}
+      % \sectionrule{0pt}{0pt}{-5pt}{2pt}
       }  
   \fi
   \sectionfont{%
     \color{myheadLineColor}
-    \sectionrule{0pt}{0pt}{-5pt}{0.8pt}
+    % \sectionrule{0pt}{0pt}{-5pt}{0.8pt}
     }
   \subsectionfont{%
     \color{myheadLineColor}
-    \sectionrule{0pt}{0pt}{-5pt}{0.6pt}
+    % \sectionrule{0pt}{0pt}{-5pt}{0.6pt}
     }
   \subsubsectionfont{%
     \color{myheadLineColor}
-    \sectionrule{0pt}{0pt}{-5pt}{0.4pt}
+    % \sectionrule{0pt}{0pt}{-5pt}{0.4pt}
     }
 \fi
 
