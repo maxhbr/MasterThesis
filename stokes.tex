@@ -953,8 +953,8 @@ as a corollary.
 \end{comment}
 \begin{defn}
   \marginnote{\cite[Def.II.1.8]{Loday1994}, \cite[4.3.10]{Loday2014}}
-  A \emph{Stokes cocycle} is a cocycle
-  $(\phi_\theta)_{\theta\in\A}$ which is
+  A \emph{Stokes cocycle} is a 1-cocycle $(\phi_\theta)_{\theta\in\A}$ of
+  $\Lambda(A^0)$ which is
   \begin{itemize}
     \item indexed by the set of anti-Stokes directions and
     \item each component $\phi_\theta$ determines an element of
@@ -1007,22 +1007,24 @@ is welldefined.
 From theorem~\ref{thm:mainThm2} and Proposition~\ref{prop:representation} we
 get the following corollary.
 \begin{cor}
+  Using the isomorphisms from the Stokes groups to the group of all Stokes
+  matrices (cf.\ proposition~\ref{prop:representation}) we obtain
   \[
-    \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
+    \St(A^0) \cong \prod_{\theta\in\A}\SSto_\theta(A^0)
   \]
-  and thus has complex dimension \TODO{}
+  and thus $\St(A^0)$ has complex dimension
+  $\dim_\C\St(A^0)=\sum_{\theta\in\A}\dim_\C\SSto_\theta(A^0)$.
 \end{cor}
 \begin{rem}
-  \TODO[Move to the main theorem?]
   The set $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ and thus
   $\prod_{\alpha\in\A}\SSto_\alpha(A^0)$ has some bad properties, when small
   deformations are applied to $[A^0]$, since under arbitrary small changes, one
-  Stokes ray can split into two. Boalch (cf.~\cite{boalch,thboalch}) solves
-  this in the single-leveled case by \rewrite{renaming our Stokes matrices as
-  Stokes factors} and introducing new Stokes matrices which are build by the
-  product of consecutive Stokes factors. He uses the rotational symmetry of the
-  single-leveled case \rewrite{thus this approach is not} simply applicable to
-  the multi-leveled case.
+  Stokes ray can split into two. Boalch~\cite{boalch,thboalch} solves this in
+  the single-leveled case by \rewrite{renaming our Stokes matrices as Stokes
+  factors} and introducing new Stokes matrices which are build by the product
+  of consecutive Stokes factors. He uses the rotational symmetry of the
+  single-leveled case \rewrite{thus this approach is not} applicable to the
+  multi-leveled case.
 \end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1030,6 +1032,7 @@ get the following corollary.
 We will only look at the unramified case, for which we refer to
 \cite[Sec.II.3]{Loday1994}.
 The proof in the ramified case can be found in \cite[Sec.II.4]{Loday1994}.
+We first have to introduce adequate coverings, which will be used in the proof.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Coverings}
