@@ -58,13 +58,13 @@ A meromorphic connection is then defined as follows.
     Some authors use the factors $k_i$ of the divisor $Z$ to limit the pole
     orders at the points $a_i$. Since we do not need this restriction, we allow
     arbitrary pole orders. Denoted is this by the $*$ in $\Omega_M^1(*Z)$.
-    A definition of $\cO_M(*Z)$ can be found
-    in~\cite[Sec.0.8]{sabbah2007isomonodromic} and $\Omega_M^1(*Z)$ is then
-    defined as
+    The sheaf $\cO_M(*Z)$ of functions, which are meromorphic along $Z$, is
+    defined in~\cite[Sec.0.8]{sabbah2007isomonodromic} and $\Omega_M^1(*Z)$ is
+    then defined as
     \[
       \Omega_M^1(*Z):=\cO_M(*Z)\underset{\cO_M}\otimes\Omega_M^1
     \]
-    the \emph{sheaf of meromorphic differential $1$-forms} (cf.\
+    \rewrite{the \emph{sheaf of meromorphic differential $1$-forms}} (cf.\
     \cite[Sec.0.9.b]{sabbah2007isomonodromic}).
   \end{s-rem}
 \end{defn}
@@ -119,8 +119,8 @@ A meromorphic connection is then defined as follows.
 \section{Local expression of meromorphic connections}
 \marginnote{\cite[28]{sabbah2007isomonodromic}, \cite[2]{thboalch} and
   \cite[11]{babbitt1989local}}
-We will usually\TODO[only?] be interested in local information of a meromorphic
-connection.  This means, that we look at a connection in a neighbourhood of $0$
+We will usually\TODO[only?] be interested in local information of meromorphic
+connections.  This means, that we look at a connection in a neighbourhood of $0$
 \rewrite{and allow only one singularity at $0$}.
 There are many ways of expressing the local information, we will either talk
 about germs of meromorphic connections or systems, which are coordinate-
@@ -128,7 +128,7 @@ and trivialization-dependent.
 \begin{prop}
   \marginnote{\textbf{\cite[Rem.5.2.4]{hotta2008}}\\\cite[Def.4.2.1]{Loday2014}}
   A germ of a meromorphic connection $(\sM,\nabla)$ is just the sheaf-theoretic
-  germ (at $t=0$), thus has the form $(\cM,\nabla)$ where
+  germ (at $t=0$), thus is given by a tuple $(\cM,\nabla)$ where
   \begin{itemize}
     \item $\cM$ is the germ at $0$ of the holomorphic bundle $\sM$ and thus a
       $\C(\!\{t\}\!)$-vectorspace of dimension $n$, since the ring of germs of
@@ -140,11 +140,11 @@ and trivialization-dependent.
       \]
       for all $f\in\C(\!\{t\}\!)$ and $m\in \cM$.
   \end{itemize}
-  \begin{s-rem}
-    \marginnote{\cite{sabbah2007isomonodromic}}
-    It is a $(\C(\!\{t\}\!),\nabla)$-vectorspace.
-  \end{s-rem}
   \begin{comment}
+      \begin{s-rem}
+      \marginnote{\cite{sabbah2007isomonodromic}}
+      It is a $(\C(\!\{t\}\!),\nabla)$-vectorspace.
+    \end{s-rem}
     \begin{s-rem}
       Loday-Richaud calls this in \cite[Def.4.2.1]{Loday2014} a
       \emph{differential module}.
@@ -156,7 +156,7 @@ and trivialization-dependent.
   connections $(\cM,\nabla)$ and we will call them meromorphic connection. If
   we want to talk about meromorphic connections in the sense of
   definition~\ref{defn:mercon} we will emphasize this by the word `global' or
-  by talking about a meromorphic connection on $M$.
+  by talking about a meromorphic connection \textbf{on $M$}.
 \end{rem}
 \begin{defn}
   \marginnote{\cite[Def.5.2.1]{hotta2008}}
@@ -186,13 +186,11 @@ Then, applying the Leibniz rule, yields
   \\&=\underline{e} \cdot dX - \underline{e}\cdot \nabla X
   \\&=\underline{e}\left(dX-AX\right).
 \end{align*}
-Hence the condition $\nabla x=0$ is equivalent to the system of ODEs
+Such that horizontal sections of $(\cM,\nabla)$, i.e.\ sections which satisfy
+$\nabla s=0$, correspond to solutions of
 \begin{equation}\label{eq:ode}
-  \frac{d}{dt}x=Ax
+  \frac{d}{dt}x=Ax \,.
 \end{equation}
-such that horizontal sections\footnote{Horizontal sections, are the sections,
-which satisfy $\nabla s=0$} of $(\cM,\nabla)$ correspond to solutions of
-(\ref{eq:ode}).
 Thus, with the connection $\nabla$ and the $K$-basis $\underline{e}$ is
 naturally associate the differential operator $\triangle=d-A$, which has order
 one and dimension $n$.
@@ -207,10 +205,10 @@ one and dimension $n$.
   \begin{enumerate}
     \item This matrix $A$ is called a \emph{connection matrix} of
       $(\cM,\nabla)$. It depends on the choice of the $\C(\!\{t\}\!)$-basis.
-      \begin{s-rem}
-        We have seen above, that a connection is fully determined by its
-        connection matrix.
-      \end{s-rem}
+      \begin{s-cor}
+        As we have seen above, \rewrite{is a connection} fully determined by
+        its connection matrix.
+      \end{s-cor}
     \item A \emph{germ of a meromorphic linear differential system} of rank
       $n$, or just a \emph{system}, is a germ of a meromorphic connection on
       the trivial vector bundle \textbf{with a chosen trivialization}
@@ -396,11 +394,11 @@ transformations}
     {}^{\hat F}\!A\in G(\!\{t\}\!)
   \right\}\,.
 \]
-Let $\hat{F'}\in\hat G(A^0)$ and $A':={}^{\hat{F'}}\!A$, then are sets $\hat
-G(A)$ and $\hat G(A')$ are related by
+Let $\hat{F'}\in\hat G(A^0)$ and $A':={}^{\hat{F'}}\!A$, then are the sets
+$\hat G(A)$ and $\hat G(A')$ related by
 \[
   \hat G(A')=\hat G(A)\hat{F'}^{-1}=\left\{
-    \hat F\in\G(\!\{t\}\!) \mid \hat F\hat{F'}\in\hat G(A)
+    \hat F\in G(\!\{t\}\!) \mid \hat F\hat{F'}\in\hat G(A)
   \right\} \,.
 \]
 
@@ -423,14 +421,14 @@ G(A)$ and $\hat G(A')$ are related by
   \begin{s-rem}
     If we start with a isomorphism
     $\Phi:(\cM,\nabla)\overset{\sim}\longrightarrow(\cM',\nabla')$ and two
-    basis choices $\cM\overset{\sim}\longrightarrow\C^n$ and
-    $\cM'\overset{\sim}\longrightarrow\C^n$ we have the following commutative
-    diagram:
+    basis choices $\cM\overset{\sim}\longrightarrow\C(\!\{t\}\!)^n$ and
+    $\cM'\overset{\sim}\longrightarrow\C(\!\{t\}\!)^n$ we have the following
+    commutative diagram:
     \[ \begin{tikzcd}
-        \C^n \arrow{rrrr}{F}\arrow{ddd}{d-B}&&&& \C^n\arrow{ddd}{d-A}
+        \C(\!\{t\}\!)^n \arrow{rrrr}{F}\arrow{ddd}{d-B}&&&& \C(\!\{t\}\!)^n\arrow{ddd}{d-A}
         \\ & \cM \dar{\nabla}\arrow{rr}{\Phi}\ular&& \cM'\dar{\nabla'}\urar
         \\ & \cM \arrow{rr}{\Phi}\dlar&& \cM'\drar
-        \\ \C^n \arrow{rrrr}{F}&&&& \C^n
+        \\ \C(\!\{t\}\!)^n \arrow{rrrr}{F}&&&& \C(\!\{t\}\!)^n
     \end{tikzcd} \]
     Thus the commutation property is given by
     \[
@@ -440,33 +438,47 @@ G(A)$ and $\hat G(A')$ are related by
     \[
       \frac{dF}{dt}=BF-FA.
     \]
+    \begin{comment}
+      \begin{align*}
+        ((d-B)\circ F) x &= (F\circ(d-A)) x
+      \\(d\circ F) x - (B\circ F) x &= F(dx -Ax)
+      \\d(Fx) - B(Fx) &= F(x' - Ax)
+      \\(F'x)x' - BFx &= Fx' - FAx
+      \\(F'x)x' - Fx' &= BFx - FAx
+      \\(F'x)x' - Fx' &= (BF - FA)x
+      \\&~\!~\vdots
+      \\F'x &= (BF - FA)x
+      \end{align*}
+    \end{comment}
   \end{s-rem}
 \end{rem}
-\begin{rem}
-  \[
-    {}^{(F_2F_1)}\!A =
-    {}^{F_2}\!\left({}^{F_1}\!A\right)
-  \]
-  \rewrite{since}
-  \begin{align*}
-    {}^{F_2F_1}\!A^0
-    &= d(F_2F_1)(F_2F_1)^{-1}+F_2F_1 A(F_2F_1)^{-1}
-  \\&=\left(
-      \left(dF_2\right)̂F_1
-      +F_2\left(dF_1\right)̂
-    \right) F_1^{̀-1} F_2^{̀-1}
-    +F_2F_1 A F_1^{̀-1}F_2^{̀-1}
-  \\&= \left(dF_2\right)̂F_2^{-1}
-     +F_2\left(dF_1\right)̂ F_1^{̀-1} F_2^{̀-1}
-     +F_2
-     \left(
-       {}^{F_1}\!A-\left(dF_1\right)F^{-1}
-     \right)
-     F_2^{̀-1}
-  \\&= \left(dF_2\right)̂F_2^{-1} +F_2 {}^{F_1}\!A F_2^{̀-1}
-  \\&= {}^{F_2}\!\left({}^{F_1}\!A\right)
-  \end{align*}
-\end{rem}
+\begin{comment}
+  \begin{rem}
+    \[
+      {}^{(F_2F_1)}\!A =
+      {}^{F_2}\!\left({}^{F_1}\!A\right)
+    \]
+    \rewrite{since}
+    \begin{align*}
+      {}^{F_2F_1}\!A^0
+      &= d(F_2F_1)(F_2F_1)^{-1}+F_2F_1 A(F_2F_1)^{-1}
+    \\&=\left(
+        \left(dF_2\right)̂F_1
+        +F_2\left(dF_1\right)̂
+      \right) F_1^{̀-1} F_2^{̀-1}
+      +F_2F_1 A F_1^{̀-1}F_2^{̀-1}
+    \\&= \left(dF_2\right)̂F_2^{-1}
+       +F_2\left(dF_1\right)̂ F_1^{̀-1} F_2^{̀-1}
+       +F_2
+       \left(
+         {}^{F_1}\!A-\left(dF_1\right)F^{-1}
+       \right)
+       F_2^{̀-1}
+    \\&= \left(dF_2\right)̂F_2^{-1} +F_2 {}^{F_1}\!A F_2^{̀-1}
+    \\&= {}^{F_2}\!\left({}^{F_1}\!A\right)
+    \end{align*}
+  \end{rem}
+\end{comment}
 \begin{defn}
   We define the \emph{(formal) equivalence relation on the connection matrices}
   as
@@ -509,7 +521,8 @@ G(A)$ and $\hat G(A')$ are related by
     \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
       \begin{s-rem}
         They are, a priori, formal transformations. Actually $G(A^0)$ is a
-        subgroup of $\Gl_n(\C[1/x,x])$\TODO[~(cf.~???)].
+        subgroup of $\Gl_n(\C[1/x,x])$
+        (cf.~\cite[853]{Loday1994}\TODO[~(cf.~\cite{BJL1979Birkhoff})]).
       \end{s-rem}
   \end{itemize}
 \end{defn}
@@ -551,12 +564,12 @@ G(A)$ and $\hat G(A')$ are related by
   \end{comment}
 \end{defn}
 \begin{thm}
-  \marginnote{\cite[Thm.II.2.8]{sabbah2007isomonodromic},
-  \cite[5.1.2]{hotta2008}}
   Let $(\cM,\nabla)$ be a regular singular meromorphic connection and $A$ its
   connection matrix.
   Then there exists a matrix $F\in G(\!\{t\}\!)$ such that after transformation
-  by $F$ the matrix $B={}^F\!A$ is constant i.e.\ ${}^F\!A\in G$.
+  by $F$ the matrix $B={}^F\!A$ is constant i.e.\ ${}^F\!A\in G$
+  (cf.~\cite[Thm.II.2.8]{sabbah2007isomonodromic}
+  or~\cite[Sec.5.1.2]{hotta2008}).
 \end{thm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -571,11 +584,10 @@ $C_2\in\C$ are two constants, then is also $C_1x_0(t)+C_2x_{00}(t)$ a solution.
 \begin{defn}
   \marginnote{\cite[4f]{thboalch}}
   A \emph{fundamental solution} $\cY$ of the system $[A]$ is an invertible
-  solution of $[0,A]$.
+  $n\times n$ matrix, which solves $[0,A]$.
   \begin{s-rem}
-    this means, that $\cY$ is a $n\times n$ matrix \comm{with entries in
-    \TODO{}} whose columns are $n$ $\C$-linearly independent solutions of the
-    system $[A]$.
+    This means, that the columns of $\cY$ are $n$ $\C$-linearly independent
+    solutions of the system $[A]$.
   \end{s-rem}
 \end{defn}
 
@@ -633,7 +645,7 @@ problem}.
       \[
         (\cE^{\phi},\nabla)=(\C(\!\{t\}\!),d-\phi')\,.
       \]
-      This is the system satisfied by the function $e^\phi$.
+      This corresponds to the system satisfied by the function $e^\phi$.
       \begin{s-cor}
         $\cE^\phi$ is determined by the class of $\phi$ in
         $\C(\!\{t\}\!)/\C\{t\}=t^{-1}\C[t^{-1}]$. In the following, we will
@@ -646,12 +658,12 @@ problem}.
         (\cN_{\alpha,0},\nabla)=\left(\C(\!\{t\}\!),d+\frac{\alpha}{t}\right)
         \,.
       \]
-      This is the system satisfied by $t^{-\alpha}$.
+      This corresponds to the system satisfied by $t^{-\alpha}$.
 
       \marginnote{\cite[Defn.II.2.5]{sabbah2007isomonodromic}}
       An \emph{elementary regular model of arbitrary rank} is a meromorphic
-      connection which has a basis, in which the connection Matrix is written
-      as
+      connection which has a basis, in which the connection Matrix can be
+      written as
       \[
         \frac{1}{t} (\alpha\id+N)
       \]
@@ -707,7 +719,8 @@ problem}.
   \def\myPhi{\textcolor{red!60!black}{\phi}}
   \def\myE{\textcolor{green!40!black}{\cE^{\myPhi}}}
   A germ $(\cM',\nabla')$ is a \emph{model} if there exists, after ramification
-  $\cM=\pi^*\cM'$ by $\pi$, a isomorphism
+  $\cM=\pi^*\cM'$ by $\pi$, a isomorphism to a direct sum of elementary
+  meromorphic connections:
   \begin{multicols}{2}
     \[
       \lambda:(\cM,\nabla)
@@ -731,17 +744,17 @@ problem}.
       \draw[->,red!50!white,thick] (n3) to[out=205,in=-30] (e3);
     \end{tikzpicture}
   \end{multicols}
+
 \end{defn}
 The important theorem here is the Levelt-Turittin theorem, which solves the
 formal classification problem.
 \begin{thm}[Levelt-Turittin]\label{thm:leveltTurittin}
-  To each germ $(\cM,\nabla)$ of a meromorphic connection there exists, after
-  potentially needed \textcolor{blue!60!black}{pullback by some suitable
-  ramification $t=z^q$ of order $q\geq1$}, a
+  To each germ $(\cM',\nabla')$ of a meromorphic connection there exists, after
+  potentially needed pullback $\pi^{*}\textcolor{black}{\cM'}=:\cM$ by some
+  suitable ramification $t=z^q$ of order $q\geq1$, a
   \textcolor{green!30!black}{\textbf{formal}} isomorphism
   \[
     \textcolor{green!30!black}{\hat{\textcolor{black}{\lambda}}}:
-    \textcolor{blue!60!black}{\pi^{*}}
     \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}}
     \overset{\cong}\longrightarrow
     \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}^{nf}}
@@ -749,7 +762,7 @@ formal classification problem.
   \]
   to a model $\cM^{nf}$.
   We then call $\cM^{nf}$ a \emph{formal decomposition} or \emph{formal model}
-  of $\cM$.
+  of $\cM$ or $\cM'$.
   \begin{rem}
     There, in general is \textbf{no} lift of the isomorphism $\hat\lambda$,
     i.e.\ there is no isomorphism making the diagram
@@ -766,30 +779,30 @@ formal classification problem.
   See \TODO{}
 \end{proof}
 \TODO[Full set of formal invariants]
-\begin{prop}
-  \marginnote{This condition \textbf{might be} equivalent to the
-    condition of being \textbf{nice} in~\cite{thboalch}.}
-  Let $(\cM,\nabla)$ be a germ, equipped with a basis in which the matrix $A$
-  takes the form
-  \[
-    A=t^{-r}A(t)
-  \]
-  with
-  \begin{itemize}
-    \item $r\geq1$,
-    \item $A$ has holomorphic entries, and
-    \item $A_0:=A(0)$ being regular semisimple, i.e.\ with pairwise distinct
-      eigenvalues.
-  \end{itemize}
-  Then there is no ramification needed, to apply the Levelt-Turittin-theorem.
-  \begin{comment}
-    Further, all the summands $\cR_\phi$ have rank one, which is not the case
-    in general.
-  \end{comment}
-\end{prop}
-\begin{proof}
-  See~\cite[Thm.II.5.7]{sabbah2007isomonodromic}.
-\end{proof}
+\begin{comment}
+  \begin{prop}
+    \marginnote{This condition \textbf{might be} equivalent to the
+      condition of being \textbf{nice} in~\cite{thboalch}.}
+    Let $(\cM,\nabla)$ be a germ, equipped with a basis in which the matrix $A$
+    takes the form
+    \[
+      A=t^{-r}A(t)
+    \]
+    with
+    \begin{itemize}
+      \item $r\geq1$,
+      \item $A$ has holomorphic entries, and
+      \item $A_0:=A(0)$ being regular semisimple, i.e.\ with pairwise distinct
+        eigenvalues.
+    \end{itemize}
+    Then there is no ramification needed, to apply the Levelt-Turittin-theorem.
+    \comm{Further, all the summands $\cR_\phi$ have rank one, which is not the
+    case in general.}
+  \end{prop}
+  \begin{proof}
+    See~\cite[Thm.II.5.7]{sabbah2007isomonodromic}.
+  \end{proof}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{In the language of systems: normal forms}
