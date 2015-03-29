@@ -21,7 +21,7 @@ $H^1(S^1;\Lambda^{<0}(A^0))$.
 In section~\ref{sec:mainThm2} we will improve the Malgrange-Sibuya Theorem by
 showing, that each 1-cohomology class in $\St(A^0)$ contains a unique
 $1$-cocycle of a special form called \emph{the Stokes cocycle}
-(cf.\ section~\ref{sec:StokesGroup}).
+(cf.\ Section~\ref{sec:StokesGroup}).
 The morphism, which maps each Stokes cocyle to its corresponding $1$-cocycle
 will be denoted by $h$.
 
@@ -141,7 +141,7 @@ isomorphism to the language of systems.
   \end{itemize}
 \end{comment}
 Let $(A,\hat F)$ be a marked pair, i.e. $\hat F$ solves $[A^0,A]$.
-There exists an open covering $\cU=(U_j)_{j\in J}$ and for every open set
+There exists an open covering $\cU=(U_j)_{j\in J}$ and for every open set $U_j$
 a lift $F_j\in\Gl_n(\cA(U_j))$ which solves $[A,A^0]$.
 By $(F_kF_j^{-1})_{jk}$ is then a cocycle of the sheaf $\St(A^0)$, relative to
 the covering $\cU$, defined.
@@ -169,12 +169,10 @@ which we call $\exp$.
   \begin{s-defn}
     Since the morphism $\exp$ depends on the choice of the normal form, we will
     denote that, if it is not clear, by
-    $\exp_{A^0}=\exp$\footnote{In~\cite{Loday1994} this is denoted as
-    $\exp_{\mu_0}$.}.
+    $\exp_{A^0}=\exp$\footnote{In Loday's book~\cite{Loday1994} this is denoted
+    as $\exp_{\mu_0}$.}.
   \end{s-defn}
   \begin{enumerate}
-    \item \marginnote{\cite[883]{Loday1994}}
-      The isomorphism $\exp_A$ makes also sense, if $A$ is not in normal form.
     \item \marginnote{\cite{Loday1994} Remark I.2.2}
       To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains which
       are conjugated via $\Phi$.
@@ -191,6 +189,8 @@ which we call $\exp$.
       \end{tikzcd} \]
       where $\exp_{A^0}(\hat F\Phi)=\Phi^{-1}\exp_{A^0}(\hat F)\Phi$.
       \TODO[$\Phi\in G(\!(t)\!)$???]
+    \item \marginnote{\cite[883]{Loday1994}}
+      The isomorphism $\exp_A$ makes also sense, if $A$ is not in normal form.
   \end{enumerate}
 \end{rem}
 
@@ -339,7 +339,7 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
       \item In \cite[Def.4.3.6]{Loday2014} $a_{jl}$ gets a negative sign to
         be consistend with calculations at $\infty$. Here this is not
         necessary, since we use the clockwise ordering of points on $S^1$
-        (cf.~\ref{defn:antiStokesDir}).
+        (cf.\ Definition~\ref{defn:antiStokesDir}).
         \begin{comment}
           Does that mean, that, to be consistend with \cite{boalch}, one has to
           invert the permutation matrix?
@@ -492,7 +492,7 @@ relations:
 As a \rewrite{subgroup of the stalk at $\theta$} of the in
 definition~\ref{defn:StokesSheaf} defined Stokes sheaf $\Lambda(A^0)$ we
 define the Stoken group as follows.
-\begin{defn}
+\begin{defn}\label{defn:stokesGroup}
   Define the \emph{Stokes group}
   \[
     \Sto_\theta(A^0):=
@@ -511,7 +511,7 @@ define the Stoken group as follows.
 \end{defn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Faithful representation of the Stokes group}\label{sec:matrixReps}
+\subsection{Stokes matrices}\label{sec:matrixReps}
 \marginnote{\cite[9f]{thboalch}, \cite[??]{Loday1994}}
 \begin{defn}\label{defn:groupOfFaithfullReps}
   Define the group
@@ -521,10 +521,10 @@ define the Stoken group as follows.
   \]
   of all \emph{Stokes matrices} of $A^0$ in the direction $\theta$.
   They will arise as a faithful representation
-  (cf.\ section~\ref{sec:faithRepre}) of $\Sto_\theta(A^0)$.
+  (cf.\ Section~\ref{sec:faithRepre}) of $\Sto_\theta(A^0)$.
 \end{defn}
 Let $\cY_0=t^L e^{Q(t^{-1})}$ be a normal solution corresponding to
-$A^0$ (cf.\ definition~\ref{defn:normSol}).
+$A^0$ (cf.\ Definition~\ref{defn:normSol}).
 For every determination $\tilde\theta$ of $\theta$ we denote by
 $\cY_{0,\tilde\theta}$ the function defined by $\cY_0$ with that determination of
 the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
@@ -556,22 +556,27 @@ the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
         matrices $G$.
       \item This morphism depends on the choice of the determination
         $\tilde\theta$ of $\theta$.
-      \item The inverse morphism of $\rho_{\tilde\theta}$ is given by
-        \begin{align*}
-          \rho_{\tilde\theta}^{-1}:
-          \SSto_\theta(A^0)
-          &\overset{\cong}\to
-          \Sto_\theta(A^0)
-          \\C_{\cY_{0,\tilde\theta}} &\mapsto
-          \cY_{0,\tilde\theta}C_{\cY_{0,\tilde\theta}}\cY_{0,\tilde\theta}^{-1}
-          \,.
-        \end{align*}
+      % \item The inverse morphism of $\rho_{\tilde\theta}$ is given by
+      %   \begin{align*}
+      %     \rho_{\tilde\theta}^{-1}:
+      %     \SSto_\theta(A^0)
+      %     &\overset{\cong}\to
+      %     \Sto_\theta(A^0)
+      %     \\C_{\cY_{0,\tilde\theta}} &\mapsto
+      %     \cY_{0,\tilde\theta}C_{\cY_{0,\tilde\theta}}\cY_{0,\tilde\theta}^{-1}
+      %     \,.
+      %   \end{align*}
+      \item In Loday's book \cite[78]{Loday2014} are the elements of
+        $\Sto_\theta(A^0)$ characterized as the flat transformations, such that
+        equation (\ref{eq:representation}) is satisfied for some unique
+        constant invertible matrix $C_{\cY_{0,\tilde\theta}}$.
     \end{enumerate}
   \end{s-rem}
 \end{prop}
 \begin{proof}
-  In general, the map $\rho_{\tilde\theta}$ maps to the $G$ since
-  \rewrite{conjugation} by the fundamental solution yields a constant matrix.
+  In general, the map $\rho_{\tilde\theta}$ maps to the group $G$ of constant
+  matrices, since \rewrite{conjugation} by the fundamental solution yields a
+  constant matrix.
   To see that the obtained matrix has the necessary zeros, to lie in
   $\SSto_{\theta}(A^0)$ we look at equation (\ref{eq:representation}) and
   deduce
@@ -658,13 +663,13 @@ the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
 \end{proof}
 
 In particular we get, that
-\begin{itemize}
+\begin{enumerate}
   \item for $j=l$ the (diagonal) blocks $C_{\tilde\theta}^{(l,j)}$ vanish since
     $q_l-q_j=0$ does not have maximal decay and
   \item if $e^{q_j-q_l}$ has has maximal decay, then $e^{q_l-q_j}$ has not.
     Thus if $C_{\tilde\theta}^{(l,j)}$ is not equal to zero, the block
     $C_{\tilde\theta}^{(j,l)}$ is necessarily zero.
-\end{itemize}
+\end{enumerate}
 \begin{rem}
   This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent.
   \rewrite{Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.}
@@ -680,6 +685,13 @@ In particular we get, that
     C_{\tilde\theta}^{(l,j)}
   \]
   and $C_{\tilde\theta}^{(l,j)}$ have the necessary block structure.
+
+  In other words:
+  \begin{einr}
+    a germ $\phi_\theta\in\Lambda_\theta(A^0)$ is in $\Sto_\theta(A^0)$ if and
+    only if there exists a $C_{\tilde\theta}\in\SSto_\theta(A^0)$ such that
+    $\phi_\theta=\cY_{0,\tilde\theta}C_{\tilde\theta}\cY_{0,\tilde\theta}^{-1}$.
+  \end{einr}
 \end{cor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -689,7 +701,7 @@ We denote the set of \emph{levels of the germ}
 $\phi_{\theta}\in\Sto_\theta(A^0)$ by
 \[
   \cK(\phi_\theta):= \left\{\deg(q_j-q_l)\mid C_{\tilde\theta}^{(l,j)}\neq0
-    \text{ in some determination of }\phi_\theta\right\} \subset \cK
+    \text{ in some determination of }\phi_\theta\right\} \subset \cK \,.
 \]
 \begin{defn}
   A germ $\phi_\theta$ is called a \emph{$k$-germ} when
@@ -723,7 +735,7 @@ $\phi_{\theta}\in\Sto_\theta(A^0)$ by
     \item $\A^k:=\left\{\theta\in\A\mid\Sto_\theta^k(A^0)\neq\{1\}\right\}$ as
       the set of anti-Stokes directions \emph{bearing the level $k$};
     \item $\A^{\leq k}:=\underset{k'\leq k}\bigcup\A^{k'}$ (resp.
-      $\A^{<k}:=\underset{k'<k}\bigcup\A^{k'}$ or
+      $\A^{<k}:=\underset{k'<k}\bigcup\A^{k'}$ and
       $\A^{\geq k}:=\underset{k'\geq k}\bigcup\A^{k'}$);
       \begin{s-rem}
         It is clear, that
@@ -803,6 +815,7 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
           $f^{<k}\in\Lambda^{<k}$.
       \end{itemize}
       \begin{s-rem}\label{rem:algFactorization}
+        \marginnote{\cite[Cor.I.5.2(ii)]{Loday1994}}
         A factorization algorithm could be:
         \begin{einr}
           the factor $f^{<k}$ common to both factorizations is the truncation
@@ -923,12 +936,11 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Stokes structures: Matrix version}\label{sec:mainThm2}
-\begin{comment}
-  See \cite{Loday1994}, \cite[Thm.4.3.11]{Loday2014}, \cite{boalch,thboalch}
-  and \cite{babbitt1989local}
-  and \cite{BJL1979Birkhoff}
-\end{comment}
+\section{Stokes structures: using Stokes matrices}\label{sec:mainThm2}
+\marginnote{\cite{Loday1994}, \cite[Thm.4.3.11]{Loday2014}
+  \\and \cite{boalch,thboalch}
+  \\and \cite{babbitt1989local}
+  \\and \cite{BJL1979Birkhoff}}
 The goal in this section is to prove, that there is a bijective and natural map
 \[
   h:\prod_{\theta\in\A}\Sto_\theta(A^0)\to\St(A^0) \,.
@@ -951,7 +963,7 @@ as a corollary.
   \cite[Thm.6.3.1]{sibuya1990Linear} says: if two differential equations have
   the same stokes phenomenon, they are analytically equivalent.
 \end{comment}
-\begin{defn}
+\begin{defn}\label{defn:stokesCocycle}
   \marginnote{\cite[Def.II.1.8]{Loday1994}, \cite[4.3.10]{Loday2014}}
   A \emph{Stokes cocycle} is a 1-cocycle $(\phi_\theta)_{\theta\in\A}$ of
   $\Lambda(A^0)$ which is
@@ -996,19 +1008,16 @@ is welldefined.
   \]
   is a bijection and natural.
   \begin{s-rem}
-    \marginnote{\cite[869]{Loday1994}}
+    \marginnote{\cite[869]{Loday1994},\cite[Sec.III.3.3]{Loday1994}}
     Natural means that $h$ commutes to isomorphisms and constructions over
     systems or connections they represent.
-    \begin{comment}
-      See \cite{Loday1994} Section III.3.3
-    \end{comment}
   \end{s-rem}
 \end{tthm}
 From theorem~\ref{thm:mainThm2} and Proposition~\ref{prop:representation} we
 get the following corollary.
 \begin{cor}
   Using the isomorphisms from the Stokes groups to the group of all Stokes
-  matrices (cf.\ proposition~\ref{prop:representation}) we obtain
+  matrices (cf.\ Proposition~\ref{prop:representation}) we obtain
   \[
     \St(A^0) \cong \prod_{\theta\in\A}\SSto_\theta(A^0)
   \]
@@ -1119,7 +1128,7 @@ If we extend to several levels, the set
 $\bigcup_k\left\{U(\theta,\frac{\pi}{k})\mid\theta\in\A^{k}\right\}$ is no
 longer a nerve.
 Hence we have to define the coverings $\cU^{\leq k}$ and $\cU^{<k}$ in a
-different way, to obtain nerves.
+different way.
 Denote by
 \[
   \left\{K_1<\cdots<K_s=k\right\}
@@ -1373,7 +1382,7 @@ This means that
         }}
       \]
       is the canonical extension of germs to their natural
-      arc of definition and thus a group isomorphism.
+      arc of definition and thus a group isomorphism. \TODO[why?]
     \item The second map
       \[
         s^k:
@@ -1392,7 +1401,7 @@ This means that
         \item \textbf{surjective}, since $\cU^k$ is adequate to
           $\Lambda^k(A^0)$ and
         \item \textbf{injective}, since on $\cU^k$ there is no $0$-cochain in
-          $\Lambda^k(A^0)$.
+          $\Lambda^k(A^0)$\TODO[(cf.~???)].
       \end{itemize}
   \end{enumerate}
   \TODO[Show, that this is the correct $h$]
@@ -1543,14 +1552,15 @@ The expression $\prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))$ is an
 abbreviation for
 $\prod_{k\in\cK}\prod_{\theta\in\A}\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$
 thus an element of $\Gamma(\dot\cU^k;\Lambda^k(A^0))$ looks like
-\[
-  \left(f_\theta\right)_{\theta\in\A}
-\]
-where $f_\theta:\cU_\theta^k\to\C$\TODO[ is \textbf{holomorphic}/meromorphic?].
+\begin{einr}
+  $\left(f_\theta\right)_{\theta\in\A}$ where
+  $f_\theta:\cU_\theta^k\to\C$\TODO[ is \textbf{holomorphic}/meromorphic?].
+\end{einr}
 Since sections in $\Lambda^k(A^0)$ are solution of the system $[A^0,A^0]$ we
 know from the theory of differential equations\TODO[source?], that an element
 $f_\theta\in\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$ is uniquely determined as
 the extension of its Stokes germ $\phi_\theta$ at $\theta$.
+\TODO[move to single leveled case?]
 \begin{comment}
   ODE-Theory, says, that a germ defines a solution in a \textbf{neighbourhood},
   why is
@@ -1646,34 +1656,16 @@ theorem~\ref{thm:mainThm2} by composition of bijective maps.
   and outputs cohomologous Stokes cocycle and thus solves this problem.
 \end{rem}
 
-\begin{comment}
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section{Algorithm~\cite[II.3.4]{Loday1994}}
-  \marginnote{\cite[II.3.4]{Loday1994}}
-  This algorithm takes a cocycle over a arbitrary cyclic covering $\cV$ and
-  outputs a Stokes cocycle, which corresponds to our coverings.
-  \[
-    g_J:
-    \prod_{\theta\in J}\Sto_\theta(A^0)
-    \to
-    \prod_{\theta\in\A}\Sto_\theta(A^0)
-  \]
-
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \subsection{Leading directions of \TODO[\dots]}
-  \marginnote{\cite[863ff]{Loday1994}}
-\end{comment}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Which information is required to describe a Stokes cocycle in the
-  multileveled case?}
+  multileveled case?}\label{sec:WhichInformationIsNeeded}
 Let $A^0$ be a normal form with dimension $n=3$ and two levels
 $\cK=\{k_1<k_2\}$, which satisfies, that there is at least one anti-Stokes
 direction $\theta_0$ which is beared by both levels.
 Let $q_j(t^{-1})$ be the determining polynomials and let $k_{jl}$ be the
 degrees of $(q_j-q_l)(t^{-1})$.
-The only way to get two levels in dimension $3$ we have, up to permutation:
-$k_1=k_{1,2}=k_{1,3}$ and $k_2=k_{2,3}$.
+Since it is the only way to get two levels in dimension $3$ we have, up to
+permutation: $k_1=k_{1,2}\geq k_{1,3}$ and $k_2=k_{2,3}$.
 We know also, that the leading terms of $(q_1-q_2)(t^{-1})$ and
 $(q_1-q_3)(t^{-1})$ are equal and thus determine the same anti-Stokes
 directions.
@@ -1725,7 +1717,7 @@ follows.
 \begin{exmp}
   Let $\theta\in\A$ be an anti-Stokes direction.
   From the definition of $\SSto_\theta(A^0)$ (cf.\
-  definition~\ref{defn:groupOfFaithfullReps}) we know that, if one has $q_1
+  Definition~\ref{defn:groupOfFaithfullReps}) we know that, if one has $q_1
   \underset{\theta,\max}{\prec} q_2$, the Stokes matrix has the form
   \[
     \begin{pmatrix}
@@ -1818,14 +1810,14 @@ In fact, the following $9$ cases of Stokes matrices can arise.
 \end{center}
 In the \textcolor{blue!75!black}{blue} cases we have $\cK_\theta=\cK$ and
 $\C^3\overset{\vartheta_\theta}{\underset{\cong}{\longrightarrow}}\SSto_\theta(A^0)$.
-In the \textcolor{green!75!black}{green} cases $\cK_\theta=\{k_2\}$ and
+In the \textcolor{green!50!black}{green} cases $\cK_\theta=\{k_2\}$ and
 $\C^2\overset{\vartheta_\theta}{\underset{\cong}{\longrightarrow}}\SSto_\theta(A^0)$ as
 well as in the \textcolor{purple!75!black}{purple} cases $\cK_\theta=\{k_1\}$
 and $\C^1\overset{\vartheta_\theta}{\underset{\cong}{\longrightarrow}}\SSto_\theta(A^0)$.
 Thus, for every $\theta\in\A$, we have an isomorphism
 $\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta$.
 Two of the cases are more complicated than necessary, to be consistent with
-the decomposition in the next part (cf.\ example~\ref{exmp:decompositionHere}).
+the decomposition in the next part (cf.\ Example~\ref{exmp:decompositionHere}).
 
 \paragraph{Decomposition by levels}
 In proposition~\ref{prop:filtrationOfStokesGroup} and especially

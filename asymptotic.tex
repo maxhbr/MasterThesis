@@ -250,7 +250,7 @@ exponential integral, see Loday-Richauds book \cite[Sec.2.2]{Loday2014}.
   \end{exmp}
 \end{comment}
 
-\begin{rem}
+\begin{rem}\label{rem:optionsOfAsymptoticExp}
   Let $I\subset S^1$ be an arc.
   Let $f$, $f_1$ and $f_2$ be functions which satisfy $f\sim_I\hat f$,
   $f_1\sim_I\hat f_1$ and $f_2\sim_I\hat f_2$.
@@ -262,11 +262,10 @@ exponential integral, see Loday-Richauds book \cite[Sec.2.2]{Loday2014}.
       $f_1(t)f_2(t)$ is on $I$ asymptotic to $\hat f_1(t)\hat f_2(t)$.
     \item \cite[4.5.Thm.20]{Balser2000Formal}:
       \begin{enumerate}
-        \item $f'(t)$ is on $I$ asymptotic to $\hat f'(t)$.
-          \begin{s-lem} \label{lem:sableDeriv}
-            \marginnote{\cite[II.2.2.4]{sabbah_cimpa90}}
-            $\cA(I)$ is stable under derivation.
-          \end{s-lem}
+        \item\label{subsubitem}
+          $f'(t)$ is on $I$ asymptotic to $\hat f'(t)$, i.e.\ $\cA(I)$ is
+          stable under derivation.
+          \marginnote{\cite[II.2.2.4]{sabbah_cimpa90}}
         \item $\int_0^tf(s)\,ds$ is on $I$ asymptotic to $\int_0^t\hat f(t)\,ds$.
       \end{enumerate}
     \item \cite[4.5.Thm.21]{Balser2000Formal}:
@@ -276,7 +275,7 @@ exponential integral, see Loday-Richauds book \cite[Sec.2.2]{Loday2014}.
   \end{enumerate}
   \TODO[Better source/proofs?]
 \end{rem}
-\begin{proof}[Proof of lemma~\ref{lem:sableDeriv}]
+\begin{proof}[Proof of Remark~\ref{rem:optionsOfAsymptoticExp}.\ref{subsubitem}]
   Let $f\in\cA(I)$ with asymptotic expansion $\hat f=\sum_{-n_0\leq n}a_nx^n$
   its asymptotic expansion where we assume that $n_0=0$.
   One has for each $m\geq0$
@@ -311,10 +310,11 @@ exponential integral, see Loday-Richauds book \cite[Sec.2.2]{Loday2014}.
     \item \cite[4.4.Thm.16]{Balser2000Formal}
   \end{itemize}
 \end{comment}
-The most important theorem here is the Borel-Ritt lemma.
+The most important theorem here is the Borel-Ritt Lemma.
 \begin{thm}[Borel-Ritt]
   \label{thm:borel-ritt}
-  Let $I$ be an open arc with a opening less than $2\pi$. Then the Taylor map
+  Let $I\subsetneq S^1$ be an open sub arc, i.e.\ with a opening less than
+  $2\pi$. Then the Taylor map
   \[
     T_{I}:\cA(I)\twoheadrightarrow\C(\!(t)\!)
   \]

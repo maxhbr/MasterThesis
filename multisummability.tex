@@ -20,7 +20,9 @@ transformation. Denote the transformed system by $A={}^{\hat F}\!A^0$.
 Let $\dot\phi=(\dot\phi_j)_{j\in J}\in\Gamma(\dot{\mathcal{V}};\Lambda(A^0))$
 be a $1$-cocycle in the image of the equivalence class of $\hat F$ by $\exp$.
 \begin{prop}\label{prop:multisummability}
-  \marginnote{\cite[Prop.III.2.1]{Loday1994}}
+  \marginnote{\cite[Prop.III.2.1]{Loday1994}
+    ,\cite[Thm.4.3.13]{Loday2014}
+    ,\cite[Thm.1]{BJL1979Birkhoff}}
   There exists a \textbf{unique} family of realizations $(F_j)_{j\in J}$ of
   $\hat F$ over $\mathcal{V}$, i.e.\ matrices $F_j$ which are analytic on
   $V_j$, satisfy $[A^0,A]$ and are asymptotic to $\hat F$ on $V_j$, such that
@@ -50,7 +52,7 @@ Let $\hat F_0\in\hat G(A^0)$ and $A^1={}^{\hat F_0}\!A^0$ and let
 \[
   \exp_{A^1}(\hat F):G\backslash\hat G(A^1) \to H^1(S^1;\Lambda(A^1))
 \]
-be the Malgrange-Sibuya isomorphism (cf.\ remark~\ref{rem:expNonNormalForm}).
+be the Malgrange-Sibuya isomorphism (cf.\ Remark~\ref{rem:expNonNormalForm}).
 
 \marginnote{\cite[883]{Loday1994}}
 The definition of the subsheaf $\Lambda^{\geq k}(A^1)$ of $\Lambda(A^1)$
@@ -131,7 +133,7 @@ $\hat F^k=\hat F(\hat F^{<k})^{-1}$.
   We have, that
   \begin{enumerate}
     \item $\hat F^k$ is $k$-summable with singular directions
-      (cf.\ definition~\ref{defn:singlDir}) belonging to
+      (cf.\ Definition~\ref{defn:singlDir}) belonging to
       $\A^k$
     \item The levels in the Stokes cocyle of $\hat F^{<k}$ are $<k$.
     \item The decomposition $\hat F=\hat F^{k}\hat F^{<k}$ with properties 1.\
@@ -202,7 +204,7 @@ $\hat F^k=\hat F(\hat F^{<k})^{-1}$.
   $g:G\backslash\hat G(A^0)\to\prod_{\theta\in\cA}\Sto_\theta(A^0)$}
   \label{sect:multisummmap}
 There are other definitions, which are equivalent to
-definition~\ref{defn:defn:sumsLeftRight}. Since some of them are more direct
+definition~\ref{defn:sumsLeftRight}. Since some of them are more direct
 and do not use the $1$-cocycle, to which they correspond, they can be used to
 obtain the corresponding $1$-cocycle. \rewrite{Many different approaches to
 define the sums can be found in} \cite{Loday2014}.
@@ -218,15 +220,26 @@ is found as
 \]
 by setting $\phi_\theta:=
 \left(S^-_\theta(\hat F)\right)̂^{̀-1}S^+_\theta(\hat F)\in\Sto_\theta(A^0)$
-(cf.\ definition~\ref{defn:sumsLeftRight}).
+(cf.\ Definition~\ref{defn:sumsLeftRight}).
 \begin{rem}
   \marginnote{\cite[Defn.3.6]{boalch}}
   $S^+_\theta(\hat F)t^Le^{Q(t^{-1})}$ is 
-  $\left\{\substack{\text{a}\\\text{the canonical}}\right\}$ fundamental
+  $\left\{\substack{\text{\rewrite{a}}\\\text{\rewrite{the canonical}}}\right\}$ fundamental
   solution of $[A]$ on the corresponding sector.
   \TODO[ or $S^-_\theta(\hat F)t^Le^{Q(t^{-1})}$?  or
     $t^Le^{Q(t^{-1})}S^+_\theta(\hat F)$?  or
   $t^Le^{Q(t^{-1})}S^-_\theta(\hat F)$?]
+  Using the equation (\ref{eq:representation}) we can write
+  \[
+    S^+_\theta(\hat F)
+    \cY_{0,\tilde\theta}(t)
+    =
+    S^-_\theta(\hat F)
+    \cY_{0,\tilde\theta}(t)C_{\cY_{0,\tilde\theta}}
+  \]
+  thus the Stokes matrix $C_{\cY_{0,\tilde\theta}}$ is a matrix, which
+  describes the \rewrite{blending} between the two adjacent sectors.
+  \TODO[see Lodays remarks on thm.4.3.13 in \cite{Loday2014}]
 \end{rem}
 \begin{rem}
   For each $\theta\in\A$ is $\phi_\theta$

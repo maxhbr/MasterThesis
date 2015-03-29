@@ -52,15 +52,15 @@ A meromorphic connection is then defined as follows.
     \]
   for $\mys\textcolor{blue!60!black}{\in\Gamma(\myU,\sM)}$ and
   $\myf\textcolor{red!60!black}{\in\cO_M(\myU)}$.
-  The rank of the Bundle $\sM$ is the \emph{rank} of the meromorphic connection
-  $(\sM,\nabla)$.
+  The \emph{rank} of the meromorphic connection $(\sM,\nabla)$ is defined as
+  the rank of the Bundle $\sM$.
   \begin{s-rem}
     Some authors use the factors $k_i$ of the divisor $Z$ to limit the pole
     orders at the points $a_i$. Since we do not need this restriction, we allow
     arbitrary pole orders. Denoted is this by the $*$ in $\Omega_M^1(*Z)$.
     The sheaf $\cO_M(*Z)$ of functions, which are meromorphic along $Z$, is
-    defined in~\cite[Sec.0.8]{sabbah2007isomonodromic} and $\Omega_M^1(*Z)$ is
-    then defined as
+    defined in Sabbah's book~\cite[Sec.0.8]{sabbah2007isomonodromic} and
+    $\Omega_M^1(*Z)$ is then defined as
     \[
       \Omega_M^1(*Z):=\cO_M(*Z)\underset{\cO_M}\otimes\Omega_M^1
     \]
@@ -75,11 +75,14 @@ A meromorphic connection is then defined as follows.
     \item Here, the variant `holomorphic bundle with meromorphic connection' is
       chosen, like in \cite{boalch}.
       There is also the twisted\TODO[better word?] description `meromorphic
-      bundle with holomorphic connection' which is used in
-      \cite{sabbah2007isomonodromic}.
+      bundle with holomorphic connection' which is for example used in
+      Sabbah's book~\cite{sabbah2007isomonodromic}.
       \\By choosing a lattice of a meromorphic bundle, one gets a holomorphic
-      bundle but the connection is no longer holomorphic. Such that we obtain a
-      meromorphic connection in our sense.
+      bundle but if the meromorphic bundle had a holomorphic connection, the
+      induced connection \rewrite{on the lattice} is no longer guaranteed to be
+      holomorphic.
+      Thus we obtain a meromorphic connection on a holomorphic bundle in our
+      sense.
   \end{enumerate}
 \end{rem}
 
@@ -87,14 +90,13 @@ A meromorphic connection is then defined as follows.
   \marginnote{\cite[0.12.2]{sabbah2007isomonodromic}}
   The connection $\nabla:\cM\to \Omega_M^1\otimes_{\cO_M}\cM$ is said to be
   \emph{integrable} or \emph{flat}, if
-  \begin{itemize}
-    \item its curvature $R_\nabla\equiv0$
-    where
+  \begin{einr}
+    its curvature vanishes, i.e.\ $R_\nabla\equiv0$ where
     \begin{itemize}
       \item $R_\nabla:=\nabla\circ\nabla:\cE\to\Omega_M^2\otimes_{\cO_M}\cE$
         is a $\cO_M$-linear morphism.
     \end{itemize}
-  \end{itemize}
+  \end{einr}
   \begin{s-prop}
     \marginnote{\cite[0.12.4]{sabbah2007isomonodromic}}
     The connection $\nabla$ is flat if and only if, in any local basis $e$ of
@@ -167,11 +169,10 @@ and trivialization-dependent.
   $\nabla\circ\phi = (\id\otimes\phi)\circ\nabla$.
   \TODO[Category of meromorphic connections!]
 \end{defn}
-\marginnote{\cite[65]{Loday2014}}
-
+\marginnote{\cite[65]{Loday2014}, \cite[129]{hotta2008}}
 Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
 Let $A=(a_{jk})$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$
-\rewrite{such that the it describes the action of $\nabla$:}
+\rewrite{such that the it describes the action of $\nabla$,} i.e.\ it satisfies
 \[
   \nabla e_k
   =
@@ -187,7 +188,7 @@ Then, applying the Leibniz rule, yields
   \\&=\underline{e}\left(dX-AX\right).
 \end{align*}
 Such that horizontal sections of $(\cM,\nabla)$, i.e.\ sections which satisfy
-$\nabla s=0$, correspond to solutions of
+$\nabla x=0$, correspond to solutions of
 \begin{equation}\label{eq:ode}
   \frac{d}{dt}x=Ax \,.
 \end{equation}
@@ -205,34 +206,40 @@ one and dimension $n$.
   \begin{enumerate}
     \item This matrix $A$ is called a \emph{connection matrix} of
       $(\cM,\nabla)$. It depends on the choice of the $\C(\!\{t\}\!)$-basis.
-      \begin{s-cor}
-        As we have seen above, \rewrite{is a connection} fully determined by
-        its connection matrix.
-      \end{s-cor}
+      \begin{comment}
+        \begin{s-cor}
+          As we have seen above, \rewrite{is a connection} fully determined by
+          its connection matrix.
+        \end{s-cor}
+      \end{comment}
     \item A \emph{germ of a meromorphic linear differential system} of rank
       $n$, or just a \emph{system}, is a germ of a meromorphic connection on
       the trivial vector bundle \textbf{with a chosen trivialization}
       \rewrite{of the fiber $E\cong\C^n$}.
       \begin{s-prop}
         Thus, the set of systems is isomorphic to the set
-        $\End(E)\otimes\C(\!\{t\}\!)=\gl_n(\C(\!\{t\}\!))$ of all
-        connection matrices.
+        \[
+          \End(E)\otimes\C(\!\{t\}\!)=\gl_n(\C(\!\{t\}\!))
+        \]
+        of all connection matrices.
       \end{s-prop}
-      It will be denoted by $[A]=d-A$ where $A$ is the connection matrix in the
-      chosen trivialization.
+      Such a system will be denoted by $[A]=d-A$ where $A$ is the connection
+      matrix in the chosen trivialization.
       \TODO[Category of systems!]
   \end{enumerate}
 \end{defn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{System \rightarrow{} germ of a meromorphic connection}
+If we want to reverse the base choice to get the corresponding meromorphic
+connection back, we can do this in the following way.
 \begin{prop}\label{prop:systToMeromConn}
-  If we start with a system $[A]$ of rank $n$, or a connection matrix $A$, we
-  get a germ of a meromorphic connection via
+  If we start with either a system $[A]$ of rank $n$, or a connection matrix
+  $A\in\gl_n(\C(\!\{t\}\!)$, we get a germ of a meromorphic connection via
   \[
     (\cM_A,\nabla_A)=(\C(\!\{t\}\!)^n,d-A)
   \]
-  and $A$ is a connection matrix for $(\cM,\nabla)$.
+  which has $A$ as its connection matrix.
   \begin{s-rem}
     Since systems are meromorphic connections together with a base choice, we
     could alternatively forget the base choice. This yields clearly an
@@ -243,7 +250,6 @@ one and dimension $n$.
   \TODO{}
 \end{proof}
 
-
 \begin{prop}
   Let $(\cM_1,\nabla_1)$ and $(\cM_2,\nabla_2)$ be two meromorphic
   connections
@@ -253,7 +259,7 @@ one and dimension $n$.
   by the block-diagonal matrix $\diag(A_1,A_2)$.
 \end{prop}
 \begin{proof}
-  Use proposition~\ref{prop:systToMeromConn} to write the connection as
+  Use Proposition~\ref{prop:systToMeromConn} to write the connection as
   \[
     (\C(\!\{t\}\!)^{n_1},d-A_1)\oplus(\C(\!\{t\}\!)^{n_2},d-A_2)
   \]
@@ -262,7 +268,8 @@ one and dimension $n$.
     \left(\C(\!\{t\}\!)^{n_1+n_2},d-
     \begin{pmatrix} A_1 & 0 \\0 & A_2 \end{pmatrix}\right) \,.
   \]
-  Denote by $A$ the block-diagonal matrix.
+  Denote by $A:=\diag(A_1,A_2)$ the block-diagonal matrix build from $A_1$ and
+  $A_2$.
   For every $j\in\{1,2\}$ we have the corresponding inclusion
   $i_j:\C(\!\{t\}\!)^{n_j}\hookrightarrow\C(\!\{t\}\!)^{n_1+n_2}$ and the
   diagram
@@ -279,6 +286,27 @@ one and dimension $n$.
     \\&=((d-A)\circ i_j)(x) \,.
   \end{align*}
 \end{proof}
+
+\begin{rem}
+  \marginnote{\cite[129f]{hotta2008}}
+  Let $(\cM_1,\nabla_1)$ and $(\cM_2,\nabla_2)$ be meromorphic connections.
+  Then
+  \begin{enumerate}
+    \item $\cM_1\otimes\cM_2$ is endowed with the structure of a meromorphic
+      connection by
+      \[
+        \nabla(u_1\otimes u_2)=\nabla_1u_x\otimes u_2+u_1\otimes\nabla_2u_2
+      \]
+      where $u_i\in\cM_i$ and
+    \item $\Hom_{\C(\!\{t\}\!)}(\cM_1,\cM_2)$ is endowed with the structure of
+      a meromorphic
+      connection by
+      \[
+        (\nabla\phi)(u_1)=\nabla_2(\phi(u_1))-\phi(\nabla_1 u_1)
+      \]
+      where $\phi\in\Hom_{\C(\!\{t\}\!)}(\cM_1,\cM_2)$ and $u_i\in\cM_i$.
+  \end{enumerate}
+\end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Local \rightarrow{} global}
@@ -374,11 +402,11 @@ the lemma of the cyclic vector. \TODO{}
 \end{notations}
 \marginnote{\cite[Sec.4.3.1]{Loday2014}}
 By \emph{meromorphic\footnote{We use the term meromorphic in the sens of
-convergent meromorphic. Otherwise we specify formal meromorphic or simply
-formal.} transformation}, or just \emph{transformation}, of a system we mean a
-$\C(\!\{t\}\!)$-linear change of the trivialization.  Such a change is given by
-a matrix $F\in G(\!\{t\}\!)$ and the transformed connection matrix ${}^F\!A$ is
-obtained through
+convergent meromorphic. Otherwise we say formal meromorphic.} transformation},
+or just \emph{transformation}, of a system we mean a $\C(\!\{t\}\!)$-linear
+change of the trivialization.
+Such a change is given by a matrix $F\in G(\!\{t\}\!)$ and the transformed
+connection matrix ${}^F\!A$ is obtained through
 \[
   {}^F\!A=(dF)F^{-1} + FAF^{-1} \,.
 \]
@@ -403,34 +431,33 @@ $\hat G(A)$ and $\hat G(A')$ related by
 \]
 
 \begin{rem}
-  \def\myB{\textcolor{blue!60!black}{B}}
-  \def\myA{\textcolor{green!30!black}{A}}
-  \def\myF{\textcolor{red!60!black}{F}}
   The condition
   \begin{einr}
-    $\myB$ is obtained from $\myA$ by transformation $\myF$
+    $B$ is obtained from $A$ by transformation $F$
   \end{einr}
   is clearly equivalent to
   \begin{einr}
-    $\myF$ solves the linear differential system
+    $F$ solves the linear differential system
     \[
-      \frac{d\myF}{dt}=\myB\myF-\myF\myA
+      \frac{dF}{dt}=BF-FA
     \]
-    which is denoted by $[\myA,\myB]$.
+    which is denoted by $[A,B]$.
   \end{einr}
   \begin{s-rem}
     If we start with a isomorphism
     $\Phi:(\cM,\nabla)\overset{\sim}\longrightarrow(\cM',\nabla')$ and two
-    basis choices $\cM\overset{\sim}\longrightarrow\C(\!\{t\}\!)^n$ and
+    base choices $\cM\overset{\sim}\longrightarrow\C(\!\{t\}\!)^n$ and
     $\cM'\overset{\sim}\longrightarrow\C(\!\{t\}\!)^n$ we have the following
     commutative diagram:
-    \[ \begin{tikzcd}
-        \C(\!\{t\}\!)^n \arrow{rrrr}{F}\arrow{ddd}{d-B}&&&& \C(\!\{t\}\!)^n\arrow{ddd}{d-A}
-        \\ & \cM \dar{\nabla}\arrow{rr}{\Phi}\ular&& \cM'\dar{\nabla'}\urar
-        \\ & \cM \arrow{rr}{\Phi}\dlar&& \cM'\drar
-        \\ \C(\!\{t\}\!)^n \arrow{rrrr}{F}&&&& \C(\!\{t\}\!)^n
+    \[ \begin{tikzcd}[column sep=.7cm,row sep=.7cm]
+        \C(\!\{t\}\!)^n \arrow{rrrrr}{F}\arrow{dddd}{d-B}&&&&&
+          \C(\!\{t\}\!)^n\arrow{dddd}{d-A}
+          \\ & \cM \arrow{dd}{\nabla}\arrow{rrr}{\Phi}\ular&&& \cM'\arrow{dd}{\nabla'}\urar
+          \\
+        \\ & \cM \arrow{rrr}{\Phi}\dlar&&& \cM'\drar
+        \\ \C(\!\{t\}\!)^n \arrow{rrrrr}{F}&&&&& \C(\!\{t\}\!)^n
     \end{tikzcd} \]
-    Thus the commutation property is given by
+    Thus the commutation property for the outer rectangle is given by
     \[
       (d-B)\circ F=F\circ(d-A)
     \]
@@ -772,7 +799,7 @@ formal classification problem.
     \end{tikzcd} \]
     kommutative.
     But sectorwise, there are lifts given by the main asymptotic existence
-    theorem (cf.\ theorem~\ref{thm:meat}).
+    theorem (cf.\ Theorem~\ref{thm:meat}).
   \end{rem}
 \end{thm}
 \begin{proof}
@@ -920,7 +947,7 @@ fundamental solution in the form $\hat F\cY$.
   We know that $\cR_\phi$ is a direct sum of regular elementary meromorphic
   connections whose fundamental matrices are of the form
   $\frac{1}{t}(\alpha\id+N)$ where $\alpha\in\C$ and $N$ is nilpotent
-  (cf.\ definition~\ref{defn:elemnMerConnBausteine}).
+  (cf.\ Definition~\ref{defn:elemnMerConnBausteine}).
   Thus the connection matrix for $\cR_\phi$ writes as
   \[
     \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
@@ -988,7 +1015,7 @@ fundamental solution in the form $\hat F\cY$.
       $\phi_i(t)$} from definition~\ref{defn:model}.
       \TODO[Why/realy?]
     \item In the unramified case $Q$ and $L$ commute thus $L$ can be supposed
-      in Jordan form (cf.  \cite[Sec.4]{Martinet1991}).
+      in Jordan form (cf.\ \cite[Sec.4]{Martinet1991}).
     \item It is always possible to permutate the columns of a fundamental
       solution by
       \[
@@ -1011,6 +1038,7 @@ fundamental solution in the form $\hat F\cY$.
       \item \cite[Thm.12.1]{wasow2002asymptotic}
       \item \cite[5.3.Thm.1]{Varadarajan96linearmeromorphic}
       \item \cite[207]{Balser2000Formal}: Some historical remarks
+      \item \cite[Thm.A]{BJL1979Birkhoff}
     \end{itemize}
   \columnbreak
     \textbf{Sheafical:}
@@ -1034,7 +1062,7 @@ Look at the situation, where $A$ is via $\hat F$ formally equivalent to $A^0$.
   We call $F$ a \emph{lift of $\hat F$ on $I\subset S^1$} if
   \begin{itemize}
     \item $F\sim_I\hat F$
-      (cf.\ page~\pageref{page:notationForAsymptoticExpansion}) and
+      (cf.\ Page~\pageref{page:notationForAsymptoticExpansion}) and
     \item $F$ satisfies the same system $[A^0,A]$ as $\hat F$.
   \end{itemize}
 \end{defn}
@@ -1115,11 +1143,11 @@ becomes the following.
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The classifying set}
+\section{The classifying set}\label{sec:classifyingSet}
 We want to understand the Set
 $\Big\{\big[(\cM,\nabla)\big]\Big\}$ of the (convergent)
 isomorphism classes of all meromorphic connections. Since we have also the
-formal classification (cf.\ section~\ref{sec:formalClassification}) and we
+formal classification (cf.\ Section~\ref{sec:formalClassification}) and we
 know, that all elements in a convergent isomorphism class lie in the same
 formal isomorphism class, i.e.\ the convergent classification is
 \rewrite{finer} than the formal classification, we can reduce the problem by
