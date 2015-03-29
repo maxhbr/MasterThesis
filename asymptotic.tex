@@ -28,7 +28,7 @@ There are \rewrite{various literature references} for Poincarè asymptotic
 expansions, or for short, asymptotic expansions.
 We will mostly refer to \cite[chapter 2]{Loday2014} and
 \cite[chapter 7]{van2003galois}.
-We will assume, that $t_0=0$ and this is without loss of generality, since
+We will assume that $t_0=0$ and this is without loss of generality, since
 asymptotic expansions at $t_0\in\C$ reduce to asymptotic expansions at $0$
 after the change of variable $t\mapsto s=t-t_0$ and asymptotic expansions at
 $t_0=\infty$ are obtained by $t\mapsto s=\frac{1}{t}$.
@@ -47,6 +47,11 @@ We introduce the following notations:
     \item $\bar{\mathfrak{s}}=\bar{\mathfrak{s}}_{a,b}(r)$ the closure of
       $\mathfrak{s}_{a,b}(r)$ in $\C^*:=\C\backslash\{0\}$.
   \end{itemize}
+  The notion of sectors can easily be extended to sectors on a $q$-sheet cover
+  or sectors on the Universal cover of $\C^*$.
+  \TODO[Sectors on the Riemann surface of the logarithm]
+\end{notations}
+\begin{figure}{h}
   \begin{center}
     \begin{tikzpicture}[scale=4]
       \node (zero) at (0,0) {};
@@ -79,14 +84,11 @@ We introduce the following notations:
       \fill (zero) circle (.7pt);
     \end{tikzpicture}
   \end{center}
-  The notion of sectors can easily be extended to sectors on a $q$-sheet cover
-  or sectors on the Universal cover of $\C^*$.
-  \TODO[Sectors on the Riemann surface of the logarithm]
-\end{notations}
+\end{figure}
 \begin{rem}
   \begin{itemize}
-    \item We will say, that \emph{a sector $\mathfrak{s}_{I}(r)$ contains
-      $\theta\in S^1$} if $\theta\in I$. In the same way we will say, that
+    \item We will say that \emph{a sector $\mathfrak{s}_{I}(r)$ contains
+      $\theta\in S^1$} if $\theta\in I$. In the same way we will say that
       $\mathfrak{s}_I(r)$ contains $U\subset S^1$ if $U\subset I$ or that
       $U\subset S^1$ contains a sector $\mathfrak{s}_I(r)$ if $I\subset U$.
     \item Since the explicit value $r$ of the radius does not matter, we shall
@@ -113,7 +115,7 @@ We introduce the following notations:
   \def\mySect{\textcolor{red!40!black}{\mathfrak{s}'}}
   \def\myConst{\textcolor{green!40!black}{C(\myN,\mySect)}}
   A function $f\in\cO(\mathfrak{s})$ is said to \emph{have the
-  formal\footnote{The term ``formal'' emphasizes, that we do not restrict the
+  formal\footnote{The term ``formal'' emphasizes that we do not restrict the
   coefficients $a_n\in\C$ in any way.} Laurent series $\sum_{n\geq n_0}a_nt^n$
   as asymptotic expansion} (or \emph{to be asymptotic to the series}) on the
   sector $\mathfrak{s}$ \TODO[for $t\to0$ in $\mathfrak{s}$] if
@@ -139,11 +141,11 @@ We introduce the following notations:
     \leq \myConst|t|^{\myN} \qquad \text{ for all }t\in \mySect \,.
   \]
   \begin{enumerate}
-    \item We will say, that \emph{$f$ has the formal Laurent series $\hat g$ as
+    \item We will say that \emph{$f$ has the formal Laurent series $\hat g$ as
       asymptotic expansion on the interval $I\subset S^1$} if there exists a
       $r\in\R_{>0}$ such that $f$ has the formal Laurent series $\hat g$ as
       asymptotic expansion on $\mathfrak{s}_I(r)$.
-    \item We will say, that \emph{$f$ has the formal Laurent series $\hat g$ as
+    \item We will say that \emph{$f$ has the formal Laurent series $\hat g$ as
       asymptotic expansion in the direction $\theta$} if there exists an
       interval $\theta\in I\subset S^1$ such that $f$ has formal Laurent series
       $\hat g$ as asymptotic expansion on the interval $I$.
@@ -178,7 +180,7 @@ $f\sim_{\theta}\hat f$).\label{page:notationForAsymptoticExpansion}
       $r_3<\min(r_1,r_2)$ and $f_3=f_1=f_2$ on $\mathfrak{s}_{a,b}(r_3)$.}.
   \end{enumerate}
 \end{defn}
-It can easily be seen, that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
+It can easily be seen that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
 
 \TODO[Properties,Examples,\dots]
 \begin{defn}
@@ -214,7 +216,7 @@ determination of $x^{\frac{1}{2}}$.
   $0$ on $D^*$ then, $f$ is bounded near $0$ and according to the removable
   singularity theorem, $f$ is analytic on $D$.
   \begin{s-rem}
-    This implies, that $\cA(S^1)\cong\C(\!\{t\}\!)$.
+    This implies that $\cA(S^1)\cong\C(\!\{t\}\!)$.
   \end{s-rem}
 \end{exmp}
 For many more extensively discussed examples, like the Euler function or the
@@ -289,7 +291,7 @@ exponential integral, see Loday-Richauds book \cite[Sec.2.2]{Loday2014}.
     f'(t)=\sum_{n=0}^mna_nt^{n-1}+mR_m(t)t^{m-1}+R_m'(t)t^m
   \]
   Let $C_{x,\rho}$ be the circle at $x$ with radius $\rho$ contained in
-  $\mathfrak{s}_I(r)$. The Cauchy theorem implies then, that
+  $\mathfrak{s}_I(r)$. The Cauchy theorem \rewrite{implies then that}
   \[
     |R_m'(t)|\leq\frac{1}{\rho}\max_{s\in\C_{x,\rho}}|R(s)| \,.
   \]
@@ -322,7 +324,7 @@ The most important theorem here is the Borel-Ritt Lemma.
   \TODO[Arcs on the universal cover of opening $>2\pi$?]
   \begin{s-rem}
     \marginnote{\cite[111]{Loday2014}}
-    This means, that to each $\hat f\in\C(\!(t)\!)$ there are functions $f$
+    This means that to each $\hat f\in\C(\!(t)\!)$ there are functions $f$
     asymptotic to $\hat f$.
     However, when $\hat f$ satisfies an equation, these asymptotic functions do
     not satisfy the same equation in general.
@@ -346,7 +348,7 @@ given function $\hat f\in\C(\!(t)\!)$ in a canonical way. For example
   $\mathfrak{s}''\subsetneq\C^*$ lies.
   Let $\sum a_nz^n$ be a formal Laurent series. We look for a function
   $f\in\cA(I)$ with Taylor series $T_{I}f=\sum a_nz^n$.
-  By subtracting the principal part\TODO[?] we may assume, that this series has
+  By subtracting the principal part\TODO[?] we may assume that this series has
   no terms with negative degree.
   Let $b_n$ be a sequence, which satisfies
   \begin{itemize}
@@ -359,7 +361,7 @@ given function $\hat f\in\C(\!(t)\!)$ in a canonical way. For example
       \\\frac{1}{n!}|a_n| & \text{when~} n>0
     \end{cases}
   \]
-  Let $\sqrt{t}$ be the branch of the square root function, that satisfies
+  Let $\sqrt{t}$ be the branch of the square root function that satisfies
   $|\arg(\sqrt{t})|<\frac{\pi}{2}$\footnote{For $t=re^{i\phi}$ is
   $\sqrt{t}=\sqrt{r}e^{i\frac{\phi}{2}}$ with $-\pi<\phi<\pi$.} for all
   $t\in\mathfrak{s}$.

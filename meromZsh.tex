@@ -104,7 +104,7 @@ A meromorphic connection is then defined as follows.
     \[
       d\omega + \omega \wedge \omega = 0.
     \]
-    This means, that the flatness condition is sufficient to assure the
+    This means that the flatness condition is sufficient to assure the
     existence of local fundamental solutions.
   \end{s-prop}
   \begin{s-rem}
@@ -122,7 +122,7 @@ A meromorphic connection is then defined as follows.
 \marginnote{\cite[28]{sabbah2007isomonodromic}, \cite[2]{thboalch} and
   \cite[11]{babbitt1989local}}
 We will usually\TODO[only?] be interested in local information of meromorphic
-connections.  This means, that we look at a connection in a neighbourhood of $0$
+connections.  This means that we look at a connection in a neighbourhood of $0$
 \rewrite{and allow only one singularity at $0$}.
 There are many ways of expressing the local information, we will either talk
 about germs of meromorphic connections or systems, which are coordinate-
@@ -157,7 +157,7 @@ and trivialization-dependent.
   From now on we will mostly talk about \textbf{germs of} meromorphic
   connections $(\cM,\nabla)$ and we will call them meromorphic connection. If
   we want to talk about meromorphic connections in the sense of
-  definition~\ref{defn:mercon} we will emphasize this by the word `global' or
+  Definition~\ref{defn:mercon} we will emphasize this by the word `global' or
   by talking about a meromorphic connection \textbf{on $M$}.
 \end{rem}
 \begin{defn}
@@ -172,19 +172,20 @@ and trivialization-dependent.
 \marginnote{\cite[65]{Loday2014}, \cite[129]{hotta2008}}
 Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
 Let $A=(a_{jk})$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$
-\rewrite{such that the it describes the action of $\nabla$,} i.e.\ it satisfies
+such that the it describes the action of $\nabla$, i.e.\ it satisfies
 \[
   \nabla e_k
   =
   -\sum_{1\leq j\leq n} a_{jk}(t)e_j \,.
 \]
-Let $x=\sum_{0\leq j\leq n}x_je_j$ be an arbitrary element of $\cM$ which is in
+The connection $\nabla$ is fully determined by $A$. Indeed, let
+$x=\sum_{0\leq j\leq n}x_je_j$ be an arbitrary element of $\cM$ which is in
 matrix notation described as $x=\underline{e}\cdot X$ with the column matrix
 $X={}^t\!(x_1,x_2 ,\dots,x_n)$.
-Then, applying the Leibniz rule, yields
+Then, applying $\nabla$ using the Leibniz rule, yields
 \begin{align*}
   \nabla x&=\nabla\left(\underline{e}\cdot X\right)
-  \\&=\underline{e} \cdot dX - \underline{e}\cdot \nabla X
+  \\&=\underline{e} \cdot dX + \nabla \underline{e} \cdot X
   \\&=\underline{e}\left(dX-AX\right).
 \end{align*}
 Such that horizontal sections of $(\cM,\nabla)$, i.e.\ sections which satisfy
@@ -263,7 +264,7 @@ connection back, we can do this in the following way.
   \[
     (\C(\!\{t\}\!)^{n_1},d-A_1)\oplus(\C(\!\{t\}\!)^{n_2},d-A_2)
   \]
-  and we want to show, that it is isomorphic to
+  and we want to show that it is isomorphic to
   \[
     \left(\C(\!\{t\}\!)^{n_1+n_2},d-
     \begin{pmatrix} A_1 & 0 \\0 & A_2 \end{pmatrix}\right) \,.
@@ -613,7 +614,7 @@ $C_2\in\C$ are two constants, then is also $C_1x_0(t)+C_2x_{00}(t)$ a solution.
   A \emph{fundamental solution} $\cY$ of the system $[A]$ is an invertible
   $n\times n$ matrix, which solves $[0,A]$.
   \begin{s-rem}
-    This means, that the columns of $\cY$ are $n$ $\C$-linearly independent
+    This means that the columns of $\cY$ are $n$ $\C$-linearly independent
     solutions of the system $[A]$.
   \end{s-rem}
 \end{defn}
@@ -661,7 +662,7 @@ meromorphic connection, lie in the same convergent equivalence class.
 In fact, every element of this convergent equivalence class will be a model in
 our definition.
 
-\rewrite{The first part is given by} the Levelt-Turittin theorem, which says,
+\rewrite{The first part is given by} the Levelt-Turittin theorem, which says
 that each meromorphic connection is, after potentially needed ramification,
 formally isomorphic to such a model.
 Thus the Levelt-Turittin theorem solves the \emph{formal classification
@@ -865,7 +866,7 @@ fundamental solution in the form $\hat F\cY$.
     \item $F\in G(\!\{t\}\!)$ a transformation.
   \end{itemize}
   The normal forms will often be denoted $A^0$.
-  If $A$ is formally equivalent to a normal form $A^0$ we say, that $A^0$
+  If $A$ is formally equivalent to a normal form $A^0$ we say that $A^0$
   \emph{is a normal form for} $A$.
 
   The fundamental solution $F t^L e^{Q(t^{-1})}$ of a normal form will be
@@ -880,7 +881,7 @@ fundamental solution in the form $\hat F\cY$.
         \[
           F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})} \,.
         \]
-        Thus it is always possible to assume, that the transformation matrix
+        Thus it is always possible to assume that the transformation matrix
         $F$ is trivial.
     \end{enumerate}
   \end{s-rem}
@@ -898,7 +899,7 @@ fundamental solution in the form $\hat F\cY$.
   where $\cY=\cY_0=t^L e^{Q(t^{-1})}$ is a normal solution.
 
   \begin{comment}
-    Since we are dealing with diagonal matrices it is easy to see, that
+    Since we are dealing with diagonal matrices it is easy to see that
     \begin{align*}
       \frac{d}{dt}e^{Q(t^{-1})}
       &=\diag\left(\frac{d}{dt}e^{q_1(t^{-1})},\frac{d}{dt}e^{q_2(t^{-1})}
@@ -917,8 +918,8 @@ fundamental solution in the form $\hat F\cY$.
       =L\frac{1}{t}t^L \,.
     \end{align*}
   \end{comment}
-  It is easy to see, that $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$
-  and $\frac{d}{dt}t^L=L\frac{1}{t}t^L$, thus we can prove, that $\cY_0$ is a
+  It is easy to see that $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$
+  and $\frac{d}{dt}t^L=L\frac{1}{t}t^L$, thus we can prove that $\cY_0$ is a
   matrix consisting of solutions:
   \begin{align*}
     \frac{d}{dt}\cY_0
@@ -1074,7 +1075,7 @@ The main asymptotic existence theorem states
   \begin{s-rem}
     \marginnote{\cite[Thm.4.4.1]{Loday2014}}
     If we write the system $[A^0,A]$ as a differential operator $D$.
-    The theorem then states, that $D$ acts linearly and surjectively on the
+    The theorem then states that $D$ acts linearly and surjectively on the
     sheaf $\cA^{<0}$, i.e.\ the sequence
     \[
       \cA^{<0}\overset{D}\longrightarrow\cA^{<0} \longrightarrow 0
@@ -1107,7 +1108,7 @@ becomes the following.
   There exists then, for any $e^{i\theta^0}\in S^1$, an isomorphism
   $\tilde\lambda_{\theta^0}:
   \tilde\cM_{\theta^0}=\cA_{\theta^0}\otimes\cM\to\tilde\cM_{\theta^0}^{nf}$
-  lifting $\hat\lambda$, that is, such that the following diagram
+  lifting $\hat\lambda$ \rewrite{that is, such that} the following diagram
   \[ \begin{tikzcd}
       \tilde\cM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
       \tilde\cM^{nf}_{\theta^o} \dar
@@ -1148,7 +1149,7 @@ We want to understand the Set
 $\Big\{\big[(\cM,\nabla)\big]\Big\}$ of the (convergent)
 isomorphism classes of all meromorphic connections. Since we have also the
 formal classification (cf.\ Section~\ref{sec:formalClassification}) and we
-know, that all elements in a convergent isomorphism class lie in the same
+know that all elements in a convergent isomorphism class lie in the same
 formal isomorphism class, i.e.\ the convergent classification is
 \rewrite{finer} than the formal classification, we can reduce the problem by
 fixing a model $(\cM^{nf},\nabla^{nf})$ with the corresponding normal form
@@ -1164,7 +1165,7 @@ $A^0$.
   \Big\}
 \end{multline*}
 of all isomorphism classes of meromorphic connections, which are formally
-isomorphic to $(\cM^{nf},\nabla^{nf})$. This is the set, that we will be
+isomorphic to $(\cM^{nf},\nabla^{nf})$. This is the set that we will be
 calling the \emph{classifying set} and we will also denote it ${}^0C(A^0)$.
 \begin{rem}
   Note that we classify
@@ -1206,7 +1207,7 @@ Where the isomorphisms of marked pairs are defined as follows:
   $g:(\cM,\nabla)\overset{\sim}\longrightarrow(\cM',\nabla')$ such that
   $\hat f=\hat f'\circ \hat g$.
   \begin{s-rem}
-    \rewrite{Sabbah states in} \cite[111]{sabbah2007isomonodromic}, that such
+    \rewrite{Sabbah states in} \cite[111]{sabbah2007isomonodromic} that such
     an isomorphism is then unique.
   \end{s-rem}
 \end{defn}
@@ -1224,7 +1225,7 @@ the set ${}^0C(A^0):=\Syst_m(A^0)/G(\!\{t\}\!)$ of meromorphic classes which
 are formally equivalent to $A^0$.
 \TODO[\cite{thboalch} p. 3: In the logarithmic case\dots]
 Analogous, $\cH(\cM^{nf},\nabla^{nf})$ corresponds to the set $\cH(A^0)$ of
-equivalence classes\rewrite{, i.e. orbits of $G(\!\{t\}\!)$,} in
+equivalence classes\rewrite{, i.e.\ orbits of $G(\!\{t\}\!)$,} in
 \[
   \hat\Syst_m(A^0):=\{(A,\hat F)
     \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\} \,.
@@ -1239,7 +1240,7 @@ equivalence classes\rewrite{, i.e. orbits of $G(\!\{t\}\!)$,} in
   \begin{s-cor}
     \marginnote{\cite[Eq.1.9b]{babbitt1983}}
     Thus the \emph{set of meromorphic classas of systems formally equivalent
-      to $A^0$} are just the orbits of $G\{t\}$, that is
+      to $A^0$} are just the orbits of $G\{t\}$ that is
     \[
       {}^0C(A^0)\cong G(\!\{t\}\!)\backslash\hat G(A^0)/G_0(A^0)
     \]
