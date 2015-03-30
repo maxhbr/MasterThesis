@@ -52,7 +52,7 @@ A meromorphic connection is then defined as follows.
     \]
   for $\mys\textcolor{blue!60!black}{\in\Gamma(\myU,\sM)}$ and
   $\myf\textcolor{red!60!black}{\in\cO_M(\myU)}$.
-  The \emph{rank} of the meromorphic connection $(\sM,\nabla)$ is defined as
+  The \emph{rank} of the meromorphic connection $(\sM,\nabla)$ is defined to be
   the rank of the Bundle $\sM$.
   \begin{s-rem}
     Some authors use the factors $k_i$ of the divisor $Z$ to limit the pole
@@ -73,7 +73,7 @@ A meromorphic connection is then defined as follows.
     \item We will occasionally omit the $\nabla$ and simply call $\sM$ the
       meromorphic connection.
     \item Here, the variant `holomorphic bundle with meromorphic connection' is
-      chosen, like in \cite{boalch}.
+      chosen, like in Boalch's paper~\cite{boalch}.
       There is also the twisted\TODO[better word?] description `meromorphic
       bundle with holomorphic connection' which is for example used in
       Sabbah's book~\cite{sabbah2007isomonodromic}.
@@ -97,16 +97,18 @@ A meromorphic connection is then defined as follows.
         is a $\cO_M$-linear morphism.
     \end{itemize}
   \end{einr}
-  \begin{s-prop}
-    \marginnote{\cite[0.12.4]{sabbah2007isomonodromic}}
-    The connection $\nabla$ is flat if and only if, in any local basis $e$ of
-    $\cM$, the connection matrix $\Omega$ satisfies
-    \[
-      d\omega + \omega \wedge \omega = 0.
-    \]
-    This means that the flatness condition is sufficient to assure the
-    existence of local fundamental solutions.
-  \end{s-prop}
+  \begin{comment}
+    \begin{s-prop}
+      \marginnote{\cite[0.12.4]{sabbah2007isomonodromic}}
+      The connection $\nabla$ is flat if and only if, in any local basis $e$ of
+      $\cM$, the connection matrix $\Omega$ satisfies
+      \[
+        d\Omega + \Omega \wedge \Omega = 0.
+      \]
+      This means that the flatness condition is sufficient to assure the
+      existence of local fundamental solutions.
+    \end{s-prop}
+  \end{comment}
   \begin{s-rem}
     Here are all connections flat, since only look at Dimension one.
   \end{s-rem}
@@ -119,8 +121,9 @@ A meromorphic connection is then defined as follows.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Local expression of meromorphic connections}
-\marginnote{\cite[28]{sabbah2007isomonodromic}, \cite[2]{thboalch} and
-  \cite[11]{babbitt1989local}}
+\marginnote{\cite[28]{sabbah2007isomonodromic},
+  \\\cite[2]{thboalch} and
+  \\\cite[11]{babbitt1989local}}
 We will usually\TODO[only?] be interested in local information of meromorphic
 connections.  This means that we look at a connection in a neighbourhood of $0$
 \rewrite{and allow only one singularity at $0$}.
@@ -135,10 +138,10 @@ and trivialization-dependent.
     \item $\cM$ is the germ at $0$ of the holomorphic bundle $\sM$ and thus a
       $\C(\!\{t\}\!)$-vectorspace of dimension $n$, since the ring of germs of
       meromorphic functions with poles at $0$ is the ring $\C(\!\{t\}\!)$, and
-    \item $\nabla:\cM\to \cM$ \TODO[one forms?] is a additive map, which
+    \item $\nabla:\cM\to \cM$ is a additive map, which
       satisfies the \emph{Leibniz rule}
       \[
-        \nabla(fm)=\partial f\cdot m + f\nabla(m)
+        \nabla(fm)=\frac{d}{dt} f\cdot m + f\nabla(m)
       \]
       for all $f\in\C(\!\{t\}\!)$ and $m\in \cM$.
   \end{itemize}
@@ -147,11 +150,11 @@ and trivialization-dependent.
       \marginnote{\cite{sabbah2007isomonodromic}}
       It is a $(\C(\!\{t\}\!),\nabla)$-vectorspace.
     \end{s-rem}
-    \begin{s-rem}
-      Loday-Richaud calls this in \cite[Def.4.2.1]{Loday2014} a
-      \emph{differential module}.
-    \end{s-rem}
   \end{comment}
+  \begin{s-rem}
+    Loday-Richaud calls the meromorphic connections in his
+    book~\cite[Def.4.2.1]{Loday2014} \emph{differential modules}.
+  \end{s-rem}
 \end{prop}
 \begin{rem}
   From now on we will mostly talk about \textbf{germs of} meromorphic
@@ -178,6 +181,9 @@ such that the it describes the action of $\nabla$, i.e.\ it satisfies
   =
   -\sum_{1\leq j\leq n} a_{jk}(t)e_j \,.
 \]
+\begin{defn}
+  The matrix $A$ is called a \emph{connection matrix} of $(\cM,\nabla)$.
+\end{defn}
 The connection $\nabla$ is fully determined by $A$. Indeed, let
 $x=\sum_{0\leq j\leq n}x_je_j$ be an arbitrary element of $\cM$ which is in
 matrix notation described as $x=\underline{e}\cdot X$ with the column matrix
@@ -193,59 +199,66 @@ $\nabla x=0$, correspond to solutions of
 \begin{equation}\label{eq:ode}
   \frac{d}{dt}x=Ax \,.
 \end{equation}
-Thus, with the connection $\nabla$ and the $K$-basis $\underline{e}$ is
-naturally associate the differential operator $\triangle=d-A$, which has order
-one and dimension $n$.
+Thus, with the connection $\nabla$ and the $\C(\!\{t\}\!)$-basis
+$\underline{e}$ is naturally associate the differential operator
+$\triangle=d-A$, which has order one and dimension $n$.
+\begin{defn}
+  We call (\ref{eq:ode}), determined by the differential operator
+  $\triangle=d-A$, a \emph{germ of a meromorphic linear differential system} of
+  rank $n$, or just a \emph{system}.
+  \begin{s-prop}
+    Thus, the set of systems is isomorphic to the set
+    \[
+      \End(E)\otimes\C(\!\{t\}\!)=\gl_n(\C(\!\{t\}\!))
+    \]
+    of all connection matrices.
+  \end{s-prop}
+  Such a system will be denoted by $[A]=d-A$ and we will call $A$ the
+  connection matrix of the system $[A]$.
+\end{defn}
 \TODO[possibly multivalued solutions ($\tilde K$)?~\cite{hotta2008} on page
 128]
+% \begin{defn}
+%   \begin{enumerate}
+%     \item This matrix $A$ is called a \emph{connection matrix} of
+%       $(\cM,\nabla)$. It depends on the choice of the $\C(\!\{t\}\!)$-basis.
+%       \begin{comment}
+%         \begin{s-cor}
+%           As we have seen above, \rewrite{is a connection} fully determined by
+%           its connection matrix together with the corresponding base choice.
+%         \end{s-cor}
+%       \end{comment}
+%     \item A \emph{germ of a meromorphic linear differential system} of rank
+%       $n$, or just a \emph{system}, is a germ of a meromorphic connection on
+%       the trivial vector bundle \textbf{with a chosen trivialization}
+%       \rewrite{of the fiber $E\cong\C^n$}.
+%       \begin{s-prop}
+%         Thus, the set of systems is isomorphic to the set
+%         \[
+%           \End(E)\otimes\C(\!\{t\}\!)=\gl_n(\C(\!\{t\}\!))
+%         \]
+%         of all connection matrices.
+%       \end{s-prop}
+%       Such a system will be denoted by $[A]=d-A$ where $A$ is the connection
+%       matrix in the chosen trivialization.
+%       \TODO[Category of systems!]
+%   \end{enumerate}
+% \end{defn}
 
-\begin{comment}
-  This means that the connection $\nabla$ is fully determined by the matrix $A$
-  and thus is fully determined by $A'$.
-\end{comment}
-\begin{defn}
-  \begin{enumerate}
-    \item This matrix $A$ is called a \emph{connection matrix} of
-      $(\cM,\nabla)$. It depends on the choice of the $\C(\!\{t\}\!)$-basis.
-      \begin{comment}
-        \begin{s-cor}
-          As we have seen above, \rewrite{is a connection} fully determined by
-          its connection matrix.
-        \end{s-cor}
-      \end{comment}
-    \item A \emph{germ of a meromorphic linear differential system} of rank
-      $n$, or just a \emph{system}, is a germ of a meromorphic connection on
-      the trivial vector bundle \textbf{with a chosen trivialization}
-      \rewrite{of the fiber $E\cong\C^n$}.
-      \begin{s-prop}
-        Thus, the set of systems is isomorphic to the set
-        \[
-          \End(E)\otimes\C(\!\{t\}\!)=\gl_n(\C(\!\{t\}\!))
-        \]
-        of all connection matrices.
-      \end{s-prop}
-      Such a system will be denoted by $[A]=d-A$ where $A$ is the connection
-      matrix in the chosen trivialization.
-      \TODO[Category of systems!]
-  \end{enumerate}
-\end{defn}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{System \rightarrow{} germ of a meromorphic connection}
-If we want to reverse the base choice to get the corresponding meromorphic
+If we want to reverse the base choice to get a corresponding meromorphic
 connection back, we can do this in the following way.
 \begin{prop}\label{prop:systToMeromConn}
   If we start with either a system $[A]$ of rank $n$, or a connection matrix
-  $A\in\gl_n(\C(\!\{t\}\!)$, we get a germ of a meromorphic connection via
+  $A\in\gl_n(\C(\!\{t\}\!))$, we get a germ of a meromorphic connection via
   \[
     (\cM_A,\nabla_A)=(\C(\!\{t\}\!)^n,d-A)
   \]
   which has $A$ as its connection matrix.
-  \begin{s-rem}
-    Since systems are meromorphic connections together with a base choice, we
-    could alternatively forget the base choice. This yields clearly an
-    isomorphic meromorphic connection.
-  \end{s-rem}
+  % \begin{s-rem}
+  %   Since systems are meromorphic connections together with a base choice, we
+  %   could alternatively forget the base choice. This yields clearly an
+  %   isomorphic meromorphic connection.
+  % \end{s-rem}
 \end{prop}
 \begin{proof}
   \TODO{}
@@ -1225,7 +1238,7 @@ the set ${}^0C(A^0):=\Syst_m(A^0)/G(\!\{t\}\!)$ of meromorphic classes which
 are formally equivalent to $A^0$.
 \TODO[\cite{thboalch} p. 3: In the logarithmic case\dots]
 Analogous, $\cH(\cM^{nf},\nabla^{nf})$ corresponds to the set $\cH(A^0)$ of
-equivalence classes\rewrite{, i.e.\ orbits of $G(\!\{t\}\!)$,} in
+equivalence classes, i.e.\ orbits of $G(\!\{t\}\!)$, in
 \[
   \hat\Syst_m(A^0):=\{(A,\hat F)
     \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\} \,.

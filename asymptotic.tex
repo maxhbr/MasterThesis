@@ -51,7 +51,7 @@ We introduce the following notations:
   or sectors on the Universal cover of $\C^*$.
   \TODO[Sectors on the Riemann surface of the logarithm]
 \end{notations}
-\begin{figure}{h}
+\begin{figure}[h]
   \begin{center}
     \begin{tikzpicture}[scale=4]
       \node (zero) at (0,0) {};
@@ -84,6 +84,10 @@ We introduce the following notations:
       \fill (zero) circle (.7pt);
     \end{tikzpicture}
   \end{center}
+  \caption{An exemplary arc $\textcolor{green!40!black}{
+    \mathfrak{s}_{\textcolor{red!60!black}{a,b}}
+  (\textcolor{blue!60!black}{r})}$ spanning from \textcolor{red!60!black}{$a$}
+  to \textcolor{red!60!black}{$b$} with radius \textcolor{blue!60!black}{$r$}.}
 \end{figure}
 \begin{rem}
   \begin{itemize}
@@ -91,12 +95,13 @@ We introduce the following notations:
       $\theta\in S^1$} if $\theta\in I$. In the same way we will say that
       $\mathfrak{s}_I(r)$ contains $U\subset S^1$ if $U\subset I$ or that
       $U\subset S^1$ contains a sector $\mathfrak{s}_I(r)$ if $I\subset U$.
-    \item Since the explicit value $r$ of the radius does not matter, we shall
-      simply speak of an \emph{arc} or \emph{interval}
-      $U(\theta,\epsilon):=\left(\theta-\frac{\epsilon}{2}
+    \item Since the explicit value $r$ of the radius does not matter as long as
+      it is small enough, we shall simply speak of an \emph{arc} or
+      \emph{interval} $U(\theta,\epsilon):=\left(\theta-\frac{\epsilon}{2}
       ,\theta+\frac{\epsilon}{2}\right)\subset S^1$ in place of a sector
       $\mathfrak{s}_{\theta-\frac{\pi}{2k},\theta+\frac{\pi}{2k}}(r)$ for a
-      sufficiently small $r$. \TODO[Define via limit]
+      sufficiently small $r$.
+      \TODO[Define via limit]
   \end{itemize}
 \end{rem}
 \begin{defn}
@@ -111,6 +116,7 @@ We introduce the following notations:
 \end{defn}
 
 \begin{defn}
+  \marginnote{\cite[Defn.7.1]{van2003galois}}
   \def\myN{\textbf{\textcolor{blue!40!black}{N}}}
   \def\mySect{\textcolor{red!40!black}{\mathfrak{s}'}}
   \def\myConst{\textcolor{green!40!black}{C(\myN,\mySect)}}
@@ -123,9 +129,9 @@ We introduce the following notations:
     \item for all proper sub-sectors $\mySect\Subset\mathfrak{s}$ and
     \item all $\myN\in\N$,
   \end{itemize}
-  there exists a constant
-  $\myConst$ such that the following estimate\footnote{Sometimes, for example
-    in \cite{sabbah_cimpa90}, this condition is written as
+  there exists a constant $\myConst$ such that the following
+  estimate\footnote{Sometimes, for example in \cite{sabbah_cimpa90}, this
+    condition is written as
     \[
       \lim_{z\to0,z\in{\mySect}}
       |t|^{-(\myN-1)}
@@ -140,6 +146,7 @@ We introduce the following notations:
     \right|
     \leq \myConst|t|^{\myN} \qquad \text{ for all }t\in \mySect \,.
   \]
+  We will use the following notations:
   \begin{enumerate}
     \item We will say that \emph{$f$ has the formal Laurent series $\hat g$ as
       asymptotic expansion on the interval $I\subset S^1$} if there exists a
@@ -170,8 +177,9 @@ $f\sim_{\theta}\hat f$).\label{page:notationForAsymptoticExpansion}
             $\cA(\mathfrak{s})$ contains $\C(\!\{t\}\!)$ as a subfield.
         \end{enumerate}
       \end{s-rem}
-    \item Define $\cA(a,b)\!\!\overset{(a,b)=I}{=}\!\!\cA(I)$
-      as the limit $\underset{r\to0}{\underrightarrow{\lim}}
+    \item
+      For $(a,b)=I$ define $\cA(a,b)=\cA(I)$ as the limit
+      $\underset{r\to0}{\underrightarrow{\lim}}
       \cA(\mathfrak{s}_{a,b}(r))$\footnote{In more detail: the
         elements of $\cA(a,b)$ are pairs $(f,\mathfrak{s}_{a,b}(r))$ mit
         $f\in\cA(\mathfrak{s}_{a,b}(r))$. The equivalence relation is given by
@@ -252,34 +260,50 @@ exponential integral, see Loday-Richauds book \cite[Sec.2.2]{Loday2014}.
   \end{exmp}
 \end{comment}
 
-\begin{rem}\label{rem:optionsOfAsymptoticExp}
-  Let $I\subset S^1$ be an arc.
-  Let $f$, $f_1$ and $f_2$ be functions which satisfy $f\sim_I\hat f$,
-  $f_1\sim_I\hat f_1$ and $f_2\sim_I\hat f_2$.
-  We have the rules:
-  \begin{enumerate}
-    \item \cite[4.5.Thm.13]{Balser2000Formal}:
-      $f_1(t)+f_2(t)$ is on $I$ asymptotic to $\hat f_1(t)+\hat f_2(t)$.
-    \item \cite[4.5.Thm.14]{Balser2000Formal}:
-      $f_1(t)f_2(t)$ is on $I$ asymptotic to $\hat f_1(t)\hat f_2(t)$.
-    \item \cite[4.5.Thm.20]{Balser2000Formal}:
-      \begin{enumerate}
-        \item\label{subsubitem}
-          $f'(t)$ is on $I$ asymptotic to $\hat f'(t)$, i.e.\ $\cA(I)$ is
-          stable under derivation.
-          \marginnote{\cite[II.2.2.4]{sabbah_cimpa90}}
-        \item $\int_0^tf(s)\,ds$ is on $I$ asymptotic to $\int_0^t\hat f(t)\,ds$.
-      \end{enumerate}
-    \item \cite[4.5.Thm.21]{Balser2000Formal}:
-      \marginnote{\cite[II.2.2.4]{sabbah_cimpa90}}
-      if $f\in\cA(I)\backslash\cA^{<0}(I)$ then
-      $f^{-1}(t)$ is on $I$ asymptotic to $\hat f^{-1}(t)$.
-  \end{enumerate}
-  \TODO[Better source/proofs?]
-\end{rem}
-\begin{proof}[Proof of Remark~\ref{rem:optionsOfAsymptoticExp}.\ref{subsubitem}]
+\begin{comment}
+  \begin{prop}
+    \marginnote{\cite[4.5.Prop.9]{Balser2000Formal}}
+    The following statements are equivalent:
+    \begin{enumerate}
+      \item $f\sim_{\mathfrak{s}}\hat f$;
+      \item All derivations $f^{(n)}(t)$ are continuous at the origin, and for
+        every proper sub-sector $\bar{\mathfrak{s}}'\Subset\mathfrak{s}$ there
+        exist constants $c$, $K$ such that
+        \[
+          \frac{1}{n!}\sup_{t\in\bar{\mathfrak{s}}'}
+          \left\Vert f^{(n)}(t) \right\Vert
+          \leq cK^n
+          \Gamma(1+n)
+        \]
+        for every $n\geq 0$.
+    \end{enumerate}
+  \end{prop}
+\end{comment}
+\begin{prop}\label{prop:optionsOfAsymptoticExp}
+  \marginnote{\cite[II.2.2.4]{sabbah_cimpa90}}
+  For every arc $I\subset S^1$ is $\cA(I)$ is stable under derivation, i.e.\
+  $f'(t)$ is on $I$ asymptotic to $\hat f'(t)$ for every function $f$
+  asymptotic to $\hat f$ on $I$.
+  \begin{s-rem}
+    Let $f_1$ and $f_2$ be functions which satisfying $f_1\sim_I\hat f_1$ and
+    $f_2\sim_I\hat f_2$.
+    We have also the rules:
+    \begin{enumerate}
+      \item $f_1(t)+f_2(t)$ is on $I$ asymptotic to $\hat f_1(t)+\hat f_2(t)$
+        (cf.\ Theorem \cite[4.5.Thm.13]{Balser2000Formal}).
+      \item $f_1(t)f_2(t)$ is on $I$ asymptotic to $\hat f_1(t)\hat f_2(t)$
+        (cf.\ Theorem \cite[4.5.Thm.14]{Balser2000Formal}).
+      \item $\int_0^tf(s)\,ds$ is on $I$ asymptotic to $\int_0^t\hat f(t)\,ds$
+        (cf.\ Theorem \cite[4.5.Thm.20]{Balser2000Formal}).
+      \item If $f\in\cA(I)\backslash\cA^{<0}(I)$ then $f^{-1}(t)$ is on $I$
+        asymptotic to $\hat f^{-1}(t)$
+        (cf.\ Theorem \cite[4.5.Thm.21]{Balser2000Formal}).
+    \end{enumerate}
+  \end{s-rem}
+\end{prop}
+\begin{proof}[Proof of Proposition~\ref{prop:optionsOfAsymptoticExp}]
   Let $f\in\cA(I)$ with asymptotic expansion $\hat f=\sum_{-n_0\leq n}a_nx^n$
-  its asymptotic expansion where we assume that $n_0=0$.
+  its asymptotic expansion where we assume without restriction that $n_0=0$.
   One has for each $m\geq0$
   \[
     f(t)=\sum_{n=0}^ma_nt^n+R_m(t)t^m
@@ -313,9 +337,9 @@ exponential integral, see Loday-Richauds book \cite[Sec.2.2]{Loday2014}.
   \end{itemize}
 \end{comment}
 The most important theorem here is the Borel-Ritt Lemma.
-\begin{thm}[Borel-Ritt]
-  \label{thm:borel-ritt}
-  Let $I\subsetneq S^1$ be an open sub arc, i.e.\ with a opening less than
+\begin{thm}[Borel-Ritt]\label{thm:borel-ritt}
+  \marginnote{\cite[Thm.2.4.1]{Loday2014}}
+  Let $I\subsetneq S^1$ be an open sub-arc, i.e.\ with a opening less than
   $2\pi$. Then the Taylor map
   \[
     T_{I}:\cA(I)\twoheadrightarrow\C(\!(t)\!)
@@ -327,7 +351,7 @@ The most important theorem here is the Borel-Ritt Lemma.
     This means that to each $\hat f\in\C(\!(t)\!)$ there are functions $f$
     asymptotic to $\hat f$.
     However, when $\hat f$ satisfies an equation, these asymptotic functions do
-    not satisfy the same equation in general.
+    not necessarily satisfy the same equation in general.
     \comm{The main asymptotic expansion theorem fills this gap on small enough
     sectors but does not garanty uniqueness.} \comm{For uniqueness we will use
     the theory of summation on a given sector.}
@@ -335,7 +359,8 @@ The most important theorem here is the Borel-Ritt Lemma.
 \end{thm}
 There are multiple approaches to obtain a function $f\in\cA(I)$ asymptotic to a
 given function $\hat f\in\C(\!(t)\!)$ in a canonical way. For example
-(multi-)multisummability which is in depth described in~\cite{Loday2014}.
+(multi-)multisummability which is in depth described in Loday-Richaud's
+book~\cite{Loday2014}. \TODO[we will scratch\dots in section?]
 \begin{proof}[Proof of thm~\ref{thm:borel-ritt}]
   Let $I:=(-\pi,\pi)$ and $R\in\R_{>0}$.
   We will prove this for the sector
@@ -373,8 +398,8 @@ given function $\hat f\in\C(\!(t)\!)$ in a canonical way. For example
     \item[(b)] $\beta_n$ has asymptotic expansion $1$ on $\mathfrak{s}$ (thus
       $\beta_n-1$ has asymptotic expansion $0$ on $\mathfrak{s}$).
   \end{enumerate}
-  Define $f(t)=\sum a_n\beta_n(t)t^n$.
-  Since 
+  Define $f(t):=\sum a_n\beta_n(t)t^n$.
+  Since
   \[
     |a_n\beta_n(t)t^n|
     \leq|a_n|b_n|z|^{n-\frac{1}{2}}
@@ -387,7 +412,7 @@ given function $\hat f\in\C(\!(t)\!)$ in a canonical way. For example
   Consider a propper sub-sector $\mathfrak{s}'\Subset\mathfrak{s}$ and
   $t\in\mathfrak{s}'$. Then, for every $N>0$
   \begin{align*}
-    \left|f(t)-\sum_{n=0}^{N-1} a_nt^n\right| 
+    \left|f(t)-\sum_{n=0}^{N-1} a_nt^n\right|
     &\leq \left| \sum_{n=0}^{N-1}a_n(\beta_n(t)-1)t^n \right|
       +|t|^N\sum_{n\geq N}\left| a_n\beta_n(t)t^{n-N} \right|
   \\&= \left| \sum_{n=0}^{N-1}a_ne^{-\frac{b_n}{\sqrt{t}}}t^n \right|
@@ -401,7 +426,7 @@ given function $\hat f\in\C(\!(t)\!)$ in a canonical way. For example
   \]
   By setting $C=C'+2|a_n|+\sum_{n\geq N+1}|a_n|b_nR^{n-\frac{1}{2}-N}$ we
   obtain a positive constant $C$, which depends on $N$ and the radius of
-  $\mathfrak{s}'<R$, such that 
+  $\mathfrak{s}'<R$, such that
   \[
     \left|f(t)-\sum_{n=0}^{N-1} a_nt^n\right| \leq C|t|^N
     \qquad\text{ for all } t\in\mathfrak{s}' \,.
@@ -433,9 +458,9 @@ given function $\hat f\in\C(\!(t)\!)$ in a canonical way. For example
     \item $D$ the open disc with coordinate $t$ centered at the origin and of
       radius $r^0>0$.
     \item $\tilde D:=[0,r^0[\times S^1$
-    \item $\pi:\tilde D\to D,~(r,\theta)\mapsto t=re^{i\theta}$ 
+    \item $\pi:\tilde D\to D,~(r,\theta)\mapsto t=re^{i\theta}$
   \end{itemize}
-  \dots we can define the derivations $t\partial/\partial t$ and 
+  \dots we can define the derivations $t\partial/\partial t$ and
   $\bar t\partial/\partial\bar t$.
   \begin{defn}
     The sheaf of rings $\cA_{\tilde D}$ is defined as the subsheaf of
