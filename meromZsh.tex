@@ -6,7 +6,7 @@ talk about global information.
 \comm{Also there is an approach with $\cD$-modules.}
 For local description one can use \textbf{germs of meromorphic connections} or
 the coordinate dependent (local) \textbf{systems} and \textbf{connection
-matrices}. 
+matrices}.
 \comm{Also, there is the coordinate independent approach with localized
 holonomic $\cD$-modules.}
 
@@ -20,7 +20,7 @@ The necessary facts about meromorphic connections are also stated in
 Boalch's paper \cite{boalch} (resp.\ his thesis \cite{thboalch}),
 and Loday-Richaud's paper \cite{Loday1994}.
 
-Systems are, for example, discussed in 
+Systems are, for example, discussed in
 the book \cite{hotta2008} from Hotta et al,
 Loday-Richaud's paper \cite{Loday1994} and his book \cite{Loday2014} and
 Boalch's paper \cite{boalch} (resp.\ his thesis \cite{thboalch}).
@@ -260,9 +260,11 @@ connection back, we can do this in the following way.
   %   isomorphic meromorphic connection.
   % \end{s-rem}
 \end{prop}
-\begin{proof}
-  \TODO{}
-\end{proof}
+\begin{comment}
+  \begin{proof}
+    \TODO{}
+  \end{proof}
+\end{comment}
 
 \begin{prop}
   Let $(\cM_1,\nabla_1)$ and $(\cM_2,\nabla_2)$ be two meromorphic
@@ -322,65 +324,61 @@ connection back, we can do this in the following way.
   \end{enumerate}
 \end{rem}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Local \rightarrow{} global}
 \begin{comment}
-  Maybe see: \cite[Thm.3.3.1]{sibuya1990Linear}: G. D. Birkhoff
-\end{comment}
-\begin{thm}
-  \begin{comment}
-    Quelle?
-  \end{comment}
-  If we start with a germ $(\cM,\nabla)$ of a meromorphic connection there is
-  a unique meromorphic connection $(\sM,\nabla)$ such that
-  \begin{itemize}
-    \item $(\sM,\nabla)$ has only singularities at $0$ and $\infty$
-    \item the singularity at $\infty$ is only \TODO{} and
-    \item $(\cM,\nabla)$ is the germ at $0$ of $(\sM,\nabla)$.
-  \end{itemize}
-\end{thm}
-\begin{proof}
-  \TODO{}
-\end{proof}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Formalization}
-\begin{multicols}{2}
-  Let $[A]$ be a system. We \rewrite{view it as a formal system, by} allowing
-  formal solutions.
-  \TODO{}
-
-\columnbreak
-
-  Let $(\cM,\nabla)$ be a meromorphic connection. The connection $\nabla$
-  naturally extends to $\hat\cM:=\cM\otimes\C(\!(t)\!)$ and
-  $\tilde\cM_\theta:=\cM\otimes\cA_\theta$.
-  \TODO{}
-\end{multicols}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{As differential operator}
-\begin{comment}
-  \begin{itemize}
-    \item \cite[Sec.4.2]{Loday2014}
-  \end{itemize}
+  \subsubsection{Local \rightarrow{} global}
+  \TODO[Maybe see: \cite{sibuya1990Linear} Thm.3.3.1: G. D. Birkhoff]
+  \begin{thm}
+    \TODO[Quelle?]
+    If we start with a germ $(\cM,\nabla)$ of a meromorphic connection there is
+    a unique meromorphic connection $(\sM,\nabla)$ such that
+    \begin{itemize}
+      \item $(\sM,\nabla)$ has only singularities at $0$ and $\infty$
+      \item the singularity at $\infty$ is only \TODO{} and
+      \item $(\cM,\nabla)$ is the germ at $0$ of $(\sM,\nabla)$.
+    \end{itemize}
+  \end{thm}
+  \begin{proof}
+    \TODO{}
+  \end{proof}
 \end{comment}
 
-From the theory of ordinary differential equations we know that to
-(\ref{eq:ode}) there is a equivalent ordinary differential equation of order
-$n$ which can be written as
-\[
-  \underset{=:P}{\underbrace{%
-      (a_n\partial_t^n+a_{n-1}\partial_t^{n-1}+\cdots a_{1}\partial_t+a_{0})
-  }} \cdot v=0
-\]
-where $a_i\in\C(\!\{t\}\!)$.
-This leads to the theory of $\cD$-modules.
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \subsubsection{Formalization}
+  \begin{multicols}{2}
+    Let $[A]$ be a system. We \rewrite{view it as a formal system, by} allowing
+    formal solutions.
+    \TODO{}
+
+    \columnbreak
+
+    Let $(\cM,\nabla)$ be a meromorphic connection. The connection $\nabla$
+    naturally extends to $\hat\cM:=\cM\otimes\C(\!(t)\!)$ and
+    $\tilde\cM_\theta:=\cM\otimes\cA_\theta$.
+    \TODO{}
+  \end{multicols}
+\end{comment}
+
 
 \begin{comment}
-  See \cite[Sec.1.4]{babbitt1983} for \textbf{ode of rank $n$} to
-  \textbf{system}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \subsubsection{As differential operator}
+  \marginnote{\cite[Sec.4.2]{Loday2014}}
+
+  From the theory of ordinary differential equations we know that to
+  (\ref{eq:ode}) there is a equivalent ordinary differential equation of order
+  $n$ which can be written as
+  \[
+    \underset{=:P}{\underbrace{%
+        (a_n\partial_t^n+a_{n-1}\partial_t^{n-1}+\cdots a_{1}\partial_t+a_{0})
+    }} \cdot v=0
+  \]
+  where $a_i\in\C(\!\{t\}\!)$.
+  This leads to the theory of $\cD$-modules.
+
+  \marginnote{See \cite[Sec.1.4]{babbitt1983} for \textbf{ode of rank $n$} to
+  \textbf{system}.}
 \end{comment}
 
 \begin{comment}
@@ -458,20 +456,25 @@ $\hat G(A)$ and $\hat G(A')$ related by
     which is denoted by $[A,B]$.
   \end{einr}
   \begin{s-rem}
-    If we start with a isomorphism
-    $\Phi:(\cM,\nabla)\overset{\sim}\longrightarrow(\cM',\nabla')$ and two
-    base choices $\cM\overset{\sim}\longrightarrow\C(\!\{t\}\!)^n$ and
-    $\cM'\overset{\sim}\longrightarrow\C(\!\{t\}\!)^n$ we have the following
-    commutative diagram:
-    \[ \begin{tikzcd}[column sep=.7cm,row sep=.7cm]
+    If we start with
+    \begin{itemize}
+      \item two base choices $\cM\overset{\sim}\longrightarrow\C(\!\{t\}\!)^n$
+        and $\cM'\overset{\sim}\longrightarrow\C(\!\{t\}\!)^n$ and
+      \item an isomorphism
+        $\Phi:(\cM,\nabla)\overset{\sim}\longrightarrow(\cM',\nabla')$ together
+        with the corresponding base change $F\in G(\!\{t\}\!)$
+    \end{itemize}
+    we have the following commutative diagram:
+    \[ \begin{tikzcd}[column sep=.5cm,row sep=.5cm]
         \C(\!\{t\}\!)^n \arrow{rrrrr}{F}\arrow{dddd}{d-B}&&&&&
           \C(\!\{t\}\!)^n\arrow{dddd}{d-A}
-          \\ & \cM \arrow{dd}{\nabla}\arrow{rrr}{\Phi}\ular&&& \cM'\arrow{dd}{\nabla'}\urar
+          \\ & \cM \arrow{dd}{\nabla}\arrow{rrr}{\Phi}\ular&&&
+          \cM'\arrow{dd}{\nabla'}\urar
           \\
         \\ & \cM \arrow{rrr}{\Phi}\dlar&&& \cM'\drar
         \\ \C(\!\{t\}\!)^n \arrow{rrrrr}{F}&&&&& \C(\!\{t\}\!)^n
     \end{tikzcd} \]
-    Thus the commutation property for the outer rectangle is given by
+    Thus the commutation property for the outer rectangle reads
     \[
       (d-B)\circ F=F\circ(d-A)
     \]
@@ -534,13 +537,15 @@ $\hat G(A)$ and $\hat G(A')$ related by
   transformation \rewrite{in} $G(\!\{t\}\!)$. The \emph{formal class} ist the
   orbit \rewrite{in} $\hat G(A)$.
   \begin{s-rem}
-    \begin{enumerate}
-      \item Thus $A$ is (formally) equivalent to $B$ if and only if there is a
-        (formal) solution of $[A,B]$.
-      \item This implies also an equivalence relation and a classification on
-        the systems.
-    \end{enumerate}
+    Thus $A$ is (formally) equivalent to $B$ if and only if there is a (formal)
+    solution of $[A,B]$.
   \end{s-rem}
+  \begin{comment}
+    \begin{s-rem}
+      This implies also an equivalence relation and a classification on the
+      systems.
+    \end{s-rem}
+  \end{comment}
 \end{defn}
 
 \begin{prop}
@@ -548,22 +553,24 @@ $\hat G(A)$ and $\hat G(A')$ related by
   Two germs of meromorphic connections are (formally) isomorphic if and only if
   their corresponding connection matrices are (formally) equivalent.
 \end{prop}
-\begin{proof}
-  \TODO{}
-\end{proof}
+\begin{comment}
+  \begin{proof}
+    \TODO{}
+  \end{proof}
+\end{comment}
 
 \begin{defn}
   \begin{itemize}
-    \item An \emph{isotropy} of $A^0$ or of $[A^0]$ is a transformation $\hat
-      F$ which satisfy ${}^{\hat F}\!A^0=A^0$.
+    \item An \emph{isotropy} of $A^0$ or of $[A^0]$ is a transformation
+      $\hat F$ which satisfy ${}^{\hat F}\!A^0=A^0$.
       Thus, the isotropies are the solutions of the system
       $[\End A^0]:=[A^0,A^0]$.
       \marginnote{\cite[853]{Loday1994}}
     \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
       \begin{s-rem}
-        They are, a priori, formal transformations. Actually $G(A^0)$ is a
-        subgroup of $\Gl_n(\C[1/x,x])$
-        (cf.~\cite[853]{Loday1994}\TODO[~(cf.~\cite{BJL1979Birkhoff})]).
+        The isotropies are, a priori, formal transformations.
+        Loday-Richaud states in his paper~\cite[853]{Loday1994}, that actually
+        $G(A^0)$ is a subgroup of $\Gl_n(\C[1/x,x])$.
       \end{s-rem}
   \end{itemize}
 \end{defn}
@@ -573,9 +580,11 @@ $\hat G(A)$ and $\hat G(A')$ related by
   equivalent matrices ${}^{\hat F_1}\!A^0$ and  ${}^{\hat F_2}\!A^0$ if and
   only if there exists $f_0\in G_0(A^0)$ such that $\hat F_1=\hat F_2f_0$.
 \end{lem}
-\begin{proof}
-  \TODO{}
-\end{proof}
+\begin{comment}
+  \begin{proof}
+    \TODO{}
+  \end{proof}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Regular / irregular singularities}
@@ -620,12 +629,12 @@ $\hat G(A)$ and $\hat G(A')$ related by
 It is well known in the theory of linear ODEs that the set of solutions to
 (\ref{eq:ode}) forms a vector space of dimension $n$ over $\C$, i.e.\ if
 $x_0(t)$ and $x_{00}(t)$ are two solution of (\ref{eq:ode}) and $C_1$,
-$C_2\in\C$ are two constants, then is also $C_1x_0(t)+C_2x_{00}(t)$ a solution.
-
+$C_2\in\C$ are two constants, then is also $C_1x_0(t)+C_2x_{00}(t)$ a solution
+of the same system.
 \begin{defn}
   \marginnote{\cite[4f]{thboalch}}
-  A \emph{fundamental solution} $\cY$ of the system $[A]$ is an invertible
-  $n\times n$ matrix, which solves $[0,A]$.
+  A \emph{fundamental solution} $\cY$ \TODO[an a sector $\mathfrak{s}$?] of the
+  system $[A]$ is an invertible $n\times n$ matrix, which solves $[0,A]$.
   \begin{s-rem}
     This means that the columns of $\cY$ are $n$ $\C$-linearly independent
     solutions of the system $[A]$.
@@ -636,11 +645,6 @@ $C_2\in\C$ are two constants, then is also $C_1x_0(t)+C_2x_{00}(t)$ a solution.
   If the trivialization is changed by $F$ (resp.\ $\hat F$) the fundamental
   solution $\cY\in G(\!\{t\}\!)$ changes to $F\cY$ (resp.\ $\hat F\cY$).
 \end{rem}
-
-\begin{comment}
-  Unique \textbf{up to permutation}?\ or up to basis change?\ in the ramified
-  case up to \TODO{}
-\end{comment}
 
 \marginnote{\cite[130]{hotta2008}, \cite[6]{heu2010}}
 Choose a fundamental solution $\cY$. Then analytic continuation along a closed
@@ -686,7 +690,8 @@ problem}.
       \[
         (\cE^{\phi},\nabla)=(\C(\!\{t\}\!),d-\phi')\,.
       \]
-      This corresponds to the system satisfied by the function $e^\phi$.
+      This corresponds to the system satisfied by the function $e^\phi$, since
+      $(d-\phi')e^\phi=0$.
       \begin{s-cor}
         $\cE^\phi$ is determined by the class of $\phi$ in
         $\C(\!\{t\}\!)/\C\{t\}=t^{-1}\C[t^{-1}]$. In the following, we will
@@ -708,10 +713,10 @@ problem}.
       \[
         \frac{1}{t} (\alpha\id+N)
       \]
-      where $N$ is a nilpotent matrix.
+      where $N\in\gl_{d+1}(\C)$ is a nilpotent matrix.
       If \rewrite{$\alpha\id + N$} is a single Jordan Block, we denote the
-      corresponding connection by $\cN_{\alpha,d}$ where $d$ is the dimension
-      \rewrite{minus one}.
+      corresponding connection by $\cN_{\alpha,d}$\comm{~where $d$ is the
+      dimension minus one}.
   \end{itemize}
 \end{defn}
 \begin{prop}
@@ -726,8 +731,8 @@ problem}.
       \]
       \begin{s-rem}
         For a detailed analysis of regular meromorphic connections
-        see~\cite[Sec.II.2]{sabbah2007isomonodromic} or
-        \cite[Sec.5.2]{hotta2008}.
+        see Sabbah's book~\cite[Sec.II.2]{sabbah2007isomonodromic} or
+        the book~\cite[Sec.5.2]{hotta2008}.
       \end{s-rem}
     \item Every germ of a meromorphic connection of rank one is isomorphic to
       some germ
@@ -742,9 +747,11 @@ problem}.
       \end{itemize}
   \end{enumerate}
 \end{prop}
-\begin{proof}
-  See~\cite[Prop.II.5.1]{sabbah2007isomonodromic}
-\end{proof}
+\begin{comment}
+  \begin{proof}
+    See~\cite[Prop.II.5.1]{sabbah2007isomonodromic}
+  \end{proof}
+\end{comment}
 \begin{defn}
   \marginnote{\cite[Def.II.5.2]{sabbah2007isomonodromic}}
   A germ $(\cM,\nabla)$ is called \emph{elementary} if it is isomorphic to
@@ -816,9 +823,11 @@ formal classification problem.
     theorem (cf.\ Theorem~\ref{thm:meat}).
   \end{rem}
 \end{thm}
-\begin{proof}
-  See \TODO{}
-\end{proof}
+\begin{comment}
+  \begin{proof}
+    See \TODO{}
+  \end{proof}
+\end{comment}
 \TODO[Full set of formal invariants]
 \begin{comment}
   \begin{prop}
