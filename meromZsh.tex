@@ -70,8 +70,8 @@ A meromorphic connection is then defined as follows.
 \end{defn}
 \begin{rem}
   \begin{enumerate}
-    \item We will occasionally omit the $\nabla$ and simply call $\sM$ the
-      meromorphic connection.
+    \item It will occasionally be convenient to omit the $\nabla$ and simply
+      call $\sM$ the meromorphic connection.
     \item Here, the variant `holomorphic bundle with meromorphic connection' is
       chosen, like in Boalch's paper~\cite{boalch}.
       There is also the twisted\TODO[better word?] description `meromorphic
@@ -656,9 +656,10 @@ along the path $\gamma$}.
   The analyic continuation of $\cY$ along a circle around $t=0$ yields the
   fundamental solution
   \[
-    \lim_{s\to2\pi}\cY(e^{\sqrt{-1}s}t)=\cY(t)\Lambda
+    \lim_{s\to2\pi}\cY(e^{\sqrt{-1}s}t)=\cY(t)L
   \]
-  where $\Lambda\in G$ is called the \emph{monodromy matrix} of $[A]$.
+  where $L\in G$ is called the \emph{monodromy matrix} of $[A]$.
+  \TODO[wie passt das zu normal-formen?]
 \end{defn}
 
 \TODO[monodromy representation] \TODO[Riemann hilbert korrespondenz]
@@ -860,9 +861,9 @@ In the language of system, the equivalent of models are normal forms, which are
 characterizes by the structure of their fundamental solutions.
 
 The normal forms are then the systems $[A^0]$, with a fundamental solution
-$\cY$ in a special form and from the Levelt-Turittin we then can deduce that
+$\cY_0$ in a special form and from the Levelt-Turittin we then can deduce that
 every system $[{}^{\hat F}\!A^0]$, with $\hat F\in G(\!(t)\!)$, has a
-fundamental solution in the form $\hat F\cY$.
+fundamental solution in the form $\hat F\cY_0$.
 \begin{defn}\label{defn:normSol}
   Let $[A]$ be a system.
   We call $[A]$ (or $A$) a \emph{normal form} if its fundamental solution can
@@ -872,15 +873,16 @@ fundamental solution in the form $\hat F\cY$.
   \]
   with
   \begin{itemize}
-    \item \emph{irregular part} $e^{Q(t^{-1})}$ of $\mathcal{Y}_0$ defind by
+    \item \emph{irregular part} $e^{Q(t^{-1})}$ of $\mathcal{Y}_0$ determined
+      by
       \[
         Q(t^{-1})=\underset{j=1}{\overset{s}{\bigoplus}}q_j(t^{-1})1_{n_j}
           =\diag(\underset{n_1\text{-times}}{\underbrace{%
           q_1,\dots,q_1}},q_2,\dots,q_s)
       \]
-      where the $q_i$ are polynomials in $\frac{1}{t}$ or in a fractional power
-      $\frac{1}{s}=\frac{1}{t^{1/p}}$ of $\frac{1}{t}$ such that $q_j(0)=0$,
-      i.e.\ without constant term,
+      where the $q_i(t^{-1})$ are polynomials in $\frac{1}{t}$ (or in a
+      fractional power $\frac{1}{s}=\frac{1}{t^{1/p}}$ of $\frac{1}{t}$ for the
+      ramified case) such that $q_j(0)=0$, i.e.\ without constant term,
     \item $L\in\gl_n(\C)$ constant matrix called the \emph{matrix of formal
       monodromy}, where $t^L$ means $e^{L\ln t}$ and
       \marginnote{in \cite[1]{Remy2014} $L$ is just a Jordan normal form.  Is
@@ -894,19 +896,21 @@ fundamental solution in the form $\hat F\cY$.
   The fundamental solution $F t^L e^{Q(t^{-1})}$ of a normal form will be
   called \emph{normal solution} and will often be denoted by $\cY_0$.
   \begin{s-rem}
-    \begin{enumerate}
-      \item The system $[A^0]$ has the same monodromy as $t^L$. \comm{In fact,
-        every formally equivalent system has the same monodromy.}
-      \item \TODO[Cor from base change for fundamental solutions]
-        By changing the basis via $F^{-1}$ wo obtain from $[A^0]$ the
-        equivalent system $[{}^{F^{-1}}\!A^0]$ with the normal solution
-        \[
-          F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})} \,.
-        \]
-        Thus it is always possible to assume that the transformation matrix
-        $F$ is trivial.
-    \end{enumerate}
+    \TODO[Cor from base change for fundamental solutions] By changing the basis
+    via $F^{-1}$ wo obtain from $[A^0]$ the equivalent system
+    $[{}^{F^{-1}}\!A^0]$ with the normal solution
+    \[
+      F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})} \,.
+    \]
+    Thus it is always possible to assume that the transformation matrix $F$ is
+    trivial.
   \end{s-rem}
+  \begin{comment}
+    \begin{s-rem}
+      The system $[A^0]$ has the same monodromy as $t^L$. \comm{In fact, every
+      formally equivalent system has the same monodromy.}
+    \end{s-rem}
+  \end{comment}
 \end{defn}
 \begin{prop}\label{prop:fundSolBuilder}
   Let $\mathcal{Y}=\hat F t^L e^{Q(t^{-1})}$ be a fundamental solution.
@@ -918,7 +922,7 @@ fundamental solution in the form $\hat F\cY$.
 \end{prop}
 \begin{proof}
   It is sufficient, to proof this in the case $\hat F=\id$, i.e.\ the case
-  where $\cY=\cY_0=t^L e^{Q(t^{-1})}$ is a normal solution.
+  where $\cY=t^L e^{Q(t^{-1})}$ is a normal solution.
 
   \begin{comment}
     Since we are dealing with diagonal matrices it is easy to see that
@@ -941,16 +945,16 @@ fundamental solution in the form $\hat F\cY$.
     \end{align*}
   \end{comment}
   It is easy to see that $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$
-  and $\frac{d}{dt}t^L=L\frac{1}{t}t^L$, thus we can prove that $\cY_0$ is a
+  and $\frac{d}{dt}t^L=L\frac{1}{t}t^L$, thus we can prove that $\cY$ is a
   matrix consisting of solutions:
   \begin{align*}
-    \frac{d}{dt}\cY_0
+    \frac{d}{dt}\cY
     &=\frac{d}{dt}\left(t^Le^{Q(t^{-1})}\right)
   \\&=\frac{d}{dt}t^Le^{Q(t^{-1})}+t^L\frac{d}{dt}e^{Q(t^{-1})}
   \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+t^LQ'(t^{-1})e^{Q(t^{-1})}
   % \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+Q'(t^{-1})t^Le^{Q(t^{-1})}
   \\&=\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
-  \\&=A^0\cY_0 \,.
+  \\&=A^0\cY \,.
   \end{align*}
   The invertability condition is clear.
 \end{proof}
@@ -980,7 +984,18 @@ fundamental solution in the form $\hat F\cY$.
   \[
     -\phi'\id + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right) \,.
   \]
-  The connection matrix of $\cM$ thus writes as
+  \begin{comment}
+    \textbf{OR}
+    A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given by
+    \[
+      t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+      \left(-\phi'\id\right)
+      t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+      + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right) \,.
+    \]
+  \end{comment}
+  Since $\cM$ is a sum of sach elementary connections, The connection matrix of
+  $\cM$ writes as
   \[
     \bigoplus_\phi\left(
       -\phi'\id + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
@@ -1004,6 +1019,33 @@ fundamental solution in the form $\hat F\cY$.
     }
     \,.
   \]
+  \begin{comment}
+    \textbf{OR}
+    A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given by
+    \[
+      \underset{Q'(t^{-1})}{
+        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+          \underbrace{-\bigoplus_\phi
+            t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+            \left(\phi'\id\right)
+            t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+          }
+        }
+      }
+      +
+      \frac{1}{t}
+      \underset{L}{
+        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+          \underbrace{%
+            \bigoplus_\phi\left(
+              \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+            \right)
+          }
+        }
+      }
+      \,.
+    \]
+  \end{comment}
 
   \TODO{}
 
@@ -1021,7 +1063,7 @@ fundamental solution in the form $\hat F\cY$.
 \end{proof}
 \begin{cor}
   From the Levelt-Turittin theorem\comm{, the fundamental solution
-  transformation rules} and theorem~\ref{thm:modelEqNormalForm} we
+  transformation rules} and Theorem~\ref{thm:modelEqNormalForm} we
   deduce that every system $[A]$ with normal form $[A^0]$ and normal solution
   $t^L e^{Q(t^{-1})}$, has the fundamental solution
   \[
@@ -1078,10 +1120,9 @@ It states that to every formal solution of a system of meromorphic differential
 equations, and every sector with sufficiently small opening, one can find a
 solution of the system having the formal one as its asymptotic expansion.
 
-Look at the situation, where $A$ is via $\hat F$ formally equivalent to $A^0$.
-
 \begin{defn}
   \marginnote{\cite[855]{Loday1994}}
+  Let $A$ be via $\hat F$ formally equivalent to $A^0$.
   We call $F$ a \emph{lift of $\hat F$ on $I\subset S^1$} if
   \begin{itemize}
     \item $F\sim_I\hat F$
@@ -1108,9 +1149,11 @@ The main asymptotic existence theorem states
     \end{comment}
   \end{s-rem}
 \end{thm}
-\begin{proof}
-  \TODO{}
-\end{proof}
+\begin{comment}
+  \begin{proof}
+    \TODO{}
+  \end{proof}
+\end{comment}
 
 \begin{comment}
   \begin{rem}
@@ -1169,11 +1212,11 @@ becomes the following.
 \section{The classifying set}\label{sec:classifyingSet}
 We want to understand the Set
 $\Big\{\big[(\cM,\nabla)\big]\Big\}$ of the (convergent)
-isomorphism classes of all meromorphic connections. Since we have also the
-formal classification (cf.\ Section~\ref{sec:formalClassification}) and we
-know that all elements in a convergent isomorphism class lie in the same
-formal isomorphism class, i.e.\ the convergent classification is
-\rewrite{finer} than the formal classification, we can reduce the problem by
+isomorphism classes of all meromorphic connections. Since we can use the formal
+classification (cf.\ Section~\ref{sec:formalClassification}) and we know that
+all elements in a convergent isomorphism class lie in the same formal
+isomorphism class (In other words: the convergent classification is
+\rewrite{finer} than the formal classification) we can reduce the problem by
 fixing a model $(\cM^{nf},\nabla^{nf})$ with the corresponding normal form
 $A^0$.
 \rewrite{Thus we can} restrict ourself to the subset
@@ -1188,20 +1231,22 @@ $A^0$.
 \end{multline*}
 of all isomorphism classes of meromorphic connections, which are formally
 isomorphic to $(\cM^{nf},\nabla^{nf})$. This is the set that we will be
-calling the \emph{classifying set} and we will also denote it ${}^0C(A^0)$.
+calling the \emph{classifying set (to $(\cM,\nabla)$)} and we will also denote
+it also by ${}^0C(A^0)$.
 \begin{rem}
   Note that we classify
   \begin{einr}
     meromorphic connections within fixed \textbf{formal meromorphic classes,
     modulo meromorphic equivalence}.
   \end{einr}
-  Whereas in \cite{boalch} and \cite{thboalch}
+  Whereas for example Boalch in~\cite{boalch} and~\cite{thboalch} classifies
   \begin{einr}
     meromorphic connections within fixed \textbf{formal analytic classes,
     modulo analytic equivalence}
   \end{einr}
-  are classified as is done in the older literature. \rewrite{The resulting
-  classifying sets are isomorphic.}
+  as it was done in the older literature.
+  This makes no difference, since the resulting classifying sets are isomorphic
+  (cf.~\cite{thboalch}\TODO[better:~\cite{babbitt1989local}]).
   \\This distinction relates to the difference between \textbf{‘regular
   singular’} connections and \textbf{‘logarithmic’} connections.
 \end{rem}
@@ -1249,9 +1294,24 @@ are formally equivalent to $A^0$.
 Analogous, $\cH(\cM^{nf},\nabla^{nf})$ corresponds to the set $\cH(A^0)$ of
 equivalence classes, i.e.\ orbits of $G(\!\{t\}\!)$, in
 \[
-  \hat\Syst_m(A^0):=\{(A,\hat F)
-    \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\} \,.
+  \hat\Syst_m(A^0):=\left\{\left(A,\hat F\right)
+    \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\right\} \,.
 \]
+Especialy follows, that two marked pairs $(A,\hat F)$ and $(A',\hat F')$ are
+equivalent, if and only if there is a base change
+$H\in G(\!\{t\}\!)$ such that
+\begin{itemize}
+  \item $A'={}^{H}\!A$, i.e.\ $H$ is a solution of $[A,A']$, and
+  \item $\hat F'=\hat FH^{-1}$.
+    \begin{comment}
+      \begin{align*}
+        {}^{\hat F H^{-1}}\!\left({}^{H}\!A\right)
+          &={}^{\hat FH^{-1}H}\!A
+        \\&={}^{\hat F}\!A
+        \\&=A^0
+      \end{align*}
+    \end{comment}
+\end{itemize}
 
 \begin{lem}
   Since $G_0(A^0)$ is by definition the stabilizer\TODO[correct?] of $A^0$ we
@@ -1271,12 +1331,14 @@ equivalence classes, i.e.\ orbits of $G(\!\{t\}\!)$, in
     $G(\!\{t\}\!)\backslash\hat G(A^0)$ (cf.\ \cite[Lem.1.17]{thboalch}).
   \end{s-cor}
 \end{lem}
-\begin{proof}
-  See
-  \begin{itemize}
-    \item~\cite[6]{thboalch}: in the case $G_0(A^0)=T$
-  \end{itemize}
-\end{proof}
+\begin{comment}
+  \begin{proof}
+    See
+    \begin{itemize}
+      \item~\cite[6]{thboalch}: in the case $G_0(A^0)=T$
+    \end{itemize}
+  \end{proof}
+\end{comment}
 
 The group $G_0(A^0)$ is easy to compute and is often trivial. In fact, the
 elements are block-diagonal, see~\cite[77]{Loday2014}.

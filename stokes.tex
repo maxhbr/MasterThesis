@@ -3,21 +3,20 @@ Stokes structures are the \rewrite{necessary information} for meromorphic
 classification, i.e.\ with the Stokes structures we are able to construct a
 \rewrite{space}, which is isomorphic to the classifying \rewrite{set}.
 
-A great overview of this topic is given in
+A great overview of this topic is given by Varadarajan in
 \cite{Varadarajan96linearmeromorphic}. Other resources we will use are for
 example \rewrite{Sabbah's} book \cite[section II]{sabbah2007isomonodromic} for
 section~\ref{sec:mainThm1}.
+For the sections~\ref{sec:StokesGroup} and~\ref{sec:mainThm2} will
 \rewrite{Loday-Richaud's} paper \cite{Loday1994} and the book \cite{Loday2014}
-are also useful, especially in the sections~\ref{sec:StokesGroup}
-and~\ref{sec:mainThm2}.
-Also useful was \rewrite{Boalch's} paper \cite{boalch} (resp.\ his thesis
-\cite{thboalch}) which looks only at the single leveled case.
+be \rewrite{useful. Also useful} was \rewrite{Boalch's} paper \cite{boalch}
+(resp.\ his thesis \cite{thboalch}) which looks only at the single leveled
+case.
 
-Let $\cM^{nf}$ be a fixed model with the corresponding connection matrix $A^0$.
+Let $\cM^{nf}$ be a fixed model with the corresponding normal form $A^0$.
 The first objective is to proof the Malgrange-Sibuya theorem
 in section~\ref{sec:mainThm1}. It states that the classifying set $\cH(A^0)$
-is isomorphic, via $\exp$, to the first cohomology
-$H^1(S^1;\Lambda^{<0}(A^0))$.
+is via $\exp$ isomorphic to the first cohomology $H^1(S^1;\Lambda^{<0}(A^0))$.
 In section~\ref{sec:mainThm2} we will improve the Malgrange-Sibuya Theorem by
 showing that each 1-cohomology class in $\St(A^0)$ contains a unique
 $1$-cocycle of a special form called \emph{the Stokes cocycle}
@@ -56,12 +55,13 @@ We \rewrite{have the following} commutative diagram of isomorphisms.
 \end{center}
 The map $g$, which makes the diagram commute, is defined using the theory of
 summation, which will be roughly discussed in
-chapter~\ref{chap:multisummability}.
+section~\ref{sec:multisummability}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes structures: Malgrange-Sibuya isomorphism}\label{sec:mainThm1}
-\marginnote{\cite[Thm.I.2.1]{Loday1994}, \cite[Thm.4.3.9]{Loday2014},
-\cite[Thm.II.6.2]{sabbah2007isomonodromic}}
+\marginnote{\cite[Thm.I.2.1]{Loday1994},
+  \\\cite[Thm.4.3.9]{Loday2014},
+  \\\cite[Thm.II.6.2]{sabbah2007isomonodromic}}
 Here we will look at the classifying set and we will proof that it is
 isomorphic \TODO[as\dots] to the first non abelian cohomology \rewrite{set}
 $H^1(S^1;\Lambda^{<0}(A^0))=:\St(A^0)$.
@@ -79,7 +79,8 @@ flat isotropies.
     \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
   \end{enumerate}
   \begin{s-rem}
-    This definition makes also sense for systems wich are not in normal form.
+    This definition \rewrite{makes also sense} for systems wich are not in
+    normal form.
   \end{s-rem}
   \begin{s-rem}
     \TODO[remove? need more defs]
@@ -114,12 +115,11 @@ of $\Sto(A^0)$ relative to $\cU$. Thus the associated cochians to $(f_j)$ and
 $(f_j')$ are equivalent. One can also check that, if $(\cM,\nabla,\hat f)$ and
 $(\cM',\nabla',\hat f')$ are isomorphic, the corresponding cocycles define the
 same cohomology class. This defines a mapping of pointed sets
-to the first non abelian cohomology of $\Lambda(A^0)$
 \[
-  \cH\to H^1(S^1;\Lambda(A^0)) \,,
+  \cH\to H^1(S^1;\Lambda(A^0))
 \]
-which sends the class of $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of
-$\id$.
+to the first non abelian cohomology of $\Lambda(A^0)$, which sends the class of
+$(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$.
 
 \begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1}
   The homomorphism
@@ -141,23 +141,22 @@ isomorphism to the language of systems.
   \end{itemize}
 \end{comment}
 Let $(A,\hat F)$ be a marked pair, i.e. $\hat F$ solves $[A^0,A]$.
-There exists an open covering $\cU=(U_j)_{j\in J}$ and for every open set $U_j$
-a lift $F_j\in\Gl_n(\cA(U_j))$ which solves $[A,A^0]$.
-By $(F_kF_j^{-1})_{jk}$ is then a cocycle of the sheaf $\St(A^0)$, relative to
-the covering $\cU$, defined.
-For other lifts $F_j'$ of $\hat F$ on $U_j$, $(F_j'F_j^{-1})$ is a $0$-cochain
-of $\Sto(A^0)$ relative to $\cU$.
-Thus the associated cochians to $(f_j)$ and $(f_j')$ are equivalent.
+There exists an open covering $\cU=(U_j)_{j\in J}$ together with, for every
+open set $U_j$ a lift $F_j\in\Gl_n(\cA(U_j))$, which solves $[A,A^0]$.  By
+$(F_kF_j^{-1})_{jk}$ is then a cocycle of the sheaf $\St(A^0)$, relative to the
+covering $\cU$, defined.
+For other lifts $F_j'$ of $\hat F$ on $U_j$ is $(F_j'F_j^{-1})$ a $0$-cochain
+of $\Sto(A^0)$ relative to $\cU$, thus the associated cochians to $(F_j)$ and
+$(F_j')$ are equivalent.
 One can also check that, if $(A,\hat F)$ and $(A',\hat F')$ are equivalent, the
 corresponding cocycles define the same cohomology class.
-This defines a mapping of pointed sets to the first non abelian cohomology of
-$\Lambda(A^0)$
+This defines a welldefined mapping of pointed sets
 \[
-  \cH(A^0)\to H^1(S^1;\Lambda(A^0)) \,,
+  \cH(A^0)\to H^1(S^1;\Lambda(A^0))
 \]
-which we call $\exp$.
+to the first non abelian cohomology of $\Lambda(A^0)$, which we call $\exp$.
 
-\begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1}
+\begin{tthm}[Malgrange-Sibuya \rewrite{(system version)}] \label{thm:mainThm1}
   The homomorphism
   \[
     \exp:\cH(A^0)\to\St(A^0):=H^1(S^1;\Lambda(A^0))
@@ -174,8 +173,8 @@ which we call $\exp$.
   \end{s-defn}
   \begin{enumerate}
     \item \marginnote{\cite{Loday1994} Remark I.2.2}
-      To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains which
-      are conjugated via $\Phi$.
+      To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains,
+      which are conjugated via $\Phi$.
       We get the following commutative diagram:
       \[ \begin{tikzcd}
           G\backslash\hat G(A^1) \rar{\cdot\Phi}\dar{\exp_{A^1}}
@@ -202,43 +201,86 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
   although the proof goes back to work from Malgrange and Sibuya (see for
   example \cite{sibuya1990Linear}).}
 \TODO[Define $\tilde\cM$ or find other way!]
-\begin{proof}
-  \textbf{First look at injectivity:}
-  Consider the two elements $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$
-  of $\cH$ which map to same element
+
+We will start by proofing the injectivity of the morphism $\exp$. 
+\begin{proof}[Proof of the injectivity]
+  % \textbf{First look at injectivity:}
+  Consider the two elements $(A,\hat F)$ and $(A',\hat F')$ of
+  $\hat\Syst_m(A^0)$, whose classes in $\cH(A^0)$ get mapped to same element
   \[
-    \exp((\cM,\nabla,\hat f))=\lambda=\exp((\cM',\nabla',\hat f'))
+    \exp((A,\hat F))=\lambda=\exp((A',\hat F'))
       \in H^1(S^1;\Lambda(A^0)) \,.
   \]
-  Since \TODO{}, it is then possible to find a finite covering
+  Since we can use refined coverings, it is possible to find a finite covering
   $\cU=\{U_j;j\in J\}$ of $S^1$ such that $\lambda$ is the class of the
-  cocycles $(f_lf_j^{-1})$ and $(f_l',f_j'^{-1})$, where $f_j$,$f_j'$ are
-  defined on $U_j$.
-  Then there exists \TODO{} a $0$-cochain $(g_j)$ of the sheaf
-  $\Aut^{<0}(\tilde\cM^{nf})$ relative to the covering $(I_j)$, such that
+  cocycles $(F_lF_j^{-1})$ and $(F_l'F_j'^{-1})$, where $F_j$, $F_j'$ are
+  defined relative to $U_j\in\cU$.
+  Since $[(F_lF_j^{-1})]=[(F_l'F_j'^{-1})]$ there exists a
+  $0$-cochain $(G_j)_{j\in J}$ of the sheaf $\Lambda(A^0)$ relative to the
+  covering $\cU$, such that
   \[
-    f_l'f_j'^{-1}=g_lf_lf_j^{-1}g_j^{-1} \text{ on } I_j\cap I_l.
+    F_l'F_j'^{-1}=G_lF_lF_j^{-1}G_j^{-1} \text{ on } U_j\cap U_l.
   \]
-  If we set $\sigma=f_j^{-1}g_{j}^{-1}f_j'$ on $I_{j}$, we get a horizontal
-  section, on \TODO{}
-  Thus we have $\sigma\circ\hat{f'}=\hat f$ Therefore $(\cM,\nabla,\hat f)$ and
-  $(\cM',\nabla',\hat{f'})$ are isomorphic and injectivity is proven.
+  If we set $H_j:=F_j^{-1}G_{j}^{-1}F_j'$
+  \comm{$H_j^{-1}:=F_j'G_{j}F_j^{-1}$} on $U_{j}$, we get a solution
+  of $[A,A']$\TODO[Proofe!!!!] which satisfies $\hat F'=H_j^{-1}\hat F$ on
+  every $U_j$.  Therefore are $(A,\hat F)$ and $(A,\hat F')$ equivalent and
+  injectivity is proven.
+  \begin{comment}
+    \textbf{First look at injectivity:}
+    Consider the two elements $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$
+    of $\cH$ which map to same element
+    \[
+      \exp((\cM,\nabla,\hat f))=\lambda=\exp((\cM',\nabla',\hat f'))
+        \in H^1(S^1;\Lambda(A^0)) \,.
+    \]
+    Since we can use refined coverings, it is possible to find a finite covering
+    $\cU=\{U_j;j\in J\}$ of $S^1$ such that $\lambda$ is the class of the
+    cocycles $(f_lf_j^{-1})$ and $(f_l',f_j'^{-1})$, where $f_j$,$f_j'$ are
+    defined on $U_j$.
+    Since $[(f_lf_j^{-1})]=[(f_l'f_j'^{-1})]$ there exists a
+    $0$-cochain $(g_j)$ of the sheaf $\Aut^{<0}(\tilde\cM^{nf})$ relative to the
+    covering $(I_j)$, such that
+    \[
+      f_l'f_j'^{-1}=g_lf_lf_j^{-1}g_j^{-1} \text{ on } I_j\cap I_l.
+    \]
+    If we set $\sigma=f_j^{-1}g_{j}^{-1}f_j'$ on $I_{j}$, we get a horizontal
+    section\TODO[~on~???], thus\TODO[why?] it satisfies $\sigma\circ\hat{f'}=\hat
+    f$. Therefore are $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat{f'})$
+    isomorphic and injectivity is proven.
+  \end{comment}
+\end{proof}
 
-  \textbf{Now look at surjectivity:}
-  Exactly as in \cite{sabbah2007isomonodromic}\marginnote{Which refers to
-  \cite{Malgrange1983}} we will start this part of the proof by giving a
-  necessary and sufficient condition for a class $\lambda$ in
-  $H^1(S^1,\Lambda(A^0))$
-  \TODO[$\Lambda(A^0)\hat{=}\Aut^{<0}(\tilde\cM^{nf})$ or
-  $\Aut^{<0}(\cM^{nf})$?]
+\begin{proof}[Proof of surjectivity]
+  % \textbf{Now look at surjectivity:}
+  Similar to the proof, given by Sabbah \marginnote{Which refers to
+  \cite{Malgrange1983}} in \cite{sabbah2007isomonodromic}, we will start this
+  part of the proof by giving a necessary and sufficient condition for a class
+  $\lambda$ in $H^1(S^1,\Lambda(A^0))$
+  \TODO[$\Lambda(A^0)\sim\Aut^{<0}(\tilde\cM^{nf})$ or $\Aut^{<0}(\cM^{nf})$?]
   to come from an object
   $(\cM,\nabla,\hat f)\in\cH$:
   \begin{einr}
     This is the case if and only if the image of
     $\lambda\in\Aut^{<0}(\cM^{nf})$ in the set
-    $H^1(S^1,\Aut_{\cA}(\tilde\cM^{nf}))$ (which contains only the
-    $\cA$-linear automorphisms) is the identity.
+    $H^1(S^1,\Aut_{\cA}(\tilde\cM^{nf}))$ (where $\Aut_{\cA}(\tilde\cM^{nf})$
+    contains only the $\cA$-linear automorphisms) is the identity.
   \end{einr}
+  \begin{comment}
+      \textbf{Now look at surjectivity:}
+      Similar to the proof, given by Sabbah \marginnote{Which refers to
+      \cite{Malgrange1983}} in \cite{sabbah2007isomonodromic}, we will start this
+      part of the proof by giving a necessary and sufficient condition for a class
+      $\lambda$ in $H^1(S^1,\Lambda(A^0))$
+      to come from an object
+      $(A,\hat F)\in\cH(A^0)$:
+      \begin{einr}
+        \rewrite{This is the case if and only if the image of
+          $\lambda\in\Aut^{<0}(\cM^{nf})$ in the set
+          $H^1(S^1,\Aut_{\cA}(\tilde\cM^{nf}))$ (where $\Aut_{\cA}(\tilde\cM^{nf})$
+        contains only the $\cA$-linear automorphisms) is the identity.}
+      \end{einr}
+  \end{comment}
   \begin{proof}
     \textbf{``\Rightarrow{}'':}
     If $\lambda$ is the image of some $(\cM,\nabla,\hat f)$ then there exists
@@ -256,11 +298,11 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
     If for some suitable covering $(I_j)$ the cocycle $(\lambda_{jl})$ is a
     coboundary with values in $\Aut_\cA(\tilde\cM^{nf})$, i.e.\
     $\lambda_{jl}=f_lf_j^{-1}$, we define a new connection $\nabla$ on
-    $\tilde\cM^{nf}$ by conjugating $\nabla^{nf}$ by $f_j$ on $I_j$.
+    $\tilde\cM^{nf}$ by conjugating $\nabla^{nf}$ by $f_j$ on $U_j$.
 
     \TODO{}
 
-    Moreover $\hat f_j=\hat f_l$ on $I_j\cap I_l$, so that the formal
+    Moreover $\hat f_j=\hat f_l$ on $U_j\cap U_l$, so that the formal
     isomorphisms
     \[
       \hat f_j:(\hat \cM^{nf},\nabla)
@@ -272,8 +314,8 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
   \end{proof}
 
   Thus, the proof of~\ref{thm:mainThm1} is a consequence of the following
-  Malgrange-Sibuya theorem.
-  \begin{thm}[Malgrange-Sibuya]
+  theorem by Malgrange and Sibuya.
+  \begin{thm}[Malgrange-Sibuya]\label{thm:malgSibuyaHelp}
     \marginnote{\cite[Thm.II.6.10]{sabbah2007isomonodromic}}
     The image of the mapping
     \[
@@ -283,12 +325,9 @@ obtained by choosing $X=\{0\}$ as the trivial deformation space.
     \]
     is the identity.
   \end{thm}
-  \begin{proof}
-     For which we refer to
-     \cite[Th.A.1]{Malgrange1983},
-     \cite[Th.6.4.1]{sibuya1990Linear},
-     \cite{babbitt1989local}
-  \end{proof}
+  For the proof of Theorem~\ref{thm:malgSibuyaHelp} which we refer to
+  \cite[Th.A.1]{Malgrange1983}, \cite[Th.6.4.1]{sibuya1990Linear} and
+  \cite{babbitt1989local}.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -655,7 +694,7 @@ the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
   conjugation by an invertible matrix defines an isomorphism to its
   \rewrite{image}.
 
-  The \textbf{surcjectivity} can also \rewrite{be seen easily}, since every
+  The \textbf{surjectivity} can also \rewrite{be seen easily}, since every
   constant (unipotent) matrix, with zeros at the necessary positions,
   characterizes a unique element of $\Sto_\theta(A^0)$.
   \TODO[Isomorphic to $\C^{?}$?]

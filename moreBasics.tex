@@ -252,3 +252,287 @@ direct product of two groups.
     $G$ as a group of matrices.
   \end{s-rem}
 \end{defn}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Multisummability}\label{sec:multisummability}
+\begin{comment}
+  \cite[Sec.III.2]{Loday2014},
+  \cite[Chap.6]{Loday2014} and
+  \cite[Chap.8]{Loday2014}
+\end{comment}
+\marginnote{\cite[111]{Loday2014}}
+The aim of a theory of summation is  to associate with any series an asymptotic
+function uniquely determined in a way as much natural as possible.
+\rewrite{We will take this as a black box and only use the fact, that it makes
+the asymptotic expansion unique.}
+
+A useful resource for this topic is Loday-Richaud's book \cite{Loday2014}.
+
+Let $[A^0]$ be a normal form and $\hat F\in\hat G(A^0)$ a formal
+transformation. Denote the transformed system by $A={}^{\hat F}\!A^0$.
+
+\marginnote{\cite[Sec.III.2.1]{Loday1994}}
+Let $\dot\phi=(\dot\phi_j)_{j\in J}\in\Gamma(\dot{\mathcal{V}};\Lambda(A^0))$
+be a $1$-cocycle in the image of the equivalence class of $\hat F$ by $\exp$.
+\begin{prop}\label{prop:multisummability}
+  \marginnote{\cite[Prop.III.2.1]{Loday1994}
+    ,\cite[Thm.4.3.13]{Loday2014}
+    ,\cite[Thm.1]{BJL1979Birkhoff}}
+  There exists a \textbf{unique} family of realizations $(F_j)_{j\in J}$ of
+  $\hat F$ over $\mathcal{V}$, i.e.\ matrices $F_j$ which are analytic on
+  $V_j$, satisfy $[A^0,A]$ and are asymptotic to $\hat F$ on $V_j$, such that
+  \[
+    \dot\phi_j=F_{j-1}F_j^{-1}
+  \]
+  for every $j\in J$.
+\end{prop}
+When $\mathcal{V}$ is the, in section~\ref{sec:proofOfMatrixThm} defined,
+cyclic covering $\cU^{\leq k_r}=:\cU$ and $\dot\phi$ is in its Stokes 
+form\TODO[~(cf.~??)], we call the realizations $F_{\alpha}$, the
+\emph{sums of $\hat F$}.
+\begin{defn}\label{defn:sumsLeftRight}
+  \marginnote{\cite[Defn.III.2.2]{Loday1994}}
+  Denote by $\alpha^+$ the next anti-Stokes direction on the right of $\alpha$
+  we can define
+  \begin{itemize}
+    \item $S_\alpha^-(\hat F):=F_\alpha$ as the \emph{sum of $\hat F$ on the
+      left of $\alpha$} and
+    \item $S_\alpha^+(\hat F):=F_{\alpha^+}$ as the \emph{sum of $\hat F$ on
+      the right of $\alpha$}.
+  \end{itemize}
+\end{defn}
+
+\marginnote{\cite[883]{Loday1994}}
+Let $\hat F_0\in\hat G(A^0)$ and $A^1={}^{\hat F_0}\!A^0$ and let
+\[
+  \exp_{A^1}(\hat F):G\backslash\hat G(A^1) \to H^1(S^1;\Lambda(A^1))
+\]
+be the Malgrange-Sibuya isomorphism (cf.\ Remark~\ref{rem:expNonNormalForm}).
+
+\marginnote{\cite[883]{Loday1994}}
+The definition of the subsheaf $\Lambda^{\geq k}(A^1)$ of $\Lambda(A^1)$
+\rewrite{needs a few additional justifications.} \TODO{}
+
+\begin{defn}
+  \marginnote{\cite[Defn.III.2.3]{Loday1994}}
+  A $1$-cocycle $\dot\phi=(\dot\phi_j)_{j\in J}$ is \emph{$k$-summable} if, for
+  all $j\in J$, it satisfies the conditions
+  \begin{enumerate}
+    \item $\dot\phi_j$ is of level $\geq k$,
+      i.e.\ $\phi_j\in\Gamma(\dot V_j;\Lambda^{\geq k}(A^1))$ and
+    \item the opening of $\dot V_j$ is $\frac{\pi}{k}$.
+  \end{enumerate}
+  An element of $\hat F\in\hat G(A^1)$ is \emph{$k$-summable} when
+  $\exp_{A^1}(\hat F)$ contains a $k$-summable cocycle.
+\end{defn}
+
+\marginnote{\cite[883]{Loday1994}}
+If in a cohomology class is a $k$-summable cocycle, it is unique up to extra
+trivial components.
+The realizations of such a $k$-summable cocycle define the $k$-sums of
+$\hat F$\comm{~in an essentially unique way}.
+When $[A^1]$ is meromorphically equivalent to $[A^0]$,
+i.e.\ $\hat F\in G(\!\{t\}\!)$, then
+\begin{einr}
+  $\hat F$ is $k$-summable
+\end{einr}
+if and only if
+\begin{einr}
+  its Stokes cocycle $\dot\phi=(\dot\phi_\theta)_{\theta\in\A}$ belongs to
+  $\Gamma(\dot\cU^k;\Lambda^k)$.
+\end{einr}
+This occurs when the Stokes cocycle $\dot\phi$ of $\hat F$ bears only the level
+$k$.
+
+\begin{comment}
+  \cite[883]{Loday1994} Turrittin's problem
+\end{comment}
+
+\begin{defn}\label{defn:singlDir}
+  \marginnote{\cite[Defn.III.2.4]{Loday1994}}
+  Let $\hat F\in\hat G(A^1)$ be $k$-summable and $(\dot\phi_j)_{j\in
+  J}\in\prod_{j\in J}\Gamma(\dot V_j;\Lambda(A^1))$ the corresponding
+  $k$-summable cocycle in $\exp_{A^1}(\hat F)$.
+
+  To each $j\in J$ with a nontrivial $\dot\phi_j$ we define the bisecting
+  direction of $\dot V_j$ as a \emph{singular direction for $\hat F$}.
+\end{defn}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Factorization}
+
+Let $\dot f\in\Gamma(\dot\cU;\Lambda(A^0))$ be the Stokes cocycle associated to
+$\hat F$ and $k=\max(\cK(\dot f))$ be the maximal level beared by $\dot f$.
+We then know, since $\dot f^{\leq k}=\dot f$ and we have
+corollary~\ref{cor:factorStokesGerms} that there is a unique decomposition
+\[
+  \dot f=\dot f^{<k}\dot g^k
+  \qquad\text{and}\qquad
+  \dot f=\dot f^k\dot f^{<k}
+\]
+where $\dot f^k$, $\dot g^k\in\Gamma(\dot\cU^{\leq k};\Lambda^k(A^0))$ and
+$\dot f^{<k}\in\Gamma(\dot\cU^{\leq k};\Lambda^{<k}(A^0))$.
+
+Since the cohomology class of $\dot f^{<k}$ belongs to $H^1(S^1;\Lambda(A^0))$
+we know from the Malgrange-Sibuya theorem that there exists an, up to left
+meromorphic factor unique, element $\hat F^{<0}$ of $\hat G(A^0)$ such that
+$\dot f^{<k}$ belongs to $\exp_{A^0}(\hat F^{<k})$.
+
+Let $A^1:={}^{\hat F^{<k}}\!A^0$ and define $\hat F^k$ by
+$\hat F^k=\hat F(\hat F^{<k})^{-1}$.
+
+\TODO[\dots]
+
+\begin{prop}\label{prop:Lod.III.2.6}
+  \marginnote{\cite[Prop.III.2.6]{Loday1994}}
+  We have, that
+  \begin{enumerate}
+    \item $\hat F^k$ is $k$-summable with singular directions
+      (cf.\ Definition~\ref{defn:singlDir}) belonging to
+      $\A^k$
+    \item The levels in the Stokes cocyle of $\hat F^{<k}$ are $<k$.
+    \item The decomposition $\hat F=\hat F^{k}\hat F^{<k}$ with properties 1.\
+      and 2.\ is essentially unique, that means:
+      \begin{einr}
+        if $\hat F=\hat H^k\hat H^{<k}$ is another decomposition, there is a
+        matrix $h\in G(\!\{t\}\!)$ such that $\hat H^{<k}=h\hat F^{<k}$ and
+        $\hat H^{k}=\hat F^{k}h^{-1}$.
+      \end{einr}
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  The first property \TODO[\dots]
+
+  The property 2.\ is clear, \rewrite{since larger levels would require more
+  singular directions}.
+
+  The property 3.\ results from the fact that we must have
+  \[
+    \exp_{A^0}(\hat H^{<k})=\exp_{A^0}(\hat F^{<k}).
+  \]
+\end{proof}
+\begin{thm}\label{thm:summaFaktori}
+  \marginnote{\cite[Thm.III.2.5]{Loday1994}}
+  Let $\hat F\in\hat G(A^0)$ be a formal transformation and
+  $\cK=\{k_1<k_2<\cdots<k_r\}$ be the set of levels of $[A^0]$. Then $\hat F$
+  can be factored in
+  \[
+    \hat F=\hat F_r\hat F_{r-1}\dots\hat F_2\hat F_1
+  \]
+  where the matrices $\hat F_j$ are
+  \begin{itemize}
+    \item $k_j$-summable and
+    \item with singular directions belonging to the set $\cA^{k_j}$.
+  \end{itemize}
+\end{thm}
+\begin{proof}
+  Follows from proposition~\ref{prop:Lod.III.2.6}
+\end{proof}
+
+\begin{comment}
+  \begin{cor}
+    \marginnote{\cite[Cor.III.2.7]{Loday1994}}
+    Write the twisted cocyle $\dot\phi\in\exp_{A^1}(\hat F^k)$ in terms of
+    sums of $\hat F^k$ over $\cU^{\leq k}$:
+    \[
+      \dot \phi_\theta=S_\theta^-(\hat F^k)^{-1}S_\theta^+(\hat F^k)
+      \text{, }
+      \theta\in\A^{\leq k} \,.
+    \]
+    Then, the factors $\dot g^k=(\dot g^k_\theta)_{\theta\in\A^{\leq k}}$ and
+    $\dot f^k=(\dot f^k_\theta)_{\theta\in\A^{\leq k}}$ in the induced
+    decompositions satisfy
+    \begin{align*}
+      \dot g_\theta^k &=S_\theta^+(\hat F^{<k})^{-1}
+                        S_\theta^-(\hat F^k)^{-1}
+                        S_\theta^+(\hat F^k)
+                        S_\theta^+(\hat F^{<k}) \,,
+    \\\dot f_\theta^k &=S_\theta^-(\hat F^{<k})^{-1}
+                        S_\theta^-(\hat F^k)^{-1}
+                        S_\theta^+(\hat F^k)
+                        S_\theta^+(\hat F^{<k}) \,.
+    \end{align*}
+  \end{cor}
+\end{comment}
+
+\subsection{The map
+  $g:G\backslash\hat G(A^0)\to\prod_{\theta\in\cA}\Sto_\theta(A^0)$}
+  \label{sect:multisummmap}
+There are other definitions, which are equivalent to
+definition~\ref{defn:sumsLeftRight}. Since some of them are more direct
+and do not use the $1$-cocycle, to which they correspond, they can be used to
+obtain the corresponding $1$-cocycle. \rewrite{Many different approaches to
+define the sums can be found in} \cite{Loday2014}.
+
+Let us fix an ambassador $\hat F$ in $G\backslash\hat G(A^0)$. We then use
+proposition~\ref{prop:multisummability} to obtain an $1$-cocycle.
+\marginnote{\cite[Thm.4.3.13]{Loday2014}}
+An element in $\prod_{\theta\in\A}\Sto_\theta(A^0)$ corresponding to $\hat F$
+is found as
+\[
+  (\phi_{\theta_1},\dots,\phi_{\theta_\nu})
+  \in\prod_{\theta\in\A}\Sto_\theta(A^0)
+\]
+by setting $\phi_\theta:=
+\left(S^-_\theta(\hat F)\right)̂^{̀-1}S^+_\theta(\hat F)\in\Sto_\theta(A^0)$
+(cf.\ Definition~\ref{defn:sumsLeftRight}).
+\begin{rem}
+  \marginnote{\cite[Defn.3.6]{boalch}}
+  $S^+_\theta(\hat F)t^Le^{Q(t^{-1})}$ is 
+  $\left\{\substack{\text{\rewrite{a}}\\\text{\rewrite{the canonical}}}\right\}$ fundamental
+  solution of $[A]$ on the corresponding sector.
+  \TODO[ or $S^-_\theta(\hat F)t^Le^{Q(t^{-1})}$?  or
+    $t^Le^{Q(t^{-1})}S^+_\theta(\hat F)$?  or
+  $t^Le^{Q(t^{-1})}S^-_\theta(\hat F)$?]
+  Using the equation (\ref{eq:representation}) we can write
+  \[
+    S^+_\theta(\hat F)
+    \cY_{0,\tilde\theta}(t)
+    =
+    S^-_\theta(\hat F)
+    \cY_{0,\tilde\theta}(t)C_{\cY_{0,\tilde\theta}}
+  \]
+  thus the Stokes matrix $C_{\cY_{0,\tilde\theta}}$ is a matrix, which
+  describes the \rewrite{blending} between the two adjacent sectors.
+  \TODO[see Lodays remarks on thm.4.3.13 in \cite{Loday2014}]
+\end{rem}
+\begin{rem}
+  For each $\theta\in\A$ is $\phi_\theta$
+  \begin{enumerate}
+    \item flat, since $\hat\phi_\theta
+         =\hat{\left(F_\theta^+\right)̂^{̀-1}}\hat{F_\theta^-}
+         =\hat{F}^{̀-1}\hat{F}=\id$
+    \item an isotropy, since
+        ${}^{\phi_\theta}\!A^0
+         = {}^{\left(F_\theta^+\right)̂^{̀-1}F_\theta^-}\!A^0
+         = {}^{\left(F_\theta^+\right)̂^{̀-1}}\!\left({}^{F_\theta^-}\!A^0\right)
+         \overset{\TODO{}}{=}{}^{\left(F_\theta^+\right)̂^{̀-1}}\!A^1
+         \overset{\TODO{}}{=}A^0$
+      % \begin{commentOUT}
+      %   \begin{align*}
+      %     {}^{\phi_\theta}\!A^0
+      %     &= (d\phi_\theta)\phi_\theta^{-1}+\phi_\theta A^0
+      %     \phi_\theta^{-1}
+      %   \\&=\left(
+      %       d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
+      %       +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
+      %     \right)\phi_\theta^{-1}+\phi_\theta A^0\phi_\theta^{-1}
+      %   \\&=\left(
+      %       d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
+      %       +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
+      %     \right) \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+      %     +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
+      %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+      %   \\&=
+      %      d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^+
+      %      +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
+      %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+      %      +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
+      %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+      %   \\&=\TODO{}
+      %   \\&=A^0
+      %   \end{align*}
+      % \end{commentOUT}
+    \item of maximal decay, since \TODO{}
+  \end{enumerate}
+\end{rem}
