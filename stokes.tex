@@ -21,7 +21,7 @@ In section~\ref{sec:mainThm2} we will improve the Malgrange-Sibuya Theorem by
 showing that each 1-cohomology class in $\St(A^0)$ contains a unique
 $1$-cocycle of a special form called \emph{the Stokes cocycle}
 (cf.\ Section~\ref{sec:StokesGroup}).
-The morphism, which maps each Stokes cocyle to its corresponding $1$-cocycle
+The morphism, which maps each Stokes cocycle to its corresponding $1$-cocycle
 will be denoted by $h$.
 
 We \rewrite{have the following} commutative diagram of isomorphisms.
@@ -65,6 +65,8 @@ section~\ref{sec:multisummability}.
 Here we will look at the classifying set and we will proof that it is
 isomorphic \TODO[as\dots] to the first non abelian cohomology \rewrite{set}
 $H^1(S^1;\Lambda^{<0}(A^0))=:\St(A^0)$.
+If we talk about cocycles or cochains, we will in the following always mean
+$1$-cocycles or $1$-cochains.
 
 Let us first define the Stokes sheaf $\Lambda(A^0)$ on $S^1$, as the sheaf of
 flat isotropies.
@@ -101,6 +103,9 @@ flat isotropies.
 \end{defn}
 
 \subsection{The theorem}
+In the language of meromorphic connections is the Malgrange-Sibuya Theorem
+described as follows.
+
 Let $(\cM,\nabla,\hat f)$ be a marked germ of a  meromorphic connection.
 There exists an open covering $\cU=(U_j)_{j\in J}$ and for every open set an
 isomorphism
@@ -108,20 +113,24 @@ isomorphism
   f_j:(\tilde\cM,\tilde\nabla)_{|U_j}
   \to(\tilde\cM^{nf},\tilde\nabla^{nf})_{|U_j}
 \]
-such that $\hat f_j=f$. By $(f_kf_j^{-1})_{jk}$ is then a cocycle of the
+such that $\hat f_j=\hat f$. By $(f_kf_j^{-1})_{jk}$ is then a cocycle of the
 sheaf $\St(A^0)$, relative to the covering $\cU$, defined.
-For other lifts $f_j'$ of $\hat f$ on $W_j$, $(f_j'f_j^{-1})$ is a $0$-cochain
-of $\Sto(A^0)$ relative to $\cU$. Thus the associated cochians to $(f_j)$ and
-$(f_j')$ are equivalent. One can also check that, if $(\cM,\nabla,\hat f)$ and
-$(\cM',\nabla',\hat f')$ are isomorphic, the corresponding cocycles define the
-same cohomology class. This defines a mapping of pointed sets
+\begin{comment}
+  For other lifts $f_j'$ of $\hat f$ on $W_j$, $(f_j'f_j^{-1})$ is a
+  $0$-cochain of $\Sto(A^0)$ relative to $\cU$. Thus the associated cochians to
+  $(f_j)$ and $(f_j')$ are equivalent. One can also check that, if
+  $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$ are isomorphic, the
+  corresponding cocycles define the same cohomology class.
+\end{comment}
+This defines a mapping of pointed sets
 \[
   \cH\to H^1(S^1;\Lambda(A^0))
 \]
 to the first non abelian cohomology of $\Lambda(A^0)$, which sends the class of
 $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$.
 
-\begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1}
+\begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1MeromVersion}
+  \marginnote{\cite[Theorem 4.5.1]{babbitt1989local}}
   The homomorphism
   \[
     \exp:\cH\to\St(A^0):=H^1(S^1;\Lambda(A^0))
@@ -135,16 +144,13 @@ $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$.
 Since the language of meromorphic connections is equivalent to the one of
 systems, there is also the translated version of the Malgrange-Sibuya
 isomorphism to the language of systems.
-\begin{comment}
-  \begin{itemize}
-    \item \TODO[See \cite{thboalch} for sheaf-less definition]
-  \end{itemize}
-\end{comment}
-Let $(A,\hat F)$ be a marked pair, i.e. $\hat F$ solves $[A^0,A]$.
+
+Let $(A,\hat F)$ be a marked pair, i.e.\ $\hat F$ solves $[A^0,A]$.
 There exists an open covering $\cU=(U_j)_{j\in J}$ together with, for every
-open set $U_j$ a lift $F_j\in\Gl_n(\cA(U_j))$, which solves $[A,A^0]$.  By
-$(F_kF_j^{-1})_{jk}$ is then a cocycle of the sheaf $\St(A^0)$, relative to the
-covering $\cU$, defined.
+open set $U_j$ a lift $F_j\in\Gl_n(\cA(U_j))$
+(cf.\ Definition~\ref{defn:lift}), which solves $[A,A^0]$.
+By $(F_kF_j^{-1})_{jk}$ is then a cocycle of the sheaf $\St(A^0)$, relative to
+the covering $\cU$, defined.
 For other lifts $F_j'$ of $\hat F$ on $U_j$ is $(F_j'F_j^{-1})$ a $0$-cochain
 of $\Sto(A^0)$ relative to $\cU$, thus the associated cochians to $(F_j)$ and
 $(F_j')$ are equivalent.
@@ -157,6 +163,7 @@ This defines a welldefined mapping of pointed sets
 to the first non abelian cohomology of $\Lambda(A^0)$, which we call $\exp$.
 
 \begin{tthm}[Malgrange-Sibuya \rewrite{(system version)}] \label{thm:mainThm1}
+  \marginnote{\cite[Theorem 4.5.1]{babbitt1989local}}
   The homomorphism
   \[
     \exp:\cH(A^0)\to\St(A^0):=H^1(S^1;\Lambda(A^0))
@@ -164,13 +171,11 @@ to the first non abelian cohomology of $\Lambda(A^0)$, which we call $\exp$.
   is an isomorphism of pointed\footnote{Which maps the class of
   $(A^0,\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology class.} sets.
 \end{tthm}
+Since the morphism $\exp$ depends on the choice of the normal form, we will
+denote that, if it is not clear, by
+$\exp_{A^0}=\exp$\footnote{In Loday's book~\cite{Loday1994} this is denoted as
+$\exp_{\mu_0}$.}.
 \begin{rem}\label{rem:expNonNormalForm}
-  \begin{s-defn}
-    Since the morphism $\exp$ depends on the choice of the normal form, we will
-    denote that, if it is not clear, by
-    $\exp_{A^0}=\exp$\footnote{In Loday's book~\cite{Loday1994} this is denoted
-    as $\exp_{\mu_0}$.}.
-  \end{s-defn}
   \begin{enumerate}
     \item \marginnote{\cite{Loday1994} Remark I.2.2}
       To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains,
@@ -194,15 +199,19 @@ to the first non abelian cohomology of $\Lambda(A^0)$, which we call $\exp$.
 \end{rem}
 
 \subsection{Proof}
-We will mainly refer to \cite[section 6.d]{sabbah2007isomonodromic}, where a
-slightly more complicated case, with deformation space, is proofen. Our proof is
-obtained by choosing $X=\{0\}$ as the trivial deformation space.
+We will mainly refer to \cite[Proof of Theorem 4.5.1]{babbitt1989local} and
+\cite[Section 6.d]{sabbah2007isomonodromic}, where a slightly more complicated
+case with deformation space is proofen. These both resources proof the theorem
+using the languages of meromorphic connections, whereas we will use systems.
+\begin{comment}
+  Our proof is obtained by choosing $X=\{0\}$ as the trivial deformation space
+  and by translating to systems.
+\end{comment}
 \marginnote{See also \cite{BJL1979Birkhoff} and \cite{babbitt1989local}
   although the proof goes back to work from Malgrange and Sibuya (see for
   example \cite{sibuya1990Linear}).}
-\TODO[Define $\tilde\cM$ or find other way!]
 
-We will start by proofing the injectivity of the morphism $\exp$. 
+We will start by proofing the injectivity of the morphism $\exp$.
 \begin{proof}[Proof of the injectivity]
   % \textbf{First look at injectivity:}
   Consider the two elements $(A,\hat F)$ and $(A',\hat F')$ of
@@ -219,17 +228,30 @@ We will start by proofing the injectivity of the morphism $\exp$.
   $0$-cochain $(G_j)_{j\in J}$ of the sheaf $\Lambda(A^0)$ relative to the
   covering $\cU$, such that
   \[
-    F_l'F_j'^{-1}=G_lF_lF_j^{-1}G_j^{-1} \text{ on } U_j\cap U_l.
+    F_l'F_j'^{-1}=G_lF_lF_j^{-1}G_j^{-1}
+    \text{~on~the~arc~} U_j\cap U_l \,.
   \]
   If we set $H_j:=F_j^{-1}G_{j}^{-1}F_j'$
-  \comm{$H_j^{-1}:=F_j'G_{j}F_j^{-1}$} on $U_{j}$, we get a solution
-  of $[A,A']$\TODO[Proofe!!!!] which satisfies $\hat F'=H_j^{-1}\hat F$ on
-  every $U_j$.  Therefore are $(A,\hat F)$ and $(A,\hat F')$ equivalent and
-  injectivity is proven.
+  \comm{($H_j^{-1}:=F_j'G_{j}F_j^{-1}$)} on $U_{j}$, we get
+  \begin{itemize}
+    \item a solution of $[A,A']$\TODO[Proofe!!!!], i.e.\ satisfies
+      ${}^{H_j}A=A'$,
+      \begin{comment}
+        \begin{align*}
+          {}^{H_j}A &= (dH_j)H_j^{-1}+H_jAH_j^{-1}
+          \\&=(d(F_j^{-1}G_{j}^{-1}F_j'))F_j'G_{j}F_j^{-1}
+              F_j^{-1}G_{j}^{-1}F_j'AF_j'G_{j}F_j^{-1}
+        \end{align*}
+      \end{comment}
+    \item which satisfies $\hat F'=\hat H_j^{-1}\hat F$ on every $U_j$, since
+      for every $j\in J$ is $G_j$ flat.
+  \end{itemize}
+  Therefore are $(A,\hat F)$ and $(A,\hat F')$ equivalent and injectivity is
+  proven.
   \begin{comment}
     \textbf{First look at injectivity:}
     Consider the two elements $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$
-    of $\cH$ which map to same element
+    of $\cH$ which map to same cohomology class
     \[
       \exp((\cM,\nabla,\hat f))=\lambda=\exp((\cM',\nabla',\hat f'))
         \in H^1(S^1;\Lambda(A^0)) \,.
@@ -251,6 +273,118 @@ We will start by proofing the injectivity of the morphism $\exp$.
   \end{comment}
 \end{proof}
 
+For the proof of the surjectivity we will use another result from Malgrange and
+Sibuya, which is also called the Malgrange-Sibuya Theorem. It can for example
+be found in Babbitt and Varadarajans's book \cite[65ff]{babbitt1989local} as
+Theorem 4.2.1.
+
+Let $\hat F\in G(\!(t)\!)$ be a matrix with formally meromorphic entries. By
+the Borel-Ritt Lemma (cf.\ Theorem~\ref{thm:borel-ritt}) we then know, that
+there exists for every sector $\mathfrak{s}$ a holomorphic function
+$g:\mathfrak{s}\to G$ which is asymptotic to $\hat F$.
+We will denote the set of all such holomorphic functions, which are on
+the arc $I$ asymptotic to $\id\in G(\!(t)\!)$ by
+\[
+  \mathcal{G}(I)=\left\{g\in\Gl_n(\cA(I))\mid g\sim_I\id\right\}\,,
+\]
+and this defines a sheaf $\mathcal{G}$ on $S^1$.
+The statement of the Malgrange-Sibuya Theorem is then, that the
+\rewrite{differece} between formal and konvergent invertible matrices is
+described by the first sheaf cohomology $H^1(S^1,\mathcal{G})$ of
+$\mathcal{G}$ via the map
+\[
+  \Theta: G\llbracket t\rrbracket/G\{t\}\to H^1(S^1,\mathcal{G}) \,,
+\]
+which is set up as follows:
+\begin{einr}
+  Let $[\hat F]\in G\llbracket t\rrbracket/G\{t\}$ with ambassador $\hat F$ and
+  let $\cU=\{U_j\mid j\in J\}$ be a finite covering of $S^1$ by open arcs.
+  The Borel-Ritt Lemma yields for every arc $j\in J$ a holomorphic function
+  $F_j$ which satisfies $F_j\sim_{U_j}\hat F$.
+  By $(F_lF_j^{-1})_{j,l\in J}$ is then a cocycle for $\mathcal{G}$ defined,
+  and write $\Theta([\hat F])$ for the corresponding cohomology class.
+\end{einr}
+It can be verified, that the cass $\Theta([\hat F])$ does not depend on
+\begin{itemize}
+  \item the choise of an ambassador $\hat F$ in
+    $[\hat F]\in G\llbracket t\rrbracket/G\{t\}$\TODO[proof!],
+  \item the choice of the covering $\cU$\TODO[proof!] nor
+  \item the choice the $F_j$\TODO[proof!].
+\end{itemize}
+\begin{lem}
+  The mapping $\Theta$ is injective.
+\end{lem}
+\begin{proof}
+  Let $\hat F$ and $\hat F'\in G\llbracket t\rrbracket$ such that
+  $\Theta([\hat F])=\Theta([\hat F'])$.
+  We then can find a covering $\cU=\{U_j\mid j\in J\}$ together with
+  holomorphic functions $F_j$ and $F_j'$, which satisfy
+  $F_j\sim_{U_j}\hat F$ and $F_j'\sim_{U_j}\hat F'$, such that
+  $(F_lF_j^{-1})_{j,l\in J}$ and $(F_l'F_j'^{-1})_{j,l\in J}$ determine the
+  classes $\Theta([\hat F])$ and $\Theta([\hat F'])$.
+  This implies that there are maps $g_j$, which are on $U_j$ holomorphic and
+  satisfy $g_j\sim_{U_j}\id$ such that
+  \[
+    F_lF_j^{-1}=g_lF_l'F_j'^{-1}g_j^{-1}
+    \text{~on~the~arc~} U_j\cap U_l
+  \]
+  This equation can be rewritten to
+  \[
+    F_l'^{-1}g_l^{-1}F_l=F_j'^{-1}g_j^{-1}F_j
+    \text{~on~the~arc~} U_j\cap U_l \,.
+  \]
+  Since this tells us, that the functions $F_j'^{-1}g_j^{-1}F_j$ coincide on
+  the overlapping and define a holomorphic map from the arc $S^1$ (i.e.\ a
+  punctured disc with a small radius) into $G$, which will be called $g$.
+  Since $F_j'^{-1}g_j^{-1}F_j\sim_{U_j}\id$ for all $j\in J$, we have
+  $g\sim\id$.
+  \TODO[Riemannscher hebbarkeits satz]
+  This defined $g$ satisfies $g=F'^{-1}F$, so that $[F]=[F']$.
+\end{proof}
+\TODO[\cite{babbitt1989local} on page 66]
+\begin{thm}[Malgrange-Sibuya]
+  The map $\Theta$ is an isomorphism
+  \[
+    G\llbracket t\rrbracket/G\{t\}\cong H^1(S^1,\mathcal{G}).
+  \]
+  \begin{s-rem}
+    Since we know that
+    $G\llbracket t\rrbracket/G\{t\}\cong G(\!(t)\!)/G(\!\{t\}\!)$\TODO[(cf~??)],
+    we get also
+    \[
+      G(\!(t)\!)/G(\!\{t\}\!)\cong H^1(S^1,\mathcal{G}).
+    \]
+  \end{s-rem}
+\end{thm}
+This theorem is proven in Section 4.4 of Babbitt and Varadarajan's book
+\cite{babbitt1989local}.
+
+\begin{proof}[Proof of surjectivity]
+  \marginnote{\cite[72]{babbitt1989local}}
+  Let the cohomology class $\lambda\in H^1(S^1,\Lambda(A^0))$ be represented by
+  a cocycle $(F_{jl})_{j,l\in J}$ associated with some finite covering
+  $\cU=\{U_j;j\in J\}$ of $S^1$. We especially know, that
+  \begin{itemize}
+    \item $F_{jl}$ is on $U_j\cap U_l$ asymptotic to $\id$ and
+    \item it is a  ${}^{F_{jl}}A^0=A^0$.
+  \end{itemize}
+  The cocycle $(F_{jl})_{j,l\in J}$ also determines an element in
+  $H^1(S^1,\Gl_n(\cA^{<0}))$.
+  We then can use the Theorem 4.2.1{} in Babbitt and Varadarajans's book
+  \cite[65ff]{babbitt1989local}, which states the following:
+  \begin{thm}[Malgrange-Sibuya]
+    There is a isomorphism
+    \[
+      G\llbracket t\rrbracket/G\{t\}\cong H^1(S^1,\Gl_n(\cA^{<0})).
+    \]
+  \end{thm}
+  We also know that
+  $G\llbracket t\rrbracket/G\{t\}\cong G(\!(t)\!)/G(\!\{t\}\!)$\TODO[(cf~??)],
+  thus we can use $G(\!(t)\!)/G(\!\{t\}\!)\cong H^1(S^1,\Gl_n(\cA^{<0}))$.
+  \TODO[lese weiter bei babbitt1989local]
+\end{proof}
+
+\TODO[Define $\tilde\cM$ or find other way!]
 \begin{proof}[Proof of surjectivity]
   % \textbf{Now look at surjectivity:}
   Similar to the proof, given by Sabbah \marginnote{Which refers to
@@ -992,7 +1126,7 @@ as a corollary.
 \TODO[This goes back to \cite{BJL1979Birkhoff}?]
 \begin{comment}
   In other words, this theorem states that in each element of $\St(A^0)$ is
-  an unique $1$-cocyle, which is a Stokes cocycle.
+  an unique $1$-cocycle, which is a Stokes cocycle.
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
