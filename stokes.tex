@@ -285,15 +285,15 @@ $g:\mathfrak{s}\to G$ which is asymptotic to $\hat F$.
 We will denote the set of all such holomorphic functions, which are on
 the arc $I$ asymptotic to $\id\in G(\!(t)\!)$ by
 \[
-  \mathcal{G}(I)=\left\{g\in\Gl_n(\cA(I))\mid g\sim_I\id\right\}\,,
+  \cG(I)=\left\{g\in\Gl_n(\cA(I))\mid g\sim_I\id\right\}\,,
 \]
-and this defines a sheaf $\mathcal{G}$ on $S^1$.
+and this defines a sheaf $\cG$ on $S^1$.
 The statement of the Malgrange-Sibuya Theorem is then, that the
 \rewrite{differece} between formal and konvergent invertible matrices is
-described by the first sheaf cohomology $H^1(S^1,\mathcal{G})$ of
-$\mathcal{G}$ via the map
+described by the first sheaf cohomology $H^1(S^1,\cG)$ of
+$\cG$ via the map
 \[
-  \Theta: G\llbracket t\rrbracket/G\{t\}\to H^1(S^1,\mathcal{G}) \,,
+  \Theta: G\llbracket t\rrbracket/G\{t\}\to H^1(S^1,\cG) \,,
 \]
 which is set up as follows:
 \begin{einr}
@@ -301,7 +301,7 @@ which is set up as follows:
   let $\cU=\{U_j\mid j\in J\}$ be a finite covering of $S^1$ by open arcs.
   The Borel-Ritt Lemma yields for every arc $j\in J$ a holomorphic function
   $F_j$ which satisfies $F_j\sim_{U_j}\hat F$.
-  By $(F_lF_j^{-1})_{j,l\in J}$ is then a cocycle for $\mathcal{G}$ defined,
+  By $(F_lF_j^{-1})_{j,l\in J}$ is then a cocycle for $\cG$ defined,
   and write $\Theta([\hat F])$ for the corresponding cohomology class.
 \end{einr}
 It can be verified, that the cass $\Theta([\hat F])$ does not depend on
@@ -312,6 +312,7 @@ It can be verified, that the cass $\Theta([\hat F])$ does not depend on
   \item the choice the $F_j$\TODO[proof!].
 \end{itemize}
 \begin{lem}
+  \TODO[remove this lemma? is not needed/used]
   The mapping $\Theta$ is injective.
 \end{lem}
 \begin{proof}
@@ -339,26 +340,27 @@ It can be verified, that the cass $\Theta([\hat F])$ does not depend on
   Since $F_j'^{-1}g_j^{-1}F_j\sim_{U_j}\id$ for all $j\in J$, we have
   $g\sim\id$.
   \TODO[Riemannscher hebbarkeits satz]
-  This defined $g$ satisfies $g=F'^{-1}F$, so that $[F]=[F']$.
+  Thus the defined $g$ satisfies $g=F'^{-1}F$, so that $[F]=[F']$.
 \end{proof}
 \TODO[\cite{babbitt1989local} on page 66]
-\begin{thm}[Malgrange-Sibuya]
+\begin{thm}[Malgrange-Sibuya]\label{thm:thm1helpMalgSibuy}
   The map $\Theta$ is an isomorphism
   \[
-    G\llbracket t\rrbracket/G\{t\}\cong H^1(S^1,\mathcal{G}).
+    G\llbracket t\rrbracket/G\{t\}\cong H^1(S^1,\cG).
   \]
   \begin{s-rem}
     Since we know that
     $G\llbracket t\rrbracket/G\{t\}\cong G(\!(t)\!)/G(\!\{t\}\!)$\TODO[(cf~??)],
     we get also
     \[
-      G(\!(t)\!)/G(\!\{t\}\!)\cong H^1(S^1,\mathcal{G}).
+      G(\!(t)\!)/G(\!\{t\}\!)\cong H^1(S^1,\cG).
     \]
   \end{s-rem}
 \end{thm}
 This theorem is proven in Section 4.4 of Babbitt and Varadarajan's book
 \cite{babbitt1989local}.
 
+We are now able to proof the surjectivity part of Theorem~\ref{thm:mainThm1}.
 \begin{proof}[Proof of surjectivity]
   \marginnote{\cite[72]{babbitt1989local}}
   Let the cohomology class $\lambda\in H^1(S^1,\Lambda(A^0))$ be represented by
@@ -369,125 +371,133 @@ This theorem is proven in Section 4.4 of Babbitt and Varadarajan's book
     \item it is a  ${}^{F_{jl}}A^0=A^0$.
   \end{itemize}
   The cocycle $(F_{jl})_{j,l\in J}$ also determines an element in
-  $H^1(S^1,\Gl_n(\cA^{<0}))$.
-  We then can use the Theorem 4.2.1{} in Babbitt and Varadarajans's book
-  \cite[65ff]{babbitt1989local}, which states the following:
-  \begin{thm}[Malgrange-Sibuya]
-    There is a isomorphism
-    \[
-      G\llbracket t\rrbracket/G\{t\}\cong H^1(S^1,\Gl_n(\cA^{<0})).
-    \]
-  \end{thm}
-  We also know that
-  $G\llbracket t\rrbracket/G\{t\}\cong G(\!(t)\!)/G(\!\{t\}\!)$\TODO[(cf~??)],
-  thus we can use $G(\!(t)\!)/G(\!\{t\}\!)\cong H^1(S^1,\Gl_n(\cA^{<0}))$.
-  \TODO[lese weiter bei babbitt1989local]
+  $\sigma\in H^1(S^1,\cG)$.
+  From the Theorem~\ref{thm:thm1helpMalgSibuy} we know, that there is a $\hat
+  F\in G\llbracket t\rrbracket\subset G(\!(t)\!)$ whose class $[\hat F]$ gets
+  via $\Theta$ mapped to $\sigma$.
+  Thus there exists holomorphic functions $F_j:\mathfrak{s}_{U_j}\to G$ with
+  $F_j\sim_{U_j}\hat F$ and $F_lF_j^{-1}=F_{jl}$ on
+  $\mathfrak{s}_{U_j\cap U_l}$ for all $j,l\in J$.
+
+  Define on every arc $U_j$ the matrix $A_j:={}^{F_j^{-1}}A^0$.
+  On the intersections $U_j\cap U_l$ we know that $A_j=A_l$, since
+  $F_lF_j^{-1}\in\Lambda(A^0)$ and thus
+  $A^0={}^{F_j}\Big(\underset{=A_l}{\underbrace{{}^{F_l^{-1}}A^0}}\Big)$.
+  Thus the $A_j$ \rewrite{glue to a} section $A$, which satisfies
+  ${}^{\hat F}A=A_0$ by construction.
+  We have found an element $(A,\hat F)\in\cH(A^0)$ whose image under $\exp$ is
+  $\sigma$.
 \end{proof}
 
-\TODO[Define $\tilde\cM$ or find other way!]
-\begin{proof}[Proof of surjectivity]
-  % \textbf{Now look at surjectivity:}
-  Similar to the proof, given by Sabbah \marginnote{Which refers to
-  \cite{Malgrange1983}} in \cite{sabbah2007isomonodromic}, we will start this
-  part of the proof by giving a necessary and sufficient condition for a class
-  $\lambda$ in $H^1(S^1,\Lambda(A^0))$
-  \TODO[$\Lambda(A^0)\sim\Aut^{<0}(\tilde\cM^{nf})$ or $\Aut^{<0}(\cM^{nf})$?]
-  to come from an object
-  $(\cM,\nabla,\hat f)\in\cH$:
-  \begin{einr}
-    This is the case if and only if the image of
-    $\lambda\in\Aut^{<0}(\cM^{nf})$ in the set
-    $H^1(S^1,\Aut_{\cA}(\tilde\cM^{nf}))$ (where $\Aut_{\cA}(\tilde\cM^{nf})$
-    contains only the $\cA$-linear automorphisms) is the identity.
-  \end{einr}
-  \begin{comment}
-      \textbf{Now look at surjectivity:}
+\begin{comment}
+  \TODO[Define $\tilde\cM$ or find other way!]
+  \begin{proof}[Proof of surjectivity]
+    \begin{multicols}{2}
+      % \textbf{Now look at surjectivity:}
       Similar to the proof, given by Sabbah \marginnote{Which refers to
       \cite{Malgrange1983}} in \cite{sabbah2007isomonodromic}, we will start this
-      part of the proof by giving a necessary and sufficient condition for a class
-      $\lambda$ in $H^1(S^1,\Lambda(A^0))$
+      part of the proof by giving a necessary and sufficient condition for a
+      class $\lambda$ in $H^1(S^1,\Lambda(A^0))$
+      \TODO[$\Lambda(A^0)\sim\Aut^{<0}(\tilde\cM^{nf})$ or $\Aut^{<0}(\cM^{nf})$?]
       to come from an object
-      $(A,\hat F)\in\cH(A^0)$:
+      $(\cM,\nabla,\hat f)\in\cH$:
       \begin{einr}
-        \rewrite{This is the case if and only if the image of
-          $\lambda\in\Aut^{<0}(\cM^{nf})$ in the set
-          $H^1(S^1,\Aut_{\cA}(\tilde\cM^{nf}))$ (where $\Aut_{\cA}(\tilde\cM^{nf})$
-        contains only the $\cA$-linear automorphisms) is the identity.}
+        This is the case if and only if the image of
+        $\lambda\in\Aut^{<0}(\cM^{nf})$ in the set
+        $H^1(S^1,\Aut_{\cA}(\tilde\cM^{nf}))$ (where $\Aut_{\cA}(\tilde\cM^{nf})$
+        contains only the $\cA$-linear automorphisms) is the identity.
       \end{einr}
-  \end{comment}
-  \begin{proof}
-    \textbf{``\Rightarrow{}'':}
-    If $\lambda$ is the image of some $(\cM,\nabla,\hat f)$ then there exists
-    \begin{itemize}
-      \item a covering $(I_{j})$ of $S^1$ and
-      \item isomorphisms $f_j:\tilde\cM\overset{\sim}\to\tilde\cM^{nf}$
-        inducing $\hat f$
-    \end{itemize}
-    such that $\lambda$ comes from a cocycle $(\lambda_{j,l})=(f_lf_j^{-1})$ on
-    $I_j\cap I_l$.
-    \TODO{} shows that $(\lambda_{jl})$ is a coboundary of
-    $\Aut_\cA(\tilde\cM^{nf})$.
 
-    \textbf{``\Leftarrow{}'':}
-    If for some suitable covering $(I_j)$ the cocycle $(\lambda_{jl})$ is a
-    coboundary with values in $\Aut_\cA(\tilde\cM^{nf})$, i.e.\
-    $\lambda_{jl}=f_lf_j^{-1}$, we define a new connection $\nabla$ on
-    $\tilde\cM^{nf}$ by conjugating $\nabla^{nf}$ by $f_j$ on $U_j$.
+    \columnbreak
 
-    \TODO{}
+      \textcolor{gray}{
+        \textbf{Now look at surjectivity:}
+        Similar to the proof, given by Sabbah \marginnote{Which refers to
+        \cite{Malgrange1983}} in \cite{sabbah2007isomonodromic}, we will start
+        this part of the proof by giving a necessary and sufficient condition
+        for a class $\lambda$ in $H^1(S^1,\Lambda(A^0))$
+        to come from an object
+        $(A,\hat F)\in\cH(A^0)$:
+        \begin{einr}
+          \rewrite{This is the case if and only if the image of
+            $\lambda\in\Aut^{<0}(\cM^{nf})$ in the set
+            $H^1(S^1,\Aut_{\cA}(\tilde\cM^{nf}))$ (where
+            $\Aut_{\cA}(\tilde\cM^{nf})$ contains only the $\cA$-linear
+            automorphisms) is the identity.}
+        \end{einr}
+      }
+    \end{multicols}
+    \begin{proof}
+      \textbf{``\Rightarrow{}'':}
+      If $\lambda$ is the image of some $(\cM,\nabla,\hat f)$ then there exists
+      \begin{itemize}
+        \item a covering $(I_{j})$ of $S^1$ and
+        \item isomorphisms $f_j:\tilde\cM\overset{\sim}\to\tilde\cM^{nf}$
+          inducing $\hat f$
+      \end{itemize}
+      such that $\lambda$ comes from a cocycle $(\lambda_{j,l})=(f_lf_j^{-1})$
+      on $I_j\cap I_l$.
+      \TODO{} shows that $(\lambda_{jl})$ is a coboundary of
+      $\Aut_\cA(\tilde\cM^{nf})$.
 
-    Moreover $\hat f_j=\hat f_l$ on $U_j\cap U_l$, so that the formal
-    isomorphisms
-    \[
-      \hat f_j:(\hat \cM^{nf},\nabla)
-      \overset{\sim}{\longrightarrow}
-      (\hat\cM^{nf},\nabla^{nf})
-    \]
-    can be glued in an isomorphism $\hat f:(\hat \cM^{nf},\nabla)
-    \overset{\sim}{\longrightarrow}(\hat\cM^{nf},\nabla^{nf})$.
+      \textbf{``\Leftarrow{}'':}
+      If for some suitable covering $(I_j)$ the cocycle $(\lambda_{jl})$ is a
+      coboundary with values in $\Aut_\cA(\tilde\cM^{nf})$, i.e.\
+      $\lambda_{jl}=f_lf_j^{-1}$, we define a new connection $\nabla$ on
+      $\tilde\cM^{nf}$ by conjugating $\nabla^{nf}$ by $f_j$ on $U_j$.
+
+      \TODO{}
+
+      Moreover $\hat f_j=\hat f_l$ on $U_j\cap U_l$, so that the formal
+      isomorphisms
+      \[
+        \hat f_j:(\hat \cM^{nf},\nabla)
+        \overset{\sim}{\longrightarrow}
+        (\hat\cM^{nf},\nabla^{nf})
+      \]
+      can be glued in an isomorphism $\hat f:(\hat \cM^{nf},\nabla)
+      \overset{\sim}{\longrightarrow}(\hat\cM^{nf},\nabla^{nf})$.
+    \end{proof}
+
+    Thus, the proof of~\ref{thm:mainThm1} is a consequence of the following
+    theorem by Malgrange and Sibuya.
+    \begin{thm}[Malgrange-Sibuya]\label{thm:malgSibuyaHelp}
+      \marginnote{\cite[Thm.II.6.10]{sabbah2007isomonodromic}}
+      The image of the mapping
+      \[
+        H^1(S^1,\Gl_d^{<0}(\cA_{\tilde D}))
+        \to
+        H^1(H^1,\Gl_d(\cA_{\tilde D}))
+      \]
+      is the identity.
+    \end{thm}
+    For the proof of Theorem~\ref{thm:malgSibuyaHelp} which we refer to
+    \cite[Th.A.1]{Malgrange1983}, \cite[Th.6.4.1]{sibuya1990Linear} and
+    \cite{babbitt1989local}.
   \end{proof}
-
-  Thus, the proof of~\ref{thm:mainThm1} is a consequence of the following
-  theorem by Malgrange and Sibuya.
-  \begin{thm}[Malgrange-Sibuya]\label{thm:malgSibuyaHelp}
-    \marginnote{\cite[Thm.II.6.10]{sabbah2007isomonodromic}}
-    The image of the mapping
-    \[
-      H^1(S^1,\Gl_d^{<0}(\cA_{\tilde D}))
-      \to
-      H^1(H^1,\Gl_d(\cA_{\tilde D}))
-    \]
-    is the identity.
-  \end{thm}
-  For the proof of Theorem~\ref{thm:malgSibuyaHelp} which we refer to
-  \cite[Th.A.1]{Malgrange1983}, \cite[Th.6.4.1]{sibuya1990Linear} and
-  \cite{babbitt1989local}.
-\end{proof}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Stokes group}\label{sec:StokesGroup}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Anti-Stokes directions and the Stokes group}
-\begin{comment}
-  \cite[I.4]{Loday1994}
-\end{comment}
-We denote
+\marginnote{\cite[I.4]{Loday1994}}
+Let us recall, that the normal form $A^0$ is written as
+$A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}$ and a normal solution is given by
+$\cY_0(t)=t^Le^{Q(t^{-1})}$, where
+$Q(t^{-1})=\diag(\underset{n_1\text{-times}}{\underbrace{%
+  q_1,\dots,q_1}},q_2,\dots ,q_s)$.
+Let us denote by
 \[
-  \cQ_{[A^0]}
-  :=
-  \left\{q_1(t^{-1}),\dots,q_s(t^{-1})\right\}
-  \,,
+  \cQ_{[A^0]} := \left\{q_1(t^{-1}),\dots,q_s(t^{-1})\right\}
 \]
-where the $q_i$ are the diagonal elements of $Q$\footnote{$Q=\diag(
-\underset{n_1\text{-times}}{\underbrace{q_1,\dots,q_1}},q_2,\dots ,q_s)$}
-from \TODO{},
-the set of the determining polynomials of $[A^0]$ and
+the \emph{set of all determining polynomials of $[A^0]$} and by
 \[
-  \cQ_{[\End A^0]}:=\left\{\left(q_i-q_l\right)(t^{-1})
-    \mid q_i \neq q_l \in\cQ_{[A^0]}
+  \cQ_{[\End A^0]}:=\left\{\left(q_j-q_l\right)(t^{-1})
+    \mid q_j \neq q_l \in\cQ_{[A^0]}
   \right\}
 \]
-the set of the determining polynomials of $[\End A^0]$ where\dots
+the \emph{set of all determining polynomials of $[\End A^0]$}.
 \begin{defn}\label{defn:determiningPolysOfEndA}
   We call
   \begin{itemize}
@@ -506,12 +516,13 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
     \begin{enumerate}
       \item It is obvious that $k_{jl}=k_{lj}$ and
         $q_{jl}(t^{-1})=-q_{lj}(t^{-1})$.
-      \item In \cite{boalch} and \cite{thboalch} the $k$ is always an integer
-        and is incremented by one. We will prefer the other definition, which
-        is taken from \cite{Loday1994}, because \TODO
-      \item In \cite[Def.4.3.6]{Loday2014} $a_{jl}$ gets a negative sign to
-        be consistend with calculations at $\infty$. Here this is not
-        necessary, since we use the clockwise ordering of points on $S^1$
+      \item In Boalch's paper \cite{boalch} (and also in \cite{thboalch}) is
+        the \rewrite{$k$ always incremented by one}.
+        We will prefer the other definition, which is also used in
+        Loday-Richaud's paper \cite{Loday1994}.
+      \item In Loday-Richaud's book \cite[Def.4.3.6]{Loday2014} $a_{jl}$ gets a
+        negative sign to be consistend with calculations at $\infty$. Here this
+        is not necessary, since we use the clockwise orientation on $S^1$
         (cf.\ Definition~\ref{defn:antiStokesDir}).
         \begin{comment}
           Does that mean that, to be consistend with \cite{boalch}, one has to
@@ -519,7 +530,7 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
         \end{comment}
     \end{enumerate}
   \end{s-rem}
-  The degrees of the elements in $\cQ_{[\End A^0]}$ are the
+  The degrees of the elements in $\cQ_{[\End A^0]}$ are defined to be  the
   \emph{levels} of $A^0$.
   The set of all levels of $A^0$ will be denoted by
   \[
@@ -528,7 +539,7 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
   \begin{s-rem}
     \begin{enumerate}
       \item If we assume that the level of $q_j-q_l$ is given by
-        $k_{jl}=\max\{\deg(q_j),\deg(q_l)\}$ and thus
+        $k_{jl}=\max\{\deg(q_j),\deg(q_l)\}$ is then $\cK$ given by
         \[
           \cK=\left\{
             k_{1,2},
@@ -539,83 +550,125 @@ the set of the determining polynomials of $[\End A^0]$ where\dots
           \right\}\,.
         \]
       \item $A^0$ is unramified if and only if $\cK\subset\Z$. Since we only
-        consider the unramified case, this will be always the case.
+        want to consider the unramified case, this will be always the case.
     \end{enumerate}
   \end{s-rem}
 \end{defn}
 
-\begin{defn}
-  \marginnote{\cite[130]{hotta2008}, \cite[79]{Loday2014}}
-  A function is \emph{of maximal decay}, if \TODO{}
-  \begin{s-rem}
-    \marginnote{\cite[79]{Loday2014}}
-    An exponential $e^{q(1/t)}=e^{-\frac{a}{t^{k}}(x+o(t^{-k}))}$ has maximal
-    decay in a direction $\tilde\theta\in S^1$ if and only if
-    $-ae^{-ik\tilde\theta}$ is real negative.
-  \end{s-rem}
+\begin{comment}
+  \TODO[Add definitions for \emph{maximal dacay}]
+  \begin{defn}
+    \marginnote{\cite[130]{hotta2008}, \cite[79]{Loday2014}}
+    A function is \emph{of maximal decay}, if \TODO{}
+    \begin{s-rem}
+      \marginnote{\cite[79]{Loday2014}}
+      An exponential $e^{q(1/t)}=e^{-\frac{a}{t^{k}}(x+o(t^{-k}))}$ has maximal
+      decay in a direction $\tilde\theta\in S^1$ if and only if
+      $-ae^{-ik\tilde\theta}$ is real negative.
+    \end{s-rem}
 
-  A function is \emph{flat}, if \TODO{}
-\end{defn}
+    \comm{On the other hand, is a function is \emph{flat}, if\dots}
+  \end{defn}
+\end{comment}
 
 On the elements of $\cQ(A^0)$ we define the following (partial) order
 relations:
 \begin{defn}
-  \marginnote{\cite[Def.I.4.4]{Loday1994}}
   Let $\tilde\theta$ be a determination of $\theta$.
-  We define the relations
   \begin{itemize}
-    \item $\boldmath q_j \underset{\tilde\theta}{\prec} q_l$
-      :\Leftrightarrow{} $\Re(a_{jl}e^{-ik_{jl}\tilde\theta})<0$
-    \\\Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is
-      flat at $0$ in a neighbourhood of the direction $\tilde\theta$.
-    \item $\boldmath q_j \underset{\tilde\theta,\max}{\prec} q_l$
-      :\Leftrightarrow{} $a_{jl}e^{-ik_{jl}\tilde\theta}$ is a real negative
-      number, i.e.\ $q_j \underset{\tilde\theta}{\prec} q_l$ and
-      $\Im(a_{jl}e^{-ik_{jl}\theta})=0$.
-      \\\Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is of maximal
-      decay in the direction $\tilde\theta$.
-      \begin{comment}
-        \Leftrightarrow{} $q_{jl}(t^{-1})\in\R_{<0}$ along $\tilde\theta$.
-      \end{comment}
-      \begin{s-rem} \label{rem:rotationalSym}
-        \marginnote{\cite[8]{thboalch}}
-        Let $\theta\in S^1$ with determination $\tilde\theta$.
-        Let $(j,l)$ be a pair such that
-        $q_j \underset{\tilde\theta,\max}{\prec} q_l$, i.e.\ such that
-        $a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}$.
-        Hence, for $n\in\N$,
-        \begin{align*}
-          a_{jl}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{jl}}\right)}
-          &=a_{jl}e^{-ik_{jl}\tilde\theta}e^{-in\pi}
-          = \begin{cases}
-            a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}
-              & \text{, if $n$ is even}
-          \\-a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{>0}
-              & \text{, if $n$ is uneven}
-          \end{cases}
-        \end{align*}
-        is, in the case when $n$ is even, also real and negative. In the other
-        case, when $n$ is uneven, we use that $a_{jl}=-a_{lj}$ and
-        $k_{jl}=k_{lj}$ to obtain
-        $a_{lj}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{lj}}\right)}
-        \in\R_{<0}$.
-
-        Thus, for $\tilde\theta':=\tilde\theta+n\frac{\pi}{k_{jl}}$ as
-        determination of $\theta':=\theta+n\frac{\pi}{k_{jl}}$, we have
-        \begin{itemize}
-          \item $q_j \underset{\tilde\theta',\max}{\prec} q_l$ when $n$ is even
-            or
-          \item $q_l \underset{\tilde\theta',\max}{\prec} q_j$ when $n$ is
-            uneven.
-        \end{itemize}
-      \end{s-rem}
+    \item We define the relation
+      $\boldmath q_j \underset{\tilde\theta}{\prec} q_l$ to be equivalent to
+      the condition
+      \begin{einr}
+        $e^{(q_j-g_l)(t^{-1})}$ is flat at $0$ in a neighbourhood of the
+        direction $\tilde\theta$.
+      \end{einr}
+    \item Let us define another relation
+      $\boldmath q_j \underset{\tilde\theta,\max}{\prec} q_l$ equivalent to
+      \begin{einr}
+        $e^{(q_j-g_l)(t^{-1})}$ is of maximal decay in the direction
+        $\tilde\theta$.
+      \end{einr}
   \end{itemize}
   \begin{s-rem}
-    In the unramified case these relations do not depend on the determination
-    $\tilde\theta$ of $\theta$. As a consequence we will only write
-    $\underset{\theta}{\prec}$ and $\underset{\theta,\max}{\prec}$.
+    \begin{enumerate}
+      \item The condition $q_j \underset{\tilde\theta}{\prec} q_l$ is
+        satisfied if and only if $\Re(a_{jl}e^{-ik_{jl}\tilde\theta})<0$.
+      \item The condition $q_j \underset{\tilde\theta,\max}{\prec} q_l$ is
+        equivalent to
+        \begin{einr}
+          $a_{jl}e^{-ik_{jl}\tilde\theta}$ is a real negative
+          number, i.e.\ $q_j \underset{\tilde\theta}{\prec} q_l$ and
+          $\Im(a_{jl}e^{-ik_{jl}\theta})=0$.
+        \end{einr}
+      \item In the unramified case do these relations not depend on the
+        determination $\tilde\theta$ of $\theta$. As a consequence we will only
+        write $\underset{\theta}{\prec}$ and $\underset{\theta,\max}{\prec}$.
+    \end{enumerate}
   \end{s-rem}
 \end{defn}
+\iffalse
+  % \begin{defn}
+  %   \marginnote{\cite[Def.I.4.4]{Loday1994}}
+  %   Let $\tilde\theta$ be a determination of $\theta$.
+  %   We define the relations
+  %   \begin{itemize}
+  %     \item $\boldmath q_j \underset{\tilde\theta}{\prec} q_l$
+  %       :\Leftrightarrow{} $\Re(a_{jl}e^{-ik_{jl}\tilde\theta})<0$
+  %     \\\Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is
+  %       flat at $0$ in a neighbourhood of the direction $\tilde\theta$.
+  %     \item $\boldmath q_j \underset{\tilde\theta,\max}{\prec} q_l$
+  %       \begin{itemize}
+  %         \item[:\Leftrightarrow{}]
+  %       $a_{jl}e^{-ik_{jl}\tilde\theta}$ is a real negative
+  %       number, i.e.\ $q_j \underset{\tilde\theta}{\prec} q_l$ and
+  %       $\Im(a_{jl}e^{-ik_{jl}\theta})=0$.
+  %         \item[\Leftrightarrow{}] $e^{(q_j-g_l)(t^{-1})}$ is of maximal decay in
+  %           the direction $\tilde\theta$.
+  %       \end{itemize}
+  %       \begin{comment}
+  %         \Leftrightarrow{} $q_{jl}(t^{-1})\in\R_{<0}$ along $\tilde\theta$.
+  %       \end{comment}
+  %       \begin{s-rem} \label{rem:rotationalSym}
+  %         \marginnote{\cite[8]{thboalch}}
+  %         Let $\theta\in S^1$ with determination $\tilde\theta$.
+  %         Let $(j,l)$ be a pair such that
+  %         $q_j \underset{\tilde\theta,\max}{\prec} q_l$, i.e.\ such that
+  %         $a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}$.
+  %         Hence, for $n\in\N$,
+  %         \begin{align*}
+  %           a_{jl}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{jl}}\right)}
+  %           &=a_{jl}e^{-ik_{jl}\tilde\theta}e^{-in\pi}
+  %           = \begin{cases}
+  %             a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}
+  %               & \text{, if $n$ is even}
+  %           \\-a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{>0}
+  %               & \text{, if $n$ is uneven}
+  %           \end{cases}
+  %         \end{align*}
+  %         is, in the case when $n$ is even, also real and negative. In the other
+  %         case, when $n$ is uneven, we use that $a_{jl}=-a_{lj}$ and
+  %         $k_{jl}=k_{lj}$ to obtain
+  %         $a_{lj}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{lj}}\right)}
+  %         \in\R_{<0}$.
+
+  %         Thus, for $\tilde\theta':=\tilde\theta+n\frac{\pi}{k_{jl}}$ as
+  %         determination of $\theta':=\theta+n\frac{\pi}{k_{jl}}$, we have
+  %         \begin{itemize}
+  %           \item $q_j \underset{\tilde\theta',\max}{\prec} q_l$ when $n$ is even
+  %             or
+  %           \item $q_l \underset{\tilde\theta',\max}{\prec} q_j$ when $n$ is
+  %             uneven.
+  %         \end{itemize}
+  %       \end{s-rem}
+  %   \end{itemize}
+  %   \begin{s-rem}
+  %     In the unramified case do these relations not depend on the determination
+  %     $\tilde\theta$ of $\theta$. As a consequence we will only write
+  %     $\underset{\theta}{\prec}$ and $\underset{\theta,\max}{\prec}$.
+  %   \end{s-rem}
+  % \end{defn}
+\fi
 
 \begin{defn}\label{defn:antiStokesDir}
   % \marginnote{See \cite[Def.I.4.5]{Loday1994}(for the ramified case)
@@ -630,23 +683,20 @@ relations:
           notation later, \rewrite{define $\A$ to contain a single, arbitrary
           direction if $\cK=\{0\}$.}
           \TODO[make all Stokes dirs $\alpha$ instead of $\theta$?]
-          \begin{s-rem} \label{rem:rotationalSymPrime}
-            \begin{enumerate}
-              \item From remark~\ref{rem:rotationalSym} follows that in the
-                case $\cK=\{k\}$, the set $\A$ has $\frac{\pi}{k}$-rotational
-                symmetry.
-              \item The clockwise ordering is chosen, similar to
-                \cite{Loday1994}, since the calculations are then compatible
-                with the calculations, which look at $\infty$ and take a
-                counterclockwise ordering. \cite{boalch} and \cite{thboalch}
-                use the inverse ordering, but look also at $0$.
-                In \cite{Loday2014} this problem is solved by an additional
-                minus sign\comm{~to $a_{ij}$}.
-            \end{enumerate}
+          \begin{s-rem}
+            The clockwise ordering is chosen, similar to Loday-Richaud's paper
+            \cite{Loday1994}, since the calculations are then compatible with
+            the calculations, which look at $\infty$ and take a
+            counterclockwise ordering.
+            Boalch uses in \cite{boalch} and \cite{thboalch} the inverse
+            ordering, but looks also at $0$, thus there might be some
+            incompatibilities.
+            In Loday-Richaud's book \cite{Loday2014} this problem is solved by
+            an additional minus sign for some koefficients\comm{~to $a_{ij}$}.
           \end{s-rem}
       \end{itemize}
-    \item $\theta$ is an \emph{Stokes direction} when there is at least one
-      pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies neither
+    \item $\theta$ is an \emph{Stokes direction} if there is at least one pair
+      $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies neither
       $q_j\underset{\theta}{\prec} q_l$ nor $q_l\underset{\theta}{\prec} q_j$.
       \begin{itemize}
         \item Let $\S=\{\sigma_1<\cdots<\sigma_\mu\}$ be the set of Stokes
@@ -654,16 +704,53 @@ relations:
       \end{itemize}
   \end{enumerate}
 \end{defn}
+\begin{lem}\label{lem:rotationalSym}%\label{rem:rotationalSymPrime}
+  If $\theta\in\A$ together with a pair $(q_j-q_l)(t^{-1})\in\cQ_{[\End A^0]}$
+  of degree $k$ is given, we have for every $l\in\N$ that
+  \[
+    \theta+l\frac{\pi}{k} \in \A \,.
+  \]
+  \begin{s-cor}
+    It follows that in the case $\cK=\{k\}$, the set $\A$ has
+    $\frac{\pi}{k}$-rotational symmetry.
+  \end{s-cor}
+\end{lem}
+\begin{proof}
+  \marginnote{\cite[8]{thboalch}}
+  Let $\theta\in S^1$ with determination $\tilde\theta$.
+  Let $(j,l)$ be a pair such that
+  $q_j \underset{\tilde\theta,\max}{\prec} q_l$, i.e.\ such that
+  $a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}$.
+  Hence, for $n\in\N$,
+  \begin{align*}
+    a_{jl}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{jl}}\right)}
+    &=a_{jl}e^{-ik_{jl}\tilde\theta}e^{-in\pi}
+    = \begin{cases}
+      a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}
+        & \text{, if $n$ is even}
+    \\-a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{>0}
+        & \text{, if $n$ is uneven}
+    \end{cases}
+  \end{align*}
+  is, in the case when $n$ is even, also real and negative. In the other
+  case, when $n$ is uneven, we use that $a_{jl}=-a_{lj}$ and
+  $k_{jl}=k_{lj}$ to obtain
+  $a_{lj}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{lj}}\right)}
+  \in\R_{<0}$.
 
-\begin{comment}
-  In the case with only one level, the stokes directions are rotational
-  symetric.
-  \\The stokes direction, beared by level $k$ have the rotational symmetry.
-\end{comment}
+  Thus, for $\tilde\theta':=\tilde\theta+n\frac{\pi}{k_{jl}}$ as
+  determination of $\theta':=\theta+n\frac{\pi}{k_{jl}}$, we have
+  \begin{itemize}
+    \item $q_j \underset{\tilde\theta',\max}{\prec} q_l$ when $n$ is even
+      or
+    \item $q_l \underset{\tilde\theta',\max}{\prec} q_j$ when $n$ is
+      uneven.
+  \end{itemize}
+\end{proof}
 
 As a \rewrite{subgroup of the stalk at $\theta$} of the in
-definition~\ref{defn:StokesSheaf} defined Stokes sheaf $\Lambda(A^0)$ we
-define the Stoken group as follows.
+Definition~\ref{defn:StokesSheaf} defined Stokes sheaf $\Lambda(A^0)$ we
+define the Stokes group as follows.
 \begin{defn}\label{defn:stokesGroup}
   Define the \emph{Stokes group}
   \[
@@ -672,13 +759,12 @@ define the Stoken group as follows.
       \mid \phi_\theta \text{ has maximal decay at } \theta
     \right\}
   \]
-  whose elements are colled \emph{Stokes germs}.
+  whose elements are called \emph{Stokes germs}.
   \begin{s-rem}
-    \begin{enumerate}
-      \item For $\theta\notin\A$ the group $\Sto_\theta(A^0)$ is trivial, since
-        no flat isotropy has maximal decay, but the identity.
-      \item This is in fact a group, since \TODO{}
-    \end{enumerate}
+    For $\theta\notin\A$ the group $\Sto_\theta(A^0)$ is trivial, since no flat
+    isotropy has maximal decay, but the identity.
+
+    \TODO[This is in fact a group, since\dots]
   \end{s-rem}
 \end{defn}
 
@@ -703,7 +789,7 @@ the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
 
 \begin{prop}\label{prop:representation}
   \marginnote{\cite[Def.I.4.7]{Loday1994}\\\cite[78f]{Loday2014}}
-  In this situation the morphism
+  In this situation is the morphism
   \begin{align*}
     \rho_{\tilde\theta}:\Sto_\theta(A^0)&\to\SSto_\theta(A^0)
     \\\phi_\theta
@@ -712,20 +798,17 @@ the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
     :=1+C_{\tilde\theta}
     :=\cY_{0,\tilde\theta}^{-1}\phi_\theta\cY_{0,\tilde\theta}
   \end{align*}
-  is an isomorphism which maps a germ of $\Sto_\theta(A^0)$ to the
-  corresponding Stokes matrix $C_{\cY_{0,\tilde\theta}}$ such that
+  an isomorphism which maps a germ of $\Sto_\theta(A^0)$ to the corresponding
+  Stokes matrix $C_{\cY_{0,\tilde\theta}}$ such that
   \begin{equation} \label{eq:representation}
     \phi_\theta(t)\cY_{0,\tilde\theta}(t)
     =\cY_{0,\tilde\theta}(t)C_{\cY_{0,\tilde\theta}}
   \end{equation}
   near $\theta$.
-  The matrix $C_{\cY_{0,\tilde\theta}}$ is a representation of $\phi_\theta$.
+  The matrix $C_{\cY_{0,\tilde\theta}}$ is then called a \emph{representation
+  of $\phi_\theta$}.
   \begin{s-rem}
     \begin{enumerate}
-      \item \marginnote{\cite[10]{thboalch}}
-        The morphism $\rho_{\tilde\theta}$ relates solutions $\phi_\theta$ of
-        $[\End(A^0)]=[A^0,A^0]$ to solutions of $[0,0]$ which are the constant
-        matrices $G$.
       \item This morphism depends on the choice of the determination
         $\tilde\theta$ of $\theta$.
       % \item The inverse morphism of $\rho_{\tilde\theta}$ is given by
@@ -738,7 +821,7 @@ the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
       %     \cY_{0,\tilde\theta}C_{\cY_{0,\tilde\theta}}\cY_{0,\tilde\theta}^{-1}
       %     \,.
       %   \end{align*}
-      \item In Loday's book \cite[78]{Loday2014} are the elements of
+      \item In Loday-Richaud's book \cite[78]{Loday2014} are the elements of
         $\Sto_\theta(A^0)$ characterized as the flat transformations, such that
         equation (\ref{eq:representation}) is satisfied for some unique
         constant invertible matrix $C_{\cY_{0,\tilde\theta}}$.
@@ -746,16 +829,20 @@ the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
   \end{s-rem}
 \end{prop}
 \begin{proof}
-  In general, the map $\rho_{\tilde\theta}$ maps to the group $G$ of constant
-  matrices, since \rewrite{conjugation} by the fundamental solution yields a
-  constant matrix.
+  It is well known (cf.\ \cite[10]{thboalch}), that the morphism
+  $\rho_{\tilde\theta}$, i.e.\ conjugation by the fundamental solution,
+  relates solutions $\phi_\theta$ of $[\End(A^0)]=[A^0,A^0]$ to solutions of
+  $[0,0]$ which are the constant matrices $G$.
+  Thus we have to show, that the image of $\Sto_\theta(A^0)$ under
+  $\rho_{\tilde\theta}$ is $\SSto_\theta(A^0)$.
+
   To see that the obtained matrix has the necessary zeros, to lie in
   $\SSto_{\theta}(A^0)$ we look at equation (\ref{eq:representation}) and
   deduce
-  \[
+  \begin{equation}\label{eq:repProof1}
     \phi_\theta(t)
     =t^L e^{Q(t^{-1})}(1_n+C_{\tilde\theta})e^{-Q(t^{-1})}t^{-L}
-  \]
+  \end{equation}
   with the given choice of the argument near $\theta$.
   After decomposing $C_{\tilde\theta}$ into
   \begin{align*}
@@ -794,8 +881,10 @@ the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
     }}
   \\&=\sum_{(l,j)}C_{\tilde\theta}^{(l,j)}
   \end{align*}
-  where the $c_{(j,l)}$ are blocks of size $n_j\times n_l$ which correspond to
-  the structure of $Q$, we get
+  where the $c_{(j,l)}$ are blocks\marginnote{One can ignore the block
+  structure by using $1\times1$ sized blocks. But one looses the uniqueness of
+  the $q_j$'s.} of size $n_j\times n_l$ which correspond to the structure of
+  $Q$. After rewriting the Equation (\ref{eq:repProof1}) we get
   \[
     \phi_\theta=
       t^L\left(
@@ -823,10 +912,12 @@ the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
   necessary and sufficient that if $e^{(q_l-q_j)(t^{-1})}$ does not have
   maximal decay in direction $\tilde\theta$ the corresponding
   block $C_{\tilde\theta}^{(l,j)}$ vanishes.
+  Thus we have seen, that $(1_n+C_{\tilde\theta})$ is an element of
+  $\SSto_\theta(A^0)$.
 
-  It is \textbf{injective}, and thus a faithful representation, since
-  conjugation by an invertible matrix defines an isomorphism to its
-  \rewrite{image}.
+  The map $\rho_{\tilde\theta}$ is \textbf{injective}, and thus a faithful
+  representation, since conjugation by an invertible matrix defines an
+  isomorphism to its \rewrite{image}.
 
   The \textbf{surjectivity} can also \rewrite{be seen easily}, since every
   constant (unipotent) matrix, with zeros at the necessary positions,
@@ -834,7 +925,7 @@ the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
   \TODO[Isomorphic to $\C^{?}$?]
 \end{proof}
 
-In particular we get that
+In particular, from the proof, we get that
 \begin{enumerate}
   \item for $j=l$ the (diagonal) blocks $C_{\tilde\theta}^{(l,j)}$ vanish since
     $q_l-q_j=0$ does not have maximal decay and
@@ -843,14 +934,14 @@ In particular we get that
     $C_{\tilde\theta}^{(j,l)}$ is necessarily zero.
 \end{enumerate}
 \begin{rem}
-  This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent.
-  \rewrite{Thus $\Sto_\alpha(A^0)$ is a unipotent Lie group.}
+  This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent, and
+  \rewrite{hence is $\Sto_\alpha(A^0)$ is a unipotent Lie group.}
 \end{rem}
 
 \begin{cor}
   \marginnote{\cite[Def.I.4.12]{Loday1994}}
   A germ $\phi_\theta\in\Lambda_\theta(A^0)$ is a Stokes germ, i.e.\ an element
-  in $\Sto_\theta(A^0)$ if and only if for some, hence all determination
+  in $\Sto_\theta(A^0)$, if and only if for some, hence all determinations
   $\tilde\theta$, it has a representation $1+C_{\tilde\theta}$ where
   \[
     C_{\tilde\theta}=\sum_{(l,j)\mid q_j\underset{\tilde\theta,\max}{\prec}q_l}
@@ -862,7 +953,8 @@ In particular we get that
   \begin{einr}
     a germ $\phi_\theta\in\Lambda_\theta(A^0)$ is in $\Sto_\theta(A^0)$ if and
     only if there exists a $C_{\tilde\theta}\in\SSto_\theta(A^0)$ such that
-    $\phi_\theta=\cY_{0,\tilde\theta}C_{\tilde\theta}\cY_{0,\tilde\theta}^{-1}$.
+    $\phi_\theta=\cY_{0,\tilde\theta}C_{\tilde\theta}\cY_{0,\tilde\theta}^{-1}$
+    in some representation $\tilde\theta$ of $\theta$.
   \end{einr}
 \end{cor}
 
@@ -879,7 +971,8 @@ $\phi_{\theta}\in\Sto_\theta(A^0)$ by
   A germ $\phi_\theta$ is called a \emph{$k$-germ} when
   $\cK(\phi_{\theta})\subset\{k\}$, i.e.\ its only level, if present, is $k$.
 \end{defn}
-
+Let us introduce a couple of notations, which coincide with the notations
+used in Loday-Richaud's paper \cite{Loday1994}.
 \begin{notations}
   \marginnote{\cite[Not.I.4.15]{Loday1994},\\\cite[362]{Martinet1991}}
   For $k\in\cK$ and $\theta\in\A$ we set:
@@ -923,7 +1016,7 @@ $\phi_{\theta}\in\Sto_\theta(A^0)$ by
       the set of levels \emph{beared by $\theta\in\A$}, and
       $K_\theta=\max\cK_\theta$ the \emph{maximal level beared by $\theta$}.
       \begin{s-rem}
-        The remark~\ref{rem:rotationalSym} implies that from $k\in\cK_{\theta}$
+        The Lemma~\ref{lem:rotationalSym} implies that from $k\in\cK_{\theta}$
         follows that $k\in\cK_{\theta+n\frac{\pi}{k}}$ for $n\in\N$.
       \end{s-rem}
   \end{itemize}
@@ -932,8 +1025,9 @@ $\phi_{\theta}\in\Sto_\theta(A^0)$ by
 \begin{comment}
   See \cite[I.5]{Loday1994} on p.\ 861f (See [LR91])
 \end{comment}
-\rewrite{We will look at the filtration of $\Lambda(A^0)$, wich will be
-restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
+\rewrite{We will now introduce a filtration of $\Lambda(A^0)$, wich will be
+restricted to $\Sto_\theta(A^0)$ and defines there the filtration, in which we
+are interested.}
 \begin{prop}
   \marginnote{\cite[Prop.I.5.1]{Loday1994}}
   For any level $k\in\cK$ one has
@@ -961,9 +1055,19 @@ restricted to $\Sto_\theta(A^0)$ and defines there the filtration.}
   \end{enumerate}
 \end{prop}
 \begin{proof}
+  \begin{comment}
+    \begin{enumerate}
+      \item \TODO[clear, since germwise clear?]
+    \end{enumerate}
+  \end{comment}
+  \begin{comment}
+    \begin{enumerate}
+      \setcounter{enumi}{1}
+      \item \TODO{}
+    \end{enumerate}
+  \end{comment}
   \begin{enumerate}
-    \item \TODO{}
-    \item \TODO{}
+    \setcounter{enumi}{2}
     \item Splitting is clear, since we have the canonical inclusion
       $\Lambda^{<k}(A^0)\hookrightarrow\Lambda^{\leq k}(A^0)$ and
       $p\circ\substack{\text{the}\\\text{inclusion}}=\id_{\Lambda^{<k}(A^0)}$.
