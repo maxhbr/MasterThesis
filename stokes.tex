@@ -772,6 +772,15 @@ define the Stokes group as follows.
 \subsection{Stokes matrices}\label{sec:matrixReps}
 \marginnote{\cite[9f]{thboalch}, \cite[??]{Loday1994}}
 \begin{defn}\label{defn:groupOfFaithfullReps}
+  Let us use
+  \[
+    \delta_{jl}:=
+    \begin{cases}
+      0 \in \C^{n_j\times n_l} & \text{,~if~} j\neq l
+    \\\id \in \C^{n_j\times n_l} & \text{,~if~} j=l
+    \end{cases}
+  \]
+  as a block version of Kronecker's delta.
   Define the group
   \[
     \SSto_\theta(A^0)= \left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
@@ -783,9 +792,12 @@ define the Stokes group as follows.
 \end{defn}
 Let $\cY_0=t^L e^{Q(t^{-1})}$ be a normal solution corresponding to
 $A^0$ (cf.\ Definition~\ref{defn:normSol}).
-For every determination $\tilde\theta$ of $\theta$ we denote by
-$\cY_{0,\tilde\theta}$ the function defined by $\cY_0$ with that determination of
-the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
+For every determination $\tilde\theta$ of $\theta$ we
+get a function $e^{Q(1/|t|e^{i\tilde\theta})}$ as a realization of the formal
+exponential $e^{Q(1/t)}$.
+Let us denote by $\cY_{0,\tilde\theta}$ the function defined by $\cY_0$ with
+that determination of the argument near the direction
+$\theta$.\label{page:alreadyUsedDefn}
 
 \begin{prop}\label{prop:representation}
   \marginnote{\cite[Def.I.4.7]{Loday1994}\\\cite[78f]{Loday2014}}
@@ -824,7 +836,17 @@ the argument near the direction $\theta$.\label{page:alreadyUsedDefn}
       \item In Loday-Richaud's book \cite[78]{Loday2014} are the elements of
         $\Sto_\theta(A^0)$ characterized as the flat transformations, such that
         equation (\ref{eq:representation}) is satisfied for some unique
-        constant invertible matrix $C_{\cY_{0,\tilde\theta}}$.
+        constant invertible matrix
+        $C_{\cY_{0,\tilde\theta}}\in\SSto_\theta(A^0)$.
+      \item \marginnote{\cite[Defn.I.4.7]{Loday1994}}
+        This construction defines also a morphism, which takes a germ
+        $\phi_\theta\in\Lambda_\theta(A^0)$ relative to $\cY_{0,\tilde\theta}$
+        into its unique representation matrix
+        \[
+          C_{\cY_{0,\tilde\theta}}
+          \in\left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
+          q_j \underset{\theta}{\prec} q_l \right\} \,.
+        \]
     \end{enumerate}
   \end{s-rem}
 \end{prop}
@@ -1051,7 +1073,13 @@ are interested.}
         \overset{p}\longrightarrow\Lambda^{<k}(A^0)
         \longrightarrow 1 \,,
       \]
-      where $i$ and $p$ are the canonical maps, splits.
+      where
+      \begin{itemize}
+        \item $i:\Lambda^k(A^0)\hookrightarrow\Lambda^{\leq k}(A^0)$ is the
+          canonical inclusion and
+        \item $p$ is the truncation to terms of levels $<k'$,
+      \end{itemize}
+      splits.
   \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -1063,7 +1091,13 @@ are interested.}
   \begin{comment}
     \begin{enumerate}
       \setcounter{enumi}{1}
-      \item \TODO{}
+      \item
+        \TODO[Germwise or sectionwise??, check only on generators?]
+        Let $\alpha$ be an direction in $S^1$.
+        Let $n\in\Lambda^k(A^0)_\alpha$ and $g\in\Lambda^{\leq k}(A^0)_\alpha$.
+        We have to show, that $gng^{-1}\in\Lambda^{\leq k}(A^0)_\alpha$,
+        i.e.\ that $gng^{-1}$ is a $k$-germ.
+        \TODO{}
     \end{enumerate}
   \end{comment}
   \begin{enumerate}
@@ -1092,13 +1126,18 @@ are interested.}
       \end{itemize}
       \begin{s-rem}\label{rem:algFactorization}
         \marginnote{\cite[Cor.I.5.2(ii)]{Loday1994}}
-        A factorization algorithm could be:
+        We can get the factor $f^{<k}$ common to both factorizations by
+        truncation of $f^{\leq k}$ to terms of level $k$.
+        This truncation can explicitly be achieved in terms of Stokes matrices,
+        by keeping in any representation $1+\sum C_{\tilde\theta}^{(j,l)}$ of
+        $f^{\leq k}$ only the terms $C_{\tilde\theta}^{(j,l)}$ such that
+        $\deg(q_j-q_l)<k$.
+
+        A factorization algorithm could then be:
         \begin{einr}
-          the factor $f^{<k}$ common to both factorizations is the truncation
-          of $f^{\leq k}$ to terms of level $k$\footnote{In any representation
-          $1+\sum C_{\tilde\theta}^{(j,l)}$ of $f^{\leq k}$ keep only the terms
-          $C_{\tilde\theta}^{(j,l)}$ such that $\deg(q_j-q_l)<k$.}. Then
-          $g^k=(f^{<k})^{-1}f^{\leq k}$ and $f^k=f^{\leq k}(f^{<k})^{-1}$.
+          get the factor $f^{<k}$ common to both factorizations by truncation
+          of $f^{\leq k}$ to terms of level $k$ and set
+          $g^k:=(f^{<k})^{-1}f^{\leq k}$ and $f^k:=f^{\leq k}(f^{<k})^{-1}$.
         \end{einr}
       \end{s-rem}
     \item This decomposition in semi-direct product can be extended to all
@@ -1110,37 +1149,37 @@ are interested.}
       order of levels $k$.
   \end{enumerate}
 \end{cor}
-\begin{prop}
-  \marginnote{\cite[Prop.I.5.3]{Loday1994}}
-  For any levels $k$,$k'\in\cK$ with $k'<k$ one has:
-  \begin{enumerate}
-    \item the sheaf $\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k'}(A^0)$ is
-      normal in $\Lambda^{\leq k}(A^0)$;
-    \item \marginnote{\cite[Proposition 10]{Martinet1991}}
-      the exact sequence of sheaves
-      \[
-        1\longrightarrow\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k'}(A^0)
-        \overset{i}\longrightarrow\Lambda^{\leq k}(A^0)
-        \overset{p}\longrightarrow\Lambda^{<k'}(A^0)
-        \longrightarrow 1 \,,
-      \]
-      where $i$ and $p$ are the canonical maps, splits.
-  \end{enumerate}
-  \TODO[is $\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k}(A^0)=\Lambda^k(A^0)$ and
-    thus the first proposition a corollary of this?]
-\end{prop}
-\begin{proof}
-  \begin{enumerate}
-    \item \TODO{}
-    \item \TODO{}
-  \end{enumerate}
-\end{proof}
-\begin{cor}
-  \marginnote{\cite[Cor.I.5.4]{Loday1994}}
-  $\cK=\{k_1<\cdots<k_r\}$
+\begin{rem}
+  Loday-Richaud states in his paper \cite[Prop.I.5.3]{Loday1994} the following
+  proposition.
+  \begin{s-prop}
+    \marginnote{\cite[Prop.I.5.3]{Loday1994}}
+    For any levels $k$,$k'\in\cK$ with $k'<k$ one has:
+    \begin{enumerate}
+      \item the sheaf $\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k'}(A^0)$ is
+        normal in $\Lambda^{\leq k}(A^0)$;
+      \item \marginnote{\cite[Proposition 10]{Martinet1991}}
+        the exact sequence of sheaves
+        \[
+          1\longrightarrow\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k'}(A^0)
+          \overset{i}\longrightarrow\Lambda^{\leq k}(A^0)
+          \overset{p}\longrightarrow\Lambda^{<k'}(A^0)
+          \longrightarrow 1 \,,
+        \]
+        where
+        \begin{itemize}
+          \item $i$ is the canonical inclusion and
+          \item $p$ is the truncation to terms of levels $<k'$,
+        \end{itemize}
+        splits.
+    \end{enumerate}
+    \TODO[is $\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k}(A^0)=\Lambda^k(A^0)$
+    and thus the first proposition a corollary of this?]
+  \end{s-prop}
+  We can use this proposition to follow (cf.\ \cite[Cor.I.5.4]{Loday1994}) that
   \begin{enumerate}
     \item
-      The filtration
+      the filtration
       \[
         \Lambda^{k_r}(A^0)
         =
@@ -1159,12 +1198,10 @@ are interested.}
       \[
         \Lambda(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Lambda^k(A^0)
       \]
-      taken in an arbitrary order.
+      taken in an arbitrary order. In fact, one can also extend the algorithm
+      from Remark~\ref{rem:algFactorization} to an arbitrary order of levels.
   \end{enumerate}
-\end{cor}
-\begin{proof}
-  \TODO{}
-\end{proof}
+\end{rem}
 \begin{prop}\label{prop:filtrationOfStokesGroup}
   \marginnote{\cite[Prop.I.5.5]{Loday1994}}
   The results can be restricted to the Stokes groups. Thus, for
@@ -1172,25 +1209,27 @@ are interested.}
   \[
     \Sto_\theta(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Sto_\theta^k(A^0)
   \]
-  the semi-direct product being taken in an arbitrary order.
+  the semi-direct product being taken in an arbitrary order \comm{(we will only
+  be interested in the ascending order)}.
   \begin{s-defn}
     We will denote the map, wich gives the factors of this factorization by
     \[
       i_\theta:
       \Sto_\theta(A^0)
-      \to
+      \overset{\cong}\longrightarrow
       \prod_{k\in\cK_\theta}\Sto_\theta^k(A^0)\,,
     \]
     where the factorization is taken in ascending order.
   \end{s-defn}
   \begin{s-rem}\label{rem:filtrationOfStokesMats}
     Write $\rho_{\tilde\theta}^k:\Sto^k_\theta(A^0)\to\SSto^k_\theta(A^0)$ for
-    the \rewrite{restriction} of the map $\rho_{\tilde\theta}$.
+    the \rewrite{restriction} of the map $\rho_{\tilde\theta}$
+    (cf.\ Proposition~\ref{prop:representation}) to the level $k$.
     \rewrite{Then, one can} denote the induced decomposition also by
     \[
       i_\theta:
       \SSto_\theta(A^0)
-      \cong
+      \overset{\cong}\longrightarrow
       \underset{k\in\cK_\theta}\bigltimes\SSto_\theta^k(A^0)
     \]
     and the corresponding diagram
