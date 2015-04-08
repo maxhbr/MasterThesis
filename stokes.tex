@@ -706,10 +706,13 @@ relations:
 \end{defn}
 \begin{lem}\label{lem:rotationalSym}%\label{rem:rotationalSymPrime}
   If $\theta\in\A$ together with a pair $(q_j-q_l)(t^{-1})\in\cQ_{[\End A^0]}$
-  of degree $k$ is given, we have for every $l\in\N$ that
+  of degree $k$ is given, we have for every $m\in\N$ that
   \[
-    \theta+l\frac{\pi}{k} \in \A \,.
+    \underset{=:\theta'}{\underbrace{\theta+m\frac{\pi}{k}}} \in \A \,.
   \]
+  Especially is either $q_j \underset{\theta',\max}{\prec} q_l$ (in the
+  case, when $m$ is even) or $q_l \underset{\theta',\max}{\prec} q_j$
+  (when $m$ is uneven) satisfied.
   \begin{s-cor}
     It follows that in the case $\cK=\{k\}$, the set $\A$ has
     $\frac{\pi}{k}$-rotational symmetry.
@@ -721,29 +724,29 @@ relations:
   Let $(j,l)$ be a pair such that
   $q_j \underset{\tilde\theta,\max}{\prec} q_l$, i.e.\ such that
   $a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}$.
-  Hence, for $n\in\N$,
+  Hence, for $m\in\N$,
   \begin{align*}
-    a_{jl}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{jl}}\right)}
-    &=a_{jl}e^{-ik_{jl}\tilde\theta}e^{-in\pi}
+    a_{jl}e^{-ik_{jl}\left(\tilde\theta+m\frac{\pi}{k_{jl}}\right)}
+    &=a_{jl}e^{-ik_{jl}\tilde\theta}e^{-im\pi}
     = \begin{cases}
       a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}
-        & \text{, if $n$ is even}
+        & \text{, if $m$ is even}
     \\-a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{>0}
-        & \text{, if $n$ is uneven}
+        & \text{, if $m$ is uneven}
     \end{cases}
   \end{align*}
   is, in the case when $n$ is even, also real and negative. In the other
   case, when $n$ is uneven, we use that $a_{jl}=-a_{lj}$ and
   $k_{jl}=k_{lj}$ to obtain
-  $a_{lj}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{lj}}\right)}
+  $a_{lj}e^{-ik_{jl}\left(\tilde\theta+m\frac{\pi}{k_{lj}}\right)}
   \in\R_{<0}$.
 
-  Thus, for $\tilde\theta':=\tilde\theta+n\frac{\pi}{k_{jl}}$ as
-  determination of $\theta':=\theta+n\frac{\pi}{k_{jl}}$, we have
+  Thus, for $\tilde\theta':=\tilde\theta+m\frac{\pi}{k_{jl}}$ as
+  determination of $\theta':=\theta+m\frac{\pi}{k_{jl}}$, we have
   \begin{itemize}
-    \item $q_j \underset{\tilde\theta',\max}{\prec} q_l$ when $n$ is even
+    \item $q_j \underset{\tilde\theta',\max}{\prec} q_l$ when $m$ is even
       or
-    \item $q_l \underset{\tilde\theta',\max}{\prec} q_j$ when $n$ is
+    \item $q_l \underset{\tilde\theta',\max}{\prec} q_j$ when $m$ is
       uneven.
   \end{itemize}
 \end{proof}
@@ -983,18 +986,19 @@ In particular, from the proof, we get that
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Filtration of the Stokes group by levels}
 \marginnote{\cite{Loday1994}, \cite[362ff]{Martinet1991}}
-We denote the set of \emph{levels of the germ}
-$\phi_{\theta}\in\Sto_\theta(A^0)$ by
-\[
-  \cK(\phi_\theta):= \left\{\deg(q_j-q_l)\mid C_{\tilde\theta}^{(l,j)}\neq0
-    \text{ in some determination of }\phi_\theta\right\} \subset \cK \,.
-\]
+Let us introduce a couple of notations and definitions, which coincide with the
+notations used in Loday-Richaud's paper \cite{Loday1994}.
+
 \begin{defn}
+  We denote the set of \emph{levels of the germ}
+  $\phi_{\theta}\in\Sto_\theta(A^0)$ by
+  \[
+    \cK(\phi_\theta):= \left\{\deg(q_j-q_l)\mid C_{\tilde\theta}^{(l,j)}\neq0
+      \text{ in some determination of }\phi_\theta\right\} \subset \cK \,.
+  \]
   A germ $\phi_\theta$ is called a \emph{$k$-germ} when
   $\cK(\phi_{\theta})\subset\{k\}$, i.e.\ its only level, if present, is $k$.
 \end{defn}
-Let us introduce a couple of notations, which coincide with the notations
-used in Loday-Richaud's paper \cite{Loday1994}.
 \begin{notations}
   \marginnote{\cite[Not.I.4.15]{Loday1994},\\\cite[362]{Martinet1991}}
   For $k\in\cK$ and $\theta\in\A$ we set:
@@ -1019,8 +1023,8 @@ used in Loday-Richaud's paper \cite{Loday1994}.
   \begin{itemize}
     \item $\SSto^\star_\theta(A^0)$ as the groups of representations, which
       correspond to elements of  $\Sto^\star_\theta(A^0)$;
-    \item $\A^k:=\left\{\theta\in\A\mid\Sto_\theta^k(A^0)\neq\{1\}\right\}$ as
-      the set of anti-Stokes directions \emph{bearing the level $k$};
+    \item $\A^k:=\left\{\theta\in\A\mid\Sto_\theta^k(A^0)\neq\{\id\}\right\}$
+      as the set of anti-Stokes directions \emph{bearing the level $k$};
     \item $\A^{\leq k}:=\underset{k'\leq k}\bigcup\A^{k'}$ (resp.
       $\A^{<k}:=\underset{k'<k}\bigcup\A^{k'}$ and
       $\A^{\geq k}:=\underset{k'\geq k}\bigcup\A^{k'}$);
@@ -1028,18 +1032,18 @@ used in Loday-Richaud's paper \cite{Loday1994}.
         It is clear that
         \begin{itemize}
           \item $\A^{\star}=\left\{\theta\in\A
-            \mid\Sto_{\theta}^\star(A^0)\neq\{1\}\right\}$ and
+            \mid\Sto_{\theta}^\star(A^0)\neq\{\id\}\right\}$ and
           \item we have the canonical inclusions
             $\A^k\hookrightarrow\A^{\leq k}$ and
             $\A^{<k}\hookrightarrow\A^{\leq k}$.
         \end{itemize}
       \end{s-rem}
-    \item $\cK_\theta:=\left\{k\in\cK\mid\Sto_\theta^k(A^0)\neq\{1\}\right\}$
+    \item $\cK_\theta:=\left\{k\in\cK\mid\Sto_\theta^k(A^0)\neq\{\id\}\right\}$
       the set of levels \emph{beared by $\theta\in\A$}, and
       $K_\theta=\max\cK_\theta$ the \emph{maximal level beared by $\theta$}.
       \begin{s-rem}
         The Lemma~\ref{lem:rotationalSym} implies that from $k\in\cK_{\theta}$
-        follows that $k\in\cK_{\theta+n\frac{\pi}{k}}$ for $n\in\N$.
+        follows that $k\in\cK_{\theta+m\frac{\pi}{k}}$ for $m\in\N$.
       \end{s-rem}
   \end{itemize}
 \end{notations}
@@ -1050,7 +1054,7 @@ used in Loday-Richaud's paper \cite{Loday1994}.
 \rewrite{We will now introduce a filtration of $\Lambda(A^0)$, wich will be
 restricted to $\Sto_\theta(A^0)$ and defines there the filtration, in which we
 are interested.}
-\begin{prop}
+\begin{prop}\label{prop:PropertiesOfStokesSheafSplitting}
   \marginnote{\cite[Prop.I.5.1]{Loday1994}}
   For any level $k\in\cK$ one has
   \begin{enumerate}
@@ -1246,9 +1250,11 @@ are interested.}
     commutes.
   \end{s-rem}
 \end{prop}
-\begin{proof}
-  \TODO{}
-\end{proof}
+\begin{comment}
+  \begin{proof}
+    \TODO{}
+  \end{proof}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes structures: using Stokes matrices}\label{sec:mainThm2}
@@ -1267,18 +1273,63 @@ we also get
 \]
 as a corollary.
 \TODO[This goes back to \cite{BJL1979Birkhoff}?]
-\begin{comment}
-  In other words, this theorem states that in each element of $\St(A^0)$ is
-  an unique $1$-cocycle, which is a Stokes cocycle.
-\end{comment}
+
+Let us recall, that $\St(A^0)$ is defined to be $H^1(S^1;\Lambda^{<0}(^0))$
+(cf.\ Section~\ref{sec:mainThm1}).
+The elements of $\prod_{\theta\in\A}\Sto_\theta(A^0)$ define in a canonical way
+cocycles of the sheaf $\Lambda^{<0}(A^0)$ (cf.\ Remark~\ref{rem:mapStoToCocy}),
+called Stokes cocycles (cf.\ Definition~\ref{defn:stokesCocycle}).
+In fact, will $h$ map such cocycles to the cohomology class, to which they
+correspond.
+Thus the statement, that $h$ is a bijection, is equivalent to the statement
+that
+\begin{einr}
+  in each cohomology class of $\St(A^0)$ is an unique $1$-cocycle, which is a
+  Stokes cocycle.
+\end{einr}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The theorem}
+\begin{rem}\label{rem:mapStoToCocy}
+  \marginnote{\cite[868]{Loday1994}}
+  Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
+  $\dot\phi=(\dot\phi_{\theta_j})_{j\in J}
+  \in\prod_{j\in J}\Lambda_{\theta_j}(A^0)$ be a finite family of germs.
+  In the following way, one can associate a cohomology class in $\St(A^0)$ to
+  any $\dot\phi$:
+  \begin{einr}
+    let $\dot\phi_j$ be the function representing the germ
+    $\dot\phi_{\theta_j}$ on its maximal arc of definition $\Omega_j$ around
+    $\theta_j$.
+    Then, for every cyclic covering $\cU=\{U_j;j\in J\}$ which satisfies
+    $\dot U_j\subset \Omega_j$ for all $j\in J$, one can define the $1$-cocycle
+    $(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
+  \end{einr}
+  To a different $\cU$ this construction yields a cohomologous
+  $1$-cocycle\TODO[Proof], thus the induced map
+  \[
+    \prod_{\alpha\in J}\Sto_\alpha(A^0)\to H^1(S^1;\Lambda(A^0))=\St(A^0)
+  \]
+  is welldefined.
+\end{rem}
 \begin{comment}
   \cite[Thm.6.3.1]{sibuya1990Linear} says: if two differential equations have
   the same stokes phenomenon, they are analytically equivalent.
 \end{comment}
+\begin{comment}
+  \begin{lem}
+    To describe a cocycle, it is equivalent to give
+    \begin{einr}
+      \TODO{}
+    \end{einr}
+    or
+    \begin{einr}
+      $(\phi_\theta)_{\theta\in J}$.
+    \end{einr}
+  \end{lem}
+\end{comment}
 \begin{defn}\label{defn:stokesCocycle}
+  \TODO[Why only germ? Sections?]
   \marginnote{\cite[Def.II.1.8]{Loday1994}, \cite[4.3.10]{Loday2014}}
   A \emph{Stokes cocycle} is a 1-cocycle $(\phi_\theta)_{\theta\in\A}$ of
   $\Lambda(A^0)$ which is
@@ -1292,29 +1343,12 @@ as a corollary.
     $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$.
   \end{s-rem}
 \end{defn}
-
-\marginnote{\cite[868]{Loday1994}}
-Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
-$\dot\phi=(\dot\phi_{\theta_j})_{j\in J}
-\in\prod_{j\in J}\Lambda_{\theta_j}(A^0)$ be a finite family of germs.
-In the following way, one can associate a cohomology class in $\St(A^0)$ to any
-$\dot\phi$:
-\begin{einr}
-  let $\dot\phi_j$ be the function representing the germ
-  $\dot\phi_{\theta_j}$ on its maximal arc of definition $\Omega_j$ around
-  $\theta_j$.
-  Then, for every cyclic covering $\cU=\{U_j;j\in J\}$ which satisfies
-  $\dot U_j\subset \Omega_j$ for all $j\in J$, one can define the $1$-cocycle
-  $(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
-\end{einr}
-To a different $\cU$ this construction yields a cohomologous
-$1$-cocycle\TODO[Proof]. Thus the, in the case $\{\theta_j\mid j\in J\}=\A$,
-induced map
+We can use Remark~\ref{rem:mapStoToCocy} to obtain in the case $J=\A$ a
+mapping
 \[
-  h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to
-  H^1(S^1;\Lambda(A^0))=\St(A^0)
+  h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0),
 \]
-is welldefined.
+which takes a Stokes cocycle to its corresponding cohomology class.
 \begin{tthm}
   \label{thm:mainThm2}
   The map
@@ -1349,6 +1383,7 @@ get the following corollary.
   of consecutive Stokes factors. He uses the rotational symmetry of the
   single-leveled case \rewrite{thus this approach is not} applicable to the
   multi-leveled case.
+  \comm{But one can\dots}
 \end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1397,8 +1432,8 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
 \begin{defn}
   A covering $\cU$ beyond which the inductive limit
   $\underset{\cU}{\underrightarrow{\lim}}H^1(\cU;\Lambda(A^0))$ is stationary
-  is said to be \emph{adequate} to describe $H^1(S^1;\Lambda(A^0))$ (or
-  \emph{adequate} to $\Lambda(A^0)$).
+  is said to be \emph{adequate} to describe $H^1(S^1;\Lambda(A^0))$ or
+  \emph{adequate} to $\Lambda(A^0)$.
 \end{defn}
 
 \begin{prop}\label{prop:adeqCovCondition}
@@ -1416,9 +1451,11 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
   is adequate to $\Lambda^k(A^0)$ (resp.\ to $\Lambda^{\leq k}(A^0)$ or to
   $\Lambda(A^0)$).
 \end{prop}
-\begin{proof}
-  \TODO{}
-\end{proof}
+\begin{comment}
+  \begin{proof}
+    \TODO{}
+  \end{proof}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Adequate coverings}
@@ -1435,8 +1472,8 @@ different levels.
       \dot\cU^k:=
       \left\{\dot U_\theta^k=U(\theta,\frac{\pi}{k})\mid\theta\in\A^k\right\}
     \]
-    consisting of all Stokes arcs for anti-Stokes directions bearing the level
-    $k$.
+    consisting of all Stokes arcs of level $k$ for anti-Stokes directions
+    bearing the level $k$.
 \end{enumerate}
 
 If we extend to several levels, the set
@@ -1622,29 +1659,34 @@ the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
   The coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ depend only on
   $\cQ_{[\End A^0]}$. Hence they depend only on $\cQ_{[A^0]}$.
 \end{rem}
+It is obvious, that for every $k\in\cK$ the covering $\cU^{\leq k}$ refines
+$\cU^{k}$ and $\cU^{<k}$.
+Furthermore are the coverings defined, such that they satisfy the
+condition in Proposition~\ref{prop:adeqCovCondition}.
+Thus the \rewrite{properties in} the following proposition \rewrite{are
+satisfied}.
 \begin{prop}\label{prop:adequateProperties}
   \marginnote{\cite[Prop.II.3.1]{Loday1994}}
   Let $k\in\cK$, then
   \begin{enumerate}
-    \item $\cU^{\leq k}$ refines $\cU^{k}$ and $\cU^{<k}$;
     \item the coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ are adequate
       to $\Lambda^k(A^0)$, $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$;
-    \item on
-      \begin{itemize}
-        \item $\cU^k$ there exists no $0$-cochain in $\Lambda^k(A^0)$;
-        \item $\cU^{\leq k}$ there exists no $0$-cochain in
-          $\Lambda^{\leq k}(A^0)$
-      \end{itemize}
+    \item there exists no $0$-cochain in $\Lambda^k(A^0)$ on $\cU^k$;
+    \item on $\cU^{\leq k}$ there is no $0$-cochain of level $k$, i.e.\ belong
+      all $0$-cochains of  $\cU^{\leq k}$ to $\cU^{<k}$
+      (cf. Proposition \cite[Prop.II.3.1 (iv)]{Loday1994}).
   \end{enumerate}
 \end{prop}
-\begin{proof}
-  \begin{enumerate}
-    \item This statement is clear by construction.
-    \item This is clear, since the coverings are build to satisfy the
-      condition from proposition~\ref{prop:adeqCovCondition}.
-    \item \TODO{}
-  \end{enumerate}
-\end{proof}
+\begin{comment}
+  \begin{proof}
+    \begin{enumerate}
+      \item This is clear, since the coverings are build to satisfy the
+        condition from proposition~\ref{prop:adeqCovCondition}.
+      \item \TODO{}
+      \item \TODO{}
+    \end{enumerate}
+  \end{proof}
+\end{comment}
 To have a shorter notation, we denote the product
 $\prod_{\theta\in\A^\star}\Gamma(\dot U_\theta^\star;\Lambda^\star(A^0))$ by
 $\Gamma(\dot U^\star;\Lambda^\star(A^0))$ for $\star\in\{k,<k,\leq k,\dots\}$.
@@ -1664,28 +1706,43 @@ This means that
 \end{itemize}
 \begin{lem}
   Let $k\in\cK$.
-  The canonical injective map
-  \[
-    i^k:\underset{\theta\in\A}\prod\Sto_\theta^k(A^0) \to
-    \Gamma(\dot\cU^k;\Lambda^k(A^0))
-  \]
-  and the canonical surjective map
-  \[
-    s^k:\Gamma(\dot\cU^k;\Lambda^k(A^0))\to H^1(S^1;\Lambda^k(A^0))
-  \]
-  are bijective and thus
-  \[
+  The morphism $h$ from Theorem~\ref{thm:mainThm2} is in the case of an unique
+  level build as
+  \[ \begin{tikzcd}[row sep=0cm]
     \underset{\theta\in\A}\prod\Sto_\theta^k(A^0)
-    \underset{\sim}{\overset{i^k}{\longrightarrow}}
-    \Gamma(\dot\cU^k;\Lambda^k(A^0))
-    \underset{\sim}{\overset{s^k}{\longrightarrow}}
-    H^1(S^1;\Lambda^k(A^0))
-  \]
-  is a bijection. \TODO[naturality?]
+    \rar{i^k}
+    & \Gamma(\dot\cU^k;\Lambda^k(A^0))
+    \rar{s^k}
+    & H^1(S^1;\Lambda^k(A^0))
+    \\
+    \text{\rotatebox[origin=c]{-90}{$=$}}
+    &&
+    \text{\rotatebox[origin=c]{-90}{$=$}}
+    \\
+    \underset{\theta\in\A}\prod\Sto_\theta(A^0)
+    \arrow{rr}{h}
+    &
+    & H^1(S^1;\Lambda(A^0))
+  \end{tikzcd} \]
+  from
+  \begin{itemize}
+    \item the canonical injective map
+      \[
+        i^k:\underset{\theta\in\A}\prod\Sto_\theta^k(A^0) \to
+        \Gamma(\dot\cU^k;\Lambda^k(A^0)) \,,
+      \]
+      i.e.\ the map which is the canonical extension of germs to their natural
+      arc, and
+    \item the quotient map
+      \[
+        s^k:\Gamma(\dot\cU^k;\Lambda^k(A^0))\to H^1(S^1;\Lambda^k(A^0))
+      \]
+  \end{itemize}
+  which are both bijections.
 \end{lem}
 \begin{proof}
   \begin{enumerate}
-    \item The map
+    \item For map
       \[
         i^k: \underset{\theta\in\A}\prod\Sto_\theta^k(A^0)
         \to
@@ -1696,8 +1753,16 @@ This means that
             }
         }}
       \]
-      is the canonical extension of germs to their natural
-      arc of definition and thus a group isomorphism. \TODO[why?]
+      it is well known to be a group isomorphism. \TODO[why?]
+      \begin{comment}
+        IDEAS:
+        \begin{itemize}
+          \item Are sections fully determined by there germs at some points?
+            \begin{itemize}
+              \item since sections are defined by differential equations??
+            \end{itemize}
+        \end{itemize}
+      \end{comment}
     \item The second map
       \[
         s^k:
@@ -1710,8 +1775,8 @@ This means that
         \to
         H^1(S^1;\Lambda^k(A^0))
       \]
-      is the quotient map. From proposition~\ref{prop:adequateProperties} we
-      know that $s^k$ is
+      is a bijection, since from proposition~\ref{prop:adequateProperties} we
+      know that it is
       \begin{itemize}
         \item \textbf{surjective}, since $\cU^k$ is adequate to
           $\Lambda^k(A^0)$ and
@@ -1723,12 +1788,12 @@ This means that
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{The case of a several level}
-\begin{comment}
-  \cite[II.3.3]{Loday1994}
-\end{comment}
+\subsubsection{The case of several levels}
+\rewrite{In the proof of the case of several levels, we will still use}
+Loday-Richaud's paper~\cite{Loday1994} as reference.
 \begin{defn}
-  We want to define a \emph{product map of cocycles} $\mathfrak{S}^{\leq k}$.
+  Here we want to define a \emph{product map of cocycles}
+  $\mathfrak{S}^\leq k$.
   This map will be composed from the following injective maps:
   \begin{enumerate}
     \item The first map is defined as
@@ -1804,10 +1869,44 @@ This means that
   \begin{enumerate}
     \item Denote by $\theta^+$ the nearest anti-Stokes direction in
       $\A^{\leq k}$ on the right\footnote{In clockwise direction.} of $\theta$.
-      \TODO{}
-    \item \TODO{}
+      The cocycles $\mathfrak{S}^{\leq k}(\dot f,\dot g)$ and
+      $\mathfrak{S}^{\leq k}(\dot f',\dot g')$ are cohomologous if and only
+      if there is a $0$-cochain $c=(c_\theta)_{\theta\in\A^{\leq k}}
+      \in\Gamma(\cU^{\leq k},\Lambda^{\leq k}(A^0)$ such that
+      \begin{equation}\label{eq:UniqueString:urdtindfgupndtcn}
+        \dot F_\theta\dot G_\theta =
+        c_\theta^{-1}\dot F_\theta'\dot G_\theta'c_{\theta^+}
+      \end{equation}
+      for every $\theta\in\A$. From Proposition~\ref{prop:adequateProperties}
+      follows, that $c$ is with values in $\Lambda^{<k}(A^0)$.
+      The fact that $\Lambda^k(A^0)$ is normal in $\Lambda^{\leq k}(A^0)$ in
+      Proposition~\ref{prop:PropertiesOfStokesSheafSplitting}, can be used to
+      see that $ c_{\theta^+}^{-1}G_\theta'c_{\theta^+}
+      \in\Gamma(\cU^{\leq k};\Lambda^{k}(A^0))$.
+      Thus, we rewrite the relation (\ref{eq:UniqueString:urdtindfgupndtcn}) to
+      \[
+        \dot F_\theta\dot G_\theta =
+        (c_\theta^{-1}\dot F_\theta'c_{\theta^+})
+        (c_{\theta^+}^{-1}G_\theta'c_{\theta^+})
+        \,,\qquad\text{~for~} \theta\in\A^{\leq k} \,.
+      \]
+      Since Corollary~\ref{cor:factorStokesGerms} tells us, that the
+      factorization into the factors of the semi-direct product are unique, we
+      get for all $\theta\in\A^k$
+      \[
+        \dot F_\theta=c_\theta^{-1}\dot F_\theta'c_{\theta^+}
+        \qquad \text{~and~} \qquad
+        \dot G_\theta=c_{\theta^+}^{-1}G_\theta'c_{\theta^+}.
+      \]
+      The former relation implies that $(\dot F_\theta)$ and $(\dot F_\theta')$
+      are cohomologous with values in $\Lambda^{<k}(A^0)$ on $\cU^{\leq k}$.
+      Since $\cU^{<k}$ is already adequate to $\Lambda^{<k}(A^0)$, \rewrite{are
+      $(\dot F_\theta)$ and $(\dot F_\theta')$} already on $\cU^{<k}$,
+      i.e.\ in $\Gamma(\dot\cU^{<k};\Lambda^{<k}(A^0))$, cohomologous.
+    \item The proof of part 2.\ (similar to the proof of part 1.) can be found
+      in Loday-Richaud's paper \cite[Proof of Lem.II.3.3]{Loday1994}.
+      \TODO[PROOF!]
   \end{enumerate}
-  \TODO{}
 \end{proof}
 \begin{defn}\label{defn:theMapTau}
   Define the injective map
