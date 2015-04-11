@@ -455,12 +455,13 @@
 %%%%  MyDevelop  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{verbatim}
+
 \newcommand{\comm}[1] {}
 \newcommand{\rewrite}[1] {#1}
 \newcommand{\ccite}[2][\empty] {}
 \newcommand{\TODO}[1][\empty] {}
 \newcommand{\NO} {}
-
+\newcommand{\PROBLEM}[1][\empty] {}
 
 \ifnum\myDevelopVariable=1
   \usepackage{xcolor}
@@ -509,6 +510,15 @@
   }}}
   \renewcommand{\NO}{{%
     \fcolorbox{CommentFrameColor}{red!50!white}{\textbf{\tiny N\!O}}}}
+
+  \renewcommand{\PROBLEM}[1][\empty]{{%
+      \fcolorbox{CommentFrameColor}{red!50!white}{%
+      \footnotesize{}
+      \ifthenelse{\equal{#1}{\empty}}
+        {\tiny P\!R\!O\!B\!L\!E\!M}
+        {\tiny P\!R\!O\!B\!L\!E\!M:\normalsize #1} % {TODO: #1}
+  }}}
+
 
   %Zeilenhöhe, für bessere lesbarkeit
   % \linesprcad{1.3}

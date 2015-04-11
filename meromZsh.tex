@@ -478,7 +478,7 @@ $\hat G(A)$ and $\hat G(A')$ related by
     \[
       (d-B)\circ F=F\circ(d-A)
     \]
-    which is equivalent \TODO[really] to
+    which is equivalent \PROBLEM[really] to
     \[
       \frac{dF}{dt}=BF-FA.
     \]
@@ -633,8 +633,9 @@ $C_2\in\C$ are two constants, then is also $C_1x_0(t)+C_2x_{00}(t)$ a solution
 of the same system.
 \begin{defn}
   \marginnote{\cite[4f]{thboalch}}
-  A \emph{fundamental solution} $\cY$ \TODO[an a sector $\mathfrak{s}$?] of the
-  system $[A]$ is an invertible $n\times n$ matrix, which solves $[0,A]$.
+  A \emph{fundamental matrix of solutios} or \emph{fundamental solution} $\cY$
+  an a sector $\mathfrak{s} $\PROBLEM[?] of the system $[A]$ is an invertible
+  $n\times n$ matrix, which solves $[0,A]$ on $\mathfrak{s}$.
   \begin{s-rem}
     This means that the columns of $\cY$ are $n$ $\C$-linearly independent
     solutions of the system $[A]$.
@@ -642,6 +643,7 @@ of the same system.
 \end{defn}
 
 \begin{rem}
+  \marginnote{\cite[2.1.3]{Zein2009}}
   If the trivialization is changed by $F$ (resp.\ $\hat F$) the fundamental
   solution $\cY\in G(\!\{t\}\!)$ changes to $F\cY$ (resp.\ $\hat F\cY$).
 \end{rem}
@@ -982,16 +984,17 @@ fundamental solution in the form $\hat F\cY_0$.
   \]
   A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given by
   \[
-    -\phi'\id + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right) \,.
+    t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+    \left(-\phi'\id\right)
+    t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+    + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right) \,.
   \]
   \begin{comment}
     \textbf{OR}
     A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given by
     \[
-      t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-      \left(-\phi'\id\right)
-      t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-      + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right) \,.
+      -\phi'\id + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+      \,.
     \]
   \end{comment}
   Since $\cM$ is a sum of sach elementary connections, The connection matrix of
@@ -999,11 +1002,17 @@ fundamental solution in the form $\hat F\cY_0$.
   \[
     \bigoplus_\phi\left(
       -\phi'\id + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-    \right)
-    =
-    \underset{Q'(t^{-1})}{
+    \right) \,,
+  \]
+  which can be rewritten as
+  \[
+    \underset{t_LQ'(t^{-1})t^{-L}}{
       \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-        \underbrace{-\bigoplus_\phi \phi'\id}
+        \underbrace{-\bigoplus_\phi
+          t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+          \left(\phi'\id\right)
+          t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+        }
       }
     }
     +
@@ -1020,14 +1029,25 @@ fundamental solution in the form $\hat F\cY_0$.
     \,.
   \]
   \begin{comment}
-    \textbf{OR}
-    A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given by
     \[
+      \underset{t^L}{
+        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+          \underbrace{\bigoplus_\phi
+            t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+          }
+        }
+      }
       \underset{Q'(t^{-1})}{
         \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-          \underbrace{-\bigoplus_\phi
-            t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-            \left(\phi'\id\right)
+          \underbrace{\left(-\bigoplus_\phi
+              \left(\phi'\id\right)
+            \right)
+          }
+        }
+      }
+      \underset{t^{-L}}{
+        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+          \underbrace{\bigoplus_\phi
             t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
           }
         }
@@ -1046,8 +1066,35 @@ fundamental solution in the form $\hat F\cY_0$.
       \,.
     \]
   \end{comment}
+  \begin{comment}
+    \textbf{OR}
+    A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given by
+    \[
+      \bigoplus_\phi\left(
+        -\phi'\id + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+      \right)
+      =
+      \underset{Q'(t^{-1})}{
+        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+          \underbrace{-\bigoplus_\phi \phi'\id}
+        }
+      }
+      +
+      \frac{1}{t}
+      \underset{L}{
+        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+          \underbrace{%
+            \bigoplus_\phi\left(
+              \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+            \right)
+          }
+        }
+      }
+      \,.
+    \]
+  \end{comment}
 
-  \TODO{}
+  \PROBLEM{}
 
   \textbf{``\Leftarrow{}'':}
   Let $A^0$ be a normal form with $\mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}$ as a
@@ -1059,7 +1106,7 @@ fundamental solution in the form $\hat F\cY_0$.
   and the proposition~\ref{prop:systToMeromConn} yields our meromorphic
   connection $(\cM_{A^0},\nabla_{A^0})=(\C(\!\{t\}\!)^n,d-A^0)$ for
   \rewrite{which we want to prove, to be} a model.
-  \TODO[Jordan-NF]
+  \PROBLEM[Jordan-NF]
 \end{proof}
 \begin{cor}
   From the Levelt-Turittin theorem\comm{, the fundamental solution
@@ -1314,7 +1361,7 @@ $H\in G(\!\{t\}\!)$ such that
 \end{itemize}
 
 \begin{lem}
-  Since $G_0(A^0)$ is by definition the stabilizer\TODO[correct?] of $A^0$ we
+  Since $G_0(A^0)$ is by definition the stabilizer\PROBLEM[correct?] of $A^0$ we
   deduce
   \[
     \Syst_m(A^0)\cong \hat G(A^0)/G_0(A^0) \,.

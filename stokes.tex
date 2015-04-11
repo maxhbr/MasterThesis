@@ -70,14 +70,16 @@ $1$-cocycles or $1$-cochains.
 
 Let us first define the Stokes sheaf $\Lambda(A^0)$ on $S^1$, as the sheaf of
 flat isotropies.
-\begin{defn} \label{defn:StokesSheaf}
+\begin{defn}\label{defn:StokesSheaf}
   The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is the sheaf of groups defined on
   $S^1$ whose stalk at any point $\theta\in S^1$ is the group of germs of
-  $f\in\Gl_n(\cO(\mathfrak{s}))$, $\mathfrak{s}$ a sector containing $\theta$, satisfying
+  $f\in\Gl_n(\cO(\mathfrak{s}))$, $\mathfrak{s}$ a sector containing $\theta$,
+  satisfying
   the conditions:
   \begin{enumerate}
     \item Flatness: $\underset{x\in\mathfrak{s}}{\underset{x\to0}{\lim}}f(x)=1$
       and $f\sim_{\mathfrak{s}} 1$;
+      \TODO[Why two condition?]
     \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
   \end{enumerate}
   \begin{s-rem}
@@ -85,8 +87,8 @@ flat isotropies.
     normal form.
   \end{s-rem}
   \begin{s-rem}
-    \TODO[remove? need more defs]
-    Sabbah \cite[110]{sabbah2007isomonodromic} talks (global) about meromorphic
+    \PROBLEM[remove? need more defs!]
+    Sabbah \cite[110]{sabbah2007isomonodromic} talks about (global) meromorphic
     connections $\sM$ on a small disk $D$ around $0$ instead of germs of
     meromorphic connections.
 
@@ -234,7 +236,7 @@ We will start by proofing the injectivity of the morphism $\exp$.
   If we set $H_j:=F_j^{-1}G_{j}^{-1}F_j'$
   \comm{($H_j^{-1}:=F_j'G_{j}F_j^{-1}$)} on $U_{j}$, we get
   \begin{itemize}
-    \item a solution of $[A,A']$\TODO[Proofe!!!!], i.e.\ satisfies
+    \item a solution of $[A,A']$\PROBLEM[Proofe!], i.e.\ satisfies
       ${}^{H_j}A=A'$,
       \begin{comment}
         \begin{align*}
@@ -307,9 +309,9 @@ which is set up as follows:
 It can be verified, that the cass $\Theta([\hat F])$ does not depend on
 \begin{itemize}
   \item the choise of an ambassador $\hat F$ in
-    $[\hat F]\in G\llbracket t\rrbracket/G\{t\}$\TODO[proof!],
-  \item the choice of the covering $\cU$\TODO[proof!] nor
-  \item the choice the $F_j$\TODO[proof!].
+    $[\hat F]\in G\llbracket t\rrbracket/G\{t\}$\PROBLEM[proof!],
+  \item the choice of the covering $\cU$\PROBLEM[proof!] nor
+  \item the choice the $F_j$\PROBLEM[proof!].
 \end{itemize}
 \begin{lem}
   \TODO[remove this lemma? is not needed/used]
@@ -339,7 +341,7 @@ It can be verified, that the cass $\Theta([\hat F])$ does not depend on
   punctured disc with a small radius) into $G$, which will be called $g$.
   Since $F_j'^{-1}g_j^{-1}F_j\sim_{U_j}\id$ for all $j\in J$, we have
   $g\sim\id$.
-  \TODO[Riemannscher hebbarkeits satz]
+  \PROBLEM[Riemannscher hebbarkeits satz]
   Thus the defined $g$ satisfies $g=F'^{-1}F$, so that $[F]=[F']$.
 \end{proof}
 \TODO[\cite{babbitt1989local} on page 66]
@@ -410,7 +412,7 @@ We are now able to proof the surjectivity part of Theorem~\ref{thm:mainThm1}.
 
     \columnbreak
 
-      \textcolor{gray}{
+      \textcolor{gray}{%
         \textbf{Now look at surjectivity:}
         Similar to the proof, given by Sabbah \marginnote{Which refers to
         \cite{Malgrange1983}} in \cite{sabbah2007isomonodromic}, we will start
@@ -559,7 +561,7 @@ the \emph{set of all determining polynomials of $[\End A^0]$}.
   \TODO[Add definitions for \emph{maximal dacay}]
   \begin{defn}
     \marginnote{\cite[130]{hotta2008}, \cite[79]{Loday2014}}
-    A function is \emph{of maximal decay}, if \TODO{}
+    A function is \emph{of maximal decay}, if \PROBLEM{}
     \begin{s-rem}
       \marginnote{\cite[79]{Loday2014}}
       An exponential $e^{q(1/t)}=e^{-\frac{a}{t^{k}}(x+o(t^{-k}))}$ has maximal
@@ -1089,14 +1091,14 @@ are interested.}
 \begin{proof}
   \begin{comment}
     \begin{enumerate}
-      \item \TODO[clear, since germwise clear?]
+      \item \PROBLEM[clear, since germwise clear?]
     \end{enumerate}
   \end{comment}
   \begin{comment}
     \begin{enumerate}
       \setcounter{enumi}{1}
       \item
-        \TODO[Germwise or sectionwise??, check only on generators?]
+        \PROBLEM[Germwise or sectionwise??, check only on generators?]
         Let $\alpha$ be an direction in $S^1$.
         Let $n\in\Lambda^k(A^0)_\alpha$ and $g\in\Lambda^{\leq k}(A^0)_\alpha$.
         We have to show, that $gng^{-1}\in\Lambda^{\leq k}(A^0)_\alpha$,
@@ -1290,6 +1292,19 @@ that
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The theorem}
+\begin{comment}
+  \begin{lem}
+    Since the sections of the sheaf $\Lambda(A^0)$ are solutions of the system
+    $[A^0,A^0]$ (cf.\ Definition~\ref{defn:StokesSheaf}),
+    the theory of differential equations\PROBLEM[source?] tells us that
+    \rewrite{sections extend uniquely}.
+    Thus we can extend any germ $\phi_\theta\in\Lambda_\theta(A^0)$ uniquely to
+    a section $\phi\in\Gamma(\Omega;\Lambda(A^0))$, where $\Omega$ is the
+    maximal arc of definition around $\theta$.
+
+    \PROBLEM[The flatness proprerty implicitly satisfied?]
+  \end{lem}
+\end{comment}
 \begin{rem}\label{rem:mapStoToCocy}
   \marginnote{\cite[868]{Loday1994}}
   Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
@@ -1306,7 +1321,7 @@ that
     $(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
   \end{einr}
   To a different $\cU$ this construction yields a cohomologous
-  $1$-cocycle\TODO[Proof], thus the induced map
+  $1$-cocycle\PROBLEM[Proof], thus the induced map
   \[
     \prod_{\alpha\in J}\Sto_\alpha(A^0)\to H^1(S^1;\Lambda(A^0))=\St(A^0)
   \]
@@ -1315,18 +1330,6 @@ that
 \begin{comment}
   \cite[Thm.6.3.1]{sibuya1990Linear} says: if two differential equations have
   the same stokes phenomenon, they are analytically equivalent.
-\end{comment}
-\begin{comment}
-  \begin{lem}
-    To describe a cocycle, it is equivalent to give
-    \begin{einr}
-      \TODO{}
-    \end{einr}
-    or
-    \begin{einr}
-      $(\phi_\theta)_{\theta\in J}$.
-    \end{einr}
-  \end{lem}
 \end{comment}
 \begin{defn}\label{defn:stokesCocycle}
   \TODO[Why only germ? Sections?]
@@ -1383,7 +1386,7 @@ get the following corollary.
   of consecutive Stokes factors. He uses the rotational symmetry of the
   single-leveled case \rewrite{thus this approach is not} applicable to the
   multi-leveled case.
-  \comm{But one can\dots}
+  \comm{But one can \dots.}
 \end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1514,15 +1517,13 @@ the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
       \dot U_\theta^{\leq k}
         :=U\left(\theta,\frac{\pi}{K_i}\right)\cap\dot U_{\theta^-,\theta^+}
     \]
-    and the family of all $\dot U_\theta^{\leq k}$ is a nerve.\TODO[proof!]
+    and the family of all $\dot U_\theta^{\leq k}$ is a nerve.\PROBLEM[proof!]
     \begin{rem}
       If $\theta$ has a $k$-maximum level equal to $k$ then is
       $\dot U_\theta^{\leq k}$ equal to the Stokes arc
       $U\left(\theta,\frac{\pi}{k}\right)=\dot U_\theta^k$.
-      \begin{comment}
-        and then no $0$-cochain with level $k$ or $\geq k$ can exists on the
-        covering $\cU^{\leq{k}}$.
-      \end{comment}
+      \comm{\dots{}and then no $0$-cochain with level $k$ or $\geq k$ can
+      exists on the covering $\cU^{\leq{k}}$.}
     \end{rem}
 \end{enumerate}
 
@@ -1682,8 +1683,8 @@ satisfied}.
     \begin{enumerate}
       \item This is clear, since the coverings are build to satisfy the
         condition from proposition~\ref{prop:adeqCovCondition}.
-      \item \TODO{}
-      \item \TODO{}
+      \item \PROBLEM{}
+      \item \PROBLEM{}
     \end{enumerate}
   \end{proof}
 \end{comment}
@@ -1732,7 +1733,7 @@ This means that
         \Gamma(\dot\cU^k;\Lambda^k(A^0)) \,,
       \]
       i.e.\ the map which is the canonical extension of germs to their natural
-      arc, and
+      arc of definition, and
     \item the quotient map
       \[
         s^k:\Gamma(\dot\cU^k;\Lambda^k(A^0))\to H^1(S^1;\Lambda^k(A^0))
@@ -1742,7 +1743,7 @@ This means that
 \end{lem}
 \begin{proof}
   \begin{enumerate}
-    \item For map
+    \item The map
       \[
         i^k: \underset{\theta\in\A}\prod\Sto_\theta^k(A^0)
         \to
@@ -1753,13 +1754,40 @@ This means that
             }
         }}
       \]
-      it is well known to be a group isomorphism. \TODO[why?]
+      is welldefined, since the sections of $\Lambda^k(A^0)$ are solution of
+      the system $[A^0,A^0]$ and we know from the theory of differential
+      equations\TODO[source?] that an element
+      $f_\theta\in\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$ is uniquely
+      determined as the extension of its germ at some point $\theta$.
+
+      It is a group isomorphism, since
+      \PROBLEM[$\Sto_\theta^k(A^0)\subsetneq\Lambda_\theta^k(A^0)$]
       \begin{comment}
+        Problems:
+        \begin{itemize}
+          \item \PROBLEM[$\Sto_\theta^k(A^0)\subsetneq\Lambda_\theta^k(A^0)$]
+            and thus
+            \[
+              i^k:
+              \underset{\theta\in\A}\prod\Sto_\theta^k(A^0)
+              \subsetneq
+              \underset{\theta\in\A}\prod\Lambda_\theta^k(A^0)
+              \to
+              \prod_{\theta\in\A^k}\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))
+            \]
+        \end{itemize}
         IDEAS:
         \begin{itemize}
           \item Are sections fully determined by there germs at some points?
             \begin{itemize}
               \item since sections are defined by differential equations??
+
+                ODE-Theory, says that a germ defines a solution in a
+                \textbf{neighbourhood}
+              \item \PROBLEM[why is th neighbourhood large enough?] I.e.\
+                \[
+                  \substack{the\\neighbourhood}\supset\cU_\theta^k \,?
+                \]
             \end{itemize}
         \end{itemize}
       \end{comment}
@@ -1781,10 +1809,11 @@ This means that
         \item \textbf{surjective}, since $\cU^k$ is adequate to
           $\Lambda^k(A^0)$ and
         \item \textbf{injective}, since on $\cU^k$ there is no $0$-cochain in
-          $\Lambda^k(A^0)$\TODO[(cf.~???)].
+          $\Lambda^k(A^0)$.
       \end{itemize}
   \end{enumerate}
-  \TODO[Show that this is the correct $h$]
+  \PROBLEM[Show that this is the correct $h$]
+  \PROBLEM[Naturality?]
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1809,7 +1838,7 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
             \dot f_\alpha \text{~restricted to } \dot U_\theta^{\leq k}
             \text{~and seen as being in } \Lambda^{\leq k}(A^0)
             & \text{~when } \theta\in\A^k
-          \\1 \text{~(the identity) }
+          \\\id \text{~(the identity) }
             & \text{~when } \theta\notin\A^k
           \end{cases}$
       \end{itemize}
@@ -1826,7 +1855,7 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
             \dot f_\alpha \text{~restricted to } \dot U_\theta^{\leq k}
             \text{~and seen as being in } \Lambda^{\leq k}(A^0)
             & \text{~when } \theta\in\A^{<k}
-          \\1 \text{~(the identity) }
+          \\\id \text{~(the identity) }
             & \text{~when } \theta\notin\A^{<k}
           \end{cases}$
       \end{itemize}
@@ -1903,8 +1932,8 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
       Since $\cU^{<k}$ is already adequate to $\Lambda^{<k}(A^0)$, \rewrite{are
       $(\dot F_\theta)$ and $(\dot F_\theta')$} already on $\cU^{<k}$,
       i.e.\ in $\Gamma(\dot\cU^{<k};\Lambda^{<k}(A^0))$, cohomologous.
-    \item The proof of part 2.\ (similar to the proof of part 1.) can be found
-      in Loday-Richaud's paper \cite[Proof of Lem.II.3.3]{Loday1994}.
+    \item The proof of part 2.\ (together with the proof of part 1.) can be
+      found in Loday-Richaud's paper \cite[Proof of Lem.II.3.3]{Loday1994}.
       \TODO[PROOF!]
   \end{enumerate}
 \end{proof}
@@ -1921,9 +1950,9 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
       \dot f_\theta \text{~restricted to } \dot U_\theta
       \text{~and seen as being in } \Lambda(A^0)
       & \text{~when } \theta\in\A^k
-    \\1 \text{~(the identity on $\dot U_\theta$) }
+    \\\id \text{~(the identity on $\dot U_\theta$) }
       & \text{~when } \theta\notin\A^k
-    \end{cases} \,.
+    \end{cases}
   \]
   \marginnote{\cite[Prop.II.3.4]{Loday1994}}
   The \emph{product map of single-leveled cocycles} is then defined as
@@ -1937,10 +1966,31 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
   \end{align*}
   following an ascending order of levels.
   \begin{s-rem}
+    The map $\tau$
     \begin{enumerate}
-      \item This map, again, is injective and
-        \TODO[proof?]
-      \item it can be extended to an arbitrary order of levels.
+      \item is injective since it is composed from $\sigma^k$ and the clearly
+        injetive mapping
+        \[ \begin{tikzcd}[row sep=0cm]
+            \Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))
+            \rar
+            & \Gamma(\dot\cU;\Lambda(A^0))
+          \\(\dot F_\theta)_{\theta\in\A^{\leq k}}
+            \rar[maps to] 
+            & (\dot F'_\theta)_{\theta\in\A}
+        \end{tikzcd} \]
+        where 
+        \[
+          \dot F'_\theta=\begin{cases}
+            \dot F_\theta \text{~restricted to } \dot U_\theta
+            \text{~and seen as being in } \Lambda(A^0)
+            & \text{~when } \theta\in\A^{\leq k}
+            \\\id \text{~(the identity on $\dot U_\theta$) }
+            & \text{~when } \theta\notin\A^{\leq k}
+          \end{cases}
+        \]
+        and
+      \item it can be extended to an arbitrary order of levels
+        (cf.\ Remark~\cite[Rem.II.3.5]{Loday1994}).
     \end{enumerate}
   \end{s-rem}
 \end{defn}
@@ -1958,45 +2008,14 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
         H^1(\cU;\Lambda(A^0))}}\,.
   \]
 \end{cor}
-\begin{proof}
-  \TODO{}
-\end{proof}
-\paragraph{Composing functions to obtain $h$}
-The expression $\prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))$ is an
-abbreviation for
-$\prod_{k\in\cK}\prod_{\theta\in\A}\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$
-thus an element of $\Gamma(\dot\cU^k;\Lambda^k(A^0))$ looks like
-\begin{einr}
-  $\left(f_\theta\right)_{\theta\in\A}$ where
-  $f_\theta:\cU_\theta^k\to\C$\TODO[ is \textbf{holomorphic}/meromorphic?].
-\end{einr}
-Since sections in $\Lambda^k(A^0)$ are solution of the system $[A^0,A^0]$ we
-know from the theory of differential equations\TODO[source?] that an element
-$f_\theta\in\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$ is uniquely determined as
-the extension of its Stokes germ $\phi_\theta$ at $\theta$.
-\TODO[move to single leveled case?]
 \begin{comment}
-  ODE-Theory, says that a germ defines a solution in a \textbf{neighbourhood},
-  why is
-  \[
-    \substack{the\\neighbourhood}=\cU_\theta^k \,?
-  \]
-  \begin{itemize}
-    \item[\cite{Loday1994} p.872] \dots cononical extansion of germs to their
-      natural arc of definition.
-  \end{itemize}
+  \begin{proof}
+    \PROBLEM[Follows from the last lemmas?]
+  \end{proof}
 \end{comment}
-We denote the isomorphism, defined by this construction as
-\begin{align*}
-  i^k: \prod_{\theta\in\A}\Sto_\theta^k(A^0)
-  &\overset{\cong}\longrightarrow \Gamma(\dot\cU^k;\Lambda^k(A^0))
-\\(\phi_\theta)_{\theta\in\A} &\longmapsto (f_\theta)_{\theta\in\A}
-  \,.
-\end{align*}
-
-
-Thus, we have the ingredients to define the function $h$ from
-theorem~\ref{thm:mainThm2} by composition of bijective maps.
+\paragraph{Composing functions to obtain $h$}
+We have the ingredients to define the function $h$ from
+Theorem~\ref{thm:mainThm2} by composition of already bijective maps.
 \begin{proof}[Proof of theorem~\ref{thm:mainThm2}]
   Let $i_\theta:\Sto_\theta(A^0)\to\prod_{k\in\cK}\Sto_\theta^k(A^0)$ be the
   map which corresponds to the filtration from
@@ -2014,7 +2033,6 @@ theorem~\ref{thm:mainThm2} by composition of bijective maps.
       \displaystyle \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
   \end{tikzcd} \]
   by $\mathfrak{T}$.
-  \TODO[the map $\mathfrak{T}$ is bijective]
   Thus we obtain the bijection
   \[
     \cT\circ\mathfrak{T}:
@@ -2023,8 +2041,8 @@ theorem~\ref{thm:mainThm2} by composition of bijective maps.
     H^1(\cU;\Lambda(A^0))
   \]
   as the map $h$.
-  \TODO[naturality (is obvious?)]
-  \TODO[Show that this is the correct $h$]
+  \PROBLEM[naturality (is obvious?)]
+  \PROBLEM[Show that this is the correct $h$]
 \end{proof}
 
 \subsection{Some remarks}
@@ -2106,10 +2124,10 @@ notation on page~\pageref{page:alreadyUsedDefn}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{What do the Stokes germs $\phi_\theta$ look like?}
 \rewrite{First} we want to use the Stokes matrices of Stokes germs, discussed
-in section~\ref{sec:matrixReps}, to \rewrite{obtain some statements} about the
+in Section~\ref{sec:matrixReps}, to \rewrite{obtain some statements} about the
 \rewrite{structure} of the Stokes germs in our situation.
 
-The proposition~\ref{prop:representation} states that every Stokes germ
+The Proposition~\ref{prop:representation} states that every Stokes germ
 $\phi_\theta$ can be written as its matrix representation conjugated by the
 normal solution. That means that there is a Stokes matrix in
 $\SSto_\theta(A^0)$, which gets via
@@ -2127,7 +2145,7 @@ mapped to the Stokes germ $\phi_\theta$.
 \paragraph{Using the structure of $\SSto_\theta(A^0)$}
 First look at an example in which we will explain, from which relations on the
 determining polynomials which restriction on the form of the Stokes matrices
-follows.
+follow.
 \begin{exmp}
   Let $\theta\in\A$ be an anti-Stokes direction.
   From the definition of $\SSto_\theta(A^0)$ (cf.\
@@ -2335,8 +2353,8 @@ where $\star\in\{1,2,3\}$.
 
 \subsection{What do Stokes cocycles look like?}
 \begin{prop}
-  By taking the product of all $\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta$
-  we obtain the isomorphism
+  By taking the product over $\A$ of all
+  $\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta$ we obtain the isomorphism
   \[
     \prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta:
     \C^{k_1+2\cdot k_2}
