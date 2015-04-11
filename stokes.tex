@@ -224,36 +224,35 @@ We will start by proofing the injectivity of the morphism $\exp$.
   \]
   Since we can use refined coverings, it is possible to find a finite covering
   $\cU=\{U_j;j\in J\}$ of $S^1$ such that $\lambda$ is the class of the
-  cocycles $(F_lF_j^{-1})$ and $(F_l'F_j'^{-1})$, where $F_j$, $F_j'$ are
+  cocycles $(F_l^{-1}F_j)$ and $(F_l'^{-1}F_j')$, where $F_j$, $F_j'$ are
   defined relative to $U_j\in\cU$.
-  Since $[(F_lF_j^{-1})]=[(F_l'F_j'^{-1})]$ there exists a
+  Since $[(F_l^{-1}F_j)]=[(F_l'^{-1}F_j')]$ there exists a
   $0$-cochain $(G_j)_{j\in J}$ of the sheaf $\Lambda(A^0)$ relative to the
   covering $\cU$, such that
   \[
-    F_l'F_j'^{-1}=G_lF_lF_j^{-1}G_j^{-1}
+    F_l'^{-1}F_j'=G_l^{-1}F_l^{-1}F_jG_j
     \text{~on~the~arc~} U_j\cap U_l \,,
   \]
   which can be rewritten to
   \[
-    F_j'^{-1}G_jF_j
-    =
-    F_l'^{-1}G_lF_l
+    F_j'G_j^{-1}F_j^{-1} = F_l'G_l^{-1}F_l^{-1}
     \text{~on~the~arc~} U_j\cap U_l \,.
   \]
-  If we set $H_j:=F_j'^{-1}G_{j}F_j$ on $U_{j}$, we get
+  If we set $H_j:=F_j'G_{j}^{-1}F_j^{-1}$ on $U_{j}$, we get
   \begin{itemize}
     \item a solution of $[A,A']$ on every $U_j$, i.e.\ it
       satisfies there ${}^{H_j}A=A'$, since
       \begin{align*}
-        {}^{H_j}A &= {}^{F_j'^{-1}G_{j}^{-1}F_j'}A
-        \\&={}^{F_j'^{-1}G_{j}^{-1}}A^0
+        {}^{H_j}A &= {}^{F_j'G_{j}^{-1}F_j^{-1}}A
+        \\&={}^{F_j'G_{j}^{-1}}A^0
         & \text{(since $F_j'$ is a lift of $\hat F'$ on $U_j$)}
-        \\&={}^{F_j'^{-1}}A^0
+        \\&={}^{F_j'}A^0
         & \text{(since $G_j$ is a is an isotropy of $A^0$)}
         \\&=A'
         & \text{(since $F_j$ is a lift of $\hat F$ on $U_j$)}
       \end{align*}
       \PROBLEM[Needs lemma ${}^{FF'}A={}^F\left({}^{F'}A\right)$]
+      and
       % \begin{comment}
       %   \begin{align*}
       %     {}^{H_j}A &= (dH_j)H_j^{-1}+H_jAH_j^{-1}
@@ -268,8 +267,29 @@ We will start by proofing the injectivity of the morphism $\exp$.
       %     \\&=A'
       %   \end{align*}
       % \end{comment}
-    \item which satisfies $\hat F'=\hat H_j^{-1}\hat F$\PROBLEM[NO!] on every
-      $U_j$, since for every $j\in J$ is $G_j$ flat.
+    \item which satisfies $\hat F'=\hat H_j\hat F$\PROBLEM[Cosistend with def?]
+      on every $U_j$, since
+      \begin{align*}
+        \hat H_j\hat F&= \widehat{F_j'G_{j}^{-1}F_j^{-1}} \hat F
+        \\&= \hat{F_j'}
+        \underset{\id}{%
+          \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+            \underbrace{%
+              \hat{G_{j}^{-1}}
+            }
+          }
+        }
+        \hat{F_j^{-1}} \hat F
+        \\&= \hat{F'}
+        \underset{\id}{%
+          \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+            \underbrace{%
+              \hat{F^{-1}} \hat F
+            }
+          }
+        }
+        \\&= \hat{F'}
+      \end{align*}
   \end{itemize}
   Therefore are $(A,\hat F)$ and $(A,\hat F')$ equivalent and injectivity is
   proven.
