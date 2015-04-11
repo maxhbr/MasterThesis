@@ -231,39 +231,45 @@ We will start by proofing the injectivity of the morphism $\exp$.
   covering $\cU$, such that
   \[
     F_l'F_j'^{-1}=G_lF_lF_j^{-1}G_j^{-1}
+    \text{~on~the~arc~} U_j\cap U_l \,,
+  \]
+  which can be rewritten to
+  \[
+    F_j'^{-1}G_jF_j
+    =
+    F_l'^{-1}G_lF_l
     \text{~on~the~arc~} U_j\cap U_l \,.
   \]
-  If we set $H_j:=F_j^{-1}G_{j}^{-1}F_j'$
-  \comm{($H_j^{-1}:=F_j'^{-1}G_{j}F_j$)} on $U_{j}$, we get
+  If we set $H_j:=F_j'^{-1}G_{j}F_j$ on $U_{j}$, we get
   \begin{itemize}
-    \item a solution of $[A,A']$\PROBLEM[Proofe!] on every $U_j$, i.e.\ it
-      satisfies
-      there ${}^{H_j}A=A'$,
-      \begin{comment}
-        \PROBLEM[reverse?]
-        \begin{align*}
-          {}^{H_j}A &= {}^{F_j'^{-1}G_{j}^{-1}F_j}A
-          \\&= {}^{F_j'^{-1}G_{j}^{-1}}A^0
-          \\&= {}^{F_j^{-1}}A^0
-          \\&= A'
-        \end{align*}
-      \end{comment}
-      \begin{comment}
-        \begin{align*}
-          {}^{H_j}A &= (dH_j)H_j^{-1}+H_jAH_j^{-1}
-          \\&=(d(F_j^{-1}G_{j}^{-1}F_j'))F_j'^{-1}G_{j}F_j
-              + F_j^{-1}G_{j}^{-1}F_j'AF_j'^{-1}G_{j}F_j
-          \\&=\dots
-          \\&=\left(d\left(\hat F\hat F'^{-1}\right)\right)
-              \left(\hat F\hat F'^{-1}\right)^{-1}
-              +\hat F\hat F'^{-1} A \left(\hat F\hat F'^{-1}\right)^{-1}
-          \\&={}^{\hat F\hat F'^{-1}}A'
-          \\&={}^{\hat F}\left({}^{\hat F'^{-1}}A'\right)
-          \\&=A'
-        \end{align*}
-      \end{comment}
-    \item which satisfies $\hat F'=\hat H_j^{-1}\hat F$ on every $U_j$, since
-      for every $j\in J$ is $G_j$ flat.
+    \item a solution of $[A,A']$ on every $U_j$, i.e.\ it
+      satisfies there ${}^{H_j}A=A'$, since
+      \begin{align*}
+        {}^{H_j}A &= {}^{F_j'^{-1}G_{j}^{-1}F_j'}A
+        \\&={}^{F_j'^{-1}G_{j}^{-1}}A^0
+        & \text{(since $F_j'$ is a lift of $\hat F'$ on $U_j$)}
+        \\&={}^{F_j'^{-1}}A^0
+        & \text{(since $G_j$ is a is an isotropy of $A^0$)}
+        \\&=A'
+        & \text{(since $F_j$ is a lift of $\hat F$ on $U_j$)}
+      \end{align*}
+      \PROBLEM[Needs lemma ${}^{FF'}A={}^F\left({}^{F'}A\right)$]
+      % \begin{comment}
+      %   \begin{align*}
+      %     {}^{H_j}A &= (dH_j)H_j^{-1}+H_jAH_j^{-1}
+      %     \\&=(d(F_j^{-1}G_{j}^{-1}F_j'))F_j'^{-1}G_{j}F_j
+      %         + F_j^{-1}G_{j}^{-1}F_j'AF_j'^{-1}G_{j}F_j
+      %     \\&=\dots
+      %     \\&=\left(d\left(\hat F\hat F'^{-1}\right)\right)
+      %         \left(\hat F\hat F'^{-1}\right)^{-1}
+      %         +\hat F\hat F'^{-1} A \left(\hat F\hat F'^{-1}\right)^{-1}
+      %     \\&={}^{\hat F\hat F'^{-1}}A'
+      %     \\&={}^{\hat F}\left({}^{\hat F'^{-1}}A'\right)
+      %     \\&=A'
+      %   \end{align*}
+      % \end{comment}
+    \item which satisfies $\hat F'=\hat H_j^{-1}\hat F$\PROBLEM[NO!] on every
+      $U_j$, since for every $j\in J$ is $G_j$ flat.
   \end{itemize}
   Therefore are $(A,\hat F)$ and $(A,\hat F')$ equivalent and injectivity is
   proven.
