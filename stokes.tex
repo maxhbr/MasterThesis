@@ -234,15 +234,32 @@ We will start by proofing the injectivity of the morphism $\exp$.
     \text{~on~the~arc~} U_j\cap U_l \,.
   \]
   If we set $H_j:=F_j^{-1}G_{j}^{-1}F_j'$
-  \comm{($H_j^{-1}:=F_j'G_{j}F_j^{-1}$)} on $U_{j}$, we get
+  \comm{($H_j^{-1}:=F_j'^{-1}G_{j}F_j$)} on $U_{j}$, we get
   \begin{itemize}
-    \item a solution of $[A,A']$\PROBLEM[Proofe!], i.e.\ satisfies
-      ${}^{H_j}A=A'$,
+    \item a solution of $[A,A']$\PROBLEM[Proofe!] on every $U_j$, i.e.\ it
+      satisfies
+      there ${}^{H_j}A=A'$,
+      \begin{comment}
+        \PROBLEM[reverse?]
+        \begin{align*}
+          {}^{H_j}A &= {}^{F_j'^{-1}G_{j}^{-1}F_j}A
+          \\&= {}^{F_j'^{-1}G_{j}^{-1}}A^0
+          \\&= {}^{F_j^{-1}}A^0
+          \\&= A'
+        \end{align*}
+      \end{comment}
       \begin{comment}
         \begin{align*}
           {}^{H_j}A &= (dH_j)H_j^{-1}+H_jAH_j^{-1}
-          \\&=(d(F_j^{-1}G_{j}^{-1}F_j'))F_j'G_{j}F_j^{-1}
-              F_j^{-1}G_{j}^{-1}F_j'AF_j'G_{j}F_j^{-1}
+          \\&=(d(F_j^{-1}G_{j}^{-1}F_j'))F_j'^{-1}G_{j}F_j
+              + F_j^{-1}G_{j}^{-1}F_j'AF_j'^{-1}G_{j}F_j
+          \\&=\dots
+          \\&=\left(d\left(\hat F\hat F'^{-1}\right)\right)
+              \left(\hat F\hat F'^{-1}\right)^{-1}
+              +\hat F\hat F'^{-1} A \left(\hat F\hat F'^{-1}\right)^{-1}
+          \\&={}^{\hat F\hat F'^{-1}}A'
+          \\&={}^{\hat F}\left({}^{\hat F'^{-1}}A'\right)
+          \\&=A'
         \end{align*}
       \end{comment}
     \item which satisfies $\hat F'=\hat H_j^{-1}\hat F$ on every $U_j$, since
