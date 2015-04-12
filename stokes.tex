@@ -230,21 +230,21 @@ We will start by proofing the injectivity of the morphism $\exp$.
   $0$-cochain $(G_j)_{j\in J}$ of the sheaf $\Lambda(A^0)$ relative to the
   covering $\cU$, such that
   \[
-    F_l'^{-1}F_j'=G_l^{-1}F_l^{-1}F_jG_j
+    F_l'^{-1}F_j'=G_lF_l^{-1}F_jG_j^{-1}
     \text{~on~the~arc~} U_j\cap U_l \,,
   \]
   which can be rewritten to
   \[
-    F_j'G_j^{-1}F_j^{-1} = F_l'G_l^{-1}F_l^{-1}
+    F_j'G_jF_j^{-1} = F_l'G_lF_l^{-1}
     \text{~on~the~arc~} U_j\cap U_l \,.
   \]
-  If we set $H_j:=F_j'G_{j}^{-1}F_j^{-1}$ on $U_{j}$, we get
+  If we set $H_j:=F_j'G_{j}F_j^{-1}$ on $U_{j}$, we get
   \begin{itemize}
     \item a solution of $[A,A']$ on every $U_j$, i.e.\ it
       satisfies there ${}^{H_j}A=A'$, since
       \begin{align*}
-        {}^{H_j}A &= {}^{F_j'G_{j}^{-1}F_j^{-1}}A
-        \\&={}^{F_j'G_{j}^{-1}}A^0
+        {}^{H_j}A &= {}^{F_j'G_{j}F_j^{-1}}A
+        \\&={}^{F_j'G_{j}}A^0
         & \text{(since $F_j'$ is a lift of $\hat F'$ on $U_j$)}
         \\&={}^{F_j'}A^0
         & \text{(since $G_j$ is a is an isotropy of $A^0$)}
@@ -267,19 +267,19 @@ We will start by proofing the injectivity of the morphism $\exp$.
       %     \\&=A'
       %   \end{align*}
       % \end{comment}
-    \item which satisfies $\hat F'=\hat H_j\hat F$\PROBLEM[Cosistend with def?]
-      on every $U_j$, since
+    \item which satisfies $\hat F'=\hat H_j\hat F$ on every $U_j$, since
       \begin{align*}
-        \hat H_j\hat F&= \widehat{F_j'G_{j}^{-1}F_j^{-1}} \hat F
+        \hat H_j\hat F&= \widehat{F_j'G_{j}F_j^{-1}} \hat F
         \\&= \hat{F_j'}
         \underset{\id}{%
           \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
             \underbrace{%
-              \hat{G_{j}^{-1}}
+              \hat{G_{j}}
             }
           }
         }
         \hat{F_j^{-1}} \hat F
+        & \text{(since $G_j$ is flat and thus $\hat G_j=\id$)}
         \\&= \hat{F'}
         \underset{\id}{%
           \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
@@ -333,7 +333,7 @@ the arc $I$ asymptotic to $\id\in G(\!(t)\!)$ by
   \cG(I)=\left\{g\in\Gl_n(\cA(I))\mid g\sim_I\id\right\}\,,
 \]
 and this defines a sheaf $\cG$ on $S^1$.
-The statement of the Malgrange-Sibuya Theorem is then, that the
+The statement of the (second) Malgrange-Sibuya Theorem is then, that the
 \rewrite{differece} between formal and konvergent invertible matrices is
 described by the first sheaf cohomology $H^1(S^1,\cG)$ of
 $\cG$ via the map
@@ -366,23 +366,23 @@ It can be verified, that the cass $\Theta([\hat F])$ does not depend on
   We then can find a covering $\cU=\{U_j\mid j\in J\}$ together with
   holomorphic functions $F_j$ and $F_j'$, which satisfy
   $F_j\sim_{U_j}\hat F$ and $F_j'\sim_{U_j}\hat F'$, such that
-  $(F_lF_j^{-1})_{j,l\in J}$ and $(F_l'F_j'^{-1})_{j,l\in J}$ determine the
+  $(F_l^{-1}F_j)_{j,l\in J}$ and $(F_l'^{-1}F_j')_{j,l\in J}$ determine the
   classes $\Theta([\hat F])$ and $\Theta([\hat F'])$.
   This implies that there are maps $g_j$, which are on $U_j$ holomorphic and
   satisfy $g_j\sim_{U_j}\id$ such that
   \[
-    F_lF_j^{-1}=g_lF_l'F_j'^{-1}g_j^{-1}
+    F_l^{-1}F_j=g_l^{-1}F_l'^{-1}F_j'g_j
     \text{~on~the~arc~} U_j\cap U_l
   \]
   This equation can be rewritten to
   \[
-    F_l'^{-1}g_l^{-1}F_l=F_j'^{-1}g_j^{-1}F_j
+    F_l'g_lF_l^{-1}=F_j'g_jF_j^{-1}
     \text{~on~the~arc~} U_j\cap U_l \,.
   \]
-  Since this tells us, that the functions $F_j'^{-1}g_j^{-1}F_j$ coincide on
+  Since this tells us, that the functions $F_j'g_jF_j^{-1}$ coincide on
   the overlapping and define a holomorphic map from the arc $S^1$ (i.e.\ a
   punctured disc with a small radius) into $G$, which will be called $g$.
-  Since $F_j'^{-1}g_j^{-1}F_j\sim_{U_j}\id$ for all $j\in J$, we have
+  Since $F_j'g_jF_j^{-1}\sim_{U_j}\id$ for all $j\in J$, we have
   $g\sim\id$.
   \PROBLEM[Riemannscher hebbarkeits satz]
   Thus the defined $g$ satisfies $g=F'^{-1}F$, so that $[F]=[F']$.
@@ -421,13 +421,13 @@ We are now able to proof the surjectivity part of Theorem~\ref{thm:mainThm1}.
   F\in G\llbracket t\rrbracket\subset G(\!(t)\!)$ whose class $[\hat F]$ gets
   via $\Theta$ mapped to $\sigma$.
   Thus there exists holomorphic functions $F_j:\mathfrak{s}_{U_j}\to G$ with
-  $F_j\sim_{U_j}\hat F$ and $F_lF_j^{-1}=F_{jl}$ on
+  $F_j\sim_{U_j}\hat F$ and $F_l^{-1}F_j=F_{jl}$ on
   $\mathfrak{s}_{U_j\cap U_l}$ for all $j,l\in J$.
 
-  Define on every arc $U_j$ the matrix $A_j:={}^{F_j^{-1}}A^0$.
+  Define on every arc $U_j$ the matrix $A_j:={}^{F_j}A^0$.
   On the intersections $U_j\cap U_l$ we know that $A_j=A_l$, since
-  $F_lF_j^{-1}\in\Lambda(A^0)$ and thus
-  $A^0={}^{F_j}\Big(\underset{=A_l}{\underbrace{{}^{F_l^{-1}}A^0}}\Big)$.
+  $F_l^{-1}F_j\in\Lambda(A^0)$ and thus
+  $A^0={}^{F_l^{-1}}\Big(\underset{=A_j}{\underbrace{{}^{F_j}A^0}}\Big)$.
   Thus the $A_j$ \rewrite{glue to a} section $A$, which satisfies
   ${}^{\hat F}A=A_0$ by construction.
   We have found an element $(A,\hat F)\in\cH(A^0)$ whose image under $\exp$ is
