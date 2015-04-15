@@ -5,26 +5,28 @@ connections.
 talk about global information.
 \comm{Also there is an approach with $\cD$-modules.}
 For local description one can use \textbf{germs of meromorphic connections} or
-the coordinate dependent (local) \textbf{systems} and \textbf{connection
-matrices}.
+the coordinate dependent \textbf{systems} and \textbf{connection matrices}.
 \comm{Also, there is the coordinate independent approach with localized
 holonomic $\cD$-modules.}
 
 Meromorphic connections are introduced and discussed in many resources.
-A good starting point are Sabbah's lecture notes \cite{sabbah_cimpa90}.
+A good starting point are Sabbah's lecture notes~\cite{sabbah_cimpa90}.
 More advanced resources are for example
-Sabbah's book \cite{sabbah2007isomonodromic},
-Varadarajan's \cite{Varadarajan96linearmeromorphic} or
-the book \cite{hotta2008} from Hotta et al.
+Sabbah's book~\cite{sabbah2007isomonodromic},
+Varadarajan's~\cite{Varadarajan96linearmeromorphic} or
+the book~\cite{hotta2008} from Hotta et al.
 The necessary facts about meromorphic connections are also stated in
-Boalch's paper \cite{boalch} (resp.\ his thesis \cite{thboalch}),
-and Loday-Richaud's paper \cite{Loday1994}.
+Boalch's paper~\cite{boalch} (resp.\ his thesis~\cite{thboalch}),
+and Loday-Richaud's paper~\cite{Loday1994}.
 
 Systems are, for example, discussed in
-the book \cite{hotta2008} from Hotta et al,
-Loday-Richaud's paper \cite{Loday1994} and his book \cite{Loday2014} and
-Boalch's paper \cite{boalch} (resp.\ his thesis \cite{thboalch}).
+the book~\cite{hotta2008} from Hotta et al,
+Loday-Richaud's paper~\cite{Loday1994} and his book~\cite{Loday2014} and
+Boalch's paper~\cite{boalch} (resp.\ his thesis~\cite{thboalch}).
 
+We will use \rewrite{all of the} mentioned \rewrite{resources}.
+
+\section{(Global) meromorphic connections}
 Let $M$ be a riemanian surface and let $Z=k_1(a_1)+\cdots+k_m(a_m)>0$ be an
 effective divisor\footnote{The $a_i$ are distinct points and the $k_i$ are
 positive integers.} on $M$.
@@ -120,7 +122,7 @@ A meromorphic connection is then defined as follows.
 \end{defn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Local expression of meromorphic connections}
+\section{Local expression of meromorphic connections and systems}
 \marginnote{\cite[28]{sabbah2007isomonodromic},
   \\\cite[2]{thboalch} and
   \\\cite[11]{babbitt1989local}}
@@ -132,7 +134,7 @@ about germs of meromorphic connections or systems, which are coordinate-
 and trivialization-dependent.
 \begin{prop}
   \marginnote{\textbf{\cite[Rem.5.2.4]{hotta2008}}\\\cite[Def.4.2.1]{Loday2014}}
-  A germ of a meromorphic connection $(\sM,\nabla)$ is just the sheaf-theoretic
+  A germ of a meromorphic connection $(\sM,\nabla)$ is the sheaf-theoretic
   germ (at $t=0$), thus is given by a tuple $(\cM,\nabla)$ where
   \begin{itemize}
     \item $\cM$ is the germ at $0$ of the holomorphic bundle $\sM$ and thus a
@@ -174,8 +176,9 @@ and trivialization-dependent.
 \end{defn}
 \marginnote{\cite[65]{Loday2014}, \cite[129]{hotta2008}}
 Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
-Let $A=(a_{jk})$ be a $n\times n$ matrix with entries in $\C(\!\{t\}\!)$
-such that the it describes the action of $\nabla$, i.e.\ it satisfies
+Let $A=(a_{jk})_{j,k\in\{1,\dots,n\}}$ be a $n\times n$ matrix with entries in
+$\C(\!\{t\}\!)$ such that the it describes the action of $\nabla$, i.e.\ it
+satisfies
 \[
   \nabla e_k
   =
@@ -245,8 +248,9 @@ $\triangle=d-A$, which has order one and dimension $n$.
 %   \end{enumerate}
 % \end{defn}
 
-If we want to reverse the base choice to get a corresponding meromorphic
-connection back, we can do this in the following way.
+If we start with a system $[A]$ and we want a meromorphic connection
+$(\cM,\nabla)$, which has $A$ as connection matrix, we can do this in the
+following way.
 \begin{prop}\label{prop:systToMeromConn}
   If we start with either a system $[A]$ of rank $n$, or a connection matrix
   $A\in\gl_n(\C(\!\{t\}\!))$, we get a germ of a meromorphic connection via
@@ -311,9 +315,9 @@ connection back, we can do this in the following way.
     \item $\cM_1\otimes\cM_2$ is endowed with the structure of a meromorphic
       connection by
       \[
-        \nabla(u_1\otimes u_2)=\nabla_1u_x\otimes u_2+u_1\otimes\nabla_2u_2
+        \nabla(u_1\otimes u_2)=\nabla_1u_1\otimes u_2+u_1\otimes\nabla_2u_2
       \]
-      where $u_i\in\cM_i$ and
+      where $u_i\in\cM_i$ \PROBLEM[how looks the connection matrix?] and
     \item $\Hom_{\C(\!\{t\}\!)}(\cM_1,\cM_2)$ is endowed with the structure of
       a meromorphic
       connection by
@@ -400,7 +404,9 @@ the lemma of the cyclic vector. \TODO{}
     \item $G=\Gl_n(\C)$;
     \item $G[t]=\Gl_n(\C[t])$;
     \item $G\{t\}=\Gl_n(\C\{t\})$ analytic transformations;
-    \item $G(\!\{t\}\!)=\Gl_n\left(\C\{t\}[t^{-1}]\right)$ meromorphic
+    \item $G(\!\{t\}\!)=\Gl_n\left(\C\{t\}[t^{-1}]\right)$
+      meromorphic\footnote{We use the term meromorphic in the sens of
+      convergent meromorphic. Otherwise we say formal meromorphic.}
       transformations;
     \item $G\llbracket t\rrbracket=\Gl_n\left(\C\llbracket t\rrbracket\right)$
       (maybe not applicable) formal transformations;
@@ -413,10 +419,8 @@ the lemma of the cyclic vector. \TODO{}
   \end{comment}
 \end{notations}
 \marginnote{\cite[Sec.4.3.1]{Loday2014}}
-By \emph{meromorphic\footnote{We use the term meromorphic in the sens of
-convergent meromorphic. Otherwise we say formal meromorphic.} transformation},
-or just \emph{transformation}, of a system we mean a $\C(\!\{t\}\!)$-linear
-change of the trivialization.
+By \emph{meromorphic transformation}, or just \emph{transformation}, of a
+system we mean a $\C(\!\{t\}\!)$-linear change of the trivialization.
 Such a change is given by a matrix $F\in G(\!\{t\}\!)$ and the transformed
 connection matrix ${}^F\!A$ is obtained through
 \[
@@ -496,36 +500,35 @@ $\hat G(A)$ and $\hat G(A')$ related by
     \end{comment}
   \end{s-rem}
 \end{rem}
-\begin{comment}
-  \begin{rem}
-    \[
-      {}^{(F_2F_1)}\!A =
-      {}^{F_2}\!\left({}^{F_1}\!A\right)
-    \]
-    \rewrite{since}
-    \begin{align*}
-      {}^{F_2F_1}\!A^0
-      &= d(F_2F_1)(F_2F_1)^{-1}+F_2F_1 A(F_2F_1)^{-1}
-    \\&=\left(
-        \left(dF_2\right)̂F_1
-        +F_2\left(dF_1\right)̂
-      \right) F_1^{̀-1} F_2^{̀-1}
-      +F_2F_1 A F_1^{̀-1}F_2^{̀-1}
-    \\&= \left(dF_2\right)̂F_2^{-1}
-       +F_2\left(dF_1\right)̂ F_1^{̀-1} F_2^{̀-1}
-       +F_2
-       \left(
-         {}^{F_1}\!A-\left(dF_1\right)F^{-1}
-       \right)
-       F_2^{̀-1}
-    \\&= \left(dF_2\right)̂F_2^{-1} +F_2 {}^{F_1}\!A F_2^{̀-1}
-    \\&= {}^{F_2}\!\left({}^{F_1}\!A\right)
-    \end{align*}
-  \end{rem}
-\end{comment}
+\begin{rem}\label{rem:distributingTransforamtionRule}
+  The simple but useful rule
+  \[
+    {}^{(F_2F_1)}\!A =
+    {}^{F_2}\!\left({}^{F_1}\!A\right)
+  \]
+  can be seen by calculation:
+  \begin{align*}
+    {}^{(F_2F_1)}\!A
+    &= d(F_2F_1)(F_2F_1)^{-1}+F_2F_1 A(F_2F_1)^{-1}
+  \\&=\left(
+      \left(dF_2\right)̂F_1
+      +F_2\left(dF_1\right)̂
+    \right) F_1^{̀-1} F_2^{̀-1}
+    +F_2F_1 A F_1^{̀-1}F_2^{̀-1}
+  \\&= \left(dF_2\right)̂F_2^{-1}
+     +F_2\left(dF_1\right)̂ F_1^{̀-1} F_2^{̀-1}
+     +F_2
+     \left(
+       {}^{F_1}\!A-\left(dF_1\right)F^{-1}
+     \right)
+     F_2^{̀-1}
+  \\&= \left(dF_2\right)̂F_2^{-1} +F_2 {}^{F_1}\!A F_2^{̀-1}
+  \\&= {}^{F_2}\!\left({}^{F_1}\!A\right)
+  \end{align*}
+\end{rem}
 \begin{defn}
-  We define the \emph{(formal) equivalence relation on the connection matrices}
-  as
+  We define the \emph{(formal) equivalence relation on the connection matrices
+  (resp.\ on the corresponding systems)} as
   \begin{einr}
     \textbf{\boldmath$A$ is (formally) equivalent to $B$}
   \end{einr}
@@ -548,16 +551,13 @@ $\hat G(A)$ and $\hat G(A')$ related by
   \end{comment}
 \end{defn}
 
+The defined equivalence relations are compatible with the \rewrite{isomorphisms
+relations} on meromorphic connections (cf.\ \cite[Lem.5.1.3]{hotta2008}),
+i.e.\ the following proposition holds.
 \begin{prop}
-  \marginnote{\cite[Lem.5.1.3]{hotta2008}}
   Two germs of meromorphic connections are (formally) isomorphic if and only if
   their corresponding connection matrices are (formally) equivalent.
 \end{prop}
-\begin{comment}
-  \begin{proof}
-    \TODO{}
-  \end{proof}
-\end{comment}
 
 \begin{defn}
   \begin{itemize}
@@ -570,7 +570,7 @@ $\hat G(A)$ and $\hat G(A')$ related by
       \begin{s-rem}
         The isotropies are, a priori, formal transformations.
         Loday-Richaud states in his paper~\cite[853]{Loday1994}, that actually
-        $G(A^0)$ is a subgroup of $\Gl_n(\C[1/x,x])$.
+        $G_0(A^0)$ is a subgroup of $\Gl_n(\C[1/t,t])$.
       \end{s-rem}
   \end{itemize}
 \end{defn}
@@ -582,7 +582,7 @@ $\hat G(A)$ and $\hat G(A')$ related by
 \end{lem}
 \begin{comment}
   \begin{proof}
-    \TODO{}
+    \TODO[Look at \cite{BJL1979Birkhoff}?]
   \end{proof}
 \end{comment}
 
@@ -633,15 +633,19 @@ $C_2\in\C$ are two constants, then is also $C_1x_0(t)+C_2x_{00}(t)$ a solution
 of the same system.
 \begin{defn}
   \marginnote{\cite[4f]{thboalch}}
-  A \emph{fundamental matrix of solutios} or \emph{fundamental solution} $\cY$
-  on a sector $\mathfrak{s} $\PROBLEM[?] of the system $[A]$ is an invertible
-  $n\times n$ matrix, which solves $[0,A]$ on $\mathfrak{s}$.
+  A \emph{fundamental matrix of (formal) solutios} or \emph{(formal)
+  fundamental solution} $\cY$ on a sector $\mathfrak{s} $\PROBLEM[?] of the
+  system $[A]$ is an invertible $n\times n$ matrix (with formal entries), which
+  solves $[0,A]$ on $\mathfrak{s}$.
   \begin{s-rem}
     This means that the columns of $\cY$ are $n$ $\C$-linearly independent
     solutions of the system $[A]$ on $\mathfrak{s}$.
   \end{s-rem}
 \end{defn}
-
+The Stokes phenomenon, which will be discussed in the
+chapter~\ref{chap:stokes}, results from the fact, that there is always a formal
+fundamental solution, which solves a system on the arc $S^1$. But holomorphic
+solutions may exist only on real sub-sectors of $S^1$.
 \begin{rem}
   \marginnote{\cite[2.1.3]{Zein2009}}
   If the trivialization is changed by $F$ (resp.\ $\hat F$) the fundamental
@@ -687,6 +691,8 @@ that each meromorphic connection is, after potentially needed ramification,
 formally isomorphic to such a model.
 Thus the Levelt-Turittin theorem solves the \emph{formal classification
 problem}.
+
+\subsection{In the language of meromorphic connections: models}
 \begin{defn}\label{defn:elemnMerConnBausteine}
   \begin{itemize}
     \item For a $\phi\in\C(\!\{t\}\!)$ we use $\cE^{\phi}$ to denote the germ
@@ -718,8 +724,7 @@ problem}.
       \]
       where $N\in\gl_{d+1}(\C)$ is a nilpotent matrix.
       If \rewrite{$\alpha\id + N$} is a single Jordan Block, we denote the
-      corresponding connection by $\cN_{\alpha,d}$\comm{~where $d$ is the
-      dimension minus one}.
+      corresponding connection by $\cN_{\alpha,d}$.
   \end{itemize}
 \end{defn}
 \begin{prop}
@@ -730,19 +735,20 @@ problem}.
       direct sum
       \[
         (\cR,\nabla)=\bigoplus_{\alpha,d}(\cN_{\alpha,d},\nabla)\,.
-        \TODO[not only of rank one]
       \]
       \begin{s-rem}
+        This solves the classification problem, for regular meromorphic
+        connections.
         For a detailed analysis of regular meromorphic connections
         see Sabbah's book~\cite[Sec.II.2]{sabbah2007isomonodromic} or
-        the book~\cite[Sec.5.2]{hotta2008}.
+        the book~\cite[Sec.5.2]{hotta2008} from Hotta et al.
       \end{s-rem}
     \item Every germ of a meromorphic connection of rank one is isomorphic to
       some germ
       \[
         (\cE^\phi,\nabla)\otimes(\cN_{\alpha,0},\nabla) \,.
       \]
-    \item Two such germs corresponding to $(\phi_1,\alpha_1)$ and
+    \item Two such rank one germs corresponding to $(\phi_1,\alpha_1)$ and
       $(\phi_2,\alpha_2)$ are isomorphic if and only if
       \begin{itemize}
         \item $\phi_1-\phi_2$ has no pole and
@@ -750,19 +756,20 @@ problem}.
       \end{itemize}
   \end{enumerate}
 \end{prop}
-\begin{comment}
-  \begin{proof}
-    See~\cite[Prop.II.5.1]{sabbah2007isomonodromic}
-  \end{proof}
-\end{comment}
+\begin{proof}
+  The statement 1.\ is given in
+  Corollary~\cite[Cor.II.2.9]{sabbah2007isomonodromic} Sabbah's Book.
+  Sabbah gives other statements in~\cite[Prop.II.5.1]{sabbah2007isomonodromic}.
+\end{proof}
 \begin{defn}
   \marginnote{\cite[Def.II.5.2]{sabbah2007isomonodromic}}
   A germ $(\cM,\nabla)$ is called \emph{elementary} if it is isomorphic to
   some germ $(\cE^\phi,\nabla)\otimes(\cR,\nabla)$ where
   \begin{itemize}
-    \item $(\cR,\nabla)$ has regular singularity at $\{0\}$ but has not to be
-      of rank $1$, i.e.\ is isomorphic to a direct sum of regular elementary
-      meromorphic connections.
+    \item $(\cE^\phi,\nabla)$ is defined \rewrite{as in}
+      Definition~\ref{defn:elemnMerConnBausteine} and
+    \item $(\cR,\nabla)$ has regular singularity at $\{0\}$, i.e.\ is
+      isomorphic to a direct sum of regular elementary meromorphic connections.
   \end{itemize}
   \marginnote{\cite[II.2.f]{sabbah2007isomonodromic}}
 \end{defn}
@@ -815,7 +822,7 @@ formal classification problem.
   We then call $\cM^{nf}$ a \emph{formal decomposition} or \emph{formal model}
   of $\cM$ or $\cM'$.
   \begin{rem}
-    There, in general is \textbf{no} lift of the isomorphism $\hat\lambda$,
+    But there is in general \textbf{no} lift of the isomorphism $\hat\lambda$,
     i.e.\ there is no isomorphism making the diagram
     \[ \begin{tikzcd}
         \cM \dar \arrow[dotted]{r}[description]{?} & \cM^{nf} \dar
@@ -878,7 +885,7 @@ fundamental solution in the form $\hat F\cY_0$.
     \item \emph{irregular part} $e^{Q(t^{-1})}$ of $\mathcal{Y}_0$ determined
       by
       \[
-        Q(t^{-1})=\underset{j=1}{\overset{s}{\bigoplus}}q_j(t^{-1})1_{n_j}
+        Q(t^{-1})=\underset{j=1}{\overset{s}{\bigoplus}}q_j(t^{-1})\id_{n_j}
           =\diag(\underset{n_1\text{-times}}{\underbrace{%
           q_1,\dots,q_1}},q_2,\dots,q_s)
       \]
@@ -982,7 +989,7 @@ fundamental solution in the form $\hat F\cY_0$.
     \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
     \,.
   \]
-  A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given by
+  A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given\PROBLEM[!] by
   \[
     t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
     \left(-\phi'\id\right)
@@ -997,21 +1004,27 @@ fundamental solution in the form $\hat F\cY_0$.
       \,.
     \]
   \end{comment}
-  Since $\cM$ is a sum of sach elementary connections, The connection matrix of
+  Since $\cM$ is a sum of such elementary connections, The connection matrix of
   $\cM$ writes as
   \[
     \bigoplus_\phi\left(
-      -\phi'\id + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+      - t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+      \left(\phi'\id\right)
+      t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+      +
+      \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
     \right) \,,
   \]
   which can be rewritten as
   \[
-    \underset{t_LQ'(t^{-1})t^{-L}}{
+    \underset{t^LQ'(t^{-1})t^{-L}}{
       \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
         \underbrace{-\bigoplus_\phi
-          t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-          \left(\phi'\id\right)
-          t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+          \left(
+            t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+            \left(\phi'\id\right)
+            t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+          \right)
         }
       }
     }
@@ -1028,6 +1041,15 @@ fundamental solution in the form $\hat F\cY_0$.
     }
     \,.
   \]
+  Thus it has 
+  \[
+    t^{\bigoplus_\phi\left(
+        \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+    \right)}
+    e^{-\bigoplus_\phi\phi'\id}
+  \]
+  as fundamental solution (cf.\ proposition~\ref{prop:fundSolBuilder}).
+  \PROBLEM[Construction only yields unipotent $N$]
   \begin{comment}
     \[
       \underset{t^L}{
@@ -1098,12 +1120,12 @@ fundamental solution in the form $\hat F\cY_0$.
 
   \textbf{``\Leftarrow{}'':}
   Let $A^0$ be a normal form with $\mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}$ as a
-  normal solution. We use proposition~\ref{prop:fundSolBuilder} to assume that
+  normal solution. We use Proposition~\ref{prop:fundSolBuilder} to assume that
   the connection matrix $A^0$ has the form
   \[
     A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
   \]
-  and the proposition~\ref{prop:systToMeromConn} yields our meromorphic
+  and the Proposition~\ref{prop:systToMeromConn} yields our meromorphic
   connection $(\cM_{A^0},\nabla_{A^0})=(\C(\!\{t\}\!)^n,d-A^0)$ for
   \rewrite{which we want to prove, to be} a model.
   \PROBLEM[Jordan-NF]

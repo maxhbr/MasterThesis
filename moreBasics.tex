@@ -276,10 +276,10 @@ transformation. Denote the transformed system by $A={}^{\hat F}\!A^0$.
 \marginnote{\cite[Sec.III.2.1]{Loday1994}}
 Let $\dot\phi=(\dot\phi_j)_{j\in J}\in\Gamma(\dot{\mathcal{V}};\Lambda(A^0))$
 be a $1$-cocycle in the image of the equivalence class of $\hat F$ by $\exp$.
+
+The following Proposition can be found in \cite[Prop.III.2.1]{Loday1994},
+\cite[Thm.4.3.13]{Loday2014} and \cite[Thm.1]{BJL1979Birkhoff}.
 \begin{prop}\label{prop:multisummability}
-  \marginnote{\cite[Prop.III.2.1]{Loday1994}
-    ,\cite[Thm.4.3.13]{Loday2014}
-    ,\cite[Thm.1]{BJL1979Birkhoff}}
   There exists a \textbf{unique} family of realizations $(F_j)_{j\in J}$ of
   $\hat F$ over $\mathcal{V}$, i.e.\ matrices $F_j$ which are analytic on
   $V_j$, satisfy $[A^0,A]$ and are asymptotic to $\hat F$ on $V_j$, such that
@@ -311,10 +311,8 @@ Let $\hat F_0\in\hat G(A^0)$ and $A^1={}^{\hat F_0}\!A^0$ and let
 \]
 be the Malgrange-Sibuya isomorphism (cf.\ Remark~\ref{rem:expNonNormalForm}).
 
-\marginnote{\cite[883]{Loday1994}}
 The definition of the subsheaf $\Lambda^{\geq k}(A^1)$ of $\Lambda(A^1)$
-\rewrite{needs a few additional justifications.} \TODO{}
-
+\rewrite{needs a few additional justifications} (cf.\ \cite[883]{Loday1994}).
 \begin{defn}
   \marginnote{\cite[Defn.III.2.3]{Loday1994}}
   A $1$-cocycle $\dot\phi=(\dot\phi_j)_{j\in J}$ is \emph{$k$-summable} if, for
@@ -380,13 +378,8 @@ we know from the Malgrange-Sibuya theorem that there exists an, up to left
 meromorphic factor unique, element $\hat F^{<0}$ of $\hat G(A^0)$ such that
 $\dot f^{<k}$ belongs to $\exp_{A^0}(\hat F^{<k})$.
 
-Let $A^1:={}^{\hat F^{<k}}\!A^0$ and define $\hat F^k$ by
-$\hat F^k=\hat F(\hat F^{<k})^{-1}$.
-
-\TODO[\dots]
-
+The Proposition \cite[Prop.III.2.6]{Loday1994} states the following.
 \begin{prop}\label{prop:Lod.III.2.6}
-  \marginnote{\cite[Prop.III.2.6]{Loday1994}}
   We have, that
   \begin{enumerate}
     \item $\hat F^k$ is $k$-summable with singular directions
@@ -402,19 +395,23 @@ $\hat F^k=\hat F(\hat F^{<k})^{-1}$.
       \end{einr}
   \end{enumerate}
 \end{prop}
-\begin{proof}
-  The first property \PROBLEM
+\begin{comment}
+  \begin{proof}
+    The first property \PROBLEM
 
-  The property 2.\ is clear, \rewrite{since larger levels would require more
-  singular directions}.
+    The property 2.\ is clear, \rewrite{since larger levels would require more
+    singular directions}.
 
-  The property 3.\ results from the fact that we must have
-  \[
-    \exp_{A^0}(\hat H^{<k})=\exp_{A^0}(\hat F^{<k}).
-  \]
-\end{proof}
+    The property 3.\ results from the fact that we must have
+    \[
+      \exp_{A^0}(\hat H^{<k})=\exp_{A^0}(\hat F^{<k}).
+    \]
+  \end{proof}
+\end{comment}
+We can use the Proposition~\ref{prop:Lod.III.2.6} to obtain the following
+factorization on transformations, which can be found an Loday's Paper
+\cite[Thm.III.2.5]{Loday1994}.
 \begin{thm}\label{thm:summaFaktori}
-  \marginnote{\cite[Thm.III.2.5]{Loday1994}}
   Let $\hat F\in\hat G(A^0)$ be a formal transformation and
   $\cK=\{k_1<k_2<\cdots<k_r\}$ be the set of levels of $[A^0]$. Then $\hat F$
   can be factored in
@@ -427,9 +424,6 @@ $\hat F^k=\hat F(\hat F^{<k})^{-1}$.
     \item with singular directions belonging to the set $\cA^{k_j}$.
   \end{itemize}
 \end{thm}
-\begin{proof}
-  Follows from proposition~\ref{prop:Lod.III.2.6}
-\end{proof}
 
 \begin{comment}
   \begin{cor}
@@ -480,9 +474,8 @@ by setting $\phi_\theta:=
 (cf.\ Definition~\ref{defn:sumsLeftRight}).
 \begin{rem}
   \marginnote{\cite[Defn.3.6]{boalch}}
-  $S^+_\theta(\hat F)t^Le^{Q(t^{-1})}$ is 
-  $\left\{\substack{\text{\rewrite{a}}\\\text{\rewrite{the canonical}}}\right\}$ fundamental
-  solution of $[A]$ on the corresponding sector.
+  $S^+_\theta(\hat F)t^Le^{Q(t^{-1})}$ is a solution of $[A]$ on the
+  corresponding sector.
   \TODO[ or $S^-_\theta(\hat F)t^Le^{Q(t^{-1})}$?  or
     $t^Le^{Q(t^{-1})}S^+_\theta(\hat F)$?  or
   $t^Le^{Q(t^{-1})}S^-_\theta(\hat F)$?]
@@ -496,45 +489,47 @@ by setting $\phi_\theta:=
   \]
   thus the Stokes matrix $C_{\cY_{0,\tilde\theta}}$ is a matrix, which
   describes the \rewrite{blending} between the two adjacent sectors.
-  \TODO[see Lodays remarks on thm.4.3.13 in \cite{Loday2014}]
+  \TODO[see Loday's remarks on thm.4.3.13 in \cite{Loday2014}]
 \end{rem}
-\begin{rem}
-  For each $\theta\in\A$ is $\phi_\theta$
-  \begin{enumerate}
-    \item flat, since $\hat\phi_\theta
-         =\hat{\left(F_\theta^+\right)̂^{̀-1}}\hat{F_\theta^-}
-         =\hat{F}^{̀-1}\hat{F}=\id$
-    \item an isotropy, since
-        ${}^{\phi_\theta}\!A^0
-         = {}^{\left(F_\theta^+\right)̂^{̀-1}F_\theta^-}\!A^0
-         = {}^{\left(F_\theta^+\right)̂^{̀-1}}\!\left({}^{F_\theta^-}\!A^0\right)
-         \overset{\PROBLEM{}}{=}{}^{\left(F_\theta^+\right)̂^{̀-1}}\!A^1
-         \overset{\PROBLEM{}}{=}A^0$
-      % \begin{commentOUT}
-      %   \begin{align*}
-      %     {}^{\phi_\theta}\!A^0
-      %     &= (d\phi_\theta)\phi_\theta^{-1}+\phi_\theta A^0
-      %     \phi_\theta^{-1}
-      %   \\&=\left(
-      %       d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
-      %       +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
-      %     \right)\phi_\theta^{-1}+\phi_\theta A^0\phi_\theta^{-1}
-      %   \\&=\left(
-      %       d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
-      %       +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
-      %     \right) \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-      %     +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
-      %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-      %   \\&=
-      %      d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^+
-      %      +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
-      %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-      %      +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
-      %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-      %   \\&=\PROBLEM{}
-      %   \\&=A^0
-      %   \end{align*}
-      % \end{commentOUT}
-    \item of maximal decay, since \PROBLEM{}
-  \end{enumerate}
-\end{rem}
+\begin{comment}
+  \begin{rem}
+    For each $\theta\in\A$ is $\phi_\theta$
+    \begin{enumerate}
+      \item flat, since $\hat\phi_\theta
+           =\hat{\left(F_\theta^+\right)̂^{̀-1}}\hat{F_\theta^-}
+           =\hat{F}^{̀-1}\hat{F}=\id$
+      \item an isotropy, since
+          ${}^{\phi_\theta}\!A^0
+           = {}^{\left(F_\theta^+\right)̂^{̀-1}F_\theta^-}\!A^0
+           = {}^{\left(F_\theta^+\right)̂^{̀-1}}\!\left({}^{F_\theta^-}\!A^0\right)
+           \overset{\PROBLEM{}}{=}{}^{\left(F_\theta^+\right)̂^{̀-1}}\!A^1
+           \overset{\PROBLEM{}}{=}A^0$
+        % \begin{commentOUT}
+        %   \begin{align*}
+        %     {}^{\phi_\theta}\!A^0
+        %     &= (d\phi_\theta)\phi_\theta^{-1}+\phi_\theta A^0
+        %     \phi_\theta^{-1}
+        %   \\&=\left(
+        %       d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
+        %       +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
+        %     \right)\phi_\theta^{-1}+\phi_\theta A^0\phi_\theta^{-1}
+        %   \\&=\left(
+        %       d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
+        %       +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
+        %     \right) \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+        %     +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
+        %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+        %   \\&=
+        %      d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^+
+        %      +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
+        %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+        %      +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
+        %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+        %   \\&=\PROBLEM{}
+        %   \\&=A^0
+        %   \end{align*}
+        % \end{commentOUT}
+      \item of maximal decay, since \PROBLEM{}
+    \end{enumerate}
+  \end{rem}
+\end{comment}

@@ -1,4 +1,4 @@
-\chapter{Stokes Structures}
+\chapter{Stokes Structures}\label{chap:stokes}
 Stokes structures are the \rewrite{necessary information} for meromorphic
 classification, i.e.\ with the Stokes structures we are able to construct a
 \rewrite{space}, which is isomorphic to the classifying \rewrite{set}.
@@ -132,7 +132,8 @@ to the first non abelian cohomology of $\Lambda(A^0)$, which sends the class of
 $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$.
 
 \begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1MeromVersion}
-  \marginnote{\cite[Theorem 4.5.1]{babbitt1989local}}
+  \marginnote{\cite[Theorem 4.5.1]{babbitt1989local},
+    \cite[Thm.3.4]{Malgrange1983}}
   The homomorphism
   \[
     \exp:\cH\to\St(A^0):=H^1(S^1;\Lambda(A^0))
@@ -195,8 +196,8 @@ $\exp_{\mu_0}$.}.
       \end{tikzcd} \]
       where $\exp_{A^0}(\hat F\Phi)=\Phi^{-1}\exp_{A^0}(\hat F)\Phi$.
       \TODO[$\Phi\in G(\!(t)\!)$???]
-    \item \marginnote{\cite[883]{Loday1994}}
-      The isomorphism $\exp_A$ makes also sense, if $A$ is not in normal form.
+    \item The isomorphism $\exp_A$ makes also sense, if $A$ is not in normal
+      form (cf.\ \cite[883]{Loday1994}).
   \end{enumerate}
 \end{rem}
 
@@ -205,10 +206,6 @@ We will mainly refer to \cite[Proof of Theorem 4.5.1]{babbitt1989local} and
 \cite[Section 6.d]{sabbah2007isomonodromic}, where a slightly more complicated
 case with deformation space is proofen. These both resources proof the theorem
 using the languages of meromorphic connections, whereas we will use systems.
-\begin{comment}
-  Our proof is obtained by choosing $X=\{0\}$ as the trivial deformation space
-  and by translating to systems.
-\end{comment}
 \marginnote{See also \cite{BJL1979Birkhoff} and \cite{babbitt1989local}
   although the proof goes back to work from Malgrange and Sibuya (see for
   example \cite{sibuya1990Linear}).}
@@ -251,7 +248,6 @@ We will start by proofing the injectivity of the morphism $\exp$.
         \\&=A'
         & \text{(since $F_j$ is a lift of $\hat F$ on $U_j$)}
       \end{align*}
-      \PROBLEM[Needs lemma ${}^{FF'}A={}^F\left({}^{F'}A\right)$]
       and
       % \begin{comment}
       %   \begin{align*}
@@ -279,7 +275,7 @@ We will start by proofing the injectivity of the morphism $\exp$.
           }
         }
         \hat{F_j^{-1}} \hat F
-        & \text{(since $G_j$ is flat and thus $\hat G_j=\id$)}
+        & \text{(since $G_j$ is flat, i.e.\ $\hat G_j=\id$)}
         \\&= \hat{F'}
         \underset{\id}{%
           \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
@@ -293,29 +289,31 @@ We will start by proofing the injectivity of the morphism $\exp$.
   \end{itemize}
   Therefore are $(A,\hat F)$ and $(A,\hat F')$ equivalent and injectivity is
   proven.
-  \begin{comment}
-    \textbf{First look at injectivity:}
-    Consider the two elements $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$
-    of $\cH$ which map to same cohomology class
-    \[
-      \exp((\cM,\nabla,\hat f))=\lambda=\exp((\cM',\nabla',\hat f'))
-        \in H^1(S^1;\Lambda(A^0)) \,.
-    \]
-    Since we can use refined coverings, it is possible to find a finite covering
-    $\cU=\{U_j;j\in J\}$ of $S^1$ such that $\lambda$ is the class of the
-    cocycles $(f_lf_j^{-1})$ and $(f_l',f_j'^{-1})$, where $f_j$,$f_j'$ are
-    defined on $U_j$.
-    Since $[(f_lf_j^{-1})]=[(f_l'f_j'^{-1})]$ there exists a
-    $0$-cochain $(g_j)$ of the sheaf $\Aut^{<0}(\tilde\cM^{nf})$ relative to the
-    covering $(I_j)$, such that
-    \[
-      f_l'f_j'^{-1}=g_lf_lf_j^{-1}g_j^{-1} \text{ on } I_j\cap I_l.
-    \]
-    If we set $\sigma=f_j^{-1}g_{j}^{-1}f_j'$ on $I_{j}$, we get a horizontal
-    section\TODO[~on~???], thus\TODO[why?] it satisfies $\sigma\circ\hat{f'}=\hat
-    f$. Therefore are $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat{f'})$
-    isomorphic and injectivity is proven.
-  \end{comment}
+  \iffalse
+    \begin{comment}
+      \textbf{First look at injectivity:}
+      Consider the two elements $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat
+      f')$ of $\cH$ which map to same cohomology class
+      \[
+        \exp((\cM,\nabla,\hat f))=\lambda=\exp((\cM',\nabla',\hat f'))
+          \in H^1(S^1;\Lambda(A^0)) \,.
+      \]
+      Since we can use refined coverings, it is possible to find a finite
+      covering $\cU=\{U_j;j\in J\}$ of $S^1$ such that $\lambda$ is the class
+      of the cocycles $(f_lf_j^{-1})$ and $(f_l',f_j'^{-1})$, where
+      $f_j$,$f_j'$ are defined on $U_j$.
+      Since $[(f_lf_j^{-1})]=[(f_l'f_j'^{-1})]$ there exists a $0$-cochain
+      $(g_j)$ of the sheaf $\Aut^{<0}(\tilde\cM^{nf})$ relative to the covering
+      $(I_j)$, such that
+      \[
+        f_l'f_j'^{-1}=g_lf_lf_j^{-1}g_j^{-1} \text{ on } I_j\cap I_l.
+      \]
+      If we set $\sigma=f_j^{-1}g_{j}^{-1}f_j'$ on $I_{j}$, we get a horizontal
+      section\TODO[~on~???], thus\TODO[why?] it satisfies
+      $\sigma\circ\hat{f'}=\hat f$. Therefore are $(\cM,\nabla,\hat f)$ and
+      $(\cM',\nabla',\hat{f'})$ isomorphic and injectivity is proven.
+    \end{comment}
+  \fi
 \end{proof}
 
 For the proof of the surjectivity we will use another result from Malgrange and
@@ -334,9 +332,8 @@ the arc $I$ asymptotic to $\id\in G(\!(t)\!)$ by
 \]
 and this defines a sheaf $\cG$ on $S^1$.
 The statement of the (second) Malgrange-Sibuya Theorem is then, that the
-\rewrite{differece} between formal and konvergent invertible matrices is
-described by the first sheaf cohomology $H^1(S^1,\cG)$ of
-$\cG$ via the map
+\rewrite{difference} between formal and konvergent invertible matrices is
+described by the first sheaf cohomology $H^1(S^1,\cG)$ of $\cG$ via the map
 \[
   \Theta: G\llbracket t\rrbracket/G\{t\}\to H^1(S^1,\cG) \,,
 \]
@@ -529,7 +526,7 @@ We are now able to proof the surjectivity part of Theorem~\ref{thm:mainThm1}.
 \marginnote{\cite[I.4]{Loday1994}}
 Let us recall, that the normal form $A^0$ is written as
 $A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}$ and a normal solution is given by
-$\cY_0(t)=t^Le^{Q(t^{-1})}$, where
+$\cY_0(t)=t^Le^{Q(t^{-1})}$ (cf.\ Proposition~\ref{prop:fundSolBuilder}), where
 $Q(t^{-1})=\diag(\underset{n_1\text{-times}}{\underbrace{%
   q_1,\dots,q_1}},q_2,\dots ,q_s)$.
 Let us denote by
@@ -601,7 +598,6 @@ the \emph{set of all determining polynomials of $[\End A^0]$}.
 \end{defn}
 
 \begin{comment}
-  \TODO[Add definitions for \emph{maximal dacay}]
   \begin{defn}
     \marginnote{\cite[130]{hotta2008}, \cite[79]{Loday2014}}
     A function is \emph{of maximal decay}, if \PROBLEM{}
@@ -615,6 +611,13 @@ the \emph{set of all determining polynomials of $[\End A^0]$}.
     \comm{On the other hand, is a function is \emph{flat}, if\dots}
   \end{defn}
 \end{comment}
+\begin{defn}
+  \TODO[better definition?]
+  \marginnote{\cite[79]{Loday2014}}
+  An exponential $e^{q(1/t)}=e^{-\frac{a}{t^{k}}(x+o(t^{-k}))}$ has
+  \emph{maximal decay in a direction $\tilde\theta\in S^1$} if and only if
+  $-ae^{-ik\tilde\theta}$ is real negative.
+\end{defn}
 
 On the elements of $\cQ(A^0)$ we define the following (partial) order
 relations:
@@ -830,10 +833,11 @@ define the Stokes group as follows.
   \]
   as a block version of Kronecker's delta.
   Define the group
-  \[
-    \SSto_\theta(A^0)= \left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
-      q_j \underset{\theta,\max}{\prec} q_l \right\}
-  \]
+  \begin{align*}
+    \SSto_\theta(A^0)= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in G \mid
+      K_{jl}=\delta_{jl} \text{~unless~}
+      q_j \underset{\theta,\max}{\prec} q_l \Big\}
+  \end{align*}
   of all \emph{Stokes matrices} of $A^0$ in the direction $\theta$.
   They will arise as a faithful representation
   (cf.\ Section~\ref{sec:faithRepre}) of $\Sto_\theta(A^0)$.
@@ -1159,7 +1163,7 @@ are interested.}
 \begin{cor}\label{cor:factorStokesGerms}
   \marginnote{\cite[Cor.I.5.2]{Loday1994}}
   \begin{enumerate}
-    \item For any $k\in\cK$ there are the two following ways of factoring
+    \item For any $k\in\cK$, there are the two following ways of factoring
       $\Lambda^{\leq k}(A^0)$ in a semi-direct product:
       \begin{align*}
         \Lambda^{\leq k}(A^0)&\cong \Lambda^{<k}(A^0)\ltimes\Lambda^{k}(A^0)

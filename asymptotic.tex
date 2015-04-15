@@ -9,7 +9,7 @@
           \item \cite{sabbah2000equations}
         \end{itemize}
       \item \textbf{\textcolor{blue}{Van der Put:
-            \cite[Chapter 7]{van2003galois}: Exact Asymptotics}}
+        \cite[Chapter 7]{van2003galois}: Exact Asymptotics}}
       \item \cite{majima1984asymptotic}
       \item \cite[Sec.4.4]{Balser2000Formal}
       \item \cite{Loday1994}
@@ -26,8 +26,9 @@
 In this chapter, we want to look at asymptotic expansions at $t_0$.
 There are \rewrite{various literature references} for Poincarè asymptotic
 expansions, or for short, asymptotic expansions.
-We will mostly refer to \cite[chapter 2]{Loday2014} and
-\cite[chapter 7]{van2003galois}.
+We will mostly refer to Loday-Richaud's book~\cite[chapter 2]{Loday2014} and
+the book~\cite[chapter 7]{van2003galois} written by van der Put and Singer
+although this topic is scratched in many publications.
 We will assume that $t_0=0$ and this is without loss of generality, since
 asymptotic expansions at $t_0\in\C$ reduce to asymptotic expansions at $0$
 after the change of variable $t\mapsto s=t-t_0$ and asymptotic expansions at
@@ -444,7 +445,13 @@ book~\cite{Loday2014}. \TODO[we will scratch\dots in section?]
   injective map, we introduce Gevrey asymptotic expansions. The associated map
   will be injective for wide arcs, but it will no longer (for large arcs) be
   surjective.
-  \begin{defn}[Gevrey asymptotics]
+  \begin{defn}[Gevrey asymptotics (of level $k$)]
+    \marginnote{\cite[Defn.2.3.1]{Loday2014}}
+    A series $\sum_{n\geq0}a_nt^n$ is of level $k$\PROBLEM[$k=1/s$?] if there
+    exist constants $C>0$, $A>0$ such that the coefficients $a_n$ satisfy
+    \[
+      |a_n|\leq C(n!)^sA^n \qquad\text{for all $n$.}
+    \]
   \end{defn}
   \begin{prop}[Ritt's theorem for Gevrey asymptotics]
     \marginnote{\cite[Prop.4.10]{Balser2000Formal}}
