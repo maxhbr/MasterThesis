@@ -6,8 +6,8 @@ talk about global information.
 \comm{Also there is an approach with $\cD$-modules.}
 For local description one can use \textbf{germs of meromorphic connections} or
 the coordinate dependent \textbf{systems} and \textbf{connection matrices}.
-\comm{Also, there is the coordinate independent approach with localized
-holonomic $\cD$-modules.}
+Other coordinate independent approaches arise for example from the theory of
+(localized holonomic) $\cD$-modules.
 
 Meromorphic connections are introduced and discussed in many resources.
 A good starting point are Sabbah's lecture notes~\cite{sabbah_cimpa90}.
@@ -28,7 +28,7 @@ We will use \rewrite{all of the} mentioned \rewrite{resources}.
 
 \section{(Global) meromorphic connections}
 Let $M$ be a riemanian surface and let $Z=k_1(a_1)+\cdots+k_m(a_m)>0$ be an
-effective divisor\footnote{The $a_i$ are distinct points and the $k_i$ are
+effective divisor\footnote{The $a_i\in M$ are distinct points and the $k_i$ are
 positive integers.} on $M$.
 It is sufficient to think $M=\P^1$ and $0\in|Z|$\footnote{If
 $Z=k_1(a_1)+\cdots+k_m(a_m)$ then $|Z|:=\{a_1,\dots,a_m\}$.}, since we will
@@ -37,7 +37,7 @@ only be interested in local information (at $0$).
 Let $\sM$ be a holomorphic Bundle over $M$ i.e.\ a locally free $\cO_M$-module
 of rank $n$.
 
-A meromorphic connection is then defined as follows.
+A (global) meromorphic connection is then defined as follows.
 \begin{defn}\label{defn:mercon}
   \def\myU{\textcolor{green!30!black}{U}}
   \def\mys{\textcolor{blue!60!black}{s}}
@@ -70,18 +70,22 @@ A meromorphic connection is then defined as follows.
     \cite[Sec.0.9.b]{sabbah2007isomonodromic}).
   \end{s-rem}
 \end{defn}
+The word ``global'' used to emphasize that the connection is ``on $M$'', i.e.\
+not only a germ at some point of $M$, \rewrite{like it will be used} later
+(cf.\ Remark~\ref{rem:GlobalNothingGerm}).
 \begin{rem}
   \begin{enumerate}
     \item It will occasionally be convenient to omit the $\nabla$ and simply
       call $\sM$ the meromorphic connection.
     \item Here, the variant `holomorphic bundle with meromorphic connection' is
       chosen, like in Boalch's paper~\cite{boalch}.
-      There is also the twisted\TODO[better word?] description `meromorphic
-      bundle with holomorphic connection' which is for example used in
-      Sabbah's book~\cite{sabbah2007isomonodromic}.
-      \\By choosing a lattice of a meromorphic bundle, one gets a holomorphic
-      bundle but if the meromorphic bundle had a holomorphic connection, the
-      induced connection \rewrite{on the lattice} is no longer guaranteed to be
+      There is also the transposed description `meromorphic bundle with
+      holomorphic connection' which is for example used in Sabbah's
+      book~\cite{sabbah2007isomonodromic}.
+      \\By choosing a lattice of a meromorphic bundle (cf.\
+      \cite[Def.0.8.3]{sabbah2007isomonodromic}), one gets a holomorphic bundle
+      but if the meromorphic bundle had a holomorphic connection, the induced
+      connection \rewrite{on the lattice} is no longer guaranteed to be
       holomorphic.
       Thus we obtain a meromorphic connection on a holomorphic bundle in our
       sense.
@@ -158,7 +162,7 @@ and trivialization-dependent.
     book~\cite[Def.4.2.1]{Loday2014} \emph{differential modules}.
   \end{s-rem}
 \end{prop}
-\begin{rem}
+\begin{rem}\label{rem:GlobalNothingGerm}
   From now on we will mostly talk about \textbf{germs of} meromorphic
   connections $(\cM,\nabla)$ and we will call them meromorphic connection. If
   we want to talk about meromorphic connections in the sense of
@@ -1027,11 +1031,9 @@ fundamental solution in the form $\hat F\cY_0$.
       \\&= \begin{pmatrix}
         t^\alpha e^{\phi_1} & \ln(t)(1+t^\alpha)e^{\phi_2}
         \\0 & t^\alpha e^{\phi_2}
-      \end{pmatrix}
-      \begin{pmatrix}
+      \end{pmatrix} \begin{pmatrix}
         \phi_1' & 0 \\ 0 & \phi_2'
-      \end{pmatrix}
-      \begin{pmatrix}
+      \end{pmatrix} \begin{pmatrix}
         t^\alpha e^{\phi_1} & \ln(t)(1+t^\alpha)e^{\phi_2}
         \\0 & t^\alpha e^{\phi_2}
       \end{pmatrix}^{-1}
@@ -1442,7 +1444,8 @@ it also by ${}^0C(A^0)$.
   \\\cite[852]{Loday1994}
   \\\cite[111]{sabbah2007isomonodromic}
   \\\cite{babbitt1983}}
-It is convenient to look at the slightly larger space of \emph{marked pairs}
+It is convenient to look at the slightly larger space of \emph{marked
+(meromorphic) pairs}
 \[
   \cH=\cH(\cM^{nf},\nabla^{nf})=\left\{
     \left[(\cM,\nabla,\hat f)\right]

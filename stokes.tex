@@ -129,19 +129,32 @@ This defines a mapping of pointed sets
   \cH\to H^1(S^1;\Lambda(A^0))
 \]
 to the first non abelian cohomology of $\Lambda(A^0)$, which sends the class of
-$(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$.
+$(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology
+class.
 
 \begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1MeromVersion}
-  \marginnote{\cite[Theorem 4.5.1]{babbitt1989local},
-    \cite[Thm.3.4]{Malgrange1983}}
+  \marginnote{\cite[Thm.I.4.5.1]{babbitt1989local},
+    \\\cite[Thm.3.4]{Malgrange1983}}
   The homomorphism
   \[
     \exp:\cH\to\St(A^0):=H^1(S^1;\Lambda(A^0))
   \]
-  is an isomorphism of pointed\footnote{Which maps the class of
-  $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$, i.e.\ the trivial
-  cohomology class.} sets.
+  is an isomorphism of pointed sets.
 \end{tthm}
+\begin{rem}
+  The theorem \cite[Thm.III.1.1.2]{babbitt1989local}, in the book from
+  Babbitt and Varadarajan, states that $\St(A^0)$
+  is actually a local moduli space for marked pairs, which are formally
+  isomorphic to a given connection $(\cM^{nf},\nabla^{nf})$. This means that
+  \begin{itemize}
+    \item the morphism property,
+    \item the criterion of equivalence and
+    \item the existence of universal families
+  \end{itemize}
+  are satisfied (cf.\ \cite[169]{babbitt1989local}).
+  In fact is the whole third part of \cite{babbitt1989local} dedicated to this
+  topic.
+\end{rem}
 
 \subsubsection{The theorem (system version)}
 Since the language of meromorphic connections is equivalent to the one of
@@ -655,68 +668,106 @@ relations:
     \end{enumerate}
   \end{s-rem}
 \end{defn}
-\iffalse
-  % \begin{defn}
-  %   \marginnote{\cite[Def.I.4.4]{Loday1994}}
-  %   Let $\tilde\theta$ be a determination of $\theta$.
-  %   We define the relations
-  %   \begin{itemize}
-  %     \item $\boldmath q_j \underset{\tilde\theta}{\prec} q_l$
-  %       :\Leftrightarrow{} $\Re(a_{jl}e^{-ik_{jl}\tilde\theta})<0$
-  %     \\\Leftrightarrow{} $e^{(q_j-g_l)(t^{-1})}$ is
-  %       flat at $0$ in a neighbourhood of the direction $\tilde\theta$.
-  %     \item $\boldmath q_j \underset{\tilde\theta,\max}{\prec} q_l$
-  %       \begin{itemize}
-  %         \item[:\Leftrightarrow{}]
-  %       $a_{jl}e^{-ik_{jl}\tilde\theta}$ is a real negative
-  %       number, i.e.\ $q_j \underset{\tilde\theta}{\prec} q_l$ and
-  %       $\Im(a_{jl}e^{-ik_{jl}\theta})=0$.
-  %         \item[\Leftrightarrow{}] $e^{(q_j-g_l)(t^{-1})}$ is of maximal decay in
-  %           the direction $\tilde\theta$.
-  %       \end{itemize}
-  %       \begin{comment}
-  %         \Leftrightarrow{} $q_{jl}(t^{-1})\in\R_{<0}$ along $\tilde\theta$.
-  %       \end{comment}
-  %       \begin{s-rem} \label{rem:rotationalSym}
-  %         \marginnote{\cite[8]{thboalch}}
-  %         Let $\theta\in S^1$ with determination $\tilde\theta$.
-  %         Let $(j,l)$ be a pair such that
-  %         $q_j \underset{\tilde\theta,\max}{\prec} q_l$, i.e.\ such that
-  %         $a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}$.
-  %         Hence, for $n\in\N$,
-  %         \begin{align*}
-  %           a_{jl}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{jl}}\right)}
-  %           &=a_{jl}e^{-ik_{jl}\tilde\theta}e^{-in\pi}
-  %           = \begin{cases}
-  %             a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}
-  %               & \text{, if $n$ is even}
-  %           \\-a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{>0}
-  %               & \text{, if $n$ is uneven}
-  %           \end{cases}
-  %         \end{align*}
-  %         is, in the case when $n$ is even, also real and negative. In the other
-  %         case, when $n$ is uneven, we use that $a_{jl}=-a_{lj}$ and
-  %         $k_{jl}=k_{lj}$ to obtain
-  %         $a_{lj}e^{-ik_{jl}\left(\tilde\theta+n\frac{\pi}{k_{lj}}\right)}
-  %         \in\R_{<0}$.
+Let us look closer at functions of the form $f:\theta\mapsto ae^{-ik\theta}$,
+corresponding to some pair $(q_j,q_l)$.
+Write $a$ as $a=|a|e^{i\arg(a)}$, thus the function writes as
+\[
+  f(\theta)=|a|e^{i(\arg(a)-k\theta)}=
+  |a|(\cos(\arg(a)-k\theta) + i\sin(\arg(a)-k\theta)) \,.
+\]
+In the figure~\ref{fig:functionF}, we illustrate the real and the imaginary
+part of $f$.
+\begin{figure}[h!] %{{{
+  \begin{flushright}
+    \tikzmarkc{n2}{purple} here is $\Im(ae^{-ik\theta})=0$
+  \end{flushright}
+  \begin{center}
+    \begin{tikzpicture}[scale=4]
+      \pgfmathsetmacro{\k}{3}
+      \pgfmathsetmacro{\argA}{0.3}
+      \pgfmathsetmacro{\absA}{0.4}
 
-  %         Thus, for $\tilde\theta':=\tilde\theta+n\frac{\pi}{k_{jl}}$ as
-  %         determination of $\theta':=\theta+n\frac{\pi}{k_{jl}}$, we have
-  %         \begin{itemize}
-  %           \item $q_j \underset{\tilde\theta',\max}{\prec} q_l$ when $n$ is even
-  %             or
-  %           \item $q_l \underset{\tilde\theta',\max}{\prec} q_j$ when $n$ is
-  %             uneven.
-  %         \end{itemize}
-  %       \end{s-rem}
-  %   \end{itemize}
-  %   \begin{s-rem}
-  %     In the unramified case do these relations not depend on the determination
-  %     $\tilde\theta$ of $\theta$. As a consequence we will only write
-  %     $\underset{\theta}{\prec}$ and $\underset{\theta,\max}{\prec}$.
-  %   \end{s-rem}
-  % \end{defn}
-\fi
+      \begin{scope}[thick]
+        \clip (-0.6,{\absA+0.1}) rectangle (2.6,{-\absA-0.1});
+        \foreach \x in {-2,-1,...,3}{
+          \pgfmathsetmacro{\s}{{\argA + \x / \k * 2 - 1/2/\k}};
+          \fill[blue!10!white]
+            ({\s + 2/2/\k},0) sin ({\s + 3/2/\k},{-\absA})
+                              cos ({\s + 4/2/\k},0);
+          \draw[blue!40!black] (\s,0) sin ({\s + 1/2/\k},\absA)
+                       cos ({\s + 2/2/\k},0)
+                       sin ({\s + 3/2/\k},{-\absA})
+                       cos ({\s + 4/2/\k},0);
+          \fill[white] ({\s + 3/2/\k},{-\absA}) circle (1pt);
+          \fill[blue!40!black] ({\s + 3/2/\k},{-\absA}) circle (.4pt);
+          \pgfmathsetmacro{\s}{{\argA + \x / \k * 2}};
+          \draw[purple] (\s,0) sin ({\s + 1/2/\k},\absA)
+                       cos ({\s + 2/2/\k},0)
+                       sin ({\s + 3/2/\k},{-\absA})
+                       cos ({\s + 4/2/\k},0);
+          \fill[white] (\s,0) circle (1pt);
+          \fill[purple] (\s,0) circle (.4pt);
+          \fill[white] ({\s + 2/2/\k},0) circle (1pt);
+          \fill[purple] ({\s + 2/2/\k},0) circle (.4pt);
+        }
+      \end{scope}
+      \draw [blue!40!black,dashed]
+        ({\argA+4/\k + 1/2/\k},{-\absA}) -- ({\argA+4/\k + 1/2/\k},0);
+      \draw [blue!40!black,dashed]
+        ({\argA+4/\k + 3/2/\k},{-\absA}) -- ({\argA+4/\k + 3/2/\k},0);
+      \draw [blue!40!black, thick
+            ,decorate
+            ,decoration={brace,mirror,amplitude=10pt}
+            ,xshift=0pt
+            ,yshift=0pt]
+        ({\argA+4/\k + 1/2/\k},{-\absA}) -- ({\argA+4/\k + 3/2/\k},{-\absA})
+        node [midway,yshift=-7pt] {$\tikzmark{g0}$};
+
+      \node at ({\argA+2 - 3/\k},0) {$\tikzmark{f-1}$};
+      \node at ({\argA+2 - 2/\k},0) {$\tikzmark{f0}$};
+      \node at ({\argA+2 - 1/\k},0) {$\tikzmark{f1}$};
+
+      \node at ({\argA-2/\k + 2/2/\k},{-\absA}) {$\tikzmark{e-1}$};
+      \node at ({\argA + 2/2/\k},{-\absA}) {$\tikzmark{e0}$};
+      \node at ({\argA+2/\k + 2/2/\k},{-\absA}) {$\tikzmark{e1}$};
+      \node at ({\argA+4/\k + 2/2/\k},{-\absA}) {$\tikzmark{e2}$};
+
+      \draw (-0.6,0) -- (2.6,0);
+      \draw[dotted] (-0.6,\absA)node[left,font=\tiny] {$|a|$} -- (2.6,\absA);
+      \draw[dotted] (-0.6,{-\absA})node[left,font=\tiny] {$-|a|$} -- (2.6,{-\absA}); 
+      \foreach \x in {-0.5,0,...,2.5}{
+        \draw[dotted] ({\x},{-\absA}) -- ({\x},{\absA + 0.1})
+          node [above,font=\tiny,] {\x \pi};
+      }
+      \draw[thick, dotted, green!50!black] (\argA,{-\absA}) -- (\argA,{\absA + 0.1})
+        node [above,font=\tiny,] {$\frac{\arg(a)}{k}$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{flushright}
+    \tikzmarkc{n3}{blue} here is $q_j \underset{\theta}{\prec} q_l$
+  \end{flushright}
+  \begin{flushright}
+    \tikzmarkc{n1}{blue} here is $q_j \underset{\theta,\max}{\prec} q_l$
+  \end{flushright}
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[->,blue!50!white,thick] (n3) to[out=150,in=270] (g0);
+    \draw[->,purple!50!white,thick] (n2) to[out=240,in=60] (f-1);
+    \draw[->,purple!50!white,thick] (n2) to[out=265,in=120] (f0);
+    \draw[->,purple!50!white,thick] (n2) to[out=290,in=60] (f1);
+    \draw[->,blue!50!white,thick] (n1) to[out=180,in=270] (e-1);
+    \draw[->,blue!50!white,thick] (n1) to[out=170,in=270] (e0);
+    \draw[->,blue!50!white,thick] (n1) to[out=160,in=270] (e1);
+    % \draw[->,blue!40!black,thick] (n1) to[out=150,in=270] (e2);
+  \end{tikzpicture}
+  \caption{In this plot is the real part of $f(\theta)=ae^{-ik\theta}$,
+    corresponding to some pair $(q_j,q_l)$, in
+    \textcolor{blue!40!white}{blue} and the imaginary part in
+    \textcolor{purple}{purple} sketched.
+  }\label{fig:functionF}
+\end{figure} %}}}
+The graphs, corresponding to the pair $(q_l,q_j)$ are then obtained by the
+transformation $\arg(a)\to\arg(-a)=\arg(a)+\pi$, i.e.\ the shift by
+$\frac{\pi}{k}$ to the right. This $\frac{\pi}{k}$ is exactly a halve period.
 
 \begin{defn}\label{defn:antiStokesDir}
   % \marginnote{See \cite[Def.I.4.5]{Loday1994}(for the ramified case)
@@ -752,6 +803,7 @@ relations:
       \end{itemize}
   \end{enumerate}
 \end{defn}
+
 \begin{lem}\label{lem:rotationalSym}%\label{rem:rotationalSymPrime}
   If $\theta\in\A$ together with a pair $(q_j-q_l)(t^{-1})\in\cQ_{[\End A^0]}$
   of degree $k$ is given, we have for every $m\in\N$ that
@@ -760,7 +812,7 @@ relations:
   \]
   Especially is either $q_j \underset{\theta',\max}{\prec} q_l$ (in the
   case, when $m$ is even) or $q_l \underset{\theta',\max}{\prec} q_j$
-  (when $m$ is uneven) satisfied.
+  (when $m$ is uneven) satisfied (see figure~\ref{fig:functionF}).
   \begin{s-cor}
     It follows that in the case $\cK=\{k\}$, the set $\A$ has
     $\frac{\pi}{k}$-rotational symmetry.
