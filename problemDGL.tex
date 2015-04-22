@@ -1,151 +1,359 @@
 \chapter{Problem with some systems}
+\PROBLEM[remove?]
+
 Here we want to talk a little bit more about
 Propositio~\ref{prop:fundSolBuilder} and about the restrictions to the form of
-models.
+determining matrices of models.
 
-\PROBLEM[remove?]
 Look at the \textbf{FALSE} example:
-$L=\begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix}$
-and $Q=\begin{pmatrix} \phi_1 & 0 \\ 0 & \phi_2 \end{pmatrix}$.
-\\We have
-\begin{align*}
-  t^L&=e^{L\ln(t)}
-  \\&=\sum_k\frac{1}{k}\left(\begin{pmatrix}
-      \alpha & 1 \\ 0 & \alpha
-     \end{pmatrix}\ln(t)\right)^k
-  \\&=\sum_k\frac{1}{k}\left(L\ln(t)\right)^k
-  \\&=
-    \begin{pmatrix}
-      \alpha\ln(t) & \ln(t) \\ 0 & \alpha\ln(t)
-    \end{pmatrix}
+\begin{itemize}
+  \item $L=\begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix}$ and
+  \item $Q=\begin{pmatrix} \phi_1 & 0 \\ 0 & \phi_2 \end{pmatrix}$.
+\end{itemize}
+\begin{lem}
+  We have, that 
+  \begin{enumerate}
+    \item $t^L=
+      \begin{pmatrix}
+        t^\alpha & \ln(t)(1+t^\alpha) \\ 0 & t^\alpha
+      \end{pmatrix}$,
+    \item the fundamental solution $\cY=
+      \begin{pmatrix}
+        t^\alpha e^{\phi_1} & \ln(t)(1+t^\alpha)e^{\phi_2}
+        \\0 & t^\alpha e^{\phi_2}
+      \end{pmatrix}$ and
+    \item the corresponding connection matrix $A=
+      \begin{pmatrix}
+        \phi_1' & (-\phi_1'+\phi_2')\frac{\ln(t)(1+t^\alpha)}{t^\alpha}
+        \\0 & \phi_2'
+      \end{pmatrix} 
+      +
+      \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}$.
+  \end{enumerate}
+\end{lem}
+\begin{proof}
+  Since
+  \begin{enumerate}
+    \item We have
+      \begin{align*}
+        t^L&=e^{L\ln(t)}
+        \\&=\sum_k\frac{1}{k}\left(\begin{pmatrix}
+            \alpha & 1 \\ 0 & \alpha
+           \end{pmatrix}\ln(t)\right)^k
+        \\&=\sum_k\frac{1}{k}\left(L\ln(t)\right)^k
+        \\&=
+          \begin{pmatrix}
+            \alpha\ln(t) & \ln(t) \\ 0 & \alpha\ln(t)
+          \end{pmatrix}
+          +
+          \frac{1}{2}\begin{pmatrix}
+            \alpha^2\ln(t)^2 & 2\alpha\ln(t)^2 \\ 0 & \alpha^2\ln(t)^2
+          \end{pmatrix}
+          +
+          \frac{1}{6}\begin{pmatrix}
+            \alpha^3\ln(t)^3 & 3\alpha^2\ln(t)^3 \\ 0 & \alpha^3\ln(t)^3
+          \end{pmatrix}
+          +\dots
+        \\&=
+          \begin{pmatrix}
+            e^{\alpha\ln(t)} & \ln(t)(1+e^{\alpha\ln(t)}) \\ 0 & e^{\alpha\ln(t)}
+          \end{pmatrix}
+        \\&=
+          \begin{pmatrix}
+            t^\alpha & \ln(t)(1+t^\alpha) \\ 0 & t^\alpha
+          \end{pmatrix}
+      \end{align*}
+    \item We then have the fundamental solution
+      \begin{align*}
+        \cY&=t^Le^Q
+        \\&=\begin{pmatrix}
+          t^\alpha & \ln(t)(1+t^\alpha) \\ 0 & t^\alpha
+        \end{pmatrix}
+        \begin{pmatrix}
+          e^{\phi_1} & 0 \\ 0 & e^{\phi_2}
+        \end{pmatrix}
+        \\&=\begin{pmatrix}
+          t^\alpha e^{\phi_1} & \ln(t)(1+t^\alpha)e^{\phi_2}
+          \\0 & t^\alpha e^{\phi_2}
+        \end{pmatrix}
+      \end{align*}
+    \item together with the connection matrix
+      \begin{align*}
+        A&=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
+        \\&= \begin{pmatrix}
+          t^\alpha & \ln(t)(1+t^\alpha)
+          \\0 & t^\alpha
+        \end{pmatrix} \begin{pmatrix}
+          \phi_1' & 0 \\ 0 & \phi_2'
+        \end{pmatrix} \begin{pmatrix}
+          t^\alpha & \ln(t)(1+t^\alpha)
+          \\0 & t^\alpha
+        \end{pmatrix}^{-1}
+        +
+        \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
+        \\&= \begin{pmatrix}
+          t^\alpha & \ln(t)(1+t^\alpha)
+          \\0 & t^\alpha
+        \end{pmatrix} \begin{pmatrix}
+          \phi_1' & 0 \\ 0 & \phi_2'
+        \end{pmatrix} 
+        \frac{1}{t^\alpha t^\alpha}
+        \begin{pmatrix}
+          t^\alpha & -\ln(t)(1+t^\alpha)
+          \\ 0 & t^\alpha
+        \end{pmatrix}
+        +
+        \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
+        \\&= \frac{1}{t^\alpha t^\alpha} \begin{pmatrix}
+          t^\alpha \phi_1' & \ln(t)(1+t^\alpha)\phi_2'
+          \\0 & t^\alpha \phi_2'
+        \end{pmatrix} 
+        \begin{pmatrix}
+          t^\alpha & -\ln(t)(1+t^\alpha)
+          \\ 0 & t^\alpha
+        \end{pmatrix}
+        +
+        \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
+        \\&= \begin{pmatrix}
+          \phi_1' & (-\phi_1'+\phi_2')\frac{\ln(t)(1+t^\alpha)}{t^\alpha}
+          \\0 & \phi_2'
+        \end{pmatrix} 
+        +
+        \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
+      \end{align*}
+  \end{enumerate}
+\end{proof}
+\begin{rem}
+  Since we are dealing with diagonal matrices it is easy to see that
+  \begin{align*}
+    \frac{d}{dt}e^{Q(t^{-1})}
+    &=\diag\left(\frac{d}{dt}e^{q_1(t^{-1})},\frac{d}{dt}e^{q_2(t^{-1})}
+      ,\dots,
+      \frac{d}{dt}e^{q_n(t^{-1})}\right)
+      \\&=\diag\left(\frac{d}{dt}q_1(t^{-1})e^{q_1(t^{-1})}
+                    ,\frac{d}{dt}q_1(t^{-1})e^{q_2(t^{-1})}
+                    ,\dots
+                    ,\frac{d}{dt}q_1(t^{-1})e^{q_n(t^{-1})}\right)
+  \\&=Q'(t^{-1})e^{Q(t^{-1})} \,.
+  \end{align*}
+  and, since the function $t^L$ is defined as $e^{L\ln t}$,
+  \begin{align*}
+    \frac{d}{dt}t^L&=\frac{d}{dt}e^{L\ln t}
+    \\&\overset{\PROBLEM}{=}Le^{(L-\id)\ln t}
+    \\&=L\frac{1}{t}t^L \,.
+  \end{align*}
+  \begin{s-rem}
+    on the one hand:
+    \begin{align*}
+      dt^L
+      &= d\begin{pmatrix}
+        t^\alpha & \ln(t)(1+t^\alpha) \\ 0 & t^\alpha
+      \end{pmatrix}
+      \\&=
+      \begin{pmatrix}
+        \alpha t^{\alpha-1} & \frac{1}{t}(1+t^\alpha)+\ln(t)\alpha t^{\alpha-1}
+        \\ 0 & \alpha t^{\alpha-1}
+      \end{pmatrix}
+    \end{align*}
+    on the other hand:
+    \begin{align*}
+      \frac{1}{t}Lt^L
+      &= \frac{1}{t}
+      \begin{pmatrix}
+        \alpha & 1 \\ 0 & \alpha
+      \end{pmatrix}
+      \begin{pmatrix}
+        t^\alpha & \ln(t)(1+t^\alpha) \\ 0 & t^\alpha
+      \end{pmatrix}
+      \\&= \frac{1}{t}
+      \begin{pmatrix}
+        \alpha t^\alpha & \alpha\ln(t)(1+t^\alpha) + t^\alpha
+        \\ 0 & \alpha t^\alpha
+      \end{pmatrix}
+      \\&= 
+      \begin{pmatrix}
+        \alpha t^{\alpha-1} & \frac{1}{t}\alpha\ln(t)(1+t^\alpha)+t^{\alpha-1}
+        \\ 0 & \alpha t^{\alpha-1}
+      \end{pmatrix}
+    \end{align*}
+    and the error is
+    \begin{align*}
+      dt^L-\frac{1}{t}Lt^L
+      &=
+      \begin{pmatrix}
+        \alpha t^{\alpha-1} & \frac{1}{t}(1+t^\alpha)+\ln(t)\alpha t^{\alpha-1}
+        \\ 0 & \alpha t^{\alpha-1}
+      \end{pmatrix}
+      -
+      \begin{pmatrix}
+        \alpha t^{\alpha-1} & \frac{1}{t}\alpha\ln(t)(1+t^\alpha)+t^{\alpha-1}
+        \\ 0 & \alpha t^{\alpha-1}
+      \end{pmatrix}
+      \\&=
+      \begin{pmatrix}
+        0 & \star
+        \\ 0 & 0
+      \end{pmatrix}
+    \end{align*}
+    where
+    \begin{align*}
+      \star &= 
+        \frac{1}{t}(1+t^\alpha)+\ln(t)\alpha t^{\alpha-1} -
+        (\frac{1}{t}\alpha\ln(t)(1+t^\alpha)+t^{\alpha-1})
+      \\&=\frac{1}{t}+t^{\alpha-1}+\ln(t)\alpha t^{\alpha-1} -
+        (\frac{1}{t}\alpha\ln(t)+\ln(t)\alpha t^{\alpha-1}+t^{\alpha-1})
+      \\&=\frac{1}{t} - \frac{1}{t}\alpha\ln(t)
+    \end{align*}
+  \end{s-rem}
+\end{rem}
+\begin{rem}
+  The defined fundamental solution satisfies the product rule (this is clear).
+  But also simple calculation yields this result:
+  \begin{align*}
+    d\cY&=d(t^Le^Q)
+    \\&=(dt^L)e^Q + t^Lde^Q
+    \\&=\left(d\begin{pmatrix}
+      t^\alpha & \ln(t)(1+t^\alpha) \\ 0 & t^\alpha
+    \end{pmatrix}\right)e^Q
     +
-    \frac{1}{2}\begin{pmatrix}
-      \alpha^2\ln(t)^2 & 2\alpha\ln(t)^2 \\ 0 & \alpha^2\ln(t)^2
+    t^Ld\begin{pmatrix}
+      e^{\phi_1} & 0 \\ 0 & e^{\phi_2}
     \end{pmatrix}
+    \\&=\begin{pmatrix}
+      \alpha t^{\alpha-1} & d(\ln(t)(1+t^\alpha)) \\ 0 & \alpha t^{\alpha-1}
+    \end{pmatrix}e^Q
     +
-    \frac{1}{6}\begin{pmatrix}
-      \alpha^3\ln(t)^3 & 3\alpha^2\ln(t)^3 \\ 0 & \alpha^3\ln(t)^3
+    t^L\begin{pmatrix}
+      \phi_1'e^{\phi_1} & 0 \\ 0 & \phi_2'e^{\phi_2}
     \end{pmatrix}
-    +\dots
-  \\&=
-    \begin{pmatrix}
-      e^{\alpha\ln(t)} & \ln(t)(1+e^{\alpha\ln(t)}) \\ 0 & e^{\alpha\ln(t)}
-    \end{pmatrix}
-  \\&=
+    \\&=\begin{pmatrix}
+      \alpha t^{\alpha-1} & \frac{1}{t}(1+t^\alpha) + \ln(t)\alpha t^{\alpha-1}
+      \\ 0 & \alpha t^{\alpha-1}
+    \end{pmatrix}e^Q
+    +
     \begin{pmatrix}
       t^\alpha & \ln(t)(1+t^\alpha) \\ 0 & t^\alpha
+    \end{pmatrix} \begin{pmatrix}
+      \phi_1'e^{\phi_1} & 0 \\ 0 & \phi_2'e^{\phi_2}
     \end{pmatrix}
-\end{align*}
-We then have the fundamental solution
-\begin{align*}
-  \cY&=\begin{pmatrix}
-    t^\alpha & \ln(t)(1+t^\alpha) \\ 0 & t^\alpha
-  \end{pmatrix}
-  \begin{pmatrix}
-    e^{\phi_1} & 0 \\ 0 & e^{\phi_2}
-  \end{pmatrix}
-  \\&=
-  \begin{pmatrix}
-    t^\alpha e^{\phi_1} & \ln(t)(1+t^\alpha)e^{\phi_2}
-    \\0 & t^\alpha e^{\phi_2}
-  \end{pmatrix}
-\end{align*}
-together with the connection matrix
-\begin{align*}
-  A&=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
-  \\&= \begin{pmatrix}
-    t^\alpha & \ln(t)(1+t^\alpha)
-    \\0 & t^\alpha
-  \end{pmatrix} \begin{pmatrix}
-    \phi_1' & 0 \\ 0 & \phi_2'
-  \end{pmatrix} \begin{pmatrix}
-    t^\alpha & \ln(t)(1+t^\alpha)
-    \\0 & t^\alpha
-  \end{pmatrix}^{-1}
-  +
-  \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
-  \\&= \begin{pmatrix}
-    t^\alpha & \ln(t)(1+t^\alpha)
-    \\0 & t^\alpha
-  \end{pmatrix} \begin{pmatrix}
-    \phi_1' & 0 \\ 0 & \phi_2'
-  \end{pmatrix} 
-  \frac{1}{t^\alpha t^\alpha}
-  \begin{pmatrix}
-    t^\alpha & -\ln(t)(1+t^\alpha)
-    \\ 0 & t^\alpha
-  \end{pmatrix}
-  +
-  \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
-  \\&= \frac{1}{t^\alpha t^\alpha} \begin{pmatrix}
-    t^\alpha \phi_1' & \ln(t)(1+t^\alpha)\phi_2'
-    \\0 & t^\alpha \phi_2'
-  \end{pmatrix} 
-  \begin{pmatrix}
-    t^\alpha & -\ln(t)(1+t^\alpha)
-    \\ 0 & t^\alpha
-  \end{pmatrix}
-  +
-  \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
-  \\&= \begin{pmatrix}
-    \phi_1' & -(\phi_1'+\phi_2')\frac{\ln(t)(1+t^\alpha)}{t^\alpha}
-    \\0 & \phi_2'
-  \end{pmatrix} 
-  +
-  \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
-\end{align*}
+    \\&=\begin{pmatrix}
+      \alpha t^{\alpha-1}e^{\phi_1} 
+      & \left(\frac{1}{t}(1+t^\alpha)+\ln(t)\alpha t^{\alpha-1}\right)e^{\phi_2}
+      \\ 0 & \alpha t^{\alpha-1}e^{\phi_2}
+    \end{pmatrix}
+    +
+    \begin{pmatrix}
+      t^\alpha\phi_1'e^{\phi_1} & \ln(t)(1+t^\alpha)\phi_2'e^{\phi_2}
+      \\ 0 & t^\alpha\phi_2'e^{\phi_2}
+    \end{pmatrix}
+    \\&=\begin{pmatrix}
+      \alpha t^{\alpha-1}e^{\phi_1} + t^\alpha\phi_1'e^{\phi_1} 
+      & \left(\frac{1}{t}(1+t^\alpha)+\ln(t)\alpha t^{\alpha-1}\right)e^{\phi_2}
+      + \ln(t)(1+t^\alpha)\phi_2'e^{\phi_2}
+      \\ 0 & \alpha t^{\alpha-1}e^{\phi_2} + t^\alpha\phi_2'e^{\phi_2}
+    \end{pmatrix}
+    \\&=\begin{pmatrix}
+      \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1} 
+      &
+      \ln(t)\alpha t^{\alpha-1}e^{\phi_2}
+      +\ln(t)(1+t^\alpha)\phi_2'e^{\phi_2}
+      +\frac{1}{t}(1+t^\alpha)e^{\phi_2}
+      \\0 & \phi_2' t^\alpha e^{\phi_2}+\alpha t^{\alpha-1} e^{\phi_2}
+    \end{pmatrix}
+    \\&=\begin{pmatrix}
+      d(t^\alpha e^{\phi_1}) & d(\ln(t)(1+t^\alpha)e^{\phi_2})
+      \\0 & d(t^\alpha e^{\phi_2})
+    \end{pmatrix}
+    \\&=d\begin{pmatrix}
+      t^\alpha e^{\phi_1} & \ln(t)(1+t^\alpha)e^{\phi_2}
+      \\0 & t^\alpha e^{\phi_2}
+    \end{pmatrix}
+    \\&=d\cY
+  \end{align*}
+\end{rem}
+
 We now want to see, that $A\cY=d\cY$:
 \begin{align*}
   A\cY&=\left( \begin{pmatrix}
-    \phi_1' & -(\phi_1'+\phi_2')\frac{\ln(t)(1+t^\alpha)}{t^\alpha}
+    \phi_1' &
+    (-\phi_1'+\phi_2')\frac{\ln(t)(\textcolor{red}{1}+t^\alpha)}{t^\alpha}
     \\0 & \phi_2'
   \end{pmatrix} 
   +
   \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
   \right)
   \begin{pmatrix}
-    t^\alpha e^{\phi_1} & \ln(t)(1+t^\alpha)e^{\phi_2}
+    t^\alpha e^{\phi_1} & \ln(t)(\textcolor{red}{1}+t^\alpha)e^{\phi_2}
     \\0 & t^\alpha e^{\phi_2}
   \end{pmatrix}
   \\&=\begin{pmatrix}
-    \phi_1' t^\alpha e^{\phi_1} & -\phi_2'\ln(t)(1+t^\alpha) e^{\phi_2}
+    \phi_1' t^\alpha e^{\phi_1}
+    & \phi_2'\ln(t)(\textcolor{red}{1}+t^\alpha) e^{\phi_2}
     \\0 & \phi_2' t^\alpha e^{\phi_2}
   \end{pmatrix}
   +
   \begin{pmatrix}
     \alpha t^\alpha e^{\phi_1} &
-    \alpha\ln(t)(1+t^\alpha)e^{\phi_2} + t^\alpha e^{\phi_2}
+    \alpha\ln(t)(\textcolor{red}{1}+t^\alpha)e^{\phi_2} + t^\alpha e^{\phi_2}
     \\0 & \alpha t^\alpha e^{\phi_2}
   \end{pmatrix}
   \frac{1}{t}
   \\&=\begin{pmatrix}
     \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1}
     &
-    \left(\frac{1}{t}\alpha -\phi_2'\right) \ln(t)(1+t^\alpha)e^{\phi_2}
+    \left(\phi_2'+\frac{1}{t}\alpha\right)
+    \ln(t)(\textcolor{red}{1}+t^\alpha)e^{\phi_2}
     +\frac{1}{t} t^\alpha e^{\phi_2}
     \\0 & \phi_2' t^\alpha e^{\phi_2}+\alpha t^{\alpha-1} e^{\phi_2}
   \end{pmatrix}
-  \\&=\dots\PROBLEM
   \\&=\begin{pmatrix}
-    \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1} 
+    \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1}
     &
-    \frac{1}{t}(1+t^\alpha)e^{\phi_2}
-    +\ln(t)\alpha t^{\alpha-1}e^{\phi_2}
-    +\ln(t)(1+t^\alpha)\phi_2'e^{\phi_2}
+    \frac{1}{t}\alpha\ln(t)(\textcolor{red}{1}+t^\alpha)e^{\phi_2}
+    +\phi_2' \ln(t)(\textcolor{brown}{1}+t^\alpha)e^{\phi_2}
+    +t^{\alpha-1} e^{\phi_2}
     \\0 & \phi_2' t^\alpha e^{\phi_2}+\alpha t^{\alpha-1} e^{\phi_2}
   \end{pmatrix}
   \\&=\begin{pmatrix}
-    \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1} 
+    \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1}
     &
-    d(\ln(t)(1+t^\alpha)e^{\phi_2})
+    \alpha\ln(t)t^{\alpha-1} e^{\phi_2}
+    +\frac{1}{t}\textcolor{red}{\alpha\ln(t)}e^{\phi_2}
+    +\phi_2' \ln(t)(\textcolor{brown}{1}+t^\alpha)e^{\phi_2}
+    +t^{\alpha-1} e^{\phi_2}
     \\0 & \phi_2' t^\alpha e^{\phi_2}+\alpha t^{\alpha-1} e^{\phi_2}
   \end{pmatrix}
   \\&=\begin{pmatrix}
-    d(t^\alpha e^{\phi_1}) & d(\ln(t)(1+t^\alpha)e^{\phi_2})
+    \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1}
+    &
+    \underset{(1)}{\underbrace{\alpha\ln(t)t^{\alpha-1} e^{\phi_2}}}
+    +\underset{(2)}{\underbrace{%
+      \phi_2' \ln(t)(\textcolor{brown}{1}+t^\alpha)e^{\phi_2}}}
+    +\textcolor{red}{\underset{(3)}{\underbrace{\textcolor{black}{%
+      \frac{1}{t}\left(\textcolor{red}{\alpha\ln(t)}
+        +t^\alpha\right) e^{\phi_2}
+    }}}}
+    \\0 & \phi_2' t^\alpha e^{\phi_2}+\alpha t^{\alpha-1} e^{\phi_2}
+  \end{pmatrix}
+  \\&\!\!\text{\textcolor{red}{\Huge\rotatebox[origin=c]{-90}{$\neq$}}}
+  \\&=\begin{pmatrix}
+    \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1} 
+    &
+    \overset{(1)}{\overbrace{\ln(t)\alpha t^{\alpha-1}e^{\phi_2}}}
+    +\overset{(2)}{\overbrace{%
+      \ln(t)(\textcolor{brown}{1}+t^\alpha)\phi_2'e^{\phi_2}}}
+    +\textcolor{red}{\overset{(3)}{\overbrace{\textcolor{black}{%
+      \frac{1}{t}(\textcolor{red}{1}+t^\alpha)e^{\phi_2}
+    }}}}
+    \\0 & \phi_2' t^\alpha e^{\phi_2}+\alpha t^{\alpha-1} e^{\phi_2}
+  \end{pmatrix}
+  \\&=\begin{pmatrix}
+    d(t^\alpha e^{\phi_1}) & d(\ln(t)(\textcolor{red}{1}+t^\alpha)e^{\phi_2})
     \\0 & d(t^\alpha e^{\phi_2})
   \end{pmatrix}
   \\&=d\begin{pmatrix}
-    t^\alpha e^{\phi_1} & \ln(t)(1+t^\alpha)e^{\phi_2}
+    t^\alpha e^{\phi_1} & \ln(t)(\textcolor{red}{1}+t^\alpha)e^{\phi_2}
     \\0 & t^\alpha e^{\phi_2}
   \end{pmatrix}
+  \\&=d\cY
 \end{align*}
