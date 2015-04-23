@@ -23,7 +23,7 @@
   \end{multicols}
   \TODO[\cite{sibuya1990Linear} Appendix A.3]
 \end{comment}
-In this chapter, we want to look at asymptotic expansions at $t_0$.
+In this chapter, we want to look at Poincarè asymptotic expansions at $t_0$.
 There are \rewrite{various literature references} for Poincarè asymptotic
 expansions, or for short, asymptotic expansions.
 We will mostly refer to Loday-Richaud's book~\cite[chapter 2]{Loday2014} and
@@ -37,19 +37,20 @@ $t_0=\infty$ are obtained by $t\mapsto s=\frac{1}{t}$.
 We introduce the following notations:
 \begin{notations} We denote by
   \begin{itemize}
-    \item $\mathfrak{s}=\mathfrak{s}_{a,b}(r)$, $a,b\in\S^1$ and $r\in\R_{>0}$
-      the open sector
+    \item $\mathfrak{s}_{a,b}(r)$, $a,b\in\S^1$ and $r\in\R_{>0}$ the open
+      sector
       \[
         \mathfrak{s}_{a,b}(r):=\left\{t\in\C \mid a<\arg(t)<b, 0<|t|<r\right\}
       \]
       of all points $t\in\C$ satisfying $a<\arg(t)<b$ and $0<|t|<r$;
-    \item $\mathfrak{s}_{I}(r)=\mathfrak{s}_{a,b}(r)$ for
-      $I=(a,b)$ an open arc\footnote{i.e.\ an open interval of $S^1$};
-    \item $\bar{\mathfrak{s}}=\bar{\mathfrak{s}}_{a,b}(r)$ the closure of
+    \item $\mathfrak{s}_{I}(r)=\mathfrak{s}_{a,b}(r)$ for an open
+      arc\footnote{i.e.\ an open interval of $S^1$} $I=(a,b)$;
+    \item $\bar{\mathfrak{s}}_{a,b}(r)$ the closure of
       $\mathfrak{s}_{a,b}(r)$ in $\C^*:=\C\backslash\{0\}$.
   \end{itemize}
   The notion of sectors can easily be extended to sectors on a $q$-sheet cover
-  or sectors on the Universal cover of $\C^*$.
+  or sectors on the Universal cover of $\C^*$, but we \rewrite{will not use
+  that}.
   \TODO[Sectors on the Riemann surface of the logarithm]
 \end{notations}
 \begin{figure}[h]
@@ -90,21 +91,24 @@ We introduce the following notations:
   (\textcolor{blue!60!black}{r})}$ spanning from \textcolor{red!60!black}{$a$}
   to \textcolor{red!60!black}{$b$} with radius \textcolor{blue!60!black}{$r$}.}
 \end{figure}
+\begin{defn}
+  We will say that \emph{a sector $\mathfrak{s}_{I}(r)$ contains $\theta\in
+  S^1$} if $\theta\in I$. In the same way we will say that $\mathfrak{s}_I(r)$
+  contains $U\subset S^1$ if $U\subset I$ or that $U\subset S^1$ contains a
+  sector $\mathfrak{s}_I(r)$ if $I\subset U$.
+\end{defn}
 \begin{rem}
   \begin{itemize}
-    \item We will say that \emph{a sector $\mathfrak{s}_{I}(r)$ contains
-      $\theta\in S^1$} if $\theta\in I$. In the same way we will say that
-      $\mathfrak{s}_I(r)$ contains $U\subset S^1$ if $U\subset I$ or that
-      $U\subset S^1$ contains a sector $\mathfrak{s}_I(r)$ if $I\subset U$.
-    \item Since the explicit value $r$ of the radius does not matter as long as
+    \item
+      Since the explicit value $r$ of the radius does not matter as long as
       it is small enough, we shall simply speak of an \emph{arc} or
-      \emph{interval} $U(\theta,\epsilon):=\left(\theta-\frac{\epsilon}{2}
-      ,\theta+\frac{\epsilon}{2}\right)\subset S^1$ in place of a sector
-      $\mathfrak{s}_{\theta-\frac{\pi}{2k},\theta+\frac{\pi}{2k}}(r)$ for a
-      sufficiently small $r$.
-      \TODO[Define via limit?]
-    \item We will denote the sector defined by an arc $I$ as
-      $\mathfrak{s}_I:=\mathfrak{s}_I(r)$ for small enough $r$.
+      \emph{interval} $I$ as $\mathfrak{s}_I(r)$ for small enough $r$.
+    \item It will be convenient to talk of arcs
+      \[
+        U(\theta,\epsilon):=\left(\theta-\frac{\epsilon}{2}
+        ,\theta+\frac{\epsilon}{2}\right)\subset S^1
+      \]
+      defined by the midpoint together with the radius.
   \end{itemize}
 \end{rem}
 \begin{defn}
@@ -125,9 +129,9 @@ We introduce the following notations:
   \def\myConst{\textcolor{green!40!black}{C(\myN,\mySect)}}
   A function $f\in\cO(\mathfrak{s})$ is said to \emph{have the
   formal\footnote{The term ``formal'' emphasizes that we do not restrict the
-  coefficients $a_n\in\C$ in any way.} Laurent series $\sum_{n\geq n_0}a_nt^n$
-  as asymptotic expansion} (or \emph{to be asymptotic to the series}) on the
-  sector $\mathfrak{s}$ \TODO[for $t\to0$ in $\mathfrak{s}$] if
+  coefficients $a_n\in\C$ in any way.} Laurent series 
+  $\hat g=\sum_{n\geq n_0}a_nt^n$ as asymptotic expansion} (or \emph{to be
+  asymptotic to the series}) on the sector $\mathfrak{s}$ if
   \begin{itemize}
     \item for all proper sub-sectors $\mySect\Subset\mathfrak{s}$ and
     \item all $\myN\in\N$,
@@ -206,18 +210,21 @@ It can easily be seen that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
       for the mapping, called \emph{Taylor map}, which associates to each
       function $f\in\cA(I)$ (resp.\ $f\in\cA(\mathfrak{s})$) its asymptotic
       expansion.
-    \item A function $f$ with $T_{\mathfrak{s}}(f)=\hat f=\id_{\mathfrak{s}}$
-      is called \emph{flat (on $\mathfrak{s}$)}. \TODO[resp]
+    \item A function $f$ which is asymptotic to the identity, i.e.\ with
+      $T_{\mathfrak{s}}(f)=\hat f=\id_{\mathfrak{s}}$, is called \emph{flat (on
+      $\mathfrak{s}$)}.
     \item Denote by $\cA^{<0}(I)$ (resp.\ $\cA^{<0}(\mathfrak{s})$) the set
       $\ker(T_{I})\subset\cA(I)$ (resp.\
       $\ker(T_{\mathfrak{s}})\subset\cA(\mathfrak{s})$) of functions asymptotic
       to zero at $0$.
+      \begin{s-rem}
+        The kernel $\cA^{<0}(I)$ is not zero in general.
+        Let $I=\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, then $\cA^{<0}(I)$
+        contains the element $e^{-\frac{1}{\sqrt{t}}}$ where $\sqrt{t}$ stands
+        for the principal determination of $x^{\frac{1}{2}}$.
+      \end{s-rem}
   \end{itemize}
 \end{defn}
-The kernel $\cA^{<0}(I)$ is not zero in general.
-Let $I=\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, then $\cA^{<0}(I)$ contains
-the element $e^{-\frac{1}{\sqrt{t}}}$ where $\sqrt{t}$ stands for the principal
-determination of $x^{\frac{1}{2}}$.
 
 \begin{exmp}[Trivial example]
   \marginnote{\cite[Exmp.2.2.3]{Loday2014}}
@@ -351,13 +358,13 @@ The most important theorem here is the Borel-Ritt Lemma.
   \TODO[Arcs on the universal cover of opening $>2\pi$?]
   \begin{s-rem}
     \marginnote{\cite[111]{Loday2014}}
-    This means that to each $\hat f\in\C(\!(t)\!)$ there are functions $f$
-    asymptotic to $\hat f$.
+    This means that to each $\hat f\in\C(\!(t)\!)$ and every arc
+    $I\subsetneq S^1$ there are functions $f$
+    asymptotic to $\hat f$ on $I$.
     However, when $\hat f$ satisfies an equation, these asymptotic functions do
     not necessarily satisfy the same equation in general.
     \comm{The main asymptotic expansion theorem fills this gap on small enough
-    sectors but does not garanty uniqueness.} \comm{For uniqueness we will use
-    the theory of summation on a given sector.}
+    sectors but does not garanty uniqueness.}
   \end{s-rem}
 \end{thm}
 There are multiple approaches to obtain a function $f\in\cA(I)$ asymptotic to a

@@ -13,16 +13,17 @@ Meromorphic connections are introduced and discussed in many resources.
 A good starting point are Sabbah's lecture notes~\cite{sabbah_cimpa90}.
 More advanced resources are for example
 Sabbah's book~\cite{sabbah2007isomonodromic},
-Varadarajan's~\cite{Varadarajan96linearmeromorphic} or
-the book~\cite{hotta2008} from Hotta et al.
+Varadarajan's book~\cite{Varadarajan96linearmeromorphic} or the
+book~\cite{hotta2008} from Hotta et al.
 The necessary facts about meromorphic connections are also stated in
 Boalch's paper~\cite{boalch} (resp.\ his thesis~\cite{thboalch}),
 and Loday-Richaud's paper~\cite{Loday1994}.
 
-Systems are, for example, discussed in
-the book~\cite{hotta2008} from Hotta et al,
-Loday-Richaud's paper~\cite{Loday1994} and his book~\cite{Loday2014} and
-Boalch's paper~\cite{boalch} (resp.\ his thesis~\cite{thboalch}).
+Although the language of meromorphic connections is often preferred, we will
+use most of the time the language of systems.
+Systems are, for example, discussed in the book~\cite{hotta2008} from Hotta et
+al, Loday-Richaud's paper~\cite{Loday1994} and his book~\cite{Loday2014} and
+Boalch's publications~\cite{boalch,thboalch}.
 
 We will use \rewrite{all of the} mentioned \rewrite{resources}.
 
@@ -117,6 +118,7 @@ not only a germ at some point of $M$, \rewrite{like it will be used} later
   \end{comment}
   \begin{s-rem}
     Here are all connections flat, since only look at Dimension one.
+    \TODO[cf\dots]
   \end{s-rem}
   \begin{comment}
     We will say that a connection on a meromorphic bundle is \emph{integrable}
@@ -133,8 +135,8 @@ not only a germ at some point of $M$, \rewrite{like it will be used} later
 We will usually\TODO[only?] be interested in local information of meromorphic
 connections.  This means that we look at a connection in a neighbourhood of $0$
 \rewrite{and allow only one singularity at $0$}.
-There are many ways of expressing the local information, we will either talk
-about germs of meromorphic connections or systems, which are coordinate-
+There are multiple ways of expressing the local information, we will either
+talk about germs of meromorphic connections or systems, which are coordinate-
 and trivialization-dependent.
 \begin{prop}
   \marginnote{\textbf{\cite[Rem.5.2.4]{hotta2008}}\\\cite[Def.4.2.1]{Loday2014}}
@@ -186,7 +188,7 @@ satisfies
 \[
   \nabla e_k
   =
-  -\sum_{1\leq j\leq n} a_{jk}(t)e_j \,.
+  -\sum_{1\leq j\leq n} a_{jk}(t)e_j \text{, for every $k\in\{1,\dots,n\}$}\,.
 \]
 \begin{defn}
   The matrix $A$ is called a \emph{connection matrix} of $(\cM,\nabla)$.
@@ -262,6 +264,7 @@ following way.
     (\cM_A,\nabla_A)=(\C(\!\{t\}\!)^n,d-A)
   \]
   which has $A$ as its connection matrix.
+  \TODO[cf??]
   % \begin{s-rem}
   %   Since systems are meromorphic connections together with a base choice, we
   %   could alternatively forget the base choice. This yields clearly an
@@ -406,44 +409,30 @@ following way.
   \textbf{system}.}
 \end{comment}
 
-\begin{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{As $\cD$-module}
-\marginnote{\cite[Sec.4.2.2]{Loday2014}}
-
-In the other direction, from $\cD$-modules to meromorphic connections, there is
-the lemma of the cyclic vector. \TODO{}
-\marginnote{\textbf{\cite[Prop.4.2.5]{Loday2014}},
-  \cite[Rem.4.2.6]{Loday2014}}
-\end{comment}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Transformation of systems}
 \begin{notations}
   We will use the following notations
   \begin{itemize}
-    \item $G=\Gl_n(\C)$;
+    \item $G=\Gl_n(\C)$ the group of all invertible matrices with coefficients
+      in $\C$;
     \item $G[t]=\Gl_n(\C[t])$;
-    \item $G\{t\}=\Gl_n(\C\{t\})$ analytic transformations;
-    \item $G(\!\{t\}\!)=\Gl_n\left(\C\{t\}[t^{-1}]\right)$
+    \item $G\{t\}=\Gl_n(\C\{t\})$ the analytic transformations;
+    \item $G(\!\{t\}\!)=\Gl_n\left(\C\{t\}[t^{-1}]\right)$ the
       meromorphic\footnote{We use the term meromorphic in the sens of
       convergent meromorphic. Otherwise we say formal meromorphic.}
       transformations;
     \item $G\llbracket t\rrbracket=\Gl_n\left(\C\llbracket t\rrbracket\right)$
-      (maybe not applicable) formal transformations;
+      the maybe not applicable formal transformations;
     \item $G(\!(t)\!)=\Gl_n\left(\C\llbracket t\rrbracket[t^{-1}]\right)$
-      (maybe not applicable) formal meromorphic transformations.
+      the maybe not applicable formal meromorphic transformations.
   \end{itemize}
-  \begin{comment}
-    We will always use the meromorphic ones, in contrast
-    to~\cite{boalch,thboalch} where analytic classification is used.
-  \end{comment}
 \end{notations}
 \marginnote{\cite[Sec.4.3.1]{Loday2014}}
 By \emph{meromorphic transformation}, or just \emph{transformation}, of a
 system we mean a $\C(\!\{t\}\!)$-linear change of the trivialization.
 Such a change is given by a matrix $F\in G(\!\{t\}\!)$ and the transformed
-connection matrix ${}^F\!A$ is obtained through
+connection matrix ${}^F\!A$ is obtained through the Gauge transformation
 \[
   {}^F\!A=(dF)F^{-1} + FAF^{-1} \,.
 \]
@@ -455,8 +444,8 @@ We denote by $\hat G(A)$ the set of all \emph{(applicable) formal
 transformations}
 \[
   \hat G(A):=\left\{\hat F\in G(\!(t)\!)
-    \mid {}^{\hat F}\!A \text{ has convergent entries i.e.\ }
-    {}^{\hat F}\!A\in G(\!\{t\}\!)
+    \mid {}^{\hat F}\!A
+    \text{ has convergent entries, i.e.\ ${}^{\hat F}\!A\in G(\!\{t\}\!)$}
   \right\}\,.
 \]
 Let $\hat{F'}\in\hat G(A^0)$ and $A':={}^{\hat{F'}}\!A$, then are the sets
@@ -503,7 +492,7 @@ $\hat G(A)$ and $\hat G(A')$ related by
     \[
       (d-B)\circ F=F\circ(d-A)
     \]
-    which is equivalent \PROBLEM[really] to
+    which is equivalent to
     \[
       \frac{dF}{dt}=BF-FA.
     \]
@@ -512,10 +501,8 @@ $\hat G(A)$ and $\hat G(A')$ related by
         ((d-B)\circ F) x &= (F\circ(d-A)) x
       \\(d\circ F) x - (B\circ F) x &= F(dx -Ax)
       \\d(Fx) - B(Fx) &= F(x' - Ax)
-      \\(F'x)x' - BFx &= Fx' - FAx
-      \\(F'x)x' - Fx' &= BFx - FAx
-      \\(F'x)x' - Fx' &= (BF - FA)x
-      \\&~\!~\vdots
+      \\Fx'+F'x - BFx &= Fx' - FAx
+      \\Fx'+F'x - Fx' &= BFx - FAx
       \\F'x &= (BF - FA)x
       \end{align*}
     \end{comment}
@@ -557,9 +544,9 @@ $\hat G(A)$ and $\hat G(A')$ related by
   \begin{einr}
     \textbf{\boldmath$B$ is obtained from $A$ by (formal) transformation}.
   \end{einr}
-  The \emph{class of a connection matrix} is the orbit under the gauge
-  transformation \rewrite{in} $G(\!\{t\}\!)$. The \emph{formal class} ist the
-  orbit \rewrite{in} $\hat G(A)$.
+  The \emph{class of a connection matrix} is the orbit under the Gauge
+  transformation by $G(\!\{t\}\!)$. The \emph{formal class} ist the orbit by
+  $\hat G(A)$.
   \begin{s-rem}
     Thus $A$ is (formally) equivalent to $B$ if and only if there is a (formal)
     solution of $[A,B]$.
@@ -583,15 +570,15 @@ i.e.\ the following proposition holds.
 \begin{defn}
   \begin{itemize}
     \item An \emph{isotropy} of $A^0$ or of $[A^0]$ is a transformation
-      $\hat F$ which satisfy ${}^{\hat F}\!A^0=A^0$.
+      $\hat F$ which satisfies ${}^{\hat F}\!A^0=A^0$.
       Thus, the isotropies are the solutions of the system
       $[\End A^0]:=[A^0,A^0]$.
       \marginnote{\cite[853]{Loday1994}}
     \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
       \begin{s-rem}
         The isotropies are, a priori, formal transformations.
-        Loday-Richaud states in his paper~\cite[853]{Loday1994}, that actually
-        $G_0(A^0)$ is a subgroup of $\Gl_n(\C[1/t,t])$.
+        Loday-Richaud mentions in his paper~\cite[853]{Loday1994}, that
+        actually $G_0(A^0)$ is a subgroup of $\Gl_n(\C[1/t,t])$.
       \end{s-rem}
   \end{itemize}
 \end{defn}
@@ -610,6 +597,9 @@ i.e.\ the following proposition holds.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Regular / irregular singularities}
 \marginnote{\cite[Defn.5.1.6]{hotta2008}}
+The meromorphic connections are distinguished into regular and irregular
+meromorphic connections.
+\TODO[more filltext!]
 \begin{defn}
   \marginnote{\cite[86]{sabbah2007isomonodromic}}
   A connection with connection matrix $A$ has \emph{regular singularity} at $0$
@@ -617,22 +607,10 @@ i.e.\ the following proposition holds.
   matrix with at most a simple pole at $t=0$.
   Otherwise, the singularity is called \emph{irregular}.
   \begin{s-rem}
-    This implies that, if $A$ has
-    $\left\{\substack{\text{irregular}\\\text{regular}}\right\}$
-    singularity, then also all
-    meromorphic equivalent matrices ${}^{F}\!A$ have
-    $\left\{\substack{\text{irregular}\\\text{regular}}\right\}$
-    singularity.
+    This implies that, if $A$ has irregular (resp.\ regular) singularity, then
+    also all meromorphic equivalent matrices ${}^{F}\!A$ have irregular
+    (resp.\ regular) singularity.
   \end{s-rem}
-  \begin{comment}
-    \begin{s-rem}
-      \marginnote{\cite[150]{van2003galois}}
-      One can express this notion of regular singular also in terms of
-      $\delta:=t\frac{d}{dt}$. A system has regular singularity if it is
-      equivalent to an equation $\delta-A$ where $A$ has entries in
-      holomorphic functions in a neighbourhood of $z=0$.
-    \end{s-rem}
-  \end{comment}
 \end{defn}
 \begin{thm}
   Let $(\cM,\nabla)$ be a regular singular meromorphic connection and $A$ its
@@ -644,13 +622,13 @@ i.e.\ the following proposition holds.
 \end{thm}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Fundamental solutions and monodromy of a system}
+\subsection{Fundamental solutions and the monodromy of a system}
 \marginnote{\cite[Sec.4.3.2]{Loday2014},
            \\\cite[130]{hotta2008},
            \\\textbf{\cite[50]{BJL1979Birkhoff}}}
 It is well known in the theory of linear ODEs that the set of solutions to
-(\ref{eq:ode}) forms a vector space of dimension $n$ over $\C$, i.e.\ if
-$x_0(t)$ and $x_{00}(t)$ are two solution of (\ref{eq:ode}) and $C_1$,
+a system like (\ref{eq:ode}) forms a vector space of dimension $n$ over $\C$,
+i.e.\ if $x_0(t)$ and $x_{00}(t)$ are two solution of (\ref{eq:ode}) and $C_1$,
 $C_2\in\C$ are two constants, then is also $C_1x_0(t)+C_2x_{00}(t)$ a solution
 of the same system.
 \begin{defn}
@@ -660,8 +638,12 @@ of the same system.
   system $[A]$ is an invertible $n\times n$ matrix (with formal entries), which
   solves $[0,A]$ on $\mathfrak{s}$.
   \begin{s-rem}
-    This means that the columns of $\cY$ are $n$ $\C$-linearly independent
-    solutions of the system $[A]$ on $\mathfrak{s}$.
+    \begin{itemize}
+      \item This means that the columns of $\cY$ are $n$ $\C$-linearly
+        independent solutions of the system $[A]$ on $\mathfrak{s}$.
+      \item Some authors introduce multivalued solutions, to avoid the
+        restrictions to sectors.
+    \end{itemize}
   \end{s-rem}
 \end{defn}
 The Stokes phenomenon, which will be discussed in the
@@ -673,7 +655,7 @@ exist only on small sub-sectors of $S^1$.
   \marginnote{\cite[2.1.3]{Zein2009}}
   If the trivialization is changed by $F$ (resp.\ $\hat F$) the fundamental
   solution $\cY\in G(\!\{t\}\!)$ changes to $F\cY$ (resp.\ $\hat F\cY$).
-  (cf.\ \cite[Thm.4.3.1]{Loday2014} and \cite[2.1.3]{Zein2009})
+  (cf.\ \cite[Thm.4.3.1]{Loday2014} or \cite[2.1.3]{Zein2009})
 \end{rem}
 
 \marginnote{\cite[130]{hotta2008}, \cite[6]{heu2010}}
@@ -693,12 +675,6 @@ along the path $\gamma$}.
 \end{defn}
 
 \TODO[monodromy representation] \TODO[Riemann hilbert korrespondenz]
-
-\begin{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \subsection{Ramification}
-  \marginnote{\cite[I.5.4.1]{sabbah_cimpa90}}
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Formal classification}\label{sec:formalClassification}
@@ -727,9 +703,9 @@ problem}.
       $(d-\phi')e^\phi=0$.
       \begin{s-cor}
         $\cE^\phi$ is determined by the class of $\phi$ in
-        $\C(\!\{t\}\!)/\C\{t\}=t^{-1}\C[t^{-1}]$. In the following, we will
-        only consider the unique ambassador $\phi$ in each class which has no
-        holomorphic part.
+        $\C(\!\{t\}\!)/\C\{t\}\cong t^{-1}\C[t^{-1}]$. In the following, we
+        will only consider the unique ambassador $\phi$ in each class which has
+        no holomorphic part.
       \end{s-cor}
     \item For $\alpha\in\C$, define the \emph{elementary regular meromorphic
       connection of rank one} $\cN_{\alpha,0}$ as the germ
@@ -752,38 +728,38 @@ problem}.
   \end{itemize}
 \end{defn}
 \begin{prop}
-  \begin{enumerate}
-    \item
-      \marginnote{\cite[Cor.II.2.9]{sabbah2007isomonodromic}}
-      Every regular germ of a meromorphic connection is isomorphic to some
-      direct sum
-      \[
-        (\cR,\nabla)=\bigoplus_{\alpha,d}(\cN_{\alpha,d},\nabla)\,.
-      \]
-      \begin{s-rem}
-        This solves the classification problem, for regular meromorphic
-        connections.
-        For a detailed analysis of regular meromorphic connections
-        see Sabbah's book~\cite[Sec.II.2]{sabbah2007isomonodromic} or
-        the book~\cite[Sec.5.2]{hotta2008} from Hotta et al.
-      \end{s-rem}
-    \item Every germ of a meromorphic connection of rank one is isomorphic to
-      some germ
-      \[
-        (\cE^\phi,\nabla)\otimes(\cN_{\alpha,0},\nabla) \,.
-      \]
-    \item Two such rank one germs corresponding to $(\phi_1,\alpha_1)$ and
-      $(\phi_2,\alpha_2)$ are isomorphic if and only if
-      \begin{itemize}
-        \item $\phi_1-\phi_2$ has no pole and
-        \item $\alpha_1-\alpha_2\in\Z$.
-      \end{itemize}
-  \end{enumerate}
+  \marginnote{\cite[Cor.II.2.9]{sabbah2007isomonodromic}}
+  Every regular germ of a meromorphic connection is isomorphic to some direct
+  sum
+  \[
+    (\cR,\nabla)=\bigoplus_{\alpha,d}(\cN_{\alpha,d},\nabla)\,.
+  \]
+  \begin{s-rem}
+    This solves the classification problem, for regular meromorphic
+    connections.
+    For a detailed analysis of regular meromorphic connections see Sabbah's
+    book~\cite[Sec.II.2]{sabbah2007isomonodromic} or the
+    book~\cite[Sec.5.2]{hotta2008} from Hotta et al.
+  \end{s-rem}
+  \begin{comment}
+    \begin{enumerate}
+      \item Every germ of a meromorphic connection of rank one is isomorphic to
+        some germ
+        \[
+          (\cE^\phi,\nabla)\otimes(\cN_{\alpha,0},\nabla) \,.
+        \]
+      \item Two such rank one germs corresponding to $(\phi_1,\alpha_1)$ and
+        $(\phi_2,\alpha_2)$ are isomorphic if and only if
+        \begin{itemize}
+          \item $\phi_1-\phi_2$ has no pole and
+          \item $\alpha_1-\alpha_2\in\Z$.
+        \end{itemize}
+    \end{enumerate}
+  \end{comment}
 \end{prop}
 \begin{proof}
-  The statement 1.\ is given in
-  Corollary~\cite[Cor.II.2.9]{sabbah2007isomonodromic} Sabbah's Book.
-  Sabbah gives other statements in~\cite[Prop.II.5.1]{sabbah2007isomonodromic}.
+  The statement is given in
+  Corollary~\cite[Cor.II.2.9]{sabbah2007isomonodromic} of Sabbah's Book.
 \end{proof}
 \begin{defn}
   \marginnote{\cite[Def.II.5.2]{sabbah2007isomonodromic}}
@@ -826,7 +802,10 @@ problem}.
       \draw[->,red!50!white,thick] (n3) to[out=205,in=-30] (e3);
     \end{tikzpicture}
   \end{multicols}
-
+  \begin{s-rem}
+    Here it is not necessary to understand ramification, since we restrict to
+    the unramified case.
+  \end{s-rem}
 \end{defn}
 The important theorem here is the Levelt-Turittin theorem, which solves the
 formal classification problem.
@@ -863,30 +842,6 @@ formal classification problem.
   \end{proof}
 \end{comment}
 \TODO[Full set of formal invariants]
-\begin{comment}
-  \begin{prop}
-    \marginnote{This condition \textbf{might be} equivalent to the
-      condition of being \textbf{nice} in~\cite{thboalch}.}
-    Let $(\cM,\nabla)$ be a germ, equipped with a basis in which the matrix $A$
-    takes the form
-    \[
-      A=t^{-r}A(t)
-    \]
-    with
-    \begin{itemize}
-      \item $r\geq1$,
-      \item $A$ has holomorphic entries, and
-      \item $A_0:=A(0)$ being regular semisimple, i.e.\ with pairwise distinct
-        eigenvalues.
-    \end{itemize}
-    Then there is no ramification needed, to apply the Levelt-Turittin-theorem.
-    \comm{Further, all the summands $\cR_\phi$ have rank one, which is not the
-    case in general.}
-  \end{prop}
-  \begin{proof}
-    See~\cite[Thm.II.5.7]{sabbah2007isomonodromic}.
-  \end{proof}
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{In the language of systems: normal forms}
@@ -969,14 +924,18 @@ fundamental solution in the form $\hat F\cY_0$.
   The fundamental solution $F t^L e^{Q(t^{-1})}$ of a normal form will be
   called \emph{normal solution} and will often be denoted by $\cY_0$.
   \begin{s-rem}
-    \TODO[Cor from base change for fundamental solutions] By changing the basis
-    via $F^{-1}$ wo obtain from $[A^0]$ the equivalent system
-    $[{}^{F^{-1}}\!A^0]$ with the normal solution
-    \[
-      F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})} \,.
-    \]
-    Thus it is always possible to assume that the transformation matrix $F$ is
-    trivial.
+    \begin{enumerate}
+      \item \TODO[Cor from base change for fundamental solutions] By changing the
+        basis via $F^{-1}$ wo obtain from $[A^0]$ the equivalent system
+        $[{}^{F^{-1}}\!A^0]$ with the normal solution
+      \[
+        F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})} \,.
+      \]
+      Thus it is always possible to assume that the transformation matrix $F$ is
+      trivial.
+      \item In the unramified case $Q$ and $L$ commute thus $L$ can be supposed
+        in Jordan form (cf.\ \cite[Sec.4]{Martinet1991}).
+    \end{enumerate}
   \end{s-rem}
   \begin{comment}
     \begin{s-rem}
@@ -985,184 +944,112 @@ fundamental solution in the form $\hat F\cY_0$.
     \end{s-rem}
   \end{comment}
 \end{defn}
-\begin{prop}\label{prop:fundSolBuilder}
-  Let $\mathcal{Y}=\hat F t^L e^{Q(t^{-1})}$ be a fundamental solution.
-  The matrix
-  \[
-    A={}^{\hat F}\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)
-  \]
-  defines a system $[A]$ which has $\cY$ as fundamental solution.
-\end{prop}
-\begin{proof}
-  It is sufficient, to proof this in the case $\hat F=\id$, i.e.\ the case
-  where $\cY=t^L e^{Q(t^{-1})}$ is a normal solution.
+\begin{comment}
+  \begin{prop}\label{prop:fundSolBuilder}
+    Let $\mathcal{Y}=\hat F t^L e^{Q(t^{-1})}$ be a fundamental solution.
+    The matrix
+    \[
+      A={}^{\hat F}\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)
+    \]
+    defines a system $[A]$ which has $\cY$ as fundamental solution.
+  \end{prop}
+  \begin{proof}
+    It is sufficient, to proof this in the case $\hat F=\id$, i.e.\ the case
+    where $\cY=t^L e^{Q(t^{-1})}$ is a normal solution.
 
-  \begin{comment}
-    Since we are dealing with diagonal matrices it is easy to see that
+    \begin{comment}
+      Since we are dealing with diagonal matrices it is easy to see that
+      \begin{align*}
+        \frac{d}{dt}e^{Q(t^{-1})}
+        &=\diag\left(\frac{d}{dt}e^{q_1(t^{-1})},\frac{d}{dt}e^{q_2(t^{-1})}
+          ,\dots,
+          \frac{d}{dt}e^{q_n(t^{-1})}\right)
+          \\&=\diag\left(\frac{d}{dt}q_1(t^{-1})e^{q_1(t^{-1})}
+                        ,\frac{d}{dt}q_1(t^{-1})e^{q_2(t^{-1})}
+                        ,\dots
+                        ,\frac{d}{dt}q_1(t^{-1})e^{q_n(t^{-1})}\right)
+      \\&=Q'(t^{-1})e^{Q(t^{-1})} \,.
+      \end{align*}
+      and, since the function $t^L$ is defined as $e^{L\ln t}$,
+      \begin{align*}
+        \frac{d}{dt}t^L&=\frac{d}{dt}e^{L\ln t}
+        =Le^{(L-\id)\ln t}
+        =L\frac{1}{t}t^L \,.
+      \end{align*}
+    \end{comment}
+    It is easy to see that $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$
+    and $\frac{d}{dt}t^L\overset{\PROBLEM}{=}L\frac{1}{t}t^L$, thus we can prove
+    that $\cY$ is a matrix consisting of solutions:
     \begin{align*}
-      \frac{d}{dt}e^{Q(t^{-1})}
-      &=\diag\left(\frac{d}{dt}e^{q_1(t^{-1})},\frac{d}{dt}e^{q_2(t^{-1})}
-        ,\dots,
-        \frac{d}{dt}e^{q_n(t^{-1})}\right)
-        \\&=\diag\left(\frac{d}{dt}q_1(t^{-1})e^{q_1(t^{-1})}
-                      ,\frac{d}{dt}q_1(t^{-1})e^{q_2(t^{-1})}
-                      ,\dots
-                      ,\frac{d}{dt}q_1(t^{-1})e^{q_n(t^{-1})}\right)
-    \\&=Q'(t^{-1})e^{Q(t^{-1})} \,.
+      \frac{d}{dt}\cY
+      &=\frac{d}{dt}\left(t^Le^{Q(t^{-1})}\right)
+    \\&= t^L\frac{d}{dt}e^{Q(t^{-1})} + \frac{d}{dt}t^Le^{Q(t^{-1})}
+    \\&= t^LQ'(t^{-1})e^{Q(t^{-1})} + L\frac{1}{t}t^Le^{Q(t^{-1})}
+    % \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+Q'(t^{-1})t^Le^{Q(t^{-1})}
+    \\&=\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
+    \\&=A^0\cY \,.
     \end{align*}
-    and, since the function $t^L$ is defined as $e^{L\ln t}$,
-    \begin{align*}
-      \frac{d}{dt}t^L&=\frac{d}{dt}e^{L\ln t}
-      =Le^{(L-\id)\ln t}
-      =L\frac{1}{t}t^L \,.
-    \end{align*}
-  \end{comment}
-  It is easy to see that $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$
-  and $\frac{d}{dt}t^L\overset{\PROBLEM}{=}L\frac{1}{t}t^L$, thus we can prove
-  that $\cY$ is a matrix consisting of solutions:
-  \begin{align*}
-    \frac{d}{dt}\cY
-    &=\frac{d}{dt}\left(t^Le^{Q(t^{-1})}\right)
-  \\&= t^L\frac{d}{dt}e^{Q(t^{-1})} + \frac{d}{dt}t^Le^{Q(t^{-1})}
-  \\&= t^LQ'(t^{-1})e^{Q(t^{-1})} + L\frac{1}{t}t^Le^{Q(t^{-1})}
-  % \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+Q'(t^{-1})t^Le^{Q(t^{-1})}
-  \\&=\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
-  \\&=A^0\cY \,.
-  \end{align*}
-  The invertability condition is clear.
-\end{proof}
+    The invertability condition is clear.
+  \end{proof}
+\end{comment}
 \begin{thm}\label{thm:modelEqNormalForm}
   A meromorphic connection $(\cM,\nabla)$ is a model if and only if its
   connection matrix $A$ defines a normal form $[A]$.
   \begin{s-rem}
-    This allows us, to say that a model $(\cM^{nf},\nabla^{nf})$ is a normal
-    form and \rewrite{vice versa}.
-    \rewrite{This} explains, why we mark models with ${}^{nf}$.
+    \begin{itemize}
+      \item This allows us, to say that a model $(\cM^{nf},\nabla^{nf})$ is a
+        normal form and \rewrite{vice versa}.
+        \rewrite{This} explains, why we mark models with ${}^{nf}$.
+      \item In the unramified case are \rewrite{the $q_i(t^{-1})$ the
+        $\phi_i(t)$} from definition~\ref{defn:model}.
+        \TODO[Why/realy?]
+    \end{itemize}
   \end{s-rem}
 \end{thm}
-\begin{proof}
-  \textbf{``\Rightarrow{}'':}
-  Let $\cM=\bigoplus_{\phi}\cE^\phi\otimes\cR_\phi$ be a model and let us first
-  fix a $\phi$ and look at the connection $\cE^\phi\otimes\cR_\phi$.
-  We know that $\cR_\phi$ is a direct sum of regular elementary meromorphic
-  connections whose fundamental matrices are of the form
-  $\frac{1}{t}(\alpha\id+N)$ where $\alpha\in\C$ and $N$ is nilpotent
-  (cf.\ Definition~\ref{defn:elemnMerConnBausteine}).
-  Thus the connection matrix for $\cR_\phi$ writes as
-  \[
-    \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-    \,.
-  \]
-  A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given\PROBLEM[!] by
-  \[
-    t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-    \left(-\phi'\id\right)
-    t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-    + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right) \,.
-  \]
-  \begin{comment}
-    \textbf{OR}
-    A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given by
+\begin{comment}
+  \begin{proof}
+    \textbf{``\Rightarrow{}'':}
+    Let $\cM=\bigoplus_{\phi}\cE^\phi\otimes\cR_\phi$ be a model and let us
+    first fix a $\phi$ and look at the connection $\cE^\phi\otimes\cR_\phi$.
+    We know that $\cR_\phi$ is a direct sum of regular elementary meromorphic
+    connections whose fundamental matrices are of the form
+    $\frac{1}{t}(\alpha\id+N)$ where $\alpha\in\C$ and $N$ is nilpotent
+    (cf.\ Definition~\ref{defn:elemnMerConnBausteine}).
+    Thus the connection matrix for $\cR_\phi$ writes as
     \[
-      -\phi'\id + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-      \,.
-    \]
-  \end{comment}
-  Since $\cM$ is a sum of such elementary connections, The connection matrix of
-  $\cM$ writes as
-  \[
-    \bigoplus_\phi\left(
-      - t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-      \left(\phi'\id\right)
-      t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-      +
       \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-    \right) \,,
-  \]
-  which can be rewritten as
-  \[
-    \underset{t^LQ'(t^{-1})t^{-L}}{
-      \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-        \underbrace{-\bigoplus_\phi
-          \left(
-            t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-            \left(\phi'\id\right)
-            t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-          \right)
-        }
-      }
-    }
-    +
-    \frac{1}{t}
-    \underset{L}{
-      \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-        \underbrace{%
-          \bigoplus_\phi\left(
-            \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-          \right)
-        }
-      }
-    }
-    \,.
-  \]
-  Thus it has
-  \[
-    t^{\bigoplus_\phi\left(
-        \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-    \right)}
-    e^{-\bigoplus_\phi\phi'\id}
-  \]
-  as fundamental solution (cf.\ proposition~\ref{prop:fundSolBuilder}).
-  \PROBLEM[Construction only yields unipotent $N$]
-  \begin{comment}
-    \[
-      \underset{t^L}{
-        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-          \underbrace{\bigoplus_\phi
-            t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-          }
-        }
-      }
-      \underset{Q'(t^{-1})}{
-        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-          \underbrace{\left(-\bigoplus_\phi
-              \left(\phi'\id\right)
-            \right)
-          }
-        }
-      }
-      \underset{t^{-L}}{
-        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-          \underbrace{\bigoplus_\phi
-            t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-          }
-        }
-      }
-      +
-      \frac{1}{t}
-      \underset{L}{
-        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-          \underbrace{%
-            \bigoplus_\phi\left(
-              \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-            \right)
-          }
-        }
-      }
       \,.
     \]
-  \end{comment}
-  \begin{comment}
-    \textbf{OR}
-    A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given by
+    A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given\PROBLEM[!]
+    by
+    \[
+      t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+      \left(-\phi'\id\right)
+      t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+      + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right) \,.
+    \]
+    Since $\cM$ is a sum of such elementary connections, The connection matrix
+    of $\cM$ writes as
     \[
       \bigoplus_\phi\left(
-        -\phi'\id + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-      \right)
-      =
-      \underset{Q'(t^{-1})}{
+        - t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+        \left(\phi'\id\right)
+        t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+        +
+        \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+      \right) \,,
+    \]
+    which can be rewritten as
+    \[
+      \underset{t^LQ'(t^{-1})t^{-L}}{
         \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-          \underbrace{-\bigoplus_\phi \phi'\id}
+          \underbrace{-\bigoplus_\phi
+            \left(
+              t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+              \left(\phi'\id\right)
+              t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+            \right)
+          }
         }
       }
       +
@@ -1178,28 +1065,38 @@ fundamental solution in the form $\hat F\cY_0$.
       }
       \,.
     \]
-  \end{comment}
+    Thus it has
+    \[
+      t^{\bigoplus_\phi\left(
+          \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+      \right)}
+      e^{-\bigoplus_\phi\phi'\id}
+    \]
+    as fundamental solution (cf.\ proposition~\ref{prop:fundSolBuilder}).
+    \PROBLEM[Construction only yields unipotent $N$]
 
-  \PROBLEM{}
+    \PROBLEM{}
 
-  \textbf{``\Leftarrow{}'':}
-  Let $A^0$ be a normal form with $\mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}$ as a
-  normal solution. We use Proposition~\ref{prop:fundSolBuilder} to assume that
-  the connection matrix $A^0$ has the form
-  \[
-    A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
-  \]
-  and the Proposition~\ref{prop:systToMeromConn} yields our meromorphic
-  connection $(\cM_{A^0},\nabla_{A^0})=(\C(\!\{t\}\!)^n,d-A^0)$ for
-  \rewrite{which we want to prove, to be} a model.
-  \begin{comment}
-    We can use Proposition~\ref{prop:MatOfSumOfMerCon} to assume, that $L$ is
-    \rewrite{only one Jordan block}.
-  \end{comment}
+    \textbf{``\Leftarrow{}'':}
+    Let $A^0$ be a normal form with $\mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}$ as a
+    normal solution. We use Proposition~\ref{prop:fundSolBuilder} to assume that
+    the connection matrix $A^0$ has the form
+    \[
+      A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
+    \]
+    and the Proposition~\ref{prop:systToMeromConn} yields our meromorphic
+    connection $(\cM_{A^0},\nabla_{A^0})=(\C(\!\{t\}\!)^n,d-A^0)$ for
+    \rewrite{which we want to prove, to be} a model.
+    \begin{comment}
+      We can use Proposition~\ref{prop:MatOfSumOfMerCon} to assume, that $L$ is
+      \rewrite{only one Jordan block}.
+    \end{comment}
 
-  \PROBLEM[Jordan-NF]
-\end{proof}
+    \PROBLEM[Jordan-NF]
+  \end{proof}
+\end{comment}
 \begin{cor}
+  \TODO[Start with this, bevore defn of normal forms?]
   From the Levelt-Turittin theorem\comm{, the fundamental solution
   transformation rules} and Theorem~\ref{thm:modelEqNormalForm} we
   deduce that every system $[A]$ with normal form $[A^0]$ and normal solution
@@ -1208,26 +1105,15 @@ fundamental solution in the form $\hat F\cY_0$.
     \mathcal{Y}=\hat F t^L e^{Q(t^{-1})}
   \]
   where $\hat F$ is a solution of $[A^0,A]$.
+  \begin{s-rem}
+    It is always possible to permutate the columns of a fundamental solution by
+    \[
+      P^{-1}\mathcal{Y}P=\hat F t^{P^{-1}LP} e^{P^{-1}Q(t^{-1})P}
+    \]
+    with a permutation matrix $P$ and \rewrite{obtain another fundamental
+    solution for the same system} (cf.\ \cite[73]{Loday2014}).
+  \end{s-rem}
 \end{cor}
-
-\begin{rem}
-  Let $[A^0]$ be a normal form with normal solution
-  $\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}$.
-  \begin{enumerate}
-    \item In the unramified case are \rewrite{the $q_i(t^{-1})$ the
-      $\phi_i(t)$} from definition~\ref{defn:model}.
-      \TODO[Why/realy?]
-    \item In the unramified case $Q$ and $L$ commute thus $L$ can be supposed
-      in Jordan form (cf.\ \cite[Sec.4]{Martinet1991}).
-    \item It is always possible to permutate the columns of a fundamental
-      solution by
-      \[
-        P^{-1}\mathcal{Y}P=\hat F t^{P^{-1}LP} e^{P^{-1}Q(t^{-1})P}
-      \]
-      with a permutation matrix $P$ and \rewrite{obtain another fundamental
-      solution for the same system} (cf.\ \cite[73]{Loday2014}).
-  \end{enumerate}
-\end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The main asymptotic existence theorem}
@@ -1256,7 +1142,8 @@ which is essentially a deduction from the Borel-Ritt lemma.
 \marginnote{\cite[207]{Balser2000Formal}}
 It states that to every formal solution of a system of meromorphic differential
 equations, and every sector with sufficiently small opening, one can find a
-solution of the system having the formal one as its asymptotic expansion.
+holomorphic solution of the system having the formal one as its asymptotic
+expansion.
 
 \begin{defn}\label{defn:lift}
   \marginnote{\cite[855]{Loday1994}}
@@ -1268,9 +1155,9 @@ solution of the system having the formal one as its asymptotic expansion.
     \item $F$ satisfies the same system $[A^0,A]$ as $\hat F$.
   \end{itemize}
 \end{defn}
-The main asymptotic existence theorem states
+The main asymptotic existence theorem, which can be for example found in
+\cite[Thm.3.1]{boalch} or \cite[Sec.4.4]{Loday2014}, states:
 \begin{thm}[M.E.A.T]\label{thm:meat}
-  \marginnote{\cite[Thm.3.1]{boalch}, \cite[Sec.4.4]{Loday2014}}
   To every $\hat F\in G(\!(t)\!)$ and to every small enough arc
   $I\subsetneq S^1$ there exists a lift $F$ on $I$.
   \begin{s-rem}
@@ -1293,12 +1180,6 @@ The main asymptotic existence theorem states
   \end{proof}
 \end{comment}
 
-\begin{comment}
-  \begin{rem}
-    We are then able to find a \rewrite{(cyclic)} covering of the $S^1$ of
-    arcs such that on every arc there exists a lift $\tilde F$ of $\hat F$.
-  \end{rem}
-\end{comment}
 \TODO{}
 
 Translated to the language of meromorphic connection the theorem~\ref{thm:meat}
@@ -1369,8 +1250,8 @@ $A^0$.
 \end{multline*}
 of all isomorphism classes of meromorphic connections, which are formally
 isomorphic to $(\cM^{nf},\nabla^{nf})$. This is the set that we will be
-calling the \emph{classifying set (to $(\cM,\nabla)$)} and we will also denote
-it also by ${}^0C(A^0)$.
+calling the \emph{classifying set (to $(\cM^{nf},\nabla^{nf})$)} and we will
+also denote it also by ${}^0C(A^0)$, if we are using the language of systems.
 \begin{rem}
   Note that we classify
   \begin{einr}
@@ -1384,8 +1265,9 @@ it also by ${}^0C(A^0)$.
   \end{einr}
   as it was done in the older literature.
   This makes no difference, since the resulting classifying sets are isomorphic
-  (cf.~\cite{thboalch}\TODO[better:~\cite{babbitt1989local}]).
-  \\This distinction relates to the difference between \textbf{‘regular
+  (cf.~\cite{thboalch} or~\cite{babbitt1989local}).
+  
+  This distinction relates to the difference between \textbf{‘regular
   singular’} connections and \textbf{‘logarithmic’} connections.
 \end{rem}
 \marginnote{\cite[6]{thboalch}
@@ -1441,21 +1323,24 @@ equivalent, if and only if there is a base change
 $H\in G(\!\{t\}\!)$ such that
 \begin{itemize}
   \item $A'={}^{H}\!A$, i.e.\ $H$ is a solution of $[A,A']$, and
-  \item $\hat F'=\hat H\hat F$\PROBLEM[Source? correct?].
-    \begin{comment}
-      \[
-        {}^{\hat H\hat F}A^0
-        =
-        {}^{\hat H}({}^{\hat F}A^0)
-        =
-        {}^{\hat H}A
-        =
-        A'
-        =
-        {}^{\hat F'}A^0
-      \]
-    \end{comment}
+  \item $\hat F'=\hat H\hat F$\PROBLEM[Source? correct? Maybe $\hat F'=H\hat F$].
 \end{itemize}
+In the following diagram is the first condition equivalent to the commutation
+property of the \textcolor{green!60!black}{green} square. The second property
+corresponds to the commutation property of the top (resp. bottom) triangle
+after formalization\PROBLEM[?].
+\[ \begin{tikzcd}[column sep=1cm,row sep=.5cm]
+  &&&\C(\{t\})^n \arrow[green!60!black, thick]{ddd}{d-A}
+    \arrow[green!60!black, thick]{ddr}{H}
+\\\C(\{t\})^n \arrow{rrru}{\hat F}
+  \arrow[ultra thick, white]{rrrrd}{\hat F'}
+  \arrow{rrrrd}{\hat F'}
+  \arrow{ddd}{d-A^0}
+\\&&&&\C(\{t\})^n \arrow[green!60!black, thick]{ddd}{d-A'}
+\\&&&\C(\{t\})^n \arrow[green!60!black, thick]{ddr}{H}
+\\\C(\{t\})^n \arrow{rrru}{\hat F} \arrow{rrrrd}{\hat F'}
+\\&&&&\C(\{t\})^n
+\end{tikzcd} \]
 
 \begin{lem}
   Since $G_0(A^0)$ is by definition the stabilizer\PROBLEM[correct?] of $A^0$ we
@@ -1475,16 +1360,9 @@ $H\in G(\!\{t\}\!)$ such that
     $G(\!\{t\}\!)\backslash\hat G(A^0)$ (cf.\ \cite[Lem.1.17]{thboalch}).
   \end{s-cor}
 \end{lem}
-\begin{comment}
-  \begin{proof}
-    See
-    \begin{itemize}
-      \item~\cite[6]{thboalch}: in the case $G_0(A^0)=T$
-    \end{itemize}
-  \end{proof}
-\end{comment}
 
 The group $G_0(A^0)$ is easy to compute and is often trivial. In fact, the
-elements are block-diagonal, see~\cite[77]{Loday2014}.
+elements are block-diagonal\TODO[corresponding to the structure of $Q$],
+see~\cite[77]{Loday2014}.
 Thus the structure of ${}^0C(A^0)$ is easily deduced from the structure of
 $G(\!\{t\}\!)\backslash\hat G(A^0)$.
