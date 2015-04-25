@@ -1,7 +1,8 @@
 \chapter{Stokes Structures}\label{chap:stokes}
-Stokes structures are the \rewrite{necessary information} for meromorphic
-classification, i.e.\ with the Stokes structures we are able to construct a
-\rewrite{space}, which is isomorphic to the classifying \rewrite{set}.
+Stokes structures are contain exactly \rewrite{necessary information} to
+classify meromorphic classification, i.e.\ with the Stokes structures we are
+able to construct a \rewrite{space}, which is isomorphic to the classifying
+\rewrite{set}.
 
 A great overview of this topic is given by Varadarajan in
 \cite{Varadarajan96linearmeromorphic}. Other resources we will use are for
@@ -13,10 +14,11 @@ be \rewrite{useful. Also useful} was \rewrite{Boalch's} paper \cite{boalch}
 (resp.\ his thesis \cite{thboalch}) which looks only at the single leveled
 case.
 
-Let $\cM^{nf}$ be a fixed model with the corresponding normal form $A^0$.
-The first objective is to proof the Malgrange-Sibuya theorem
+Let $(\cM^{nf},\nabla^{nf})$ be a fixed model with the corresponding normal
+form $A^0$.  The first objective is to proof the Malgrange-Sibuya theorem
 in section~\ref{sec:mainThm1}. It states that the classifying set $\cH(A^0)$
-is via $\exp$ isomorphic to the first cohomology $H^1(S^1;\Lambda^{<0}(A^0))$.
+is via an map $\exp$ isomorphic to the first cohomology
+$H^1(S^1;\Lambda^{<0}(A^0))=:\St(A^0)$.
 In section~\ref{sec:mainThm2} we will improve the Malgrange-Sibuya Theorem by
 showing that each 1-cohomology class in $\St(A^0)$ contains a unique
 $1$-cocycle of a special form called \emph{the Stokes cocycle}
@@ -27,10 +29,9 @@ will be denoted by $h$.
 We \rewrite{have the following} commutative diagram of isomorphisms.
 \begin{center}
   \begin{tikzpicture}[scale=3]
-    \node[] (modSpcMat) at (0,0) {$\cH(A^0)$};
-    \node[purple] (class) at (1,0) {$G\backslash\hat G(A^0)$};
-    \node[] (sheaf2) at (2,1) {$H^1(S^1;\Lambda^{<0}(A^0))$};
-    \node[green!40!black] (sheaf) at (3,1) {$\St(\cM^{nf})$};
+    \node[] (modSpcMat) at (0.3,0) {$\cH$};
+    \node[purple] (class) at (1.3,0) {$\cH(A^0)$};
+    \node[green!40!black] (sheaf) at (3,1.2) {$\St(\cM^{nf})$};
     \node[] (sheaf3) at (3,0.7) {\textcolor{purple}{$\St(A^0)$}};
     \node[blue] (mat) at (3,-1) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
     % \node[blue] (mat') at (3.5,-1.5) {$(U_+\times U_-)^{k-1}$};
@@ -38,23 +39,22 @@ We \rewrite{have the following} commutative diagram of isomorphisms.
     % \draw[thick,double] (modSpcMat) -- (modSpcSheaf) -- (class) -- (class2) --
     %   (modSpcMat);
     \draw[thick,double,blue] (modSpcMat) -- (class);
-    \draw[thick,double] (sheaf) -- (sheaf2) node[midway,above] {\tiny def.};
-    \draw[purple,thick,double] (sheaf) -- (sheaf3) node[midway,right] {\tiny def.};
+    \draw[purple,thick,double] (sheaf) -- (sheaf3);
 
     \draw[->,green!40!black] (modSpcMat) -- (sheaf)
       node[midway,above left] {$\exp$};
-    \draw[->,blue,dashed] (modSpcMat) edge[bend right=20] (mat);
+%    \draw[->,blue,dashed] (modSpcMat) edge[bend right=20] (mat);
     \draw[->,blue] (class) -- (mat) node[midway,below left] {g};
     % \draw[->,blue,dotted] (mat) -- (mat') node[midway,right] {$\cK=\{k-1\}$};
     \draw[->,purple,dashed] (class) -- (sheaf3)
       node[midway,below right] {$\exp_{A^0}$};
     % \draw[->,purple,dashed] (class) -- (mat);
     \draw[->,purple] (mat) -- (sheaf3) node[midway, right] {$h$};
-    \draw[->,purple,dashed] (sheaf3) edge[bend right=20] (mat);
+%    \draw[->,purple,dashed] (sheaf3) edge[bend right=20] (mat);
   \end{tikzpicture}
 \end{center}
 The map $g$, which makes the diagram commute, is defined using the theory of
-summation, which will be roughly discussed in
+summation, which will be roughly discussed the appendix in
 section~\ref{sec:multisummability}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -69,7 +69,7 @@ If we talk about cocycles or cochains, we will in the following always mean
 $1$-cocycles or $1$-cochains.
 
 Let us first define the Stokes sheaf $\Lambda(A^0)$ on $S^1$, as the sheaf of
-flat isotropies.
+flat isotropies of $[A^0]$.
 \begin{defn}\label{defn:StokesSheaf}
   The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is the sheaf of groups defined on
   $S^1$ whose stalk at any point $\theta\in S^1$ is the group of germs of
@@ -79,7 +79,7 @@ flat isotropies.
   \begin{enumerate}
     \item Flatness: $\underset{x\in\mathfrak{s}}{\underset{x\to0}{\lim}}f(x)=1$
       and $f\sim_{\mathfrak{s}} 1$;
-      \TODO[Why two condition?]
+      \PROBLEM[Why two condition?]
     \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
   \end{enumerate}
   \begin{s-rem}
@@ -109,21 +109,20 @@ In the language of meromorphic connections is the Malgrange-Sibuya Theorem
 described as follows.
 
 Let $(\cM,\nabla,\hat f)$ be a marked germ of a  meromorphic connection.
-There exists an open covering $\cU=(U_j)_{j\in J}$ and for every open set an
-isomorphism
+\rewrite{By Theorem}~\ref{thm:maet} there exists an open covering
+$\cU=(U_j)_{j\in J}$ and for every open set, an isomorphism
 \[
   f_j:(\tilde\cM,\tilde\nabla)_{|U_j}
   \to(\tilde\cM^{nf},\tilde\nabla^{nf})_{|U_j}
 \]
-such that $\hat f_j=\hat f$. By $(f_kf_j^{-1})_{jk}$ is then a cocycle of the
-sheaf $\St(A^0)$, relative to the covering $\cU$, defined.
-\begin{comment}
-  For other lifts $f_j'$ of $\hat f$ on $W_j$, $(f_j'f_j^{-1})$ is a
+such that $f_j\sim_{U_j}\hat f$.
+By $(f_kf_j^{-1})_{jk}$ is then a cocycle of the sheaf $\St(A^0)$, relative
+to the covering $\cU$, defined.
+\comm{For other lifts $f_j'$ of $\hat f$ on $W_j$, $(f_j'f_j^{-1})$ is a
   $0$-cochain of $\Sto(A^0)$ relative to $\cU$. Thus the associated cochians to
   $(f_j)$ and $(f_j')$ are equivalent. One can also check that, if
   $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$ are isomorphic, the
-  corresponding cocycles define the same cohomology class.
-\end{comment}
+  corresponding cocycles define the same cohomology class.}
 This defines a mapping of pointed sets
 \[
   \cH\to H^1(S^1;\Lambda(A^0))
@@ -161,9 +160,9 @@ Since the language of meromorphic connections is equivalent to the one of
 systems, there is also the translated version of the Malgrange-Sibuya
 isomorphism to the language of systems.
 
-Let $(A,\hat F)$ be a marked pair, i.e.\ $\hat F$ solves $[A^0,A]$.
-There exists an open covering $\cU=(U_j)_{j\in J}$ together with, for every
-open set $U_j$ a lift $F_j\in\Gl_n(\cA(U_j))$
+Let $(A,\hat F)$ be a marked pair, thus $\hat F$ solves $[A^0,A]$.
+By the M.A.E.T there exists an open covering $\cU=(U_j)_{j\in J}$ together
+with, for every open set $U_j$ a lift $F_j\in\Gl_n(\cA(U_j))$
 (cf.\ Definition~\ref{defn:lift}), which solves $[A,A^0]$.
 By $(F_kF_j^{-1})_{jk}$ is then a cocycle of the sheaf $\St(A^0)$, relative to
 the covering $\cU$, defined.
@@ -187,6 +186,21 @@ to the first non abelian cohomology of $\Lambda(A^0)$, which we call $\exp$.
   is an isomorphism of pointed\footnote{Which maps the class of
   $(A^0,\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology class.} sets.
 \end{tthm}
+\begin{rem}
+  The theorem \cite[Thm.III.1.1.2]{babbitt1989local}, in the book from
+  Babbitt and Varadarajan, states that $\St(A^0)$ is actually a local moduli
+  space for marked pairs, which are formally isomorphic to a given system
+  $[A^0]$.
+  This means that
+  \begin{itemize}
+    \item the morphism property,
+    \item the criterion of equivalence and
+    \item the existence of universal families
+  \end{itemize}
+  are satisfied (cf.\ \cite[169]{babbitt1989local}).
+  In fact is the whole third part of \cite{babbitt1989local} dedicated to this
+  topic.
+\end{rem}
 Since the morphism $\exp$ depends on the choice of the normal form, we will
 denote that, if it is not clear, by
 $\exp_{A^0}=\exp$\footnote{In Loday's book~\cite{Loday1994} this is denoted as
@@ -197,20 +211,46 @@ $\exp_{\mu_0}$.}.
       To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains,
       which are conjugated via $\Phi$.
       We get the following commutative diagram:
-      \[ \begin{tikzcd}
-          G\backslash\hat G(A^1) \rar{\cdot\Phi}\dar{\exp_{A^1}}
-          & G\backslash\hat G(A^0) \dar{\exp_{A^0}}
-          & \hat F \arrow[|->]{r}\arrow[|->]{d}
-          & \hat F\Phi \arrow[|->]{d}
-        \\ H^1(S^1;\lambda(A^1)) \rar
-          & H^1(S^1;\lambda(A^0))
-          & \exp_{A^1}(\hat F) \arrow[|->]{r}
-          & \exp_{A^0}(\hat F\Phi)
-      \end{tikzcd} \]
+      \begin{center}
+        \begin{tikzpicture}[scale=2.6]
+          \node (tl) at (-1,0.6) {$G\backslash\hat G(A^1)$};
+          \node (tr) at (1,0.6) {$G\backslash\hat G(A^0)$};
+          \node (bl) at (-1,-0.6) {$H^1(S^1;\lambda(A^1))$};
+          \node (br) at (1,-0.6) {$H^1(S^1;\lambda(A^0))$};
+          \node (tlin) at ($ (tl) - (-0.3,0.2) $)
+            {\rotatebox[origin=c]{135}{$\in$}};
+          \node (trin) at ($ (tr) - (-0.3,0.2) $)
+            {\rotatebox[origin=c]{135}{$\in$}};
+          \node (blin) at ($ (bl) - (-0.2,0.2) $)
+            {\rotatebox[origin=c]{135}{$\in$}};
+          \node (brin) at ($ (br) - (-0.2,0.2) $)
+            {\rotatebox[origin=c]{135}{$\in$}};
+          \node (tlE) at ($ (tl) - (-0.5,0.4) $) {$\hat F$};
+          \node (trE) at ($ (tr) - (-0.5,0.4) $) {$\hat F\Phi$};
+          \node (blE) at ($ (bl) - (-0.5,0.4) $) {$\exp_{A^1}(\hat F)$};
+          \node (brE) at ($ (br) - (-0.5,0.4) $) {$\exp_{A^0}(\hat F)$};
+          \draw[->] (tl) -- (tr) node [midway,above] {$\cdot\Phi$};
+          \draw[->] (tl) -- (bl) node [midway,right] {$\exp_{A^1}$};
+          \draw[->] (tr) -- (br) node [midway,right] {$\exp_{A^0}$};
+          \draw[->] (bl) -- (br);
+          \draw[|->] (tlE) -- (trE);
+          \draw[|->] (tlE) -- (blE);
+          \draw[|->] (trE) -- (brE);
+          \draw[|->] (blE) -- (brE);
+        \end{tikzpicture}
+      \end{center}
+      % \[ \begin{tikzcd}
+      %     G\backslash\hat G(A^1) \rar{\cdot\Phi}\dar{\exp_{A^1}}
+      %     & G\backslash\hat G(A^0) \dar{\exp_{A^0}}
+      %     & \hat F \arrow[|->]{r}\arrow[|->]{d}
+      %     & \hat F\Phi \arrow[|->]{d}
+      %   \\ H^1(S^1;\lambda(A^1)) \rar
+      %     & H^1(S^1;\lambda(A^0))
+      %     & \exp_{A^1}(\hat F) \arrow[|->]{r}
+      %     & \exp_{A^0}(\hat F\Phi)
+      % \end{tikzcd} \]
       where $\exp_{A^0}(\hat F\Phi)=\Phi^{-1}\exp_{A^0}(\hat F)\Phi$.
       \TODO[$\Phi\in G(\!(t)\!)$???]
-    \item The isomorphism $\exp_A$ makes also sense, if $A$ is not in normal
-      form (cf.\ \cite[883]{Loday1994}).
   \end{enumerate}
 \end{rem}
 
@@ -236,7 +276,7 @@ We will start by proofing the injectivity of the morphism $\exp$.
   $\cU=\{U_j;j\in J\}$ of $S^1$ such that $\lambda$ is the class of the
   cocycles $(F_l^{-1}F_j)$ and $(F_l'^{-1}F_j')$, where $F_j$, $F_j'$ are
   defined relative to $U_j\in\cU$.
-  Since $[(F_l^{-1}F_j)]=[(F_l'^{-1}F_j')]$ there exists a
+  Since $[(F_l^{-1}F_j)]=[(F_l'^{-1}F_j')]$ by assumption there exists a
   $0$-cochain $(G_j)_{j\in J}$ of the sheaf $\Lambda(A^0)$ relative to the
   covering $\cU$, such that
   \[
@@ -336,8 +376,8 @@ Theorem 4.2.1.
 
 Let $\hat F\in G(\!(t)\!)$ be a matrix with formally meromorphic entries. By
 the Borel-Ritt Lemma (cf.\ Theorem~\ref{thm:borel-ritt}) we then know, that
-there exists for every sector $\mathfrak{s}$ a holomorphic function
-$g:\mathfrak{s}\to G$ which is asymptotic to $\hat F$.
+there exists for every sector $\mathfrak{s}\subsetneq S^1$ a holomorphic
+function $g:\mathfrak{s}\to G$ which is asymptotic to $\hat F$.
 We will denote the set of all such holomorphic functions, which are on
 the arc $I$ asymptotic to $\id\in G(\!(t)\!)$ by
 \[
@@ -354,11 +394,15 @@ which is set up as follows:
 \begin{einr}
   Let $[\hat F]\in G\llbracket t\rrbracket/G\{t\}$ with ambassador $\hat F$ and
   let $\cU=\{U_j\mid j\in J\}$ be a finite covering of $S^1$ by open arcs.
-  The Borel-Ritt Lemma yields for every arc $j\in J$ a holomorphic function
-  $F_j$ which satisfies $F_j\sim_{U_j}\hat F$.
+  The Borel-Ritt Lemma yields for every arc $j\in J\subsetneq S^1$ a
+  holomorphic function $F_j$ which satisfies $F_j\sim_{U_j}\hat F$.
   By $(F_lF_j^{-1})_{j,l\in J}$ is then a cocycle for $\cG$ defined,
   and write $\Theta([\hat F])$ for the corresponding cohomology class.
 \end{einr}
+This definition is similar to the definition of the map of
+Theorem~\ref{thm:mainThm1}. The difference is, that we instead of M.A.E.D, to
+obtain lifts, we use only the Borel-Ritt Lemma to obtain asymptotic matrices.
+
 It can be verified, that the cass $\Theta([\hat F])$ does not depend on
 \begin{itemize}
   \item the choise of an ambassador $\hat F$ in
@@ -397,7 +441,6 @@ It can be verified, that the cass $\Theta([\hat F])$ does not depend on
   \PROBLEM[Riemannscher hebbarkeits satz]
   Thus the defined $g$ satisfies $g=F'^{-1}F$, so that $[F]=[F']$.
 \end{proof}
-\TODO[\cite{babbitt1989local} on page 66]
 \begin{thm}[Malgrange-Sibuya]\label{thm:thm1helpMalgSibuy}
   The map $\Theta$ is an isomorphism
   \[
@@ -415,7 +458,8 @@ It can be verified, that the cass $\Theta([\hat F])$ does not depend on
 This theorem is proven in Section 4.4 of Babbitt and Varadarajan's book
 \cite{babbitt1989local}.
 
-We are now able to proof the surjectivity part of Theorem~\ref{thm:mainThm1}.
+We are now able to proof the surjectivity of the map from
+Theorem~\ref{thm:mainThm1}.
 \begin{proof}[Proof of surjectivity]
   \marginnote{\cite[72]{babbitt1989local}}
   Let the cohomology class $\lambda\in H^1(S^1,\Lambda(A^0))$ be represented by
@@ -423,7 +467,7 @@ We are now able to proof the surjectivity part of Theorem~\ref{thm:mainThm1}.
   $\cU=\{U_j;j\in J\}$ of $S^1$. We especially know, that
   \begin{itemize}
     \item $F_{jl}$ is on $U_j\cap U_l$ asymptotic to $\id$ and
-    \item it is a  ${}^{F_{jl}}A^0=A^0$.
+    \item it is a isotropy, i.e.\  ${}^{F_{jl}}A^0=A^0$.
   \end{itemize}
   The cocycle $(F_{jl})_{j,l\in J}$ also determines an element in
   $\sigma\in H^1(S^1,\cG)$.
@@ -436,14 +480,21 @@ We are now able to proof the surjectivity part of Theorem~\ref{thm:mainThm1}.
 
   Define on every arc $U_j$ the matrix $A_j:={}^{F_j}A^0$.
   On the intersections $U_j\cap U_l$ we know that $A_j=A_l$, since
-  $F_l^{-1}F_j\in\Lambda(A^0)$ and thus
-  $A^0={}^{F_l^{-1}}\Big(\underset{=A_j}{\underbrace{{}^{F_j}A^0}}\Big)$.
+  from $F_l^{-1}F_j\in\Lambda(A^0)$ follows on $U_j\cap U_l$ that
+  \[
+    A^0={}^{F_l^{-1}}({}^{F_j}A^0)
+    \qquad\Rightarrow{}\qquad
+    \underset{=A_l}{\underbrace{{}^{F_l}A^0}}
+    =\underset{=A_j}{\underbrace{{}^{F_j}A^0}}
+    \,.
+  \]
   Thus the $A_j$ \rewrite{glue to a} section $A$, which satisfies
   ${}^{\hat F}A=A_0$ by construction.
   We have found an element $(A,\hat F)\in\cH(A^0)$ whose image under $\exp$ is
   $\sigma$.
 \end{proof}
 
+\iffalse
 \begin{comment}
   \TODO[Define $\tilde\cM$ or find other way!]
   \begin{proof}[Proof of surjectivity]
@@ -531,6 +582,7 @@ We are now able to proof the surjectivity part of Theorem~\ref{thm:mainThm1}.
     \cite{babbitt1989local}.
   \end{proof}
 \end{comment}
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Stokes group}\label{sec:StokesGroup}
@@ -542,25 +594,27 @@ $A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}$ and a normal solution is given by
 $\cY_0(t)=t^Le^{Q(t^{-1})}$ (cf.\ Proposition~\ref{prop:fundSolBuilder}), where
 $Q(t^{-1})=\diag(\underset{n_1\text{-times}}{\underbrace{%
   q_1,\dots,q_1}},q_2,\dots ,q_s)$.
-Let us denote by
+Let
 \[
-  \cQ_{[A^0]} := \left\{q_1(t^{-1}),\dots,q_s(t^{-1})\right\}
+  \left\{q_1(t^{-1}),\dots,q_s(t^{-1})\right\}
 \]
-the \emph{set of all determining polynomials of $[A^0]$} and by
+the be \emph{set of all determining polynomials of $[A^0]$} and denote by
 \[
-  \cQ_{[\End A^0]}:=\left\{\left(q_j-q_l\right)(t^{-1})
-    \mid q_j \neq q_l \in\cQ_{[A^0]}
+  \cQ(A^0):=\left\{\left(q_j-q_l\right)(t^{-1})
+    \mid
+    q_j,q_l\in\left\{q_1(t^{-1}),\dots,q_s(t^{-1})\right\},
+    q_j \neq q_l
   \right\}
 \]
 the \emph{set of all determining polynomials of $[\End A^0]$}.
+Instead of $q_j-q_l\in\cQ(A^0)$ we will talk of pairs $(q_j,q_l)\in\cQ(A^0)$.
 \begin{defn}\label{defn:determiningPolysOfEndA}
   We call
   \begin{itemize}
     \item $a_{jl}\in\C\backslash\{0\}$ the \emph{leading factor},
     \item $\frac{a_{jl}}{t^{k}}=:q_{jl}(t^{-1})$ the \emph{leading
       coefficient} and
-    \item $k=k_{jl}$ the \emph{degree} $\deg(q_j-q_l)$ of $(q_j-q_l)$ or a
-      \emph{level} of $A^0$
+    \item $k=k_{jl}$ the \emph{degree}
   \end{itemize}
   of $q_j-q_l\in\cQ_{[\End A^0]}$ if
   \[
@@ -573,40 +627,23 @@ the \emph{set of all determining polynomials of $[\End A^0]$}.
         $q_{jl}(t^{-1})=-q_{lj}(t^{-1})$.
       \item In Boalch's paper \cite{boalch} (and also in \cite{thboalch}) is
         the \rewrite{$k$ always incremented by one}.
-        We will prefer the other definition, which is also used in
+        We will prefer the \rewrite{other notion}, which is also used in
         Loday-Richaud's paper \cite{Loday1994}.
-      \item In Loday-Richaud's book \cite[Def.4.3.6]{Loday2014} $a_{jl}$ gets a
-        negative sign to be consistend with calculations at $\infty$. Here this
-        is not necessary, since we use the clockwise orientation on $S^1$
-        (cf.\ Definition~\ref{defn:antiStokesDir}).
-        \begin{comment}
-          Does that mean that, to be consistend with \cite{boalch}, one has to
-          invert the permutation matrix?
-        \end{comment}
+      \item In Loday-Richaud's book \cite[Def.4.3.6]{Loday2014} $a_{jl}$ is
+        negated to be consistend with calculations at $\infty$.
+        Here this is not necessary, since we use the clockwise orientation on
+        $S^1$ (cf.\ Definition~\ref{defn:antiStokesDir}).
     \end{enumerate}
   \end{s-rem}
-  The degrees of the elements in $\cQ_{[\End A^0]}$ are defined to be  the
+  The degrees of the elements in $\cQ(A^0)$ are defined to be  the
   \emph{levels} of $A^0$.
   The set of all levels of $A^0$ will be denoted by
   \[
     \cK=\{k_1<\dots<k_r\} \subset \Q \,.
   \]
   \begin{s-rem}
-    \begin{enumerate}
-      \item If we assume that the level of $q_j-q_l$ is given by
-        $k_{jl}=\max\{\deg(q_j),\deg(q_l)\}$ is then $\cK$ given by
-        \[
-          \cK=\left\{
-            k_{1,2},
-            k_{1,3},\dots,
-            k_{1,n},
-            k_{2,3},\dots,
-            k_{n-1,n}
-          \right\}\,.
-        \]
-      \item $A^0$ is unramified if and only if $\cK\subset\Z$. Since we only
-        want to consider the unramified case, this will be always the case.
-    \end{enumerate}
+    $[A^0]$ is unramified if and only if $\cK\subset\Z$. Since we only want to
+    consider the unramified case, this will be always the case.
   \end{s-rem}
 \end{defn}
 
@@ -625,7 +662,7 @@ the \emph{set of all determining polynomials of $[\End A^0]$}.
   \end{defn}
 \end{comment}
 \begin{defn}
-  \TODO[better definition?]
+  \PROBLEM[better definition?]
   \marginnote{\cite[79]{Loday2014}}
   An exponential $e^{q(1/t)}=e^{-\frac{a}{t^{k}}(x+o(t^{-k}))}$ has
   \emph{maximal decay in a direction $\tilde\theta\in S^1$} if and only if
@@ -652,29 +689,30 @@ relations:
       \end{einr}
   \end{itemize}
   \begin{s-rem}
-    \begin{enumerate}
-      \item The condition $q_j \underset{\tilde\theta}{\prec} q_l$ is
-        satisfied if and only if $\Re(a_{jl}e^{-ik_{jl}\tilde\theta})<0$.
-      \item The condition $q_j \underset{\tilde\theta,\max}{\prec} q_l$ is
-        equivalent to
-        \begin{einr}
-          $a_{jl}e^{-ik_{jl}\tilde\theta}$ is a real negative
-          number, i.e.\ $q_j \underset{\tilde\theta}{\prec} q_l$ and
-          $\Im(a_{jl}e^{-ik_{jl}\theta})=0$.
-        \end{einr}
-      \item In the unramified case do these relations not depend on the
-        determination $\tilde\theta$ of $\theta$. As a consequence we will only
-        write $\underset{\theta}{\prec}$ and $\underset{\theta,\max}{\prec}$.
-    \end{enumerate}
+    In the unramified case do these relations not depend on the determination
+    $\tilde\theta$ of $\theta$. As a consequence we will only write
+    $\underset{\theta}{\prec}$ and $\underset{\theta,\max}{\prec}$.
   \end{s-rem}
 \end{defn}
-Let us look closer at functions of the form $f:\theta\mapsto ae^{-ik\theta}$,
-corresponding to some pair $(q_j,q_l)$.
+We know that
+\begin{enumerate}
+  \item the condition $q_j \underset{\tilde\theta}{\prec} q_l$ is
+    satisfied if and only if $\Re(a_{jl}e^{-ik_{jl}\tilde\theta})<0$ and
+  \item the condition $q_j \underset{\tilde\theta,\max}{\prec} q_l$ is
+    equivalent to
+    \begin{einr}
+      $a_{jl}e^{-ik_{jl}\tilde\theta}$ is a real negative
+      number, i.e.\ $q_j \underset{\tilde\theta}{\prec} q_l$ and
+      $\Im(a_{jl}e^{-ik_{jl}\theta})=0$.
+    \end{einr}
+\end{enumerate}
+Thus it is convenient to look closer at some functions of the form
+$f:\theta\mapsto ae^{-ik\theta}$, corresponding to some pair $(q_j,q_l)$.
 Write $a$ as $a=|a|e^{i\arg(a)}$, thus the function writes as
-\[
-  f(\theta)=|a|e^{i(\arg(a)-k\theta)}=
-  |a|(\cos(\arg(a)-k\theta) + i\sin(\arg(a)-k\theta)) \,.
-\]
+\begin{align*}
+  f(\theta)&=|a|e^{i(\arg(a)-k\theta)}
+  \\&=|a|(\cos(\arg(a)-k\theta) + i\sin(\arg(a)-k\theta)) \,.
+\end{align*}
 In the figure~\ref{fig:functionF}, we illustrate the real and the imaginary
 part of $f$.
 \begin{figure}[h!] %{{{
@@ -751,9 +789,9 @@ part of $f$.
   \end{flushright}
   \begin{tikzpicture}[remember picture,overlay]
     \draw[->,blue!50!white,thick] (n3) to[out=150,in=270] (g0);
-    \draw[->,purple!50!white,thick] (n2) to[out=240,in=60] (f-1);
+    \draw[->,purple!50!white,thick] (n2) to[out=240,in=70] (f-1);
     \draw[->,purple!50!white,thick] (n2) to[out=265,in=120] (f0);
-    \draw[->,purple!50!white,thick] (n2) to[out=290,in=60] (f1);
+    \draw[->,purple!50!white,thick] (n2) to[out=290,in=70] (f1);
     \draw[->,blue!50!white,thick] (n1) to[out=180,in=270] (e-1);
     \draw[->,blue!50!white,thick] (n1) to[out=170,in=270] (e0);
     \draw[->,blue!50!white,thick] (n1) to[out=160,in=270] (e1);
@@ -761,12 +799,13 @@ part of $f$.
   \end{tikzpicture}
   \caption{In this plot is the real part of $f(\theta)=ae^{-ik\theta}$,
     corresponding to some pair $(q_j,q_l)$, in
-    \textcolor{blue!40!white}{blue} and the imaginary part in
+    \textcolor{blue!60!white}{blue} and the imaginary part in
     \textcolor{purple}{purple} sketched.
   }\label{fig:functionF}
 \end{figure} %}}}
-The graphs, corresponding to the pair $(q_l,q_j)$ are then obtained by the
-transformation $\arg(a)\to\arg(-a)=\arg(a)+\pi$, i.e.\ the shift by
+
+The graphs, corresponding to the flipped pair $(q_l,q_j)$ are then obtained by
+the transformation $\arg(a)\to\arg(-a)=\arg(a)+\pi$, i.e.\ the shift by
 $\frac{\pi}{k}$ to the right. This $\frac{\pi}{k}$ is exactly a halve period.
 
 \begin{defn}\label{defn:antiStokesDir}

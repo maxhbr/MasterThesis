@@ -480,14 +480,24 @@ $\hat G(A)$ and $\hat G(A')$ related by
     \end{itemize}
     we have the following commutative diagram:
     \[ \begin{tikzcd}[column sep=.5cm,row sep=.5cm]
-        \C(\!\{t\}\!)^n \arrow{rrrrr}{F}\arrow{dddd}{d-B}&&&&&
-          \C(\!\{t\}\!)^n\arrow{dddd}{d-A}
+        \C(\!\{t\}\!)^n
+        \arrow[green!60!black]{rrrrr}{F}\arrow[green!60!black]{dddd}{d-B}&&&&&
+          \C(\!\{t\}\!)^n\arrow[green!60!black]{dddd}{d-A}
           \\ & \cM \arrow{dd}{\nabla}\arrow{rrr}{\Phi}\ular&&&
           \cM'\arrow{dd}{\nabla'}\urar
           \\
         \\ & \cM \arrow{rrr}{\Phi}\dlar&&& \cM'\drar
-        \\ \C(\!\{t\}\!)^n \arrow{rrrrr}{F}&&&&& \C(\!\{t\}\!)^n
+        \\ \C(\!\{t\}\!)^n \arrow[green!60!black]{rrrrr}{F}&&&&&
+          \C(\!\{t\}\!)^n
     \end{tikzcd} \]
+    \marginnote{\begin{align*}
+          ((d-B)\circ F) x &= (F\circ(d-A)) x
+        \\(d\circ F) x - (B\circ F) x &= F(dx -Ax)
+        \\d(Fx) - B(Fx) &= F(x' - Ax)
+        \\Fx'+F'x - BFx &= Fx' - FAx
+        \\Fx'+F'x - Fx' &= BFx - FAx
+        \\F'x &= (BF - FA)x
+      \end{align*}}
     Thus the commutation property for the outer rectangle reads
     \[
       (d-B)\circ F=F\circ(d-A)
@@ -496,16 +506,6 @@ $\hat G(A)$ and $\hat G(A')$ related by
     \[
       \frac{dF}{dt}=BF-FA.
     \]
-    \begin{comment}
-      \begin{align*}
-        ((d-B)\circ F) x &= (F\circ(d-A)) x
-      \\(d\circ F) x - (B\circ F) x &= F(dx -Ax)
-      \\d(Fx) - B(Fx) &= F(x' - Ax)
-      \\Fx'+F'x - BFx &= Fx' - FAx
-      \\Fx'+F'x - Fx' &= BFx - FAx
-      \\F'x &= (BF - FA)x
-      \end{align*}
-    \end{comment}
   \end{s-rem}
 \end{rem}
 \begin{rem}\label{rem:distributingTransforamtionRule}
@@ -531,7 +531,7 @@ $\hat G(A)$ and $\hat G(A')$ related by
      \right)
      F_2^{̀-1}
   \\&= \left(dF_2\right)̂F_2^{-1} +F_2 {}^{F_1}\!A F_2^{̀-1}
-  \\&= {}^{F_2}\!\left({}^{F_1}\!A\right)
+  \\&= {}^{F_2}\!\left({}^{F_1}\!A\right) \,.
   \end{align*}
 \end{rem}
 \begin{defn}
@@ -545,7 +545,7 @@ $\hat G(A)$ and $\hat G(A')$ related by
     \textbf{\boldmath$B$ is obtained from $A$ by (formal) transformation}.
   \end{einr}
   The \emph{class of a connection matrix} is the orbit under the Gauge
-  transformation by $G(\!\{t\}\!)$. The \emph{formal class} ist the orbit by
+  transformation by $G(\!\{t\}\!)$. The \emph{formal class} is the orbit by
   $\hat G(A)$.
   \begin{s-rem}
     Thus $A$ is (formally) equivalent to $B$ if and only if there is a (formal)
@@ -957,26 +957,25 @@ fundamental solution in the form $\hat F\cY_0$.
     It is sufficient, to proof this in the case $\hat F=\id$, i.e.\ the case
     where $\cY=t^L e^{Q(t^{-1})}$ is a normal solution.
 
-    \begin{comment}
-      Since we are dealing with diagonal matrices it is easy to see that
-      \begin{align*}
-        \frac{d}{dt}e^{Q(t^{-1})}
-        &=\diag\left(\frac{d}{dt}e^{q_1(t^{-1})},\frac{d}{dt}e^{q_2(t^{-1})}
-          ,\dots,
-          \frac{d}{dt}e^{q_n(t^{-1})}\right)
-          \\&=\diag\left(\frac{d}{dt}q_1(t^{-1})e^{q_1(t^{-1})}
-                        ,\frac{d}{dt}q_1(t^{-1})e^{q_2(t^{-1})}
-                        ,\dots
-                        ,\frac{d}{dt}q_1(t^{-1})e^{q_n(t^{-1})}\right)
-      \\&=Q'(t^{-1})e^{Q(t^{-1})} \,.
-      \end{align*}
-      and, since the function $t^L$ is defined as $e^{L\ln t}$,
-      \begin{align*}
-        \frac{d}{dt}t^L&=\frac{d}{dt}e^{L\ln t}
-        =Le^{(L-\id)\ln t}
-        =L\frac{1}{t}t^L \,.
-      \end{align*}
-    \end{comment}
+      \TODO[Since we are dealing with diagonal matrices it is easy to see
+      that\dots]
+      % \begin{align*}
+      %   \frac{d}{dt}e^{Q(t^{-1})}
+      %   &=\diag\left(\frac{d}{dt}e^{q_1(t^{-1})},\frac{d}{dt}e^{q_2(t^{-1})}
+      %     ,\dots,
+      %     \frac{d}{dt}e^{q_n(t^{-1})}\right)
+      %     \\&=\diag\left(\frac{d}{dt}q_1(t^{-1})e^{q_1(t^{-1})}
+      %                   ,\frac{d}{dt}q_1(t^{-1})e^{q_2(t^{-1})}
+      %                   ,\dots
+      %                   ,\frac{d}{dt}q_1(t^{-1})e^{q_n(t^{-1})}\right)
+      % \\&=Q'(t^{-1})e^{Q(t^{-1})} \,.
+      % \end{align*}
+      % and, since the function $t^L$ is defined as $e^{L\ln t}$,
+      % \begin{align*}
+      %   \frac{d}{dt}t^L&=\frac{d}{dt}e^{L\ln t}
+      %   =Le^{(L-\id)\ln t}
+      %   =L\frac{1}{t}t^L \,.
+      % \end{align*}
     It is easy to see that $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$
     and $\frac{d}{dt}t^L\overset{\PROBLEM}{=}L\frac{1}{t}t^L$, thus we can prove
     that $\cY$ is a matrix consisting of solutions:
@@ -1087,10 +1086,8 @@ fundamental solution in the form $\hat F\cY_0$.
     and the Proposition~\ref{prop:systToMeromConn} yields our meromorphic
     connection $(\cM_{A^0},\nabla_{A^0})=(\C(\!\{t\}\!)^n,d-A^0)$ for
     \rewrite{which we want to prove, to be} a model.
-    \begin{comment}
-      We can use Proposition~\ref{prop:MatOfSumOfMerCon} to assume, that $L$ is
-      \rewrite{only one Jordan block}.
-    \end{comment}
+    \TODO[We can use Proposition~\ref{prop:MatOfSumOfMerCon} to assume, that $L$ is
+      \textbf{only one Jordan block}.]
 
     \PROBLEM[Jordan-NF]
   \end{proof}
@@ -1157,7 +1154,7 @@ expansion.
 \end{defn}
 The main asymptotic existence theorem, which can be for example found in
 \cite[Thm.3.1]{boalch} or \cite[Sec.4.4]{Loday2014}, states:
-\begin{thm}[M.E.A.T]\label{thm:meat}
+\begin{thm}[M.A.E.T]\label{thm:maet}
   To every $\hat F\in G(\!(t)\!)$ and to every small enough arc
   $I\subsetneq S^1$ there exists a lift $F$ on $I$.
   \begin{s-rem}
