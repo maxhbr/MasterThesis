@@ -706,7 +706,7 @@ We know that
       $\Im(a_{jl}e^{-ik_{jl}\theta})=0$.
     \end{einr}
 \end{enumerate}
-Thus it is convenient to look closer at some functions of the form
+Thus it is convenient to look closer at functions of the form
 $f:\theta\mapsto ae^{-ik\theta}$, corresponding to some pair $(q_j,q_l)$.
 Write $a$ as $a=|a|e^{i\arg(a)}$, thus the function writes as
 \begin{align*}
@@ -806,7 +806,8 @@ part of $f$.
 
 The graphs, corresponding to the flipped pair $(q_l,q_j)$ are then obtained by
 the transformation $\arg(a)\to\arg(-a)=\arg(a)+\pi$, i.e.\ the shift by
-$\frac{\pi}{k}$ to the right. This $\frac{\pi}{k}$ is exactly a halve period.
+$\frac{\pi}{k}$ to the right. This $\frac{\pi}{k}$ is exactly a halve period,
+thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
 
 \begin{defn}\label{defn:antiStokesDir}
   % \marginnote{See \cite[Def.I.4.5]{Loday1994}(for the ramified case)
@@ -820,7 +821,8 @@ $\frac{\pi}{k}$ to the right. This $\frac{\pi}{k}$ is exactly a halve period.
           anti-Stokes directions in a clockwise ordering. For a uniform
           notation later, \rewrite{define $\A$ to contain a single, arbitrary
           direction if $\cK=\{0\}$.}
-          \TODO[make all Stokes dirs $\alpha$ instead of $\theta$?]
+          \TODO[Is this used somewhere??]
+          \PROBLEM[make all Stokes dirs $\alpha$ instead of $\theta$?]
           \begin{s-rem}
             The clockwise ordering is chosen, similar to Loday-Richaud's paper
             \cite{Loday1994}, since the calculations are then compatible with
@@ -831,6 +833,7 @@ $\frac{\pi}{k}$ to the right. This $\frac{\pi}{k}$ is exactly a halve period.
             incompatibilities.
             In Loday-Richaud's book \cite{Loday2014} this problem is solved by
             an additional minus sign for some koefficients\comm{~to $a_{ij}$}.
+            \PROBLEM[mentioned to often?]
           \end{s-rem}
       \end{itemize}
     \item $\theta$ is an \emph{Stokes direction} if there is at least one pair
@@ -844,7 +847,7 @@ $\frac{\pi}{k}$ to the right. This $\frac{\pi}{k}$ is exactly a halve period.
 \end{defn}
 
 \begin{lem}\label{lem:rotationalSym}%\label{rem:rotationalSymPrime}
-  If $\theta\in\A$ together with a pair $(q_j-q_l)(t^{-1})\in\cQ_{[\End A^0]}$
+  If $\theta\in\A$ together with a pair $(q_j-q_l)(t^{-1})\in\cQ(A^0)$
   of degree $k$ is given, we have for every $m\in\N$ that
   \[
     \underset{=:\theta'}{\underbrace{\theta+m\frac{\pi}{k}}} \in \A \,.
@@ -874,7 +877,7 @@ $\frac{\pi}{k}$ to the right. This $\frac{\pi}{k}$ is exactly a halve period.
         & \text{, if $m$ is uneven}
     \end{cases}
   \end{align*}
-  is, in the case when $n$ is even, also real and negative. In the other
+  is, in the case when $m$ is even, also real and negative. In the other
   case, when $n$ is uneven, we use that $a_{jl}=-a_{lj}$ and $k_{jl}=k_{lj}$ to
   obtain
   $a_{lj}e^{-ik_{lj}\left(\tilde\theta+m\frac{\pi}{k_{lj}}\right)} \in\R_{<0}$.
@@ -973,19 +976,15 @@ $\theta$.\label{page:alreadyUsedDefn}
       %     \cY_{0,\tilde\theta}C_{\cY_{0,\tilde\theta}}\cY_{0,\tilde\theta}^{-1}
       %     \,.
       %   \end{align*}
-      \item In Loday-Richaud's book \cite[78]{Loday2014} are the elements of
-        $\Sto_\theta(A^0)$ characterized as the flat transformations, such that
-        equation (\ref{eq:representation}) is satisfied for some unique
-        constant invertible matrix
-        $C_{\cY_{0,\tilde\theta}}\in\SSto_\theta(A^0)$.
       \item \marginnote{\cite[Defn.I.4.7]{Loday1994}}
         This construction defines also a morphism, which takes a germ
-        $\phi_\theta\in\Lambda_\theta(A^0)$ relative to $\cY_{0,\tilde\theta}$
-        into its unique representation matrix
+        $\phi_\theta\in\Lambda_\theta(A^0)\supsetneq\Sto_\theta(A^0)$ relative
+        to $\cY_{0,\tilde\theta}$ into its unique representation matrix
         \[
           C_{\cY_{0,\tilde\theta}}
           \in\left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
-          q_j \underset{\theta}{\prec} q_l \right\} \,.
+          q_j \underset{\theta}{\prec} q_l \right\}
+          \supsetneq\SSto_\theta(A^0) \,.
         \]
     \end{enumerate}
   \end{s-rem}
@@ -1114,10 +1113,17 @@ In particular, from the proof, we get that
   In other words:
   \begin{einr}
     a germ $\phi_\theta\in\Lambda_\theta(A^0)$ is in $\Sto_\theta(A^0)$ if and
-    only if there exists a $C_{\tilde\theta}\in\SSto_\theta(A^0)$ such that
-    $\phi_\theta=\cY_{0,\tilde\theta}C_{\tilde\theta}\cY_{0,\tilde\theta}^{-1}$
-    in some representation $\tilde\theta$ of $\theta$.
+    only if there exists a $C_{\cY_{0,\tilde\theta}}\in\SSto_\theta(A^0)$ such
+    that $\phi_\theta=\cY_{0,\tilde\theta}C_{\cY_{0,\tilde\theta}}
+    \cY_{0,\tilde\theta}^{-1}$ in some representation $\tilde\theta$ of
+    $\theta$.
   \end{einr}
+  \begin{s-rem}
+    In Loday-Richaud's book \cite[78]{Loday2014} are the elements of
+    $\Sto_\theta(A^0)$ actually characterized as the flat transformations, such
+    that equation (\ref{eq:representation}) is satisfied for some unique
+    constant invertible matrix $C_{\cY_{0,\tilde\theta}}\in\SSto_\theta(A^0)$.
+  \end{s-rem}
 \end{cor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1125,6 +1131,8 @@ In particular, from the proof, we get that
 \marginnote{\cite{Loday1994}, \cite[362ff]{Martinet1991}}
 Let us introduce a couple of notations and definitions, which coincide with the
 notations used in Loday-Richaud's paper \cite{Loday1994}.
+Another resource is for example the paper~\cite[362f]{Martinet1991} from
+Martinet and Ramis.
 
 \begin{defn}
   We denote the set of \emph{levels of the germ}
@@ -1189,8 +1197,12 @@ notations used in Loday-Richaud's paper \cite{Loday1994}.
   See \cite[I.5]{Loday1994} on p.\ 861f (See [LR91])
 \end{comment}
 \rewrite{We will now introduce a filtration of $\Lambda(A^0)$, wich will be
-restricted to $\Sto_\theta(A^0)$ and defines there the filtration, in which we
-are interested.}
+restricted to $\Sto_\theta(A^0)$ and defines there a filtration. This leads to
+a decomposition of $\Sto_\theta(A^0)$ into a semidirect product.} Let us start
+by studying the sheaves $\Lambda^\star(A^0)$, and discuss how they correlate.
+
+The following proposition can be found as~\cite[Prop.I.5.1]{Loday1994} and the
+key-statement is also given in~\cite[Prop.4.10]{Martinet1991}.
 \begin{prop}\label{prop:PropertiesOfStokesSheafSplitting}
   \marginnote{\cite[Prop.I.5.1]{Loday1994}}
   For any level $k\in\cK$ one has
@@ -1223,31 +1235,7 @@ are interested.}
       splits.
   \end{enumerate}
 \end{prop}
-\begin{proof}
-  \begin{comment}
-    \begin{enumerate}
-      \item \PROBLEM[clear, since germwise clear?]
-    \end{enumerate}
-  \end{comment}
-  \begin{comment}
-    \begin{enumerate}
-      \setcounter{enumi}{1}
-      \item
-        \PROBLEM[Germwise or sectionwise??, check only on generators?]
-        Let $\alpha$ be an direction in $S^1$.
-        Let $n\in\Lambda^k(A^0)_\alpha$ and $g\in\Lambda^{\leq k}(A^0)_\alpha$.
-        We have to show, that $gng^{-1}\in\Lambda^{\leq k}(A^0)_\alpha$,
-        i.e.\ that $gng^{-1}$ is a $k$-germ.
-        \TODO{}
-    \end{enumerate}
-  \end{comment}
-  \begin{enumerate}
-    \setcounter{enumi}{2}
-    \item Splitting is clear, since we have the canonical inclusion
-      $\Lambda^{<k}(A^0)\hookrightarrow\Lambda^{\leq k}(A^0)$ and
-      $p\circ\substack{\text{the}\\\text{inclusion}}=\id_{\Lambda^{<k}(A^0)}$.
-  \end{enumerate}
-\end{proof}
+Thus we obtain the following corollary.
 \begin{cor}\label{cor:factorStokesGerms}
   \marginnote{\cite[Cor.I.5.2]{Loday1994}}
   \begin{enumerate}
@@ -1282,9 +1270,9 @@ are interested.}
         \end{einr}
       \end{s-rem}
     \item This decomposition in semi-direct product can be extended to all
-      levels. Thus
+      levels (cf.\ \cite[Cor.I.5.2]{Loday1994}). Thus
       \[
-        \Lambda(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Lambda^k(A^0)
+        \Lambda(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Lambda^k(A^0) \,,
       \]
       where the semi-direct product is taken in an ascending or descending
       order of levels $k$.
@@ -1345,8 +1333,8 @@ are interested.}
 \end{rem}
 \begin{prop}\label{prop:filtrationOfStokesGroup}
   \marginnote{\cite[Prop.I.5.5]{Loday1994}}
-  The results can be restricted to the Stokes groups. Thus, for
-  $\theta\in\A$, one has
+  The results can be restricted to the Stokes groups
+  (cf.\ \cite[Prop.I.5.5]{Loday1994}). Thus, for $\theta\in\A$, one has
   \[
     \Sto_\theta(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Sto_\theta^k(A^0)
   \]

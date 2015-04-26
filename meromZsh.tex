@@ -212,9 +212,12 @@ Thus, with the connection $\nabla$ and the $\C(\!\{t\}\!)$-basis
 $\underline{e}$ is naturally associate the differential operator
 $\triangle=d-A$, which has order one and dimension $n$.
 \begin{defn}
+  \marginnote{\cite[Sec.4]{Martinet1991}}
   We call (\ref{eq:ode}), determined by the differential operator
-  $\triangle=d-A$, a \emph{germ of a meromorphic linear differential system} of
-  rank $n$, or just a \emph{system}.
+  $\triangle=d-A$, a \emph{germ of a meromorphic linear differential
+  system\footnote{Martinet and Ramis call them in~\cite{Martinet1991}
+  \emph{germs of meromorphic differential operators.}}} of rank $n$, or just a
+  \emph{system}.
   \begin{s-prop}
     Thus, the set of systems is isomorphic to the set
     \[
@@ -634,20 +637,30 @@ of the same system.
 \begin{defn}
   \marginnote{\cite[4f]{thboalch}}
   A \emph{fundamental matrix of (formal) solutios} or \emph{(formal)
-  fundamental solution} $\cY$ on a sector $\mathfrak{s} $\PROBLEM[?] of the
+  fundamental solution} $\cY$ on a sector $\mathfrak{s}$ of the
   system $[A]$ is an invertible $n\times n$ matrix (with formal entries), which
   solves $[0,A]$ on $\mathfrak{s}$.
   \begin{s-rem}
     \begin{itemize}
       \item This means that the columns of $\cY$ are $n$ $\C$-linearly
         independent solutions of the system $[A]$ on $\mathfrak{s}$.
-      \item Some authors introduce multivalued solutions, to avoid the
-        restrictions to sectors.
+      \item Some authors\PROBLEM[?] introduce multi-valued solutions, to avoid
+        the restriction to sectors.
+
+        \begin{einr}
+          \emph{Multi-valued} are functions, which are not single-valued and
+          \emph{single-valued} is a function $f$, which satisfies
+          \[
+            f(t)=f(t\exp(2\pi i)) \qquad\text{whenever both sides are defined.}
+          \]
+        \end{einr}
+        The function $t\to t^\alpha$, for example, is single-valued whenever
+        $\alpha\in\Z$.
     \end{itemize}
   \end{s-rem}
 \end{defn}
 The Stokes phenomenon, which will be discussed in the
-chapter~\ref{chap:stokes}, results from the fact, that there is always a formal
+chapter~\ref{chap:stokes}, results from the fact that there is always a formal
 fundamental solution, which solves a system on the full arc $S^1$.
 But holomorphic solutions, which are asymptotic to the formal solution, may
 exist only on small sub-sectors of $S^1$.
