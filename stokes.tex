@@ -1235,12 +1235,13 @@ key-statement is also given in~\cite[Prop.4.10]{Martinet1991}.
       splits.
   \end{enumerate}
 \end{prop}
-Thus we obtain the following corollary.
+From the splitting of the sequence, we obtain immediately the following
+decomposition into a semidirect product.
 \begin{cor}\label{cor:factorStokesGerms}
   \marginnote{\cite[Cor.I.5.2]{Loday1994}}
   \begin{enumerate}
     \item For any $k\in\cK$, there are the two following ways of factoring
-      $\Lambda^{\leq k}(A^0)$ in a semi-direct product:
+      $\Lambda^{\leq k}(A^0)$ in a semidirect product:
       \begin{align*}
         \Lambda^{\leq k}(A^0)&\cong \Lambda^{<k}(A^0)\ltimes\Lambda^{k}(A^0)
       \\                     &\cong \Lambda^{k}(A^0)\ltimes\Lambda^{<k}(A^0)\,.
@@ -1257,10 +1258,10 @@ Thus we obtain the following corollary.
         \marginnote{\cite[Cor.I.5.2(ii)]{Loday1994}}
         We can get the factor $f^{<k}$ common to both factorizations by
         truncation of $f^{\leq k}$ to terms of level $k$.
-        This truncation can explicitly be achieved in terms of Stokes matrices,
-        by keeping in any representation $1+\sum C_{\tilde\theta}^{(j,l)}$ of
-        $f^{\leq k}$ only the terms $C_{\tilde\theta}^{(j,l)}$ such that
-        $\deg(q_j-q_l)<k$.
+        This truncation can explicitly be achieved, in terms of Stokes
+        matrices, by keeping in any representation
+        $1+\sum C_{\tilde\theta}^{(j,l)}$ of $f^{\leq k}$ only the blocks
+        $C_{\tilde\theta}^{(j,l)}$ such that $\deg(q_j-q_l)<k$.
 
         A factorization algorithm could then be:
         \begin{einr}
@@ -1269,12 +1270,12 @@ Thus we obtain the following corollary.
           $g^k:=(f^{<k})^{-1}f^{\leq k}$ and $f^k:=f^{\leq k}(f^{<k})^{-1}$.
         \end{einr}
       \end{s-rem}
-    \item This decomposition in semi-direct product can be extended to all
+    \item This decomposition in semidirect product can be extended to all
       levels (cf.\ \cite[Cor.I.5.2]{Loday1994}). Thus
       \[
         \Lambda(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Lambda^k(A^0) \,,
       \]
-      where the semi-direct product is taken in an ascending or descending
+      where the semidirect product is taken in an ascending or descending
       order of levels $k$.
   \end{enumerate}
 \end{cor}
@@ -1338,7 +1339,7 @@ Thus we obtain the following corollary.
   \[
     \Sto_\theta(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Sto_\theta^k(A^0)
   \]
-  the semi-direct product being taken in an arbitrary order \comm{(we will only
+  the semidirect product being taken in an arbitrary order \comm{(we will only
   be interested in the ascending order)}.
   \begin{s-defn}
     We will denote the map, wich gives the factors of this factorization by
@@ -2050,7 +2051,7 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
         \,,\qquad\text{~for~} \theta\in\A^{\leq k} \,.
       \]
       Since Corollary~\ref{cor:factorStokesGerms} tells us, that the
-      factorization into the factors of the semi-direct product are unique, we
+      factorization into the factors of the semidirect product are unique, we
       get for all $\theta\in\A^k$
       \[
         \dot F_\theta=c_\theta^{-1}\dot F_\theta'c_{\theta^+}
