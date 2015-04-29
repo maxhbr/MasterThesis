@@ -1,0 +1,735 @@
+\chapter{Structure of Stokes germs and Stokes
+  matrices}\label{chp:WhichInformationIsNeeded}
+Here we want to discuss, which information is required to describe the Stokes
+cocycle corresponding to a multileveled system.
+\section{Simplest, multileveled case}
+Let $A^0$ be a normal form with dimension $n=3$ and two levels
+$\cK=\{k_1<k_2\}$, which satisfies that there is at least one anti-Stokes
+direction $\theta_0$ which is beared by both levels.
+Let $q_j(t^{-1})$ be the determining polynomials and let $k_{jl}$ be the
+degrees of $(q_j-q_l)(t^{-1})$.
+Since it is the only way to get two levels in dimension $3$ we have, up to
+permutation: $k_1=k_{1,2}\geq k_{1,3}$ and $k_2=k_{2,3}$.
+We know also that the leading terms of $(q_1-q_2)(t^{-1})$ and
+$(q_1-q_3)(t^{-1})$ are equal and thus determine the same anti-Stokes
+directions.
+The set of all anti-Stokes directions is then given as
+\[
+  \A=\left\{\theta_0+\frac{\pi}{k}\cdot j\mid k\in\cK\text{, }j\in\N\right\}
+    =:\{
+      \underset{\theta_0}{%
+        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+          \theta_1
+      }}
+    ,\dots,\theta_\nu\}\,.
+\]
+Denote by $\cY_0(t)$ a normal solution of $[A^0]$.
+
+\marginnote{\cite[79]{Loday2014}}
+Fix a set of determinations $\tilde\theta_1,\dots,\tilde\theta_\nu$ of the
+anti-Stokes directions $\theta_1,\dots,\theta_\nu$ such that all
+$\tilde\theta_j$ lie in the same interval $[2m\pi,2(m+1)\pi[$.
+For every $\theta\in\A$ denote by $\cY_{0,\tilde\theta}(t)$ the normal solution
+with that choice of a determination of the argument. We have already used this
+notation on page~\pageref{page:alreadyUsedDefn}.
+
+\subsection{What do the Stokes germs $\phi_\theta$ look like?}
+\rewrite{First} we want to use the Stokes matrices of Stokes germs, discussed
+in Section~\ref{sec:matrixReps}, to \rewrite{obtain some statements} about the
+\rewrite{structure} of the Stokes germs in our situation.
+
+The Proposition~\ref{prop:representation} states that every Stokes germ
+$\phi_\theta$ can be written as its matrix representation conjugated by the
+normal solution. That means that there is a Stokes matrix in
+$\SSto_\theta(A^0)$, which gets via
+\begin{align*}
+  \rho_{\tilde\theta}^{-1}:
+  \SSto_\theta(A^0)
+  &\overset{\cong}\longrightarrow
+  \Sto_\theta(A^0)
+  \\C_{\cY_{0,\tilde\theta}} &\longmapsto
+  \cY_{0,\tilde\theta} C_{\cY_{0,\tilde\theta}} \cY_{0,\tilde\theta}^{-1} \,,
+\end{align*}
+mapped to the Stokes germ $\phi_\theta$.
+\TODO[This depends on the determination $\tilde\theta$ of $\theta$]
+
+\paragraph{Using the structure of $\SSto_\theta(A^0)$}
+First look at an example in which we will explain, from which relations on the
+determining polynomials which restriction on the form of the Stokes matrices
+follow.
+\begin{exmp}
+  Let $\theta\in\A$ be an anti-Stokes direction.
+  From the definition of $\SSto_\theta(A^0)$ (cf.\
+  Definition~\ref{defn:groupOfFaithfullReps}) we know that, if one has $q_1
+  \underset{\theta,\max}{\prec} q_2$, the Stokes matrix has the form
+  \[
+    \begin{pmatrix}
+      1 & \text{\boldmath$c_1$} & \star
+    \\\text{\boldmath$0$} & 1 & \star
+    \\\star & \star & 1
+    \end{pmatrix}
+  \]
+  where $c_j\in\C$ and $\star\in\C$.
+  \begin{s-rem}
+    In our situation, we also know that
+    \begin{einr}
+      $q_1 \underset{\theta,\max}{\prec} q_2$
+      \Leftrightarrow{}
+      $q_1 \underset{\theta,\max}{\prec} q_3$
+      \qquad \rewrite{respectively} \qquad
+      $q_2 \underset{\theta,\max}{\prec} q_1$
+      \Leftrightarrow{}
+      $q_3 \underset{\theta,\max}{\prec} q_1$
+    \end{einr}
+    since the leading terms of $q_1-q_2$ and $q_1-q_3$ are equal.
+  \end{s-rem}
+  Thus the representation has the \rewrite{form}
+  \[
+    \begin{pmatrix}
+      1 & c_1 & \text{\boldmath$c_2$}
+    \\0 & 1 & \star
+    \\\text{\boldmath$0$} & \star & 1
+    \end{pmatrix}\,.
+  \]
+  If we also know that neither $q_2 \underset{\theta,\max}{\prec} q_3$ nor
+  $q_3 \underset{\theta,\max}{\prec} q_2$ it has the \rewrite{form}
+  \[
+    \begin{pmatrix}
+      1 & c_1 & c_2
+    \\0 & 1 & \text{\boldmath$0$}
+    \\0 & \text{\boldmath$0$} & 1
+    \end{pmatrix}\,.
+  \]
+  We also know that every matrix of this \rewrite{form} is a representation to
+  some Stokes germ.
+  Thus we have an isomorphism
+  \begin{align*}
+    \vartheta_\theta:\C^2 &\longrightarrow \SSto_\theta(A^0)
+  \\(c_1,c_2)&\longmapsto
+    \begin{pmatrix}
+      1 & c_1 & c_2
+    \\0 & 1 & 0
+    \\0 & 0 & 1
+    \end{pmatrix}
+  \end{align*}
+\end{exmp}
+In fact, the following $9$ cases of Stokes matrices can arise.
+\begin{center}
+  \def\arraystretch{1.3}
+  \setlength\tabcolsep{4mm}
+  \begin{tabular}{r|c|c|c}
+    & $q_2 \underset{\theta,\max}{\prec} q_3$
+    & $q_3 \underset{\theta,\max}{\prec} q_2$
+    & else
+    \tabularnewline
+    \hline
+    $\substack{q_1 \underset{\theta,\max}{\prec} q_2\\\text{and}
+    \\q_1 \underset{\theta,\max}{\prec} q_3}$
+    & $\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & c_1 \\0 & 0 & 1 \end{pmatrix}$
+   \cellcolor{blue!15}
+    & $\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & c_1 & 1 \end{pmatrix}$
+   \cellcolor{blue!15}
+    & $\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}$
+   \cellcolor{green!15}
+    \tabularnewline
+    \hline
+    $\substack{q_2 \underset{\theta,\max}{\prec} q_1\\\text{and}
+    \\q_3 \underset{\theta,\max}{\prec} q_1}$
+    & $\begin{pmatrix} 1 & 0 & 0 \\c_2+c_1c_3 & 1 & c_1 \\c_3 & 0 & 1 \end{pmatrix}$
+   \cellcolor{blue!15}
+    & $\begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_1c_2+c_3 & c_1 & 1 \end{pmatrix}$
+   \cellcolor{blue!15}
+    & $\begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_3 & 0 & 1 \end{pmatrix}$
+   \cellcolor{green!15}
+    \tabularnewline
+    \hline
+    else
+    & $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_1 \\0 & 0 & 1 \end{pmatrix}$
+   \cellcolor{purple!15}
+    & $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_1 & 1 \end{pmatrix}$
+   \cellcolor{purple!15}
+    & $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}$
+  \end{tabular}
+\end{center}
+In the \textcolor{blue!75!black}{blue} cases we have $\cK_\theta=\cK$ and
+$\C^3\overset{\vartheta_\theta}{\underset{\cong}{\longrightarrow}}\SSto_\theta(A^0)$.
+In the \textcolor{green!50!black}{green} cases $\cK_\theta=\{k_2\}$ and
+$\C^2\overset{\vartheta_\theta}{\underset{\cong}{\longrightarrow}}\SSto_\theta(A^0)$ as
+well as in the \textcolor{purple!75!black}{purple} cases $\cK_\theta=\{k_1\}$
+and $\C^1\overset{\vartheta_\theta}{\underset{\cong}{\longrightarrow}}\SSto_\theta(A^0)$.
+Thus, for every $\theta\in\A$, we have an isomorphism
+$\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta$.
+Two of the cases are more complicated than necessary, to be consistent with
+the decomposition in the next part (cf.\ Example~\ref{exmp:decompositionHere}).
+
+\paragraph{Decomposition by levels}
+In proposition~\ref{prop:filtrationOfStokesGroup} and especially
+remark~\ref{rem:filtrationOfStokesMats} we have defined a decomposition of the
+Stokes group $\Sto_\theta(A^0)$ in subgroups generated by $k$-germs for
+$k\in\cK$.
+In our case, we have at most two level, such that this decomposition is given
+by
+\[
+  \phi_\theta=\phi_\theta^{k_1} \phi_\theta^{k_2}
+  \overset{i_\theta}\longmapsto
+    \left(\phi_\theta^{k_1},\phi_\theta^{k_2}\right)
+      \in\Sto_\theta^{k_1}(A^0)\times\Sto_\theta^{k_2}(A^0) \,,
+\]
+where $\phi_\theta^{k_1}\in\Sto_\theta^{k_1}(A^0)=\Sto_\theta^{<k_2}(A^0)$,
+$\phi_\theta^{k_2}\in\Sto_\theta^{k_2}(A^0)$  and $i_\theta$ is the map, wich
+gives the factors of this factorization in ascending order.
+
+This decomposition of a germ $\phi_\theta$ is trivial if
+$\#\cK(\phi_\theta)\leq1$, thus the interesting cases are the
+\textcolor{blue!75!black}{blue} cases.
+
+\begin{exmp}\label{exmp:decompositionHere}
+  Look at the example
+  \[
+    \vartheta_\theta(c_1,c_2,c_3)=
+    \cY_{0,\tilde\theta}
+    \begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_1c_2+c_3 & c_1 & 1 \end{pmatrix}
+    \cY_{0,\tilde\theta}^{-1}
+    =\phi_\theta
+    \,.
+  \]
+  According to remark~\ref{rem:algFactorization} the factor
+  $\phi_\theta^{k_1}$, generated by the $k_1$-germs, is given by
+  \[
+    \phi_\theta^{k_1}=
+    \cY_{0,\tilde\theta}
+    \begin{pmatrix}
+      1 & 0 & 0
+    \\\text{\boldmath $0$} & 1 & 0
+    \\\text{\boldmath $0$} & c_1 & 1
+    \end{pmatrix}
+    \cY_{0,\tilde\theta}^{-1}
+    \,.
+  \]
+  The other factor $\phi_\theta^{k_2}$ is then obtained as
+  \begin{align*}
+    \phi_\theta^{k_2}&=
+    \left(\phi_\theta^{k_1}\right)^{-1}
+    \phi_\theta^{k_2}
+  \\&=\cY_{0,\tilde\theta}
+    \begin{pmatrix}
+      1     & 0    & 0
+    \\0     & 1    & 0
+    \\0     & -c_1 & 1
+    \end{pmatrix}
+    \underset{=\id}{\underbrace{%
+        \cY_{0,\tilde\theta}^{-1}
+        \cY_{0,\tilde\theta}
+    }}
+    \begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_1c_2+c_3 & c_1 & 1 \end{pmatrix}
+    \cY_{0,\tilde\theta}^{-1}
+  \\&=\cY_{0,\tilde\theta}
+    \begin{pmatrix}
+      1     & 0 & 0
+    \\c_2     & 1          & 0
+    \\c_3     & 0          & 1
+    \end{pmatrix}
+    \cY_{0,\tilde\theta}^{-1}
+    \,.
+  \end{align*}
+\end{exmp}
+The four nontrivial decomposition in our situation, are given by
+\begin{enumerate}
+  \item $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_1 \\0 & 0 & 1 \end{pmatrix}
+  \cdot\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}=
+  \begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & c_1 \\0 & 0 & 1 \end{pmatrix}$
+  \item $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_1 & 1 \end{pmatrix}
+  \cdot\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}=
+  \begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & c_1 & 1 \end{pmatrix}$
+  \item $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_1 \\0 & 0 & 1 \end{pmatrix}
+  \cdot\begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_3 & 0 & 1 \end{pmatrix}=
+  \begin{pmatrix} 1 & 0 & 0 \\c_2+c_1c_3 & 1 & c_1 \\c_3 & 0 & 1 \end{pmatrix}$
+  \item $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_1 & 1 \end{pmatrix}
+  \cdot\begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_3 & 0 & 1 \end{pmatrix}=
+  \begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_1c_2+c_3 & c_1 & 1 \end{pmatrix}$
+\end{enumerate}
+We will use this decompositions to write the isomorphisms
+$\vartheta_\theta:\C^\star\to \SSto_\theta(A^0)$ as
+\[ \begin{tikzcd}
+  \C^\star
+  \rar{j_\theta}
+  \arrow[rr,out=-30,in=-150,"\vartheta_\theta"]
+  &
+  \SSto_\theta^{k_1}(A^0)\times\SSto_\theta^{k_2}(A^0)
+  \rar{i_\theta^{-1}}
+  &
+  \SSto_\theta(A^0)
+\end{tikzcd} \]
+where $\star\in\{1,2,3\}$.
+
+\subsection{What do Stokes cocycles look like?}
+\begin{prop}\label{prop:decompositionDiagram}
+  By taking the product over $\A$ of all
+  $\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta$ we obtain the isomorphism
+  \[
+    \prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta:
+    \C^{k_1+2\cdot k_2}
+    \overset\cong\longrightarrow \prod_{\theta\in\A}\SSto_\theta(A^0)
+    \overset\cong\longrightarrow \prod_{\theta\in\A}\Sto_\theta(A^0)
+  \]
+  which can be concatenated with $h$ to obtain an element in $\St(A^0)$.
+  We can also define the isomorphism
+  $\C^{2\cdot(k_1+2\cdot k_2)}\textcolor{purple}{\longrightarrow} \St(A^0)$
+  which makes the following diagram commute.
+  \[ \begin{tikzcd}[column sep=1.5cm,row sep=2cm]
+      &\C^{2\cdot(k_1+2\cdot k_2)}
+      \dlar[blue]{\prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}\circ\vartheta_\theta}
+      \arrow[dr,purple]
+    \\\prod_{\theta\in\A}\Sto_\theta(A^0)
+      \arrow[rr,green!50!black,"h"]
+      &&\St(A^0)
+  \end{tikzcd} \]
+  Using the knowledge, how the morphism were build and the fact that some of
+  the morphism are equal, we can rewrite this diagram as follows
+  \[ \begin{tikzcd}
+      &\C^{2\cdot(k_1+2\cdot k_2)}
+      \dar[xshift=-1pt,blue]
+      \dar[xshift=1pt,purple,"\prod_{\theta\in\A}j_\theta"]
+    \\
+      &\prod_{k\in\{k_1,k_2\}}\prod_{\theta\in\A}\SSto_{\theta}^{k}(A^0)
+       \arrow[dl,blue,"\prod_{\theta\in\A}i_\theta^{-1}"]
+       \arrow[ddr,purple,
+         "\prod_{k\in\{k_1,k_2\}}\prod_{\theta\in\A}(\rho_{\tilde\theta}^k)^{-1}"]
+    \\ \prod_{\theta\in\A} \SSto_{\theta}(A^0)
+        \dar[blue]{\prod_{\theta\in\A}\rho_{\tilde\theta}^{-1}}
+    \\\prod_{\theta\in\A} \Sto_{\theta}(A^0)
+      \arrow[rr,green!50!black,"\prod_{\theta\in\A}i_\theta"]
+      &&\prod_{k\in\{k_1,k_2\}}\prod_{\theta\in\A}\Sto_{\theta}^{k}(A^0)
+      \dar[xshift=-1pt,green!50!black]
+      \dar[xshift=1pt,purple]{\prod_{k\in\{k_1,k_2\}}i^k}
+    \\
+      && \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
+      \dar[xshift=-1pt,green!50!black]
+      \dar[xshift=1pt,purple]{\cT}
+    \\&& \St(A^0)
+  \end{tikzcd} \]
+\end{prop}
+
+\begin{comment}
+  Decompose $\C^{k_1+2\cdot k_2}\cong
+  \prod_{\theta\in\A^{k_1}} \C \times \prod_{\theta\in\A^{k_2}} \C^2$ and
+  define the isomorphism
+  \[
+    \C^{k_1+2\cdot k_2}\overset{\cong}\longrightarrow
+    \prod_{\theta\in\A^{k_1}} \SSto_{\theta}^{k_1}(A^0) \times
+    \prod_{\theta\in\A^{k_2}} \SSto_{\theta}^{k_2}(A^0)
+  \]
+  levelwise as
+  \begin{enumerate}
+    \item an element
+      $\left( (a_{\theta_{\nu_1}},b_{\theta_{\nu_1}})
+        ,(a_{\theta_{\nu_2}},b_{\theta_{\nu_2}})
+        ,\dots
+      \right)\in\prod_{\theta\in\A^{k_2}} \C^2$
+      gets mapped to
+      \[
+        \left.
+        \begin{cases}
+          \left(
+          \begin{pmatrix} 1 & a_{\theta_{\nu_1}} & b_{\theta_{\nu_1}} \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}
+          ,\begin{pmatrix} 1 & 0 & 0 \\a_{\theta_{\nu_2}} & 1 & 0 \\b_{\theta_{\nu_2}} & 0 & 1 \end{pmatrix}
+          ,\begin{pmatrix} 1 & a_{\theta_{\nu_3}} & b_{\theta_{\nu_3}} \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}
+            ,\dots
+          \right)
+          & ,\substack{\text{~if~} q_1 \underset{\theta_0,\max}{\prec} q_2
+            \\\text{~and~} q_1 \underset{\theta_0,\max}{\prec} q_3}
+          \\\left(
+          \begin{pmatrix} 1 & 0 & 0 \\a_{\theta_{\nu_1}} & 1 & 0 \\b_{\theta_{\nu_1}} & 0 & 1 \end{pmatrix}
+          ,\begin{pmatrix} 1 & a_{\theta_{\nu_2}} & b_{\theta_{\nu_2}} \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}
+          ,\begin{pmatrix} 1 & 0 & 0 \\a_{\theta_{\nu_3}} & 1 & 0 \\b_{\theta_{\nu_3}} & 0 & 1 \end{pmatrix}
+            ,\dots
+          \right)
+          & ,\substack{\text{~if~} q_2 \underset{\theta_0,\max}{\prec} q_1
+            \\\text{~and~} q_3 \underset{\theta_0,\max}{\prec} q_1}
+        \end{cases}
+        \right\}
+        =:\left(
+          C_{\theta_{\nu_1}}^{k_2}
+          ,C_{\theta_{\nu_2}}^{k_2}
+          ,\dots
+        \right)
+      \]
+    \item
+      $\left(
+        c_{\theta_{\mu_1}}
+        ,c_{\theta_{\mu_2}}
+        ,\dots
+      \right)\in\prod_{\theta\in\A^{k_1}} \C$
+      gets mapped to
+      \[
+        \left.
+        \begin{cases}
+          \left(
+          \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_{\theta_{\mu_1}} \\0 & 0 & 1 \end{pmatrix}
+          ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_{\theta_{\mu_2}} & 1 \end{pmatrix}
+          ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_{\theta_{\mu_3}} \\0 & 0 & 1 \end{pmatrix}
+            ,\dots
+          \right)
+          &\text{,~if~} q_2 \underset{\theta_0,\max}{\prec} q_3
+          \\\left(
+          \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_{\theta_{\mu_1}} & 1 \end{pmatrix}
+          ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_{\theta_{\mu_2}} \\0 & 0 & 1 \end{pmatrix}
+          ,\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_{\theta_{\mu_2}} & 1 \end{pmatrix}
+            ,\dots
+          \right)
+          &\text{,~if~} q_3 \underset{\theta_0,\max}{\prec} q_2
+        \end{cases}
+      \right\}
+      =:\left(
+        C_{\theta_{\mu_1}}^{k_1}
+        ,C_{\theta_{\mu_2}}^{k_1}
+        ,\dots
+      \right)
+      \]
+  \end{enumerate}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Explicit example}
+\def\kOne{1}
+\def\kTwo{3}
+\def\zkOnepzKtwo{14} % 2\cdot(\kOne+2\cdot\kTwo
+\def\zkOne{2} % 2*\kOne
+\def\zkTwo{6} % 2*\kTwo
+
+Even more explicit, we can fix the levels $k_1=\kOne$ and $k_2=\kTwo$ together
+with $\theta_0=0$.
+Assume without any restriction that $q_1 \underset{\theta_0,\max}{\prec} q_2$
+and $q_1 \underset{\theta_0,\max}{\prec} q_3$ as well as
+$q_2 \underset{\theta_0,\max}{\prec} q_3$.
+
+The classification space is in this case isomorphic to
+$\C^{2\cdot(\kOne+2\cdot\kTwo)}=\C^{\zkOnepzKtwo}$.
+The element
+\[
+  ({}^1c_1,{}^2c_1,
+  {}^1c_2,{}^1c_3,{}^2c_2,{}^2c_3,\dots,{}^{\zkTwo}c_2,{}^{\zkTwo}c_3)
+  \in\C^{\zkOnepzKtwo}
+\]
+gets, via the morphism $\prod_{\theta\in\A}j_\theta$, mapped to
+\begin{align*}
+  &\left(
+  \left(
+    \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & {}^1c_1 \\0 & 0 & 1 \end{pmatrix},
+    \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & {}^2c_1 & 1 \end{pmatrix}
+  \right),
+  \right.
+\\&\qquad\left(
+  \left.
+    \begin{pmatrix} 1 & {}^1c_2 & {}^1c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
+    \begin{pmatrix} 1 & 0 & 0 \\{}^2c_2 & 1 & 0 \\{}^2c_3 & 0 & 1 \end{pmatrix},
+    \dots,
+    \begin{pmatrix} 1 & 0 & 0 \\{}^{\zkTwo}c_2 & 1 & 0 \\{}^{\zkTwo}c_3 & 0 & 1 \end{pmatrix}
+  \right)
+  \right)
+\end{align*}
+in $\prod_{\theta\in\A^{\kOne}}\SSto_{\theta}^{\kOne}(A^0) \times
+\prod_{\theta\in\A^{\kTwo}}\SSto_{\theta}^{\kTwo}(A^0)$ and thus the element
+\begin{align*}
+  &\left(
+  \left(
+    \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & {}^1c_1 \\0 & 0 & 1 \end{pmatrix},
+    \id,\id,
+    \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & {}^2c_1 & 1 \end{pmatrix},
+    \id,\id
+  \right),
+  \right.
+\\&\qquad\left(
+  \left.
+    \begin{pmatrix} 1 & {}^1c_2 & {}^1c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
+    \begin{pmatrix} 1 & 0 & 0 \\{}^2c_2 & 1 & 0 \\{}^2c_3 & 0 & 1 \end{pmatrix},
+    \dots,
+    \begin{pmatrix} 1 & 0 & 0 \\{}^{\zkTwo}c_2 & 1 & 0 \\{}^{\zkTwo}c_3 & 0 & 1 \end{pmatrix}
+  \right)
+  \right)
+\end{align*}
+in
+$\prod_{\theta\in\A}\SSto_{\theta}^{\kOne}(A^0) \times
+\prod_{\theta\in\A}\SSto_{\theta}^{\kTwo}(A^0)$.
+Using the morphism $\prod_{\theta\in\A}i_\theta^{-1}$ we get a complete set of
+Stokes matrices as
+\begin{align*}
+  &\left(
+    \begin{pmatrix} 1 & {}^1c_2 & {}^1c_3 \\0 & 1 & {}^1c_1 \\0 & 0 & 1 \end{pmatrix},
+    \begin{pmatrix} 1 & 0 & 0 \\{}^2c_2 & 1 & 0 \\{}^2c_3 & 0 & 1 \end{pmatrix},
+    \begin{pmatrix} 1 & {}^3c_2 & {}^3c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
+  \right.
+\\&\qquad
+  \left.
+    \begin{pmatrix} 1 & 0 & 0 \\{}^4c_2 & 1 & 0 \\{}^2c_1{}^4c_2+{}^4c_3 & {}^2c_1 & 1 \end{pmatrix},
+    \begin{pmatrix} 1 & {}^5c_2 & {}^5c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
+    \begin{pmatrix} 1 & 0 & 0 \\{}^{\zkTwo}c_2 & 1 & 0 \\{}^{\zkTwo}c_3 & 0 & 1 \end{pmatrix}
+  \right)
+  \in
+  \prod_{\theta\in\A}\SSto_{\theta}(A^0)
+\end{align*}
+
+\section{A more general multileveled case}
+Let us assume, that our normal form $[A^0]$ of dimension $n$ has the levels
+$\cK$ and start at the situation
+$\prod_{k\in\cK}\prod_{\theta\in\A}\SSto_{\theta}^{k}(A^0)$
+of Proposition~\ref{prop:decompositionDiagram}.
+Since the factors $\prod_{\theta\in\A}\SSto_{\theta}^{k}(A^0)$ are products
+over a single level, we are able to apply the theory discussed by Boalch
+in~\cite[Section 3]{boalch}.
+
+We know that
+\[
+  \prod_{\theta\in\A}\SSto_{\theta}^{k}(A^0)\cong
+  \prod_{\theta\in\A^k}\SSto_{\theta}^{k}(A^0) \,,
+\]
+since $\SSto_{\theta}^{k}(A^0)=\{\id\}$ when $k\notin\cK_\theta$.
+
+Let $I=U(\theta,\frac{\pi}{k})$ be an arc width $\frac{\pi}{k}$ and let us
+assume, that $\theta\pm\frac{\pi}{2k}\notin\A$.
+\begin{rem}\label{rem:remarkAboutCommonStructure}
+  We also know that for every sector $I$ of width $\frac{\pi}{k}$, there is to
+  any unordered pair in $\cQ(A^0)$, which has level $k$,
+  \[
+    [(q_j,q_l)]\in
+    \{(q_j,q_l)\mid(q_j,q_l)\in \cQ(A^0), k_{j,l}=k\}/(q_j,q_l)-(q_l,q_j)
+  \]
+  there is exactly one direction $\theta\in\A^{k}\cap I$, of level $k$ which
+  lies in $I$, which satisfies either $q_j\underset{\theta,\max}{\prec}q_l$ or
+  $q_l\underset{\theta,\max}{\prec}q_j$.
+
+  For every $\theta\in\A^k\cap I$ we can write the Stokes matrix as
+  \[
+    K^\theta=(K^\theta_{jl})_{j,l\in\{1,\dots,s\}}\in\SSto_\theta^k(A^0)
+  \]
+  where the $K^\theta_{jl}\in\C^{n_j\times n_l}$ are blocks corresponding to
+  the structure of $Q$ (cf.\ Definition~\ref{defn:groupOfFaithfullReps}).
+  We then know for $j\neq l$ that, if $K^\theta_{jl}\neq0$ then
+  \begin{itemize}
+    \item is $K^\theta_{lj}=0$ and
+    \item for every $\theta'\in(\A^k\cap I)\{\theta\}$ is $K^{\theta'}_{jl}=0$
+      as well as $K^{\theta'}_{lj}=0$.
+  \end{itemize}
+\end{rem}
+\begin{rem}
+  In the situation of Remark~\ref{rem:remarkAboutCommonStructure}
+  there exists a common (block) permutation matrix $P\in G$ given by
+  $(P)_{jl}=\delta_{\pi(j)l}$ where
+  \begin{itemize}
+    \item $\delta_{jl}$ is the block version of Kronecker's delta which was
+      introduced in Definition~\ref{defn:groupOfFaithfullReps} and
+    \item $\pi$ is the permutation of $\{1,\dots,s\}$ corresponding to
+      $q_j\underset{\theta,\max}{\prec}q_l$ \Leftrightarrow{} $\pi(j)<\pi(l)$
+      \marginnote{\cite[18]{boalch}}
+  \end{itemize}
+  such that every matrix $P^{-1}K^{\theta}P$ is upper triangular.
+  \begin{s-rem}
+    After moving the sector $U(\theta,\frac{\pi}{k})$ to
+    $U(\theta,\frac{\pi}{k})+\frac{\pi}{k}
+    =U(\theta+\frac{\pi}{k},\frac{\pi}{k})$ we obtain also a corresponding
+    permutation $\pi'$ which is inverse to $\pi$.
+    The corresponding permutation matrix $P'$ which is then given by
+    $P'=P^{-1}$.
+
+    Such that the permutation $P$ transforms Stokes matrices on the sector
+    $I+\frac{\pi}{k}$ to lower triangular matrices
+  \end{s-rem}
+  In the single leveled case of this phenomenon is discussed on page 18 of
+  Boalch's paper~\cite{boalch}.
+\end{rem}
+
+\begin{rem}
+  In the paper \cite{BJL1979Birkhoff} from Balser, Jurkat and Lutz is the
+  following Lemma stated as Lemma 2 on page 75.
+  \begin{s-lem}
+    Let 
+    \[
+      T\subset\{(j,l)\mid 1\leq j<l\leq n\}
+    \]
+    be a position set, which satisfies the \emph{completeness property}:
+    \begin{einr}
+      if $(j,k)$ and $(k,l)\in T$ then is also $(j,l)\in T$.
+    \end{einr}
+    Choose a indexing $i:\{1,\dots,
+    \underset{\mu}{\underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\#T}}\}
+    \overset{\cong}{\to}T$, then there
+    exists for every 
+    \[
+      K\in S_T:=\left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in G \mid
+        K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T \right\}
+    \]
+    unique scalars $t_m\in\C$ such that
+    \[
+      K=(\id + t_1E_{i(1)})\cdots(\id + t_{\mu}E_{i(\mu)}) \,.
+    \]
+  \end{s-lem}
+  The completeness property is reasonable, since for example
+  $S_{\{(2,3),(3,2)\}}$, corresponding to the not complete set
+  $\{(2,3),(3,2)\}$, is not stable under the product:
+  \begin{align*}
+    \begin{pmatrix}
+      1 & a & 0
+    \\0 & 1 & 0
+    \\0 & 0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 & 0 & 0
+    \\0 & 1 & b
+    \\0 & 0 & 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+      1 & a & \textcolor{red!60!black}{ab}
+    \\0 & 1 & b
+    \\0 & 0 & 1
+    \end{pmatrix}
+    \notin S_{\{(2,3),(3,2)\}}
+    \,.
+  \end{align*}
+  \begin{s-cor}
+    Let $T_1$ be a subsets of $T$, such that
+    \begin{einr}
+      $T_1$ and $T_2:=T\backslash T_1$ satisfy the completeness property.
+    \end{einr}
+    Then is by
+    \begin{align*}
+      S_{T_1}\times S_{T_2} &\longrightarrow S_T
+    \\(K_1,K_2) &\longmapsto K_1\times K_2
+    \end{align*}
+    an isomorphism defined.
+  \end{s-cor}
+\end{rem}
+
+We would like to see, that the sets
+\[
+  \{(j,l)\mid q_j \underset{\theta,\max}{\prec} q_l\}
+\]
+as well as
+\[
+  \{(j,l)\mid q_j \underset{\theta}{\prec} q_l\}
+\]
+satisfy the completeness property. We then would have an isomorphism, 
+\[
+  \prod_{\theta\in\A^k\cap I}\SSto_\theta^k(A^0)
+  \longrightarrow
+  \SSto_I^k(A^0)
+\]
+where at
+\begin{align*}
+  \SSto_I^k(A^0)&:=
+  \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in G \mid K_{jl}=\delta_{jl}
+  \text{~unless~} q_j \underset{\theta,\max}{\prec} q_l
+  \text{~for some~}\theta\in\A^k\cap I \Big\}
+  \\&= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in G \mid K_{jl}=\delta_{jl}
+  \text{~unless~} q_j \underset{\theta}{\prec} q_l \Big\} \,.
+\end{align*}
+This would yield directly an isomorphism
+\[
+  \prod_{\theta\in\A^k}\SSto_\theta^k(A^0)
+  \longrightarrow
+  \prod_{j\in\{1,\dots,2k\}}
+  \SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0) \,.
+\]
+
+\begin{comment}
+  We can use the structure, to obtain the following theorem.
+  \begin{thm}
+    By multiplying the Stokes matrices of level $k$ of the arc $I$ we obtain an
+    matrix
+    \[
+      K^I = \prod_{\theta\in\A^k\cap I}K^\theta
+    \]
+    which lies\PROBLEM[false] in
+    \begin{align*}
+      \SSto_I^k(A^0):&=
+      \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in G \mid K_{jl}=\delta_{jl}
+      \text{~unless~} q_j \underset{\theta,\max}{\prec} q_l
+      \text{~for some~}\theta\in\A^k\cap I \Big\}
+      \\&= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in G \mid K_{jl}=\delta_{jl}
+      \text{~unless~} q_j \underset{\theta}{\prec} q_l \Big\} \,.
+    \end{align*}
+    This, in fact, defines an isomorphism
+    \[
+      \prod_{\theta\in\A^k\cap I}\SSto_\theta^k(A^0)
+      \longrightarrow
+      \SSto_I^k(A^0)
+    \]
+    The product of these isomorphism for the correct arcs yield the isomorphism
+    \[
+      \prod_{\theta\in\A^k}\SSto_\theta^k(A^0)
+      \longrightarrow
+      \prod_{j\in\{1,\dots,2k\}}
+      \SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0)
+    \]
+  \end{thm}
+  \begin{proof}
+    \PROBLEM[proof]
+    We can assume that $s=n$, i.e.\ that all blocks are of size $1\times1$.
+
+    Let us reduce the problem to the case of two matrices upper triangular
+    $K_1$ and $K_2$ as follows.
+
+    Let $T_1$ and $T_2$ be two distinct subsets of all coordinates in a upper
+    triangular matrix, which do not lie on the diagonal,
+    \[
+      \left\{ (j,l) \mid 1\leq j<l \leq n \right\} \,.
+    \]
+    Let $K^m$ be a matrix in the space
+    \[
+      S_m:=\left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in G \mid
+        K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T_m \right\}
+    \]
+    which corresponds to $\SSto_\theta(A^0)$ for some $\theta\in I$.
+    Corresponding to $\SSto_I(A^0)$ we introduce
+    \[
+      S_{\{1,2\}}:= \left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in G \mid
+        K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T_1\dot\cup T_2 \right\}
+        \,.
+    \]
+    We have to proof that
+    \begin{align*}
+      S_1 \times S_2 &\longrightarrow S_{\{1,2\}}
+    \\(K_1,K_2) &\longmapsto K_1\cdot K_2
+    \end{align*}
+    is an isomorphism.
+
+    \textbf{Surjectivity} is clear\TODO[False], since
+    \begin{itemize}
+      \item $\id$ is contained in $S_1$ as well as in $S_2$ and
+      \item every element of the base
+        \[
+          \left\{
+            \begin{array}{cc}
+              \begin{array}{ccccc}
+              &  &  & \textcolor{gray}{\underset{\downarrow}{j}}\end{array}\\
+                \begin{pmatrix}1 &  &  & 1\\
+                 & 1\\
+                 &  & 1\\
+                 &  &  & 1\\
+                 &  &  &  & 1
+              \end{pmatrix} & \!\!\!\!\!\!\!\!\!\!\!\begin{array}{c}
+                \textcolor{gray}{\leftarrow l}\\
+                \\
+                \\
+                \\
+                \\
+              \end{array}\\
+              \\
+            \end{array} \in G
+            | (j,l)\in T_1\dot\cup T_2
+          \right\}
+        \]
+        is either in $S_1$ or $S_2$.
+    \end{itemize}
+
+    The next ingredient for this Proof is the Lemma 2 on page 75 of the paper
+    \cite{BJL1979Birkhoff}. It says the following
+    \begin{s-rem}
+      
+    \end{s-rem}
+
+    \TODO[see \cite{boalch,thboalch}]
+  \end{proof}
+\end{comment}
+
+\PROBLEM{}
