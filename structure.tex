@@ -303,7 +303,7 @@ where $\star\in\{1,2,3\}$.
       \dar[xshift=-1pt,green!50!black]
       \dar[xshift=1pt,purple]{\prod_{k\in\{k_1,k_2\}}i^k}
     \\
-      && \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
+      && \prod_{k\in\{k_1,k_2\}}\Gamma(\dot\cU^k;\Lambda^k(A^0))
       \dar[xshift=-1pt,green!50!black]
       \dar[xshift=1pt,purple]{\cT}
     \\&& \St(A^0)
@@ -538,89 +538,97 @@ assume, that $\theta\pm\frac{\pi}{2k}\notin\A$.
   Boalch's paper~\cite{boalch}.
 \end{rem}
 
-\begin{rem}
-  In the paper \cite{BJL1979Birkhoff} from Balser, Jurkat and Lutz is the
-  following Lemma stated as Lemma 2 on page 75.
-  \begin{s-lem}
-    Let 
-    \[
-      T\subset\{(j,l)\mid 1\leq j<l\leq n\}
-    \]
-    be a position set, which satisfies the \emph{completeness property}:
-    \begin{einr}
-      if $(j,k)$ and $(k,l)\in T$ then is also $(j,l)\in T$.
-    \end{einr}
-    Choose a indexing $i:\{1,\dots,
-    \underset{\mu}{\underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\#T}}\}
-    \overset{\cong}{\to}T$, then there
-    exists for every 
-    \[
-      K\in S_T:=\left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in G \mid
-        K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T \right\}
-    \]
-    unique scalars $t_m\in\C$ such that
-    \[
-      K=(\id + t_1E_{i(1)})\cdots(\id + t_{\mu}E_{i(\mu)}) \,.
-    \]
-  \end{s-lem}
-  The completeness property is reasonable, since for example
-  $S_{\{(2,3),(3,2)\}}$, corresponding to the not complete set
-  $\{(2,3),(3,2)\}$, is not stable under the product:
+In the paper \cite{BJL1979Birkhoff} from Balser, Jurkat and Lutz is the
+following Lemma stated as Lemma 2 on page 75.
+\begin{lem}
+  Let $T\subset\{1,\dots,n\}\times\{1,\dots,n\}$ be a position set, which
+  satisfies the \emph{completeness property}:
+  \begin{einr}
+    if $(j,k)$ and $(k,l)\in T$ then is also $(j,l)\in T$.
+  \end{einr}
+  Choose a indexing $i:\{1,\dots,
+  \underset{\mu}{\underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\#T}}\}
+  \overset{\cong}{\to}T$ of the position set, then there exists for every 
+  \[
+    K\in S_T:=\left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in G \mid
+      K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T \right\}
+  \]
+  unique scalars $t_m\in\C$ such that
+  \[
+    K=(\id + t_1E_{i(1)})\cdots(\id + t_{\mu}E_{i(\mu)}) \,.
+  \]
+  \begin{s-rem}
+    \begin{enumerate}
+      \item The completeness property is reasonable, since for example
+        $S_{\{(2,3),(3,2)\}}$, corresponding to the not complete set
+        $\{(2,3),(3,2)\}$, is not stable under the product:
+        \begin{align*}
+          \begin{pmatrix}
+            1 & a & 0
+          \\0 & 1 & 0
+          \\0 & 0 & 1
+          \end{pmatrix}
+          \begin{pmatrix}
+            1 & 0 & 0
+          \\0 & 1 & b
+          \\0 & 0 & 1
+          \end{pmatrix}
+          =
+          \begin{pmatrix}
+            1 & a & \textcolor{red!60!black}{ab}
+          \\0 & 1 & b
+          \\0 & 0 & 1
+          \end{pmatrix}
+          \notin S_{\{(2,3),(3,2)\}}
+          \,.
+        \end{align*}
+      \item We can write the group $\SSto_\theta(A^0)$ as 
+        \[
+          \SSto_\theta(A^0)=
+          S_{\{(j,l)\mid q_j \underset{\theta,\max}{\prec} q_l\}} \,.
+        \]
+    \end{enumerate}
+  \end{s-rem}
+\end{lem}
+\begin{cor}\label{cor:composeLevelwise}
+  Let $T_1,\dots,T_r$ be a subsets of the complete set $T$, such that
+  \begin{itemize}
+    \item $T=T_1\dot\cup\dots\dot\cup T_r$ and
+    \item for every $m$ does $T_m$ satisfy the completeness property.
+  \end{itemize}
+  Then is by
   \begin{align*}
-    \begin{pmatrix}
-      1 & a & 0
-    \\0 & 1 & 0
-    \\0 & 0 & 1
-    \end{pmatrix}
-    \begin{pmatrix}
-      1 & 0 & 0
-    \\0 & 1 & b
-    \\0 & 0 & 1
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      1 & a & \textcolor{red!60!black}{ab}
-    \\0 & 1 & b
-    \\0 & 0 & 1
-    \end{pmatrix}
-    \notin S_{\{(2,3),(3,2)\}}
-    \,.
+    S_{T_1}\times\cdots\times S_{T_m} &\longrightarrow S_T
+  \\(K_1,\dots,K_m) &\longmapsto K_1\cdots K_m
   \end{align*}
-  \begin{s-cor}
-    Let $T_1,\dots,T_r$ be a subsets of $T$, such that
-    \begin{itemize}
-      \item $T=T_1\dot\cup\dots\dot\cup T_r$ and
-      \item for every $m$ does $T_m$ satisfy the completeness property.
-    \end{itemize}
-    Then is by
+  an isomorphism defined.
+\end{cor}
+We can apply the Corollary~\ref{cor:composeLevelwise} in our situation. Let
+$I=U(\theta,\frac{\pi}{k})$ be an arc of width $\frac{\pi}{k}$ which satisfies,
+that $\theta\pm\frac{\pi}{2k}\notin\A^k$.
+We then have
+\begin{itemize}
+  \item for every $\theta'\in I\cap \A^k$ satisfies the set
+    $T_{\theta'}:=\{(j,l)\mid q_j\underset{\theta_{\theta'},\max}{\prec}q_l\}$
+    the completeness property, since it is defined via a \rewrite{transitiv
+    relation}, and
+  \item the union of all $T_{\theta'}$ is then
     \begin{align*}
-      S_{T_1}\times S_{T_2} &\longrightarrow S_T
-    \\(K_1,K_2) &\longmapsto K_1\times K_2
+      T&:=\dot\bigcup_{\theta'\in I\cap\A}T_{\theta'}
+      \\&=\{(j,l) \mid q_j \underset{\theta',\max}{\prec} q_l
+          \text{~for some~}\theta'\in\A^k\cap I \}
+      \\&=\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}
     \end{align*}
-    an isomorphism defined.
-  \end{s-cor}
-\end{rem}
-
-We would like to see, that the sets 
-$\{(j,l)\mid q_j \underset{\theta',\max}{\prec} q_l\}$ for every $\theta'\in I$
-\TODO[satisfied, since group?]
-as well as $\{(j,l)\mid q_j \underset{\theta}{\prec} q_l\}$
-satisfy the completeness property. We then would have an isomorphism, 
+    and is also complete, since $\underset{\theta}{\prec}$ is also a
+    \rewrite{transitive relation.}
+\end{itemize}
+Thus we have an isomorphism
 \[
   \prod_{\theta\in\A^k\cap I}\SSto_\theta^k(A^0)
   \longrightarrow
-  \SSto_I^k(A^0)
+  S_T=:\SSto_I^k(A^0)
 \]
-where at
-\begin{align*}
-  \SSto_I^k(A^0)&:=
-  \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in G \mid K_{jl}=\delta_{jl}
-  \text{~unless~} q_j \underset{\theta,\max}{\prec} q_l
-  \text{~for some~}\theta\in\A^k\cap I \Big\}
-  \\&= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in G \mid K_{jl}=\delta_{jl}
-  \text{~unless~} q_j \underset{\theta}{\prec} q_l \Big\} \,.
-\end{align*}
-This would yield directly an isomorphism
+This yields directly an isomorphism
 \[
   \prod_{\theta\in\A^k}\SSto_\theta^k(A^0)
   \longrightarrow
@@ -628,105 +636,37 @@ This would yield directly an isomorphism
   \SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0) \,.
 \]
 
-\begin{comment}
-  We can use the structure, to obtain the following theorem.
-  \begin{thm}
-    By multiplying the Stokes matrices of level $k$ of the arc $I$ we obtain an
-    matrix
-    \[
-      K^I = \prod_{\theta\in\A^k\cap I}K^\theta
-    \]
-    which lies\PROBLEM[false] in
-    \begin{align*}
-      \SSto_I^k(A^0):&=
-      \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in G \mid K_{jl}=\delta_{jl}
-      \text{~unless~} q_j \underset{\theta,\max}{\prec} q_l
-      \text{~for some~}\theta\in\A^k\cap I \Big\}
-      \\&= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in G \mid K_{jl}=\delta_{jl}
-      \text{~unless~} q_j \underset{\theta}{\prec} q_l \Big\} \,.
-    \end{align*}
-    This, in fact, defines an isomorphism
-    \[
-      \prod_{\theta\in\A^k\cap I}\SSto_\theta^k(A^0)
-      \longrightarrow
-      \SSto_I^k(A^0)
-    \]
-    The product of these isomorphism for the correct arcs yield the isomorphism
-    \[
-      \prod_{\theta\in\A^k}\SSto_\theta^k(A^0)
-      \longrightarrow
-      \prod_{j\in\{1,\dots,2k\}}
-      \SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0)
-    \]
-  \end{thm}
-  \begin{proof}
-    \PROBLEM[proof]
-    We can assume that $s=n$, i.e.\ that all blocks are of size $1\times1$.
-
-    Let us reduce the problem to the case of two matrices upper triangular
-    $K_1$ and $K_2$ as follows.
-
-    Let $T_1$ and $T_2$ be two distinct subsets of all coordinates in a upper
-    triangular matrix, which do not lie on the diagonal,
-    \[
-      \left\{ (j,l) \mid 1\leq j<l \leq n \right\} \,.
-    \]
-    Let $K^m$ be a matrix in the space
-    \[
-      S_m:=\left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in G \mid
-        K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T_m \right\}
-    \]
-    which corresponds to $\SSto_\theta(A^0)$ for some $\theta\in I$.
-    Corresponding to $\SSto_I(A^0)$ we introduce
-    \[
-      S_{\{1,2\}}:= \left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in G \mid
-        K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T_1\dot\cup T_2 \right\}
-        \,.
-    \]
-    We have to proof that
-    \begin{align*}
-      S_1 \times S_2 &\longrightarrow S_{\{1,2\}}
-    \\(K_1,K_2) &\longmapsto K_1\cdot K_2
-    \end{align*}
-    is an isomorphism.
-
-    \textbf{Surjectivity} is clear\TODO[False], since
-    \begin{itemize}
-      \item $\id$ is contained in $S_1$ as well as in $S_2$ and
-      \item every element of the base
-        \[
-          \left\{
-            \begin{array}{cc}
-              \begin{array}{ccccc}
-              &  &  & \textcolor{gray}{\underset{\downarrow}{j}}\end{array}\\
-                \begin{pmatrix}1 &  &  & 1\\
-                 & 1\\
-                 &  & 1\\
-                 &  &  & 1\\
-                 &  &  &  & 1
-              \end{pmatrix} & \!\!\!\!\!\!\!\!\!\!\!\begin{array}{c}
-                \textcolor{gray}{\leftarrow l}\\
-                \\
-                \\
-                \\
-                \\
-              \end{array}\\
-              \\
-            \end{array} \in G
-            | (j,l)\in T_1\dot\cup T_2
-          \right\}
-        \]
-        is either in $S_1$ or $S_2$.
-    \end{itemize}
-
-    The next ingredient for this Proof is the Lemma 2 on page 75 of the paper
-    \cite{BJL1979Birkhoff}. It says the following
-    \begin{s-rem}
-      
-    \end{s-rem}
-
-    \TODO[see \cite{boalch,thboalch}]
-  \end{proof}
-\end{comment}
+\begin{prop}
+  We now can improve the diagram of isomorphisms from
+  Propositios~\label{prop:decompositionDiagram} by writing it in a more general
+  form and adding the found isomorphism.
+  Let $\theta$ be a direction, which satisfies
+  $\theta\pm\frac{\pi}{2k}\notin\A^k$ for every $k\in\cK$.
+  \[ \begin{tikzcd}
+      % &\C^{2\cdot(k_1+2\cdot k_2)}
+      % \dar[xshift=-1pt,blue]
+      % \dar[xshift=1pt,purple,"\prod_{\theta'\in\A}j_\theta'"]
+    % \\
+      &\displaystyle\prod_{k\in\cK}\prod_{\theta'\in\A}\SSto_{\theta'}^{k}(A^0)
+       \arrow[dl,blue,"\prod_{\theta'\in\A}i_\theta'^{-1}"]
+       \arrow[ddr,purple,
+         "\prod_{k\in\cK}\prod_{\theta'\in\A}(\rho_{\tilde\theta'}^k)^{-1}"]
+       \arrow[r]
+      &\displaystyle\prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
+       \SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0)
+    \\ \displaystyle\prod_{\theta'\in\A} \SSto_{\theta'}(A^0)
+        \dar[blue]{\prod_{\theta'\in\A}\rho_{\tilde\theta'}^{-1}}
+    \\\displaystyle\prod_{\theta'\in\A} \Sto_{\theta'}(A^0)
+      \arrow[rr,green!50!black,"\prod_{\theta'\in\A}i_\theta'"]
+      &&\displaystyle\prod_{k\in\cK}\prod_{\theta'\in\A}\Sto_{\theta'}^{k}(A^0)
+      \dar[xshift=-1pt,green!50!black]
+      \dar[xshift=1pt,purple]{\prod_{k\in\cK}i^k}
+    \\
+      && \displaystyle\prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
+      \dar[xshift=-1pt,green!50!black]
+      \dar[xshift=1pt,purple]{\cT}
+    \\&& \St(A^0)
+  \end{tikzcd} \]
+\end{prop}
 
 \PROBLEM{}
