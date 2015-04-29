@@ -946,9 +946,80 @@ define the Stokes group as follows.
   They will arise as a faithful representation
   (cf.\ Section~\ref{sec:faithRepre}) of $\Sto_\theta(A^0)$.
   \begin{s-rem}
-    In Boalch's publications \cite[boalch,thboalch] are our Stokes matrices
-    called Stokes factors, since he introduces other objects, he want to call
+    In Boalch's publications \cite{boalch,thboalch} are our Stokes matrices
+    called Stokes factors, since he introduces other objects, he wants to call
     Stokes matrices.
+  \end{s-rem}
+  \begin{s-rem}
+    \BIGPROBLEM[needs more assumptions!]
+    \begin{comment}
+      Loday-Richaud defines Stokes matrices in \cite[Defn.III.3.4]{Loday1994}.
+    \end{comment}
+    Let
+    \begin{itemize}
+      \item $q_1 = 1/t^k + t/t^k$,
+      \item $q_2 = 2/t^k + t/t^k$ and
+      \item $q_3 = 1/t^k + 2t/t^k$
+    \end{itemize}
+    be the three diagonal elements of $Q$ of some system $A$.
+    Thus the determining polynomials are given by
+    \begin{itemize}
+      \item $q_{1,2}=q_1-q_2 = 1/t^k$,
+      \item $q_{1,3}=q_1-q_3 = -t/t^k$ and
+      \item $q_{2,3}=q_2-q_3 = 1/t^k -t/t^k$.
+    \end{itemize}
+    Since the leading terms of $q_{1,2}$ and $q_{2,3}$ are equal, they
+    determine the same anti-Stokes directions. Let $\theta$ be one of the
+    directions, which does neither satisfy 
+    $q_1\underset{\theta,\max}{\prec}q_3$ nor
+    $q_3\underset{\theta,\max}{\prec}q_1$ (it is always possible, to find such
+    a direction since the level of $q_{1,3}$ is different to the levels of the
+    other ones).
+    The group of Stokes matrices at $\theta$ is then given by
+    \[
+      \SSto_\theta(A^0)=\left\{
+        K= \begin{pmatrix}
+          1 & a & 0
+        \\0 & 1 & b
+        \\0 & 0 & 1
+        \end{pmatrix}
+        \mid 
+        a,b \in\C
+      \right\}
+    \]
+    But $\SSto_\theta(A^0)$ is \textbf{not closed under the product}, i.e.\
+    \[
+      \begin{pmatrix}
+        1 & a & 0
+      \\0 & 1 & 0
+      \\0 & 0 & 1
+      \end{pmatrix}
+      \begin{pmatrix}
+        1 & 0 & 0
+      \\0 & 1 & b
+      \\0 & 0 & 1
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+        1 & a & \textcolor{red!60!black}{ab}
+      \\0 & 1 & b
+      \\0 & 0 & 1
+      \end{pmatrix}
+      \notin \SSto_\theta(A^0)
+      \,.
+    \]
+    \textcolor{green!40!black}{Maybe define the Stokes matrices as:}
+    \[
+      \SSto_\theta(A^0)=\left\{
+        K= \begin{pmatrix}
+          1 & a & ab
+        \\0 & 1 & b
+        \\0 & 0 & 1
+        \end{pmatrix}
+        \mid 
+        a,b \in\C
+      \right\}
+    \]
   \end{s-rem}
 \end{defn}
 Let $\cY_0=t^L e^{Q(t^{-1})}$ be a normal solution corresponding to

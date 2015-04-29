@@ -462,6 +462,7 @@
 \newcommand{\TODO}[1][\empty] {}
 \newcommand{\NO} {}
 \newcommand{\PROBLEM}[1][\empty] {}
+\newcommand{\BIGPROBLEM}[1][\empty] {}
 
 \ifnum\myDevelopVariable=1
   \usepackage{xcolor}
@@ -517,6 +518,13 @@
       \ifthenelse{\equal{#1}{\empty}}
         {\tiny P\!R\!O\!B\!L\!E\!M}
         {\tiny P\!R\!O\!B\!L\!E\!M:\normalsize #1} % {TODO: #1}
+  }}}
+  \renewcommand{\BIGPROBLEM}[1][\empty]{{%
+      \fcolorbox{CommentFrameColor}{red!50!white}{%
+      \footnotesize{}
+      \ifthenelse{\equal{#1}{\empty}}
+        {\tiny P\!R\!O\!B\!L\!E\!M}
+        {\tiny P\!R\!O\!B\!L\!E\!M:\huge #1} % {TODO: #1}
   }}}
 
 

@@ -587,10 +587,11 @@ assume, that $\theta\pm\frac{\pi}{2k}\notin\A$.
     \,.
   \end{align*}
   \begin{s-cor}
-    Let $T_1$ be a subsets of $T$, such that
-    \begin{einr}
-      $T_1$ and $T_2:=T\backslash T_1$ satisfy the completeness property.
-    \end{einr}
+    Let $T_1,\dots,T_r$ be a subsets of $T$, such that
+    \begin{itemize}
+      \item $T=T_1\dot\cup\dots\dot\cup T_r$ and
+      \item for every $m$ does $T_m$ satisfy the completeness property.
+    \end{itemize}
     Then is by
     \begin{align*}
       S_{T_1}\times S_{T_2} &\longrightarrow S_T
@@ -600,14 +601,10 @@ assume, that $\theta\pm\frac{\pi}{2k}\notin\A$.
   \end{s-cor}
 \end{rem}
 
-We would like to see, that the sets
-\[
-  \{(j,l)\mid q_j \underset{\theta,\max}{\prec} q_l\}
-\]
-as well as
-\[
-  \{(j,l)\mid q_j \underset{\theta}{\prec} q_l\}
-\]
+We would like to see, that the sets 
+$\{(j,l)\mid q_j \underset{\theta',\max}{\prec} q_l\}$ for every $\theta'\in I$
+\TODO[satisfied, since group?]
+as well as $\{(j,l)\mid q_j \underset{\theta}{\prec} q_l\}$
 satisfy the completeness property. We then would have an isomorphism, 
 \[
   \prod_{\theta\in\A^k\cap I}\SSto_\theta^k(A^0)
