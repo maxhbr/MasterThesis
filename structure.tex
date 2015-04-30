@@ -477,27 +477,48 @@ of Proposition~\ref{prop:decompositionDiagram}.
 Since the factors $\prod_{\theta\in\A}\SSto_{\theta}^{k}(A^0)$ are products
 over a single level, we are able to apply the theory discussed by Boalch
 in~\cite[Section 3]{boalch}.
-
-We know that
-\[
-  \prod_{\theta\in\A}\SSto_{\theta}^{k}(A^0)\cong
-  \prod_{\theta\in\A^k}\SSto_{\theta}^{k}(A^0) \,,
-\]
-since $\SSto_{\theta}^{k}(A^0)=\{\id\}$ when $k\notin\cK_\theta$.
-
-Let $I=U(\theta,\frac{\pi}{k})$ be an arc width $\frac{\pi}{k}$ and let us
-assume, that $\theta\pm\frac{\pi}{2k}\notin\A$.
-\begin{rem}\label{rem:remarkAboutCommonStructure}
-  We also know that for every sector $I$ of width $\frac{\pi}{k}$, there is to
-  any unordered pair in $\cQ(A^0)$, which has level $k$,
+The goal is, to group the set $\A^k$ of all anti-Stokes directions of level $k$
+into $2k$ distinct subsets of consecutive anti-Stokes directions of length
+$\frac{\#\A^k}{2k}$. Such a subset of $\A^k$ will be called a
+\emph{half-period}.
+Let $\theta\in S^1$ be a direction which satisfies that
+$\theta\pm\frac{\pi}{2k}\notin\A$, then is a half-period obtained by
+$\A^k\cap U(\theta,\frac{\pi}{k})$ where $U(\theta,\frac{\pi}{k})$ is an arc of
+width $\frac{\pi}{k}$ with center $\theta$
+(cf.\ Remark~\ref{rem:arcsByWidthAndCenter}).
+This can be reformulated to:
+\begin{einr}
+  every arc of width $\frac{\pi}{k}$, which has no anti-Stokes direction of
+  level $k$ on the border, contains $\frac{\#\A^k}{2k}$ anti-Stokes directions
+\end{einr}
+or
+\begin{einr}
+  that for every sector $I$ of width $\frac{\pi}{k}$, which satisfies the
+  condition on the border, there is to any unordered pair in $\cQ(A^0)$, which
+  has level $k$,
   \[
     [(q_j,q_l)]\in
     \{(q_j,q_l)\mid(q_j,q_l)\in \cQ(A^0), k_{j,l}=k\}/(q_j,q_l)-(q_l,q_j)
   \]
-  there is exactly one direction $\theta\in\A^{k}\cap I$, of level $k$ which
-  lies in $I$, which satisfies either $q_j\underset{\theta,\max}{\prec}q_l$ or
+  exactly one direction $\theta\in\A^{k}\cap I$ which satisfies either
+  $q_j\underset{\theta,\max}{\prec}q_l$ or
   $q_l\underset{\theta,\max}{\prec}q_j$.
+\end{einr}
+We then are able to express the information of the Stokes matrices
+corresponding to such an half-period in a single matrix of special form.
 
+\begin{comment}
+  We know that
+  \[
+    \prod_{\theta\in\A}\SSto_{\theta}^{k}(A^0)\cong
+    \prod_{\theta\in\A^k}\SSto_{\theta}^{k}(A^0) \,,
+  \]
+  since $\SSto_{\theta}^{k}(A^0)=\{\id\}$ when $k\notin\cK_\theta$.
+\end{comment}
+
+Let $I=U(\theta,\frac{\pi}{k})$ be an arc width $\frac{\pi}{k}$ such that
+$\theta\pm\frac{\pi}{2k}\notin\A^k$.
+\begin{rem}\label{rem:remarkAboutCommonStructure}
   For every $\theta\in\A^k\cap I$ we can write the Stokes matrix as
   \[
     K^\theta=(K^\theta_{jl})_{j,l\in\{1,\dots,s\}}\in\SSto_\theta^k(A^0)
@@ -507,8 +528,8 @@ assume, that $\theta\pm\frac{\pi}{2k}\notin\A$.
   We then know for $j\neq l$ that, if $K^\theta_{jl}\neq0$ then
   \begin{itemize}
     \item is $K^\theta_{lj}=0$ and
-    \item for every $\theta'\in(\A^k\cap I)\{\theta\}$ is $K^{\theta'}_{jl}=0$
-      as well as $K^{\theta'}_{lj}=0$.
+    \item for every $\theta'\in(\A^k\cap I)\backslash\{\theta\}$ is
+      $K^{\theta'}_{jl}=0$ as well as $K^{\theta'}_{lj}=0$.
   \end{itemize}
 \end{rem}
 \begin{rem}
@@ -548,7 +569,7 @@ following Lemma stated as Lemma 2 on page 75.
   \end{einr}
   Choose a indexing $i:\{1,\dots,
   \underset{\mu}{\underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\#T}}\}
-  \overset{\cong}{\to}T$ of the position set, then there exists for every 
+  \overset{\cong}{\to}T$ of the position set, then there exists for every
   \[
     K\in S_T:=\left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in G \mid
       K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T \right\}
@@ -582,7 +603,7 @@ following Lemma stated as Lemma 2 on page 75.
           \notin S_{\{(2,3),(3,2)\}}
           \,.
         \end{align*}
-      \item We can write the group $\SSto_\theta(A^0)$ as 
+      \item We can write the group $\SSto_\theta(A^0)$ as
         \[
           \SSto_\theta(A^0)=
           S_{\{(j,l)\mid q_j \underset{\theta,\max}{\prec} q_l\}} \,.
@@ -635,8 +656,10 @@ This yields directly an isomorphism
   \prod_{j\in\{1,\dots,2k\}}
   \SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0) \,.
 \]
+This means, that the information of all Stokes-matrices can be grouped into
+$2k$ matrices, which are products of the corresponding Stokes matrices.
 
-\begin{prop}
+\begin{cor}
   We now can improve the diagram of isomorphisms from
   Propositios~\label{prop:decompositionDiagram} by writing it in a more general
   form and adding the found isomorphism.
@@ -648,25 +671,45 @@ This yields directly an isomorphism
       % \dar[xshift=1pt,purple,"\prod_{\theta'\in\A}j_\theta'"]
     % \\
       &\displaystyle\prod_{k\in\cK}\prod_{\theta'\in\A}\SSto_{\theta'}^{k}(A^0)
-       \arrow[dl,blue,"\prod_{\theta'\in\A}i_\theta'^{-1}"]
-       \arrow[ddr,purple,
+       \arrow[dl,"\prod_{\theta'\in\A}i_\theta'^{-1}"]
+       \arrow[ddr,
          "\prod_{k\in\cK}\prod_{\theta'\in\A}(\rho_{\tilde\theta'}^k)^{-1}"]
        \arrow[r]
       &\displaystyle\prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
        \SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0)
     \\ \displaystyle\prod_{\theta'\in\A} \SSto_{\theta'}(A^0)
-        \dar[blue]{\prod_{\theta'\in\A}\rho_{\tilde\theta'}^{-1}}
+        \dar{\prod_{\theta'\in\A}\rho_{\tilde\theta'}^{-1}}
     \\\displaystyle\prod_{\theta'\in\A} \Sto_{\theta'}(A^0)
-      \arrow[rr,green!50!black,"\prod_{\theta'\in\A}i_\theta'"]
+      \arrow[rr,"\prod_{\theta'\in\A}i_\theta'"]
       &&\displaystyle\prod_{k\in\cK}\prod_{\theta'\in\A}\Sto_{\theta'}^{k}(A^0)
-      \dar[xshift=-1pt,green!50!black]
-      \dar[xshift=1pt,purple]{\prod_{k\in\cK}i^k}
+      \dar{\prod_{k\in\cK}i^k}
     \\
       && \displaystyle\prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
-      \dar[xshift=-1pt,green!50!black]
-      \dar[xshift=1pt,purple]{\cT}
+      \dar{\cT}
     \\&& \St(A^0)
+      \arrow[purple,uuuu,out=30,in=-60,thick]
   \end{tikzcd} \]
-\end{prop}
+  \[
+    \St(A^0) \textcolor{purple}{\longrightarrow}
+    \prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
+    \SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0)
+  \]
+
+  \begin{s-rem}
+    The contained isomorphism
+    \[
+      \prod_{\theta'\in\A}\SSto_{\theta'}(A^0) \longrightarrow
+      \prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
+      \SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0)
+    \]
+    is in the single-leveled case with $n=s$, i.e.\ all diagonal elements of
+    $Q$ are different, given in Lemma 3.2 of Boalch's paper
+    \cite[Lem.3.2]{boalch}.
+    In this case is every
+    $\SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0)$ isomorphic to some
+    $PU_+P^{-1}$ where $U_+$ is the group of all upper triangular matrices,
+    with ones on the diagonal, and $P$ is a permutation matrix.
+  \end{s-rem}
+\end{cor}
 
 \PROBLEM{}
