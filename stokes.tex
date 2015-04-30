@@ -666,7 +666,8 @@ $(q_j,q_l)\in\cQ(A^0)$.
   \PROBLEM[better definition?]
   \marginnote{\cite[79]{Loday2014}}
   An exponential $e^{q(1/t)}=e^{-\frac{a}{t^{k}}(x+o(t^{-k}))}$ has
-  \emph{maximal decay in a direction $\tilde\theta\in S^1$} if and only if
+  \emph{maximal decay in a direction $\tilde\theta\in
+  S^1$}\PROBLEM[determination is not in $S^1$?] if and only if
   $-ae^{-ik\tilde\theta}$ is real negative.
 \end{defn}
 
@@ -826,16 +827,15 @@ thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
   % \marginnote{See \cite[Def.I.4.5]{Loday1994}(for the ramified case)
   %   \cite[Def.3.2]{boalch}}
   \begin{enumerate}
-    \item $\theta$ is an \emph{anti-Stokes direction} if there is at least one
+    \item $\alpha$ is an \emph{anti-Stokes direction} if there is at least one
       pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies
-      $q_j \underset{\theta,\max}{\prec} q_l$.
+      $q_j \underset{\alpha,\max}{\prec} q_l$.
       \begin{itemize}
-        \item Let $\A=\{\theta_1,\dots,\theta_{\nu}\}$ denote the set of all
+        \item Let $\A=\{\alpha_1,\dots,\alpha_{\nu}\}$ denote the set of all
           anti-Stokes directions in a clockwise ordering. For a uniform
           notation later, \rewrite{define $\A$ to contain a single, arbitrary
           direction if $\cK=\{0\}$.}
           \TODO[Is this used somewhere??]
-          \PROBLEM[make all Stokes dirs $\alpha$ instead of $\theta$?]
           \begin{s-rem}
             The clockwise ordering is chosen, similar to Loday-Richaud's paper
             \cite{Loday1994}, since the calculations are then compatible with
@@ -849,7 +849,16 @@ thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
             \PROBLEM[mentioned to often?]
           \end{s-rem}
       \end{itemize}
-    \item $\theta$ is an \emph{Stokes direction} if there is at least one pair
+      \begin{s-rem}
+        We will use the greek letter $\alpha$ when we want to emphasize that
+        a direction is an anti-Stokes direction. For generic directions, we
+        will use $\theta$. In fact will most of the following definitions and
+        constructions work for every $\theta\in S^1$, the Stokes group
+        (cf.\ Definition~\ref{defn:stokesGroup} for example will be trivial
+        for every $\theta\notin\A$. Thus the interesting directions are still
+        the anti-Stokes directions $\alpha\in\A$.
+      \end{s-rem}
+    \item $\theta$ is a \emph{Stokes direction} if there is at least one pair
       $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies neither
       $q_j\underset{\theta}{\prec} q_l$ nor $q_l\underset{\theta}{\prec} q_j$.
       \begin{itemize}
@@ -860,13 +869,14 @@ thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
 \end{defn}
 
 \begin{lem}\label{lem:rotationalSym}%\label{rem:rotationalSymPrime}
-  If $\theta\in\A$ together with a pair $(q_j-q_l)(t^{-1})\in\cQ(A^0)$
-  of degree $k$ is given, we have for every $m\in\N$ that
+  If $\alpha\in\A$ together with a determining pair
+  $(q_j-q_l)(t^{-1})\in\cQ(A^0)$ of degree $k$ is given, we have for every
+  $m\in\N$ that
   \[
-    \underset{=:\theta'}{\underbrace{\theta+m\frac{\pi}{k}}} \in \A \,.
+    \underset{=:\alpha'}{\underbrace{\alpha+m\frac{\pi}{k}}} \in \A \,.
   \]
-  Especially is either $q_j \underset{\theta',\max}{\prec} q_l$ (in the
-  case, when $m$ is even) or $q_l \underset{\theta',\max}{\prec} q_j$
+  Especially is either $q_j \underset{\alpha',\max}{\prec} q_l$ (in the
+  case, when $m$ is even) or $q_l \underset{\alpha',\max}{\prec} q_j$
   (when $m$ is uneven) satisfied (see figure~\ref{fig:functionF}).
   \begin{s-cor}
     It follows that in the case $\cK=\{k\}$, the set $\A$ has
@@ -875,31 +885,31 @@ thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
 \end{lem}
 \begin{proof}
   \marginnote{\cite[8]{thboalch}}
-  Let $\theta\in S^1$ with determination $\tilde\theta$.
+  Let $\alpha\in S^1$ with determination $\tilde\alpha$.
   Let $(j,l)$ be a pair such that
-  $q_j \underset{\tilde\theta,\max}{\prec} q_l$, i.e.\ such that
-  $a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}$.
+  $q_j \underset{\tilde\alpha,\max}{\prec} q_l$, i.e.\ such that
+  $a_{jl}e^{-ik_{jl}\tilde\alpha}\in\R_{<0}$.
   Hence, for $m\in\N$,
   \begin{align*}
-    a_{jl}e^{-ik_{jl}\left(\tilde\theta+m\frac{\pi}{k_{jl}}\right)}
-    &=a_{jl}e^{-ik_{jl}\tilde\theta}e^{-im\pi}
+    a_{jl}e^{-ik_{jl}\left(\tilde\alpha+m\frac{\pi}{k_{jl}}\right)}
+    &=a_{jl}e^{-ik_{jl}\tilde\alpha}e^{-im\pi}
     = \begin{cases}
-      a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{<0}
+      a_{jl}e^{-ik_{jl}\tilde\alpha}\in\R_{<0}
         & \text{, if $m$ is even}
-    \\-a_{jl}e^{-ik_{jl}\tilde\theta}\in\R_{>0}
+    \\-a_{jl}e^{-ik_{jl}\tilde\alpha}\in\R_{>0}
         & \text{, if $m$ is uneven}
     \end{cases}
   \end{align*}
   is, in the case when $m$ is even, also real and negative. In the other
   case, when $n$ is uneven, we use that $a_{jl}=-a_{lj}$ and $k_{jl}=k_{lj}$ to
   obtain
-  $a_{lj}e^{-ik_{lj}\left(\tilde\theta+m\frac{\pi}{k_{lj}}\right)} \in\R_{<0}$.
+  $a_{lj}e^{-ik_{lj}\left(\tilde\alpha+m\frac{\pi}{k_{lj}}\right)} \in\R_{<0}$.
 
-  Thus, for $\tilde\theta':=\tilde\theta+m\frac{\pi}{k_{jl}}$ as determination
-  of $\theta':=\theta+m\frac{\pi}{k_{jl}}$, we have $\theta'\in\A$ since
+  Thus, for $\tilde\alpha':=\tilde\alpha+m\frac{\pi}{k_{jl}}$ as determination
+  of $\alpha':=\alpha+m\frac{\pi}{k_{jl}}$, we have $\alpha'\in\A$ since
   \begin{itemize}
-    \item $q_j \underset{\tilde\theta',\max}{\prec} q_l$ when $m$ is even or
-    \item $q_l \underset{\tilde\theta',\max}{\prec} q_j$ when $m$ is uneven.
+    \item $q_j \underset{\tilde\alpha',\max}{\prec} q_l$ when $m$ is even or
+    \item $q_l \underset{\tilde\alpha',\max}{\prec} q_j$ when $m$ is uneven.
   \end{itemize}
 \end{proof}
 
@@ -911,7 +921,7 @@ define the Stokes group as follows.
   \[
     \Sto_\theta(A^0):=
     \left\{\phi_\theta\in\Lambda_\theta(A^0)
-      \mid \phi_\theta \text{ has maximal decay at } \theta
+      \mid \phi_\theta \text{~has maximal decay at~} \theta
     \right\}
   \]
   whose elements are called \emph{Stokes germs}.
@@ -1026,15 +1036,17 @@ define the Stokes group as follows.
 \end{defn}
 Let $\cY_0=t^L e^{Q(t^{-1})}$ be a normal solution corresponding to
 $A^0$ (cf.\ Definition~\ref{defn:normSol}).
-For every determination $\tilde\theta$ of $\theta$ we
-get a function $e^{Q(1/|t|e^{i\tilde\theta})}$ as a realization of the formal
-exponential $e^{Q(1/t)}$.
+For every determination $\tilde\theta$ of $\theta\in S^1$ we get a function
+$e^{Q(1/|t|e^{i\tilde\theta})}$ as a realization of the formal exponential
+$e^{Q(1/t)}$.
 Let us denote by $\cY_{0,\tilde\theta}$ the function defined by $\cY_0$ with
 that determination of the argument near the direction
 $\theta$.\label{page:alreadyUsedDefn}
 
 \begin{prop}\label{prop:representation}
   \marginnote{\cite[Def.I.4.7]{Loday1994}\\\cite[78f]{Loday2014}}
+  \TODO[use $\theta$ to emphasize genericness or $\alpha$ since it is only
+  usefull for anti-Stokes directions?]
   In this situation is the morphism
   \begin{align*}
     \rho_{\tilde\theta}:\Sto_\theta(A^0)&\to\SSto_\theta(A^0)
@@ -1187,7 +1199,7 @@ In particular, from the proof, we get that
 \end{enumerate}
 \begin{rem}
   This implies that the matrix $1_n+C_{\tilde\theta}$ is unipotent, and
-  \rewrite{hence is $\Sto_\alpha(A^0)$ is a unipotent Lie group.}
+  \rewrite{hence is $\Sto_\theta(A^0)$ is a unipotent Lie group.}
 \end{rem}
 
 \begin{cor}
@@ -1237,7 +1249,7 @@ Martinet and Ramis.
 \end{defn}
 \begin{notations}
   \marginnote{\cite[Not.I.4.15]{Loday1994},\\\cite[362]{Martinet1991}}
-  For $k\in\cK$ and $\theta\in\A$ we set:
+  For $k\in\cK$ and $\theta\in S^1$ we set:
   \begin{itemize}
     \item $\Lambda^{k}(A^0):=$ the subsheaf of $\Lambda(A^0)$ of all germs,
       which are generated by $k$-germs;
@@ -1259,7 +1271,7 @@ Martinet and Ramis.
   \begin{itemize}
     \item $\SSto^\star_\theta(A^0)$ as the groups of representations, which
       correspond to elements of  $\Sto^\star_\theta(A^0)$;
-    \item $\A^k:=\left\{\theta\in\A\mid\Sto_\theta^k(A^0)\neq\{\id\}\right\}$
+    \item $\A^k:=\left\{\alpha\in\A\mid\Sto_\alpha^k(A^0)\neq\{\id\}\right\}$
       as the set of anti-Stokes directions \emph{bearing the level $k$};
     \item $\A^{\leq k}:=\underset{k'\leq k}\bigcup\A^{k'}$ (resp.
       $\A^{<k}:=\underset{k'<k}\bigcup\A^{k'}$ and
@@ -1267,19 +1279,19 @@ Martinet and Ramis.
       \begin{s-rem}
         It is clear that
         \begin{itemize}
-          \item $\A^{\star}=\left\{\theta\in\A
-            \mid\Sto_{\theta}^\star(A^0)\neq\{\id\}\right\}$ and
+          \item $\A^{\star}=\left\{\alpha\in\A
+            \mid\Sto_{\alpha}^\star(A^0)\neq\{\id\}\right\}$ and
           \item we have the canonical inclusions
             $\A^k\hookrightarrow\A^{\leq k}$ and
             $\A^{<k}\hookrightarrow\A^{\leq k}$.
         \end{itemize}
       \end{s-rem}
-    \item $\cK_\theta:=\left\{k\in\cK\mid\Sto_\theta^k(A^0)\neq\{\id\}\right\}$
-      the set of levels \emph{beared by $\theta\in\A$}, and
-      $K_\theta=\max\cK_\theta$ the \emph{maximal level beared by $\theta$}.
+    \item $\cK_\alpha:=\left\{k\in\cK\mid\Sto_\alpha^k(A^0)\neq\{\id\}\right\}$
+      the set of levels \emph{beared by $\alpha\in\A$}, and
+      $K_\alpha=\max\cK_\alpha$ the \emph{maximal level beared by $\alpha$}.
       \begin{s-rem}
-        The Lemma~\ref{lem:rotationalSym} implies that from $k\in\cK_{\theta}$
-        follows that $k\in\cK_{\theta+m\frac{\pi}{k}}$ for $m\in\N$.
+        The Lemma~\ref{lem:rotationalSym} implies that from $k\in\cK_{\alpha}$
+        follows that $k\in\cK_{\alpha+m\frac{\pi}{k}}$ for $m\in\N$.
       \end{s-rem}
   \end{itemize}
 \end{notations}
@@ -1351,8 +1363,8 @@ decomposition into a semidirect product.
         truncation of $f^{\leq k}$ to terms of level $k$.
         This truncation can explicitly be achieved, in terms of Stokes
         matrices, by keeping in any representation
-        $1+\sum C_{\tilde\theta}^{(j,l)}$ of $f^{\leq k}$ only the blocks
-        $C_{\tilde\theta}^{(j,l)}$ such that $\deg(q_j-q_l)<k$.
+        $1+\sum C^{(j,l)}$ of $f^{\leq k}$ only the blocks
+        $C^{(j,l)}$ such that $\deg(q_j-q_l)<k$.
 
         A factorization algorithm could then be:
         \begin{einr}
@@ -1364,7 +1376,7 @@ decomposition into a semidirect product.
     \item This decomposition in semidirect product can be extended to all
       levels (cf.\ \cite[Cor.I.5.2]{Loday1994}). Thus
       \[
-        \Lambda(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Lambda^k(A^0) \,,
+        \Lambda(A^0)\cong\underset{k\in\cK}\bigltimes\Lambda^k(A^0) \,,
       \]
       where the semidirect product is taken in an ascending or descending
       order of levels $k$.
@@ -1417,7 +1429,7 @@ decomposition into a semidirect product.
       is normal and
     \item we can use this to achieve the decomposition
       \[
-        \Lambda(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Lambda^k(A^0)
+        \Lambda(A^0)\cong\underset{k\in\cK}\bigltimes\Lambda^k(A^0)
       \]
       taken in an arbitrary order. In fact, one can also extend the algorithm
       from Remark~\ref{rem:algFactorization} to an arbitrary order of levels.
@@ -1426,43 +1438,43 @@ decomposition into a semidirect product.
 \begin{prop}\label{prop:filtrationOfStokesGroup}
   \marginnote{\cite[Prop.I.5.5]{Loday1994}}
   The results can be restricted to the Stokes groups
-  (cf.\ \cite[Prop.I.5.5]{Loday1994}). Thus, for $\theta\in\A$, one has
+  (cf.\ \cite[Prop.I.5.5]{Loday1994}). Thus, for $\alpha\in\A$, one has
   \[
-    \Sto_\theta(A^0)\cong\underset{k\in\cK_\theta}\bigltimes\Sto_\theta^k(A^0)
+    \Sto_\alpha(A^0)\cong\underset{k\in\cK_\alpha}\bigltimes\Sto_\alpha^k(A^0)
   \]
   the semidirect product being taken in an arbitrary order \comm{(we will only
   be interested in the ascending order)}.
   \begin{s-defn}
     We will denote the map, wich gives the factors of this factorization by
     \[
-      i_\theta:
-      \Sto_\theta(A^0)
+      i_\alpha:
+      \Sto_\alpha(A^0)
       \overset{\cong}\longrightarrow
-      \prod_{k\in\cK_\theta}\Sto_\theta^k(A^0)\,,
+      \prod_{k\in\cK_\alpha}\Sto_\alpha^k(A^0)\,,
     \]
     where the factorization is taken in ascending order.
   \end{s-defn}
   \begin{s-rem}\label{rem:filtrationOfStokesMats}
-    Write $\rho_{\tilde\theta}^k:\Sto^k_\theta(A^0)\to\SSto^k_\theta(A^0)$ for
-    the \rewrite{restriction} of the map $\rho_{\tilde\theta}$
+    Write $\rho_{\tilde\alpha}^k:\Sto^k_\alpha(A^0)\to\SSto^k_\alpha(A^0)$ for
+    the \rewrite{restriction} of the map $\rho_{\tilde\alpha}$
     (cf.\ Proposition~\ref{prop:representation}) to the level $k$.
     \rewrite{Then, one can} denote the induced decomposition also by
     \[
-      i_\theta:
-      \SSto_\theta(A^0)
+      i_\alpha:
+      \SSto_\alpha(A^0)
       \overset{\cong}\longrightarrow
-      \underset{k\in\cK_\theta}\bigltimes\SSto_\theta^k(A^0)
+      \underset{k\in\cK_\alpha}\bigltimes\SSto_\alpha^k(A^0)
     \]
     and the corresponding diagram
     \[ \begin{tikzcd}
-        \Sto_\theta(A^0)
-        \rar{i_\theta}
-        \dar{\rho_{\tilde\theta}}
-        & \prod_{k\in\cK_\theta}\Sto_\theta^k(A^0)\,,
-        \dar{\prod_{k\in\cK}\rho_{\tilde\theta}^k}
-      \\\SSto_\theta(A^0)
-        \rar{i_\theta^k}
-        & \prod_{k\in\cK_\theta}\SSto_\theta^k(A^0)\,,
+        \Sto_\alpha(A^0)
+        \rar{i_\alpha}
+        \dar{\rho_{\tilde\alpha}}
+        & \prod_{k\in\cK_\alpha}\Sto_\alpha^k(A^0)\,,
+        \dar{\prod_{k\in\cK}\rho_{\tilde\alpha}^k}
+      \\\SSto_\alpha(A^0)
+        \rar{i_\alpha^k}
+        & \prod_{k\in\cK_\alpha}\SSto_\alpha^k(A^0)\,,
     \end{tikzcd} \]
     commutes.
   \end{s-rem}
@@ -1481,19 +1493,19 @@ decomposition into a semidirect product.
   \\and \cite{BJL1979Birkhoff}}
 The goal in this section is to prove that there is a bijective and natural map
 \[
-  h:\prod_{\theta\in\A}\Sto_\theta(A^0)\to\St(A^0) \,.
+  h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0) \,.
 \]
-And since $\Sto_\theta(A^0)$ has a faithful representation $\SSto_\theta(A^0)$
+And since $\Sto_\alpha(A^0)$ has a faithful representation $\SSto_\alpha(A^0)$
 we also get
 \[
-  \prod_{\theta\in\A}\SSto_\theta(A^0)\cong\St(A^0)
+  \prod_{\alpha\in\A}\SSto_\alpha(A^0)\cong\St(A^0)
 \]
 as a corollary.
 \TODO[This goes back to \cite{BJL1979Birkhoff}?]
 
 Let us recall, that $\St(A^0)$ is defined to be $H^1(S^1;\Lambda^{<0}(^0))$
 (cf.\ Section~\ref{sec:mainThm1}).
-The elements of $\prod_{\theta\in\A}\Sto_\theta(A^0)$ define in a canonical way
+The elements of $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ define in a canonical way
 cocycles of the sheaf $\Lambda^{<0}(A^0)$ (cf.\ Remark~\ref{rem:mapStoToCocy}),
 called Stokes cocycles (cf.\ Definition~\ref{defn:stokesCocycle}).
 In fact, will $h$ map such cocycles to the cohomology class, to which they
@@ -1549,12 +1561,12 @@ that
 \begin{defn}\label{defn:stokesCocycle}
   \TODO[Why only germ? Sections?]
   \marginnote{\cite[Def.II.1.8]{Loday1994}, \cite[4.3.10]{Loday2014}}
-  A \emph{Stokes cocycle} is a 1-cocycle $(\phi_\theta)_{\theta\in\A}$ of
+  A \emph{Stokes cocycle} is a 1-cocycle $(\phi_\alpha)_{\alpha\in\A}$ of
   $\Lambda(A^0)$ which is
   \begin{itemize}
     \item indexed by the set of anti-Stokes directions and
-    \item each component $\phi_\theta$ determines an element of
-      $\Sto_\theta(A^0)$.
+    \item each component $\phi_\alpha$ determines an element of
+      $\Sto_\alpha(A^0)$.
   \end{itemize}
   \begin{s-rem}
     The set of all Stokes cocycles can be identified with
@@ -1586,16 +1598,17 @@ get the following corollary.
   Using the isomorphisms from the Stokes groups to the group of all Stokes
   matrices (cf.\ Proposition~\ref{prop:representation}) we obtain
   \[
-    \St(A^0) \cong \prod_{\theta\in\A}\SSto_\theta(A^0)
+    \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
   \]
   and thus $\St(A^0)$ has complex dimension
-  $\dim_\C\St(A^0)=\sum_{\theta\in\A}\dim_\C\SSto_\theta(A^0)$.
+  $\dim_\C\St(A^0)=\sum_{\alpha\in\A}\dim_\C\SSto_\alpha(A^0)$.
 \end{cor}
 \begin{rem}
   The set $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ and thus
   $\prod_{\alpha\in\A}\SSto_\alpha(A^0)$ has some bad properties, when small
   deformations are applied to $[A^0]$, since under arbitrary small changes, one
-  Stokes ray can split into two. Boalch~\cite{boalch,thboalch} solves this in
+  Stokes ray can split into two. Boalch~\cite{boalch,thboalch}\PROBLEM[solution
+  goes back to \cite{BJL1979Birkhoff} or so?] solves this in
   the single-leveled case by \rewrite{renaming our Stokes matrices as Stokes
   factors} and introducing new Stokes matrices which are build by the product
   of consecutive Stokes factors. He uses the rotational symmetry of the
@@ -1656,10 +1669,10 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
 
 \begin{prop}\label{prop:adeqCovCondition}
   \marginnote{\cite[Prop.II.1.7]{Loday1994}}
-  Let $\theta\in\A$ and $k\in\cK_\theta$.
+  Let $\alpha\in\A$ and $k\in\cK_\alpha$.
   \begin{s-defn}
-    An arc $U(\theta,\frac{\pi}{k})$ is called a \emph{Stokes arc of level $k$
-    at $\theta$}.
+    An arc $U(\alpha,\frac{\pi}{k})$ is called a \emph{Stokes arc of level $k$
+    at $\alpha$}.
   \end{s-defn}
   A cyclic covering $\cU=(U_j)_{j\in J}$, which satisfies
   \begin{einr}
@@ -1684,59 +1697,59 @@ and $\Lambda^{<k}(A^0)$. Furthermore will the coverings be comparable at the
 different levels.
 
 \begin{enumerate}
-  \item The first covering $\cU^{k}=\{\dot U_\theta^k\mid\theta\in\A^k\}$
+  \item The first covering $\cU^{k}=\{\dot U_\alpha^k\mid\alpha\in\A^k\}$
     is the cyclic covering with nerve
     \[
       \dot\cU^k:=
-      \left\{\dot U_\theta^k=U(\theta,\frac{\pi}{k})\mid\theta\in\A^k\right\}
+      \left\{\dot U_\alpha^k=U(\alpha,\frac{\pi}{k})\mid\alpha\in\A^k\right\}
     \]
     consisting of all Stokes arcs of level $k$ for anti-Stokes directions
     bearing the level $k$.
 \end{enumerate}
 
 If we extend to several levels, the set
-$\bigcup_k\left\{U(\theta,\frac{\pi}{k})\mid\theta\in\A^{k}\right\}$ is no
+$\bigcup_k\left\{U(\alpha,\frac{\pi}{k})\mid\alpha\in\A^{k}\right\}$ is no
 longer a nerve.
 Hence we have to define the coverings $\cU^{\leq k}$ and $\cU^{<k}$ in a
 different way.
 Denote by
 \[
   \left\{K_1<\cdots<K_s=k\right\}
-  =\left\{\max\left(\cK_\theta\cap[0,k]\right)\mid\theta\in\A^{\leq k}\right\}
+  =\left\{\max\left(\cK_\alpha\cap[0,k]\right)\mid\alpha\in\A^{\leq k}\right\}
 \]
-the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
+the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
 \begin{enumerate}
   \setcounter{enumi}{1}
   \item The cyclic covering
-    $\cU^{\leq k}=\left\{U_\theta^{\leq k}\mid\theta\in\A^{\leq k}\right\}$
+    $\cU^{\leq k}=\left\{U_\alpha^{\leq k}\mid\alpha\in\A^{\leq k}\right\}$
     will be defined by induction.
     Let us assume that
     \begin{einr}
-      the $\dot U_\theta^{\leq k}$ are defined for all $\theta\in\A^{\leq k}$
+      the $\dot U_\alpha^{\leq k}$ are defined for all $\alpha\in\A^{\leq k}$
       with $k$-maximum level greater than $K_i$ such that their complete family
       is a nerve.
     \end{einr}
     Let
     \begin{itemize}
-      \item $\theta$ be a anti-Stokes direction with $k$-maximum level $K_i$
+      \item $\alpha$ be a anti-Stokes direction with $k$-maximum level $K_i$
         and
-      \item $\theta^-$ (resp.\ $\theta^+$) be the next anti-Stokes direction
+      \item $\alpha^-$ (resp.\ $\alpha^+$) be the next anti-Stokes direction
         with $k$-maximum level greater then $K_i$ on the left (resp.\ on the
-        right) and define $\dot U_{\theta^-,\theta^+}$ as the clockwise hull of
-        the arcs $\dot U_{\theta^-}^{\leq k}$ and $\dot U_{\theta^+}^{\leq k}$.
+        right) and define $\dot U_{\alpha^-,\alpha^+}$ as the clockwise hull of
+        the arcs $\dot U_{\alpha^-}^{\leq k}$ and $\dot U_{\alpha^+}^{\leq k}$.
         If there are no anti-Stokes directions with $k$-maximum level greater
-        then $K_i$ we set $\dot U_{\theta^-,\theta^+}=S^1$.
+        then $K_i$ we set $\dot U_{\alpha^-,\alpha^+}=S^1$.
     \end{itemize}
     We then set
     \[
-      \dot U_\theta^{\leq k}
-        :=U\left(\theta,\frac{\pi}{K_i}\right)\cap\dot U_{\theta^-,\theta^+}
+      \dot U_\alpha^{\leq k}
+        :=U\left(\alpha,\frac{\pi}{K_i}\right)\cap\dot U_{\alpha^-,\alpha^+}
     \]
-    and the family of all $\dot U_\theta^{\leq k}$ is a nerve.\PROBLEM[proof!]
+    and the family of all $\dot U_\alpha^{\leq k}$ is a nerve.\PROBLEM[proof!]
     \begin{rem}
-      If $\theta$ has a $k$-maximum level equal to $k$ then is
-      $\dot U_\theta^{\leq k}$ equal to the Stokes arc
-      $U\left(\theta,\frac{\pi}{k}\right)=\dot U_\theta^k$.
+      If $\alpha$ has a $k$-maximum level equal to $k$ then is
+      $\dot U_\alpha^{\leq k}$ equal to the Stokes arc
+      $U\left(\alpha,\frac{\pi}{k}\right)=\dot U_\alpha^k$.
       \comm{\dots{}and then no $0$-cochain with level $k$ or $\geq k$ can
       exists on the covering $\cU^{\leq{k}}$.}
     \end{rem}
@@ -1745,7 +1758,7 @@ the set of all \emph{$k$-maximum levels} for $\theta\in\A^{\leq k}$.
 \begin{enumerate}
   \setcounter{enumi}{2}
 \item The last cyclic covering,
-  $\cU^{<k}=\left\{U_{\theta}^k\mid\theta\in\A^{<k}\right\}$, is defined as
+  $\cU^{<k}=\left\{U_{\alpha}^k\mid\alpha\in\A^{<k}\right\}$, is defined as
   $\cU^{<k}:=\cU^{\leq k'}$ where $k':=\max\{k''\in\cK\mid k''<k\}$.
 \end{enumerate}
 
@@ -1904,7 +1917,7 @@ satisfied}.
   \end{proof}
 \end{comment}
 To have a shorter notation, we denote the product
-$\prod_{\theta\in\A^\star}\Gamma(\dot U_\theta^\star;\Lambda^\star(A^0))$ by
+$\prod_{\alpha\in\A^\star}\Gamma(\dot U_\alpha^\star;\Lambda^\star(A^0))$ by
 $\Gamma(\dot U^\star;\Lambda^\star(A^0))$ for $\star\in\{k,<k,\leq k,\dots\}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1916,7 +1929,7 @@ This means that
   \item either $\Lambda(A^0)$ has only one level $k$, thus
     \begin{itemize}
       \item $\Lambda(A^0)=\Lambda^k(A^0)$ and
-      \item $\Sto_\theta(A^0)=\Sto_\theta^k(A^0)$,
+      \item $\Sto_\theta(A^0)=\Sto_\theta^k(A^0)$ for every $\theta$,
     \end{itemize}
   \item or we restrict to a given level $k\in\cK$.
 \end{itemize}
@@ -1925,7 +1938,7 @@ This means that
   The morphism $h$ from Theorem~\ref{thm:mainThm2} is in the case of an unique
   level build as
   \[ \begin{tikzcd}[row sep=0cm]
-    \underset{\theta\in\A}\prod\Sto_\theta^k(A^0)
+    \underset{\alpha\in\A}\prod\Sto_\alpha^k(A^0)
     \rar{i^k}
     & \Gamma(\dot\cU^k;\Lambda^k(A^0))
     \rar{s^k}
@@ -1935,7 +1948,7 @@ This means that
     &&
     \text{\rotatebox[origin=c]{-90}{$=$}}
     \\
-    \underset{\theta\in\A}\prod\Sto_\theta(A^0)
+    \underset{\alpha\in\A}\prod\Sto_\alpha(A^0)
     \arrow{rr}{h}
     &
     & H^1(S^1;\Lambda(A^0))
@@ -1944,7 +1957,7 @@ This means that
   \begin{itemize}
     \item the canonical injective map
       \[
-        i^k:\underset{\theta\in\A}\prod\Sto_\theta^k(A^0) \to
+        i^k:\underset{\alpha\in\A}\prod\Sto_\alpha^k(A^0) \to
         \Gamma(\dot\cU^k;\Lambda^k(A^0)) \,,
       \]
       i.e.\ the map which is the canonical extension of germs to their natural
@@ -1960,35 +1973,35 @@ This means that
   \begin{enumerate}
     \item The map
       \[
-        i^k: \underset{\theta\in\A}\prod\Sto_\theta^k(A^0)
+        i^k: \underset{\alpha\in\A}\prod\Sto_\alpha^k(A^0)
         \to
         \underset{\Gamma(\dot\cU^k;\Lambda^k(A^0))}{%
           \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
             \underbrace{%
-              \prod_{\theta\in\A^k}\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))
+              \prod_{\alpha\in\A^k}\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))
             }
         }}
       \]
       is welldefined, since the sections of $\Lambda^k(A^0)$ are solution of
       the system $[A^0,A^0]$ and we know from the theory of differential
       equations\TODO[source?] that an element
-      $f_\theta\in\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))$ is uniquely
-      determined as the extension of its germ at some point $\theta$.
+      $f_\alpha\in\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))$ is uniquely
+      determined as the extension of its germ at some point $\alpha$.
 
       It is a group isomorphism, since
-      \PROBLEM[$\Sto_\theta^k(A^0)\subsetneq\Lambda_\theta^k(A^0)$ SEE bjl p.72]
+      \PROBLEM[$\Sto_\alpha^k(A^0)\subsetneq\Lambda_\alpha^k(A^0)$ SEE bjl p.72]
       \begin{comment}
         Problems:
         \begin{itemize}
-          \item \PROBLEM[$\Sto_\theta^k(A^0)\subsetneq\Lambda_\theta^k(A^0)$]
+          \item \PROBLEM[$\Sto_\alpha^k(A^0)\subsetneq\Lambda_\alpha^k(A^0)$]
             and thus
             \[
               i^k:
-              \underset{\theta\in\A}\prod\Sto_\theta^k(A^0)
+              \underset{\alpha\in\A}\prod\Sto_\alpha^k(A^0)
               \subsetneq
-              \underset{\theta\in\A}\prod\Lambda_\theta^k(A^0)
+              \underset{\alpha\in\A}\prod\Lambda_\alpha^k(A^0)
               \to
-              \prod_{\theta\in\A^k}\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))
+              \prod_{\alpha\in\A^k}\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))
             \]
         \end{itemize}
         IDEAS:
@@ -2001,7 +2014,7 @@ This means that
                 \textbf{neighbourhood}
               \item \PROBLEM[why is the neighbourhood large enough?] I.e.\
                 \[
-                  \substack{the\\neighbourhood}\supset\cU_\theta^k \,?
+                  \substack{the\\neighbourhood}\supset\cU_\alpha^k \,?
                 \]
             \end{itemize}
           \item $U_\alpha^k$ is the largest arc, to contain no corresponding
@@ -2019,7 +2032,7 @@ This means that
         \overset{\Gamma(\dot\cU^k;\Lambda^k(A^0))}{%
           \overset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
             \overbrace{%
-              \prod_{\theta\in\A^k}\Gamma(\dot\cU_\theta^k;\Lambda^k(A^0))
+              \prod_{\alpha\in\A^k}\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))
             }
         }}
         \to
