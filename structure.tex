@@ -475,38 +475,45 @@ Let us assume, that our normal form $[A^0]$ of dimension $n$ has the levels
 $\cK$ and start at the situation
 $\prod_{k\in\cK}\prod_{\alpha\in\A}\SSto_{\alpha}^{k}(A^0)$
 of Proposition~\ref{prop:decompositionDiagram}.
-Since the factors $\prod_{\alpha\in\A}\SSto_{\alpha}^{k}(A^0)$ are products
-over a single level, we are able to apply the theory discussed by Boalch
-in~\cite[Section 3]{boalch}.
-The goal is, to group the set $\A^k$ of all anti-Stokes directions of level $k$
-into $2k$ distinct subsets of consecutive anti-Stokes directions of length
-$\frac{\#\A^k}{2k}$. Such a subset of $\A^k$ will be called a
-\emph{half-period}.
-Let $\theta\in S^1$ be a direction which satisfies that
-$\theta\pm\frac{\pi}{2k}\notin\A$, then is a half-period obtained by
-$\A^k\cap U(\theta,\frac{\pi}{k})$ where $U(\theta,\frac{\pi}{k})$ is an arc of
-width $\frac{\pi}{k}$ with center $\theta$
-(cf.\ Remark~\ref{rem:arcsByWidthAndCenter}).
-This can be reformulated to:
+We want to rewrite the inner product
+\begin{align*}
+  \prod_{\alpha\in\A}\SSto_{\alpha}^{k}(A^0)
+  &=\prod_{\alpha\in\A^k}\SSto_{\alpha}^{k}(A^0)
+  &\text{(since $\SSto_{\alpha}^{k}(A^0)=\{\id\}$ when $k\notin\cK_\alpha$.)}
+\end{align*}
+by collecting the information of multiple Stokes matrices into one product of
+these matrices.
+Boalch, which looks in his publications \cite{boalch,thboalch} only at the
+single-leveled case, uses this extensively to obtain better Stokes matrices,
+which are stable under small deformations
+(cf.\ Remark~\ref{rem:boalchRemarkFactorMatrix}).
+
+\begin{defn}
+  A subset of $\A^k$ consisting of $\frac{\#\A^k}{2k}$ consecutive anti-Stokes
+  directions of level $k$ will be called a \emph{half-period (of level $k$)}.
+  \begin{s-rem}
+    The set $\A^k$ can clearly be split into $2k$ distinct half-periods.
+  \end{s-rem}
+\end{defn}
+From the definition of anti-Stokes directions of level $k$ it is clear that 
+every arc of width $\frac{\pi}{k}$, which has no anti-Stokes direction of level
+$k$ on its border, contains $\frac{\#\A^k}{2k}$ anti-Stokes directions
+since
 \begin{einr}
-  every arc of width $\frac{\pi}{k}$, which has no anti-Stokes direction of
-  level $k$ on the border, contains $\frac{\#\A^k}{2k}$ anti-Stokes directions
+  for every sector $I=U(\theta,\frac{\pi}{k})$, of width $\frac{\pi}{k}$ and
+  center $\theta$, which satisfies $\theta\pm\frac{\pi}{2k}\notin\A^k$,
+  there is to any pair $(q_j,q_l)$ in $\cQ(A^0)$, which has level $k_{jl}=k$,
+  exactly one direction $\alpha\in \A^k\cap I$ which satisfies, that
+  $\Im(a_{jl}e^{-ik_{jl\alpha}})=0$.
+  At such a direction $\alpha$, corresponding to the pair $(q_j,q_l)$, is then
+  either $q_j\underset{\alpha,\max}{\prec}q_l$ or
+  $q_l\underset{\alpha,\max}{\prec}q_j$ satisfied.
 \end{einr}
-or
-\begin{einr}
-  that for every sector $I$ of width $\frac{\pi}{k}$, which satisfies the
-  condition on the border, there is to any unordered pair in $\cQ(A^0)$, which
-  has level $k$,
-  \[
-    [(q_j,q_l)]\in
-    \{(q_j,q_l)\mid(q_j,q_l)\in \cQ(A^0), k_{j,l}=k\}/(q_j,q_l)-(q_l,q_j)
-  \]
-  exactly one direction $\alpha\in\A^{k}\cap I$ which satisfies either
-  $q_j\underset{\alpha,\max}{\prec}q_l$ or
-  $q_l\underset{\alpha,\max}{\prec}q_j$.
-\end{einr}
-We then are able to express the information of the Stokes matrices
-corresponding to such an half-period in a single matrix of special form.
+This implies that for every $\theta$, which satisfies
+$\theta\pm\frac{\pi}{2k}\notin\A^k$, is $\A^k\cap U(\theta,\frac{\pi}{k})$
+a half-period and by
+$\dot\bigcup_{1\leq m\leq 2k}\A^k\cap U(\theta,\frac{m\pi}{k})=\A^k$ is a
+splitting of $\A^k$ given.
 
 \begin{comment}
   We know that
