@@ -117,8 +117,12 @@
 % \fi
 
 \input{moreBasics.tex}
-\input{landkarte.tex}
-\input{problemDGL.tex}
+\ifnum\myDevelopVariable=1
+  \input{landkarte.tex}
+\fi
+\ifnum\myDevelopVariable=1
+  \input{problemDGL.tex}
+\fi
 
 % \input{literatur.tex}
 

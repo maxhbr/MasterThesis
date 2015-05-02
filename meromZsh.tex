@@ -878,7 +878,7 @@ $q_j'(t^{-1})\id_{n_j}+\frac{1}{t}L_j$ given, where
 $q_j(t^{-1})=\phi_j(t)$ and $q_j'(t^{-1})=\frac{d}{dt}\phi_j(t)$\footnote{By
 abuse of notation we denote by $q_j'(t^{-1})$ the derivation
 $\frac{d}{dt}(q_j(t^{-1}))=\left(\left(\frac{d}{dt}q_j\right)\circ t^{-1}\right)
-\cdot\frac{d}{dt}t^{-1}$.}.
+\cdot\frac{d}{dt}t^{-1}$. The same does apply for $Q'(t^{-1})$.}.
 A connection matrix for $\cM^{nf}$ is then obtained by
 \begin{align*}
   A^0&= \bigoplus_{j=1}^s
@@ -901,7 +901,7 @@ A connection matrix for $\cM^{nf}$ is then obtained by
 \end{prop}
 \begin{proof}
   It is easy to see that $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$
-  and $\frac{d}{dt}t^L\overset{\PROBLEM}{=}L\frac{1}{t}t^L$, thus we can prove
+  and $\frac{d}{dt}t^L=L\frac{1}{t}t^L$, thus we can prove
   that $\cY_0$ is a matrix consisting of solutions:
   \begin{align*}
     \frac{d}{dt}\cY_0
@@ -910,9 +910,16 @@ A connection matrix for $\cM^{nf}$ is then obtained by
   \\&= t^LQ'(t^{-1})e^{Q(t^{-1})} + L\frac{1}{t}t^Le^{Q(t^{-1})}
   % \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+Q'(t^{-1})t^Le^{Q(t^{-1})}
   \\&=\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
-  \\&=\left(Q'(t^{-1})+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
+  \\&\overset{\star}{=}\left(Q'(t^{-1})+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
   \\&=A^0\cY_0 \,.
   \end{align*}
+  The equality, marked by the $\star$, is satisfied, since the block structure
+  of $L$ is finer then the structure of $Q(t^{-1})$, and thus the structure of
+  $Q'(t^{-1})$. Thus we can look at the problem
+  $t^LQ'(t^{-1})t^{-L}=Q'(t^{-1})$ blockwise, where $Q'(t^{-1})$ can be
+  written as $q'(t^{-1})\id$ for some $q'(t^{-1})$. The equation is then
+  clearly satisfied. \PROBLEM[This will be mentioned to later!]
+
   The invertability condition is clear.
 \end{proof}
 To $\hat\lambda$ and the (implicitly) used choices of bases corresponds a
@@ -934,14 +941,17 @@ to $(\cM,\nabla)$.
   \[
     \bar A={}^{\hat F}\left(Q'(t^{-1})+L\frac{1}{t}\right) \,.
   \]
-  \begin{s-rem}
-    It is always possible to permutate the columns of a fundamental solution by
-    \[
-      P^{-1}\mathcal{Y}P=\hat F t^{P^{-1}LP} e^{P^{-1}Q(t^{-1})P}
-    \]
-    with a permutation matrix $P$ and \rewrite{obtain another fundamental
-    solution for the same system} (cf.\ \cite[73]{Loday2014}).
-  \end{s-rem}
+  \begin{comment}
+    \begin{s-rem}
+      It is always possible to permutate the columns of a fundamental solution
+      by
+      \[
+        P^{-1}\mathcal{Y}P=\hat F t^{P^{-1}LP} e^{P^{-1}Q(t^{-1})P}
+      \]
+      with a permutation matrix $P$ and \rewrite{obtain another fundamental
+      solution for the same system} (cf.\ \cite[73]{Loday2014}).
+    \end{s-rem}
+  \end{comment}
 \end{cor}
 In the case that $\hat\lambda$ is a convergent isomorphism, i.e.\ in the case,
 when $A$ is already a model, we see that it has a fundamental solution of the
@@ -1000,49 +1010,11 @@ something like a model.
   connection matrix $A$ is a normal form.
 \end{cor}
 
-
+\begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{In the language of systems: normal forms}
 In the language of system, the equivalent of models are normal forms, which are
 characterizes by the structure of their fundamental solutions.
-
-\begin{comment}
-  If we start with a connection matrix $A\in G(\!\{t\}\!)$, we can bring it into
-  \PROBLEM-normal form using formal transformations\PROBLEM[not defined yet].
-  I.e.\ it becomes a block diagonal matrix of blocks, of the form
-  \[
-    \begin{pmatrix}
-      f(t) & 1 & 0 \dots
-    \\0 & f(t) & 1 & 0 \dots
-    \\ & 0 &\ddots & \ddots
-    \\ & & \ddots
-    \end{pmatrix}
-  \]
-  The $f$ can be written as $\phi(t)\in t\C(\!\{t\}\!)$\PROBLEM[$\in t\C(t)$?]
-  and $\alpha$ such that $f(t)=\phi(t)+\alpha$. Thus the block decomposes into
-  \[
-    \begin{pmatrix}
-      f(t) & 1 & 0 \dots
-    \\0 & f(t) & 1 & 0 \dots
-    \\ & 0 &\ddots & \ddots
-    \\ & & \ddots
-    \end{pmatrix}
-    =
-    \begin{pmatrix}
-      \phi(t) & 0 \dots
-    \\0 & \phi(t) & 0 \dots
-    \\ & 0 &\ddots & \ddots
-    \\ & & \ddots
-    \end{pmatrix}
-    +
-    \begin{pmatrix}
-      \alpha & 1 & 0 \dots
-    \\0 & \alpha & 1 & 0 \dots
-    \\ & 0 &\ddots & \ddots
-    \\ & & \ddots
-    \end{pmatrix}
-  \]
-\end{comment}
 
 The normal forms are then the systems $[A^0]$, with a fundamental solution
 $\cY_0$ in a special form and from the Levelt-Turittin we then can deduce that
@@ -1095,12 +1067,6 @@ fundamental solution in the form $\hat F\cY_0$.
         in Jordan form (cf.\ \cite[Sec.4]{Martinet1991}).
     \end{enumerate}
   \end{s-rem}
-  \begin{comment}
-    \begin{s-rem}
-      The system $[A^0]$ has the same monodromy as $t^L$. \comm{In fact, every
-      formally equivalent system has the same monodromy.}
-    \end{s-rem}
-  \end{comment}
 \end{defn}
 \begin{thm}\label{thm:modelEqNormalForm}
   A meromorphic connection $(\cM,\nabla)$ is a model if and only if its
@@ -1116,93 +1082,91 @@ fundamental solution in the form $\hat F\cY_0$.
     \end{itemize}
   \end{s-rem}
 \end{thm}
-\begin{comment}
-  \begin{proof}
-    \textbf{``\Rightarrow{}'':}
-    Let $\cM=\bigoplus_{\phi}\cE^\phi\otimes\cR_\phi$ be a model and let us
-    first fix a $\phi$ and look at the connection $\cE^\phi\otimes\cR_\phi$.
-    We know that $\cR_\phi$ is a direct sum of regular elementary meromorphic
-    connections whose fundamental matrices are of the form
-    $\frac{1}{t}(\alpha\id+N)$ where $\alpha\in\C$ and $N$ is nilpotent
-    (cf.\ Definition~\ref{defn:elemnMerConnBausteine}).
-    Thus the connection matrix for $\cR_\phi$ writes as
-    \[
-      \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-      \,.
-    \]
-    A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given\PROBLEM[!]
-    by
-    \[
-      t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-      \left(-\phi'\id\right)
+\begin{proof}
+  \textbf{``\Rightarrow{}'':}
+  Let $\cM=\bigoplus_{\phi}\cE^\phi\otimes\cR_\phi$ be a model and let us
+  first fix a $\phi$ and look at the connection $\cE^\phi\otimes\cR_\phi$.
+  We know that $\cR_\phi$ is a direct sum of regular elementary meromorphic
+  connections whose fundamental matrices are of the form
+  $\frac{1}{t}(\alpha\id+N)$ where $\alpha\in\C$ and $N$ is nilpotent
+  (cf.\ Definition~\ref{defn:elemnMerConnBausteine}).
+  Thus the connection matrix for $\cR_\phi$ writes as
+  \[
+    \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+    \,.
+  \]
+  A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given\PROBLEM[!]
+  by
+  \[
+    t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+    \left(-\phi'\id\right)
+    t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+    + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right) \,.
+  \]
+  Since $\cM$ is a sum of such elementary connections, The connection matrix
+  of $\cM$ writes as
+  \[
+    \bigoplus_\phi\left(
+      - t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+      \left(\phi'\id\right)
       t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-      + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right) \,.
-    \]
-    Since $\cM$ is a sum of such elementary connections, The connection matrix
-    of $\cM$ writes as
-    \[
-      \bigoplus_\phi\left(
-        - t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-        \left(\phi'\id\right)
-        t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-        +
-        \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-      \right) \,,
-    \]
-    which can be rewritten as
-    \[
-      \underset{t^LQ'(t^{-1})t^{-L}}{
-        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-          \underbrace{-\bigoplus_\phi
-            \left(
-              t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-              \left(\phi'\id\right)
-              t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-            \right)
-          }
-        }
-      }
       +
-      \frac{1}{t}
-      \underset{L}{
-        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-          \underbrace{%
-            \bigoplus_\phi\left(
-              \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-            \right)
-          }
+      \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+    \right) \,,
+  \]
+  which can be rewritten as
+  \[
+    \underset{t^LQ'(t^{-1})t^{-L}}{
+      \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+        \underbrace{-\bigoplus_\phi
+          \left(
+            t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+            \left(\phi'\id\right)
+            t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+          \right)
         }
       }
-      \,.
-    \]
-    Thus it has
-    \[
-      t^{\bigoplus_\phi\left(
-          \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-      \right)}
-      e^{-\bigoplus_\phi\phi'\id}
-    \]
-    as fundamental solution (cf.\ proposition~\ref{prop:fundSolBuilder}).
-    \PROBLEM[Construction only yields unipotent $N$]
+    }
+    +
+    \frac{1}{t}
+    \underset{L}{
+      \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+        \underbrace{%
+          \bigoplus_\phi\left(
+            \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+          \right)
+        }
+      }
+    }
+    \,.
+  \]
+  Thus it has
+  \[
+    t^{\bigoplus_\phi\left(
+        \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+    \right)}
+    e^{-\bigoplus_\phi\phi'\id}
+  \]
+  as fundamental solution (cf.\ proposition~\ref{prop:fundSolBuilder}).
+  \PROBLEM[Construction only yields unipotent $N$]
 
-    \PROBLEM{}
+  \PROBLEM{}
 
-    \textbf{``\Leftarrow{}'':}
-    Let $A^0$ be a normal form with $\mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}$ as a
-    normal solution. We use Proposition~\ref{prop:fundSolBuilder} to assume that
-    the connection matrix $A^0$ has the form
-    \[
-      A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
-    \]
-    and the Proposition~\ref{prop:systToMeromConn} yields our meromorphic
-    connection $(\cM_{A^0},\nabla_{A^0})=(\C(\!\{t\}\!)^n,d-A^0)$ for
-    \rewrite{which we want to prove, to be} a model.
-    \TODO[We can use Proposition~\ref{prop:MatOfSumOfMerCon} to assume, that $L$ is
-      \textbf{only one Jordan block}.]
+  \textbf{``\Leftarrow{}'':}
+  Let $A^0$ be a normal form with $\mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}$ as a
+  normal solution. We use Proposition~\ref{prop:fundSolBuilder} to assume that
+  the connection matrix $A^0$ has the form
+  \[
+    A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
+  \]
+  and the Proposition~\ref{prop:systToMeromConn} yields our meromorphic
+  connection $(\cM_{A^0},\nabla_{A^0})=(\C(\!\{t\}\!)^n,d-A^0)$ for
+  \rewrite{which we want to prove, to be} a model.
+  \TODO[We can use Proposition~\ref{prop:MatOfSumOfMerCon} to assume, that $L$ is
+    \textbf{only one Jordan block}.]
 
-    \PROBLEM[Jordan-NF]
-  \end{proof}
-\end{comment}
+  \PROBLEM[Jordan-NF]
+\end{proof}
 \begin{cor}
   \TODO[Start with this, bevore defn of normal forms?]
   From the Levelt-Turittin theorem\comm{, the fundamental solution
@@ -1222,6 +1186,7 @@ fundamental solution in the form $\hat F\cY_0$.
     solution for the same system} (cf.\ \cite[73]{Loday2014}).
   \end{s-rem}
 \end{cor}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The main asymptotic existence theorem}
@@ -1232,7 +1197,7 @@ fundamental solution in the form $\hat F\cY_0$.
     \begin{itemize}
       \item \cite[Thm.4.4.1]{Loday2014}
       \item \cite[Thm.7.10]{van2003galois}{\tiny\cite[Thm.7.12]{van2003galois}}
-      \item \cite[Thm.12.1]{wasow2002asymptotic}
+      \item \cite[Thm.IV.12.1]{wasow2002asymptotic}
       \item \cite[5.3.Thm.1]{Varadarajan96linearmeromorphic}
       \item \cite[207]{Balser2000Formal}: Some historical remarks
       \item \cite[Thm.A]{BJL1979Birkhoff}
@@ -1263,8 +1228,10 @@ expansion.
     \item $F$ satisfies the same system $[A^0,A]$ as $\hat F$.
   \end{itemize}
 \end{defn}
-The main asymptotic existence theorem, which can be for example found in
-\cite[Thm.3.1]{boalch} or \cite[Sec.4.4]{Loday2014}, states:
+The following theorem, often called the main asymptotic existence theorem, can
+be for example found in as Theorem A in the paper~\cite{BJL1979Birkhoff} from
+Balser, Jurkat and Lutz, Theorem 3.1 in Boalch's paper~\cite[Thm.3.1]{boalch}
+or Theorem 4.4.1 in Loday-Richaud's Book~\cite{Loday2014}.
 \begin{thm}[M.A.E.T]\label{thm:maet}
   To every $\hat F\in G(\!(t)\!)$ and to every small enough arc
   $I\subsetneq S^1$ there exists a lift $F$ on $I$.
@@ -1278,22 +1245,15 @@ The main asymptotic existence theorem, which can be for example found in
     \]
     are exact sequences of sheaves of $\C$-vector spaces.
     \begin{comment}
-      Proof in \textbf{[Mal91a, App 1; Thm 1]}
+      (cf.~\cite[App.1;Thm.1]{malgrange1991})
     \end{comment}
   \end{s-rem}
 \end{thm}
-\begin{comment}
-  \begin{proof}
-    \TODO{}
-  \end{proof}
-\end{comment}
-
-\TODO{}
 
 Translated to the language of meromorphic connection the theorem~\ref{thm:maet}
-becomes the following.
+becomes the following (cf.~\cite[Thm.II.5.12]{sabbah2007isomonodromic}
+or~\cite[Sec.II.2.4]{sabbah_cimpa90}).
 \begin{thm}[Sectorial decomposition]
-  \marginnote{\cite[Thm.II.5.12]{sabbah2007isomonodromic}}
   Let $(\cM,\nabla)$ be a meromorphic connection and let
   $\hat\lambda:\hat\cM\to\hat\cM^{nf}$ be the isomorphism given by
   theorem~\ref{thm:leveltTurittin} together with the model $\cM^{nf}$.
@@ -1309,31 +1269,6 @@ becomes the following.
   \end{tikzcd} \]
   commutes
 \end{thm}
-\begin{proof}
-  \rewrite{This is clear,} since the tensor is right exact and we have the
-  Borel-Ritt Lemma.
-  A proof can be found in~\cite[Sec.II.2.4]{sabbah_cimpa90}.
-\end{proof}
-
-\begin{comment}
-  \begin{multicols}{2}
-    \begin{thm}
-      \marginnote{\cite[Thm.II.2.3.1]{sabbah_cimpa90}}
-      \rewrite{Let $\cM_{K}$ be a meromorphic connection. There exists an
-        integer $q\geq 1$ such that, after the ramification $x=t^q$, one has,
-        for all $\theta\in S^1$ and each sufficiently small interval $V$
-        centered at $\theta$}
-      \[
-        \cA_L(V)\otimes_L\cM_L\cong\cA_L(V)\otimes_L
-        \left(\cF_L^R\otimes\cG_L\right)
-      \]
-    \end{thm}
-    \begin{proof}
-      See \cite[Sec.II.2.4]{sabbah_cimpa90}
-    \end{proof}
-  \columnbreak
-  \end{multicols}
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The classifying set}\label{sec:classifyingSet}
