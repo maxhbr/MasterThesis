@@ -161,7 +161,7 @@ and trivialization-dependent.
     \end{s-rem}
   \end{comment}
   \begin{s-rem}
-    Loday-Richaud calls the meromorphic connections in his
+    Loday-Richaud calls the meromorphic connections in her
     book~\cite[Def.4.2.1]{Loday2014} \emph{differential modules}.
   \end{s-rem}
 \end{prop}
@@ -581,7 +581,7 @@ i.e.\ the following proposition holds.
     \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
       \begin{s-rem}
         The isotropies are, a priori, formal transformations.
-        Loday-Richaud mentions in his paper~\cite[853]{Loday1994}, that
+        Loday-Richaud mentions in her paper~\cite[853]{Loday1994}, that
         actually $G_0(A^0)$ is a subgroup of $\Gl_n(\C[1/t,t])$.
       \end{s-rem}
   \end{itemize}
@@ -874,7 +874,7 @@ $\cM^{nf}=\bigoplus_{j=1}^s\cE^{\phi_j}\otimes\cR_{\phi_j}$.
 For every $j$ is a connection matrix, corresponding to $\cR_{\phi_j}$, given
 by some constant matrix in Jordan normal form divided by $t$, $\frac{1}{t}L_j$.
 A connection matrix to $\cE^{\phi_j}\otimes\cR_{\phi_j}$ is then by
-$q_j'(t^{-1})\id_{n_j}+\frac{1}{t}L_j$ given, where
+$q_j'(t^{-1})\cdot\id_{n_j}+\frac{1}{t}L_j$ given\TODO[(cf.~???)], where
 $q_j(t^{-1})=\phi_j(t)$ and $q_j'(t^{-1})=\frac{d}{dt}\phi_j(t)$\footnote{By
 abuse of notation we denote by $q_j'(t^{-1})$ the derivation
 $\frac{d}{dt}(q_j(t^{-1}))=\left(\left(\frac{d}{dt}q_j\right)\circ t^{-1}\right)
@@ -882,10 +882,10 @@ $\frac{d}{dt}(q_j(t^{-1}))=\left(\left(\frac{d}{dt}q_j\right)\circ t^{-1}\right)
 A connection matrix for $\cM^{nf}$ is then obtained by
 \begin{align*}
   A^0&= \bigoplus_{j=1}^s
-  \left(q_j'(t^{-1})\id_{n_j}+\frac{1}{t}L_j\right)
+  \left(q_j'(t^{-1})\cdot\id_{n_j}+\frac{1}{t}L_j\right)
   \\&= \underset{Q'(t^{-1})}{%
     \underset{\text{\rotatebox[origin=c]{-90}{$=:$}}}{\underbrace{%
-    \underset{j=1}{\overset{s}{\bigoplus}}q_j'(t^{-1})\id_{n_j}}}}
+    \underset{j=1}{\overset{s}{\bigoplus}}q_j'(t^{-1})\cdot\id_{n_j}}}}
     +\frac{1}{t}\underset{L}{%
     \underset{\text{\rotatebox[origin=c]{-90}{$=:$}}}{\underbrace{%
     \bigoplus_{j=1}^sL_j}}}
@@ -917,8 +917,8 @@ A connection matrix for $\cM^{nf}$ is then obtained by
   of $L$ is finer then the structure of $Q(t^{-1})$, and thus the structure of
   $Q'(t^{-1})$. Thus we can look at the problem
   $t^LQ'(t^{-1})t^{-L}=Q'(t^{-1})$ blockwise, where $Q'(t^{-1})$ can be
-  written as $q'(t^{-1})\id$ for some $q'(t^{-1})$. The equation is then
-  clearly satisfied. \PROBLEM[This will be mentioned to later!]
+  written as $q'(t^{-1})\cdot\id$ for some $q'(t^{-1})$. The equation is then
+  clearly satisfied.
 
   The invertability condition is clear.
 \end{proof}
@@ -985,25 +985,26 @@ something like a model.
           Since we only look at unramified connections, we are able to assume
           that $L$ is in Jordan normal form, since in this case $Q$ and $L$
           commute. It then has a block structure, which is finer then the
-          structure of $Q$ (cf.~\cite{Remy2014} or~\cite[Sec.4]{Martinet1991}).
+          structure of
+          $Q=\underset{j=1}{\overset{s}{\bigoplus}}q_j(t^{-1})\id_{n_j}$
+          (cf.~\cite[Sec.1]{Remy2014} or~\cite[Sec.4]{Martinet1991}).
           \PROBLEM[Why?]
         \end{s-rem}
       and
     \item a (convergent) transformation $F\in G(\!\{t\}\!)$.
+      \begin{s-rem}
+        By changing the basis via $F^{-1}$ we obtain from $[A^0]$ the
+        equivalent system $[{}^{F^{-1}}\!A^0]$ with the normal solution
+        \[
+          F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})} \,.
+        \]
+        Thus it is always possible to assume that the transformation matrix $F$
+        is trivial.
+      \end{s-rem}
   \end{itemize}
   The normal forms will often be denoted $A^0$.
   If $A$ is formally equivalent to a normal form $A^0$ we say that $A^0$
   \emph{is a normal form for} $A$ and for $[A]$.
-
-  \begin{s-rem}
-    By changing the basis via $F^{-1}$ we obtain from $[A^0]$ the equivalent
-    system $[{}^{F^{-1}}\!A^0]$ with the normal solution
-    \[
-      F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})} \,.
-    \]
-    Thus it is always possible to assume that the transformation matrix $F$ is
-    trivial.
-  \end{s-rem}
 \end{defn}
 \begin{cor}
   A meromorphic connection $(\cM,\nabla)$ as a model if and only if its
@@ -1361,6 +1362,7 @@ equivalence classes, i.e.\ orbits of $G(\!\{t\}\!)$, in
   \hat\Syst_m(A^0):=\left\{\left(A,\hat F\right)
     \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\right\} \,.
 \]
+\label{page:ofDefnOfIsomOfMarkedPairs}
 Especially follows, that two marked pairs $(A,\hat F)$ and $(A',\hat F')$ are
 equivalent, if and only if there is a base change
 $H\in G(\!\{t\}\!)$ such that

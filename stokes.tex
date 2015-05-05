@@ -18,7 +18,7 @@ Let $(\cM^{nf},\nabla^{nf})$ be a fixed model with the corresponding normal
 form $A^0$.  The first objective is to proof the Malgrange-Sibuya theorem
 in section~\ref{sec:mainThm1}. It states that the classifying set $\cH(A^0)$
 is via an map $\exp$ isomorphic to the first cohomology
-$H^1(S^1;\Lambda^{<0}(A^0))=:\St(A^0)$.
+$H^1(S^1;\Lambda(A^0))=:\St(A^0)$.
 In section~\ref{sec:mainThm2} we will improve the Malgrange-Sibuya Theorem by
 showing that each 1-cohomology class in $\St(A^0)$ contains a unique
 $1$-cocycle of a special form called \emph{the Stokes cocycle}
@@ -64,22 +64,33 @@ section~\ref{sec:multisummability}.
   \\\cite[Thm.II.6.2]{sabbah2007isomonodromic}}
 Here we will look at the classifying set and we will proof that it is
 isomorphic \TODO[as\dots] to the first non abelian cohomology \rewrite{set}
-$H^1(S^1;\Lambda^{<0}(A^0))=:\St(A^0)$.
+$H^1(S^1;\Lambda(A^0))=:\St(A^0)$.
 If we talk about cocycles or cochains, we will in the following always mean
 $1$-cocycles or $1$-cochains.
 
 Let us first define the Stokes sheaf $\Lambda(A^0)$ on $S^1$, as the sheaf of
 flat isotropies of $[A^0]$.
 \begin{defn}\label{defn:StokesSheaf}
-  The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is the sheaf of groups defined on
-  $S^1$ whose stalk at any point $\theta\in S^1$ is the group of germs of
-  $f\in\Gl_n(\cO(\mathfrak{s}))$, $\mathfrak{s}$ a sector containing $\theta$,
-  satisfying
-  the conditions:
+  \begin{comment}
+    The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is the sheaf of groups defined on
+    $S^1$ whose stalk at any point $\theta\in S^1$ is the group of germs of
+    $f\in\Gl_n(\cO(\mathfrak{s}))$, $\mathfrak{s}$ a sector containing
+    $\theta$, satisfying the conditions:
+    \begin{enumerate}
+      \item Flatness:
+        $\underset{x\in\mathfrak{s}}{\underset{x\to0}{\lim}}f(x)=1$ and
+        $f\sim_{\mathfrak{s}} 1$;
+        \PROBLEM[Why two condition?]
+      \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
+    \end{enumerate}
+  \end{comment}
+  The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is defined as the subsheaf of
+  $\GL_n(\cA)$, in the following way.
+  For some $\theta\in S^1$ is the stalk at $\theta$ the subgroup of
+  $\GL_n(\cA)_\theta$ of elements $f$ which satisfy
   \begin{enumerate}
-    \item Flatness: $\underset{x\in\mathfrak{s}}{\underset{x\to0}{\lim}}f(x)=1$
-      and $f\sim_{\mathfrak{s}} 1$;
-      \PROBLEM[Why two condition?]
+    \item Flatness: $f$ is asymptotic to the identity,
+      i.e.\ $f\sim_{\mathfrak{s}} 1$;
     \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
   \end{enumerate}
   \begin{s-rem}
@@ -105,8 +116,8 @@ flat isotropies of $[A^0]$.
 \end{defn}
 
 \subsection{The theorem}
-In the language of meromorphic connections is the Malgrange-Sibuya Theorem
-described as follows.
+In the language of meromorphic connections is the map, in the Malgrange-Sibuya
+Theorem bellow, described as follows.
 
 Let $(\cM,\nabla,\hat f)$ be a marked germ of a  meromorphic connection.
 \rewrite{By Theorem}~\ref{thm:maet} there exists an open covering
@@ -133,7 +144,8 @@ class.
 
 \begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1MeromVersion}
   \marginnote{\cite[Thm.I.4.5.1]{babbitt1989local},
-    \\\cite[Thm.3.4]{Malgrange1983}}
+    \\\cite[Thm.3.4]{Malgrange1983},
+    \\\cite[Thm.13]{Martinet1991}}
   The homomorphism
   \[
     \exp:\cH\to\St(A^0):=H^1(S^1;\Lambda(A^0))
@@ -141,6 +153,8 @@ class.
   is an isomorphism of pointed sets.
 \end{tthm}
 \begin{rem}
+  \TODO[Frage Felix!]
+  \PROBLEM[doppelt]
   The theorem \cite[Thm.III.1.1.2]{babbitt1989local}, in the book from
   Babbitt and Varadarajan, states that $\St(A^0)$
   is actually a local moduli space for marked pairs, which are formally
@@ -156,13 +170,14 @@ class.
 \end{rem}
 
 \subsubsection{The theorem (system version)}
-Since the language of meromorphic connections is equivalent to the one of
-systems, there is also the translated version of the Malgrange-Sibuya
-isomorphism to the language of systems.
+Since the language of meromorphic connections is equivalent\TODO[check!] to the
+one of systems, there is also the translated version of the Malgrange-Sibuya
+isomorphism to the language of systems. The corresponding map is then build as
+follows.
 
 Let $(A,\hat F)$ be a marked pair, thus $\hat F$ solves $[A^0,A]$.
 By the M.A.E.T there exists an open covering $\cU=(U_j)_{j\in J}$ together
-with, for every open set $U_j$ a lift $F_j\in\Gl_n(\cA(U_j))$
+with, for every open set $U_j$ a lift $F_j\in\Gl_n(\cA(U_j))$ of $\hat F$
 (cf.\ Definition~\ref{defn:lift}), which solves $[A,A^0]$.
 By $(F_kF_j^{-1})_{jk}$ is then a cocycle of the sheaf $\St(A^0)$, relative to
 the covering $\cU$, defined.
@@ -187,6 +202,7 @@ to the first non abelian cohomology of $\Lambda(A^0)$, which we call $\exp$.
   $(A^0,\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology class.} sets.
 \end{tthm}
 \begin{rem}
+  \TODO[Frage Felix!]
   The theorem \cite[Thm.III.1.1.2]{babbitt1989local}, in the book from
   Babbitt and Varadarajan, states that $\St(A^0)$ is actually a local moduli
   space for marked pairs, which are formally isomorphic to a given system
@@ -202,59 +218,46 @@ to the first non abelian cohomology of $\Lambda(A^0)$, which we call $\exp$.
   topic.
 \end{rem}
 Since the morphism $\exp$ depends on the choice of the normal form, we will
-denote that, if it is not clear, by
-$\exp_{A^0}=\exp$\footnote{In Loday's book~\cite{Loday1994} this is denoted as
-$\exp_{\mu_0}$.}.
+denote that, if it is not clear, by $\exp_{A^0}=\exp$\comm{~(In Loday-Richaud's
+paper is this denoted as $\exp_{\mu_0}$)}.
 \begin{rem}\label{rem:expNonNormalForm}
-  \begin{enumerate}
-    \item \marginnote{\cite{Loday1994} Remark I.2.2}
-      To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains,
-      which are conjugated via $\Phi$.
-      We get the following commutative diagram:
-      \begin{center}
-        \begin{tikzpicture}[scale=2.6]
-          \node (tl) at (-1,0.6) {$G\backslash\hat G(A^1)$};
-          \node (tr) at (1,0.6) {$G\backslash\hat G(A^0)$};
-          \node (bl) at (-1,-0.6) {$H^1(S^1;\lambda(A^1))$};
-          \node (br) at (1,-0.6) {$H^1(S^1;\lambda(A^0))$};
-          \node (tlin) at ($ (tl) - (-0.3,0.2) $)
-            {\rotatebox[origin=c]{135}{$\in$}};
-          \node (trin) at ($ (tr) - (-0.3,0.2) $)
-            {\rotatebox[origin=c]{135}{$\in$}};
-          \node (blin) at ($ (bl) - (-0.2,0.2) $)
-            {\rotatebox[origin=c]{135}{$\in$}};
-          \node (brin) at ($ (br) - (-0.2,0.2) $)
-            {\rotatebox[origin=c]{135}{$\in$}};
-          \node (tlE) at ($ (tl) - (-0.5,0.4) $) {$\hat F$};
-          \node (trE) at ($ (tr) - (-0.5,0.4) $) {$\hat F\Phi$};
-          \node (blE) at ($ (bl) - (-0.5,0.4) $) {$\exp_{A^1}(\hat F)$};
-          \node (brE) at ($ (br) - (-0.5,0.4) $) {$\exp_{A^0}(\hat F)$};
-          \draw[->] (tl) -- (tr) node [midway,above] {$\cdot\Phi$};
-          \draw[->] (tl) -- (bl) node [midway,right] {$\exp_{A^1}$};
-          \draw[->] (tr) -- (br) node [midway,right] {$\exp_{A^0}$};
-          \draw[->] (bl) -- (br);
-          \draw[|->] (tlE) -- (trE);
-          \draw[|->] (tlE) -- (blE);
-          \draw[|->] (trE) -- (brE);
-          \draw[|->] (blE) -- (brE);
-        \end{tikzpicture}
-      \end{center}
-      % \[ \begin{tikzcd}
-      %     G\backslash\hat G(A^1) \rar{\cdot\Phi}\dar{\exp_{A^1}}
-      %     & G\backslash\hat G(A^0) \dar{\exp_{A^0}}
-      %     & \hat F \arrow[|->]{r}\arrow[|->]{d}
-      %     & \hat F\Phi \arrow[|->]{d}
-      %   \\ H^1(S^1;\lambda(A^1)) \rar
-      %     & H^1(S^1;\lambda(A^0))
-      %     & \exp_{A^1}(\hat F) \arrow[|->]{r}
-      %     & \exp_{A^0}(\hat F\Phi)
-      % \end{tikzcd} \]
-      where $\exp_{A^0}(\hat F\Phi)=\Phi^{-1}\exp_{A^0}(\hat F)\Phi$.
-      \TODO[$\Phi\in G(\!(t)\!)$???]
-  \end{enumerate}
+  \marginnote{\cite{Loday1994} Remark I.2.2}
+  To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains, which
+  are conjugated via $\Phi$.
+  We get the following commutative diagram:
+  \begin{center}
+    \begin{tikzpicture}[scale=2.6]
+      \node (tl) at (-1,0.6) {$G\backslash\hat G(A^1)$};
+      \node (tr) at (1,0.6) {$G\backslash\hat G(A^0)$};
+      \node (bl) at (-1,-0.6) {$H^1(S^1;\lambda(A^1))$};
+      \node (br) at (1,-0.6) {$H^1(S^1;\lambda(A^0))$};
+      \node (tlin) at ($ (tl) - (-0.3,0.2) $)
+        {\rotatebox[origin=c]{135}{$\in$}};
+      \node (trin) at ($ (tr) - (-0.3,0.2) $)
+        {\rotatebox[origin=c]{135}{$\in$}};
+      \node (blin) at ($ (bl) - (-0.2,0.2) $)
+        {\rotatebox[origin=c]{135}{$\in$}};
+      \node (brin) at ($ (br) - (-0.2,0.2) $)
+        {\rotatebox[origin=c]{135}{$\in$}};
+      \node (tlE) at ($ (tl) - (-0.5,0.4) $) {$\hat F$};
+      \node (trE) at ($ (tr) - (-0.5,0.4) $) {$\hat F\Phi$};
+      \node (blE) at ($ (bl) - (-0.5,0.4) $) {$\exp_{A^1}(\hat F)$};
+      \node (brE) at ($ (br) - (-0.5,0.4) $) {$\exp_{A^0}(\hat F)$};
+      \draw[->] (tl) -- (tr) node [midway,above] {$\cdot\Phi$};
+      \draw[->] (tl) -- (bl) node [midway,right] {$\exp_{A^1}$};
+      \draw[->] (tr) -- (br) node [midway,right] {$\exp_{A^0}$};
+      \draw[->] (bl) -- (br);
+      \draw[|->] (tlE) -- (trE);
+      \draw[|->] (tlE) -- (blE);
+      \draw[|->] (trE) -- (brE);
+      \draw[|->] (blE) -- (brE);
+    \end{tikzpicture}
+  \end{center}
+  where $\exp_{A^0}(\hat F\Phi)=\Phi^{-1}\exp_{A^0}(\hat F)\Phi$.
+  \TODO[$\Phi\in G(\!(t)\!)$???]
 \end{rem}
 
-\subsection{Proof}
+\subsection{Proof of Theorem~\ref{thm:mainThm1}}
 We will mainly refer to \cite[Proof of Theorem 4.5.1]{babbitt1989local} and
 \cite[Section 6.d]{sabbah2007isomonodromic}, where a slightly more complicated
 case with deformation space is proofen. These both resources proof the theorem
@@ -266,16 +269,16 @@ using the languages of meromorphic connections, whereas we will use systems.
 We will start by proofing the injectivity of the morphism $\exp$.
 \begin{proof}[Proof of the injectivity]
   % \textbf{First look at injectivity:}
-  Consider the two elements $(A,\hat F)$ and $(A',\hat F')$ of
+  Consider the two marked pairs $(A,\hat F)$ and $(A',\hat F')$ in
   $\hat\Syst_m(A^0)$, whose classes in $\cH(A^0)$ get mapped to same element
   \[
     \exp((A,\hat F))=\lambda=\exp((A',\hat F'))
       \in H^1(S^1;\Lambda(A^0)) \,.
   \]
-  Since we can use refined coverings, it is possible to find a finite covering
+  By using refined coverings, it is possible to find a finite covering
   $\cU=\{U_j;j\in J\}$ of $S^1$ such that $\lambda$ is the class of the
-  cocycles $(F_l^{-1}F_j)$ and $(F_l'^{-1}F_j')$, where $F_j$, $F_j'$ are
-  defined relative to $U_j\in\cU$.
+  cocycles $(F_l^{-1}F_j)$ and $(F_l'^{-1}F_j')$, where $F_j$ (resp.\ $F_j'$)
+  are lifts of $\hat F$ (resp.\ $\hat F'$) on $U_j\in\cU$.
   Since $[(F_l^{-1}F_j)]=[(F_l'^{-1}F_j')]$ by assumption there exists a
   $0$-cochain $(G_j)_{j\in J}$ of the sheaf $\Lambda(A^0)$ relative to the
   covering $\cU$, such that
@@ -340,7 +343,8 @@ We will start by proofing the injectivity of the morphism $\exp$.
         \\&= \hat{F'}
       \end{align*}
   \end{itemize}
-  Therefore are $(A,\hat F)$ and $(A,\hat F')$ equivalent and injectivity is
+  Therefore are $(A,\hat F)$ and $(A,\hat F')$ equivalent
+  (cf.\ page~\pageref{page:ofDefnOfIsomOfMarkedPairs}) and injectivity is
   proven.
   \iffalse
     \begin{comment}
@@ -386,11 +390,11 @@ the arc $I$ asymptotic to $\id\in G(\!(t)\!)$ by
 and this defines a sheaf $\cG$ on $S^1$.
 The statement of the (second) Malgrange-Sibuya Theorem is then, that the
 \rewrite{difference} between formal and konvergent invertible matrices is
-described by the first sheaf cohomology $H^1(S^1,\cG)$ of $\cG$ via the map
+described by the first sheaf cohomology $H^1(S^1;\cG)$ of $\cG$ via the map
 \[
-  \Theta: G\llbracket t\rrbracket/G\{t\}\to H^1(S^1,\cG) \,,
+  \Theta: G\llbracket t\rrbracket/G\{t\}\to H^1(S^1;\cG) \,,
 \]
-which is set up as follows:
+which will turn out to be an isomorphism. It is set up as follows:
 \begin{einr}
   Let $[\hat F]\in G\llbracket t\rrbracket/G\{t\}$ with ambassador $\hat F$ and
   let $\cU=\{U_j\mid j\in J\}$ be a finite covering of $S^1$ by open arcs.
@@ -399,11 +403,12 @@ which is set up as follows:
   By $(F_lF_j^{-1})_{j,l\in J}$ is then a cocycle for $\cG$ defined,
   and write $\Theta([\hat F])$ for the corresponding cohomology class.
 \end{einr}
-This definition is similar to the definition of the map of
+This construction is similar to the definition of the map of
 Theorem~\ref{thm:mainThm1}. The difference is, that we instead of M.A.E.D, to
-obtain lifts, we use only the Borel-Ritt Lemma to obtain asymptotic matrices.
+obtain lifts in the sense of Definition~\ref{defn:lift}, we use only the
+Borel-Ritt Lemma to obtain only asymptotic lifts.
 
-It can be verified, that the cass $\Theta([\hat F])$ does not depend on
+It can be verified, that the class $\Theta([\hat F])$ does not depend on
 \begin{itemize}
   \item the choise of an ambassador $\hat F$ in
     $[\hat F]\in G\llbracket t\rrbracket/G\{t\}$\PROBLEM[proof!],
@@ -423,46 +428,46 @@ It can be verified, that the cass $\Theta([\hat F])$ does not depend on
   $(F_l^{-1}F_j)_{j,l\in J}$ and $(F_l'^{-1}F_j')_{j,l\in J}$ determine the
   classes $\Theta([\hat F])$ and $\Theta([\hat F'])$.
   This implies that there are maps $g_j$, which are on $U_j$ holomorphic and
-  satisfy $g_j\sim_{U_j}\id$ such that
+  satisfy $G_j\sim_{U_j}\id$ such that
   \[
-    F_l^{-1}F_j=g_l^{-1}F_l'^{-1}F_j'g_j
+    F_l'^{-1}F_j'=G_lF_l^{-1}F_jG_j^{-1}
     \text{~on~the~arc~} U_j\cap U_l
   \]
   This equation can be rewritten to
   \[
-    F_l'g_lF_l^{-1}=F_j'g_jF_j^{-1}
+    F_j'G_jF_j^{-1}=F_l'G_lF_l^{-1}
     \text{~on~the~arc~} U_j\cap U_l \,.
   \]
-  Since this tells us, that the functions $F_j'g_jF_j^{-1}$ coincide on
+  Since this tells us, that the functions $F_j'G_jF_j^{-1}$ coincide on
   the overlapping and define a holomorphic map from the arc $S^1$ (i.e.\ a
-  punctured disc with a small radius) into $G$, which will be called $g$.
-  Since $F_j'g_jF_j^{-1}\sim_{U_j}\id$ for all $j\in J$, we have
-  $g\sim\id$.
+  punctured disc with a small radius) into $G$, which will be called $G$.
+  Since $F_j'G_jF_j^{-1}\sim_{U_j}\id$ for all $j\in J$, we have
+  $G\sim\id$.
   \PROBLEM[Riemannscher hebbarkeits satz]
-  Thus the defined $g$ satisfies $g=F'^{-1}F$, so that $[F]=[F']$.
+  Thus the defined $G$ satisfies $G=F'^{-1}F$, so that $[F]=[F']$.
 \end{proof}
 \begin{thm}[Malgrange-Sibuya]\label{thm:thm1helpMalgSibuy}
   The map $\Theta$ is an isomorphism
   \[
-    G\llbracket t\rrbracket/G\{t\}\cong H^1(S^1,\cG).
+    G\llbracket t\rrbracket/G\{t\}\cong H^1(S^1;\cG).
   \]
   \begin{s-rem}
     Since we know that
     $G\llbracket t\rrbracket/G\{t\}\cong G(\!(t)\!)/G(\!\{t\}\!)$\TODO[(cf~??)],
     we get also
     \[
-      G(\!(t)\!)/G(\!\{t\}\!)\cong H^1(S^1,\cG).
+      G(\!(t)\!)/G(\!\{t\}\!)\cong H^1(S^1;\cG).
     \]
   \end{s-rem}
 \end{thm}
 This theorem is proven in Section 4.4 of Babbitt and Varadarajan's book
-\cite{babbitt1989local}.
+\cite{babbitt1989local} or on page 371 of \cite{Martinet1991}.
 
 We are now able to proof the surjectivity of the map from
 Theorem~\ref{thm:mainThm1}.
 \begin{proof}[Proof of surjectivity]
   \marginnote{\cite[72]{babbitt1989local}}
-  Let the cohomology class $\lambda\in H^1(S^1,\Lambda(A^0))$ be represented by
+  Let the cohomology class $\lambda\in H^1(S^1;\Lambda(A^0))$ be represented by
   a cocycle $(F_{jl})_{j,l\in J}$ associated with some finite covering
   $\cU=\{U_j;j\in J\}$ of $S^1$. We especially know, that
   \begin{itemize}
@@ -470,7 +475,7 @@ Theorem~\ref{thm:mainThm1}.
     \item it is a isotropy, i.e.\  ${}^{F_{jl}}A^0=A^0$.
   \end{itemize}
   The cocycle $(F_{jl})_{j,l\in J}$ also determines an element in
-  $\sigma\in H^1(S^1,\cG)$.
+  $\sigma\in H^1(S^1;\cG)$.
   From the Theorem~\ref{thm:thm1helpMalgSibuy} we know, that there is a $\hat
   F\in G\llbracket t\rrbracket\subset G(\!(t)\!)$ whose class $[\hat F]$ gets
   via $\Theta$ mapped to $\sigma$.
@@ -503,14 +508,14 @@ Theorem~\ref{thm:mainThm1}.
       Similar to the proof, given by Sabbah \marginnote{Which refers to
       \cite{Malgrange1983}} in \cite{sabbah2007isomonodromic}, we will start this
       part of the proof by giving a necessary and sufficient condition for a
-      class $\lambda$ in $H^1(S^1,\Lambda(A^0))$
+      class $\lambda$ in $H^1(S^1;\Lambda(A^0))$
       \TODO[$\Lambda(A^0)\sim\Aut^{<0}(\tilde\cM^{nf})$ or $\Aut^{<0}(\cM^{nf})$?]
       to come from an object
       $(\cM,\nabla,\hat f)\in\cH$:
       \begin{einr}
         This is the case if and only if the image of
         $\lambda\in\Aut^{<0}(\cM^{nf})$ in the set
-        $H^1(S^1,\Aut_{\cA}(\tilde\cM^{nf}))$ (where $\Aut_{\cA}(\tilde\cM^{nf})$
+        $H^1(S^1;\Aut_{\cA}(\tilde\cM^{nf}))$ (where $\Aut_{\cA}(\tilde\cM^{nf})$
         contains only the $\cA$-linear automorphisms) is the identity.
       \end{einr}
 
@@ -521,13 +526,13 @@ Theorem~\ref{thm:mainThm1}.
         Similar to the proof, given by Sabbah \marginnote{Which refers to
         \cite{Malgrange1983}} in \cite{sabbah2007isomonodromic}, we will start
         this part of the proof by giving a necessary and sufficient condition
-        for a class $\lambda$ in $H^1(S^1,\Lambda(A^0))$
+        for a class $\lambda$ in $H^1(S^1;\Lambda(A^0))$
         to come from an object
         $(A,\hat F)\in\cH(A^0)$:
         \begin{einr}
           \rewrite{This is the case if and only if the image of
             $\lambda\in\Aut^{<0}(\cM^{nf})$ in the set
-            $H^1(S^1,\Aut_{\cA}(\tilde\cM^{nf}))$ (where
+            $H^1(S^1;\Aut_{\cA}(\tilde\cM^{nf}))$ (where
             $\Aut_{\cA}(\tilde\cM^{nf})$ contains only the $\cA$-linear
             automorphisms) is the identity.}
         \end{einr}
@@ -571,9 +576,9 @@ Theorem~\ref{thm:mainThm1}.
       \marginnote{\cite[Thm.II.6.10]{sabbah2007isomonodromic}}
       The image of the mapping
       \[
-        H^1(S^1,\Gl_d^{<0}(\cA_{\tilde D}))
+        H^1(S^1;\Gl_d^{<0}(\cA_{\tilde D}))
         \to
-        H^1(H^1,\Gl_d(\cA_{\tilde D}))
+        H^1(S^1;\Gl_d(\cA_{\tilde D}))
       \]
       is the identity.
     \end{thm}
@@ -586,11 +591,12 @@ Theorem~\ref{thm:mainThm1}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Stokes group}\label{sec:StokesGroup}
+\TODO[Überleitung?]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Anti-Stokes directions and the Stokes group}
 \marginnote{\cite[I.4]{Loday1994}}
-Let us recall, that the normal form $A^0$ is written as
-$A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}$ and a normal solution is given by
+Let us recall, that the normal form $A^0$ can be written as
+$A^0=Q'(t^{-1})+L\frac{1}{t}$ and a normal solution is given by
 $\cY_0(t)=t^Le^{Q(t^{-1})}$ (cf.\ Proposition~\ref{prop:fundSolBuilder}), where
 $Q(t^{-1})=\diag(\underset{n_1\text{-times}}{\underbrace{%
   q_1,\dots,q_1}},q_2,\dots ,q_s)$.
@@ -774,7 +780,7 @@ part of $f$.
 
       \draw (-0.6,0) -- (2.6,0);
       \draw[dotted] (-0.6,\absA)node[left,font=\tiny] {$|a|$} -- (2.6,\absA);
-      \draw[dotted] (-0.6,{-\absA})node[left,font=\tiny] {$-|a|$} -- (2.6,{-\absA}); 
+      \draw[dotted] (-0.6,{-\absA})node[left,font=\tiny] {$-|a|$} -- (2.6,{-\absA});
       \foreach \x in {-0.5,0,...,2.5}{
         \draw[dotted] ({\x},{-\absA}) -- ({\x},{\absA + 0.1})
           node [above,font=\tiny,] {\x \pi};
@@ -816,7 +822,7 @@ thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
   \[
     q_j \underset{\tilde\theta}{\prec} q_l
   \]
-  is equivalent to 
+  is equivalent to
   \begin{einr}
     there is a $\theta'\in U(\tilde\theta,\frac{\pi}{k})$ such that
     $q_j \underset{\tilde\theta,\max}{\prec} q_l$.
@@ -994,7 +1000,7 @@ define the Stokes group as follows.
   %       \\0 & 1 & 0
   %       \\0 & b  & 1
   %       \end{pmatrix}
-  %       \mid 
+  %       \mid
   %       a,b \in\C
   %     \right\}
   %   \]
@@ -1027,7 +1033,7 @@ define the Stokes group as follows.
   %       \\0 & 1 & b
   %       \\0 & 0 & 1
   %       \end{pmatrix}
-  %       \mid 
+  %       \mid
   %       a,b \in\C
   %     \right\}
   %   \]
@@ -1239,7 +1245,7 @@ Martinet and Ramis.
 
 \begin{defn}
   We denote the set of \emph{levels of the germ}
-  $\phi_{\theta}\in\Sto_\theta(A^0)$ by
+  $\phi_{\theta}\in\Lambda_\theta(A^0)$ by
   \[
     \cK(\phi_\theta):= \left\{\deg(q_j-q_l)\mid C_{\tilde\theta}^{(l,j)}\neq0
       \text{ in some determination of }\phi_\theta\right\} \subset \cK \,.
@@ -1383,7 +1389,7 @@ decomposition into a semidirect product.
   \end{enumerate}
 \end{cor}
 \begin{rem}
-  Loday-Richaud states in his paper \cite[Prop.I.5.3]{Loday1994} the following
+  Loday-Richaud states in her paper \cite[Prop.I.5.3]{Loday1994} the following
   proposition.
   \begin{s-prop}
     \marginnote{\cite[Prop.I.5.3]{Loday1994}}
@@ -1503,10 +1509,10 @@ we also get
 as a corollary.
 \TODO[This goes back to \cite{BJL1979Birkhoff}?]
 
-Let us recall, that $\St(A^0)$ is defined to be $H^1(S^1;\Lambda^{<0}(^0))$
+Let us recall, that $\St(A^0)$ is defined to be $H^1(S^1;\Lambda(^0))$
 (cf.\ Section~\ref{sec:mainThm1}).
 The elements of $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ define in a canonical way
-cocycles of the sheaf $\Lambda^{<0}(A^0)$ (cf.\ Remark~\ref{rem:mapStoToCocy}),
+cocycles of the sheaf $\Lambda(A^0)$ (cf.\ Remark~\ref{rem:mapStoToCocy}),
 called Stokes cocycles (cf.\ Definition~\ref{defn:stokesCocycle}).
 In fact, will $h$ map such cocycles to the cohomology class, to which they
 correspond.
@@ -1534,6 +1540,7 @@ that
 \end{comment}
 \begin{rem}\label{rem:mapStoToCocy}
   \marginnote{\cite[868]{Loday1994}}
+  \PROBLEM[does not work for every set! needs some thm from boalch?]
   Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
   $\dot\phi=(\dot\phi_{\theta_j})_{j\in J}
   \in\prod_{j\in J}\Lambda_{\theta_j}(A^0)$ be a finite family of germs.
@@ -1561,8 +1568,8 @@ that
 \begin{defn}\label{defn:stokesCocycle}
   \TODO[Why only germ? Sections?]
   \marginnote{\cite[Def.II.1.8]{Loday1994}, \cite[4.3.10]{Loday2014}}
-  A \emph{Stokes cocycle} is a 1-cocycle $(\phi_\alpha)_{\alpha\in\A}$ of
-  $\Lambda(A^0)$ which is
+  A \emph{Stokes cocycle} is a 1-cocycle\PROBLEM[only family?]
+  $(\phi_\alpha)_{\alpha\in\A}$ of $\Lambda(A^0)$ which is
   \begin{itemize}
     \item indexed by the set of anti-Stokes directions and
     \item each component $\phi_\alpha$ determines an element of
@@ -1579,8 +1586,7 @@ mapping
   h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0),
 \]
 which takes a Stokes cocycle to its corresponding cohomology class.
-\begin{tthm}
-  \label{thm:mainThm2}
+\begin{tthm}\label{thm:mainThm2}
   The map
   \[
     h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0)
@@ -1618,7 +1624,7 @@ get the following corollary.
 \end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Proof}\label{sec:proofOfMatrixThm}
+\subsection{Proof of Theorem~\ref{thm:mainThm2}}\label{sec:proofOfMatrixThm}
 We will only look at the unramified case, for which we refer to
 \cite[Sec.II.3]{Loday1994}.
 The proof in the ramified case can be found in \cite[Sec.II.4]{Loday1994}.
@@ -1665,6 +1671,25 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
   $\underset{\cU}{\underrightarrow{\lim}}H^1(\cU;\Lambda(A^0))$ is stationary
   is said to be \emph{adequate} to describe $H^1(S^1;\Lambda(A^0))$ or
   \emph{adequate} to $\Lambda(A^0)$.
+  \begin{comment}
+    A covering $\cU$ is said to be \emph{adequate} to describe
+    $H^1(S^1;\Lambda(A^0))$ or \emph{adequate} to $\Lambda(A^0)$ if for every
+    element in
+    $\underset{\cU}{\underrightarrow{\lim}}H^1(\cU;\Lambda(A^0))$
+    given by some covering $\cU'$ and an element of $\Gamma(\cU';\Lambda(A^0))$
+    there exists
+    \begin{itemize}
+      \item an element in $\Gamma(\cU;\Lambda(A^0))$ and
+      \item an common refinement of $\cU$ and $\cU'$
+    \end{itemize}
+    such that \PROBLEM[the elements are~?? on the refined covering.]
+  \end{comment}
+
+  In other words is a covering $\cU$ adequate, if and only if the canonical map
+  \[
+    \Gamma(\cU;\Lambda(A^0))\to\H^1(S^1;\Lambda(A^0))
+  \]
+  is surjective.\TODO[Proof? check??]
 \end{defn}
 
 \begin{prop}\label{prop:adeqCovCondition}
@@ -1983,16 +2008,21 @@ This means that
         }}
       \]
       is welldefined, since the sections of $\Lambda^k(A^0)$ are solution of
-      the system $[A^0,A^0]$ and we know from the theory of differential
-      equations\TODO[source?] that an element
+      the system $[A^0,A^0]$ and it is very well known from the theory of
+      differential equations\TODO[source?] that an element
       $f_\alpha\in\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))$ is uniquely
       determined as the extension of its germ at some point $\alpha$.
 
-      It is a group isomorphism, since
+      It is also a group isomorphism (cf.~\cite{Loday1994}).
+
       \PROBLEM[$\Sto_\alpha^k(A^0)\subsetneq\Lambda_\alpha^k(A^0)$ SEE bjl p.72]
       \begin{comment}
-        Problems:
+        It is a group isomorphism, since
+        \\Problems:
         \begin{itemize}
+          \item Show that a element of $\Lambda_\alpha^k(A^0)$ is extensionable
+            to the arc $U_\alpha\in\dot\cU_\alpha^k$ if and only if it has
+            maximal decay in direction $\alpha$.
           \item \PROBLEM[$\Sto_\alpha^k(A^0)\subsetneq\Lambda_\alpha^k(A^0)$]
             and thus
             \[
@@ -2018,12 +2048,15 @@ This means that
                 \]
             \end{itemize}
           \item $U_\alpha^k$ is the largest arc, to contain no corresponding
-            Stokes ray 
+            Stokes ray
             \begin{itemize}
               \item Then might \cite[Lemma 1]{BJL1979Birkhoff} on p.\ 73 help
             \end{itemize}
+          \item Every arc $U\in\dot\cU_\alpha^k$ has the width $\frac{\pi}{k}$
+            and is delimited by Stokes directions.
           \item maybe follows from \cite[Prop.1.24]{thboalch}
           \item \textbf{See \cite{babbitt1989local}}
+          \item See \cite[375]{Martinet1991}
         \end{itemize}
       \end{comment}
     \item The second map
@@ -2169,7 +2202,6 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
       i.e.\ in $\Gamma(\dot\cU^{<k};\Lambda^{<k}(A^0))$, cohomologous.
     \item The proof of part 2.\ (together with the proof of part 1.) can be
       found in Loday-Richaud's paper \cite[Proof of Lem.II.3.3]{Loday1994}.
-      \TODO[PROOF!]
   \end{enumerate}
 \end{proof}
 \begin{defn}\label{defn:theMapTau}
@@ -2210,10 +2242,10 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
             \rar
             & \Gamma(\dot\cU;\Lambda(A^0))
           \\(\dot F_\theta)_{\theta\in\A^{\leq k}}
-            \rar[maps to] 
+            \rar[maps to]
             & (\dot F'_\theta)_{\theta\in\A}
         \end{tikzcd} \]
-        where 
+        where
         \[
           \dot F'_\theta=\begin{cases}
             \dot F_\theta \text{~restricted to } \dot U_\theta
