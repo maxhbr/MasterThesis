@@ -1,6 +1,6 @@
 \RequirePackage{xstring}
-\IfSubStr{\jobname}{\detokenize{nonotes}}{%
-  \xdef\myDevelopVariable{0}
+\IfSubStr{\jobname}{\detokenize{with_notes}}{%
+  \xdef\myDevelopVariable{1}
   \documentclass[ngerman
     ,fontsize=12pt % TODO
     ,numbers=noenddot % obsolete
@@ -16,7 +16,7 @@
     % ,draft
   ]{./myClass}
 }{%
-  \xdef\myDevelopVariable{1}
+  \xdef\myDevelopVariable{0}
   \documentclass[ngerman
     ,fontsize=12pt % TODO
     ,numbers=noenddot % obsolete
