@@ -312,7 +312,7 @@ i.e.\ $\hat F\in G(\!\{t\}\!)$, then
 \end{einr}
 if and only if
 \begin{einr}
-  its Stokes cocycle $\dot\phi=(\dot\phi_\theta)_{\theta\in\A}$ belongs to
+  its Stokes cocycle $\dot\phi=(\dot\phi_\alpha)_{\alpha\in\A}$ belongs to
   $\Gamma(\dot\cU^k;\Lambda^k)$.
 \end{einr}
 This occurs when the Stokes cocycle $\dot\phi$ of $\hat F$ bears only the level
@@ -405,28 +405,28 @@ Paper~\cite[Thm.III.2.5]{Loday1994} or as~\cite[Thm.4.7]{Martinet1991}.
     Write the twisted cocyle $\dot\phi\in\exp_{A^1}(\hat F^k)$ in terms of
     sums of $\hat F^k$ over $\cU^{\leq k}$:
     \[
-      \dot \phi_\theta=S_\theta^-(\hat F^k)^{-1}S_\theta^+(\hat F^k)
+      \dot \phi_\alpha=S_\alpha^-(\hat F^k)^{-1}S_\alpha^+(\hat F^k)
       \text{, }
-      \theta\in\A^{\leq k} \,.
+      \alpha\in\A^{\leq k} \,.
     \]
-    Then, the factors $\dot g^k=(\dot g^k_\theta)_{\theta\in\A^{\leq k}}$ and
-    $\dot f^k=(\dot f^k_\theta)_{\theta\in\A^{\leq k}}$ in the induced
+    Then, the factors $\dot g^k=(\dot g^k_\alpha)_{\alpha\in\A^{\leq k}}$ and
+    $\dot f^k=(\dot f^k_\alpha)_{\alpha\in\A^{\leq k}}$ in the induced
     decompositions satisfy
     \begin{align*}
-      \dot g_\theta^k &=S_\theta^+(\hat F^{<k})^{-1}
-                        S_\theta^-(\hat F^k)^{-1}
-                        S_\theta^+(\hat F^k)
-                        S_\theta^+(\hat F^{<k}) \,,
-    \\\dot f_\theta^k &=S_\theta^-(\hat F^{<k})^{-1}
-                        S_\theta^-(\hat F^k)^{-1}
-                        S_\theta^+(\hat F^k)
-                        S_\theta^+(\hat F^{<k}) \,.
+      \dot g_\alpha^k &=S_\alpha^+(\hat F^{<k})^{-1}
+                        S_\alpha^-(\hat F^k)^{-1}
+                        S_\alpha^+(\hat F^k)
+                        S_\alpha^+(\hat F^{<k}) \,,
+    \\\dot f_\alpha^k &=S_\alpha^-(\hat F^{<k})^{-1}
+                        S_\alpha^-(\hat F^k)^{-1}
+                        S_\alpha^+(\hat F^k)
+                        S_\alpha^+(\hat F^{<k}) \,.
     \end{align*}
   \end{cor}
 \end{comment}
 
 \subsection{The map
-  $g:G\backslash\hat G(A^0)\to\prod_{\theta\in\cA}\Sto_\theta(A^0)$}
+  $g:G\backslash\hat G(A^0)\to\prod_{\alpha\in\cA}\Sto_\alpha(A^0)$}
   \label{sect:multisummmap}
 There are other definitions, which are equivalent to
 definition~\ref{defn:sumsLeftRight}. Since some of them are more direct
@@ -437,68 +437,68 @@ define the sums can be found in} \cite{Loday2014}.
 Let us fix an ambassador $\hat F$ in $G\backslash\hat G(A^0)$. We then use
 proposition~\ref{prop:multisummability} to obtain an $1$-cocycle.
 \marginnote{\cite[Thm.4.3.13]{Loday2014}}
-An element in $\prod_{\theta\in\A}\Sto_\theta(A^0)$ corresponding to $\hat F$
+An element in $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ corresponding to $\hat F$
 is found as
 \[
-  (\phi_{\theta_1},\dots,\phi_{\theta_\nu})
-  \in\prod_{\theta\in\A}\Sto_\theta(A^0)
+  (\phi_{\alpha_1},\dots,\phi_{\alpha_\nu})
+  \in\prod_{\alpha\in\A}\Sto_\alpha(A^0)
 \]
-by setting $\phi_\theta:=
-\left(S^-_\theta(\hat F)\right)̂^{̀-1}S^+_\theta(\hat F)\in\Sto_\theta(A^0)$
+by setting $\phi_\alpha:=
+\left(S^-_\alpha(\hat F)\right)̂^{̀-1}S^+_\alpha(\hat F)\in\Sto_\alpha(A^0)$
 (cf.\ Definition~\ref{defn:sumsLeftRight}).
 \begin{rem}
   \marginnote{\cite[Defn.3.6]{boalch}}
-  $S^+_\theta(\hat F)t^Le^{Q(t^{-1})}$ is a solution of $[A]$ on the
+  $S^+_\alpha(\hat F)t^Le^{Q(t^{-1})}$ is a solution of $[A]$ on the
   corresponding sector.
-  \TODO[ or $S^-_\theta(\hat F)t^Le^{Q(t^{-1})}$?  or
-    $t^Le^{Q(t^{-1})}S^+_\theta(\hat F)$?  or
-  $t^Le^{Q(t^{-1})}S^-_\theta(\hat F)$?]
+  \TODO[ or $S^-_\alpha(\hat F)t^Le^{Q(t^{-1})}$?  or
+    $t^Le^{Q(t^{-1})}S^+_\alpha(\hat F)$?  or
+  $t^Le^{Q(t^{-1})}S^-_\alpha(\hat F)$?]
   Using the equation (\ref{eq:representation}) we can write
   \[
-    S^+_\theta(\hat F)
-    \cY_{0,\tilde\theta}(t)
+    S^+_\alpha(\hat F)
+    \cY_{0,\alpha}(t)
     =
-    S^-_\theta(\hat F)
-    \cY_{0,\tilde\theta}(t)C_{\cY_{0,\tilde\theta}}
+    S^-_\alpha(\hat F)
+    \cY_{0,\alpha}(t)C_{\cY_{0,\alpha}}
   \]
-  thus the Stokes matrix $C_{\cY_{0,\tilde\theta}}$ is a matrix, which
+  thus the Stokes matrix $C_{\cY_{0,\alpha}}$ is a matrix, which
   describes the \rewrite{blending} between the two adjacent sectors.
   \TODO[see Loday's remarks on thm.4.3.13 in \cite{Loday2014}]
 \end{rem}
 \begin{comment}
   \begin{rem}
-    For each $\theta\in\A$ is $\phi_\theta$
+    For each $\alpha\in\A$ is $\phi_\alpha$
     \begin{enumerate}
-      \item flat, since $\hat\phi_\theta
-           =\hat{\left(F_\theta^+\right)̂^{̀-1}}\hat{F_\theta^-}
+      \item flat, since $\hat\phi_\alpha
+           =\hat{\left(F_\alpha^+\right)̂^{̀-1}}\hat{F_\alpha^-}
            =\hat{F}^{̀-1}\hat{F}=\id$
       \item an isotropy, since
-          ${}^{\phi_\theta}\!A^0
-           = {}^{\left(F_\theta^+\right)̂^{̀-1}F_\theta^-}\!A^0
-           = {}^{\left(F_\theta^+\right)̂^{̀-1}}\!\left({}^{F_\theta^-}\!A^0\right)
-           \overset{\PROBLEM{}}{=}{}^{\left(F_\theta^+\right)̂^{̀-1}}\!A^1
+          ${}^{\phi_\alpha}\!A^0
+           = {}^{\left(F_\alpha^+\right)̂^{̀-1}F_\alpha^-}\!A^0
+           = {}^{\left(F_\alpha^+\right)̂^{̀-1}}\!\left({}^{F_\alpha^-}\!A^0\right)
+           \overset{\PROBLEM{}}{=}{}^{\left(F_\alpha^+\right)̂^{̀-1}}\!A^1
            \overset{\PROBLEM{}}{=}A^0$
         % \begin{commentOUT}
         %   \begin{align*}
-        %     {}^{\phi_\theta}\!A^0
-        %     &= (d\phi_\theta)\phi_\theta^{-1}+\phi_\theta A^0
-        %     \phi_\theta^{-1}
+        %     {}^{\phi_\alpha}\!A^0
+        %     &= (d\phi_\alpha)\phi_\alpha^{-1}+\phi_\alpha A^0
+        %     \phi_\alpha^{-1}
         %   \\&=\left(
-        %       d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
-        %       +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
-        %     \right)\phi_\theta^{-1}+\phi_\theta A^0\phi_\theta^{-1}
+        %       d\left(\left(F_\alpha^+\right)̂^{̀-1}\right)̂F_\alpha^-
+        %       +\left(F_\alpha^+\right)̂^{̀-1}dF_\alpha^-
+        %     \right)\phi_\alpha^{-1}+\phi_\alpha A^0\phi_\alpha^{-1}
         %   \\&=\left(
-        %       d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^-
-        %       +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
-        %     \right) \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-        %     +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
-        %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+        %       d\left(\left(F_\alpha^+\right)̂^{̀-1}\right)̂F_\alpha^-
+        %       +\left(F_\alpha^+\right)̂^{̀-1}dF_\alpha^-
+        %     \right) \left(F_\alpha^-\right)̂^{̀-1}F_\alpha^+
+        %     +\left(F_\alpha^+\right)̂^{̀-1}F_\alpha^- A^0
+        %      \left(F_\alpha^-\right)̂^{̀-1}F_\alpha^+
         %   \\&=
-        %      d\left(\left(F_\theta^+\right)̂^{̀-1}\right)̂F_\theta^+
-        %      +\left(F_\theta^+\right)̂^{̀-1}dF_\theta^-
-        %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
-        %      +\left(F_\theta^+\right)̂^{̀-1}F_\theta^- A^0
-        %      \left(F_\theta^-\right)̂^{̀-1}F_\theta^+
+        %      d\left(\left(F_\alpha^+\right)̂^{̀-1}\right)̂F_\alpha^+
+        %      +\left(F_\alpha^+\right)̂^{̀-1}dF_\alpha^-
+        %      \left(F_\alpha^-\right)̂^{̀-1}F_\alpha^+
+        %      +\left(F_\alpha^+\right)̂^{̀-1}F_\alpha^- A^0
+        %      \left(F_\alpha^-\right)̂^{̀-1}F_\alpha^+
         %   \\&=\PROBLEM{}
         %   \\&=A^0
         %   \end{align*}
