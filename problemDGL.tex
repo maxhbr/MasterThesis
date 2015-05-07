@@ -1,20 +1,19 @@
 \chapter{Some remarks on the structure of normal forms}
 Here we want to talk a little bit more about the restrictions to the form of
-determining matrices of models.
+determining matrices of models. See section~\ref{sec:normalForms}.
 
-Look at the example:
-\begin{itemize}
-  \item $L=\begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix}$ and
-  \item $Q=\begin{pmatrix} \phi_1 & 0 \\ 0 & \phi_2 \end{pmatrix}$, with
-    $\phi_1\neq\phi_2$.
-\end{itemize}
+Look at the example: $L=\begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix}$
+and $Q=\begin{pmatrix} \phi_1 & 0 \\ 0 & \phi_2 \end{pmatrix}$, with
+$\phi_1\neq\phi_2$.
+
 Questions:
 \begin{enumerate}
   \item does they define a system with the corresponding fundamental solution?
     \checkmark
   \item is the defined system in normal form?
-    (\checkmark{}, if one uses for example the definition \cite[p.853]{Loday1994})
-  \item if it is in normal form, is there always a transformation, such that
+    (\checkmark{}, if one uses for example the definition
+    \cite[p.853]{Loday1994})
+  \item if it is in normal form, is there always a base change, such that
     the conditions on the structures are defined?
 \end{enumerate}
 \begin{lem}
@@ -160,41 +159,39 @@ Questions:
     \\&=Le^{(L-\id)\ln t}
     \\&=L\frac{1}{t}t^L \,.
   \end{align*}
-  \begin{s-rem}
-    on the one hand:
-    \begin{align*}
-      dt^L
-      &= d\begin{pmatrix}
-        t^\alpha & \ln(t)t^\alpha \\ 0 & t^\alpha
-      \end{pmatrix}
-      \\&=
-      \begin{pmatrix}
-        \alpha t^{\alpha-1} & \frac{1}{t}t^\alpha+\ln(t)\alpha t^{\alpha-1}
-        \\ 0 & \alpha t^{\alpha-1}
-      \end{pmatrix}
-    \end{align*}
-    on the other hand:
-    \begin{align*}
-      \frac{1}{t}Lt^L
-      &= \frac{1}{t}
-      \begin{pmatrix}
-        \alpha & 1 \\ 0 & \alpha
-      \end{pmatrix}
-      \begin{pmatrix}
-        t^\alpha & \ln(t)t^\alpha \\ 0 & t^\alpha
-      \end{pmatrix}
-      \\&= \frac{1}{t}
-      \begin{pmatrix}
-        \alpha t^\alpha & \alpha\ln(t)t^\alpha + t^\alpha
-        \\ 0 & \alpha t^\alpha
-      \end{pmatrix}
-      \\&= 
-      \begin{pmatrix}
-        \alpha t^{\alpha-1} & \frac{1}{t}\alpha\ln(t)t^\alpha+t^{\alpha-1}
-        \\ 0 & \alpha t^{\alpha-1}
-      \end{pmatrix}
-    \end{align*}
-  \end{s-rem}
+  Since on the one hand:
+  \begin{align*}
+    dt^L
+    &= d\begin{pmatrix}
+      t^\alpha & \ln(t)t^\alpha \\ 0 & t^\alpha
+    \end{pmatrix}
+    \\&=
+    \begin{pmatrix}
+      \alpha t^{\alpha-1} & \frac{1}{t}t^\alpha+\ln(t)\alpha t^{\alpha-1}
+      \\ 0 & \alpha t^{\alpha-1}
+    \end{pmatrix}
+  \end{align*}
+  on the other hand:
+  \begin{align*}
+    \frac{1}{t}Lt^L
+    &= \frac{1}{t}
+    \begin{pmatrix}
+      \alpha & 1 \\ 0 & \alpha
+    \end{pmatrix}
+    \begin{pmatrix}
+      t^\alpha & \ln(t)t^\alpha \\ 0 & t^\alpha
+    \end{pmatrix}
+    \\&= \frac{1}{t}
+    \begin{pmatrix}
+      \alpha t^\alpha & \alpha\ln(t)t^\alpha + t^\alpha
+      \\ 0 & \alpha t^\alpha
+    \end{pmatrix}
+    \\&= 
+    \begin{pmatrix}
+      \alpha t^{\alpha-1} & \frac{1}{t}\alpha\ln(t)t^\alpha+t^{\alpha-1}
+      \\ 0 & \alpha t^{\alpha-1}
+    \end{pmatrix}
+  \end{align*}
 \end{rem}
 \begin{rem}
   The defined fundamental solution satisfies the product rule (this is clear).
@@ -262,63 +259,68 @@ Questions:
   \end{align*}
 \end{rem}
 
-We now want to see, that $A\cY=d\cY$:
-\begin{align*}
-  A\cY&=\left( \begin{pmatrix}
-    \phi_1' &
-    (-\phi_1'+\phi_2')\frac{\ln(t)t^\alpha}{t^\alpha}
-    \\0 & \phi_2'
-  \end{pmatrix} 
-  +
-  \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
-  \right)
-  \begin{pmatrix}
-    t^\alpha e^{\phi_1} & \ln(t)t^\alpha e^{\phi_2}
-    \\0 & t^\alpha e^{\phi_2}
-  \end{pmatrix}
-  \\&=\begin{pmatrix}
-    \phi_1' t^\alpha e^{\phi_1}
-    & \phi_2'\ln(t)t^\alpha e^{\phi_2}
-    \\0 & \phi_2' t^\alpha e^{\phi_2}
-  \end{pmatrix}
-  +
-  \begin{pmatrix}
-    \alpha t^\alpha e^{\phi_1} &
-    \alpha\ln(t)t^\alpha e^{\phi_2} + t^\alpha e^{\phi_2}
-    \\0 & \alpha t^\alpha e^{\phi_2}
-  \end{pmatrix}
-  \frac{1}{t}
-  \\&=\begin{pmatrix}
-    \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1}
-    &
-    \left(\phi_2'+\frac{1}{t}\alpha\right)
-    \ln(t)t^\alpha e^{\phi_2}
-    +\frac{1}{t} t^\alpha e^{\phi_2}
-    \\0 & \phi_2' t^\alpha e^{\phi_2}+\alpha t^{\alpha-1} e^{\phi_2}
-  \end{pmatrix}
-  \\&=\begin{pmatrix}
-    \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1}
-    &
-    \frac{1}{t}\alpha\ln(t)t^\alpha e^{\phi_2}
-    +\phi_2' \ln(t)t^\alpha e^{\phi_2}
-    +t^{\alpha-1} e^{\phi_2}
-    \\0 & \phi_2' t^\alpha e^{\phi_2}+\alpha t^{\alpha-1} e^{\phi_2}
-  \end{pmatrix}
-  \\&=\begin{pmatrix}
-    \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1}
-    &
-    \alpha\ln(t)t^{\alpha-1} e^{\phi_2}
-    +\phi_2' \ln(t)t^\alpha e^{\phi_2}
-    +t^{\alpha-1} e^{\phi_2}
-    \\0 & \phi_2' t^\alpha e^{\phi_2}+\alpha t^{\alpha-1} e^{\phi_2}
-  \end{pmatrix}
-  \\&=\begin{pmatrix}
-    d(t^\alpha e^{\phi_1}) & d(\ln(t)t^\alpha e^{\phi_2})
-    \\0 & d(t^\alpha e^{\phi_2})
-  \end{pmatrix}
-  \\&=d\begin{pmatrix}
-    t^\alpha e^{\phi_1} & \ln(t)t^\alpha e^{\phi_2}
-    \\0 & t^\alpha e^{\phi_2}
-  \end{pmatrix}
-  \\&=d\cY
-\end{align*}
+\begin{lem}
+  The equation $A\cY=d\cY$ is satisfied and thus is $\cY$ a fundamental solution
+  for $A$.
+\end{lem}
+\begin{proof}
+  \begin{align*}
+    A\cY&=\left( \begin{pmatrix}
+      \phi_1' &
+      (-\phi_1'+\phi_2')\frac{\ln(t)t^\alpha}{t^\alpha}
+      \\0 & \phi_2'
+    \end{pmatrix} 
+    +
+    \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
+    \right)
+    \begin{pmatrix}
+      t^\alpha e^{\phi_1} & \ln(t)t^\alpha e^{\phi_2}
+      \\0 & t^\alpha e^{\phi_2}
+    \end{pmatrix}
+    \\&=\begin{pmatrix}
+      \phi_1' t^\alpha e^{\phi_1}
+      & \phi_2'\ln(t)t^\alpha e^{\phi_2}
+      \\0 & \phi_2' t^\alpha e^{\phi_2}
+    \end{pmatrix}
+    +
+    \begin{pmatrix}
+      \alpha t^\alpha e^{\phi_1} &
+      \alpha\ln(t)t^\alpha e^{\phi_2} + t^\alpha e^{\phi_2}
+      \\0 & \alpha t^\alpha e^{\phi_2}
+    \end{pmatrix}
+    \frac{1}{t}
+    \\&=\begin{pmatrix}
+      \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1}
+      &
+      \left(\phi_2'+\frac{1}{t}\alpha\right)
+      \ln(t)t^\alpha e^{\phi_2}
+      +\frac{1}{t} t^\alpha e^{\phi_2}
+      \\0 & \phi_2' t^\alpha e^{\phi_2}+\alpha t^{\alpha-1} e^{\phi_2}
+    \end{pmatrix}
+    % \\&=\begin{pmatrix}
+    %   \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1}
+    %   &
+    %   \frac{1}{t}\alpha\ln(t)t^\alpha e^{\phi_2}
+    %   +\phi_2' \ln(t)t^\alpha e^{\phi_2}
+    %   +t^{\alpha-1} e^{\phi_2}
+    %   \\0 & \phi_2' t^\alpha e^{\phi_2}+\alpha t^{\alpha-1} e^{\phi_2}
+    % \end{pmatrix}
+    \\&=\begin{pmatrix}
+      \phi_1' t^\alpha e^{\phi_1} +\alpha t^{\alpha-1} e^{\phi_1}
+      &
+      \alpha\ln(t)t^{\alpha-1} e^{\phi_2}
+      +\phi_2' \ln(t)t^\alpha e^{\phi_2}
+      +t^{\alpha-1} e^{\phi_2}
+      \\0 & \phi_2' t^\alpha e^{\phi_2}+\alpha t^{\alpha-1} e^{\phi_2}
+    \end{pmatrix}
+    \\&=\begin{pmatrix}
+      d(t^\alpha e^{\phi_1}) & d(\ln(t)t^\alpha e^{\phi_2})
+      \\0 & d(t^\alpha e^{\phi_2})
+    \end{pmatrix}
+    % \\&=d\begin{pmatrix}
+    %   t^\alpha e^{\phi_1} & \ln(t)t^\alpha e^{\phi_2}
+    %   \\0 & t^\alpha e^{\phi_2}
+    % \end{pmatrix}
+    \\&=d\cY
+  \end{align*}
+\end{proof}

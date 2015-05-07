@@ -629,7 +629,8 @@ meromorphic connections.
 \subsection{Fundamental solutions and the monodromy of a system}
 \marginnote{\cite[Sec.4.3.2]{Loday2014},
            \\\cite[130]{hotta2008},
-           \\\textbf{\cite[50]{BJL1979Birkhoff}}}
+           \\\textbf{\cite[50]{BJL1979Birkhoff}}
+           \\,\cite[26]{sibuya1990Linear}}
 It is well known in the theory of linear ODEs that the set of solutions to
 a system like (\ref{eq:ode}) forms a vector space of dimension $n$ over $\C$,
 i.e.\ if $x_0(t)$ and $x_{00}(t)$ are two solution of (\ref{eq:ode}) and $C_1$,
@@ -858,8 +859,9 @@ formal classification problem.
 \TODO[Full set of formal invariants]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{In the language of systems: normal forms}
-\marginnote{\cite{Remy2014}}
+\subsection{In the language of systems: normal forms}\label{sec:normalForms}
+\marginnote{\cite{Remy2014}i
+           \\,\cite[146]{sibuya1990Linear}}
 Here we will see, that the fundamental solution of a model can be written in a
 special form and that this property characterizes models.
 \begin{defn}
@@ -897,7 +899,8 @@ A connection matrix for $\cM^{nf}$ is then obtained by
   \[
     A^0=Q'(t^{-1})+L\frac{1}{t} \,,
   \]
-  where $Q$ and $L$ are as above.
+  where $Q$ and $L$ are as above, i.e.\ they satisfy
+  $t^LQ'(t^{-1})t^{-L}=Q'(t^{-1})$.
 \end{prop}
 \begin{proof}
   It is easy to see that $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$
