@@ -175,15 +175,20 @@ one of systems, there is also the translated version of the Malgrange-Sibuya
 isomorphism to the language of systems. The corresponding map is then build as
 follows.
 
+\marginnote{\cite[855]{Loday1994}}
 Let $(A,\hat F)$ be a marked pair, thus $\hat F$ solves $[A^0,A]$.
 By the M.A.E.T there exists an open covering $\cU=(U_j)_{j\in J}$ together
 with, for every open set $U_j$ a lift $F_j\in\Gl_n(\cA(U_j))$ of $\hat F$
 (cf.\ Definition~\ref{defn:lift}), which solves $[A,A^0]$.
-By $(F_kF_j^{-1})_{jk}$ is then a cocycle of the sheaf $\St(A^0)$, relative to
-the covering $\cU$, defined.
-For other lifts $F_j'$ of $\hat F$ on $U_j$ is $(F_j'F_j^{-1})$ a $0$-cochain
-of $\Sto(A^0)$ relative to $\cU$, thus the associated cochians to $(F_j)$ and
-$(F_j')$ are equivalent.
+By the cocycle $(F_l^{-1}F_j)_{jl}\in\Gamma(\dot\cU;\Lambda(A^0))$ is then a
+cohomology class in $\St(A^0)$, relative to the covering $\cU$, determined.
+For other lifts $F_j'$ of $\hat F$ on $U_j$ is $(G_j=F_j^{-1}F_j')$ a
+$0$-cochain of $\Lambda(A^0)$ relative to $\cU$, which satisfies
+\[
+  F_k^{-1}F_j=G_k F_k'^{-1}F'_j G_j^{-1} \,.
+\]
+Thus the cochians associated to $(F_j)$ and $(F_j')$ determine the same
+cohomology class in $\St(A^0)$.
 One can also check that, if $(A,\hat F)$ and $(A',\hat F')$ are equivalent, the
 corresponding cocycles define the same cohomology class.
 This defines a welldefined mapping of pointed sets
@@ -261,7 +266,7 @@ paper is this denoted as $\exp_{\mu_0}$)}.
 We will mainly refer to \cite[Proof of Theorem 4.5.1]{babbitt1989local} and
 \cite[Section 6.d]{sabbah2007isomonodromic}, where a slightly more complicated
 case with deformation space is proofen. These both resources proof the theorem
-using the languages of meromorphic connections, whereas we will use systems.
+using the languages of meromorphic connections whereas we will use systems.
 \marginnote{See also \cite{BJL1979Birkhoff} and \cite{babbitt1989local}
   although the proof goes back to work from Malgrange and Sibuya (see for
   example \cite{sibuya1990Linear}).}
@@ -381,11 +386,11 @@ Theorem 4.2.1.
 Let $\hat F\in G(\!(t)\!)$ be a matrix with formally meromorphic entries. By
 the Borel-Ritt Lemma (cf.\ Theorem~\ref{thm:borel-ritt}) we then know, that
 there exists for every sector $\mathfrak{s}\subsetneq S^1$ a holomorphic
-function $g:\mathfrak{s}\to G$ which is asymptotic to $\hat F$.
+function $G:\mathfrak{s}\to G$ which is asymptotic to $\hat F$.
 We will denote the set of all such holomorphic functions, which are on
 the arc $I$ asymptotic to $\id\in G(\!(t)\!)$ by
 \[
-  \cG(I)=\left\{g\in\Gl_n(\cA(I))\mid g\sim_I\id\right\}\,,
+  \cG(I)=\left\{G\in\Gl_n(\cA(I))\mid g\sim_I\id\right\}\,,
 \]
 and this defines a sheaf $\cG$ on $S^1$.
 The statement of the (second) Malgrange-Sibuya Theorem is then, that the
@@ -427,7 +432,7 @@ It can be verified, that the class $\Theta([\hat F])$ does not depend on
   $F_j\sim_{U_j}\hat F$ and $F_j'\sim_{U_j}\hat F'$, such that
   $(F_l^{-1}F_j)_{j,l\in J}$ and $(F_l'^{-1}F_j')_{j,l\in J}$ determine the
   classes $\Theta([\hat F])$ and $\Theta([\hat F'])$.
-  This implies that there are maps $g_j$, which are on $U_j$ holomorphic and
+  This implies that there are maps $G_j$, which are on $U_j$ holomorphic and
   satisfy $G_j\sim_{U_j}\id$ such that
   \[
     F_l'^{-1}F_j'=G_lF_l^{-1}F_jG_j^{-1}
@@ -488,7 +493,7 @@ Theorem~\ref{thm:mainThm1}.
   from $F_l^{-1}F_j\in\Lambda(A^0)$ follows on $U_j\cap U_l$ that
   \[
     A^0={}^{F_l^{-1}}({}^{F_j}A^0)
-    \qquad\Rightarrow{}\qquad
+    \qquad\Longrightarrow{}\qquad
     \underset{=A_l}{\underbrace{{}^{F_l}A^0}}
     =\underset{=A_j}{\underbrace{{}^{F_j}A^0}}
     \,.
@@ -591,20 +596,20 @@ Theorem~\ref{thm:mainThm1}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The Stokes group}\label{sec:StokesGroup}
-\TODO[Überleitung?]
+\PROBLEM[rewrite!]
+Here we want to introduce the notion of Stokes groups. They are for example
+also introduced in \cite{Loday1994}, \cite{Loday2014} or section 4
+of~\cite{Martinet1991}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Anti-Stokes directions and the Stokes group}
 \marginnote{\cite[I.4]{Loday1994}}
 Let us recall, that the normal form $A^0$ can be written as
 $A^0=Q'(t^{-1})+L\frac{1}{t}$ and a normal solution is given by
 $\cY_0(t)=t^Le^{Q(t^{-1})}$ (cf.\ Proposition~\ref{prop:fundSolBuilder}), where
-$Q(t^{-1})=\diag(\underset{n_1\text{-times}}{\underbrace{%
-  q_1,\dots,q_1}},q_2,\dots ,q_s)$.
-Let
-\[
-  \left\{q_1(t^{-1}),\dots,q_s(t^{-1})\right\}
-\]
-the be \emph{set of all determining polynomials of $[A^0]$} and denote by
+$Q(t^{-1})=\bigoplus_{j\in\{1,\dots,s\}}q_j(t^{-1})\id_{n_j}$.
+\PROBLEM[Common Structure?]
+Let $\left\{q_1(t^{-1}),\dots,q_s(t^{-1})\right\}$ the be \emph{set of all
+determining polynomials of $[A^0]$} and denote by
 \[
   \cQ(A^0):=\left\{\left(q_j-q_l\right)(t^{-1})
     \mid
@@ -613,7 +618,7 @@ the be \emph{set of all determining polynomials of $[A^0]$} and denote by
   \right\}
 \]
 the \emph{set of all determining polynomials of $[\End A^0]$}.
-Instead of $q_j-q_l\in\cQ(A^0)$ we will talk of (ordered) pairs
+Instead of $q_j-q_l\in\cQ(A^0)$ we will sometimes talk of (ordered) pairs
 $(q_j,q_l)\in\cQ(A^0)$.
 \begin{defn}\label{defn:determiningPolysOfEndA}
   We call
@@ -679,7 +684,7 @@ $(q_j,q_l)\in\cQ(A^0)$.
 
 On the elements of $\cQ(A^0)$ we define the following (partial) order
 relations:
-\begin{defn}
+\begin{defn}\label{defn:definingRelations}
   Let $\tilde\theta$ be a determination of $\theta$.
   \begin{itemize}
     \item We define the relation
@@ -1454,7 +1459,7 @@ decomposition into a semidirect product.
       i_\alpha:
       \SSto_\alpha(A^0)
       \overset{\cong}\longrightarrow
-      \underset{k\in\cK_\alpha}\bigltimes\SSto_\alpha^k(A^0)
+      \prod_{k\in\cK_\alpha}\SSto_\alpha^k(A^0)
     \]
     and the corresponding diagram
     \[ \begin{tikzcd}
@@ -1464,7 +1469,7 @@ decomposition into a semidirect product.
         & \prod_{k\in\cK_\alpha}\Sto_\alpha^k(A^0)\,,
         \dar{\prod_{k\in\cK}\rho_{\alpha}^k}
       \\\SSto_\alpha(A^0)
-        \rar{i_\alpha^k}
+        \rar{i_\alpha}
         & \prod_{k\in\cK_\alpha}\SSto_\alpha^k(A^0)\,,
     \end{tikzcd} \]
     commutes.
@@ -1478,21 +1483,20 @@ decomposition into a semidirect product.
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Stokes structures: using Stokes matrices}\label{sec:mainThm2}
+\section{Stokes structures: using Stokes groups}\label{sec:mainThm2}
 \marginnote{\cite{Loday1994}, \cite[Thm.4.3.11]{Loday2014}
   \\and \cite{boalch,thboalch}
   \\and \cite{babbitt1989local}
-  \\and \cite{BJL1979Birkhoff}}
+  \\and \cite{BJL1979Birkhoff}
+  \\and \cite[Chapter 4]{Martinet1991}}
+
 The goal in this section is to prove that there is a bijective and natural map
 \[
   h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\longrightarrow\St(A^0) \,.
 \]
-And since $\Sto_\alpha(A^0)$ has a faithful representation $\SSto_\alpha(A^0)$
-we also get
-\[
-  \prod_{\alpha\in\A}\SSto_\alpha(A^0)\cong\St(A^0)
-\]
-as a corollary.
+And since $\Sto_\alpha(A^0)$ has $\SSto_\alpha(A^0)$ as a faithful
+representation, we also get the isomorphism 
+$\prod_{\alpha\in\A}\SSto_\alpha(A^0)\cong\St(A^0)$ as a corollary.
 \TODO[This goes back to \cite{BJL1979Birkhoff}?]
 
 Let us recall, that $\St(A^0)$ is defined to be $H^1(S^1;\Lambda(^0))$
@@ -1511,10 +1515,12 @@ that
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Coverings}
+To formulate the following theorem, we use the notion of cyclic coverings and
+nerves of such coverings, which are defined as follows.
+
 \marginnote{\cite[Sec.II.1]{Loday1994} and \cite[Sec.II.3.1]{Loday1994}}
-A covering $\cV$ is said to \emph{refine} a covering $\cU$ if, to each open set
-$V\in\cV$ there is at least one $U\in\cU$ with $V\subset U$.
 \begin{defn}
+  \PROBLEM[vereinfachen, neu-schreiben]
   \begin{enumerate}
     \item A covering $\cU=\{U_j;j\in J\}$ is called \emph{cyclic covering} if
       \begin{enumerate}
@@ -1535,7 +1541,15 @@ $V\in\cV$ there is at least one $U\in\cU$ with $V\subset U$.
       \end{itemize}
   \end{enumerate}
 \end{defn}
-The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
+The cyclic coverings correspond one-to-one to nerves of cyclic coverings. If
+one starts with a nerve $\{\dot U_j \mid j\in J\}$, one obtains a cyclic
+covering as $\cU=\{U_j \mid j\in J\}$ where the arc $U_j$ is the connected
+clockwise hull from $\dot U_{j-1}$ to $\dot U_j$.
+
+\begin{defn}
+  A covering $\cV$ is said to \emph{refine} a covering $\cU$ if, to each open
+  set $V\in\cV$ there is at least one $U\in\cU$ with $V\subset U$.
+\end{defn}
 \begin{prop}
   \marginnote{\cite[Prop.II.1.3]{Loday1994}}
   The covering $\cV$ refines $\cU$ if and only if the corresponding nerves
@@ -1585,14 +1599,16 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
   is welldefined.
 \end{rem}
 \begin{defn}\label{defn:stokesCocycle}
-  \marginnote{\cite[Def.II.1.8]{Loday1994}, \cite[4.3.10]{Loday2014}}
+  \marginnote{\cite[Def.II.1.8]{Loday1994}
+    \\, \cite[4.3.10]{Loday2014}
+    \\, \cite[Defn 6 on p 374]{Martinet1991}}
   Let $\nu=\#\A$ the number of all anti-Stokes directions and write
   $\A=\{\alpha_1,\dots,\alpha_\nu\}$.
 
   A \emph{Stokes cocycle} is a 1-cocycle $(\phi_j)_{j\in\{1,\dots,\nu\}}\in
-  \prod_{j\in\{1,\dots,\nu\}}\Gamma(U_j;\Lambda(A^0))$
-  $\Lambda(A^0)$ corresponding to some cyclic covering with nerve
-  $\dot\cU=\{\dot U_j\mid j\in\{1,\dots,\nu\}\}$, which satisfies for every $j$
+  \prod_{j\in\{1,\dots,\nu\}}\Gamma(U_j;\Lambda(A^0))$ corresponding to some
+  cyclic covering with nerve $\dot\cU=\{\dot U_j\mid j\in\{1,\dots,\nu\}\}$,
+  which satisfies for every $j\in\{1,\dots,\nu\}$
   \begin{itemize}
     \item $\alpha_j\in\dot U_j$ and
     \item the germ $\phi_{\alpha_j}:=\phi_{j,\alpha_j}$ of $\phi_j$ at
@@ -1600,16 +1616,16 @@ The cyclic coverings correspond one-to-one to nerves of cyclic coverings.
   \end{itemize}
   \begin{s-rem}
     Since the sections in $\Gamma(\dot U_j;\Lambda(A^0))$ are uniquely
-    determined as the extension of the germ at $\alpha_j$ have, that the set of
+    determined as the extension of the germ at $\alpha_j$ have that the set of
     all Stokes cocycles can be identified with
     $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$.
   \end{s-rem}
 \end{defn}
-We can use Remark~\ref{rem:mapStoToCocy} to obtain in the case $J=\A$ a
+We can use Remark~\ref{rem:mapStoToCocy} to obtain, in the case $J=\A$, a
 mapping
-\[ \begin{tikzcd}
-    h:\prod_{\alpha\in\A}\Sto_\alpha(A^0) \rar & \St(A^0),
-\end{tikzcd} \]
+\[
+    h:\prod_{\alpha\in\A}\Sto_\alpha(A^0) \longrightarrow \St(A^0),
+\]
 which takes a Stokes cocycle to its corresponding cohomology class.
 \begin{tthm}\label{thm:mainThm2}
   The map
@@ -1658,6 +1674,7 @@ We first have to introduce adequate coverings, which will be used in the proof.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Adequate coverings}
 \begin{defn}
+  \marginnote{\cite[371]{Martinet1991} defines adapted coverings}
   Let $\star\in\{k,<k,\leq k,\dots\}$.
   A covering $\cU$ beyond which the inductive limit
   $\underset{\cU}{\underrightarrow{\lim}}H^1(\cU;\Lambda^\star(A^0))$ is
@@ -1679,9 +1696,9 @@ We first have to introduce adequate coverings, which will be used in the proof.
   \end{comment}
 
   In other words is a covering $\cU$ adequate, if and only if the canonical map
-  \[ \begin{tikzcd}
-      \Gamma(\cU;\Lambda^\star(A^0)) \rar& H^1(S^1;\Lambda^\star(A^0))
-  \end{tikzcd} \]
+  \[
+      \Gamma(\cU;\Lambda^\star(A^0))\longrightarrow H^1(S^1;\Lambda^\star(A^0))
+  \]
   is surjective.\TODO[Proof? check??]
 \end{defn}
 The following proposition is in Loday-Richauds paper~\cite{Loday1994} given as
@@ -1778,8 +1795,8 @@ the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
 \begin{figure} %{{{
   \centering
 
-  \def\kOne{7}
-  \def\kTwo{10}
+  \def\kOne{5}
+  \def\kTwo{11}
   \begin{tikzpicture}[scale=5] %{{{
 
     \newcommand{\myDrawArcA}[4]{%{{{
@@ -2035,7 +2052,8 @@ This means that
             and is delimited by Stokes directions.
           \item maybe follows from \cite[Prop.1.24]{thboalch}
           \item \textbf{See \cite{babbitt1989local}}
-          \item See \cite[375]{Martinet1991}
+          \item See \cite[375]{Martinet1991} and
+            \cite[Def.5 on 372]{Martinet1991}
         \end{itemize}
       \end{comment}
     \item The second map
@@ -2050,13 +2068,13 @@ This means that
         \rar &
         H^1(S^1;\Lambda^k(A^0))
       \end{tikzcd} \]
-      is a bijection, since from proposition~\ref{prop:adequateProperties} we
-      know that it is
+      is a bijection, \rewrite{since} from
+      proposition~\ref{prop:adequateProperties} we know that it is
       \begin{itemize}
-        \item \textbf{surjective}, since $\cU^k$ is adequate to
+        \item \textbf{surjective}, \rewrite{since} $\cU^k$ is adequate to
           $\Lambda^k(A^0)$ and
-        \item \textbf{injective}, since on $\cU^k$ there is no $0$-cochain in
-          $\Lambda^k(A^0)$.
+        \item \textbf{injective}, \rewrite{since} on $\cU^k$ there is no
+          $0$-cochain in $\Lambda^k(A^0)$.
       \end{itemize}
   \end{enumerate}
   \PROBLEM[Show that this is the correct $h$]
@@ -2067,7 +2085,7 @@ This means that
 \subsubsection{The case of several levels}
 \rewrite{In the proof of the case of several levels, we will still use}
 Loday-Richaud's paper~\cite{Loday1994} as reference.
-\begin{defn}
+\begin{defn}\label{defn:firstSetOfInlusions}
   Here we want to define a \emph{product map of cocycles}
   $\mathfrak{S}^{\leq k}$.
   This map will be composed from the following injective maps:
@@ -2172,14 +2190,14 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
       \[
         \dot F_\alpha=c_\alpha^{-1}\dot F_\alpha'c_{\alpha^+}
         \qquad \text{~and~} \qquad
-        \dot G_\alpha=c_{\alpha^+}^{-1}G_\alpha'c_{\alpha^+}.
+        \dot G_\alpha=c_{\alpha^+}^{-1}\dot G_\alpha'c_{\alpha^+}.
       \]
       The former relation implies that $(\dot F_\alpha)$ and $(\dot F_\alpha')$
       are cohomologous with values in $\Lambda^{<k}(A^0)$ on $\cU^{\leq k}$.
       Since $\cU^{<k}$ is already adequate to $\Lambda^{<k}(A^0)$, \rewrite{are
       $(\dot F_\alpha)$ and $(\dot F_\alpha')$} already on $\cU^{<k}$,
       i.e.\ in $\Gamma(\dot\cU^{<k};\Lambda^{<k}(A^0))$, cohomologous.
-    \item The proof of part 2.\ (together with the proof of part 1.) can be
+    \item The proof of part 2.\ (together with a proof of part 1.) can be
       found in Loday-Richaud's paper \cite[Proof of Lem.II.3.3]{Loday1994}.
   \end{enumerate}
 \end{proof}

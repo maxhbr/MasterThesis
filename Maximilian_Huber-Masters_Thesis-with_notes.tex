@@ -60,6 +60,7 @@
 
 \usepackage{paracol}
 \usepackage{multicol}
+\usepackage{longtable}
 \usepackage{relsize}
 
 \usepackage{graphicx}
@@ -81,6 +82,9 @@
 %\ifnum\myDevelopVariable=0
   \input{einleitung.tex}
 %\if
+% \ifnum\myDevelopVariable=1
+  \input{symbols.tex}
+% \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifnum\myDevelopVariable=0
@@ -88,9 +92,6 @@
 \fi
 
 \input{asymptotic.tex}
-% % \input{sympl.tex}
-% % \input{lie.tex}
-% % \input{monodromy.tex}
 
 % \input{asymptotic.tex}
 \input{meromZsh.tex}
@@ -119,9 +120,9 @@
 \ifnum\myDevelopVariable=1
   \input{landkarte.tex}
 \fi
-% \ifnum\myDevelopVariable=1
+\ifnum\myDevelopVariable=1
   \input{problemDGL.tex}
-% \fi
+\fi
 
 % \input{literatur.tex}
 

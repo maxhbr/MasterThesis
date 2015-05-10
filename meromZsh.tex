@@ -744,7 +744,7 @@ problem}.
 \end{defn}
 \begin{prop}
   \marginnote{\cite[Cor.II.2.9]{sabbah2007isomonodromic}}
-  Every regular germ of a meromorphic connection is isomorphic to some direct
+  Every germ of a regular meromorphic connection is isomorphic to some direct
   sum
   \[
     (\cR,\nabla)=\bigoplus_{\alpha,d}(\cN_{\alpha,d},\nabla)\,.
@@ -1241,6 +1241,7 @@ or Theorem 4.4.1 in Loday-Richaud's Book~\cite{Loday2014}.
   $I\subsetneq S^1$ there exists a lift $F$ on $I$.
   \begin{s-rem}
     \marginnote{\cite[Thm.4.4.1]{Loday2014}}
+    \PROBLEM[Differential operator is $\triangle$]
     If we write the system $[A^0,A]$ as a differential operator $D$.
     The theorem then states that $D$ acts linearly and surjectively on the
     sheaf $\cA^{<0}$, i.e.\ the sequence
@@ -1253,26 +1254,28 @@ or Theorem 4.4.1 in Loday-Richaud's Book~\cite{Loday2014}.
     \end{comment}
   \end{s-rem}
 \end{thm}
-
-Translated to the language of meromorphic connection the theorem~\ref{thm:maet}
-becomes the following (cf.~\cite[Thm.II.5.12]{sabbah2007isomonodromic}
-or~\cite[Sec.II.2.4]{sabbah_cimpa90}).
-\begin{thm}[Sectorial decomposition]
-  Let $(\cM,\nabla)$ be a meromorphic connection and let
-  $\hat\lambda:\hat\cM\to\hat\cM^{nf}$ be the isomorphism given by
-  theorem~\ref{thm:leveltTurittin} together with the model $\cM^{nf}$.
-  There exists then, for any $e^{i\theta^0}\in S^1$, an isomorphism
-  $\tilde\lambda_{\theta^0}:
-  \tilde\cM_{\theta^0}=\cA_{\theta^0}\otimes\cM\to\tilde\cM_{\theta^0}^{nf}$
-  lifting $\hat\lambda$ \rewrite{that is, such that} the following diagram
-  \[ \begin{tikzcd}
-      \tilde\cM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
-      \tilde\cM^{nf}_{\theta^o} \dar
-      \\\hat\cM \rar{\hat\lambda} &
-      \hat\cM^{nf}
-  \end{tikzcd} \]
-  commutes
-\end{thm}
+In the language of meromorphic connections is this theorem for example stated
+in~\cite[Thm.II.5.12]{sabbah2007isomonodromic}
+and~\cite[Sec.II.2.4]{sabbah_cimpa90}.
+\begin{comment}
+  \begin{thm}[Sectorial decomposition]
+    \PROBLEM[needs more defns]
+    Let $(\cM,\nabla)$ be a meromorphic connection and let
+    $\hat\lambda:\hat\cM\to\hat\cM^{nf}$ be the isomorphism given by
+    theorem~\ref{thm:leveltTurittin} together with the model $\cM^{nf}$.
+    There exists then, for any $e^{i\theta^0}\in S^1$, an isomorphism
+    $\tilde\lambda_{\theta^0}:
+    \tilde\cM_{\theta^0}=\cA_{\theta^0}\otimes\cM\to\tilde\cM_{\theta^0}^{nf}$
+    lifting $\hat\lambda$ \rewrite{that is, such that} the following diagram
+    \[ \begin{tikzcd}
+        \tilde\cM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
+        \tilde\cM^{nf}_{\theta^o} \dar
+        \\\hat\cM \rar{\hat\lambda} &
+        \hat\cM^{nf}
+    \end{tikzcd} \]
+    commutes
+  \end{thm}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The classifying set}\label{sec:classifyingSet}
