@@ -85,7 +85,7 @@
   \usepackage{courier}
 \fi
 
-%\linespread{1.5}
+% \linespread{1.5}
 
 %%%% Headline styles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \usepackage{scrpage2}
