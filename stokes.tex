@@ -1795,18 +1795,18 @@ the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
 \begin{figure} %{{{
   \centering
 
-  \def\kOne{5}
-  \def\kTwo{11}
+  \def\kOne{7}
+  \def\kTwo{10}
   \begin{tikzpicture}[scale=5] %{{{
 
     \newcommand{\myDrawArcA}[4]{%{{{
       % Parameter: radius , center , width , color
       \pgfmathsetmacro\hwdth{#3 / 2}
-      \draw[ultra thick,#4]
+      \draw[#4]
         ({cos( #2 )},{sin( #2 )})
         --
         ({cos( #2 ) * #1 },{sin( #2 ) * #1 });
-      \draw[thick,#4]
+      \draw[ultra thick,#4]
         ({cos(#2 - \hwdth) * #1},{sin(#2 - \hwdth) * #1})
         arc
         ({#2 - \hwdth}:{#2 + \hwdth}:#1);
@@ -1823,11 +1823,11 @@ the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
     }%}}}
     \newcommand{\myDrawArcB}[5]{%{{{
       % Parameter: radius , center , start , stop , color
-      \draw[ultra thick,#5]
+      \draw[#5]
         ({cos( #2 )},{sin( #2 )})
         --
         ({cos( #2 ) * #1 },{sin( #2 ) * #1 });
-      \draw[thick,#5]
+      \draw[ultra thick,#5]
         ({cos( #3 ) * #1},{sin( #3 ) * #1})
         arc
         ({ #3 }:{ #4 }:#1);
