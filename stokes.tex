@@ -29,7 +29,7 @@ will be denoted by $h$.
 We \rewrite{have the following} commutative diagram of isomorphisms.
 \begin{center}
   \begin{tikzpicture}[scale=3]
-    \node[] (modSpcMat) at (0.3,0) {$\cH$};
+    \node[] (modSpcMat) at (0.7,0.3) {$\cH$};
     \node[purple] (class) at (1.3,0) {$\cH(A^0)$};
     \node[green!40!black] (sheaf) at (3,1.2) {$\St(\cM^{nf})$};
     \node[] (sheaf3) at (3,0.7) {\textcolor{purple}{$\St(A^0)$}};
@@ -89,7 +89,7 @@ flat isotropies of $[A^0]$.
   For some $\theta\in S^1$ is the stalk at $\theta$ the subgroup of
   $\GL_n(\cA)_\theta$ of elements $f$ which satisfy
   \begin{enumerate}
-    \item Flatness: $f$ is asymptotic to the identity,
+    \item Multiplicatively flatness: $f$ is asymptotic to the identity,
       i.e.\ $f\sim_{\mathfrak{s}} 1$;
     \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
   \end{enumerate}
@@ -1518,17 +1518,19 @@ that
 To formulate the following theorem, we use the notion of cyclic coverings and
 nerves of such coverings, which are defined as follows.
 
-\marginnote{\cite[Sec.II.1]{Loday1994} and \cite[Sec.II.3.1]{Loday1994}}
 \begin{defn}
-  \PROBLEM[vereinfachen, neu-schreiben]
+  \marginnote{\cite[Sec.II.1]{Loday1994} and \cite[Sec.II.3.1]{Loday1994}}
+  \TODO[rewrite?]
+  Let $J=\Z/p\Z$ be a finite set with a cyclic additive structure.
   \begin{enumerate}
-    \item A covering $\cU=\{U_j;j\in J\}$ is called \emph{cyclic covering} if
+    \item A \emph{cyclic covering} of $S^1$ is a finite covering
+      $\cU=\left(U_j=U(\theta_j,\epsilon_j)\right)_{j\in J}$ consisting of
+      arcs, which satisfies that
       \begin{enumerate}
-        \item the set $J$ is finite and cyclic $J=\Z/\nu\Z$;
-        \item the $U_j$ and, if $\#J>2$, the $U_j\cap U_{j+1}$ are connected
-          arcs on $S^1$;
-        \item the bisecting directions of the $U_j$ are in ascending order with
-          respect to the clockwise orientation of $S^1$;
+        \item the $U_j\cap U_{j+1}$ have only one connected component when
+          $\#J>2$;
+        \item the $\theta_j$ are in ascending order with respect to the
+          clockwise orientation of $S^1$;
         \item the $U_j$ are not encased, this means that the arcs
           $U_j\backslash U_l$ are connected arcs for all $j,l\in J$.
       \end{enumerate}

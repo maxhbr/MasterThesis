@@ -571,20 +571,19 @@ i.e.\ the following proposition holds.
   their corresponding connection matrices are (formally) equivalent.
 \end{prop}
 
-\begin{defn}
-  \begin{itemize}
-    \item An \emph{isotropy} of $A^0$ or of $[A^0]$ is a transformation
-      $\hat F$ which satisfies ${}^{\hat F}\!A^0=A^0$.
-      Thus, the isotropies are the solutions of the system
-      $[\End A^0]:=[A^0,A^0]$.
-      \marginnote{\cite[853]{Loday1994}}
-    \item Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
-      \begin{s-rem}
-        The isotropies are, a priori, formal transformations.
-        Loday-Richaud mentions in her paper~\cite[853]{Loday1994}, that
-        actually $G_0(A^0)$ is a subgroup of $\Gl_n(\C[1/t,t])$.
-      \end{s-rem}
-  \end{itemize}
+\begin{defn}\label{defn:isotropies}
+  \marginnote{\cite[853]{Loday1994}}
+  An \emph{isotropy} of $A^0$ or of $[A^0]$ is a transformation
+  $\hat F$ which satisfies ${}^{\hat F}\!A^0=A^0$.
+  Thus, the isotropies are the solutions of the system
+  $[\End A^0]:=[A^0,A^0]$.
+
+  Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
+  \begin{s-rem}
+    The isotropies are, a priori, formal transformations.
+    Loday-Richaud mentions in her paper~\cite[853]{Loday1994}, that
+    actually $G_0(A^0)$ is a subgroup of $\Gl_n(\C[1/t,t])$.
+  \end{s-rem}
 \end{defn}
 \begin{lem}
   \marginnote{\cite[854]{Loday1994}}
@@ -885,7 +884,7 @@ A connection matrix for $\cM^{nf}$ is then obtained by
 \begin{align*}
   A^0&= \bigoplus_{j=1}^s
   \left(q_j'(t^{-1})\cdot\id_{n_j}+\frac{1}{t}L_j\right)
-  \\&= 
+  \\&=
     \underset{j=1}{\overset{s}{\bigoplus}}q_j'(t^{-1})\cdot\id_{n_j}
     +\frac{1}{t}\underset{L}{%
     \underset{\text{\rotatebox[origin=c]{-90}{$=:$}}}{\underbrace{%
@@ -1198,8 +1197,7 @@ fundamental solution in the form $\hat F\cY_0$.
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The main asymptotic existence theorem}
-\TODO[move] \TODO[maybe \textbf{not necessary}, since we have Borel-Ritt!]
+\section{The main asymptotic existence theorem (M.A.E.T)}
 \begin{comment}
   \begin{multicols}{2}
     \textbf{Classical:}
@@ -1223,7 +1221,7 @@ Here we want to state the main asymptotic expansion theorem (or often M.A.E.T.)
 which is essentially a deduction from the Borel-Ritt lemma.
 \marginnote{\cite[207]{Balser2000Formal}}
 It states that to every formal solution of a system of meromorphic differential
-equations, and every sector with sufficiently small opening, one can find a
+equations and every sector with sufficiently small opening, one can find a
 holomorphic solution of the system having the formal one as its asymptotic
 expansion.
 
@@ -1370,7 +1368,6 @@ we denote that in $\Syst_m$ by the subscript ${}_m$.
 Thus ${}^0C(\cM^{nf},\nabla^{nf})$ corresponds to
 the set ${}^0C(A^0):=\Syst_m(A^0)/G(\!\{t\}\!)$ of meromorphic classes which
 are formally equivalent to $A^0$.
-\TODO[\cite{thboalch} p. 3: In the logarithmic case\dots]
 Analogous, $\cH(\cM^{nf},\nabla^{nf})$ corresponds to the set $\cH(A^0)$ of
 equivalence classes, i.e.\ orbits of $G(\!\{t\}\!)$, in
 \[
@@ -1403,15 +1400,18 @@ after formalization\PROBLEM[?].
 \end{tikzcd} \]
 
 \begin{lem}
-  Since $G_0(A^0)$ is by definition the stabilizer\PROBLEM[correct?] of $A^0$ we
-  deduce
+  \marginnote{\url{http://mathworld.wolfram.com/Stabilizer.html}}
+  Since $G_0(A^0)$ is by definition the stabilizer of $A^0$ (cf.\
+  definition~\ref{defn:isotropies}) and $\Syst_m(A^0)$ is the corresponding
+  orbit we can use the Proposition~\cite[Prop.3.1]{wielandt1964finite} in the
+  book from Wielandt we deduce
   \[
     \Syst_m(A^0)\cong \hat G(A^0)/G_0(A^0) \,.
   \]
   \begin{s-cor}
     \marginnote{\cite[Eq.1.9b]{babbitt1983}}
     Thus the \emph{set of meromorphic classas of systems formally equivalent
-      to $A^0$} are just the orbits of $G\{t\}$ that is
+    to $A^0$} are just the orbits of $G(\!\{t\}\!)$ in $\Syst_m(A^0)$ that is
     \[
       {}^0C(A^0)\cong G(\!\{t\}\!)\backslash\hat G(A^0)/G_0(A^0)
     \]
