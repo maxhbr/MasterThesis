@@ -142,16 +142,20 @@ to the first non abelian cohomology of $\Lambda(A^0)$, which sends the class of
 $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology
 class.
 
-\begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1MeromVersion}
-  \marginnote{\cite[Thm.I.4.5.1]{babbitt1989local},
-    \\\cite[Thm.3.4]{Malgrange1983},
-    \\\cite[Thm.13]{Martinet1991}}
-  The homomorphism
-  \[
-    \exp:\cH\to\St(A^0):=H^1(S^1;\Lambda(A^0))
-  \]
-  is an isomorphism of pointed sets.
-\end{tthm}
+\begin{center}
+  \begin{minipage}[t]{0.8\textwidth}
+    \begin{tthm}[Malgrange-Sibuya] \label{thm:mainThm1MeromVersion}
+      \marginnote{\cite[Thm.I.4.5.1]{babbitt1989local},
+        \\\cite[Thm.3.4]{Malgrange1983},
+        \\\cite[Thm.13]{Martinet1991}}
+      The homomorphism
+      \[ \begin{tikzcd}
+          \exp:\cH \rar& \St(A^0):=H^1(S^1;\Lambda(A^0))
+      \end{tikzcd} \]
+      is an isomorphism of pointed sets.
+    \end{tthm}
+  \end{minipage}
+\end{center}
 \begin{rem}
   \TODO[Frage Felix!]
   \PROBLEM[doppelt]
@@ -197,15 +201,19 @@ This defines a welldefined mapping of pointed sets
 \]
 to the first non abelian cohomology of $\Lambda(A^0)$, which we call $\exp$.
 
-\begin{tthm}[Malgrange-Sibuya \rewrite{(system version)}] \label{thm:mainThm1}
-  \marginnote{\cite[Theorem 4.5.1]{babbitt1989local}}
-  The homomorphism
-  \[
-    \exp:\cH(A^0)\to\St(A^0):=H^1(S^1;\Lambda(A^0))
-  \]
-  is an isomorphism of pointed\footnote{Which maps the class of
-  $(A^0,\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology class.} sets.
-\end{tthm}
+\begin{center}
+  \begin{minipage}[t]{0.8\textwidth}
+    \begin{tthm}[Malgrange-Sibuya \rewrite{(system version)}]\label{thm:mainThm1}
+      \marginnote{\cite[Theorem 4.5.1]{babbitt1989local}}
+      The homomorphism
+      \[ \begin{tikzcd}
+          \exp:\cH(A^0) \rar& \St(A^0):=H^1(S^1;\Lambda(A^0))
+      \end{tikzcd} \]
+      is an isomorphism of pointed\footnote{Which maps the class of
+      $(A^0,\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology class.} sets.
+    \end{tthm}
+  \end{minipage}
+\end{center}
 \begin{rem}
   \TODO[Frage Felix!]
   The theorem \cite[Thm.III.1.1.2]{babbitt1989local}, in the book from
@@ -628,7 +636,7 @@ $(q_j,q_l)\in\cQ(A^0)$.
       coefficient} and
     \item $k=k_{jl}$ the \emph{degree}
   \end{itemize}
-  of $q_j-q_l\in\cQ_{[\End A^0]}$ if
+  of $q_j-q_l\in\cQ(A^0)$ if
   \[
     q_j-q_l\in\left\{\frac{a_{jl}}{t^{k}}+h \mid h \in o(t^{-k}), a_{jl}\neq0
     \right\}\,.
@@ -1206,7 +1214,7 @@ In particular, from the proof, we get that
   $C_{\phi_\theta}$ where
   \[
     C_{\phi_\theta}=1_n +
-    \sum_{(l,j)\mid q_j\underset{\phi_\theta,\max}{\prec}q_l}
+    \sum_{(l,j)\mid q_j\underset{\theta,\max}{\prec}q_l}
     C_{\phi_\theta}^{(l,j)}
   \]
   and the $C_{\phi_\theta}^{(l,j)}$ have the necessary block structure.
@@ -1495,7 +1503,7 @@ The goal in this section is to prove that there is a bijective and natural map
   h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\longrightarrow\St(A^0) \,.
 \]
 And since $\Sto_\alpha(A^0)$ has $\SSto_\alpha(A^0)$ as a faithful
-representation, we also get the isomorphism 
+representation, we also get the isomorphism
 $\prod_{\alpha\in\A}\SSto_\alpha(A^0)\cong\St(A^0)$ as a corollary.
 \TODO[This goes back to \cite{BJL1979Birkhoff}?]
 
@@ -1587,18 +1595,27 @@ clockwise hull from $\dot U_{j-1}$ to $\dot U_j$.
     let $\dot\phi_j$ be the function representing the germ
     $\dot\phi_{\theta_j}$ on its maximal arc of definition $\Omega_j$ around
     $\theta_j$.
-    Then, for every cyclic covering $\cU=\{U_j;j\in J\}$ which satisfies
+    Then, for every cyclic covering $\cU=(U_j)_{j\in J}$ which satisfies
     $\dot U_j\subset \Omega_j$ for all $j\in J$, one can define the $1$-cocycle
-    $(\dot\phi_{j|\dot U_j})_{j\in J}$ on $\cU$.
+    $(\dot\phi_{j|\dot U_j})_{j\in J}\in\Gamma(\dot\cU;\Lambda(A^0))$.
   \end{einr}
-  To a different cyclic covering $\cU'$ this construction yields a cohomologous
-  $1$-cocycle, thus the induced map
+  To a different cyclic covering, satisfying the condition above, this
+  construction yields a cohomologous $1$-cocycle, thus the induced map
   \[
-    \prod_{\theta\in J}\Sto_\theta(A^0)
+    \prod_{j\in J}\Lambda_{\theta_j}(A^0)
     \longrightarrow
     H^1(S^1;\Lambda(A^0))=\St(A^0)
   \]
   is welldefined.
+  \begin{comment}
+    \begin{s-rem}
+      Let $\dot\phi=(\dot\phi_{\theta})\in\Lambda_\theta(A^0)$ be a cocycle
+      consisting only of an single element, which satisfies that the maximal
+      arc of definition $\theta$ has opening less than $2\pi$.
+      There can not exist a covering consisting of a single element $U$
+      satisfying $U\subset\Omega$ and thus no map \dots
+    \end{s-rem}
+  \end{comment}
 \end{rem}
 \begin{defn}\label{defn:stokesCocycle}
   \marginnote{\cite[Def.II.1.8]{Loday1994}
@@ -1609,7 +1626,7 @@ clockwise hull from $\dot U_{j-1}$ to $\dot U_j$.
 
   A \emph{Stokes cocycle} is a 1-cocycle $(\phi_j)_{j\in\{1,\dots,\nu\}}\in
   \prod_{j\in\{1,\dots,\nu\}}\Gamma(U_j;\Lambda(A^0))$ corresponding to some
-  cyclic covering with nerve $\dot\cU=\{\dot U_j\mid j\in\{1,\dots,\nu\}\}$,
+  cyclic covering with nerve $\dot\cU=(\dot U_j)_{j\in\{1,\dots,\nu\}}$,
   which satisfies for every $j\in\{1,\dots,\nu\}$
   \begin{itemize}
     \item $\alpha_j\in\dot U_j$ and
@@ -1625,22 +1642,30 @@ clockwise hull from $\dot U_{j-1}$ to $\dot U_j$.
 \end{defn}
 We can use Remark~\ref{rem:mapStoToCocy} to obtain, in the case $J=\A$, a
 mapping
-\[
-    h:\prod_{\alpha\in\A}\Sto_\alpha(A^0) \longrightarrow \St(A^0),
-\]
+\[ \begin{tikzcd}
+    h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)
+    \rar[hook]&
+    \prod_{\alpha\in\A}\Lambda_\alpha(A^0)
+    \rar&
+    \St(A^0),
+\end{tikzcd} \]
 which takes a Stokes cocycle to its corresponding cohomology class.
-\begin{tthm}\label{thm:mainThm2}
-  The map
-  \[
-    h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)\to\St(A^0)
-  \]
-  is a bijection and natural.
-  \begin{s-rem}
-    \marginnote{\cite[869]{Loday1994},\cite[Sec.III.3.3]{Loday1994}}
-    Natural means that $h$ commutes to isomorphisms and constructions over
-    systems or connections they represent.
-  \end{s-rem}
-\end{tthm}
+\begin{center}
+  \begin{minipage}[t]{0.8\textwidth}
+    \begin{tthm}\label{thm:mainThm2}
+      The map
+      \[ \begin{tikzcd}
+          h:\prod_{\alpha\in\A}\Sto_\alpha(A^0) \rar& \St(A^0)
+      \end{tikzcd} \]
+      is a bijection and natural.
+      \begin{s-rem}
+        \marginnote{\cite[869]{Loday1994},\cite[Sec.III.3.3]{Loday1994}}
+        Natural means that $h$ commutes to isomorphisms and constructions over
+        systems or connections they represent.
+      \end{s-rem}
+    \end{tthm}
+  \end{minipage}
+\end{center}
 From theorem~\ref{thm:mainThm2} and Proposition~\ref{prop:representation} we
 get the following corollary.
 \begin{cor}
@@ -1650,7 +1675,10 @@ get the following corollary.
     \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
   \]
   and thus $\St(A^0)$ has complex dimension
-  $\dim_\C\St(A^0)=\sum_{\alpha\in\A}\dim_\C\SSto_\alpha(A^0)$.
+  $\dim_\C\St(A^0)=\sum_{\alpha\in\A}\dim_\C\SSto_\alpha(A^0)$ and
+  $\dim_\C\SSto_\alpha(A^0)=
+  \sum_{q_j\underset{\alpha,\max}{\prec}q_l}\deg(q_j-q_l)$
+  (cf.~\cite[Sec.III.1]{Loday1994}).
 \end{cor}
 \begin{rem}\label{rem:boalchRemarkFactorMatrix}
   The set $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ and thus
@@ -1708,18 +1736,22 @@ Proposition II.1.7. It contains a simple characterization, which will be used
 to see, that our defined coverings are adequate.
 \begin{prop}\label{prop:adeqCovCondition}
   \marginnote{\cite[Prop.II.1.7]{Loday1994}}
-  Let $\alpha\in\A$ and $k\in\cK_\alpha$.
+  Let $k\in\cK_\alpha$.
   \begin{s-defn}
+    Let $\alpha\in\A^k$.
     An arc $U(\alpha,\frac{\pi}{k})$ is called a \emph{Stokes arc of level $k$
     at $\alpha$}.
   \end{s-defn}
   A cyclic covering $\cU=(U_j)_{j\in J}$, which satisfies
   \begin{einr}
-    each Stokes arc of level $k$ (resp.\ of level $\leq k$ or of any level)
-    contains at least one arc $\dot U_j$ from the nerve $\dot\cU$ of $\cU$
+    for every $\alpha\in\A^k$ contains the Stokes arc $U(\alpha,\frac{\pi}{k})$
+    at least one arc $\dot U_j$ from the nerve $\dot\cU$ of $\cU$
   \end{einr}
-  is adequate to $\Lambda(A^0)$ (resp.\ to $\Lambda^{\leq k}(A^0)$ or to
-  $\Lambda^k(A^0)$).
+  is adequate to $\Lambda^k(A^0)$.
+
+  The covering $\cU$ is adequate to $\Lambda^{\leq k}(A^0)$ (resp.\
+  $\Lambda^{<k}(A^0)$) if it is adequate to $\Lambda^{k'}(A^0)$ for every
+  $k'\leq k$ (resp.\ $k'<k$).
 \end{prop}
 
 Let $k\in\cK$.
@@ -1739,6 +1771,22 @@ different levels.
     bearing the level $k$.
 \end{enumerate}
 
+\begin{rem}
+  Boalch introduces in his publications~\cite[19]{boalch}
+  and~\cite[Def.1.23]{thboalch} the notion of \emph{supersectors} $\hat\Sect$,
+  they are in the case of a single level $k$, defined as follows:
+  \begin{einr}
+    write the anti-Stokes directions as $\A=\{\alpha_1,\dots,\alpha_\nu\}$
+    arranged according to the clockwise ordering, then is the $i$-th
+    supersector defined as the arc
+    \[
+      \hat\Sect_i:=
+        \left(\alpha_i-\frac{\pi}{2k},\alpha_{i+1}+\frac{\pi}{2k}\right) \,.
+    \]
+  \end{einr}
+  This yields a cyclic covering $(\hat\Sect_i)_{i\in\{1,\dots,\nu\}}$ whose
+  nerve is exactly $\dot\cU^k$ defined above.
+\end{rem}
 If we extend to several levels, the set
 $\bigcup_k\left\{U(\alpha,\frac{\pi}{k})\mid\alpha\in\A^{k}\right\}$ is no
 longer a nerve.
@@ -1768,7 +1816,8 @@ the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
       \item $\alpha^-$ (resp.\ $\alpha^+$) be the next anti-Stokes direction
         with $k$-maximum level greater then $K_i$ on the left (resp.\ on the
         right) and define $\dot U_{\alpha^-,\alpha^+}$ as the clockwise hull of
-        the arcs $\dot U_{\alpha^-}^{\leq k}$ and $\dot U_{\alpha^+}^{\leq k}$.
+        the arcs $\dot U_{\alpha^-}^{\leq k}$ and $\dot U_{\alpha^+}^{\leq k}$
+        already defined by induction.
         If there are no anti-Stokes directions with $k$-maximum level greater
         then $K_i$ we set $\dot U_{\alpha^-,\alpha^+}=S^1$.
     \end{itemize}
@@ -1918,7 +1967,7 @@ the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
 
 \begin{rem}
   The coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ depend only on
-  $\cQ_{[\End A^0]}$. Hence they depend only on $\cQ_{[A^0]}$.
+  $\cQ(A^0)$. Hence they depend only on the determining polynomials.
 \end{rem}
 It is obvious, that for every $k\in\cK$ the covering $\cU^{\leq k}$ refines
 $\cU^{k}$ and $\cU^{<k}$.
@@ -1928,14 +1977,15 @@ Thus the first property in the following proposition is satisfied. The other
 two can be found at \cite[Prop.II.3.1 (iv)]{Loday1994}
 \begin{prop}\label{prop:adequateProperties}
   \marginnote{\cite[Prop.II.3.1]{Loday1994}}
+  \PROBLEM[Was bedeutet das?]
   Let $k\in\cK$, then
   \begin{enumerate}
     \item the coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ are adequate
       to $\Lambda^k(A^0)$, $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$;
     \item there exists no $0$-cochain in $\Lambda^k(A^0)$ on $\cU^k$;
     \item on $\cU^{\leq k}$ there is no $0$-cochain in $\Lambda^{\leq0}(A^0)$
-      of level $k$, i.e.\ belong all $0$-cochains of $\Lambda^{\leq k}(A^0)$
-      to $\Lambda^{<k}(A^0)$.
+      of level $k$, i.e.\ all $0$-cochains of $\Lambda^{\leq k}(A^0)$
+      belong to $\Lambda^{<k}(A^0)$.
   \end{enumerate}
 \end{prop}
 To have a shorter notation, we denote the product
@@ -2203,16 +2253,80 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
       found in Loday-Richaud's paper \cite[Proof of Lem.II.3.3]{Loday1994}.
   \end{enumerate}
 \end{proof}
-\begin{defn}\label{defn:theMapTau}
-  Define the injective map
+Let $k\in\cK$ and $k'=\max\{k'\in\cK\mid k'<k\}$. We then know by definition
+that $\cU^{<k}=\cU^{\leq k'}$ as well as
+$\Lambda^{< k}(A^0)=\Lambda^{\leq k'}(A^0)$ and thus
+$\Gamma(\dot\cU^{< k};\Lambda^{< k}(A^0))=
+\Gamma(\dot\cU^{\leq k'};\Lambda^{\leq k'}(A^0))$ and obtain the following
+proposition.
+\begin{prop}\label{prop:theMapTau}
+  By applying $\mathfrak{S}^{\leq\star}$ multiple times one obtains
+  the \emph{product map of single leveled cocycles} in the following way
+  \[ \begin{tikzcd}[column sep=1.4cm,row sep=.9cm]
+      \underset{\tikzmark{e1}}{\underbrace{%
+        \Gamma(\dot\cU^{<k_r};\Lambda^{<k_r}(A^0))}}
+      \times
+      \Gamma(\dot\cU^{k_r};\Lambda^{k_r}(A^0))
+      \rar{\mathfrak{S}^{\leq k_r}}&
+      \overset{\Gamma(\dot\cU;\Lambda(A^0))}{%
+        \overset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+          \Gamma(\dot\cU^{\leq k_r};\Lambda^{\leq k_r}(A^0))
+      }}
+      \\\underset{\tikzmark{e2}}{\underbrace{%i
+        \Gamma(\dot\cU^{<k_{r-1}};\Lambda^{<k_{r-1}}(A^0))}}
+      \times
+      \Gamma(\dot\cU^{k_{r-1}};\Lambda^{k_{r-1}}(A^0))
+      \rar{\mathfrak{S}^{\leq k_{r-1}}}&
+      \overset{\tikzmark{n1}}{%
+        \Gamma(\dot\cU^{\leq k_{r-1}};\Lambda^{\leq k_{r-1}}(A^0))}
+      \\\hspace{6cm}\cdots \rar{\mathfrak{S}^{\leq k_{r-2}}}&
+      \overset{\tikzmark{n2}}{%
+        \Gamma(\dot\cU^{\leq k_{r-2}};\Lambda^{\leq k_{r-2}}(A^0))}
+      \\\underset{\tikzmark{eEND}}{\underbrace{%
+        \Gamma(\dot\cU^{<k_3};\Lambda^{<k_3}(A^0))}}
+      \times
+      \Gamma(\dot\cU^{k_3};\Lambda^{k_3}(A^0))
+      \rar{\mathfrak{S}^{\leq k_3}}&
+      \cdots\hspace{3cm}
+      \\
+      \Gamma(\dot\cU^{k_1};\Lambda^{k_1}(A^0))
+      \times
+      \Gamma(\dot\cU^{k_2};\Lambda^{k_2}(A^0))
+      \rar{\mathfrak{S}^{\leq k_2}}&
+      \overset{\tikzmark{nEND}}{%
+        \Gamma(\dot\cU^{\leq k_2};\Lambda^{\leq k_2}(A^0))}
+  \end{tikzcd} \]
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[->] (n1) to[out=90,in=270] node[midway,fill=white]{$=$}
+      ([yshift=.3em]e1);
+    \draw[->] (n2) to[out=90,in=270] node[midway,fill=white]{$=$}
+      ([yshift=.3em]e2);
+    \draw[->] (nEND) to[out=90,in=270] node[midway,fill=white]{$=$}
+      ([yshift=.3em]eEND);
+  \end{tikzpicture}
+  which can be written in the following compact form
   \begin{align*}
-    \tau^k:\Gamma(\dot\cU^k;\Lambda^k(A^0))
-    &\longrightarrow \Gamma(\dot\cU;\Lambda(A^0))
-  \\\dot f=(\dot f_\alpha)_{\alpha\in\A^k}
+    \tau:\prod_{k\in\cK}\Gamma(\dot \cU^k;\Lambda^k(A^0))
+    &\longrightarrow
+    \Gamma(\dot\cU;\Lambda(A^0))
+  \\(\dot f^k)_{k\in\cK}
     &\longmapsto
-    (\dot F_\alpha)_{\alpha\in\A}
+    \prod_{k\in\cK}\tau^k(\dot f^k)
   \end{align*}
-  where
+  where the products are following an ascending order of levels and the maps
+  $\tau_k$ are defined as
+  \[ \begin{tikzcd}[row sep=0cm]
+    \tau^k:\Gamma(\dot\cU^k;\Lambda^k(A^0))
+    \arrow{r}{\sigma^k}&
+    \Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))
+    \rar &
+    \Gamma(\dot\cU;\Lambda(A^0))
+  \\(\dot f_\alpha)_{\alpha\in\A^k}
+    \arrow[|->]{rr}
+    &&
+    (\dot F_\alpha)_{\alpha\in\A}
+  \end{tikzcd} \]
+  with
   \[
     \dot F_\alpha=\begin{cases}
       \dot f_\alpha \text{~restricted to } \dot U_\alpha
@@ -2222,46 +2336,70 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
       & \text{~when } \alpha\notin\A^k
     \end{cases}
   \]
-  \marginnote{\cite[Prop.II.3.4]{Loday1994}}
-  The \emph{product map of single-leveled cocycles} is then defined as
-  \begin{align*}
-    \tau:\prod_{k\in\cK}\Gamma(\dot \cU^k;\Lambda^k(A^0))
-    &\longrightarrow
-    \Gamma(\dot\cU;\Lambda(A^0))
-  \\(\dot f^k)_{k\in\cK}
-    &\longmapsto
-    \prod_{k\in\cK}\tau^k(\dot f^k)
-  \end{align*}
-  following an ascending order of levels.
-  \begin{s-rem}
-    The map $\tau$
-    \begin{enumerate}
-      \item is injective since it is composed from $\sigma^k$ and the clearly
-        injetive mapping
-        \[ \begin{tikzcd}[row sep=0cm]
+  The defined map $\tau$ is clearly injective and it can be extended to an
+  arbitrary order of levels (cf.\ Remark~\cite[Rem.II.3.5]{Loday1994}).
+\end{prop}
+\begin{comment}
+  \begin{defn}\label{defn:theMapTau}
+    Define the injective map
+    \begin{align*}
+      \tau^k:\Gamma(\dot\cU^k;\Lambda^k(A^0))
+      &\longrightarrow \Gamma(\dot\cU;\Lambda(A^0))
+    \\\dot f=(\dot f_\alpha)_{\alpha\in\A^k}
+      &\longmapsto
+      (\dot F_\alpha)_{\alpha\in\A}
+    \end{align*}
+    where
+    \[
+      \dot F_\alpha=\begin{cases}
+        \dot f_\alpha \text{~restricted to } \dot U_\alpha
+        \text{~and seen as being in } \Lambda(A^0)
+        & \text{~when } \alpha\in\A^k
+      \\\id \text{~(the identity on $\dot U_\alpha$) }
+        & \text{~when } \alpha\notin\A^k
+      \end{cases}
+    \]
+    \marginnote{\cite[Prop.II.3.4]{Loday1994}}
+    The \emph{product map of single-leveled cocycles} is then defined as
+    \begin{align*}
+      \tau:\prod_{k\in\cK}\Gamma(\dot \cU^k;\Lambda^k(A^0))
+      &\longrightarrow
+      \Gamma(\dot\cU;\Lambda(A^0))
+    \\(\dot f^k)_{k\in\cK}
+      &\longmapsto
+      \prod_{k\in\cK}\tau^k(\dot f^k)
+    \end{align*}
+    following an ascending order of levels.
+    \begin{s-rem}
+      The map $\tau$
+      \begin{enumerate}
+        \item is injective since it is composed from $\sigma^k$ and the clearly
+          injetive mapping
+          \begin{align*}
             \Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))
-            \rar
-            & \Gamma(\dot\cU;\Lambda(A^0))
+            &\longrightarrow
+            \Gamma(\dot\cU;\Lambda(A^0))
           \\(\dot F_\alpha)_{\alpha\in\A^{\leq k}}
-            \rar[maps to]
-            & (\dot F'_\alpha)_{\alpha\in\A}
-        \end{tikzcd} \]
-        where
-        \[
-          \dot F'_\alpha=\begin{cases}
-            \dot F_\alpha \text{~restricted to } \dot U_\alpha
-            \text{~and seen as being in } \Lambda(A^0)
-            & \text{~when } \alpha\in\A^{\leq k}
-            \\\id \text{~(the identity on $\dot U_\alpha$) }
-            & \text{~when } \alpha\notin\A^{\leq k}
-          \end{cases}
-        \]
-        and
-      \item it can be extended to an arbitrary order of levels
-        (cf.\ Remark~\cite[Rem.II.3.5]{Loday1994}).
-    \end{enumerate}
-  \end{s-rem}
-\end{defn}
+            &\longmapsto
+            (\dot F'_\alpha)_{\alpha\in\A}
+          \end{align*}
+          where
+          \[
+            \dot F'_\alpha=\begin{cases}
+              \dot F_\alpha \text{~restricted to } \dot U_\alpha
+              \text{~and seen as being in } \Lambda(A^0)
+              & \text{~when } \alpha\in\A^{\leq k}
+              \\\id \text{~(the identity on $\dot U_\alpha$) }
+              & \text{~when } \alpha\notin\A^{\leq k}
+            \end{cases}
+          \]
+          and
+        \item it can be extended to an arbitrary order of levels
+          (cf.\ Remark~\cite[Rem.II.3.5]{Loday1994}).
+      \end{enumerate}
+    \end{s-rem}
+  \end{defn}
+\end{comment}
 \begin{cor}
   The product map of single-leveled cocycles $\tau$ induces on the cohomology
   a bijective and natural map
@@ -2276,11 +2414,6 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
         H^1(\cU;\Lambda(A^0))}}\,.
   \end{tikzcd} \]
 \end{cor}
-\begin{comment}
-  \begin{proof}
-    \PROBLEM[Follows from the last lemmas?]
-  \end{proof}
-\end{comment}
 \paragraph{Composing functions to obtain $h$}
 We have the ingredients to define the function $h$ from
 Theorem~\ref{thm:mainThm2} by composition of already bijective maps.
@@ -2300,12 +2433,11 @@ Theorem~\ref{thm:mainThm2} by composition of already bijective maps.
       \rar{\prod_{k\in\cK}i^k}&
       \displaystyle \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
   \end{tikzcd} \]
-  by $\mathfrak{T}$.
-  Thus we obtain the bijection
+  by $\mathfrak{T}$ with the result that we obtain the bijection
   \[
     \cT\circ\mathfrak{T}:
     \prod_{\alpha\in\cA}\Sto_\alpha(A^0)
-    \to
+    \longrightarrow
     H^1(\cU;\Lambda(A^0))
   \]
   as the map $h$.
