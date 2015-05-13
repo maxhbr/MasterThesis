@@ -1581,7 +1581,7 @@ clockwise hull from $\dot U_{j-1}$ to $\dot U_j$.
     a section $\phi\in\Gamma(\Omega;\Lambda(A^0))$, where $\Omega$ is the
     maximal arc of definition around $\theta$.
 
-    \PROBLEM[The flatness proprerty implicitly satisfied?]
+    \PROBLEM[The flatness property implicitly satisfied?]
   \end{lem}
 \end{comment}
 \begin{rem}\label{rem:mapStoToCocy}
@@ -2423,20 +2423,20 @@ Theorem~\ref{thm:mainThm2} by composition of already bijective maps.
   proposition~\ref{prop:filtrationOfStokesGroup} and
   denote the composition
   \[ \begin{tikzcd}[column sep=1.8cm,row sep=0]
-      \displaystyle \prod_{\alpha\in\cA}\Sto_\alpha(A^0)
+      \displaystyle \prod_{\alpha\in\A}\Sto_\alpha(A^0)
       \rar{\prod_{\alpha\in\A}i_\alpha}
       \arrow[ddrr, out=270,in=200,"\mathfrak{T}"]
       &
-      \displaystyle \prod_{\alpha\in\cA}\prod_{k\in\cK}\Sto_\alpha^k(A^0)
+      \displaystyle \prod_{\alpha\in\A}\prod_{k\in\cK}\Sto_\alpha^k(A^0)
     \\&\text{\rotatebox[origin=c]{-90}{$\equiv$}}
-    \\&\displaystyle \prod_{k\in\cK}\prod_{\alpha\in\cA}\Sto_\alpha^k(A^0)
+    \\&\displaystyle \prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_\alpha^k(A^0)
       \rar{\prod_{k\in\cK}i^k}&
       \displaystyle \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
   \end{tikzcd} \]
   by $\mathfrak{T}$ with the result that we obtain the bijection
   \[
     \cT\circ\mathfrak{T}:
-    \prod_{\alpha\in\cA}\Sto_\alpha(A^0)
+    \prod_{\alpha\in\A}\Sto_\alpha(A^0)
     \longrightarrow
     H^1(\cU;\Lambda(A^0))
   \]
@@ -2488,3 +2488,222 @@ Theorem~\ref{thm:mainThm2} by composition of already bijective maps.
   cyclic covering and outputs cohomologous Stokes cocycle and thus solves this
   problem.
 \end{rem}
+
+\section{Further improvements}
+In the prove of theorem~\ref{thm:mainThm2} we have seen, \rewrite{that not only
+$\cH(A^0)\cong\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ but} also that
+\begin{align*}
+  \cH(A^0)&\cong\prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_\alpha^k(A^0) 
+  \\&\cong\prod_{k\in\cK}\prod_{\alpha\in\A^k}\Sto_\alpha^k(A^0)
+  &\text{(since $\SSto_{\alpha}^{k}(A^0)=\{\id\}$ when $k\notin\cK_\alpha$.)}
+  \\&\cong\prod_{k\in\cK}\prod_{\alpha\in\A^k}\SSto_\alpha^k(A^0) \,.
+\end{align*}
+This representation can be used to achieve further improvements, since one is
+able to multiply some succeeding Stokes matrices (resp. Stokes germs) of the
+same level without loss of information.
+This is based on the Corollary~\ref{cor:composeLevelwise} stated bellow
+
+Let us fix a level $k\in\cK$. We want to rewrite the product
+$\prod_{\alpha\in\A^k}\SSto_\alpha^k(A^0)$ by collecting the information of
+multiple Stokes matrices into one product of these matrices.
+
+\TODO[move?]
+Boalch, which looks in his publications \cite{boalch,thboalch} only at the
+single-leveled case, uses this extensively to obtain better Stokes matrices,
+which are stable under small deformations
+(cf.\ Remark~\ref{rem:boalchRemarkFactorMatrix}).
+
+\begin{defn}
+  A subset of $\A^k$ consisting of $\frac{\#\A^k}{2k}$ consecutive anti-Stokes
+  directions of level $k$ will be called a \emph{half-period (of level $k$)}.
+  \begin{s-rem}
+    The set $\A^k$ can clearly be split into $2k$ distinct half-periods.
+  \end{s-rem}
+\end{defn}
+From the definition of anti-Stokes directions of level $k$ it is clear that 
+every arc of width $\frac{\pi}{k}$, which has no anti-Stokes direction of level
+$k$ on its border, contains $\frac{\#\A^k}{2k}$ anti-Stokes directions
+since
+\begin{einr}
+  for every sector $I=U(\theta,\frac{\pi}{k})$, of width $\frac{\pi}{k}$ and
+  center $\theta$, which satisfies $\theta\pm\frac{\pi}{2k}\notin\A^k$,
+  there is to any pair $(q_j,q_l)$ in $\cQ(A^0)$, which has level $k_{jl}=k$,
+  exactly one direction $\alpha\in \A^k\cap I$ which satisfies, that
+  $\Im(a_{jl}e^{-ik_{jl\alpha}})=0$.
+  At such a direction $\alpha$, corresponding to the pair $(q_j,q_l)$, is then
+  either $q_j\underset{\alpha,\max}{\prec}q_l$ or
+  $q_l\underset{\alpha,\max}{\prec}q_j$ satisfied.
+\end{einr}
+This implies that for every $\theta$, which satisfies
+$\theta\pm\frac{\pi}{2k}\notin\A^k$, is $\A^k\cap U(\theta,\frac{\pi}{k})$
+a half-period and by
+$\dot\bigcup_{1\leq m\leq 2k}\A^k\cap U(\theta,\frac{m\pi}{k})=\A^k$ is the
+corresponding \rewrite{decomposition} in half-periods of $\A^k$ given.
+
+Let $I=U(\theta,\frac{\pi}{k})$ be an arc width $\frac{\pi}{k}$ such that
+$\theta\pm\frac{\pi}{2k}\notin\A^k$.
+\begin{rem}\label{rem:remarkAboutCommonStructure}
+  For every $\alpha\in\A^k\cap I$ we can write the Stokes matrix as
+  \[
+    K^\alpha=(K^\alpha_{jl})_{j,l\in\{1,\dots,s\}}\in\SSto_\alpha^k(A^0)
+  \]
+  where the $K^\alpha_{jl}\in\C^{n_j\times n_l}$ are blocks corresponding to
+  the structure of $Q$ (cf.\ Definition~\ref{defn:groupOfFaithfullReps}).
+  We then know for $j\neq l$ that, if $K^\alpha_{jl}\neq0$ then
+  \begin{itemize}
+    \item is $K^\alpha_{lj}=0$ and
+    \item for every $\alpha'\in(\A^k\cap I)\backslash\{\alpha\}$ is
+      $K^{\alpha'}_{jl}=0$ as well as $K^{\alpha'}_{lj}=0$.
+  \end{itemize}
+\end{rem}
+\begin{rem}
+  In the situation of Remark~\ref{rem:remarkAboutCommonStructure}
+  there exists a common (block) permutation matrix $P\in G$ given by
+  $(P)_{jl}=\delta_{\pi(j)l}$ where
+  \begin{itemize}
+    \item $\delta_{jl}$ is the block version of Kronecker's delta which was
+      introduced in Definition~\ref{defn:groupOfFaithfullReps} and
+    \item $\pi$ is the permutation of $\{1,\dots,s\}$ corresponding to
+      $q_j\underset{\theta}{\prec}q_l$ \Leftrightarrow{} $\pi(j)<\pi(l)$
+      \marginnote{\cite[18]{boalch}}
+  \end{itemize}
+  such that every matrix $P^{-1}K^{\alpha}P$ is upper triangular and the
+  observation from remark~\ref{rem:remarkAboutCommonStructure} is still
+  satisfied.
+  \begin{s-rem}
+    After moving the sector $U(\theta,\frac{\pi}{k})$ to
+    $U(\theta,\frac{\pi}{k})+\frac{\pi}{k}
+    =U(\theta+\frac{\pi}{k},\frac{\pi}{k})$ we obtain also a corresponding
+    permutation $\pi'$ which is inverse to $\pi$.
+    The corresponding permutation matrix $P'$ is then given by $P'=P^{-1}$.
+
+    Such that the permutation $P$ transforms Stokes matrices on the sector
+    $I+\frac{\pi}{k}$ to lower triangular matrices
+  \end{s-rem}
+  In the single leveled case of this phenomenon is discussed on page 18 of
+  Boalch's paper~\cite{boalch}.
+\end{rem}
+
+In the paper \cite{BJL1979Birkhoff} from Balser, Jurkat and Lutz is the
+following Lemma stated as Lemma 2 on page 75.
+\begin{lem}
+  Let $T\subset\{1,\dots,n\}\times\{1,\dots,n\}$ be a position set, which
+  satisfies the \emph{completeness property}:
+  \begin{einr}
+    if $(j,k)$ and $(k,l)\in T$ then is also $(j,l)\in T$.
+  \end{einr}
+  Choose a indexing $i:\{1,\dots,
+  \underset{\#T}{\underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\mu}}\}
+  \overset{\cong}{\to}T$ of the position set, then there exists for every
+  \[
+    K\in S_T:=\left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in G \mid
+      K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T \right\}
+  \]
+  unique scalars $t_j\in\C$ such that
+  \[
+    K=(\id + t_1E_{i(1)})\cdots(\id + t_{\mu}E_{i(\mu)}) \,.
+  \]
+  \begin{s-rem}
+    The completeness property is reasonable, since for example
+    $S_{\{(2,3),(3,2)\}}$, corresponding to the not complete set
+    $\{(2,3),(3,2)\}$, is not stable under the product:
+    \begin{align*}
+      \begin{pmatrix}
+        1 & a & 0
+      \\0 & 1 & 0
+      \\0 & 0 & 1
+      \end{pmatrix}
+      \begin{pmatrix}
+        1 & 0 & 0
+      \\0 & 1 & b
+      \\0 & 0 & 1
+      \end{pmatrix}
+      =
+      \begin{pmatrix}
+        1 & a & \textcolor{red!60!black}{ab}
+      \\0 & 1 & b
+      \\0 & 0 & 1
+      \end{pmatrix}
+      \notin S_{\{(2,3),(3,2)\}}
+      \,.
+    \end{align*}
+  \end{s-rem}
+\end{lem}
+From the previous lemma we deduce the following corollary.
+\begin{cor}\label{cor:composeLevelwise}
+  Let $T_1,\dots,T_r$ be a subsets of the complete set $T$, such that
+  \begin{itemize}
+    \item $T=T_1\dot\cup\dots\dot\cup T_r$ and
+    \item for every $m$ does $T_m$ satisfy the completeness property.
+  \end{itemize}
+  Then is by
+  \begin{align*}
+    S_{T_1}\times\cdots\times S_{T_m} &\longrightarrow S_T
+  \\(K_1,\dots,K_m) &\longmapsto K_1\cdots K_m
+  \end{align*}
+  an isomorphism defined.
+\end{cor}
+We can apply the previous corollary in our situation. This yields the following
+theorem.
+\begin{thm}
+  Let $\theta\in S^1$ be a fixed direction which satisfies
+  $\theta\pm\frac{\pi}{2k}\notin\A^k$, then
+  \[
+    \cH\cong \prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
+    \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0) \,,
+  \]
+  where
+  \begin{align*}
+    \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)&:=
+      S_{\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}}
+    \\&= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in G \mid
+      K_{jl}=\delta_{jl} \text{~unless~}
+      q_j \underset{\theta}{\prec} q_l \Big\}
+  \end{align*}
+  \begin{s-rem}
+    This means that the information of all Stokes-matrices can on every level
+    $k$ be grouped into $2k$ matrices, which are products of the corresponding
+    Stokes matrices.
+  \end{s-rem}
+\end{thm}
+\begin{proof}
+  Let $I=U(\theta,\frac{\pi}{k})$ be the arc of width $\frac{\pi}{k}$
+  corresponding to $\theta$.
+  We then have
+  \begin{itemize}
+    \item for every $\alpha\in\A$ satisfies the set
+      $T_{\alpha}:=\{(j,l)\mid q_j\underset{\alpha,\max}{\prec}q_l\}$
+      the completeness property, since it is defined via a \rewrite{transitiv
+      relation}, and
+    \item the union of all $T_{\alpha}$ for $\alpha\in I\cap \A^k$ is then
+      \begin{align*}
+        T&:=\dot\bigcup_{\alpha\in I\cap\A}T_{\alpha}
+        \\&=\{(j,l) \mid q_j \underset{\alpha,\max}{\prec} q_l
+            \text{~for some~}\alpha\in\A^k\cap I \}
+        \\&=\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}
+      \end{align*}
+      and is also complete, since $\underset{\theta}{\prec}$ is also a
+      \rewrite{transitive relation.}
+  \end{itemize}
+  Thus, by Corollary~\ref{cor:composeLevelwise} we have an isomorphism
+  \begin{align*}
+    \prod_{\alpha\in\A^k\cap I}
+    \overset{S_{T_\alpha}}{%
+      \overset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\overbrace{%
+          \SSto_\alpha^k(A^0)
+        }
+      }
+    }
+    \overset{\cong}\longrightarrow
+    S_T=:\hat\SSto_\theta^k(A^0)
+  \end{align*}
+  and it yields directly an isomorphism
+  \[
+    \prod_{\alpha\in\A^k}\SSto_\alpha^k(A^0)
+    \overset{\cong}\longrightarrow
+    \prod_{j\in\{1,\dots,2k\}}
+    \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0) \,.
+  \]
+  \rewrite{The product for every $k\in\cK$ of this isomorphism yields the
+  isomorphisms of the theorem.}
+\end{proof}

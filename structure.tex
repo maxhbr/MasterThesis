@@ -464,213 +464,13 @@ Stokes matrices as
   \prod_{\alpha\in\A}\SSto_{\alpha}(A^0)
 \end{align*}
 
-\section{A more general multileveled case}
+\section{In the more general multileveled context}
 Let us assume, that our normal form $[A^0]$ of dimension $n$ has the levels
-$\cK$ and start at the situation
-$\prod_{k\in\cK}\prod_{\alpha\in\A}\SSto_{\alpha}^{k}(A^0)$
-of Proposition~\ref{prop:decompositionDiagram}.
-We want to rewrite the inner product
-\begin{align*}
-  \prod_{\alpha\in\A}\SSto_{\alpha}^{k}(A^0)
-  &=\prod_{\alpha\in\A^k}\SSto_{\alpha}^{k}(A^0)
-  &\text{(since $\SSto_{\alpha}^{k}(A^0)=\{\id\}$ when $k\notin\cK_\alpha$.)}
-\end{align*}
-by collecting the information of multiple Stokes matrices into one product of
-these matrices.
-Boalch, which looks in his publications \cite{boalch,thboalch} only at the
-single-leveled case, uses this extensively to obtain better Stokes matrices,
-which are stable under small deformations
-(cf.\ Remark~\ref{rem:boalchRemarkFactorMatrix}).
-
-\begin{defn}
-  A subset of $\A^k$ consisting of $\frac{\#\A^k}{2k}$ consecutive anti-Stokes
-  directions of level $k$ will be called a \emph{half-period (of level $k$)}.
-  \begin{s-rem}
-    The set $\A^k$ can clearly be split into $2k$ distinct half-periods.
-  \end{s-rem}
-\end{defn}
-From the definition of anti-Stokes directions of level $k$ it is clear that 
-every arc of width $\frac{\pi}{k}$, which has no anti-Stokes direction of level
-$k$ on its border, contains $\frac{\#\A^k}{2k}$ anti-Stokes directions
-since
-\begin{einr}
-  for every sector $I=U(\theta,\frac{\pi}{k})$, of width $\frac{\pi}{k}$ and
-  center $\theta$, which satisfies $\theta\pm\frac{\pi}{2k}\notin\A^k$,
-  there is to any pair $(q_j,q_l)$ in $\cQ(A^0)$, which has level $k_{jl}=k$,
-  exactly one direction $\alpha\in \A^k\cap I$ which satisfies, that
-  $\Im(a_{jl}e^{-ik_{jl\alpha}})=0$.
-  At such a direction $\alpha$, corresponding to the pair $(q_j,q_l)$, is then
-  either $q_j\underset{\alpha,\max}{\prec}q_l$ or
-  $q_l\underset{\alpha,\max}{\prec}q_j$ satisfied.
-\end{einr}
-This implies that for every $\theta$, which satisfies
-$\theta\pm\frac{\pi}{2k}\notin\A^k$, is $\A^k\cap U(\theta,\frac{\pi}{k})$
-a half-period and by
-$\dot\bigcup_{1\leq m\leq 2k}\A^k\cap U(\theta,\frac{m\pi}{k})=\A^k$ is a
-splitting of $\A^k$ given.
-
-\begin{comment}
-  We know that
-  \[
-    \prod_{\alpha\in\A}\SSto_{\alpha}^{k}(A^0)\cong
-    \prod_{\alpha\in\A^k}\SSto_{\alpha}^{k}(A^0) \,,
-  \]
-  since $\SSto_{\alpha}^{k}(A^0)=\{\id\}$ when $k\notin\cK_\alpha$.
-\end{comment}
-
-Let $I=U(\theta,\frac{\pi}{k})$ be an arc width $\frac{\pi}{k}$ such that
-$\theta\pm\frac{\pi}{2k}\notin\A^k$.
-\begin{rem}\label{rem:remarkAboutCommonStructure}
-  For every $\alpha\in\A^k\cap I$ we can write the Stokes matrix as
-  \[
-    K^\alpha=(K^\alpha_{jl})_{j,l\in\{1,\dots,s\}}\in\SSto_\alpha^k(A^0)
-  \]
-  where the $K^\alpha_{jl}\in\C^{n_j\times n_l}$ are blocks corresponding to
-  the structure of $Q$ (cf.\ Definition~\ref{defn:groupOfFaithfullReps}).
-  We then know for $j\neq l$ that, if $K^\alpha_{jl}\neq0$ then
-  \begin{itemize}
-    \item is $K^\alpha_{lj}=0$ and
-    \item for every $\alpha'\in(\A^k\cap I)\backslash\{\alpha\}$ is
-      $K^{\alpha'}_{jl}=0$ as well as $K^{\alpha'}_{lj}=0$.
-  \end{itemize}
-\end{rem}
-\begin{rem}
-  In the situation of Remark~\ref{rem:remarkAboutCommonStructure}
-  there exists a common (block) permutation matrix $P\in G$ given by
-  $(P)_{jl}=\delta_{\pi(j)l}$ where
-  \begin{itemize}
-    \item $\delta_{jl}$ is the block version of Kronecker's delta which was
-      introduced in Definition~\ref{defn:groupOfFaithfullReps} and
-    \item $\pi$ is the permutation of $\{1,\dots,s\}$ corresponding to
-      $q_j\underset{\theta}{\prec}q_l$ \Leftrightarrow{} $\pi(j)<\pi(l)$
-      \marginnote{\cite[18]{boalch}}
-  \end{itemize}
-  such that every matrix $P^{-1}K^{\alpha}P$ is upper triangular.
-  \begin{s-rem}
-    After moving the sector $U(\theta,\frac{\pi}{k})$ to
-    $U(\theta,\frac{\pi}{k})+\frac{\pi}{k}
-    =U(\theta+\frac{\pi}{k},\frac{\pi}{k})$ we obtain also a corresponding
-    permutation $\pi'$ which is inverse to $\pi$.
-    The corresponding permutation matrix $P'$ which is then given by
-    $P'=P^{-1}$.
-
-    Such that the permutation $P$ transforms Stokes matrices on the sector
-    $I+\frac{\pi}{k}$ to lower triangular matrices
-  \end{s-rem}
-  In the single leveled case of this phenomenon is discussed on page 18 of
-  Boalch's paper~\cite{boalch}.
-\end{rem}
-
-In the paper \cite{BJL1979Birkhoff} from Balser, Jurkat and Lutz is the
-following Lemma stated as Lemma 2 on page 75.
-\begin{lem}
-  Let $T\subset\{1,\dots,n\}\times\{1,\dots,n\}$ be a position set, which
-  satisfies the \emph{completeness property}:
-  \begin{einr}
-    if $(j,k)$ and $(k,l)\in T$ then is also $(j,l)\in T$.
-  \end{einr}
-  Choose a indexing $i:\{1,\dots,
-  \underset{\mu}{\underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\#T}}\}
-  \overset{\cong}{\to}T$ of the position set, then there exists for every
-  \[
-    K\in S_T:=\left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in G \mid
-      K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T \right\}
-  \]
-  unique scalars $t_m\in\C$ such that
-  \[
-    K=(\id + t_1E_{i(1)})\cdots(\id + t_{\mu}E_{i(\mu)}) \,.
-  \]
-  \begin{s-rem}
-    \begin{enumerate}
-      \item The completeness property is reasonable, since for example
-        $S_{\{(2,3),(3,2)\}}$, corresponding to the not complete set
-        $\{(2,3),(3,2)\}$, is not stable under the product:
-        \begin{align*}
-          \begin{pmatrix}
-            1 & a & 0
-          \\0 & 1 & 0
-          \\0 & 0 & 1
-          \end{pmatrix}
-          \begin{pmatrix}
-            1 & 0 & 0
-          \\0 & 1 & b
-          \\0 & 0 & 1
-          \end{pmatrix}
-          =
-          \begin{pmatrix}
-            1 & a & \textcolor{red!60!black}{ab}
-          \\0 & 1 & b
-          \\0 & 0 & 1
-          \end{pmatrix}
-          \notin S_{\{(2,3),(3,2)\}}
-          \,.
-        \end{align*}
-      \item We can write the group $\SSto_\alpha(A^0)$ as
-        \[
-          \SSto_\alpha(A^0)=
-          S_{\{(j,l)\mid q_j \underset{\alpha,\max}{\prec} q_l\}} \,.
-        \]
-    \end{enumerate}
-  \end{s-rem}
-\end{lem}
-\begin{cor}\label{cor:composeLevelwise}
-  Let $T_1,\dots,T_r$ be a subsets of the complete set $T$, such that
-  \begin{itemize}
-    \item $T=T_1\dot\cup\dots\dot\cup T_r$ and
-    \item for every $m$ does $T_m$ satisfy the completeness property.
-  \end{itemize}
-  Then is by
-  \begin{align*}
-    S_{T_1}\times\cdots\times S_{T_m} &\longrightarrow S_T
-  \\(K_1,\dots,K_m) &\longmapsto K_1\cdots K_m
-  \end{align*}
-  an isomorphism defined.
-\end{cor}
-We can apply the Corollary~\ref{cor:composeLevelwise} in our situation. Let
-$I=U(\theta,\frac{\pi}{k})$ be an arc of width $\frac{\pi}{k}$ which satisfies,
-that $\theta\pm\frac{\pi}{2k}\notin\A^k$.
-We then have
-\begin{itemize}
-  \item for every $\alpha\in I\cap \A^k$ satisfies the set
-    $T_{\alpha}:=\{(j,l)\mid q_j\underset{\alpha,\max}{\prec}q_l\}$
-    the completeness property, since it is defined via a \rewrite{transitiv
-    relation}, and
-  \item the union of all $T_{\alpha}$ is then
-    \begin{align*}
-      T&:=\dot\bigcup_{\alpha\in I\cap\A}T_{\alpha}
-      \\&=\{(j,l) \mid q_j \underset{\alpha,\max}{\prec} q_l
-          \text{~for some~}\alpha\in\A^k\cap I \}
-      \\&=\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}
-    \end{align*}
-    and is also complete, since $\underset{\theta}{\prec}$ is also a
-    \rewrite{transitive relation.}
-\end{itemize}
-Thus we have an isomorphism
-\begin{align*}
-  \prod_{\alpha\in\A^k\cap I}\SSto_\alpha^k(A^0)
-  \longrightarrow
-  S_T=:\SSto_I^k(A^0)
-\end{align*}
-and it yields directly an isomorphism
-\[
-  \prod_{\alpha\in\A^k}\SSto_\alpha^k(A^0)
-  \longrightarrow
-  \prod_{j\in\{1,\dots,2k\}}
-  \SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0) \,.
-\]
-This means, that the information of all Stokes-matrices can be grouped into
-$2k$ matrices, which are products of the corresponding Stokes matrices.
-
-\begin{rem}
-  The group $\SSto_{U(\theta,\frac{\pi}{k})}^k(A^0)$ is defined as
-  \begin{align*}
-    \SSto_{U(\theta,\frac{\pi}{k})}^k(A^0)&= S_T
-  \end{align*}
-\end{rem}
+$\cK$.
 
 \begin{cor}
   We now can improve the diagram of isomorphisms from
-  Propositios~\label{prop:decompositionDiagram} by writing it in a more general
+  Proposition~\ref{prop:decompositionDiagram} by writing it in a more general
   form and adding the found isomorphism.
   Let $\theta$ be a direction, which satisfies
   $\theta\pm\frac{\pi}{2k}\notin\A^k$ for every $k\in\cK$.
@@ -685,7 +485,7 @@ $2k$ matrices, which are products of the corresponding Stokes matrices.
          "\prod_{k\in\cK}\prod_{\alpha\in\A}(\rho_{\alpha}^k)^{-1}"]
        \arrow[r]
       &\displaystyle\prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
-       \SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0)
+       \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)
     \\ \displaystyle\prod_{\alpha\in\A} \SSto_{\alpha}(A^0)
         \dar{\prod_{\alpha\in\A}\rho_{\alpha}^{-1}}
     \\\displaystyle\prod_{\alpha\in\A} \Sto_{\alpha}(A^0)
@@ -701,7 +501,7 @@ $2k$ matrices, which are products of the corresponding Stokes matrices.
   \[
     \St(A^0) \textcolor{purple}{\longrightarrow}
     \prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
-    \SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0)
+    \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)
   \]
 
   \begin{s-rem}
@@ -709,13 +509,13 @@ $2k$ matrices, which are products of the corresponding Stokes matrices.
     \[
       \prod_{\alpha\in\A}\SSto_{\alpha}(A^0) \longrightarrow
       \prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
-      \SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0)
+      \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)
     \]
     is in the single-leveled case with $n=s$, i.e.\ all diagonal elements of
     $Q$ are different, given in Lemma 3.2 of Boalch's paper
     \cite[Lem.3.2]{boalch}.
     In this case is every
-    $\SSto_{U(\theta+j\frac{\pi}{k},\frac{\pi}{k})}^k(A^0)$ isomorphic to some
+    $\hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)$ isomorphic to some
     $PU_+P^{-1}$ where $U_+$ is the group of all upper triangular matrices,
     with ones on the diagonal, and $P$ is a permutation matrix.
   \end{s-rem}
