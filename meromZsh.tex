@@ -418,8 +418,6 @@ following way.
 \begin{notations}
   We will use the following notations
   \begin{itemize}
-    \item $G=\Gl_n(\C)$ the group of all invertible matrices with coefficients
-      in $\C$;
     \item $G[t]=\Gl_n(\C[t])$;
     \item $G\{t\}=\Gl_n(\C\{t\})$ the analytic transformations;
     \item $G(\!\{t\}\!)=\Gl_n\left(\C\{t\}[t^{-1}]\right)$ the
@@ -619,7 +617,7 @@ meromorphic connections.
   Let $(\cM,\nabla)$ be a regular singular meromorphic connection and $A$ its
   connection matrix.
   Then there exists a matrix $F\in G(\!\{t\}\!)$ such that after transformation
-  by $F$ the matrix $B={}^F\!A$ is constant i.e.\ ${}^F\!A\in G$
+  by $F$ the matrix $B={}^F\!A$ is constant i.e.\ ${}^F\!A\in\Gl_n(\C)$
   (cf.~\cite[Thm.II.2.8]{sabbah2007isomonodromic}
   or~\cite[Sec.5.1.2]{hotta2008}).
 \end{thm}
@@ -684,7 +682,8 @@ along the path $\gamma$}.
   \[
     \lim_{s\to2\pi}\cY(e^{\sqrt{-1}s}t)=\cY(t)L
   \]
-  where $L\in G$ is called the \emph{\TODO[(formal)?]monodromy matrix} of $[A]$.
+  where $L\in\GL_n(\C)$ is called the \emph{\TODO[(formal)?]monodromy matrix}
+  of $[A]$.
   \PROBLEM[wie passt das zu normal-formen?]
 \end{defn}
 
@@ -872,8 +871,9 @@ where
 $Q(t^{-1}):=\bigoplus_{j=1}^sq_j(t^{-1})\cdot\id_{n_j}$
 and $L:=\bigoplus_{j=1}^sL_j$.
 \begin{prop}\label{prop:fundSolBuilder}
-  Let $L\in G$ be constant and $Q(t^{-1})=\diag(q_1(t^{-1}),\dots,q_n(t^{-1}))$
-  a diagonal matrix of polynomials in $t^{-1}$.
+  Let $L\in \GL_n(\C)$ be constant and
+  $Q(t^{-1})=\diag(q_1(t^{-1}),\dots,q_n(t^{-1}))$ a diagonal matrix of
+  polynomials in $t^{-1}$.
   The matrix $\cY_0:=t^L e^{Q(t^{-1})}$ is then a fundamental solution of the
   system determined by the matrix
   \[

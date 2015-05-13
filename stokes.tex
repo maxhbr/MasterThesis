@@ -394,7 +394,7 @@ Theorem 4.2.1.
 Let $\hat F\in G(\!(t)\!)$ be a matrix with formally meromorphic entries. By
 the Borel-Ritt Lemma (cf.\ Theorem~\ref{thm:borel-ritt}) we then know, that
 there exists for every sector $\mathfrak{s}\subsetneq S^1$ a holomorphic
-function $G:\mathfrak{s}\to G$ which is asymptotic to $\hat F$.
+function $G:\mathfrak{s}\to\GL_n(\C)$ which is asymptotic to $\hat F$.
 We will denote the set of all such holomorphic functions, which are on
 the arc $I$ asymptotic to $\id\in G(\!(t)\!)$ by
 \[
@@ -453,7 +453,8 @@ It can be verified, that the class $\Theta([\hat F])$ does not depend on
   \]
   Since this tells us, that the functions $F_j'G_jF_j^{-1}$ coincide on
   the overlapping and define a holomorphic map from the arc $S^1$ (i.e.\ a
-  punctured disc with a small radius) into $G$, which will be called $G$.
+  punctured disc with a small radius) into $\GL_n(\C)$, which will be called
+  $G$.
   Since $F_j'G_jF_j^{-1}\sim_{U_j}\id$ for all $j\in J$, we have
   $G\sim\id$.
   \PROBLEM[Riemannscher hebbarkeits satz]
@@ -492,8 +493,8 @@ Theorem~\ref{thm:mainThm1}.
   From the Theorem~\ref{thm:thm1helpMalgSibuy} we know, that there is a $\hat
   F\in G\llbracket t\rrbracket\subset G(\!(t)\!)$ whose class $[\hat F]$ gets
   via $\Theta$ mapped to $\sigma$.
-  Thus there exists holomorphic functions $F_j:\mathfrak{s}_{U_j}\to G$ with
-  $F_j\sim_{U_j}\hat F$ and $F_l^{-1}F_j=F_{jl}$ on
+  Thus there exists holomorphic functions $F_j:\mathfrak{s}_{U_j}\to\GL_n(\C)$ 
+  with $F_j\sim_{U_j}\hat F$ and $F_l^{-1}F_j=F_{jl}$ on
   $\mathfrak{s}_{U_j\cap U_l}$ for all $j,l\in J$.
 
   Define on every arc $U_j$ the matrix $A_j:={}^{F_j}A^0$.
@@ -965,7 +966,7 @@ define the Stokes group as follows.
   as a block version of Kronecker's delta.
   Define the group
   \begin{align*}
-    \SSto_\theta(A^0)= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in G \mid
+    \SSto_\theta(A^0)= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in\GL_n(\C) \mid
       K_{jl}=\delta_{jl} \text{~unless~}
       q_j \underset{\theta,\max}{\prec} q_l \Big\}
   \end{align*}
@@ -1099,7 +1100,7 @@ $A^0$ (cf.\ Definition~\ref{defn:normSol}).
   It is well known (cf.\ \cite[10]{thboalch}), that the morphism
   $\rho_{\theta}$, i.e.\ conjugation by the fundamental solution, relates
   solutions $\phi_\theta$ of $[\End(A^0)]=[A^0,A^0]$ to solutions of $[0,0]$
-  which are the constant matrices $G$.
+  which are the constant matrices $\GL_n(\C)$.
   Thus we have to show, that the image of $\Sto_\theta(A^0)$ under
   $\rho_{\theta}$ is $\SSto_\theta(A^0)$.
 
@@ -2558,7 +2559,7 @@ $\theta\pm\frac{\pi}{2k}\notin\A^k$.
 \end{rem}
 \begin{rem}
   In the situation of Remark~\ref{rem:remarkAboutCommonStructure}
-  there exists a common (block) permutation matrix $P\in G$ given by
+  there exists a common (block) permutation matrix $P\in\GL_n(\C)$ given by
   $(P)_{jl}=\delta_{\pi(j)l}$ where
   \begin{itemize}
     \item $\delta_{jl}$ is the block version of Kronecker's delta which was
@@ -2596,7 +2597,7 @@ following Lemma stated as Lemma 2 on page 75.
   \underset{\#T}{\underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\mu}}\}
   \overset{\cong}{\to}T$ of the position set, then there exists for every
   \[
-    K\in S_T:=\left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in G \mid
+    K\in S_T:=\left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in\GL_n(\C)\mid
       K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T \right\}
   \]
   unique scalars $t_j\in\C$ such that
@@ -2656,7 +2657,7 @@ theorem.
   \begin{align*}
     \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)&:=
       S_{\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}}
-    \\&= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in G \mid
+    \\&= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in\GL_n(\C)\mid
       K_{jl}=\delta_{jl} \text{~unless~}
       q_j \underset{\theta}{\prec} q_l \Big\}
   \end{align*}
