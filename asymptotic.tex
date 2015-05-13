@@ -98,18 +98,15 @@ We introduce the following notations:
   sector $\mathfrak{s}_I(r)$ if $I\subset U$.
 \end{defn}
 \begin{rem}\label{rem:arcsByWidthAndCenter}
-  \begin{itemize}
-    \item
-      Since the explicit value $r$ of the radius does not matter as long as
-      it is small enough, we shall simply speak of an \emph{arc} or
-      \emph{interval} $I$ as $\mathfrak{s}_I(r)$ for small enough $r$.
-    \item It will be convenient to talk of arcs
-      \[
-        U(\theta,\epsilon):=\left(\theta-\frac{\epsilon}{2}
-        ,\theta+\frac{\epsilon}{2}\right)\subset S^1
-      \]
-      defined by the midpoint together with the radius.
-  \end{itemize}
+  Since the explicit value $r$ of the radius does not matter as long as it is
+  small enough, we shall simply speak of an \emph{arc} or \emph{interval} $I$
+  as $\mathfrak{s}_I(r)$ for small enough $r$.
+  \\It will be sometimes convenient to talk of arcs
+  \[
+    U(\theta,\epsilon):=\left(\theta-\frac{\epsilon}{2}
+    ,\theta+\frac{\epsilon}{2}\right)\subset S^1
+  \]
+  defined by the midpoint together with the radius.
 \end{rem}
 \begin{defn}
   A sector $\mathfrak{s}_{a',b'}(r')$ is said to be a proper sub-sector of the
@@ -363,8 +360,7 @@ The most important theorem here is the Borel-Ritt Lemma.
     asymptotic to $\hat f$ on $I$.
     However, when $\hat f$ satisfies an equation, these asymptotic functions do
     not necessarily satisfy the same equation in general.
-    \comm{The main asymptotic expansion theorem fills this gap on small enough
-    sectors but does not garanty uniqueness.}
+    This gap will be filled in section~\ref{sec:MAET} for small enough sectors.
   \end{s-rem}
 \end{thm}
 There are multiple approaches to obtain a function $f\in\cA(I)$ asymptotic to a

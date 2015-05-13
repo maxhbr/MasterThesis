@@ -707,6 +707,8 @@ Thus the Levelt-Turittin theorem solves the \emph{formal classification
 problem}.
 
 \subsection{In the language of meromorphic connections: models}
+This approach is discussed in~\cite{sabbah_cimpa90} and in a more general
+context in~\cite[Sec.II.5]{sabbah2007isomonodromic}.
 \begin{defn}\label{defn:elemnMerConnBausteine}
   \begin{itemize}
     \item For a $\phi\in\C(\!\{t\}\!)$ we use $\cE^{\phi}$ to denote the germ
@@ -739,49 +741,29 @@ problem}.
       where $N\in\gl_{d+1}(\C)$ is a nilpotent matrix.
       If \rewrite{$\alpha\id + N$} is a single Jordan Block, we denote the
       corresponding connection by $\cN_{\alpha,d}$.
+      \begin{s-rem}
+        The Corollary~\cite[Cor.II.2.9]{sabbah2007isomonodromic} states, that
+        every germ of a regular meromorphic connection $(\cR,\nabla)$ is
+        isomorphic to some direct sum
+        \[
+          (\cR,\nabla)=\bigoplus_{\alpha,d}(\cN_{\alpha,d},\nabla)\,.
+        \]
+        of elementary regular meromorphic connections.
+        This solves the classification problem, for regular meromorphic
+        connections.
+        For a detailed analysis of regular meromorphic connections see Sabbah's
+        book~\cite[Sec.II.2]{sabbah2007isomonodromic} or the
+        book~\cite[Sec.5.2]{hotta2008} from Hotta et al.
+      \end{s-rem}
   \end{itemize}
 \end{defn}
-\begin{prop}
-  \marginnote{\cite[Cor.II.2.9]{sabbah2007isomonodromic}}
-  Every germ of a regular meromorphic connection is isomorphic to some direct
-  sum
-  \[
-    (\cR,\nabla)=\bigoplus_{\alpha,d}(\cN_{\alpha,d},\nabla)\,.
-  \]
-  \begin{s-rem}
-    This solves the classification problem, for regular meromorphic
-    connections.
-    For a detailed analysis of regular meromorphic connections see Sabbah's
-    book~\cite[Sec.II.2]{sabbah2007isomonodromic} or the
-    book~\cite[Sec.5.2]{hotta2008} from Hotta et al.
-  \end{s-rem}
-  \begin{comment}
-    \begin{enumerate}
-      \item Every germ of a meromorphic connection of rank one is isomorphic to
-        some germ
-        \[
-          (\cE^\phi,\nabla)\otimes(\cN_{\alpha,0},\nabla) \,.
-        \]
-      \item Two such rank one germs corresponding to $(\phi_1,\alpha_1)$ and
-        $(\phi_2,\alpha_2)$ are isomorphic if and only if
-        \begin{itemize}
-          \item $\phi_1-\phi_2$ has no pole and
-          \item $\alpha_1-\alpha_2\in\Z$.
-        \end{itemize}
-    \end{enumerate}
-  \end{comment}
-\end{prop}
-\begin{proof}
-  The statement is given in
-  Corollary~\cite[Cor.II.2.9]{sabbah2007isomonodromic} of Sabbah's Book.
-\end{proof}
 \begin{defn}
   \marginnote{\cite[Def.II.5.2]{sabbah2007isomonodromic}}
   A germ $(\cM,\nabla)$ is called \emph{elementary} if it is isomorphic to
   some germ $(\cE^\phi,\nabla)\otimes(\cR,\nabla)$ where
   \begin{itemize}
     \item $(\cE^\phi,\nabla)$ is defined \rewrite{as in}
-      Definition~\ref{defn:elemnMerConnBausteine} and
+      definition~\ref{defn:elemnMerConnBausteine} and
     \item $(\cR,\nabla)$ has regular singularity at $\{0\}$, i.e.\ is
       isomorphic to a direct sum of regular elementary meromorphic connections.
   \end{itemize}
@@ -850,11 +832,9 @@ formal classification problem.
     theorem (cf.\ Theorem~\ref{thm:maet}).
   \end{rem}
 \end{thm}
-\begin{comment}
-  \begin{proof}
-    See \TODO{}
-  \end{proof}
-\end{comment}
+Proofs of this theorem can be found in multiple places, for example in
+\cite[Thm.5.4.7]{sabbah_cimpa90}.
+
 \TODO[Full set of formal invariants]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -869,12 +849,12 @@ special form and that this property characterizes models.
   \emph{normal solution}.
 \end{defn}
 
-Let $(\cM,\nabla)$ be an unramified meromorphic connection and is thus via some
+Let $(\cM,\nabla)$ be an unramified meromorphic connection which is via some
 $\hat\lambda$ formally isomorphic to some model
-$\cM^{nf}=\bigoplus_{j=1}^s\cE^{\phi_j}\otimes\cR_{\phi_j}$.
-For every $j$ is a connection matrix, corresponding to $\cR_{\phi_j}$, given
-by some constant matrix in Jordan normal form divided by $t$, $\frac{1}{t}L_j$.
-A connection matrix to $\cE^{\phi_j}\otimes\cR_{\phi_j}$ is then by
+$\cM^{nf}=\bigoplus_{j=1}^s\cE^{\phi_j}\otimes\cR_j$.
+For every $j$ is a connection matrix, corresponding to $\cR_j$ given by
+$\frac{1}{t}L_j$, where $L$ is in Jordan normal form.
+A connection matrix to $\cE^{\phi_j}\otimes\cR_j$ is then by
 $q_j'(t^{-1})\cdot\id_{n_j}+\frac{1}{t}L_j$ given\TODO[(cf.~???)], where
 $q_j(t^{-1})=\phi_j(t)$ and $q_j'(t^{-1})=\frac{d}{dt}\phi_j(t)$\footnote{By
 abuse of notation we denote by $q_j'(t^{-1})$ the derivation
@@ -884,15 +864,13 @@ A connection matrix for $\cM^{nf}$ is then obtained by
 \begin{align*}
   A^0&= \bigoplus_{j=1}^s
   \left(q_j'(t^{-1})\cdot\id_{n_j}+\frac{1}{t}L_j\right)
-  \\&=
-    \underset{j=1}{\overset{s}{\bigoplus}}q_j'(t^{-1})\cdot\id_{n_j}
-    +\frac{1}{t}\underset{L}{%
-    \underset{\text{\rotatebox[origin=c]{-90}{$=:$}}}{\underbrace{%
-    \bigoplus_{j=1}^sL_j}}}
+  \\&=\bigoplus_{j=1}^sq_j'(t^{-1})\cdot\id_{n_j}
+    +\frac{1}{t}\bigoplus_{j=1}^sL_j
   \\&=Q'(t^{-1})+\frac{1}{t}L \,,
 \end{align*}
 where
-$Q(t^{-1}):=\underset{j=1}{\overset{s}{\bigoplus}}q_j(t^{-1})\cdot\id_{n_j}$.
+$Q(t^{-1}):=\bigoplus_{j=1}^sq_j(t^{-1})\cdot\id_{n_j}$
+and $L:=\bigoplus_{j=1}^sL_j$.
 \begin{prop}\label{prop:fundSolBuilder}
   Let $L\in G$ be constant and $Q(t^{-1})=\diag(q_1(t^{-1}),\dots,q_n(t^{-1}))$
   a diagonal matrix of polynomials in $t^{-1}$.
@@ -1197,7 +1175,7 @@ fundamental solution in the form $\hat F\cY_0$.
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The main asymptotic existence theorem (M.A.E.T)}
+\section{The main asymptotic existence theorem (M.A.E.T)}\label{sec:MAET}
 \begin{comment}
   \begin{multicols}{2}
     \textbf{Classical:}
