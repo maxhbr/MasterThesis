@@ -29,11 +29,11 @@ will be denoted by $h$.
 We \rewrite{have the following} commutative diagram of isomorphisms.
 \begin{center}
   \begin{tikzpicture}[scale=3]
-    \node[] (modSpcMat) at (0.7,0.3) {$\cH$};
-    \node[purple] (class) at (1.3,0) {$\cH(A^0)$};
-    \node[green!40!black] (sheaf) at (3,1.2) {$\St(\cM^{nf})$};
-    \node[] (sheaf3) at (3,0.7) {\textcolor{purple}{$\St(A^0)$}};
-    \node[blue] (mat) at (3,-1) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
+    \node[] (modSpcMat) at (0,0) {$\cH$};
+    \node[blue] (mat) at (0,-1.3) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
+    \node[purple] (class) at ($(modSpcMat)!0.3!(mat)$) {$\cH(A^0)$};
+    \node[green!40!black] (sheaf) at (3,0) {$\St(\cM^{nf})$};
+    \node[] (sheaf3) at ($(sheaf)!0.3!(mat)$) {\textcolor{purple}{$\St(A^0)$}};
     % \node[blue] (mat') at (3.5,-1.5) {$(U_+\times U_-)^{k-1}$};
 
     % \draw[thick,double] (modSpcMat) -- (modSpcSheaf) -- (class) -- (class2) --
@@ -42,17 +42,17 @@ We \rewrite{have the following} commutative diagram of isomorphisms.
     \draw[purple,thick,double] (sheaf) -- (sheaf3);
 
     \draw[->,green!40!black] (modSpcMat) -- (sheaf)
-      node[midway,above left] {$\exp$};
+      node[midway,above] {$\exp$};
 %    \draw[->,blue,dashed] (modSpcMat) edge[bend right=20] (mat);
-    \draw[->,blue] (class) -- (mat) node[midway,below left] {g};
+    \draw[->,blue] (class) -- (mat) node[midway,left] {g};
     % \draw[->,blue,dotted] (mat) -- (mat') node[midway,right] {$\cK=\{k-1\}$};
     \draw[->,purple,dashed] (class) -- (sheaf3)
-      node[midway,below right] {$\exp_{A^0}$};
+      node[midway,below] {$\exp_{A^0}$};
     % \draw[->,purple,dashed] (class) -- (mat);
-    \draw[->,purple] (mat) -- (sheaf3) node[midway, right] {$h$};
+    \draw[->,purple] (mat) -- (sheaf3) node[midway, below right] {$h$};
 %    \draw[->,purple,dashed] (sheaf3) edge[bend right=20] (mat);
   \end{tikzpicture}
-\end{center}
+\end{center}\label{page:ofPreDiagram}
 The map $g$, which makes the diagram commute, is defined using the theory of
 summation, which will be roughly discussed the appendix in
 section~\ref{sec:multisummability}.
@@ -1669,30 +1669,56 @@ which takes a Stokes cocycle to its corresponding cohomology class.
 \end{center}
 From theorem~\ref{thm:mainThm2} and Proposition~\ref{prop:representation} we
 get the following corollary.
-\begin{cor}
+\begin{cor}\label{cor:isomToChochN}
+  \PROBLEM[mentioned twice]
   Using the isomorphisms from the Stokes groups to the group of all Stokes
   matrices (cf.\ Proposition~\ref{prop:representation}) we obtain
   \[
     \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
   \]
-  and thus $\St(A^0)$ has complex dimension
-  $\dim_\C\St(A^0)=\sum_{\alpha\in\A}\dim_\C\SSto_\alpha(A^0)$ and
-  $\dim_\C\SSto_\alpha(A^0)=
-  \sum_{q_j\underset{\alpha,\max}{\prec}q_l}\deg(q_j-q_l)$
-  (cf.~\cite[Sec.III.1]{Loday1994}).
+  which endows $\St(A^0)$ with the structure of an unipotent Lie group with the
+  finite complex dimension
+  $N:=\dim_\C\St(A^0)=\sum_{\alpha\in\A}\dim_\C\SSto_\alpha(A^0)$ where
+  $\dim_\C\SSto_\alpha(A^0)=\sum_{q_j\underset{\alpha,\max}{\prec} q_l}
+  n_j\cdot n_l$ (cf.~\cite[Sec.III.1]{Loday1994}).
+  This can be rewritten in the following way
+  \begin{align*}
+    N&=\sum_{\alpha\in\A}\sum_{q_j\underset{\alpha,\max}{\prec}q_l}n_j\cdot n_l
+    \\&= \sum_{1\leq j,l\leq n}\deg(q_j-q_l)\cdot n_j\cdot n_l
+    \\&=\sum_{\substack{1\leq j,l\leq n\\j<l}}2\cdot\deg(q_j-q_l)\cdot
+      n_j\cdot n_l
+  \end{align*}
+  \begin{s-rem}
+    This number $N$ is known to be the \emph{irregularity} of $[\End A^0]$.
+  \end{s-rem}
 \end{cor}
-\begin{rem}\label{rem:boalchRemarkFactorMatrix}
-  The set $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ and thus
-  $\prod_{\alpha\in\A}\SSto_\alpha(A^0)$ has some bad properties, when small
-  deformations are applied to $[A^0]$, since under arbitrary small changes, one
-  Stokes ray can split into two. Boalch~\cite{boalch,thboalch}\PROBLEM[solution
-  goes back to \cite{BJL1979Birkhoff} or so?] solves this in
-  the single-leveled case by \rewrite{renaming our Stokes matrices as Stokes
-  factors} and introducing new Stokes matrices which are build by the product
-  of consecutive Stokes factors. He uses the rotational symmetry of the
-  single-leveled case \rewrite{thus this approach is not} applicable to the
-  multi-leveled case.
-  \comm{But one can \dots.}
+\begin{comment}
+  \marginnote{\cite[880f]{Loday1994}}
+  We have also two structures of a linear affine variety on the set $\St(A^0)$.
+  \begin{rem}
+    Let $\sto_\alpha(A^0)$ be the Lie algebra corresponding to
+    $\Sto_\alpha(A^0)$. The exponential map\footnote{This is not the map $\exp$
+    from section~\ref{sec:mainThm1}.} induces an homomorphism
+    $\exp:\sto_\alpha(A^0)\to\Sto_\alpha(A^0)$ and denote by $\ln=\exp^{-1}$
+    the inverse map.
+    \begin{enumerate}
+      \item The \emph{tangent linear structure} is defined as \TODO
+      \item Using the map
+        \begin{align*}
+          \sto_{\alpha}(A^0) &\overset{\id+\cdot}\longrightarrow
+          \Sto_{\alpha}(A^0)
+        \\\dot{f}_\alpha & \longmapsto \id+\dot{f}_\alpha \,.
+        \end{align*}
+    \end{enumerate}
+  \end{rem}
+\end{comment}
+
+\begin{rem}
+  To define the inverse map of $h$, one has to find in each cocycle in
+  $\St(A^0)$ the Stokes cocycle. Loday-Richaud gives an algorithm in section
+  II.3.4 of her paper~\cite{Loday1994}, which takes a cocycle over an arbitrary
+  cyclic covering and outputs cohomologous Stokes cocycle and thus solves this
+  problem.
 \end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2298,11 +2324,11 @@ proposition.
         \Gamma(\dot\cU^{\leq k_2};\Lambda^{\leq k_2}(A^0))}
   \end{tikzcd} \]
   \begin{tikzpicture}[remember picture,overlay]
-    \draw[->] (n1) to[out=90,in=270] node[midway,fill=white]{$=$}
+    \draw[<-] (n1) to[out=90,in=270] node[midway,fill=white]{$=$}
       ([yshift=.3em]e1);
-    \draw[->] (n2) to[out=90,in=270] node[midway,fill=white]{$=$}
+    \draw[<-] (n2) to[out=90,in=270] node[midway,fill=white]{$=$}
       ([yshift=.3em]e2);
-    \draw[->] (nEND) to[out=90,in=270] node[midway,fill=white]{$=$}
+    \draw[<-] (nEND) to[out=90,in=270] node[midway,fill=white]{$=$}
       ([yshift=.3em]eEND);
   \end{tikzpicture}
   which can be written in the following compact form
@@ -2322,7 +2348,7 @@ proposition.
     \Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))
     \rar &
     \Gamma(\dot\cU;\Lambda(A^0))
-  \\(\dot f_\alpha)_{\alpha\in\A^k}
+  \\~~~(\dot f_\alpha)_{\alpha\in\A^k}
     \arrow[|->]{rr}
     &&
     (\dot F_\alpha)_{\alpha\in\A}
@@ -2434,63 +2460,29 @@ Theorem~\ref{thm:mainThm2} by composition of already bijective maps.
       \rar{\prod_{k\in\cK}i^k}&
       \displaystyle \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
   \end{tikzcd} \]
-  by $\mathfrak{T}$ with the result that we obtain the bijection
+  by $\mathfrak{T}$. The bijection $h$ is then obtained as
   \[
-    \cT\circ\mathfrak{T}:
-    \prod_{\alpha\in\A}\Sto_\alpha(A^0)
-    \longrightarrow
-    H^1(\cU;\Lambda(A^0))
+    \cT\circ\mathfrak{T}: \prod_{\alpha\in\A}\Sto_\alpha(A^0)
+    \longrightarrow H^1(\cU;\Lambda(A^0)) \,.
   \]
-  as the map $h$.
   \PROBLEM[naturality (is obvious?)]
   \PROBLEM[Show that this is the correct $h$]
 \end{proof}
 
-\subsection{Some remarks}
-\marginnote{\cite[III.1]{Loday1994}}
-\begin{rem}
-  The morphism $h$ endows the set $H^1(S^1;\Lambda(A^0))$ , resp.\ the
-  classifying set, with the structure of a unipotent Lie group with finite
-  dimension
-  \[
-    N=\sum_{1\leq j,l\leq n}\deg(q_j-q_l)
-     =\sum_{\substack{1\leq j,l\leq n\\j<l}}2\cdot\deg(q_j-q_l)
-  \]
-  \begin{rem}
-    This number $N$ is known to be the \emph{irregularity} of $[\End A^0]$.
-  \end{rem}
-\end{rem}
-
+\section{Further improvements}
+The set $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ and thus
+$\prod_{\alpha\in\A}\SSto_\alpha(A^0)$ has some bad properties, when small
+deformations are applied to $[A^0]$, since under arbitrary small changes, one
+Stokes ray can split into two.
 \begin{comment}
-  \marginnote{\cite[880f]{Loday1994}}
-  We have also two structures of a linear affine variety on the set $\St(A^0)$.
-  \begin{rem}
-    Let $\sto_\alpha(A^0)$ be the Lie algebra corresponding to
-    $\Sto_\alpha(A^0)$. The exponential map\footnote{This is not the map $\exp$
-    from section~\ref{sec:mainThm1}.} induces an homomorphism
-    $\exp:\sto_\alpha(A^0)\to\Sto_\alpha(A^0)$ and denote by $\ln=\exp^{-1}$
-    the inverse map.
-    \begin{enumerate}
-      \item The \emph{tangent linear structure} is defined as \TODO
-      \item Using the map
-        \begin{align*}
-          \sto_{\alpha}(A^0) &\overset{\id+\cdot}\longrightarrow
-          \Sto_{\alpha}(A^0)
-        \\\dot{f}_\alpha & \longmapsto \id+\dot{f}_\alpha \,.
-        \end{align*}
-    \end{enumerate}
+  \begin{rem}\label{rem:boalchRemarkFactorMatrix}
+    Boalch~\cite{boalch,thboalch}\PROBLEM[solution goes back to
+    \cite{BJL1979Birkhoff} or so?] solves this in the single-leveled case by
+    \rewrite{renaming our Stokes matrices as Stokes factors} and introducing
+    new Stokes matrices which are build by the product of consecutive Stokes
+    factors.
   \end{rem}
 \end{comment}
-
-\begin{rem}
-  To define the inverse map of $h$, one has to find in each cocycle in
-  $\St(A^0)$ the Stokes cocycle. Loday-Richaud gives an algorithm in section
-  II.3.4 of her paper~\cite{Loday1994}, which takes a cocycle over an arbitrary
-  cyclic covering and outputs cohomologous Stokes cocycle and thus solves this
-  problem.
-\end{rem}
-
-\section{Further improvements}
 In the prove of theorem~\ref{thm:mainThm2} we have seen, \rewrite{that not only
 $\cH(A^0)\cong\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ but} also that
 \begin{align*}
@@ -2632,7 +2624,7 @@ following Lemma stated as Lemma 2 on page 75.
 \end{lem}
 From the previous lemma we deduce the following corollary.
 \begin{cor}\label{cor:composeLevelwise}
-  Let $T_1,\dots,T_r$ be a subsets of the complete set $T$, such that
+  Let $T_1,\dots,T_r$ be a subsets of the position set $T$, such that
   \begin{itemize}
     \item $T=T_1\dot\cup\dots\dot\cup T_r$ and
     \item for every $m$ does $T_m$ satisfy the completeness property.
@@ -2650,61 +2642,150 @@ theorem.
   Let $\theta\in S^1$ be a fixed direction which satisfies
   $\theta\pm\frac{\pi}{2k}\notin\A^k$, then
   \[
-    \cH\cong \prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
-    \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0) \,,
+    \cH(A^0)\cong\prod_{k\in\cK}\prod_{j\in\{1,\dots,2k\}}
+    \hat\Sto_{\theta+j\frac{\pi}{k}}^k(A^0) \,,
   \]
   where
   \begin{align*}
-    \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)&:=
-      S_{\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}}
-    \\&= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in\GL_n(\C)\mid
-      K_{jl}=\delta_{jl} \text{~unless~}
-      q_j \underset{\theta}{\prec} q_l \Big\}
+    \hat\SSto_{\theta}^k(A^0)
+      &:= \left\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in\GL_n(\C)\mid
+        K_{jl}=\delta_{jl} \text{~unless~}
+        q_j \underset{\theta}{\prec} q_l \right\}
+    \\&=S_{\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}}
   \end{align*}
+  and
+  \[
+    \hat\Sto_{\theta}^k(A^0):=\{\rho_\theta^{-1}(K) 
+      \mid K\in\hat\SSto_{\theta}^k(A^0) \} \,.
+  \]
   \begin{s-rem}
-    This means that the information of all Stokes-matrices can on every level
-    $k$ be grouped into $2k$ matrices, which are products of the corresponding
+    This means that the information of all Stokes-matrices on every level $k$
+    can be grouped into $2k$ matrices, which are products of the corresponding
     Stokes matrices.
   \end{s-rem}
 \end{thm}
 \begin{proof}
-  Let $I=U(\theta,\frac{\pi}{k})$ be the arc of width $\frac{\pi}{k}$
-  corresponding to $\theta$.
-  We then have
+  We have an isomorphism
+  \[ \begin{tikzcd}
+    \eta_\theta^k:
+    \underset{\alpha\in\A^k\cap U(\theta,\frac{\pi}{k})}\prod
+    \underset{S_{\{(j,l)\mid q_j\underset{\alpha,\max}{\prec}q_l\}}}{%
+      \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\underbrace{%
+          \SSto_\alpha^k(A^0)}}}
+    \rar{\cong}&
+    \underset{S_{\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}}}{%
+      \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\underbrace{%
+          \hat\SSto_\theta^k(A^0)}}}
+    \,.
+  \end{tikzcd} \]
+  from Corollary~\ref{cor:composeLevelwise}, since
   \begin{itemize}
     \item for every $\alpha\in\A$ satisfies the set
-      $T_{\alpha}:=\{(j,l)\mid q_j\underset{\alpha,\max}{\prec}q_l\}$
-      the completeness property, since it is defined via a \rewrite{transitiv
-      relation}, and
-    \item the union of all $T_{\alpha}$ for $\alpha\in I\cap \A^k$ is then
+      $\{(j,l)\mid q_j\underset{\alpha,\max}{\prec}q_l\}$ the completeness
+      property, since it is defined via a \rewrite{transitiv relation}, and
+    \item the union of all $\{(j,l)\mid q_j\underset{\alpha,\max}{\prec}q_l\}$
+      for $\alpha\in I\cap\A^k$ is then
       \begin{align*}
-        T&:=\dot\bigcup_{\alpha\in I\cap\A}T_{\alpha}
-        \\&=\{(j,l) \mid q_j \underset{\alpha,\max}{\prec} q_l
-            \text{~for some~}\alpha\in\A^k\cap I \}
-        \\&=\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}
+        \dot\bigcup_{\alpha\in I\cap\A}
+          \{(j,l)\mid q_j\underset{\alpha,\max}{\prec}q_l\}
+          &=\{(j,l) \mid q_j \underset{\alpha,\max}{\prec} q_l
+            \text{~for some~}\alpha\in\A^k\cap U(\theta,\frac{\pi}{k}) \}
+        \\&= \{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}
+          \qquad\qquad\text{(cf.\ Remark~\ref{rem:relationDistanceCondition})}
       \end{align*}
       and is also complete, since $\underset{\theta}{\prec}$ is also a
-      \rewrite{transitive relation.}
+      \rewrite{transitive relation}.
   \end{itemize}
-  Thus, by Corollary~\ref{cor:composeLevelwise} we have an isomorphism
-  \begin{align*}
-    \prod_{\alpha\in\A^k\cap I}
-    \overset{S_{T_\alpha}}{%
-      \overset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\overbrace{%
-          \SSto_\alpha^k(A^0)
-        }
-      }
-    }
-    \overset{\cong}\longrightarrow
-    S_T=:\hat\SSto_\theta^k(A^0)
-  \end{align*}
-  and it yields directly an isomorphism
-  \[
-    \prod_{\alpha\in\A^k}\SSto_\alpha^k(A^0)
-    \overset{\cong}\longrightarrow
-    \prod_{j\in\{1,\dots,2k\}}
+  The isomorphism of the theorem is then the Stokes germ version of
+  \[ \begin{tikzcd}
+    \underset{\eta}{%
+      \underset{\text{\rotatebox[origin=c]{90}{$:=$}}}{\underbrace{%
+        \underset{k\in\cK}{\prod}\underset{j\in\{1,\dots,2k\}}{\prod}
+        \eta_{\theta+j\frac{\pi}{k}}^k
+    }}}:
+    \underset{\cH(A^0)}{%
+      \underset{\text{\rotatebox[origin=c]{-90}{$\cong$}}}{\underbrace{%
+        \prod_{k\in\cK}\prod_{\alpha\in\A^k}\SSto_\alpha^k(A^0)}}}
+    \rar{\cong}&
+    \underset{k\in\cK}{\prod}\underset{j\in\{1,\dots,2k\}}{\prod}
     \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0) \,.
-  \]
-  \rewrite{The product for every $k\in\cK$ of this isomorphism yields the
-  isomorphisms of the theorem.}
+  \end{tikzcd} \]
 \end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The complete Diagram}
+If we start with the diagram from page~\pageref{page:ofPreDiagram}, we can add
+all the defined isomorphisms can be written into one big diagram.
+\begin{center}
+  \begin{tikzpicture}
+    \pgfmathsetmacro{\dx}{4cm}
+    \pgfmathsetmacro{\ldx}{6cm}
+    \pgfmathsetmacro{\dy}{2.5cm}
+    \pgfmathsetmacro{\mdy}{-1.5cm}
+
+    \node (cH) at (-6,3.5) {$\cH(A^0)$};
+    \node (ProdOfStos) at (-6,-4)
+      {$\displaystyle\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$};
+    \node (S3P) at ([xshift={\dx},yshift={\dy}]ProdOfStos)
+      {$\displaystyle\prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_{\alpha}^{k}(A^0)$};
+    \node (S2P) at ([xshift={\dx},yshift={\dy}]S3P)
+      {$\displaystyle\prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))$};
+    \node (StA0) at ([xshift={\dx},yshift={\dy}]S2P)
+      {$\St(A^0)$};
+    \node (ProdOfSStos) at ([yshift=-{\dy}]ProdOfStos)
+      {$\displaystyle\prod_{\alpha\in\A}\SSto_{\alpha}(A^0)$};
+    \node (SS3P) at ([yshift=-{\dy}]S3P)
+      {$\displaystyle\prod_{k\in\cK}\prod_{\alpha\in\A}\SSto_{\alpha}^{k}(A^0)$};
+    \node (SS2P) at ([yshift={\mdy},xshift={\ldx}]S3P)
+      {$\displaystyle\prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
+        \hat\Sto_{\theta+j\frac{\pi}{k}}^k(A^0)$};
+    \node (SSS2P) at ([yshift={\mdy},xshift={\ldx}]SS3P)
+      {$\displaystyle\prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
+        \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)$};
+    \node (SSS3P) at ([yshift={\mdy},xshift={\ldx}]ProdOfSStos)
+      {$\displaystyle\prod_{\alpha\in\A}
+        \C^{\sum_{q_j\underset{\alpha,\max}{\prec}q_l}
+          \deg(q_j-q_l)\cdot n_j\cdot n_l}$};
+
+    \draw[->] (cH) -- (ProdOfStos)
+      node[midway,left] {$g$};
+    \draw[->] (cH) -- (StA0)
+      node[midway,above] {$\exp_{A^0}$};
+    \draw[->,purple] (ProdOfStos) -- (S3P)
+      node[midway,above left] {\rewrite{$\displaystyle\chi\circ\prod_{\alpha\in\A}i_\alpha$}};
+    \draw[->,purple] (S3P) -- (S2P)
+      node[midway,above left] {$\prod_{k\in\cK}i^k$};
+    \draw[->,purple] (S2P) -- (StA0)
+      node[midway,above left] {$\cT$};
+    \draw[->] (ProdOfStos) -- (ProdOfSStos)
+      node[midway,left] {$\prod_{\alpha\in\A}\rho_\alpha$};
+    \draw[->] (ProdOfSStos) -- (SS3P)
+      node[midway,below right] {\rewrite{$\displaystyle\chi\circ\prod_{\alpha\in\A}i_\alpha$}};
+    \draw[->] (S3P) -- (SS3P)
+      node[midway,right] {$\prod_{k\in\cK}\prod_{\alpha\in\A}\rho_{\alpha}^k$};
+    \draw[->] (S3P) -- (SS2P)
+      node[midway] {};
+    \draw[->] (SS3P) -- (SSS2P)
+      node[midway,above] {$\eta$};
+    \draw[->] (SS2P) -- (SSS2P)
+      node[midway,right] {(induced by $\rho$)};
+    \draw[->] (ProdOfSStos) -- (SSS3P)
+      node[midway,below left] {Cor.\ref{cor:isomToChochN}};
+  \end{tikzpicture}
+\end{center}
+Where
+\begin{itemize}
+  \item the \textcolor{purple}{purple path} is the isomorphism $h$ from
+    theorem~\ref{thm:mainThm2} and
+  \item we denote
+    \begin{itemize}
+      \item $\chi:\displaystyle \prod_{\alpha\in\A}\prod_{k\in\cK}\Sto_\alpha^k(A^0)
+        \equiv\displaystyle \prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_\alpha^k(A^0)$
+        the reordering and 
+      \item by abuse of notation we also denote the Stokes matrix version in
+        the same way
+        $\chi:\displaystyle \prod_{\alpha\in\A}\prod_{k\in\cK}\SSto_\alpha^k(A^0)
+        \equiv\displaystyle
+        \prod_{k\in\cK}\prod_{\alpha\in\A}\SSto_\alpha^k(A^0)$.
+    \end{itemize}
+\end{itemize}

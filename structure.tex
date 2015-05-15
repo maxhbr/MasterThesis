@@ -475,10 +475,9 @@ $\cK$.
   Let $\theta$ be a direction, which satisfies
   $\theta\pm\frac{\pi}{2k}\notin\A^k$ for every $k\in\cK$.
   \[ \begin{tikzcd}
-      % &\C^{2\cdot(k_1+2\cdot k_2)}
-      % \dar[xshift=-1pt,blue]
-      % \dar[xshift=1pt,purple,"\prod_{\alpha\in\A}j_\alpha"]
-    % \\
+      & \C^{\sum_{q_j\underset{\alpha,\max}{\prec}q_l}\deg(q_j-q_l)}
+      \dar["\prod_{\alpha\in\A}j_\alpha"]
+    \\
       &\displaystyle\prod_{k\in\cK}\prod_{\alpha\in\A}\SSto_{\alpha}^{k}(A^0)
        \arrow[dl,"\prod_{\alpha\in\A}i_\alpha^{-1}"]
        \arrow[ddr,
