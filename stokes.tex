@@ -957,7 +957,7 @@ define the Stokes group as follows.
 \begin{defn}\label{defn:groupOfFaithfullReps}
   Let us use
   \[
-    \delta_{jl}:=
+    \bdelta_{jl}:=
     \begin{cases}
       0 \in \C^{n_j\times n_l} & \text{,~if~} j\neq l
     \\\id \in \C^{n_j\times n_l} & \text{,~if~} j=l
@@ -967,7 +967,7 @@ define the Stokes group as follows.
   Define the group
   \begin{align*}
     \SSto_\theta(A^0)= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in\GL_n(\C) \mid
-      K_{jl}=\delta_{jl} \text{~unless~}
+      K_{jl}=\bdelta_{jl} \text{~unless~}
       q_j \underset{\theta,\max}{\prec} q_l \Big\}
   \end{align*}
   of all \emph{Stokes matrices} of $A^0$ in the direction $\theta$.
@@ -1089,7 +1089,7 @@ $A^0$ (cf.\ Definition~\ref{defn:normSol}).
         unique representation matrix
         \[
           C_{\phi_\theta}
-          \in\left\{K\in G\mid K_{jl}=\delta_{jl} \text{ unless }
+          \in\left\{K\in G\mid K_{jl}=\bdelta_{jl} \text{ unless }
           q_j \underset{\theta}{\prec} q_l \right\}
           \supset\SSto_\theta(A^0) \,.
         \]
@@ -2552,10 +2552,10 @@ $\theta\pm\frac{\pi}{2k}\notin\A^k$.
 \begin{rem}
   In the situation of Remark~\ref{rem:remarkAboutCommonStructure}
   there exists a common (block) permutation matrix $P\in\GL_n(\C)$ given by
-  $(P)_{jl}=\delta_{\pi(j)l}$ where
+  $(P)_{jl}=\bdelta_{\pi(j)l}$ where
   \begin{itemize}
-    \item $\delta_{jl}$ is the block version of Kronecker's delta which was
-      introduced in Definition~\ref{defn:groupOfFaithfullReps} and
+    \item $\bdelta_{jl}$ is the block version of Kronecker's delta
+      which was introduced in Definition~\ref{defn:groupOfFaithfullReps} and
     \item $\pi$ is the permutation of $\{1,\dots,s\}$ corresponding to
       $q_j\underset{\theta}{\prec}q_l$ \Leftrightarrow{} $\pi(j)<\pi(l)$
       \marginnote{\cite[18]{boalch}}
@@ -2579,7 +2579,7 @@ $\theta\pm\frac{\pi}{2k}\notin\A^k$.
 
 In the paper \cite{BJL1979Birkhoff} from Balser, Jurkat and Lutz is the
 following Lemma stated as Lemma 2 on page 75.
-\begin{lem}
+\begin{lem}\label{lem:UniqueDecompositionWotBlocks}
   Let $T\subset\{1,\dots,n\}\times\{1,\dots,n\}$ be a position set, which
   satisfies the \emph{completeness property}:
   \begin{einr}
@@ -2587,9 +2587,11 @@ following Lemma stated as Lemma 2 on page 75.
   \end{einr}
   Choose a indexing $i:\{1,\dots,
   \underset{\#T}{\underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\mu}}\}
-  \overset{\cong}{\to}T$ of the position set, then there exists for every
+  \overset{\cong}{\to}T$ of the position set and denote by
+  $\delta_{jl}\in\C$ the \rewrite{ordinary} Kronecker's delta,
+  then there exists for every
   \[
-    K\in S_T:=\left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in\GL_n(\C)\mid
+    K\in \left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in\GL_n(\C)\mid
       K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T \right\}
   \]
   unique scalars $t_j\in\C$ such that
@@ -2622,13 +2624,54 @@ following Lemma stated as Lemma 2 on page 75.
     \end{align*}
   \end{s-rem}
 \end{lem}
-From the previous lemma we deduce the following corollary.
+\begin{lem}
+  Every position set, corresponding to some block, is complete. 
+\end{lem}
+\begin{proof}
+  Such a position set is given by
+  \[
+    T:=\{(j,l)\mid j_1\leq j\leq j_2, l_1\leq l\leq l_2\}
+  \]
+  for some $j_1,j_2,l_2$ and $l_2$ in $\{1,\dots,n\}$.
+
+  Let $(j,k)$, $(k,l)\in T$ be two positions.
+  It is obvious that $(j,l)\in T$, since $j_1\leq j\leq j_2$ and 
+  $l_1\leq l\leq l_2$ are satisfied.
+\end{proof}
+\begin{cor}
+  We can write the lemma~\ref{lem:UniqueDecompositionWotBlocks} in block form,
+  corresponding to the structure of $Q$.
+  Let $T\subset\{1,\dots,s\}\times\{1,\dots,s\}$ be a position set and choose a
+  indexing 
+  \[
+    i:\{1,\dots, \underset{\#T}{\underset{%
+      \text{\rotatebox[origin=c]{-90}{$=$}}}{\mu}}\}\overset{\cong}{\to}T
+  \]
+  of $T$.
+  \begin{s-defn}
+    Define
+    \[
+      S_T:=\left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in\GL_n(\C)\mid
+      K_{jl}=\bdelta_{jl} \text{~unless~} (j,l)\in T \right\} \,,
+    \]
+    where $\bdelta_{jl}$ is the block version of Kronecker's delta,
+    corresponding to the structure of $Q$.
+  \end{s-defn}
+  From the lemma~\ref{lem:UniqueDecompositionWotBlocks} then follows that for
+  every $K\in S_T$ is the decomposition
+  \[
+    K=K_1\cdot K_2\cdots K_\mu \,,
+  \]
+  where $K_j\in S_{\{i(j)\}}$, is unique.
+\end{cor}
+From the previous corollary we deduce the following corollary.
 \begin{cor}\label{cor:composeLevelwise}
-  Let $T_1,\dots,T_r$ be a subsets of the position set $T$, such that
-  \begin{itemize}
-    \item $T=T_1\dot\cup\dots\dot\cup T_r$ and
-    \item for every $m$ does $T_m$ satisfy the completeness property.
-  \end{itemize}
+  Let $T_1,\dots,T_r\subset\{1,\dots,s\}\times\{1,\dots,s\}$ be a distinct
+  position sets, such that
+  \begin{einr}
+    $T:=T_1\dot\cup\dots\dot\cup T_r$ \rewrite{as well as} every $T_m$ satisfy
+    the completeness property.
+  \end{einr}
   Then is by
   \begin{align*}
     S_{T_1}\times\cdots\times S_{T_m} &\longrightarrow S_T
@@ -2715,7 +2758,7 @@ theorem.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The complete Diagram}
 If we start with the diagram from page~\pageref{page:ofPreDiagram}, we can add
-all the defined isomorphisms can be written into one big diagram.
+all the defined isomorphisms and rewrite into the following diagram.
 \begin{center}
   \begin{tikzpicture}
     \pgfmathsetmacro{\dx}{4cm}
@@ -2742,7 +2785,7 @@ all the defined isomorphisms can be written into one big diagram.
     \node (SSS2P) at ([yshift={\mdy},xshift={\ldx}]SS3P)
       {$\displaystyle\prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
         \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)$};
-    \node (SSS3P) at ([yshift={\mdy},xshift={\ldx}]ProdOfSStos)
+    \node[red] (SSS3P) at ([yshift={\mdy},xshift={\ldx}]ProdOfSStos)
       {$\displaystyle\prod_{\alpha\in\A}
         \C^{\sum_{q_j\underset{\alpha,\max}{\prec}q_l}
           \deg(q_j-q_l)\cdot n_j\cdot n_l}$};
@@ -2769,8 +2812,8 @@ all the defined isomorphisms can be written into one big diagram.
       node[midway,above] {$\eta$};
     \draw[->] (SS2P) -- (SSS2P)
       node[midway,right] {(induced by $\rho$)};
-    \draw[->] (ProdOfSStos) -- (SSS3P)
-      node[midway,below left] {Cor.\ref{cor:isomToChochN}};
+    \draw[->,red] (ProdOfSStos) -- (SSS3P)
+      node[midway,below left,red] {Cor.\ref{cor:isomToChochN}};
   \end{tikzpicture}
 \end{center}
 Where
@@ -2789,3 +2832,4 @@ Where
         \prod_{k\in\cK}\prod_{\alpha\in\A}\SSto_\alpha^k(A^0)$.
     \end{itemize}
 \end{itemize}
+\PROBLEM[Der unterste respektiert die Struktur nicht]
