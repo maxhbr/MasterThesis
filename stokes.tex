@@ -29,7 +29,7 @@ will be denoted by $h$.
 We \rewrite{have the following} commutative diagram of isomorphisms.
 \begin{center}
   \begin{tikzpicture}[scale=3]
-    \node[] (modSpcMat) at (0,0) {$\cH$};
+    \node[] (modSpcMat) at (0,0) {$\cH(\cM^{nf},\nabla^{nf})$};
     \node[blue] (mat) at (0,-1.3) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
     \node[purple] (class) at ($(modSpcMat)!0.3!(mat)$) {$\cH(A^0)$};
     \node[green!40!black] (sheaf) at (3,0) {$\St(\cM^{nf})$};
@@ -136,7 +136,7 @@ to the covering $\cU$, defined.
   corresponding cocycles define the same cohomology class.}
 This defines a mapping of pointed sets
 \[
-  \cH\to H^1(S^1;\Lambda(A^0))
+  \cH(\cM^{nf},\nabla^{nf})\to H^1(S^1;\Lambda(A^0))
 \]
 to the first non abelian cohomology of $\Lambda(A^0)$, which sends the class of
 $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology
@@ -150,7 +150,7 @@ class.
         \\\cite[Thm.13]{Martinet1991}}
       The homomorphism
       \[ \begin{tikzcd}
-          \exp:\cH \rar& \St(A^0):=H^1(S^1;\Lambda(A^0))
+          \exp:\cH(\cM^{nf},\nabla^{nf}) \rar& \St(A^0):=H^1(S^1;\Lambda(A^0))
       \end{tikzcd} \]
       is an isomorphism of pointed sets.
     \end{tthm}
@@ -255,7 +255,7 @@ paper is this denoted as $\exp_{\mu_0}$)}.
       \node (tlE) at ($ (tl) - (-0.5,0.4) $) {$\hat F$};
       \node (trE) at ($ (tr) - (-0.5,0.4) $) {$\hat F\Phi$};
       \node (blE) at ($ (bl) - (-0.5,0.4) $) {$\exp_{A^1}(\hat F)$};
-      \node (brE) at ($ (br) - (-0.5,0.4) $) {$\exp_{A^0}(\hat F)$};
+      \node (brE) at ($ (br) - (-0.5,0.4) $) {$\exp_{A^0}(\hat F\Phi)$};
       \draw[->] (tl) -- (tr) node [midway,above] {$\cdot\Phi$};
       \draw[->] (tl) -- (bl) node [midway,right] {$\exp_{A^1}$};
       \draw[->] (tr) -- (br) node [midway,right] {$\exp_{A^0}$};
@@ -362,8 +362,9 @@ We will start by proofing the injectivity of the morphism $\exp$.
   \iffalse
     \begin{comment}
       \textbf{First look at injectivity:}
-      Consider the two elements $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat
-      f')$ of $\cH$ which map to same cohomology class
+      Consider the two elements $(\cM,\nabla,\hat f)$ and
+      $(\cM',\nabla',\hat f')$ of $\cH(\cM^{nf},\nabla^{nf})$ which map to same
+      cohomology class
       \[
         \exp((\cM,\nabla,\hat f))=\lambda=\exp((\cM',\nabla',\hat f'))
           \in H^1(S^1;\Lambda(A^0)) \,.
@@ -493,7 +494,7 @@ Theorem~\ref{thm:mainThm1}.
   From the Theorem~\ref{thm:thm1helpMalgSibuy} we know, that there is a $\hat
   F\in G\llbracket t\rrbracket\subset G(\!(t)\!)$ whose class $[\hat F]$ gets
   via $\Theta$ mapped to $\sigma$.
-  Thus there exists holomorphic functions $F_j:\mathfrak{s}_{U_j}\to\gl_n(\C)$ 
+  Thus there exists holomorphic functions $F_j:\mathfrak{s}_{U_j}\to\gl_n(\C)$
   with $F_j\sim_{U_j}\hat F$ and $F_l^{-1}F_j=F_{jl}$ on
   $\mathfrak{s}_{U_j\cap U_l}$ for all $j,l\in J$.
 
@@ -525,7 +526,7 @@ Theorem~\ref{thm:mainThm1}.
       class $\lambda$ in $H^1(S^1;\Lambda(A^0))$
       \TODO[$\Lambda(A^0)\sim\Aut^{<0}(\tilde\cM^{nf})$ or $\Aut^{<0}(\cM^{nf})$?]
       to come from an object
-      $(\cM,\nabla,\hat f)\in\cH$:
+      $(\cM,\nabla,\hat f)\in\cH(\cM^{nf},\nabla^{nf})$:
       \begin{einr}
         This is the case if and only if the image of
         $\lambda\in\Aut^{<0}(\cM^{nf})$ in the set
@@ -635,11 +636,12 @@ $(q_j,q_l)\in\cQ(A^0)$.
     \item $a_{jl}\in\C\backslash\{0\}$ the \emph{leading factor},
     \item $\frac{a_{jl}}{t^{k}}=:q_{jl}(t^{-1})$ the \emph{leading
       coefficient} and
-    \item $k=k_{jl}$ the \emph{degree}
+    \item $k_{jl}$ the \emph{degree}
   \end{itemize}
   of $q_j-q_l\in\cQ(A^0)$ if
   \[
-    q_j-q_l\in\left\{\frac{a_{jl}}{t^{k}}+h \mid h \in o(t^{-k}), a_{jl}\neq0
+    q_j-q_l\in\left\{\frac{a_{jl}}{t^{k_{jl}}}+h \mid h \in o(t^{-k_{jl}}),
+      a_{jl}\neq0
     \right\}\,.
   \]
   \begin{s-rem}
@@ -831,14 +833,14 @@ the transformation $\arg(a)\to\arg(-a)=\arg(a)+\pi$, i.e.\ the shift by
 $\frac{\pi}{k}$ to the right. This $\frac{\pi}{k}$ is exactly a halve period,
 thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
 \begin{rem}\label{rem:relationDistanceCondition}
-  Let $k=k_{jl}$ be the degree of $q_j-q_l$.
+  Let $k_{jl}$ be the degree of $q_j-q_l$.
   It is easy to see (cf.\ Figure~\ref{fig:functionF}), that the condition
   \[
     q_j \underset{\theta}{\prec} q_l
   \]
   is equivalent to
   \begin{einr}
-    there is a $\theta'\in U(\theta,\frac{\pi}{k})$ such that
+    there is a $\theta'\in U(\theta,\frac{\pi}{k_{jl}})$ such that
     $q_j \underset{\theta,\max}{\prec} q_l$.
   \end{einr}
 \end{rem}
@@ -890,10 +892,10 @@ thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
 
 \begin{lem}\label{lem:rotationalSym}%\label{rem:rotationalSymPrime}
   If $\alpha\in\A$ together with a determining pair
-  $(q_j-q_l)(t^{-1})\in\cQ(A^0)$ of degree $k$ is given, we have for every
+  $(q_j-q_l)(t^{-1})\in\cQ(A^0)$ of degree $k_{jl}$ is given, we have for every
   $m\in\N$ that
   \[
-    \underset{=:\alpha'}{\underbrace{\alpha+m\frac{\pi}{k}}} \in \A \,.
+    \underset{=:\alpha'}{\underbrace{\alpha+m\frac{\pi}{k_{jl}}}} \in \A \,.
   \]
   Especially is either $q_j \underset{\alpha',\max}{\prec} q_l$ (in the
   case, when $m$ is even) or $q_l \underset{\alpha',\max}{\prec} q_j$
@@ -1088,11 +1090,32 @@ $A^0$ (cf.\ Definition~\ref{defn:normSol}).
         $\phi_\theta\in\Lambda_\theta(A^0)\supset\Sto_\theta(A^0)$ into its
         unique representation matrix
         \[
-          C_{\phi_\theta}
-          \in\left\{K\in G\mid K_{jl}=\bdelta_{jl} \text{ unless }
-          q_j \underset{\theta}{\prec} q_l \right\}
-          \supset\SSto_\theta(A^0) \,.
+          C_{\phi_\theta} \in
+          \underset{\SSto_\theta(A^0)}{%
+            \underset{\text{\rotatebox[origin=c]{90}{$\subset$}}}{%
+              \hat\SSto_{\theta}(A^0)}}
+          :=
+          \left\{(K_{jl})_{j,l\in\{1,\dots,s\}}
+            \in \GL_n(\C)\mid K_{jl}=\bdelta_{jl} \text{ unless }
+            q_j \underset{\theta}{\prec} q_l \right\}
+          \,.
         \]
+        \begin{comment}
+          Does this define a local-constant sheaf
+          \[
+            I\mapsto \hat\SSto_{I}(A^0)
+            :=
+            \left\{(K_{jl})_{j,l\in\{1,\dots,s\}}
+              \in \GL_n(\C)\mid K_{jl}=\bdelta_{jl} \text{ unless }
+              q_j \underset{\theta}{\prec} q_l
+              \text{ for some } \theta\in I\right\}
+          \]
+          and a skyscreaper sheaf
+          \[
+            I\mapsto \SSto_{I}(A^0) \,.
+          \]
+          \PROBLEM
+        \end{comment}
     \end{enumerate}
   \end{s-rem}
 \end{prop}
@@ -1239,7 +1262,7 @@ In particular, from the proof, we get that
 \marginnote{\cite{Loday1994}, \cite[362ff]{Martinet1991}}
 Let us introduce a couple of notations and definitions, which coincide with the
 notations used in Loday-Richaud's paper \cite{Loday1994}.
-Another resource is for example the paper~\cite[362f]{Martinet1991} from
+Another good resource is for example the paper~\cite[362f]{Martinet1991} from
 Martinet and Ramis.
 
 \begin{defn}
@@ -1250,7 +1273,7 @@ Martinet and Ramis.
       \text{ in some representation of }\phi_\theta\right\} \subset \cK \,.
   \]
   A germ $\phi_\theta$ is called a \emph{$k$-germ} when
-  $\cK(\phi_{\theta})\subset\{k\}$, i.e.\ its only level, if present, is $k$.
+  $\cK(\phi_{\theta})\subset\{k\}$, i.e.\ it has at most the level $k$.
 \end{defn}
 \begin{notations}
   \marginnote{\cite[Not.I.4.15]{Loday1994},\\\cite[362]{Martinet1991}}
@@ -1485,11 +1508,6 @@ decomposition into a semidirect product.
     \PROBLEM[PROOF?]
   \end{s-rem}
 \end{prop}
-\begin{comment}
-  \begin{proof}
-    \TODO{}
-  \end{proof}
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes structures: using Stokes groups}\label{sec:mainThm2}
@@ -1529,20 +1547,32 @@ nerves of such coverings, which are defined as follows.
 
 \begin{defn}
   \marginnote{\cite[Sec.II.1]{Loday1994} and \cite[Sec.II.3.1]{Loday1994}}
-  \TODO[rewrite?]
-  Let $J=\Z/p\Z$ be a finite set with a cyclic additive structure.
+  Let $J$ be a finite set, identified to the finite set
+  $\{1,\dots,p\}\subset\Z$.
   \begin{enumerate}
     \item A \emph{cyclic covering} of $S^1$ is a finite covering
       $\cU=\left(U_j=U(\theta_j,\epsilon_j)\right)_{j\in J}$ consisting of
       arcs, which satisfies that
       \begin{enumerate}
-        \item the $U_j\cap U_{j+1}$ have only one connected component when
-          $\#J>2$;
-        \item the $\theta_j$ are in ascending order with respect to the
-          clockwise orientation of $S^1$;
-        \item the $U_j$ are not encased, this means that the arcs
-          $U_j\backslash U_l$ are connected arcs for all $j,l\in J$.
+        \item $\tilde\theta_j < \tilde\theta_{j+1}$ for $j\in\{1,\dots,p-1\}$,
+        \item $\tilde\theta_j-\frac{\epsilon_j}{2}\leq
+          \tilde\theta_{j+1}-\frac{\epsilon_{j+1}}{2}$ for
+          $j\in\{1,\dots,p-1\}$ and
+          $\tilde\theta_p-\frac{\epsilon_p}{2}\leq
+          \tilde\theta_{1}+2\pi-\frac{\epsilon_{1}}{2}$,
       \end{enumerate}
+      where the $\tilde\theta_j\in [0,2\pi[$ are determinations of the
+      $\theta_j\in S^1$.
+      \begin{comment}
+        \begin{enumerate}
+          \item the $\theta_j$ are in ascending order with respect to the
+            clockwise orientation of $S^1$;
+          \item the $U_j\cap U_{j+1}$ have only one connected component when
+            $\#J>2$;
+          \item the $U_j$ are not encased by another arc, this means that the
+            open sets $U_j\backslash U_l$ are connected for all $j,l\in J$.
+        \end{enumerate}
+      \end{comment}
     \item The \emph{nerve} of a cyclic covering $\cU=\{U_j;j\in J\}$ is the
       family $\dot\cU=\{\dot U_j;j\in J\}$ defined by:
       \begin{itemize}
@@ -1550,6 +1580,17 @@ nerves of such coverings, which are defined as follows.
         \item $\dot U_1$ and $\dot U_2$ the connected components of
           $U_1\cap U_2$ when $\#J=2$.
       \end{itemize}
+      \begin{s-rem}
+        The nerve of the cyclic covering
+        $\cU=\left(U(\theta_j,\epsilon_j)\right)_{j\in J}$ is explicitly given
+        by
+        \[
+          \dot\cU=\left(
+            \left(\theta_{j+1}-\frac{\epsilon_{j+1}}{2},
+            \theta_{j}+\frac{\epsilon_{j}}{2}\right)
+          \right)_{j\in J} \,.
+        \]
+      \end{s-rem}
   \end{enumerate}
 \end{defn}
 The cyclic coverings correspond one-to-one to nerves of cyclic coverings. If
@@ -1681,12 +1722,12 @@ get the following corollary.
   $N:=\dim_\C\St(A^0)=\sum_{\alpha\in\A}\dim_\C\SSto_\alpha(A^0)$ where
   $\dim_\C\SSto_\alpha(A^0)=\sum_{q_j\underset{\alpha,\max}{\prec} q_l}
   n_j\cdot n_l$ (cf.~\cite[Sec.III.1]{Loday1994}).
-  This can be rewritten in the following way
+  This can be rewritten in the following way:
   \begin{align*}
     N&=\sum_{\alpha\in\A}\sum_{q_j\underset{\alpha,\max}{\prec}q_l}n_j\cdot n_l
     \\&= \sum_{1\leq j,l\leq n}\deg(q_j-q_l)\cdot n_j\cdot n_l
     \\&=\sum_{\substack{1\leq j,l\leq n\\j<l}}2\cdot\deg(q_j-q_l)\cdot
-      n_j\cdot n_l
+      n_j\cdot n_l \,.
   \end{align*}
   \begin{s-rem}
     This number $N$ is known to be the \emph{irregularity} of $[\End A^0]$.
@@ -1758,7 +1799,7 @@ We first have to introduce adequate coverings, which will be used in the proof.
   \]
   is surjective.\TODO[Proof? check??]
 \end{defn}
-The following proposition is in Loday-Richauds paper~\cite{Loday1994} given as
+The following proposition is in Loday-Richaud's paper~\cite{Loday1994} given as
 Proposition II.1.7. It contains a simple characterization, which will be used
 to see, that our defined coverings are adequate.
 \begin{prop}\label{prop:adeqCovCondition}
@@ -1798,7 +1839,7 @@ different levels.
     bearing the level $k$.
 \end{enumerate}
 
-\begin{rem}
+\begin{rem}\label{rem:superSectors}
   Boalch introduces in his publications~\cite[19]{boalch}
   and~\cite[Def.1.23]{thboalch} the notion of \emph{supersectors} $\hat\Sect$,
   they are in the case of a single level $k$, defined as follows:
@@ -1813,6 +1854,55 @@ different levels.
   \end{einr}
   This yields a cyclic covering $(\hat\Sect_i)_{i\in\{1,\dots,\nu\}}$ whose
   nerve is exactly $\dot\cU^k$ defined above.
+  \begin{comment}
+    \begin{tikzpicture}[scale=3]
+      \node[] (zero) at (0,0) {};
+      \draw[blue] (zero) circle (1cm);
+
+      \fill[fill=green!20!white] (0,0) -- ({cos( 15 )},{sin( 15 )}) arc
+        (15:85:1) -- cycle;
+
+      \fill[fill=red!60!black] (0,0) -- ({cos( 15 )*0.5},{sin( 15 )*0.5}) arc
+        (15:45:0.5) -- cycle;
+      \fill[fill=red!60!black] (0,0) -- ({cos( 55 )*0.5},{sin( 55 )*0.5}) arc
+        (55:85:0.5) -- cycle;
+
+      \fill[fill=green!20!white] (0,0) -- ({cos( 15 )*0.4},{sin( 15 )*0.4}) arc
+        (15:85:0.4) -- cycle;
+
+      \node[green!40!black] at (1,1) {$\widehat\Sect_i$};
+
+      \node[] (lft) at ({cos( 85 )},{sin( 85 )}) {};
+      \node[] (rgt) at ({cos( 15 )},{sin( 15 )}) {};
+
+      \draw[->,red!40!black] ({cos( 45 )},{sin( 45 )})
+        to [out=35, in=25] (rgt);
+
+      \draw[->,red!40!black] ({cos( 55 )},{sin( 55 )})
+        to [out=65, in=75] (lft);
+
+      \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 85 )},{sin( 85 )});
+      \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 15 )},{sin( 15 )});
+      \fill[red!40!black] ({cos( 85 )},{sin( 85 )}) circle (1pt);
+      \fill[red!40!black] ({cos( 15 )},{sin( 15 )}) circle (1pt);
+
+      \foreach \w/\str in {10/,
+                           20/,
+                           45/$\alpha_i$,
+                           55/$\alpha_{i+1}$}
+      {\draw (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+       \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (.7pt);
+       \foreach \sep in {60,120,180,240,300}
+       {\draw (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+        \fill[blue!20!white]
+          ({cos( \w + \sep )},{sin( \w + \sep )}) circle (.7pt);
+       }
+      };
+
+
+      \fill (zero) circle (1pt);
+    \end{tikzpicture}
+  \end{comment}
 \end{rem}
 If we extend to several levels, the set
 $\bigcup_k\left\{U(\alpha,\frac{\pi}{k})\mid\alpha\in\A^{k}\right\}$ is no
@@ -2001,7 +2091,7 @@ $\cU^{k}$ and $\cU^{<k}$.
 Furthermore are the coverings defined, such that they satisfy the
 condition in Proposition~\ref{prop:adeqCovCondition}.
 Thus the first property in the following proposition is satisfied. The other
-two can be found at \cite[Prop.II.3.1 (iv)]{Loday1994}
+two can be found at \cite[Prop.II.3.1 (iv)]{Loday1994}.
 \begin{prop}\label{prop:adequateProperties}
   \marginnote{\cite[Prop.II.3.1]{Loday1994}}
   \PROBLEM[Was bedeutet das?]
@@ -2033,6 +2123,102 @@ This means that
     \end{itemize}
   \item or we restrict to a given level $k\in\cK$.
 \end{itemize}
+\begin{comment}
+  \begin{lem}\label{lem:extendsSoFar}
+    Every $k$-germ $\phi_\alpha\in\Lambda_\alpha^k(A^0)$ can be uniquely
+    extended to the corresponding arc $U_\alpha^k$ in $\cU^k$.
+    \begin{s-cor}
+      For every $\alpha$ can every germ at $\phi_\alpha\in\Lambda_\alpha(A^0)$,
+      with the levels $\cK(\phi_\alpha)$, be extended to the arc
+      $\underset{U_\alpha}{%
+        \underset{\text{\rotatebox[origin=c]{90}{$\subset$}}}{%
+          U_\alpha^{\max\cK(\phi_\alpha)}}}\in\cU^{\max\cK(\phi_\alpha)}$.
+    \end{s-cor}
+  \end{lem}
+  Since the sheaf $\hat\SSto(A^0)$ is locally constant with discontinuities at
+  the Stokes directions.
+\end{comment}
+\begin{comment}
+  \begin{lem}\label{lem:extendsSoFar}
+    Every $k$-germ $\phi_\alpha\in\Lambda_\alpha^k(A^0)$ can be uniquely
+    extended to the corresponding arc $U_\alpha^k$ in $\cU^k$.
+    \begin{s-cor}
+      For every $\alpha$ can every germ at $\phi_\alpha\in\Lambda_\alpha(A^0)$,
+      with the levels $\cK(\phi_\alpha)$, be extended to the arc
+      $\underset{U_\alpha}{%
+        \underset{\text{\rotatebox[origin=c]{90}{$\subset$}}}{%
+          U_\alpha^{\max\cK(\phi_\alpha)}}}\in\cU^{\max\cK(\phi_\alpha)}$.
+    \end{s-cor}
+  \end{lem}
+  \begin{lem}
+    The extension is linear, i.e.\ is the extension of a sum the sum of the
+    extensions. Especially
+    \begin{einr}
+      let $\phi_\alpha\in\Sto_\alpha(A^0)$ be a germ \dots
+    \end{einr}
+  \end{lem}
+  \begin{rem}
+    The uniqueness from lemma~\ref{lem:extendsSoFar} is clear, since the
+    sections of $\Lambda^k(A^0)$ are solution of the system $[A^0,A^0]$ and it
+    is very well known from the theory of differential equations\TODO[source?]
+    that an element $f_\alpha\in\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))$ is
+    uniquely determined as the extension of its germ at some point $\alpha$.
+  \end{rem}
+  It remains to see that the germs $\phi_\alpha$ can be extended to the arc
+  $U_\alpha^k$, which is delimited by the corresponding Stokes directions.
+  There may be a direct way, without using summation theory, but this is
+  only implicitly mentioned in Loday-Richaud's paper~\cite{Loday1994}.
+  We will instead use the two theorems~\cite[Thm.4.3.13]{Loday2014}
+  \marginnote{(or~\cite[Prop.III.2.1]{Loday1994},
+              \cite[Thm.1]{BJL1979Birkhoff})}
+  and~\cite[Thm.3.1 2]{boalch}. The first explains, how the Stokes cocycles
+  are connected to the theory of summation and the second gives an statement
+  how far the obtained sums can be analytically extended.
+
+  Denote by $\alpha^+$ (resp.\ $\alpha^-$) the next anti-Stokes direction on
+  the right (resp.\ left) of $\alpha$.
+  \begin{thm}
+    Let $\hat F\in\hat G(A^0)$ be an formal transformation.
+    On each arc $(\alpha,\alpha^+)$ the summation theory gives a canonical way
+    to find an invertible $n\times n$ matrix of meromorphic functions
+    $\Sigma_i(\hat F)$ asymptotic to $\hat F$, which is called \emph{the sum of
+    $\hat F$}.
+  \end{thm}
+  \begin{defn}\label{defn:sumsLeftRight}
+    \marginnote{\cite[Defn.III.2.2]{Loday1994}}
+    Denote by $\alpha^+$ the next anti-Stokes direction on the right of $\alpha$
+    we can define
+    \begin{itemize}
+      \item $S_\alpha^-(\hat F):=F_\alpha$ as the \emph{sum of $\hat F$ on the
+        left of $\alpha$} and
+      \item $S_\alpha^+(\hat F):=F_{\alpha^+}$ as the \emph{sum of $\hat F$ on
+        the right of $\alpha$}.
+    \end{itemize}
+  \end{defn}
+  \begin{lem}
+    \marginnote{\cite[Thm.4.3.13]{Loday2014}}
+    The Stokes cocycle $(\phi_\alpha)_{\alpha\in\A}$ satisfy
+    \[
+      \phi_\alpha=F_\alpha^+(t)^{-1}F_\alpha^-(t) \,.
+    \]
+  \end{lem}
+  \begin{lem}
+    \marginnote{\cite[Thm.3.1]{boalch}}
+    Let $\pm\in\{+,-\}$ and let $\Omega_\alpha^\pm\ni\alpha$ be the arc of
+    definition of $F_\alpha^\pm(t)$.
+    The sum $F_\alpha^\pm(t)$ can be analytically continued to the arc
+    $U_\alpha^k\cup\Omega_\alpha^\pm$.
+  \end{lem}
+
+
+  Let us now look closer at the canonical extension
+  \[ \begin{tikzcd}
+    i^k:\underset{\alpha\in\A}\prod\Sto_\alpha^k(A^0) \rar&
+    \Gamma(\dot\cU^k;\Lambda^k(A^0)) \,,
+  \end{tikzcd} \]
+  which extends every germ $\phi_\alpha\in(\phi_\alpha)_{\alpha\in\A}$ to
+  the corresponding arc $U_\alpha\in\dot\cU^k$.
+\end{comment}
 \begin{lem}
   Let $k\in\cK$.
   The morphism $h$ from Theorem~\ref{thm:mainThm2} is in the case of an unique
@@ -2486,7 +2672,7 @@ Stokes ray can split into two.
 In the prove of theorem~\ref{thm:mainThm2} we have seen, \rewrite{that not only
 $\cH(A^0)\cong\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ but} also that
 \begin{align*}
-  \cH(A^0)&\cong\prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_\alpha^k(A^0) 
+  \cH(A^0)&\cong\prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_\alpha^k(A^0)
   \\&\cong\prod_{k\in\cK}\prod_{\alpha\in\A^k}\Sto_\alpha^k(A^0)
   &\text{(since $\SSto_{\alpha}^{k}(A^0)=\{\id\}$ when $k\notin\cK_\alpha$.)}
   \\&\cong\prod_{k\in\cK}\prod_{\alpha\in\A^k}\SSto_\alpha^k(A^0) \,.
@@ -2513,7 +2699,7 @@ which are stable under small deformations
     The set $\A^k$ can clearly be split into $2k$ distinct half-periods.
   \end{s-rem}
 \end{defn}
-From the definition of anti-Stokes directions of level $k$ it is clear that 
+From the definition of anti-Stokes directions of level $k$ it is clear that
 every arc of width $\frac{\pi}{k}$, which has no anti-Stokes direction of level
 $k$ on its border, contains $\frac{\#\A^k}{2k}$ anti-Stokes directions
 since
@@ -2625,31 +2811,31 @@ following Lemma stated as Lemma 2 on page 75.
   \end{s-rem}
 \end{lem}
 \begin{lem}
-  Every position set, corresponding to some block, is complete. 
+  Every position set, corresponding to some block, is complete.
 \end{lem}
 \begin{proof}
-  Such a position set is given by
+  Such a position set, corresponding to some block, is given by
   \[
-    T:=\{(j,l)\mid j_1\leq j\leq j_2, l_1\leq l\leq l_2\}
+    T=\{(j,l)\mid j_1\leq j\leq j_2, l_1\leq l\leq l_2\}
   \]
   for some $j_1,j_2,l_2$ and $l_2$ in $\{1,\dots,n\}$.
 
   Let $(j,k)$, $(k,l)\in T$ be two positions.
-  It is obvious that $(j,l)\in T$, since $j_1\leq j\leq j_2$ and 
+  It is obvious that $(j,l)\in T$, since $j_1\leq j\leq j_2$ and
   $l_1\leq l\leq l_2$ are satisfied.
 \end{proof}
 \begin{cor}
   We can write the lemma~\ref{lem:UniqueDecompositionWotBlocks} in block form,
   corresponding to the structure of $Q$.
   Let $T\subset\{1,\dots,s\}\times\{1,\dots,s\}$ be a position set and choose a
-  indexing 
+  indexing
   \[
     i:\{1,\dots, \underset{\#T}{\underset{%
       \text{\rotatebox[origin=c]{-90}{$=$}}}{\mu}}\}\overset{\cong}{\to}T
   \]
   of $T$.
   \begin{s-defn}
-    Define
+    Define the group of matrices, corresponding by a complete position set, by
     \[
       S_T:=\left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in\GL_n(\C)\mid
       K_{jl}=\bdelta_{jl} \text{~unless~} (j,l)\in T \right\} \,,
@@ -2691,20 +2877,28 @@ theorem.
   where
   \begin{align*}
     \hat\SSto_{\theta}^k(A^0)
-      &:= \left\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in\GL_n(\C)\mid
+    :\!\!&= \left\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in\GL_n(\C)\mid
         K_{jl}=\delta_{jl} \text{~unless~}
-        q_j \underset{\theta}{\prec} q_l \right\}
+        q_j \underset{\theta}{\prec} q_l \text{, } k_{jl}=k\right\}
     \\&=S_{\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}}
   \end{align*}
   and
   \[
-    \hat\Sto_{\theta}^k(A^0):=\{\rho_\theta^{-1}(K) 
+    \hat\Sto_{\theta}^k(A^0):=\{\rho_\theta^{-1}(K)
       \mid K\in\hat\SSto_{\theta}^k(A^0) \} \,.
   \]
   \begin{s-rem}
-    This means that the information of all Stokes-matrices on every level $k$
-    can be grouped into $2k$ matrices, which are products of the corresponding
-    Stokes matrices.
+    \begin{enumerate}
+      \item This means that the information of all Stokes-matrices on every
+        level $k\in\cK$ can be grouped into $2k$ matrices, which are products
+        of the corresponding Stokes matrices.
+      \item By the definition above, it is obvious that
+        \[
+          \Sto_{\theta}^k(A^0)=
+          \bigcap_{\theta'\in \A^k\cap U(\theta,\frac{\pi}{k})}
+          \hat\Sto_{\theta'}^k(A^0) \,.
+        \]
+    \end{enumerate}
   \end{s-rem}
 \end{thm}
 \begin{proof}
@@ -2824,7 +3018,7 @@ Where
     \begin{itemize}
       \item $\chi:\displaystyle \prod_{\alpha\in\A}\prod_{k\in\cK}\Sto_\alpha^k(A^0)
         \equiv\displaystyle \prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_\alpha^k(A^0)$
-        the reordering and 
+        the reordering and
       \item by abuse of notation we also denote the Stokes matrix version in
         the same way
         $\chi:\displaystyle \prod_{\alpha\in\A}\prod_{k\in\cK}\SSto_\alpha^k(A^0)

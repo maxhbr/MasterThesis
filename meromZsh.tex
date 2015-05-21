@@ -483,13 +483,14 @@ $\hat G(A)$ and $\hat G(A')$ related by
     we have the following commutative diagram:
     \[ \begin{tikzcd}[column sep=.5cm,row sep=.5cm]
         \C(\!\{t\}\!)^n
-        \arrow[green!60!black]{rrrrr}{F}\arrow[green!60!black]{dddd}{d-B}&&&&&
-          \C(\!\{t\}\!)^n\arrow[green!60!black]{dddd}{d-A}
+        \arrow[green!60!black,thick]{rrrrr}{F}
+        \arrow[green!60!black,thick]{dddd}{d-A}&&&&&
+          \C(\!\{t\}\!)^n\arrow[green!60!black,thick]{dddd}{d-B}
           \\ & \cM \arrow{dd}{\nabla}\arrow{rrr}{\Phi}\ular&&&
           \cM'\arrow{dd}{\nabla'}\urar
           \\
         \\ & \cM \arrow{rrr}{\Phi}\dlar&&& \cM'\drar
-        \\ \C(\!\{t\}\!)^n \arrow[green!60!black]{rrrrr}{F}&&&&&
+        \\ \C(\!\{t\}\!)^n \arrow[green!60!black,thick]{rrrrr}{F}&&&&&
           \C(\!\{t\}\!)^n
     \end{tikzcd} \]
     \marginnote{\begin{align*}
@@ -587,7 +588,8 @@ i.e.\ the following proposition holds.
   \marginnote{\cite[854]{Loday1994}}
   Two formal transformations $\hat F_1$ and $\hat F_2$ take $A^0$ into
   equivalent matrices ${}^{\hat F_1}\!A^0$ and  ${}^{\hat F_2}\!A^0$ if and
-  only if there exists $f_0\in G_0(A^0)$ such that $\hat F_1=\hat F_2f_0$.
+  only if there exists $f_0\in G_0(A^0)$ such that $\hat F_1=\hat F_2f_0$
+  (cf.~\cite[854]{Loday1994}).
 \end{lem}
 \begin{comment}
   \begin{proof}
@@ -628,10 +630,10 @@ meromorphic connections.
            \\\cite[130]{hotta2008},
            \\\textbf{\cite[50]{BJL1979Birkhoff}}
            \\,\cite[26]{sibuya1990Linear}}
-It is well known in the theory of linear ODEs that the set of solutions to
-a system like (\ref{eq:ode}) forms a vector space of dimension $n$ over $\C$,
-i.e.\ if $x_0(t)$ and $x_{00}(t)$ are two solution of (\ref{eq:ode}) and $C_1$,
-$C_2\in\C$ are two constants, then is also $C_1x_0(t)+C_2x_{00}(t)$ a solution
+It is well known in the theory of linear ODEs that the solutions to a system
+like (\ref{eq:ode}) form a vector space of dimension $n$ over $\C$, i.e.\ if
+$x_0(t)$ and $x_{00}(t)$ are two solution of (\ref{eq:ode}) and $c_1$,
+$c_2\in\C$ are two constants, then is also $c_1x_0(t)+c_2x_{00}(t)$ a solution
 of the same system.
 \begin{defn}
   \marginnote{\cite[4f]{thboalch}}
@@ -1313,7 +1315,7 @@ also denote it also by ${}^0C(A^0)$, if we are using the language of systems.
 It is convenient to look at the slightly larger space of \emph{marked
 (meromorphic) pairs}
 \[
-  \cH=\cH(\cM^{nf},\nabla^{nf})=\left\{
+  \cH(\cM^{nf},\nabla^{nf})=\left\{
     \left[(\cM,\nabla,\hat f)\right]
       \mid
       \hat f:(\hat\cM,\hat\nabla)
