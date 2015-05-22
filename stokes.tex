@@ -9,10 +9,10 @@ A great overview of this topic is given by Varadarajan in
 example \rewrite{Sabbah's} book \cite[section II]{sabbah2007isomonodromic} for
 section~\ref{sec:mainThm1}.
 For the sections~\ref{sec:StokesGroup} and~\ref{sec:mainThm2} will
-\rewrite{Loday-Richaud's} paper \cite{Loday1994} and the book \cite{Loday2014}
-be \rewrite{useful. Also useful} was \rewrite{Boalch's} paper \cite{boalch}
-(resp.\ his thesis \cite{thboalch}) which looks only at the single leveled
-case.
+\rewrite{Loday-Richaud's} paper \cite{Loday1994} and the book
+\cite[Sec.4]{Loday2014} be \rewrite{useful. Also useful} was \rewrite{Boalch's}
+paper \cite{boalch} (resp.\ his thesis \cite{thboalch}) which looks only at the
+single leveled case.
 
 Let $(\cM^{nf},\nabla^{nf})$ be a fixed model with the corresponding normal
 form $A^0$.  The first objective is to proof the Malgrange-Sibuya theorem
@@ -25,6 +25,8 @@ $1$-cocycle of a special form called \emph{the Stokes cocycle}
 (cf.\ Section~\ref{sec:StokesGroup}).
 The morphism, which maps each Stokes cocycle to its corresponding $1$-cocycle
 will be denoted by $h$.
+
+This will be further improved in section~\ref{sec:furtherImprovements}.
 
 We \rewrite{have the following} commutative diagram of isomorphisms.
 \begin{center}
@@ -56,6 +58,8 @@ We \rewrite{have the following} commutative diagram of isomorphisms.
 The map $g$, which makes the diagram commute, is defined using the theory of
 summation, which will be roughly discussed the appendix in
 section~\ref{sec:multisummability}.
+This diagram will be enhanced in section~\ref{sec:theCompleteDiagram} by
+adding a couple of isomorphisms.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes structures: Malgrange-Sibuya isomorphism}\label{sec:mainThm1}
@@ -94,25 +98,27 @@ flat isotropies of $[A^0]$.
     \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
   \end{enumerate}
   \begin{s-rem}
-    This definition \rewrite{makes also sense} for systems wich are not in
-    normal form.
+    This definition \rewrite{makes also sense as} $\Lambda(A)$ where $A$ stands
+    for a systems wich is not in normal form.
   \end{s-rem}
-  \begin{s-rem}
-    \PROBLEM[remove? need more defs!]
-    Sabbah \cite[110]{sabbah2007isomonodromic} talks about (global) meromorphic
-    connections $\sM$ on a small disk $D$ around $0$ instead of germs of
-    meromorphic connections.
+  \begin{comment}
+    \begin{s-rem}
+      \PROBLEM[remove? need more defs!]
+      Sabbah \cite[110]{sabbah2007isomonodromic} talks about (global)
+      meromorphic connections $\sM$ on a small disk $D$ around $0$ instead of
+      germs of meromorphic connections.
 
-    Define on $S^1$ the sheaf $\Aut^{<0}(\tilde\sM^{nf})$ of automorphisms of
-    $\tilde\sM^{nf}=\cA_D\otimes_{\cO_D}\sM^{nf}$ which
-    \begin{itemize}
-      \item are compatible with the connection and
-      \item are formally equal to the identity, i.e.\ induce the identity on
-        $\hat\sM^{nf}=\hat\cO_D\otimes_{\cO_D}\sM^{nf}$
-    \end{itemize}
+      Define on $S^1$ the sheaf $\Aut^{<0}(\tilde\sM^{nf})$ of automorphisms of
+      $\tilde\sM^{nf}:=\cA_D\otimes_{\cO_D}\sM^{nf}$ which
+      \begin{itemize}
+        \item are compatible with the connection and
+        \item are formally equal to the identity, i.e.\ induce the identity on
+          $\hat\sM^{nf}:=\hat\cO_D\otimes_{\cO_D}\sM^{nf}$
+      \end{itemize}
 
-    The sheaf $\Aut^{<0}(\tilde\sM^{nf})$ corresponds to our $\Lambda(A^0)$.
-  \end{s-rem}
+      The sheaf $\Aut^{<0}(\tilde\sM^{nf})$ corresponds to our $\Lambda(A^0)$.
+    \end{s-rem}
+  \end{comment}
 \end{defn}
 
 \subsection{The theorem}
@@ -136,7 +142,7 @@ to the covering $\cU$, defined.
   corresponding cocycles define the same cohomology class.}
 This defines a mapping of pointed sets
 \[
-  \cH(\cM^{nf},\nabla^{nf})\to H^1(S^1;\Lambda(A^0))
+  \exp:\cH(\cM^{nf},\nabla^{nf})\longrightarrow H^1(S^1;\Lambda(A^0))
 \]
 to the first non abelian cohomology of $\Lambda(A^0)$, which sends the class of
 $(\cM^{nf},\nabla^{nf},\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology
@@ -156,26 +162,10 @@ class.
     \end{tthm}
   \end{minipage}
 \end{center}
-\begin{rem}
-  \TODO[Frage Felix!]
-  \PROBLEM[doppelt]
-  The theorem \cite[Thm.III.1.1.2]{babbitt1989local}, in the book from
-  Babbitt and Varadarajan, states that $\St(A^0)$
-  is actually a local moduli space for marked pairs, which are formally
-  isomorphic to a given connection $(\cM^{nf},\nabla^{nf})$. This means that
-  \begin{itemize}
-    \item the morphism property,
-    \item the criterion of equivalence and
-    \item the existence of universal families
-  \end{itemize}
-  are satisfied (cf.\ \cite[169]{babbitt1989local}).
-  In fact is the whole third part of \cite{babbitt1989local} dedicated to this
-  topic.
-\end{rem}
 
 \subsubsection{The theorem (system version)}
-Since the language of meromorphic connections is equivalent\TODO[check!] to the
-one of systems, there is also the translated version of the Malgrange-Sibuya
+Since the language of meromorphic connections is equivalent to the one of
+systems, there is also the translated version of the Malgrange-Sibuya
 isomorphism to the language of systems. The corresponding map is then build as
 follows.
 
@@ -200,6 +190,8 @@ This defines a welldefined mapping of pointed sets
   \cH(A^0)\to H^1(S^1;\Lambda(A^0))
 \]
 to the first non abelian cohomology of $\Lambda(A^0)$, which we call $\exp$.
+It maps the class of $(A^0,\hat\id)$ to that of $\id$, i.e.\ the trivial
+cohomology class.
 
 \begin{center}
   \begin{minipage}[t]{0.8\textwidth}
@@ -209,24 +201,25 @@ to the first non abelian cohomology of $\Lambda(A^0)$, which we call $\exp$.
       \[ \begin{tikzcd}
           \exp:\cH(A^0) \rar& \St(A^0):=H^1(S^1;\Lambda(A^0))
       \end{tikzcd} \]
-      is an isomorphism of pointed\footnote{Which maps the class of
-      $(A^0,\hat\id)$ to that of $\id$, i.e.\ the trivial cohomology class.} sets.
+      is an isomorphism of pointed sets.
     \end{tthm}
   \end{minipage}
 \end{center}
 \begin{rem}
-  \TODO[Frage Felix!]
+  % \TODO[Frage Felix!]
   The theorem \cite[Thm.III.1.1.2]{babbitt1989local}, in the book from
   Babbitt and Varadarajan, states that $\St(A^0)$ is actually a local moduli
   space for marked pairs, which are formally isomorphic to a given system
   $[A^0]$.
-  This means that
-  \begin{itemize}
-    \item the morphism property,
-    \item the criterion of equivalence and
-    \item the existence of universal families
-  \end{itemize}
-  are satisfied (cf.\ \cite[169]{babbitt1989local}).
+  \begin{comment}
+    This means that
+    \begin{itemize}
+      \item the morphism property,
+      \item the criterion of equivalence and
+      \item the existence of universal families
+    \end{itemize}
+    are satisfied (cf.\ \cite[169]{babbitt1989local}).
+  \end{comment}
   In fact is the whole third part of \cite{babbitt1989local} dedicated to this
   topic.
 \end{rem}
@@ -292,7 +285,7 @@ We will start by proofing the injectivity of the morphism $\exp$.
   $\cU=\{U_j;j\in J\}$ of $S^1$ such that $\lambda$ is the class of the
   cocycles $(F_l^{-1}F_j)$ and $(F_l'^{-1}F_j')$, where $F_j$ (resp.\ $F_j'$)
   are lifts of $\hat F$ (resp.\ $\hat F'$) on $U_j\in\cU$.
-  Since $[(F_l^{-1}F_j)]=[(F_l'^{-1}F_j')]$ by assumption there exists a
+  From $[(F_l^{-1}F_j)]=[(F_l'^{-1}F_j')]$ follows that there exists a
   $0$-cochain $(G_j)_{j\in J}$ of the sheaf $\Lambda(A^0)$ relative to the
   covering $\cU$, such that
   \[
@@ -306,7 +299,7 @@ We will start by proofing the injectivity of the morphism $\exp$.
   \]
   If we set $H_j:=F_j'G_{j}F_j^{-1}$ on $U_{j}$, we get
   \begin{itemize}
-    \item a solution of $[A,A']$ on every $U_j$, i.e.\ it
+    \item that $H_j$ is a solution of $[A,A']$ on every $U_j$, i.e.\ it
       satisfies there ${}^{H_j}A=A'$, since
       \begin{align*}
         {}^{H_j}A &= {}^{F_j'G_{j}F_j^{-1}}A
@@ -318,20 +311,6 @@ We will start by proofing the injectivity of the morphism $\exp$.
         & \text{(since $F_j$ is a lift of $\hat F$ on $U_j$)}
       \end{align*}
       and
-      % \begin{comment}
-      %   \begin{align*}
-      %     {}^{H_j}A &= (dH_j)H_j^{-1}+H_jAH_j^{-1}
-      %     \\&=(d(F_j^{-1}G_{j}^{-1}F_j'))F_j'^{-1}G_{j}F_j
-      %         + F_j^{-1}G_{j}^{-1}F_j'AF_j'^{-1}G_{j}F_j
-      %     \\&=\dots
-      %     \\&=\left(d\left(\hat F\hat F'^{-1}\right)\right)
-      %         \left(\hat F\hat F'^{-1}\right)^{-1}
-      %         +\hat F\hat F'^{-1} A \left(\hat F\hat F'^{-1}\right)^{-1}
-      %     \\&={}^{\hat F\hat F'^{-1}}A'
-      %     \\&={}^{\hat F}\left({}^{\hat F'^{-1}}A'\right)
-      %     \\&=A'
-      %   \end{align*}
-      % \end{comment}
     \item which satisfies $\hat F'=\hat H_j\hat F$ on every $U_j$, since
       \begin{align*}
         \hat H_j\hat F&= \widehat{F_j'G_{j}F_j^{-1}} \hat F
@@ -388,29 +367,30 @@ We will start by proofing the injectivity of the morphism $\exp$.
 \end{proof}
 
 For the proof of the surjectivity we will use another result from Malgrange and
-Sibuya, which is also called the Malgrange-Sibuya Theorem. It can for example
-be found in Babbitt and Varadarajans's book \cite[65ff]{babbitt1989local} as
-Theorem 4.2.1.
+Sibuya, which is also called the Malgrange-Sibuya Theorem
+(Theorem~\ref{thm:thm1helpMalgSibuy}). It can for example be found in Babbitt
+and Varadarajans's book \cite[65ff]{babbitt1989local} as Theorem 4.2.1.
 
 Let $\hat F\in G(\!(t)\!)$ be a matrix with formally meromorphic entries. By
 the Borel-Ritt Lemma (cf.\ Theorem~\ref{thm:borel-ritt}) we then know, that
 there exists for every sector $\mathfrak{s}\subsetneq S^1$ a holomorphic
-function $G:\mathfrak{s}\to\gl_n(\C)$ which is asymptotic to $\hat F$.
+function $G:\mathfrak{s}\to\GL_n(\C)$ which is asymptotic to $\hat F$.
 We will denote the set of all such holomorphic functions, which are on
 the arc $I$ asymptotic to $\id\in G(\!(t)\!)$ by
 \[
   \cG(I)=\left\{G\in\Gl_n(\cA(I))\mid g\sim_I\id\right\}\,,
 \]
 and this defines a sheaf $\cG$ on $S^1$.
-The statement of the (second) Malgrange-Sibuya Theorem is then, that the
-\rewrite{difference} between formal and konvergent invertible matrices is
-described by the first sheaf cohomology $H^1(S^1;\cG)$ of $\cG$ via the map
+The statement of the (second) Malgrange-Sibuya Theorem
+(Theorem~\ref{thm:thm1helpMalgSibuy}) is then, that the \rewrite{difference}
+between formal and konvergent invertible matrices is described by the first
+sheaf cohomology $H^1(S^1;\cG)$ of $\cG$ via the map
 \[
-  \Theta: G\llbracket t\rrbracket/G\{t\}\to H^1(S^1;\cG) \,,
+  \Theta: G(\!(t)\!)/G(\!\{t\}\!)\longrightarrow H^1(S^1;\cG) \,,
 \]
 which will turn out to be an isomorphism. It is set up as follows:
 \begin{einr}
-  Let $[\hat F]\in G\llbracket t\rrbracket/G\{t\}$ with ambassador $\hat F$ and
+  Let $[\hat F]\in G(\!(t)\!)/G(\!\{t\}\!)$ with ambassador $\hat F$ and
   let $\cU=\{U_j\mid j\in J\}$ be a finite covering of $S^1$ by open arcs.
   The Borel-Ritt Lemma yields for every arc $j\in J\subsetneq S^1$ a
   holomorphic function $F_j$ which satisfies $F_j\sim_{U_j}\hat F$.
@@ -425,7 +405,7 @@ Borel-Ritt Lemma to obtain only asymptotic lifts.
 It can be verified, that the class $\Theta([\hat F])$ does not depend on
 \begin{itemize}
   \item the choise of an ambassador $\hat F$ in
-    $[\hat F]\in G\llbracket t\rrbracket/G\{t\}$\PROBLEM[proof!],
+    $[\hat F]\in G(\!(t)\!)/G(\!\{t\}\!)$\PROBLEM[proof!],
   \item the choice of the covering $\cU$\PROBLEM[proof!] nor
   \item the choice the $F_j$\PROBLEM[proof!].
 \end{itemize}
@@ -434,7 +414,7 @@ It can be verified, that the class $\Theta([\hat F])$ does not depend on
   The mapping $\Theta$ is injective.
 \end{lem}
 \begin{proof}
-  Let $\hat F$ and $\hat F'\in G\llbracket t\rrbracket$ such that
+  Let $\hat F$ and $\hat F'\in G(\!(t)\!)$ such that
   $\Theta([\hat F])=\Theta([\hat F'])$.
   We then can find a covering $\cU=\{U_j\mid j\in J\}$ together with
   holomorphic functions $F_j$ and $F_j'$, which satisfy
@@ -464,16 +444,8 @@ It can be verified, that the class $\Theta([\hat F])$ does not depend on
 \begin{thm}[Malgrange-Sibuya]\label{thm:thm1helpMalgSibuy}
   The map $\Theta$ is an isomorphism
   \[
-    G\llbracket t\rrbracket/G\{t\}\cong H^1(S^1;\cG).
+    G(\!(t)\!)/G(\!\{t\}\!)\cong H^1(S^1;\cG).
   \]
-  \begin{s-rem}
-    Since we know that
-    $G\llbracket t\rrbracket/G\{t\}\cong G(\!(t)\!)/G(\!\{t\}\!)$\TODO[(cf~??)],
-    we get also
-    \[
-      G(\!(t)\!)/G(\!\{t\}\!)\cong H^1(S^1;\cG).
-    \]
-  \end{s-rem}
 \end{thm}
 This theorem is proven in Section 4.4 of Babbitt and Varadarajan's book
 \cite{babbitt1989local} or on page 371 of \cite{Martinet1991}.
@@ -616,9 +588,10 @@ of~\cite{Martinet1991}.
 Let us recall, that the normal form $A^0$ can be written as
 $A^0=Q'(t^{-1})+L\frac{1}{t}$ and a normal solution is given by
 $\cY_0(t)=t^Le^{Q(t^{-1})}$ (cf.\ Proposition~\ref{prop:fundSolBuilder}), where
-$Q(t^{-1})=\bigoplus_{j\in\{1,\dots,s\}}q_j(t^{-1})\id_{n_j}$.
-\PROBLEM[Common Structure?]
-Let $\left\{q_1(t^{-1}),\dots,q_s(t^{-1})\right\}$ the be \emph{set of all
+$Q(t^{-1})=\bigoplus_{j\in\{1,\dots,s\}}q_j(t^{-1})\cdot\id_{n_j}$ and the
+block structure of $L$ is finer then the structure of $Q$
+(cf.\ definition~\ref{defn:structureComparison}).
+Let $\left\{q_1(t^{-1}),\dots,q_s(t^{-1})\right\}$ be the \emph{set of all
 determining polynomials of $[A^0]$} and denote by
 \[
   \cQ(A^0):=\left\{\left(q_j-q_l\right)(t^{-1})
@@ -636,7 +609,7 @@ $(q_j,q_l)\in\cQ(A^0)$.
     \item $a_{jl}\in\C\backslash\{0\}$ the \emph{leading factor},
     \item $\frac{a_{jl}}{t^{k}}=:q_{jl}(t^{-1})$ the \emph{leading
       coefficient} and
-    \item $k_{jl}$ the \emph{degree}
+    \item $k_{jl}\in\Q$ the \emph{degree}
   \end{itemize}
   of $q_j-q_l\in\cQ(A^0)$ if
   \[
@@ -665,36 +638,22 @@ $(q_j,q_l)\in\cQ(A^0)$.
     \cK=\{k_1<\dots<k_r\} \subset \Q \,.
   \]
   \begin{s-rem}
-    $[A^0]$ is unramified if and only if $\cK\subset\Z$. Since we only want to
-    consider the unramified case, this will be always the case.
+    The system $[A^0]$ is unramified if and only if $\cK\subset\Z$.
+    Since we only want to consider the unramified case, this will be always the
+    case.
   \end{s-rem}
 \end{defn}
 
-\begin{comment}
-  \begin{defn}
-    \marginnote{\cite[130]{hotta2008}, \cite[79]{Loday2014}}
-    A function is \emph{of maximal decay}, if \PROBLEM{}
-    \begin{s-rem}
-      \marginnote{\cite[79]{Loday2014}}
-      An exponential $e^{q(1/t)}=e^{-\frac{a}{t^{k}}(x+o(t^{-k}))}$ has maximal
-      decay in a direction $\tilde\theta\in S^1$ if and only if
-      $-ae^{-ik\tilde\theta}$ is real negative.
-    \end{s-rem}
-
-    \comm{On the other hand, is a function is \emph{flat}, if\dots}
-  \end{defn}
-\end{comment}
 \begin{defn}
-  \PROBLEM[better definition?]
-  \marginnote{\cite[79]{Loday2014}}
-  Let $k\in\N$.
-  An exponential $e^{q(1/t)}=e^{-\frac{a}{t^{k}}(x+o(t^{-k}))}$ has
-  \emph{maximal decay in a direction $\theta\in S^1$} if and only if
-  $-ae^{-ik\tilde\theta}$ is real negative.
+  \marginnote{\cite[130]{hotta2008}, \cite[79]{Loday2014}}
+  Let $k\in\N$ and $a\in\C$.
+  An exponential $e^{q(t^{-1})}$, where $q(t^{-1})=\frac{a}{t^{k}}+o(t^{-k})$,
+  has \emph{maximal decay in a direction $\theta\in S^1$} if and only if
+  $ae^{-ik\tilde\theta}$ is real negative.
 \end{defn}
 
-On the elements of $\cQ(A^0)$ we define the following (partial) order
-relations:
+On the determining polynomials of $[A^0]$ we define the following (partial)
+order relations:
 \begin{defn}\label{defn:definingRelations}
   Let $\tilde\theta$ be a determination of $\theta$.
   \begin{itemize}
@@ -830,7 +789,7 @@ part of $f$.
 
 The graphs, corresponding to the flipped pair $(q_l,q_j)$ are then obtained by
 the transformation $\arg(a)\to\arg(-a)=\arg(a)+\pi$, i.e.\ the shift by
-$\frac{\pi}{k}$ to the right. This $\frac{\pi}{k}$ is exactly a halve period,
+$\frac{\pi}{k}$ to the right. This $\frac{\pi}{k}$ is exactly a half period,
 thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
 \begin{rem}\label{rem:relationDistanceCondition}
   Let $k_{jl}$ be the degree of $q_j-q_l$.
@@ -871,15 +830,6 @@ thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
             \PROBLEM[mentioned to often?]
           \end{s-rem}
       \end{itemize}
-      \begin{s-rem}
-        We will use the greek letter $\alpha$ when we want to emphasize that
-        a direction is an anti-Stokes direction. For generic directions, we
-        will use $\theta$. In fact will most of the following definitions and
-        constructions work for every $\theta\in S^1$, the Stokes group
-        (cf.\ Definition~\ref{defn:stokesGroup} for example will be trivial
-        for every $\theta\notin\A$. Thus the interesting directions are still
-        the anti-Stokes directions $\alpha\in\A$.
-      \end{s-rem}
     \item $\theta$ is a \emph{Stokes direction} if there is at least one pair
       $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies neither
       $q_j\underset{\theta}{\prec} q_l$ nor $q_l\underset{\theta}{\prec} q_j$.
@@ -889,6 +839,15 @@ thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
       \end{itemize}
   \end{enumerate}
 \end{defn}
+We will use the greek letter $\alpha$ when we want to emphasize that a
+direction is an anti-Stokes direction.
+For generic directions, we will use $\theta$.
+In fact will most of the following definitions and
+constructions work for every $\theta\in S^1$, but the Stokes group
+(cf.\ Definition~\ref{defn:stokesGroup}) for example will be trivial
+for every $\theta\notin\A$.
+Thus the interesting directions are  only the anti-Stokes directions
+$\alpha\in\A$.
 
 \begin{lem}\label{lem:rotationalSym}%\label{rem:rotationalSymPrime}
   If $\alpha\in\A$ together with a determining pair
@@ -1059,8 +1018,6 @@ $A^0$ (cf.\ Definition~\ref{defn:normSol}).
 
 \begin{prop}\label{prop:representation}
   \marginnote{\cite[Def.I.4.7]{Loday1994}\\\cite[78f]{Loday2014}}
-  \TODO[use $\theta$ to emphasize genericness or $\alpha$ since it is only
-  usefull for anti-Stokes directions?]
   In this situation is the morphism
   \begin{align*}
     \rho_{\theta}:\Sto_\theta(A^0)&\longrightarrow\SSto_\theta(A^0)
@@ -1841,67 +1798,69 @@ different levels.
 
 \begin{rem}\label{rem:superSectors}
   Boalch introduces in his publications~\cite[19]{boalch}
-  and~\cite[Def.1.23]{thboalch} the notion of \emph{supersectors} $\hat\Sect$,
-  they are in the case of a single level $k$, defined as follows:
+  and~\cite[Def.1.23]{thboalch} the notion of \emph{supersectors}, they are in
+  the case of a single level $k$, defined as follows:
   \begin{einr}
     write the anti-Stokes directions as $\A=\{\alpha_1,\dots,\alpha_\nu\}$
     arranged according to the clockwise ordering, then is the $i$-th
     supersector defined as the arc
     \[
-      \hat\Sect_i:=
+      \hat\Sect^k_i:=
         \left(\alpha_i-\frac{\pi}{2k},\alpha_{i+1}+\frac{\pi}{2k}\right) \,.
     \]
   \end{einr}
-  This yields a cyclic covering $(\hat\Sect_i)_{i\in\{1,\dots,\nu\}}$ whose
+  This yields a cyclic covering $(\hat\Sect^k_i)_{i\in\{1,\dots,\nu\}}$ whose
   nerve is exactly $\dot\cU^k$ defined above.
   \begin{comment}
-    \begin{tikzpicture}[scale=3]
-      \node[] (zero) at (0,0) {};
-      \draw[blue] (zero) circle (1cm);
+    \begin{center}
+      \begin{tikzpicture}[scale=3]
+        \node[] (zero) at (0,0) {};
+        \draw[blue] (zero) circle (1cm);
 
-      \fill[fill=green!20!white] (0,0) -- ({cos( 15 )},{sin( 15 )}) arc
-        (15:85:1) -- cycle;
+        \fill[fill=green!20!white] (0,0) -- ({cos( 15 )},{sin( 15 )}) arc
+          (15:85:1) -- cycle;
 
-      \fill[fill=red!60!black] (0,0) -- ({cos( 15 )*0.5},{sin( 15 )*0.5}) arc
-        (15:45:0.5) -- cycle;
-      \fill[fill=red!60!black] (0,0) -- ({cos( 55 )*0.5},{sin( 55 )*0.5}) arc
-        (55:85:0.5) -- cycle;
+        \fill[fill=red!60!black] (0,0) -- ({cos( 15 )*0.5},{sin( 15 )*0.5}) arc
+          (15:45:0.5) -- cycle;
+        \fill[fill=red!60!black] (0,0) -- ({cos( 55 )*0.5},{sin( 55 )*0.5}) arc
+          (55:85:0.5) -- cycle;
 
-      \fill[fill=green!20!white] (0,0) -- ({cos( 15 )*0.4},{sin( 15 )*0.4}) arc
-        (15:85:0.4) -- cycle;
+        \fill[fill=green!20!white] (0,0) -- ({cos( 15 )*0.4},{sin( 15 )*0.4}) arc
+          (15:85:0.4) -- cycle;
 
-      \node[green!40!black] at (1,1) {$\widehat\Sect_i$};
+        \node[green!40!black] at (1,1) {$\widehat\Sect_i$};
 
-      \node[] (lft) at ({cos( 85 )},{sin( 85 )}) {};
-      \node[] (rgt) at ({cos( 15 )},{sin( 15 )}) {};
+        \node[] (lft) at ({cos( 85 )},{sin( 85 )}) {};
+        \node[] (rgt) at ({cos( 15 )},{sin( 15 )}) {};
 
-      \draw[->,red!40!black] ({cos( 45 )},{sin( 45 )})
-        to [out=35, in=25] (rgt);
+        \draw[->,red!40!black] ({cos( 45 )},{sin( 45 )})
+          to [out=35, in=25] (rgt);
 
-      \draw[->,red!40!black] ({cos( 55 )},{sin( 55 )})
-        to [out=65, in=75] (lft);
+        \draw[->,red!40!black] ({cos( 55 )},{sin( 55 )})
+          to [out=65, in=75] (lft);
 
-      \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 85 )},{sin( 85 )});
-      \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 15 )},{sin( 15 )});
-      \fill[red!40!black] ({cos( 85 )},{sin( 85 )}) circle (1pt);
-      \fill[red!40!black] ({cos( 15 )},{sin( 15 )}) circle (1pt);
+        \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 85 )},{sin( 85 )});
+        \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 15 )},{sin( 15 )});
+        \fill[red!40!black] ({cos( 85 )},{sin( 85 )}) circle (1pt);
+        \fill[red!40!black] ({cos( 15 )},{sin( 15 )}) circle (1pt);
 
-      \foreach \w/\str in {10/,
-                           20/,
-                           45/$\alpha_i$,
-                           55/$\alpha_{i+1}$}
-      {\draw (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
-       \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (.7pt);
-       \foreach \sep in {60,120,180,240,300}
-       {\draw (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-        \fill[blue!20!white]
-          ({cos( \w + \sep )},{sin( \w + \sep )}) circle (.7pt);
-       }
-      };
+        \foreach \w/\str in {10/,
+                             20/,
+                             45/$\alpha_i$,
+                             55/$\alpha_{i+1}$}
+        {\draw (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
+         \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (.7pt);
+         \foreach \sep in {60,120,180,240,300}
+         {\draw (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
+          \fill[blue!20!white]
+            ({cos( \w + \sep )},{sin( \w + \sep )}) circle (.7pt);
+         }
+        };
 
 
-      \fill (zero) circle (1pt);
-    \end{tikzpicture}
+        \fill (zero) circle (1pt);
+      \end{tikzpicture}
+    \end{center}
   \end{comment}
 \end{rem}
 If we extend to several levels, the set
@@ -2655,7 +2614,8 @@ Theorem~\ref{thm:mainThm2} by composition of already bijective maps.
   \PROBLEM[Show that this is the correct $h$]
 \end{proof}
 
-\section{Further improvements}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Further improvements}\label{sec:furtherImprovements}
 The set $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ and thus
 $\prod_{\alpha\in\A}\SSto_\alpha(A^0)$ has some bad properties, when small
 deformations are applied to $[A^0]$, since under arbitrary small changes, one
@@ -2950,7 +2910,7 @@ theorem.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The complete Diagram}
+\section{The complete Diagram}\label{sec:theCompleteDiagram}
 If we start with the diagram from page~\pageref{page:ofPreDiagram}, we can add
 all the defined isomorphisms and rewrite into the following diagram.
 \begin{center}
@@ -3006,7 +2966,7 @@ all the defined isomorphisms and rewrite into the following diagram.
       node[midway,above] {$\eta$};
     \draw[->] (SS2P) -- (SSS2P)
       node[midway,right] {(induced by $\rho$)};
-    \draw[->,red] (ProdOfSStos) -- (SSS3P)
+    \draw[->,red] (SSS3P) -- (ProdOfSStos)
       node[midway,below left,red] {Cor.\ref{cor:isomToChochN}};
   \end{tikzpicture}
 \end{center}

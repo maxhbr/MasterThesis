@@ -151,7 +151,7 @@
 
 \allowdisplaybreaks
 
-\iftrue %Section Numbers moved left out
+\ifnum\myDevelopVariable=1
   \usepackage{sectsty}
   \makeatletter\def\@seccntformat#1{%
     \protect\makebox[0pt][r]{\csname the#1\endcsname\hspace{12pt}}}\makeatother

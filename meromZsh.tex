@@ -872,20 +872,49 @@ A connection matrix for $\cM^{nf}$ is then obtained by
 where
 $Q(t^{-1}):=\bigoplus_{j=1}^sq_j(t^{-1})\cdot\id_{n_j}$
 and $L:=\bigoplus_{j=1}^sL_j$.
+\begin{defn}\label{defn:structureComparison}
+  Let $L$ be a block diagonal matrix $L=\bigoplus_{j=1}^sL_j$, where the $L_j$
+  are of size $n_j\times n_j$ and $Q$ be a diagonal matrix.
+  We will say, that \emph{the block structure of $L$ is finer then the
+  structure of $Q$} if there are $q_j$'s such that
+  $Q=\bigoplus_{j=1}q_j\cdot\id_{n_j}$.
+  \begin{s-rem}
+    \begin{enumerate}\label{rem:structureComparison}
+      \item The matrices $Q$ and $L$ defined above clearly satisfy this
+        condition.
+      \item When this condition is satisfied, do $L$ and $Q$ commute.
+    \end{enumerate}
+  \end{s-rem}
+\end{defn}
 \begin{prop}\label{prop:fundSolBuilder}
   Let $L\in \GL_n(\C)$ be constant and
   $Q(t^{-1})=\diag(q_1(t^{-1}),\dots,q_n(t^{-1}))$ a diagonal matrix of
-  polynomials in $t^{-1}$.
+  polynomials in $t^{-1}$ where
+  \begin{itemize}
+    \item $L$ is in Jordan normal form and
+    \item the block structure of $L$ is finer then the structure of
+      $Q(t^{-1})$.
+  \end{itemize}
   The matrix $\cY_0:=t^L e^{Q(t^{-1})}$ is then a fundamental solution of the
   system determined by the matrix
   \[
-    A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t} \,.
+    A^0=Q'(t^{-1})+L\frac{1}{t} \,.
   \]
 \end{prop}
 \begin{proof}
-  It is easy to see that $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$
-  and $\frac{d}{dt}t^L=L\frac{1}{t}t^L$, thus we can prove
-  that $\cY_0$ is a matrix consisting of solutions:
+  It is easy to see that
+  \begin{itemize}
+    \item the block structure of $t^L$ is finer then the structure of
+      $Q'(t^{-1})$, since
+      \begin{itemize}
+        \item $t^L=t^{\bigoplus_{j=1}^sL_j}=\bigoplus_{j=1}^st^L_j$ and
+        \item $Q'(t^{-1})=\frac{d}{dt}\bigoplus_{j=1}q_j(t^{-1})\cdot\id_{n_j}=
+          \bigoplus_{j=1}q'_j(t^{-1})\cdot\id_{n_j}$ \,,
+      \end{itemize}
+    \item $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$ and
+      $\frac{d}{dt}t^L=L\frac{1}{t}t^L$
+  \end{itemize}
+  thus we can prove that $\cY_0$ is a matrix consisting of solutions:
   \begin{align*}
     \frac{d}{dt}\cY_0
     &=\frac{d}{dt}\left(t^Le^{Q(t^{-1})}\right)
@@ -893,6 +922,8 @@ and $L:=\bigoplus_{j=1}^sL_j$.
   \\&= t^LQ'(t^{-1})e^{Q(t^{-1})} + L\frac{1}{t}t^Le^{Q(t^{-1})}
   % \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+Q'(t^{-1})t^Le^{Q(t^{-1})}
   \\&=\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
+  \\&=\left(Q'(t^{-1})+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
+    &\text{(using Remark~\ref{rem:structureComparison})}
   \\&=A^0\cY_0 \,.
   \end{align*}
   The invertability condition is clear.
@@ -967,17 +998,7 @@ and we will use this fact, to say when a system is something like a model.
       fractional power $\frac{1}{s}=\frac{1}{t^{1/p}}$ of $\frac{1}{t}$ for the
       ramified case) such that $q_j(0)=0$, i.e.\ without constant term,
     \item a constant matrix $L\in\gl_n(\C)$ called the \emph{matrix of formal
-      monodromy}, where $t^L$ means $e^{L\ln t}$
-        \begin{s-rem}
-          Since we only look at unramified connections, we are able to assume
-          that $L$ is in Jordan normal form, since in this case $Q$ and $L$
-          commute. It then has a block structure, which is finer then the
-          structure of
-          $Q=\underset{j=1}{\overset{s}{\bigoplus}}q_j(t^{-1})\id_{n_j}$
-          (cf.~\cite[Sec.1]{Remy2014} or~\cite[Sec.4]{Martinet1991}).
-          \PROBLEM[Why?]
-        \end{s-rem}
-      and
+      monodromy}, where $t^L$ means $e^{L\ln t}$ and
     \item a (convergent) transformation $F\in G(\!\{t\}\!)$.
       \begin{s-rem}
         By changing the basis via $F^{-1}$ we obtain from $[A^0]$ the
@@ -994,187 +1015,195 @@ and we will use this fact, to say when a system is something like a model.
   \emph{is a normal form for} $A$ and for $[A]$.
 \end{defn}
 \begin{cor}
-  A meromorphic connection $(\cM,\nabla)$ as a model if and only if its
+  Since we only look at unramified connections, by the Levelt-Turittin Theorem 
+  we are able to assume that $L$ is in Jordan normal form and that it has a
+  block structure, which is finer then the structure of
+  $Q=\bigoplus_{j=1}^sq_j(t^{-1})\cdot\id_{n_j}$
+  (cf.~\cite[Sec.1]{Remy2014} or~\cite[Sec.4]{Martinet1991}).
+\end{cor}
+The following corollary enables us to use normal forms in place of models.
+\begin{cor}
+  A meromorphic connection $(\cM,\nabla)$ is a model if and only if its
   connection matrix $A$ is a normal form.
 \end{cor}
 
-\begin{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{In the language of systems: normal forms}
-In the language of system, the equivalent of models are normal forms, which are
-characterizes by the structure of their fundamental solutions.
+% \begin{comment}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection{In the language of systems: normal forms}
+% In the language of system, the equivalent of models are normal forms, which are
+% characterizes by the structure of their fundamental solutions.
 
-The normal forms are then the systems $[A^0]$, with a fundamental solution
-$\cY_0$ in a special form and from the Levelt-Turittin we then can deduce that
-every system $[{}^{\hat F}\!A^0]$, with $\hat F\in G(\!(t)\!)$, has a
-fundamental solution in the form $\hat F\cY_0$.
-\begin{defn}\label{defn:normSol}
-  Let $[A]$ be a system.
-  We call $[A]$ (or $A$) a \emph{normal form} if its fundamental solution can
-  be written as
-  \[
-    \mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}
-  \]
-  with
-  \begin{itemize}
-    \item \emph{irregular part} $e^{Q(t^{-1})}$ of $\mathcal{Y}_0$ determined
-      by
-      \[
-        Q(t^{-1})=\underset{j=1}{\overset{s}{\bigoplus}}q_j(t^{-1})\id_{n_j}
-          =\diag(\underset{n_1\text{-times}}{\underbrace{%
-          q_1,\dots,q_1}},q_2,\dots,q_s)
-      \]
-      where the $q_i(t^{-1})$ are polynomials in $\frac{1}{t}$ (or in a
-      fractional power $\frac{1}{s}=\frac{1}{t^{1/p}}$ of $\frac{1}{t}$ for the
-      ramified case) such that $q_j(0)=0$, i.e.\ without constant term,
-    \item $L\in\gl_n(\C)$ constant
-      \PROBLEM[block diagonal (corresponding to $Q$)]
-      matrix called the \emph{matrix of formal
-      monodromy}, where $t^L$ means $e^{L\ln t}$ and
-      \marginnote{in \cite[1]{Remy2014} $L$ is just a Jordan normal form.  Is
-      this generic enough?}
-    \item a transformation $F\in G(\!\{t\}\!)$.
-  \end{itemize}
-  The normal forms will often be denoted $A^0$.
-  If $A$ is formally equivalent to a normal form $A^0$ we say that $A^0$
-  \emph{is a normal form for} $A$ and for $[A]$.
+% The normal forms are then the systems $[A^0]$, with a fundamental solution
+% $\cY_0$ in a special form and from the Levelt-Turittin we then can deduce that
+% every system $[{}^{\hat F}\!A^0]$, with $\hat F\in G(\!(t)\!)$, has a
+% fundamental solution in the form $\hat F\cY_0$.
+% \begin{defn}\label{defn:normSol}
+%   Let $[A]$ be a system.
+%   We call $[A]$ (or $A$) a \emph{normal form} if its fundamental solution can
+%   be written as
+%   \[
+%     \mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}
+%   \]
+%   with
+%   \begin{itemize}
+%     \item \emph{irregular part} $e^{Q(t^{-1})}$ of $\mathcal{Y}_0$ determined
+%       by
+%       \[
+%         Q(t^{-1})=\underset{j=1}{\overset{s}{\bigoplus}}q_j(t^{-1})\id_{n_j}
+%           =\diag(\underset{n_1\text{-times}}{\underbrace{%
+%           q_1,\dots,q_1}},q_2,\dots,q_s)
+%       \]
+%       where the $q_i(t^{-1})$ are polynomials in $\frac{1}{t}$ (or in a
+%       fractional power $\frac{1}{s}=\frac{1}{t^{1/p}}$ of $\frac{1}{t}$ for the
+%       ramified case) such that $q_j(0)=0$, i.e.\ without constant term,
+%     \item $L\in\gl_n(\C)$ constant
+%       \PROBLEM[block diagonal (corresponding to $Q$)]
+%       matrix called the \emph{matrix of formal
+%       monodromy}, where $t^L$ means $e^{L\ln t}$ and
+%       \marginnote{in \cite[1]{Remy2014} $L$ is just a Jordan normal form.  Is
+%       this generic enough?}
+%     \item a transformation $F\in G(\!\{t\}\!)$.
+%   \end{itemize}
+%   The normal forms will often be denoted $A^0$.
+%   If $A$ is formally equivalent to a normal form $A^0$ we say that $A^0$
+%   \emph{is a normal form for} $A$ and for $[A]$.
 
-  The fundamental solution $F t^L e^{Q(t^{-1})}$ of a normal form will be
-  called \emph{normal solution} and will often be denoted by $\cY_0$.
-  \begin{s-rem}
-    \begin{enumerate}
-      \item \TODO[Cor from base change for fundamental solutions] By changing the
-        basis via $F^{-1}$ wo obtain from $[A^0]$ the equivalent system
-        $[{}^{F^{-1}}\!A^0]$ with the normal solution
-      \[
-        F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})} \,.
-      \]
-      Thus it is always possible to assume that the transformation matrix $F$ is
-      trivial.
-      \item In the unramified case $Q$ and $L$ commute thus $L$ can be supposed
-        in Jordan form (cf.\ \cite[Sec.4]{Martinet1991}).
-    \end{enumerate}
-  \end{s-rem}
-\end{defn}
-\begin{thm}\label{thm:modelEqNormalForm}
-  A meromorphic connection $(\cM,\nabla)$ is a model if and only if its
-  connection matrix $A$ defines a normal form $[A]$.
-  \begin{s-rem}
-    \begin{itemize}
-      \item This allows us, to say that a model $(\cM^{nf},\nabla^{nf})$ is a
-        normal form and \rewrite{vice versa}.
-        \rewrite{This} explains, why we mark models with ${}^{nf}$.
-      \item In the unramified case are \rewrite{the $q_i(t^{-1})$ the
-        $\phi_i(t)$} from definition~\ref{defn:model}.
-        \TODO[Why/realy?]
-    \end{itemize}
-  \end{s-rem}
-\end{thm}
-\begin{proof}
-  \textbf{``\Rightarrow{}'':}
-  Let $\cM=\bigoplus_{\phi}\cE^\phi\otimes\cR_\phi$ be a model and let us
-  first fix a $\phi$ and look at the connection $\cE^\phi\otimes\cR_\phi$.
-  We know that $\cR_\phi$ is a direct sum of regular elementary meromorphic
-  connections whose fundamental matrices are of the form
-  $\frac{1}{t}(\alpha\id+N)$ where $\alpha\in\C$ and $N$ is nilpotent
-  (cf.\ Definition~\ref{defn:elemnMerConnBausteine}).
-  Thus the connection matrix for $\cR_\phi$ writes as
-  \[
-    \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-    \,.
-  \]
-  A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given\PROBLEM[!]
-  by
-  \[
-    t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-    \left(-\phi'\id\right)
-    t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-    + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right) \,.
-  \]
-  Since $\cM$ is a sum of such elementary connections, The connection matrix
-  of $\cM$ writes as
-  \[
-    \bigoplus_\phi\left(
-      - t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-      \left(\phi'\id\right)
-      t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-      +
-      \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-    \right) \,,
-  \]
-  which can be rewritten as
-  \[
-    \underset{t^LQ'(t^{-1})t^{-L}}{
-      \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-        \underbrace{-\bigoplus_\phi
-          \left(
-            t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-            \left(\phi'\id\right)
-            t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
-          \right)
-        }
-      }
-    }
-    +
-    \frac{1}{t}
-    \underset{L}{
-      \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-        \underbrace{%
-          \bigoplus_\phi\left(
-            \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-          \right)
-        }
-      }
-    }
-    \,.
-  \]
-  Thus it has
-  \[
-    t^{\bigoplus_\phi\left(
-        \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
-    \right)}
-    e^{-\bigoplus_\phi\phi'\id}
-  \]
-  as fundamental solution (cf.\ proposition~\ref{prop:fundSolBuilder}).
-  \PROBLEM[Construction only yields unipotent $N$]
+%   The fundamental solution $F t^L e^{Q(t^{-1})}$ of a normal form will be
+%   called \emph{normal solution} and will often be denoted by $\cY_0$.
+%   \begin{s-rem}
+%     \begin{enumerate}
+%       \item \TODO[Cor from base change for fundamental solutions] By changing the
+%         basis via $F^{-1}$ wo obtain from $[A^0]$ the equivalent system
+%         $[{}^{F^{-1}}\!A^0]$ with the normal solution
+%       \[
+%         F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})} \,.
+%       \]
+%       Thus it is always possible to assume that the transformation matrix $F$ is
+%       trivial.
+%       \item In the unramified case $Q$ and $L$ commute thus $L$ can be supposed
+%         in Jordan form (cf.\ \cite[Sec.4]{Martinet1991}).
+%     \end{enumerate}
+%   \end{s-rem}
+% \end{defn}
+% \begin{thm}\label{thm:modelEqNormalForm}
+%   A meromorphic connection $(\cM,\nabla)$ is a model if and only if its
+%   connection matrix $A$ defines a normal form $[A]$.
+%   \begin{s-rem}
+%     \begin{itemize}
+%       \item This allows us, to say that a model $(\cM^{nf},\nabla^{nf})$ is a
+%         normal form and \rewrite{vice versa}.
+%         \rewrite{This} explains, why we mark models with ${}^{nf}$.
+%       \item In the unramified case are \rewrite{the $q_i(t^{-1})$ the
+%         $\phi_i(t)$} from definition~\ref{defn:model}.
+%         \TODO[Why/realy?]
+%     \end{itemize}
+%   \end{s-rem}
+% \end{thm}
+% \begin{proof}
+%   \textbf{``\Rightarrow{}'':}
+%   Let $\cM=\bigoplus_{\phi}\cE^\phi\otimes\cR_\phi$ be a model and let us
+%   first fix a $\phi$ and look at the connection $\cE^\phi\otimes\cR_\phi$.
+%   We know that $\cR_\phi$ is a direct sum of regular elementary meromorphic
+%   connections whose fundamental matrices are of the form
+%   $\frac{1}{t}(\alpha\id+N)$ where $\alpha\in\C$ and $N$ is nilpotent
+%   (cf.\ Definition~\ref{defn:elemnMerConnBausteine}).
+%   Thus the connection matrix for $\cR_\phi$ writes as
+%   \[
+%     \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+%     \,.
+%   \]
+%   A connection matrix of $\cE^\phi\otimes\cR_\phi$ is then given\PROBLEM[!]
+%   by
+%   \[
+%     t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+%     \left(-\phi'\id\right)
+%     t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+%     + \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right) \,.
+%   \]
+%   Since $\cM$ is a sum of such elementary connections, The connection matrix
+%   of $\cM$ writes as
+%   \[
+%     \bigoplus_\phi\left(
+%       - t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+%       \left(\phi'\id\right)
+%       t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+%       +
+%       \frac{1}{t} \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+%     \right) \,,
+%   \]
+%   which can be rewritten as
+%   \[
+%     \underset{t^LQ'(t^{-1})t^{-L}}{
+%       \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+%         \underbrace{-\bigoplus_\phi
+%           \left(
+%             t^{\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+%             \left(\phi'\id\right)
+%             t^{-\bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)}
+%           \right)
+%         }
+%       }
+%     }
+%     +
+%     \frac{1}{t}
+%     \underset{L}{
+%       \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+%         \underbrace{%
+%           \bigoplus_\phi\left(
+%             \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+%           \right)
+%         }
+%       }
+%     }
+%     \,.
+%   \]
+%   Thus it has
+%   \[
+%     t^{\bigoplus_\phi\left(
+%         \bigoplus_{(\alpha,N)}\left( \alpha\id+N\right)
+%     \right)}
+%     e^{-\bigoplus_\phi\phi'\id}
+%   \]
+%   as fundamental solution (cf.\ proposition~\ref{prop:fundSolBuilder}).
+%   \PROBLEM[Construction only yields unipotent $N$]
 
-  \PROBLEM{}
+%   \PROBLEM{}
 
-  \textbf{``\Leftarrow{}'':}
-  Let $A^0$ be a normal form with $\mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}$ as a
-  normal solution. We use Proposition~\ref{prop:fundSolBuilder} to assume that
-  the connection matrix $A^0$ has the form
-  \[
-    A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
-  \]
-  and the Proposition~\ref{prop:systToMeromConn} yields our meromorphic
-  connection $(\cM_{A^0},\nabla_{A^0})=(\C(\!\{t\}\!)^n,d-A^0)$ for
-  \rewrite{which we want to prove, to be} a model.
-  \TODO[We can use Proposition~\ref{prop:MatOfSumOfMerCon} to assume, that $L$ is
-    \textbf{only one Jordan block}.]
+%   \textbf{``\Leftarrow{}'':}
+%   Let $A^0$ be a normal form with $\mathcal{Y}_0(t)=F t^L e^{Q(t^{-1})}$ as a
+%   normal solution. We use Proposition~\ref{prop:fundSolBuilder} to assume that
+%   the connection matrix $A^0$ has the form
+%   \[
+%     A^0=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
+%   \]
+%   and the Proposition~\ref{prop:systToMeromConn} yields our meromorphic
+%   connection $(\cM_{A^0},\nabla_{A^0})=(\C(\!\{t\}\!)^n,d-A^0)$ for
+%   \rewrite{which we want to prove, to be} a model.
+%   \TODO[We can use Proposition~\ref{prop:MatOfSumOfMerCon} to assume, that $L$ is
+%     \textbf{only one Jordan block}.]
 
-  \PROBLEM[Jordan-NF]
-\end{proof}
-\begin{cor}
-  \TODO[Start with this, bevore defn of normal forms?]
-  From the Levelt-Turittin theorem\comm{, the fundamental solution
-  transformation rules} and Theorem~\ref{thm:modelEqNormalForm} we
-  deduce that every system $[A]$ with normal form $[A^0]$ and normal solution
-  $t^L e^{Q(t^{-1})}$, has the fundamental solution
-  \[
-    \mathcal{Y}=\hat F t^L e^{Q(t^{-1})}
-  \]
-  where $\hat F$ is a solution of $[A^0,A]$.
-  \begin{s-rem}
-    It is always possible to permutate the columns of a fundamental solution by
-    \[
-      P^{-1}\mathcal{Y}P=\hat F t^{P^{-1}LP} e^{P^{-1}Q(t^{-1})P}
-    \]
-    with a permutation matrix $P$ and \rewrite{obtain another fundamental
-    solution for the same system} (cf.\ \cite[73]{Loday2014}).
-  \end{s-rem}
-\end{cor}
-\end{comment}
+%   \PROBLEM[Jordan-NF]
+% \end{proof}
+% \begin{cor}
+%   \TODO[Start with this, bevore defn of normal forms?]
+%   From the Levelt-Turittin theorem\comm{, the fundamental solution
+%   transformation rules} and Theorem~\ref{thm:modelEqNormalForm} we
+%   deduce that every system $[A]$ with normal form $[A^0]$ and normal solution
+%   $t^L e^{Q(t^{-1})}$, has the fundamental solution
+%   \[
+%     \mathcal{Y}=\hat F t^L e^{Q(t^{-1})}
+%   \]
+%   where $\hat F$ is a solution of $[A^0,A]$.
+%   \begin{s-rem}
+%     It is always possible to permutate the columns of a fundamental solution by
+%     \[
+%       P^{-1}\mathcal{Y}P=\hat F t^{P^{-1}LP} e^{P^{-1}Q(t^{-1})P}
+%     \]
+%     with a permutation matrix $P$ and \rewrite{obtain another fundamental
+%     solution for the same system} (cf.\ \cite[73]{Loday2014}).
+%   \end{s-rem}
+% \end{cor}
+% \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The main asymptotic existence theorem (M.A.E.T)}\label{sec:MAET}
