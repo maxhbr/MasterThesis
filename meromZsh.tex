@@ -905,7 +905,7 @@ and $L:=\bigoplus_{j=1}^sL_j$.
   It is easy to see that
   \begin{itemize}
     \item the block structure of $t^L$ is finer then the structure of
-      $Q'(t^{-1})$, since
+      $Q'(t^{-1})$ and thus $t^LQ'(t^{-1})t^{-L}=Q'(t^{-1})$, since
       \begin{itemize}
         \item $t^L=t^{\bigoplus_{j=1}^sL_j}=\bigoplus_{j=1}^st^L_j$ and
         \item $Q'(t^{-1})=\frac{d}{dt}\bigoplus_{j=1}q_j(t^{-1})\cdot\id_{n_j}=
@@ -928,16 +928,33 @@ and $L:=\bigoplus_{j=1}^sL_j$.
   \end{align*}
   The invertability condition is clear.
 \end{proof}
-The matrices $L$ and $Q$ defined above satisfy $t^LQ'(t^{-1})t^{-L}=Q'(t^{-1})$
-since the block structure of $L$ is finer then the structure of $Q(t^{-1})$,
-and thus the structure of $Q'(t^{-1})$. Thus one can look at the problem
-$t^LQ'(t^{-1})t^{-L}=Q'(t^{-1})$ blockwise, where $Q'(t^{-1})$ can be written
-as $q'(t^{-1})\cdot\id$ for some $q'(t^{-1})$. The equation is then clearly
-satisfied.
-Using this fact and the Proposition~\ref{prop:fundSolBuilder} we have, that
-$\cY_0:=t^Le^{Q(t^{-1})}$ is a fundamental for the system corresponding to the
-matrix $A^0$ defined above.
+\begin{rem}
+  If one starts without the assumption on the structure, one only obtains
+  \[
+    A=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
+  \]
+  as possible system matrix.
 
+  Let us look at the example:
+  $L=\begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix}$
+  and
+  $Q=\begin{pmatrix} \phi_1 & 0 \\ 0 & \phi_2 \end{pmatrix}$,
+  with
+  $\phi_1\neq\phi_2$.
+  The matrix $A$ is then 
+  \begin{align*}
+    A&=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
+    \\&=
+    \begin{pmatrix}
+      \phi_1' & (-\phi_1'+\phi_2')\ln(t)
+      \\0 & \phi_2'
+    \end{pmatrix} 
+    +
+    \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
+    \notin\gl_n(\C(\!\{t\}\!))
+    \,.
+  \end{align*}
+\end{rem}
 To $\hat\lambda$ and the (implicitly) used choices of bases corresponds a
 formal transformation $\hat F$ and thus we have
 \begin{itemize}
@@ -1014,7 +1031,7 @@ and we will use this fact, to say when a system is something like a model.
   If $A$ is formally equivalent to a normal form $A^0$ we say that $A^0$
   \emph{is a normal form for} $A$ and for $[A]$.
 \end{defn}
-\begin{cor}
+\begin{cor}\label{cor:structuralAssumptions}
   Since we only look at unramified connections, by the Levelt-Turittin Theorem 
   we are able to assume that $L$ is in Jordan normal form and that it has a
   block structure, which is finer then the structure of
