@@ -15,19 +15,56 @@ paper \cite{boalch} (resp.\ his thesis \cite{thboalch}) which looks only at the
 single leveled case.
 
 Let $(\cM^{nf},\nabla^{nf})$ be a fixed model with the corresponding normal
-form $A^0$.  The first objective is to proof the Malgrange-Sibuya Theorem
-in Section~\ref{sec:mainThm1}. It states that the classifying set $\cH(A^0)$
-is via an map $\exp$ isomorphic to the first cohomology
-$H^1(S^1;\Lambda(A^0))=:\St(A^0)$.
+form $A^0$.
+The purpose of the next section (Section~\ref{sec:mainThm1}) is, to proof the
+Malgrange-Sibuya Theorem.
+It states that the classifying set $\cH(A^0)$ is via an map $\exp$ isomorphic
+to the first non abelian cohomology $H^1(S^1;\Lambda(A^0))$ of the Stokes sheaf
+$\Lambda(A^0)$. It will be denoted by $\St(A^0)$.
 In Section~\ref{sec:mainThm2} we will improve the Malgrange-Sibuya Theorem by
 showing that each 1-cohomology class in $\St(A^0)$ contains a unique
 $1$-cocycle of a special form called \emph{the Stokes cocycle}
 (cf.\ Section~\ref{sec:StokesGroup}).
 The morphism, which maps each Stokes cocycle to its corresponding $1$-cocycle
 will be denoted by $h$.
-
 This will be further improved in Section~\ref{sec:furtherImprovements}.
 
+If one introduces the map $g$, which arises from the theory of summation and
+which takes an equivalence class (resp.\ an ambassador of such a class) and
+returns a corresponding Stokes cocycle in an canonically way
+(cf.\ Section~\ref{sec:multisummability} where the theory of summation  will be
+roughly discussed), as a black-box one can write the following commutative
+diagram.
+\begin{center}
+  \begin{tikzpicture}[scale=3]
+    \node[] (modSpcMat) at (0,0.4) {$\cH(\cM^{nf},\nabla^{nf})$};
+    \node[blue] (mat) at (0,-1.3) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
+    \node[purple] (class) at (0,0) {$\cH(A^0)$};
+    \node[green!40!black] (sheaf) at (3,0.4) {$\St(\cM^{nf})$};
+    \node[] (sheaf3) at (3,0) {\textcolor{purple}{$\St(A^0)$}};
+    % \node[blue] (mat') at (3.5,-1.5) {$(U_+\times U_-)^{k-1}$};
+
+    % \draw[thick,double] (modSpcMat) -- (modSpcSheaf) -- (class) -- (class2) --
+    %   (modSpcMat);
+    \draw[thick,double,blue] (modSpcMat) -- (class);
+    \draw[purple,thick,double] (sheaf) -- (sheaf3);
+
+    \draw[->,green!40!black] (modSpcMat) -- (sheaf)
+      node[midway,above] {$\exp$};
+%    \draw[->,blue,dashed] (modSpcMat) edge[bend right=20] (mat);
+    \draw[->,blue] (class) -- (mat) node[midway,left] {g};
+    % \draw[->,blue,dotted] (mat) -- (mat') node[midway,right] {$\cK=\{k-1\}$};
+    \draw[->,purple] (class) -- (sheaf3)
+      node[midway,below] {$\exp_{A^0}$};
+    % \draw[->,purple,dashed] (class) -- (mat);
+    \draw[->,purple] (mat) -- (sheaf3) node[midway, below right] {$h$};
+%    \draw[->,purple,dashed] (sheaf3) edge[bend right=20] (mat);
+  \end{tikzpicture}
+\end{center}\label{page:ofPreDiagram}
+This diagram will be enhanced in Section~\ref{sec:theCompleteDiagram} by
+adding a couple of isomorphisms.
+
+\begin{comment}
 We \rewrite{have the following} commutative diagram of isomorphisms.
 \begin{center}
   \begin{tikzpicture}[scale=3]
@@ -60,6 +97,7 @@ summation, which will be roughly discussed the appendix in
 Section~\ref{sec:multisummability}.
 This diagram will be enhanced in Section~\ref{sec:theCompleteDiagram} by
 adding a couple of isomorphisms.
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes structures: Malgrange-Sibuya isomorphism}\label{sec:mainThm1}
@@ -68,7 +106,7 @@ adding a couple of isomorphisms.
   \\\cite[Thm.II.6.2]{sabbah2007isomonodromic}}
 Here we will look at the classifying set and we will proof that it is
 isomorphic \TODO[as\dots] to the first non abelian cohomology \rewrite{set}
-$H^1(S^1;\Lambda(A^0))=:\St(A^0)$.
+$H^1(S^1;\Lambda(A^0))$, which will be denoted as $\St(A^0)$.
 If we talk about cocycles or cochains, we will in the following always mean
 $1$-cocycles or $1$-cochains.
 
@@ -948,9 +986,14 @@ define the Stokes group as follows.
   They will arise as a faithful representation
   (cf.\ Section~\ref{sec:faithRepre}) of $\Sto_\theta(A^0)$.
   \begin{s-rem}
-    In Boalch's publications~\cite{boalch,thboalch} are our Stokes matrices
-    called Stokes factors, since he introduces other objects, he wants to call
-    Stokes matrices.
+    \begin{enumerate}
+      \item In Boalch's publications~\cite{boalch,thboalch} are our Stokes
+        matrices called Stokes factors, since he introduces other objects, he
+        wants to call Stokes matrices.
+      \item There is obviously a bijection
+        $\prod_{q_j \underset{\theta,\max}{\prec} q_l}\C^{n_j \cdot n_l}
+        \overset{\cong}{\longrightarrow} \SSto_\theta(A^0)$.
+    \end{enumerate}
   \end{s-rem}
 \iffalse
   % \begin{s-rem}
@@ -1640,7 +1683,8 @@ clockwise hull from $\dot U_{j-1}$ to $\dot U_j$.
     Since the sections in $\Gamma(\dot U_j;\Lambda(A^0))$ are uniquely
     determined as the extension of the germ at $\alpha_j$ have that the set of
     all Stokes cocycles can be identified with
-    $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$.
+    $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$. We will use this fact implicitly and
+    call elements of $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ Stokes cocycles.
   \end{s-rem}
 \end{defn}
 We can use Remark~\ref{rem:mapStoToCocy} to obtain, in the case $J=\A$, a
@@ -2620,8 +2664,7 @@ Theorem~\ref{thm:mainThm2} by composition of already bijective maps.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Structure of Stokes germs and Stokes
-  matrices}\label{chp:WhichInformationIsNeeded}
+\subsection{Some exemplary calculations}\label{chp:WhichInformationIsNeeded}
 Here we want to discuss, which information is required to describe the Stokes
 cocycle corresponding to a multileveled system in more depth.
 We will look at a sigle-leveled system corresponding to a normal form
@@ -2940,7 +2983,8 @@ with $\theta=0$.
 Assume without any restriction that $q_1 \underset{\theta,\max}{\prec} q_2$
 and $q_1 \underset{\theta,\max}{\prec} q_3$ as well as
 $q_2 \underset{\theta,\max}{\prec} q_3$.
-Let the matrix $L$ be given as $L=\diag(l_1,l_2,l_3)\in\Gl_n(\C)$.
+Other choices would result \rewrite{in reordering of the tuples below.}
+\comm{Let the matrix $L$ be given as $L=\diag(l_1,l_2,l_3)\in\Gl_n(\C)$.}
 
 The classification space is in this case isomorphic to
 $\C^{2\cdot(\kOne+2\cdot\kTwo)}=\C^{\zkOnepzKtwo}$.
@@ -3007,10 +3051,12 @@ Stokes matrices as
   \in
   \prod_{\alpha\in\A}\SSto_{\alpha}(A^0) \,.
 \end{align*}
+Applying the isomorphism $\prod_{\alpha\in\A}\rho_\alpha^{-1}$, i.e.\
+conjugation by the fundamental solution $\cY_0(t)=t^Le^{Q(t^{-1})}$, yields
+then the corresponding Stokes cocycle in
+$\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$ and thus an element in $\St(A^0)$.
 \begin{comment}
-  Applying the isomorphism $\prod_{\alpha\in\A}\rho_\alpha^{-1}$, i.e.\
-  conjugation by the fundamental solution $\cY_0(t)=t^Le^{Q(t^{-1})}$, yields
-  the following element
+  This element is explicitly given as
   \begin{align*}
     &\left(
       \begin{pmatrix}
@@ -3402,6 +3448,7 @@ diagram.
     \pgfmathsetmacro{\mdy}{-1.5cm}
 
     \node (cH) at (-6,3.5) {$\cH(A^0)$};
+    \node (cH2) at ([yshift=-2cm,xshift=3cm]cH) {$G(\!\{t\}\!)\backslash\hat G(A^0)$};
     \node (ProdOfStos) at (-6,-4)
       {$\displaystyle\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$};
     \node (S3P) at ([xshift={\dx},yshift={\dy}]ProdOfStos)
@@ -3425,6 +3472,8 @@ diagram.
         \C^{\sum_{q_j\underset{\alpha,\max}{\prec}q_l}
           \deg(q_j-q_l)\cdot n_j\cdot n_l}$};
 
+    \draw[->] (cH2) -- (cH)
+      node[midway,above right] {Cor.~\ref{cor:isomorphyOfClassfset}};
     \draw[->] (cH) -- (ProdOfStos)
       node[midway,left] {$g$};
     \draw[->] (cH) -- (StA0)
