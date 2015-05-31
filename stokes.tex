@@ -991,7 +991,8 @@ define the Stokes group as follows.
         matrices called Stokes factors, since he introduces other objects, he
         wants to call Stokes matrices.
       \item There is obviously a bijection
-        $\prod_{q_j \underset{\theta,\max}{\prec} q_l}\C^{n_j \cdot n_l}
+        $\vartheta_\theta:
+        \prod_{q_j\underset{\theta,\max}{\prec}q_l}\C^{n_j \cdot n_l}
         \overset{\cong}{\longrightarrow} \SSto_\theta(A^0)$.
     \end{enumerate}
   \end{s-rem}
@@ -1077,8 +1078,9 @@ define the Stokes group as follows.
     \rho_{\theta}:\Sto_\theta(A^0)&\longrightarrow\SSto_\theta(A^0)
     \\\phi_\theta
     &\longmapsto
-    C_{\phi_\theta}:=\cY_{0}^{-1}\phi_\theta\cY_{0}
+    C_{\phi_\theta}:=\cY_{0}\phi_\theta\cY_{0}^{-1}
   \end{align*}
+  \marginnote{Boalch uses $C_{\phi_\theta}:=\cY_{0}^{-1}\phi_\theta\cY_{0}$}
   an isomorphism which maps a germ of $\Sto_\theta(A^0)$ to the corresponding
   Stokes matrix $C_{\phi_\theta}$ such that
   \begin{equation} \label{eq:representation}
@@ -1109,8 +1111,10 @@ define the Stokes group as follows.
           \left\{(K_{jl})_{j,l\in\{1,\dots,s\}}
             \in \GL_n(\C)\mid K_{jl}=\bdelta_{jl} \text{ unless }
             q_j \underset{\theta}{\prec} q_l \right\}
-          \,.
         \]
+        and there is a bijection $\hat\vartheta_\theta:
+        \prod_{q_j\underset{\theta}{\prec}q_l}\C^{n_j \cdot n_l}
+        \overset{\cong}{\longrightarrow} \hat\SSto_\theta(A^0)$.
         \begin{comment}
           Does this define a local-constant sheaf
           \[
@@ -1144,7 +1148,6 @@ define the Stokes group as follows.
   \begin{equation}\label{eq:repProof1}
     \phi_\theta(t)
     =t^L e^{Q(t^{-1})}C_{\phi_\theta}e^{-Q(t^{-1})}t^{-L}
-    \PROBLEM[vertauscht?]
   \end{equation}
   with the given choice of the argument near $\theta$.
   After decomposing $C_{\phi_\theta}$ into
@@ -1218,14 +1221,18 @@ define the Stokes group as follows.
   Thus we have seen, that $C_{\phi_\theta}$ is an
   element of $\SSto_\theta(A^0)$.
 
-  The map $\rho_{\tilde\theta}$ is \textbf{injective}, and thus a faithful
-  representation, since conjugation by an invertible matrix defines an
-  isomorphism to its \rewrite{image}.
+  The \textbf{surjectivity} can \rewrite{be seen easily}, since every constant
+  matrix, with zeros at the necessary positions, characterizes an unique
+  element of $\Sto_\theta(A^0)$:
+  \begin{einr}
+    Let $C=1_n + \sum_{(l,j)\mid q_j\underset{\theta,\max}{\prec}q_l}
+    C^{(l,j)}$ be an element of $\SSto_\theta(A^0)$.  Then is a pre-image of
+    $C$ given by $t^L e^{Q(t^{-1})}Ce^{-Q(t^{-1})}t^{-L}$ which lies in
+    $\Sto_\theta(A^0)$, since it satisfies the condition discussed above.
+  \end{einr}
 
-  The \textbf{surjectivity} can also \rewrite{be seen easily}, since every
-  constant (unipotent) matrix, with zeros at the necessary positions,
-  characterizes a unique element of $\Sto_\theta(A^0)$.
-  \TODO[Isomorphic to $\C^{?}$?]
+  The map $\rho_{\tilde\theta}$ is also \textbf{injective}, since it is the
+  conjugation by an invertible matrix.
 \end{proof}
 
 In particular, from the proof, we get that
@@ -1236,13 +1243,17 @@ In particular, from the proof, we get that
     Thus if $C_{\phi_\theta}^{(l,j)}$ is not equal to zero, the block
     $C_{\phi_\theta}^{(j,l)}$ is necessarily zero.
 \end{enumerate}
-\begin{comment}
-  \begin{rem}
-    This implies that the matrix $C_{\phi_\theta}$ is unipotent, and
-    \rewrite{hence is $\Sto_\theta(A^0)$ is a unipotent Lie group.}
-  \end{rem}
-\end{comment}
+This implies that the matrix $C_{\phi_\theta}$ is unipotent, and \rewrite{hence
+is $\Sto_\theta(A^0)$ is a unipotent Lie group.}
 
+On can use the Stokes matrices to give an alternative characterization of
+Stokes germs:
+\begin{einr}
+  a germ $\phi_\theta\in\Lambda_\theta(A^0)$ is in $\Sto_\theta(A^0)$ if and
+  only if there exists a $C\in\SSto_\theta(A^0)$ such that
+  $\phi_\theta=\cY_{0}C\cY_{0}^{-1}$.
+\end{einr}
+Formulated is this in the following corollary.
 \begin{cor}
   \marginnote{\cite[Def.I.4.12]{Loday1994}}
   A germ $\phi_\theta\in\Lambda_\theta(A^0)$ is a Stokes germ, i.e.\ an element
@@ -1254,13 +1265,6 @@ In particular, from the proof, we get that
     C_{\phi_\theta}^{(l,j)}
   \]
   and the $C_{\phi_\theta}^{(l,j)}$ have the necessary block structure.
-
-  In other words:
-  \begin{einr}
-    a germ $\phi_\theta\in\Lambda_\theta(A^0)$ is in $\Sto_\theta(A^0)$ if and
-    only if there exists a $C\in\SSto_\theta(A^0)$ such that
-    $\phi_\theta=\cY_{0}C\cY_{0}^{-1}$.
-  \end{einr}
   \begin{s-rem}
     In Loday-Richaud's book \cite[78]{Loday2014} are the elements of
     $\Sto_\theta(A^0)$ actually characterized as the flat transformations, such
@@ -1270,12 +1274,17 @@ In particular, from the proof, we get that
 \end{cor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Filtration of the Stokes group by levels}
+\subsection{Decomposition of the Stokes group by levels}
 \marginnote{\cite{Loday1994}, \cite[362ff]{Martinet1991}}
+\rewrite{The goal of this section is, to introduce a filtration of
+$\Lambda(A^0)$, wich will be restricted to $\Sto_\theta(A^0)$ and defines there
+a filtration.} This leads to a decomposition of $\Sto_\theta(A^0)$ into a
+semidirect product (cf.\ Prpopsition~\ref{prop:filtrationOfStokesGroup}).
+
 Let us introduce a couple of notations and definitions, which coincide with the
 notations used in Loday-Richaud's paper \cite{Loday1994}.
-Another good resource is for example the paper~\cite[362f]{Martinet1991} from
-Martinet and Ramis.
+Another good resource, which uses similar notations, is for example the
+paper~\cite[362f]{Martinet1991} from Martinet and Ramis.
 
 \begin{defn}
   We denote the set of \emph{levels of the germ}
@@ -1295,50 +1304,37 @@ Martinet and Ramis.
       which are generated by $k$-germs;
     \item $\Lambda^{\leq k}(A^0)$ (resp. $\Lambda^{<k}(A^0)$ or
       $\Lambda^{\geq k}(A^0)$) as the subsheaf of $\Lambda(A^0)$ generated by
-      $k'$-germs for all $k'\leq k$ (resp. $k'<k$ or $k'\geq k$);
+      $k'$-germs for all $k'\leq k$ (resp. $k'<k$ or $k'\geq k$).
   \end{itemize}
+  Let $\star\in\{k,<k,\leq k,\dots\}$.
   The restriction to $\Sto_\theta$ yields the groups
   \[
     \Sto_\theta^\star(A^0):=\Sto_\theta(A^0)\cap\Lambda_\theta^{\star}(A^0)
   \]
-  for $\star\in\{k,<k,\leq k,\dots\}$.
-  % \begin{itemize}
-  %   \item $\Sto_\theta^k(A^0):=\Sto_\theta(A^0)\cap\Lambda_\theta^{k}(A^0)$;
-  %   \item $\Sto_\theta^{\leq k}(A^0):=\Sto_\theta(A^0)\cap\Lambda_\theta^{\leq k}(A^0)$;
-  %   \item $\Sto_\theta^{<k}(A^0):=\Sto_\theta(A^0)\cap\Lambda_\theta^{<k}(A^0)$;
-  % \end{itemize}
-  We define also
-  \begin{itemize}
-    \item $\SSto^\star_\theta(A^0)$ as the groups of representations, which
-      correspond to elements of  $\Sto^\star_\theta(A^0)$;
-    \item $\A^k:=\left\{\alpha\in\A\mid\Sto_\alpha^k(A^0)\neq\{\id\}\right\}$
-      as the set of anti-Stokes directions \emph{bearing the level $k$};
-    \item $\A^{\leq k}:=\underset{k'\leq k}\bigcup\A^{k'}$ (resp.
-      $\A^{<k}:=\underset{k'<k}\bigcup\A^{k'}$ and
-      $\A^{\geq k}:=\underset{k'\geq k}\bigcup\A^{k'}$);
-      \begin{s-rem}
-        It is clear that
-        \begin{itemize}
-          \item $\A^{\star}=\left\{\alpha\in\A
-            \mid\Sto_{\alpha}^\star(A^0)\neq\{\id\}\right\}$ and
-          \item we have the canonical inclusions
-            $\A^k\hookrightarrow\A^{\leq k}$ and
-            $\A^{<k}\hookrightarrow\A^{\leq k}$.
-        \end{itemize}
-      \end{s-rem}
-    \item $\cK_\alpha:=\left\{k\in\cK\mid\Sto_\alpha^k(A^0)\neq\{\id\}\right\}$
-      the set of levels \emph{beared by $\alpha\in\A$}, and
-      $K_\alpha=\max\cK_\alpha$ the \emph{maximal level beared by $\alpha$}.
-      \begin{s-rem}
-        The Lemma~\ref{lem:rotationalSym} implies that from $k\in\cK_{\alpha}$
-        follows that $k\in\cK_{\alpha+m\frac{\pi}{k}}$ for $m\in\N$.
-      \end{s-rem}
-  \end{itemize}
+  and let us also define $\SSto^\star_\theta(A^0)$ as the groups of
+  representations, which correspond to elements of  $\Sto^\star_\theta(A^0)$.
 \end{notations}
-\rewrite{We will now introduce a filtration of $\Lambda(A^0)$, wich will be
-restricted to $\Sto_\theta(A^0)$ and defines there a filtration. This leads to
-a decomposition of $\Sto_\theta(A^0)$ into a semidirect product.} Let us start
-by studying the sheaves $\Lambda^\star(A^0)$, and discuss how they correlate.
+Corresponding to the definitions above, one can define
+$\A^\star:=\left\{\alpha\in\A\mid\Sto_\alpha^\star(A^0)\neq\{\id\}\right\}$
+for $\star\in\{k,<k,\leq k,\dots\}$ and we say that \emph{$\alpha$ is bearing
+the level $k$} if $\alpha\in\A^k$.
+\begin{rem}
+  It is clear that we have the canonical inclusions
+  $\A^k\hookrightarrow\A^{\leq k}$ and
+  $\A^{<k}\hookrightarrow\A^{\leq k}$.
+\end{rem}
+Sometimes it is also useful to talk about the \emph{set of levels beared by an
+direction $\alpha\in\A$}:
+\[
+  \cK_\alpha:=\left\{k\in\cK\mid\Sto_\alpha^k(A^0)\neq\{\id\}\right\} \,.
+\]
+\begin{cor}
+  The Lemma~\ref{lem:rotationalSym} implies that from $k\in\cK_{\alpha}$
+  follows that $k\in\cK_{\alpha+m\frac{\pi}{k}}$ for $m\in\N$.
+\end{cor}
+
+Let us now study the sheaves $\Lambda^\star(A^0)$, and discuss how they
+correlate.
 
 The following proposition can be found as~\cite[Prop.I.5.1]{Loday1994} and the
 key-statement is also given in~\cite[Prop.4.10]{Martinet1991}.
@@ -1406,17 +1402,19 @@ decomposition into a semidirect product.
     \end{einr}
   \end{s-rem}
   This decomposition in semidirect product can be extended to all levels
-  (cf.\ \cite[Cor.I.5.2]{Loday1994}).
+  (cf.\ \cite[Cor.I.5.2]{Loday1994}), since
+  $\Lambda^{<k}(A^0)=\Lambda^{\leq\max\{k'\in\cK\mid k' < k\}}$.
   Thus
   \[
     \Lambda(A^0)\cong\underset{k\in\cK}\bigltimes\Lambda^k(A^0) \,,
   \]
   where the semidirect product is taken in an ascending or descending order of
-  levels $k$.
+  levels.
 \end{cor}
 \begin{rem}
   Loday-Richaud states in her paper \cite[Prop.I.5.3]{Loday1994} the following
-  proposition.
+  proposition, which is a more general version of
+  Proposition~\ref{prop:PropertiesOfStokesSheafSplitting}.
   \begin{s-prop}
     \marginnote{\cite[Prop.I.5.3]{Loday1994}}
     For any levels $k$,$k'\in\cK$ with $k'<k$ one has:
@@ -1426,7 +1424,7 @@ decomposition into a semidirect product.
       \item \marginnote{\cite[Proposition 10]{Martinet1991}}
         the exact sequence of sheaves
         \[
-          1\longrightarrow\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k'}(A^0)
+          1\longrightarrow\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k}(A^0)
           \overset{i}\longrightarrow\Lambda^{\leq k}(A^0)
           \overset{p}\longrightarrow\Lambda^{<k'}(A^0)
           \longrightarrow 1 \,,
@@ -1467,6 +1465,7 @@ decomposition into a semidirect product.
       from Remark~\ref{rem:algFactorization} to an arbitrary order of levels.
   \end{enumerate}
 \end{rem}
+The important statement, which we will use later, is then the following.
 \begin{prop}\label{prop:filtrationOfStokesGroup}
   \marginnote{\cite[Prop.I.5.5]{Loday1994}}
   The results can be restricted to the Stokes groups
@@ -1530,7 +1529,7 @@ representation, we also get the isomorphism
 $\prod_{\alpha\in\A}\SSto_\alpha(A^0)\cong\St(A^0)$ as a corollary.
 \TODO[This goes back to \cite{BJL1979Birkhoff}?]
 
-Let us recall, that $\St(A^0)$ is defined to be $H^1(S^1;\Lambda(^0))$
+Let us recall, that $\St(A^0)$ is defined to be $H^1(S^1;\Lambda(A^0))$
 (cf.\ Section~\ref{sec:mainThm1}).
 The elements of $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ define in a canonical way
 cocycles of the sheaf $\Lambda(A^0)$ (cf.\ Remark~\ref{rem:mapStoToCocy}),
@@ -1545,14 +1544,13 @@ that
 \end{einr}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Coverings}
+\subsubsection{Cyclic coverings}
 To formulate the following theorem, we use the notion of cyclic coverings and
 nerves of such coverings, which are defined as follows.
 
 \begin{defn}
   \marginnote{\cite[Sec.II.1]{Loday1994} and \cite[Sec.II.3.1]{Loday1994}}
-  Let $J$ be a finite set, identified to the finite set
-  $\{1,\dots,p\}\subset\Z$.
+  Let $J$ be a finite set, identified to $\{1,\dots,p\}\subset\Z$.
   \begin{enumerate}
     \item A \emph{cyclic covering} of $S^1$ is a finite covering
       $\cU=\left(U_j=U(\theta_j,\epsilon_j)\right)_{j\in J}$ consisting of
@@ -1563,7 +1561,8 @@ nerves of such coverings, which are defined as follows.
           \tilde\theta_{j+1}-\frac{\epsilon_{j+1}}{2}$ for
           $j\in\{1,\dots,p-1\}$ and
           $\tilde\theta_p-\frac{\epsilon_p}{2}\leq
-          \tilde\theta_{1}+2\pi-\frac{\epsilon_{1}}{2}$,
+          \tilde\theta_{1}+2\pi-\frac{\epsilon_{1}}{2}$, i.e.\ the arcs are not
+          encased by another arc,
       \end{enumerate}
       where the $\tilde\theta_j\in [0,2\pi[$ are determinations of the
       $\theta_j\in S^1$.
@@ -2689,7 +2688,7 @@ $(q_1-q_2)(t^{-1})$ and $(q_1-q_3)(t^{-1})$ equal and thus
   %   $q_3 \underset{\alpha,\max}{\prec} q_1$
   \item $q_1 \underset{\alpha,\max}{\prec} q_2$
     (resp.~$q_2 \underset{\alpha,\max}{\prec} q_1$)
-    if and only if 
+    if and only if
     $q_1 \underset{\alpha,\max}{\prec} q_3$
     (resp.~$q_3 \underset{\alpha,\max}{\prec} q_1$)
     and thus do they determine the same anti-Stokes directions.
@@ -3052,9 +3051,9 @@ Stokes matrices as
   \prod_{\alpha\in\A}\SSto_{\alpha}(A^0) \,.
 \end{align*}
 Applying the isomorphism $\prod_{\alpha\in\A}\rho_\alpha^{-1}$, i.e.\
-conjugation by the fundamental solution $\cY_0(t)=t^Le^{Q(t^{-1})}$, yields
-then the corresponding Stokes cocycle in
-$\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$ and thus an element in $\St(A^0)$.
+conjugation by the fundamental solution $\cY_0(t)=t^Le^{Q(t^{-1})}$
+(cf.\ \ref{prop:representation}), yields then the corresponding Stokes cocycle
+in $\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$ and thus an element in $\St(A^0)$.
 \begin{comment}
   This element is explicitly given as
   \begin{align*}
@@ -3448,7 +3447,7 @@ diagram.
     \pgfmathsetmacro{\mdy}{-1.5cm}
 
     \node (cH) at (-6,3.5) {$\cH(A^0)$};
-    \node (cH2) at ([yshift=-2cm,xshift=3cm]cH) {$G(\!\{t\}\!)\backslash\hat G(A^0)$};
+    \node (cH2) at ([yshift=-2cm,xshift=2cm]cH) {$G(\!\{t\}\!)\backslash\hat G(A^0)$};
     \node (ProdOfStos) at (-6,-4)
       {$\displaystyle\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$};
     \node (S3P) at ([xshift={\dx},yshift={\dy}]ProdOfStos)
@@ -3497,7 +3496,7 @@ diagram.
     \draw[->] (SS2P) -- (SSS2P)
       node[midway,right] {(induced by $\rho$)};
     \draw[->,red] (SSS3P) -- (ProdOfSStos)
-      node[midway,below left,red] {Cor.~\ref{cor:isomToChochN}};
+      node[midway,below left,red] {$\prod_{\alpha\in\A}\vartheta_\alpha$};
   \end{tikzpicture}
 \end{center}
 Where
