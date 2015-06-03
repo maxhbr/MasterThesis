@@ -12,7 +12,8 @@ For the Sections~\ref{sec:StokesGroup} and~\ref{sec:mainThm2} will
 \rewrite{Loday-Richaud's} paper \cite{Loday1994} and the book
 \cite[Sec.4]{Loday2014} be \rewrite{useful. Also useful} was \rewrite{Boalch's}
 paper \cite{boalch} (resp.\ his thesis \cite{thboalch}) which looks only at the
-single leveled case.
+single leveled case or the paper\cite[Thm.13]{Martinet1991} from Martinet and
+Ramis.
 
 Let $(\cM^{nf},\nabla^{nf})$ be a fixed model with the corresponding normal
 form $A^0$.
@@ -30,74 +31,31 @@ will be denoted by $h$.
 This will be further improved in Section~\ref{sec:furtherImprovements}.
 
 If one introduces the map $g$, which arises from the theory of summation and
-which takes an equivalence class (resp.\ an ambassador of such a class) and
-returns a corresponding Stokes cocycle in an canonically way
-(cf.\ Section~\ref{sec:multisummability} where the theory of summation  will be
-roughly discussed), as a black-box one can write the following commutative
+takes an equivalence class (resp.\ an ambassador of such a class) and returns a
+corresponding Stokes cocycle in an canonically way
+(cf.\ Appendix~\ref{app:multisummability} where the theory of summation  will
+be roughly discussed), as a black-box one can write the following commutative
 diagram.
 \begin{center}
   \begin{tikzpicture}[scale=3]
-    \node[] (modSpcMat) at (0,0.4) {$\cH(\cM^{nf},\nabla^{nf})$};
-    \node[blue] (mat) at (0,-1.3) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
-    \node[purple] (class) at (0,0) {$\cH(A^0)$};
-    \node[green!40!black] (sheaf) at (3,0.4) {$\St(\cM^{nf})$};
-    \node[] (sheaf3) at (3,0) {\textcolor{purple}{$\St(A^0)$}};
-    % \node[blue] (mat') at (3.5,-1.5) {$(U_+\times U_-)^{k-1}$};
+    % \node[] (modSpcMat) at (0,0.4) {$\cH(\cM^{nf},\nabla^{nf})$};
+    \node[] (mat) at (0,-.8) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
+    \node[] (class) at (0,0) {$\cH(A^0)$};
+    % \node[green!40!black] (sheaf) at (3,0.4) {$\St(\cM^{nf})$};
+    \node[] (sheaf3) at (1.3,0) {$\St(A^0)$};
 
-    % \draw[thick,double] (modSpcMat) -- (modSpcSheaf) -- (class) -- (class2) --
-    %   (modSpcMat);
-    \draw[thick,double,blue] (modSpcMat) -- (class);
-    \draw[purple,thick,double] (sheaf) -- (sheaf3);
+    % \draw[thick,double,blue] (modSpcMat) -- (class);
+    % \draw[purple,thick,double] (sheaf) -- (sheaf3);
 
-    \draw[->,green!40!black] (modSpcMat) -- (sheaf)
-      node[midway,above] {$\exp$};
-%    \draw[->,blue,dashed] (modSpcMat) edge[bend right=20] (mat);
-    \draw[->,blue] (class) -- (mat) node[midway,left] {g};
-    % \draw[->,blue,dotted] (mat) -- (mat') node[midway,right] {$\cK=\{k-1\}$};
-    \draw[->,purple] (class) -- (sheaf3)
-      node[midway,below] {$\exp_{A^0}$};
-    % \draw[->,purple,dashed] (class) -- (mat);
-    \draw[->,purple] (mat) -- (sheaf3) node[midway, below right] {$h$};
-%    \draw[->,purple,dashed] (sheaf3) edge[bend right=20] (mat);
+    % \draw[->,green!40!black] (modSpcMat) -- (sheaf)
+    %   node[midway,above] {$\exp$};
+    \draw[->] (class) -- (mat) node[midway,left] {g};
+    \draw[->] (class) -- (sheaf3) node[midway,above] {$\exp$};
+    \draw[->] (mat) -- (sheaf3) node[midway, below right] {$h$};
   \end{tikzpicture}
 \end{center}\label{page:ofPreDiagram}
 This diagram will be enhanced in Section~\ref{sec:theCompleteDiagram} by
 adding a couple of isomorphisms.
-
-\begin{comment}
-We \rewrite{have the following} commutative diagram of isomorphisms.
-\begin{center}
-  \begin{tikzpicture}[scale=3]
-    \node[] (modSpcMat) at (0,0) {$\cH(\cM^{nf},\nabla^{nf})$};
-    \node[blue] (mat) at (0,-1.3) {$\prod_{\theta\in\A}\Sto_\theta(A^0)$};
-    \node[purple] (class) at ($(modSpcMat)!0.3!(mat)$) {$\cH(A^0)$};
-    \node[green!40!black] (sheaf) at (3,0) {$\St(\cM^{nf})$};
-    \node[] (sheaf3) at ($(sheaf)!0.3!(mat)$) {\textcolor{purple}{$\St(A^0)$}};
-    % \node[blue] (mat') at (3.5,-1.5) {$(U_+\times U_-)^{k-1}$};
-
-    % \draw[thick,double] (modSpcMat) -- (modSpcSheaf) -- (class) -- (class2) --
-    %   (modSpcMat);
-    \draw[thick,double,blue] (modSpcMat) -- (class);
-    \draw[purple,thick,double] (sheaf) -- (sheaf3);
-
-    \draw[->,green!40!black] (modSpcMat) -- (sheaf)
-      node[midway,above] {$\exp$};
-%    \draw[->,blue,dashed] (modSpcMat) edge[bend right=20] (mat);
-    \draw[->,blue] (class) -- (mat) node[midway,left] {g};
-    % \draw[->,blue,dotted] (mat) -- (mat') node[midway,right] {$\cK=\{k-1\}$};
-    \draw[->,purple,dashed] (class) -- (sheaf3)
-      node[midway,below] {$\exp_{A^0}$};
-    % \draw[->,purple,dashed] (class) -- (mat);
-    \draw[->,purple] (mat) -- (sheaf3) node[midway, below right] {$h$};
-%    \draw[->,purple,dashed] (sheaf3) edge[bend right=20] (mat);
-  \end{tikzpicture}
-\end{center}\label{page:ofPreDiagram}
-The map $g$, which makes the diagram commute, is defined using the theory of
-summation, which will be roughly discussed the appendix in
-Section~\ref{sec:multisummability}.
-This diagram will be enhanced in Section~\ref{sec:theCompleteDiagram} by
-adding a couple of isomorphisms.
-\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes structures: Malgrange-Sibuya isomorphism}\label{sec:mainThm1}
@@ -139,6 +97,7 @@ flat isotropies of $[A^0]$.
     This definition \rewrite{makes also sense as} $\Lambda(A)$ where $A$ stands
     for a systems wich is not in normal form.
   \end{s-rem}
+  \iffalse
   \begin{comment}
     \begin{s-rem}
       \PROBLEM[remove? need more defs!]
@@ -157,15 +116,21 @@ flat isotropies of $[A^0]$.
       The sheaf $\Aut^{<0}(\tilde\sM^{nf})$ corresponds to our $\Lambda(A^0)$.
     \end{s-rem}
   \end{comment}
+  \fi
 \end{defn}
 
 \subsection{The theorem}
+\rewrite{Here we want to state the Malgrange-Sibuya Theorem. We will first give
+it in the language of meromorphic connections and after that we will give the
+same theorem in the language of systems. The second variant of this theorem
+will be proven in the next section.}
+
 In the language of meromorphic connections is the map, in the Malgrange-Sibuya
 Theorem bellow, described as follows.
 
 Let $(\cM,\nabla,\hat f)$ be a marked germ of a  meromorphic connection.
-\rewrite{By Theorem}~\ref{thm:maet} there exists an open covering
-$\cU=(U_j)_{j\in J}$ and for every open set, an isomorphism
+\rewrite{By Theorem}~\ref{thm:sectorialDecompFromMAET} there exists an open
+covering $\cU=(U_j)_{j\in J}$ and for every open set, an isomorphism
 \[
   f_j:(\tilde\cM,\tilde\nabla)_{|U_j}
   \to(\tilde\cM^{nf},\tilde\nabla^{nf})_{|U_j}
@@ -209,9 +174,10 @@ follows.
 
 \marginnote{\cite[855]{Loday1994}}
 Let $(A,\hat F)$ be a marked pair, thus $\hat F$ solves $[A^0,A]$.
-By the M.A.E.T there exists an open covering $\cU=(U_j)_{j\in J}$ together
-with, for every open set $U_j$ a lift $F_j\in\Gl_n(\cA(U_j))$ of $\hat F$
-(cf.\ Definition~\ref{defn:lift}), which solves $[A,A^0]$.
+By the M.A.E.T (Theorem~\ref{thm:maet}) there exists an open covering
+$\cU=(U_j)_{j\in J}$ together with, for every open set $U_j$ a lift
+$F_j\in\Gl_n(\cA(U_j))$ of $\hat F$ (cf.\ Definition~\ref{defn:lift}), which
+solves $[A,A^0]$.
 By the cocycle $(F_l^{-1}F_j)_{jl}\in\Gamma(\dot\cU;\Lambda(A^0))$ is then a
 cohomology class in $\St(A^0)$, relative to the covering $\cU$, determined.
 For other lifts $F_j'$ of $\hat F$ on $U_j$ is $(G_j=F_j^{-1}F_j')$ a
@@ -267,14 +233,14 @@ paper is this denoted as $\exp_{\mu_0}$)}.
 \begin{rem}\label{rem:expNonNormalForm}
   \marginnote{\cite{Loday1994} Remark I.2.2}
   To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains, which
-  are conjugated via $\Phi$.
-  We get the following commutative diagram:
+  are conjugated via $\Phi\in G(\!\{t\}\!)$.
+  We especially get the following commutative diagram:
   \begin{center}
     \begin{tikzpicture}[scale=2.6]
       \node (tl) at (-1,0.6) {$G\backslash\hat G(A^1)$};
       \node (tr) at (1,0.6) {$G\backslash\hat G(A^0)$};
-      \node (bl) at (-1,-0.6) {$H^1(S^1;\lambda(A^1))$};
-      \node (br) at (1,-0.6) {$H^1(S^1;\lambda(A^0))$};
+      \node (bl) at (-1,-0.6) {$H^1(S^1;\Lambda(A^1))$};
+      \node (br) at (1,-0.6) {$H^1(S^1;\Lambda(A^0))$};
       \node (tlin) at ($ (tl) - (-0.3,0.2) $)
         {\rotatebox[origin=c]{135}{$\in$}};
       \node (trin) at ($ (tr) - (-0.3,0.2) $)
@@ -298,13 +264,12 @@ paper is this denoted as $\exp_{\mu_0}$)}.
     \end{tikzpicture}
   \end{center}
   where $\exp_{A^0}(\hat F\Phi)=\Phi^{-1}\exp_{A^0}(\hat F)\Phi$.
-  \TODO[$\Phi\in G(\!(t)\!)$???]
 \end{rem}
 
 \subsection{Proof of Theorem~\ref{thm:mainThm1}}
 We will mainly refer to \cite[Proof of Theorem 4.5.1]{babbitt1989local} and
 \cite[Section 6.d]{sabbah2007isomonodromic}, where a slightly more complicated
-case with deformation space is proofen. These both resources proof the theorem
+case with deformation space is proven. These both resources proof the theorem
 using the languages of meromorphic connections whereas we will use systems.
 \marginnote{See also \cite{BJL1979Birkhoff} and \cite{babbitt1989local}
   although the proof goes back to work from Malgrange and Sibuya (see for
@@ -480,10 +445,7 @@ It can be verified, that the class $\Theta([\hat F])$ does not depend on
   Thus the defined $G$ satisfies $G=F'^{-1}F$, so that $[F]=[F']$.
 \end{proof}
 \begin{thm}[Malgrange-Sibuya]\label{thm:thm1helpMalgSibuy}
-  The map $\Theta$ is an isomorphism
-  \[
-    G(\!(t)\!)/G(\!\{t\}\!)\cong H^1(S^1;\cG).
-  \]
+  The map $\Theta:G(\!(t)\!)/G(\!\{t\}\!)\to H^1(S^1;\cG)$ is an isomorphism.
 \end{thm}
 This Theorem is proven in Section 4.4 of Babbitt and Varadarajan's book
 \cite{babbitt1989local} or on page 371 of \cite{Martinet1991}.
@@ -615,7 +577,7 @@ Theorem~\ref{thm:mainThm1}.
 \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The Stokes group}\label{sec:StokesGroup}
+\section{The Stokes groups}\label{sec:StokesGroup}
 \PROBLEM[rewrite!]
 Here we want to introduce the notion of Stokes groups. They are for example
 also introduced in \cite{Loday1994}, \cite{Loday2014} or section 4
@@ -716,6 +678,7 @@ order relations:
         $e^{(q_j-g_l)(t^{-1})}$ is of maximal decay in the direction
         $\tilde\theta$.
       \end{einr}
+      \TODO[maybe replace by $\prec\!\!\!\prec$]
   \end{itemize}
   \begin{s-rem}
     In the unramified case do these relations not depend on the determination
@@ -800,13 +763,13 @@ part of $f$.
       \node at ({\argA+2/\k + 2/2/\k},{-\absA}) {$\tikzmark{e1}$};
       \node at ({\argA+4/\k + 2/2/\k},{-\absA}) {$\tikzmark{e2}$};
 
-      \draw[-latex'] (-0.6,0) -- (2.7,0);
+      \draw[-latex'] (-0.7,0) -- (2.7,0);
       \draw[dotted] (-0.6,\absA)node[left,font=\tiny] {$|a|$} -- (2.6,\absA);
       \draw[dotted] (-0.6,{-\absA})node[left,font=\tiny] {$-|a|$} -- (2.6,{-\absA});
 
       \draw[dotted] ({-0.5},{-\absA}) -- ({-0.5},{\absA + 0.1})
         node [above,font=\tiny,] {-0.5 \pi};
-      \draw[-latex'] ({0},{-\absA}) -- ({0},{\absA + 0.2});
+      \draw[-latex'] ({0},{-\absA-0.1}) -- ({0},{\absA + 0.2});
       \foreach \x in {0.5,1,...,2.5}{%
         \draw[dotted] ({\x},{-\absA}) -- ({\x},{\absA + 0.1})
           node [above,font=\tiny,] {\x \pi};
@@ -826,7 +789,7 @@ part of $f$.
     \draw[->,blue!50!white,thick] (n3) to[out=150,in=270] (g0);
     \draw[->,purple!50!white,thick] (n2) to[out=240,in=70] (f-1);
     \draw[->,purple!50!white,thick] (n2) to[out=265,in=120] (f0);
-    \draw[->,purple!50!white,thick] (n2) to[out=290,in=70] (f1);
+    \draw[->,purple!50!white,thick] (n2) to[out=280,in=70] (f1);
     \draw[->,blue!50!white,thick] (n1) to[out=180,in=270] (e-1);
     \draw[->,blue!50!white,thick] (n1) to[out=170,in=270] (e0);
     \draw[->,blue!50!white,thick] (n1) to[out=160,in=270] (e1);
@@ -1273,6 +1236,43 @@ Formulated is this in the following corollary.
   \end{s-rem}
 \end{cor}
 
+\begin{defn}
+  We denote the set of \emph{levels of the germ}
+  $\phi_{\theta}\in\Lambda_\theta(A^0)$ by
+  \[
+    \cK(\phi_\theta):= \left\{\deg(q_j-q_l)\mid C_{\phi_\theta}^{(l,j)}\neq0
+      \text{ in some representation of }\phi_\theta\right\} \subset \cK \,.
+  \]
+  A germ $\phi_\theta$ is called a \emph{$k$-germ} when
+  $\cK(\phi_{\theta})\subset\{k\}$, i.e.\ it has at most the level $k$.
+\end{defn}
+
+\begin{comment}
+  \PROBLEM[This would be good]
+  \begin{lem}
+    Every $k$-germ in direction $\alpha$ can be extended to the arc
+    $U(\frac{\pi}{\max\cK(\phi_\alpha)},\alpha)$.
+  \end{lem}
+  \begin{proof}
+    Use
+    \begin{itemize}
+      \item \cite[Prop.1.24]{thboalch}
+      \item \cite[Sec.III.3.1]{Loday1994}
+    \end{itemize}
+    or
+    \begin{itemize}
+      \item multisummability als black box??
+    \end{itemize}
+  \end{proof}
+  \begin{cor}
+    Every germ $\phi_\alpha\in\Sto_\alpha(A^0)$ can be extended to the arc
+    $U(\frac{\pi}{\max\cK(\phi_\alpha)},\alpha)$, i.e.\ there is a section
+    $\phi\in\Gamma\left(U(\frac{\pi}{\max\cK(\phi_\alpha)},\alpha),
+    \Lambda(A^0)\right)$
+    which has $\phi_\alpha$ as its germ at $\alpha$.
+  \end{cor}
+\end{comment}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Decomposition of the Stokes group by levels}
 \marginnote{\cite{Loday1994}, \cite[362ff]{Martinet1991}}
@@ -1285,17 +1285,6 @@ Let us introduce a couple of notations and definitions, which coincide with the
 notations used in Loday-Richaud's paper \cite{Loday1994}.
 Another good resource, which uses similar notations, is for example the
 paper~\cite[362f]{Martinet1991} from Martinet and Ramis.
-
-\begin{defn}
-  We denote the set of \emph{levels of the germ}
-  $\phi_{\theta}\in\Lambda_\theta(A^0)$ by
-  \[
-    \cK(\phi_\theta):= \left\{\deg(q_j-q_l)\mid C_{\phi_\theta}^{(l,j)}\neq0
-      \text{ in some representation of }\phi_\theta\right\} \subset \cK \,.
-  \]
-  A germ $\phi_\theta$ is called a \emph{$k$-germ} when
-  $\cK(\phi_{\theta})\subset\{k\}$, i.e.\ it has at most the level $k$.
-\end{defn}
 \begin{notations}
   \marginnote{\cite[Not.I.4.15]{Loday1994},\\\cite[362]{Martinet1991}}
   For $k\in\cK$ and $\theta\in S^1$ we set:
@@ -1332,7 +1321,6 @@ direction $\alpha\in\A$}:
   The Lemma~\ref{lem:rotationalSym} implies that from $k\in\cK_{\alpha}$
   follows that $k\in\cK_{\alpha+m\frac{\pi}{k}}$ for $m\in\N$.
 \end{cor}
-
 Let us now study the sheaves $\Lambda^\star(A^0)$, and discuss how they
 correlate.
 
@@ -1401,7 +1389,7 @@ decomposition into a semidirect product.
       and $f^k:=f^{\leq k}(f^{<k})^{-1}$.
     \end{einr}
   \end{s-rem}
-  This decomposition in semidirect product can be extended to all levels
+  This decomposition in a semidirect product can be extended to all levels
   (cf.\ \cite[Cor.I.5.2]{Loday1994}), since
   $\Lambda^{<k}(A^0)=\Lambda^{\leq\max\{k'\in\cK\mid k' < k\}}$.
   Thus
@@ -1508,7 +1496,6 @@ The important statement, which we will use later, is then the following.
         & \prod_{k\in\cK_\alpha}\SSto_\alpha^k(A^0)\,,
     \end{tikzcd} \]
     commutes.
-    \PROBLEM[PROOF?]
   \end{s-rem}
 \end{prop}
 
@@ -1556,12 +1543,12 @@ nerves of such coverings, which are defined as follows.
       $\cU=\left(U_j=U(\theta_j,\epsilon_j)\right)_{j\in J}$ consisting of
       arcs, which satisfies that
       \begin{enumerate}
-        \item $\tilde\theta_j < \tilde\theta_{j+1}$ for $j\in\{1,\dots,p-1\}$,
-        \item $\tilde\theta_j-\frac{\epsilon_j}{2}\leq
-          \tilde\theta_{j+1}-\frac{\epsilon_{j+1}}{2}$ for
+        \item $\tilde\theta_j \geq \tilde\theta_{j+1}$ for $j\in\{1,\dots,p-1\}$,
+        \item $\tilde\theta_j+\frac{\epsilon_j}{2}\geq
+          \tilde\theta_{j+1}+\frac{\epsilon_{j+1}}{2}$ for
           $j\in\{1,\dots,p-1\}$ and
-          $\tilde\theta_p-\frac{\epsilon_p}{2}\leq
-          \tilde\theta_{1}+2\pi-\frac{\epsilon_{1}}{2}$, i.e.\ the arcs are not
+          $\tilde\theta_p+\frac{\epsilon_p}{2}\geq
+          \tilde\theta_{1}-2\pi+\frac{\epsilon_{1}}{2}$, i.e.\ the arcs are not
           encased by another arc,
       \end{enumerate}
       where the $\tilde\theta_j\in [0,2\pi[$ are determinations of the
@@ -1634,14 +1621,13 @@ clockwise hull from $\dot U_{j-1}$ to $\dot U_j$.
   Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
   $\dot\phi=(\dot\phi_{\theta_j})_{j\in J}
   \in\prod_{j\in J}\Lambda_{\theta_j}(A^0)$ be a finite family of germs.
+  Let $\dot\phi_j$ be the function representing the germ $\dot\phi_{\theta_j}$
+  on its (maximal) arc of definition $\Omega_j$ around $\theta_j$.
   In the following way, one can associate a cohomology class in $\St(A^0)$ to
-  any $\dot\phi$:
+  $\dot\phi$:
   \begin{einr}
-    let $\dot\phi_j$ be the function representing the germ
-    $\dot\phi_{\theta_j}$ on its maximal arc of definition $\Omega_j$ around
-    $\theta_j$.
-    Then, for every cyclic covering $\cU=(U_j)_{j\in J}$ which satisfies
-    $\dot U_j\subset \Omega_j$ for all $j\in J$, one can define the $1$-cocycle
+    for every cyclic covering $\cU=(U_j)_{j\in J}$ which satisfies
+    $\dot U_j\subset\Omega_j$ for all $j\in J$, one can define the $1$-cocycle
     $(\dot\phi_{j|\dot U_j})_{j\in J}\in\Gamma(\dot\cU;\Lambda(A^0))$.
   \end{einr}
   To a different cyclic covering, satisfying the condition above, this
@@ -1658,7 +1644,7 @@ clockwise hull from $\dot U_{j-1}$ to $\dot U_j$.
       consisting only of an single element, which satisfies that the maximal
       arc of definition $\theta$ has opening less than $2\pi$.
       There can not exist a covering consisting of a single element $U$
-      satisfying $U\subset\Omega$ and thus no map \dots
+      satisfying $\dot U\subset\Omega$ and thus no map \dots
     \end{s-rem}
   \end{comment}
 \end{rem}
@@ -1797,11 +1783,18 @@ We first have to introduce adequate coverings, which will be used in the proof.
     such that \PROBLEM[the elements are~?? on the refined covering.]
   \end{comment}
 
-  In other words is a covering $\cU$ adequate, if and only if the canonical map
+  In other words is a covering $\cU$ adequate, if and only if the quotient map
   \[
       \Gamma(\cU;\Lambda^\star(A^0))\longrightarrow H^1(S^1;\Lambda^\star(A^0))
   \]
   is surjective.\TODO[Proof? check??]
+  \begin{comment}
+    \cite[371]{Martinet1991} introduces the following definition
+    \begin{s-defn}
+      A covering $\cU$ is \emph{adapted} if every anti-Stokes direction is
+      contained in exactly one element of the nerve $\dot\cU$.
+    \end{s-defn}
+  \end{comment}
 \end{defn}
 The following proposition is in Loday-Richaud's paper~\cite{Loday1994} given as
 Proposition II.1.7. It contains a simple characterization, which will be used
@@ -1893,8 +1886,8 @@ different levels.
 
         \foreach \w/\str in {10/,
                              20/,
-                             45/$\alpha_i$,
-                             55/$\alpha_{i+1}$}
+                             45/$\alpha_{i+1}$,
+                             55/$\alpha_{i}$}
         {\draw (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
          \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (.7pt);
          \foreach \sep in {60,120,180,240,300}
@@ -1910,9 +1903,9 @@ different levels.
     \end{center}
   \end{comment}
 \end{rem}
-If we extend to several levels, the set
-$\bigcup_k\left\{U(\alpha,\frac{\pi}{k})\mid\alpha\in\A^{k}\right\}$ is no
-longer a nerve.
+If we extend to more then one level level, $\#\cK>1$, the set
+$\bigcup_{k\in\cK}\left\{U(\alpha,\frac{\pi}{k})\mid\alpha\in\A^{k}\right\}$ is
+no longer a nerve.
 Hence we have to define the coverings $\cU^{\leq k}$ and $\cU^{<k}$ in a
 different way.
 Denote by
@@ -1949,7 +1942,7 @@ the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
       \dot U_\alpha^{\leq k}
         :=U\left(\alpha,\frac{\pi}{K_i}\right)\cap\dot U_{\alpha^-,\alpha^+}
     \]
-    and the family of all $\dot U_\alpha^{\leq k}$ is a nerve.\PROBLEM[proof!]
+    and the family of all $\dot U_\alpha^{\leq k}$ is a nerve.
     \begin{rem}
       If $\alpha$ has a $k$-maximum level equal to $k$ then is
       $\dot U_\alpha^{\leq k}$ equal to the Stokes arc
@@ -1962,7 +1955,7 @@ the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
 \begin{enumerate}
   \setcounter{enumi}{2}
 \item The last cyclic covering,
-  $\cU^{<k}=\left\{U_{\alpha}^k\mid\alpha\in\A^{<k}\right\}$, is defined as
+  $\cU^{<k}=\left\{U_{\alpha}^{<k}\mid\alpha\in\A^{<k}\right\}$, is defined as
   $\cU^{<k}:=\cU^{\leq k'}$ where $k':=\max\{k''\in\cK\mid k''<k\}$.
 \end{enumerate}
 
@@ -2106,9 +2099,9 @@ two can be found at \cite[Prop.II.3.1 (iv)]{Loday1994}.
     \item the coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ are adequate
       to $\Lambda^k(A^0)$, $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$;
     \item there exists no $0$-cochain in $\Lambda^k(A^0)$ on $\cU^k$;
-    \item on $\cU^{\leq k}$ there is no $0$-cochain in $\Lambda^{\leq0}(A^0)$
-      of level $k$, i.e.\ all $0$-cochains of $\Lambda^{\leq k}(A^0)$
-      belong to $\Lambda^{<k}(A^0)$.
+    \item on $\cU^{\leq k}$ there is no $0$-cochain in $\Lambda^{\leq k}(A^0)$
+      of level $k$, i.e.\ all $0$-cochains of $\Lambda^{\leq k}(A^0)$ belong to
+      $\Lambda^{<k}(A^0)$.
   \end{enumerate}
 \end{prop}
 To have a shorter notation, we denote the product
@@ -2369,15 +2362,15 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
         &\longmapsto (\dot G_\alpha)_{\alpha\in\A^{\leq k}}
       \end{align*}
       where
-      \begin{itemize}
-        \item $\dot G_\alpha=\begin{cases}
-            \dot f_\alpha \text{~restricted to } \dot U_\alpha^{\leq k}
-            \text{~and seen as being in } \Lambda^{\leq k}(A^0)
-            & \text{~when } \alpha\in\A^k
-          \\\id \text{~(the identity) }
-            & \text{~when } \alpha\notin\A^k
-          \end{cases}$
-      \end{itemize}
+      \[
+        \dot G_\alpha=\begin{cases}
+          \dot f_\alpha \text{~restricted to } \dot U_\alpha^{\leq k}
+          \text{~and seen as being in } \Lambda^{\leq k}(A^0)
+          & \text{~when } \alpha\in\A^k
+        \\\id \text{~(the identity) }
+          & \text{~when } \alpha\notin\A^k
+        \end{cases}
+      \]
     \item and the second map
       \begin{align*}
         \sigma^{<k}:\Gamma(\dot\cU^{<k};\Lambda^{<k}(A^0))
@@ -2386,15 +2379,15 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
         &\longmapsto (\dot F_\alpha)_{\alpha\in\A^{\leq k}}
       \end{align*}
       is defined, in a similar way, as
-      \begin{itemize}
-        \item $\dot F_\alpha=\begin{cases}
-            \dot f_\alpha \text{~restricted to } \dot U_\alpha^{\leq k}
-            \text{~and seen as being in } \Lambda^{\leq k}(A^0)
-            & \text{~when } \alpha\in\A^{<k}
-          \\\id \text{~(the identity) }
-            & \text{~when } \alpha\notin\A^{<k}
-          \end{cases}$
-      \end{itemize}
+      \[
+        \dot F_\alpha=\begin{cases}
+          \dot f_\alpha \text{~restricted to } \dot U_\alpha^{\leq k}
+          \text{~and seen as being in } \Lambda^{\leq k}(A^0)
+          & \text{~when } \alpha\in\A^{<k}
+        \\\id \text{~(the identity) }
+          & \text{~when } \alpha\notin\A^{<k}
+        \end{cases}
+      \]
   \end{enumerate}
   Thus we can define
   \begin{align*}
@@ -2479,8 +2472,9 @@ $\Gamma(\dot\cU^{< k};\Lambda^{< k}(A^0))=
 \Gamma(\dot\cU^{\leq k'};\Lambda^{\leq k'}(A^0))$ and obtain the following
 proposition.
 \begin{prop}\label{prop:theMapTau}
-  By applying $\mathfrak{S}^{\leq\star}$ multiple times one obtains
-  the \emph{product map of single leveled cocycles} in the following way
+  By applying $\mathfrak{S}^{\leq k}$ successively for different $k$'s
+  in decending order, one obtains the \emph{product map of single leveled
+  cocycles $\tau$} in the following way
   \[ \begin{tikzcd}[column sep=1.4cm,row sep=.9cm]
       \underset{\tikzmark{e1}}{\underbrace{%
         \Gamma(\dot\cU^{<k_r};\Lambda^{<k_r}(A^0))}}
@@ -2543,11 +2537,11 @@ proposition.
   \\~~~(\dot f_\alpha)_{\alpha\in\A^k}
     \arrow[|->]{rr}
     &&
-    (\dot F_\alpha)_{\alpha\in\A}
+    (\dot G_\alpha)_{\alpha\in\A}
   \end{tikzcd} \]
   with
   \[
-    \dot F_\alpha=\begin{cases}
+    \dot G_\alpha=\begin{cases}
       \dot f_\alpha \text{~restricted to } \dot U_\alpha
       \text{~and seen as being in } \Lambda(A^0)
       & \text{~when } \alpha\in\A^k
@@ -2678,7 +2672,30 @@ degrees of $(q_j-q_l)(t^{-1})$.
 Up to permutation, we know that in our case are the leading terms of
 $(q_1-q_2)(t^{-1})$ and $(q_1-q_3)(t^{-1})$ equal and thus
 \begin{itemize}
-  \item up to permutation is $k_2=k_{1,2}=k_{1,3}$ and $k_1=k_{2,3}$ and
+  \item up to permutation is $k_2=k_{1,2}=k_{1,3}$ and $k_1=k_{2,3}$, i.e.\ the
+    larger degree appears twice, and
+    \begin{comment}
+      let $q_1,q_2,q_3$ be polynomials, such that
+      \[
+        \deg(q_1-q_2) =: k_2 > k_1 := \deg(q_2-q_3)
+      \]
+      then is the degree of $q_1-q_3$ given by
+      \begin{itemize}
+        \item[\textbf{case 1}] $\deg(q_1)<k_2$: then is $\deg(q_2)=k_2$ and
+          thus $\deg(q_3)=k_2$.
+        \item[\textbf{case 2}] $\deg(q_2)<k_2$: then is $\deg(q_1)=k_2$ and
+          $\deg(q_3)\leq\deg(q_2)$.
+        \item[\textbf{case 3}] $\deg(q_1)=\deg(q_2)=k_2$: thus follows that the
+          leading term of $q_1$ and $q_2$ are different.
+          \begin{itemize}
+            \item[\textbf{subcase 3.a}] $\deg(q_3)<k_2$: everything is clear
+            \item[\textbf{subcase 3.b}] $\deg(q_3)=k_2$: here has the leading
+              term of $q_3$ be equal to them from $q_1$ to satisfy that
+              $k_2>\deg(q_2-q_3)$.
+          \end{itemize}
+      \end{itemize}
+      From this follows that $\deg(q_1-q_3)=k_2$.
+    \end{comment}
   % \item $q_1 \underset{\alpha,\max}{\prec} q_2$
   %   \Leftrightarrow{}
   %   $q_1 \underset{\alpha,\max}{\prec} q_3$
@@ -2703,14 +2720,9 @@ The set of all anti-Stokes directions is then given as
     %   }}
     % ,\dots,\alpha_\nu\}\,.
 \]
-Denote by $\cY_0(t)=t^Le^{Q(t^{-1})}$ a normal solution of $[A^0]$.
+Denote by $\cY_0(t)$ a normal solution of $[A^0]$.
 
 Let us start by looking at a single germ in depth.
-\begin{comment}
-  \rewrite{First} we want to use the Stokes matrices of Stokes germs, discussed
-  in Section~\ref{sec:matrixReps}, to \rewrite{obtain some statements} about
-  the \rewrite{structure} of the Stokes germs in our situation.
-\end{comment}
 The Proposition~\ref{prop:representation} states that every Stokes germ
 $\phi_\alpha$ can be written as its matrix representation conjugated by the
 normal solution, i.e.\ as $\phi_\alpha=\cY_{0}C_{\phi_\alpha}\cY_{0}^{-1}
@@ -3438,7 +3450,7 @@ theorem.
 \section{The complete Diagram}\label{sec:theCompleteDiagram}
 If we start with the diagram from Page~\pageref{page:ofPreDiagram}, we can add
 all the defined isomorphisms and rewrite into the following commutative
-diagram.
+diagram of \textbf{isomorphisms of pointed sets}.\PROBLEM[pointed sets?]
 \begin{center}
   \begin{tikzpicture}
     \pgfmathsetmacro{\dx}{4cm}

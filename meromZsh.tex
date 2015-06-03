@@ -341,7 +341,7 @@ following way.
 
 \begin{comment}
   \begin{lem}
-    \PROBLEM[how looks the connection matrix? Simly the sum?]
+    \PROBLEM[how looks the connection matrix? Simply the sum?]
     Let $(\cM_1,\nabla_1)$ and $(\cM_2,\nabla_2)$ be meromorphic connections
     with connection matrices $A_1$ and $A_2$.
     The connection matrix of $(\cM_1\otimes\cM_2,\nabla)$ is then given by
@@ -821,7 +821,7 @@ formal classification problem.
   to a model $\cM^{nf}$.
   We then call $\cM^{nf}$ a \emph{formal decomposition} or \emph{formal model}
   of $\cM$ or $\cM'$.
-  \begin{rem}
+  \begin{s-rem}\label{rem:leveltTurittin}
     But there is in general \textbf{no} lift of the isomorphism $\hat\lambda$,
     i.e.\ there is no isomorphism making the diagram
     \[ \begin{tikzcd}
@@ -831,7 +831,7 @@ formal classification problem.
     kommutative.
     But sectorwise, there are lifts given by the main asymptotic existence
     theorem (cf.\ Theorem~\ref{thm:maet}).
-  \end{rem}
+  \end{s-rem}
 \end{thm}
 Proofs of this theorem can be found in multiple places, for example in
 \cite[Thm.5.4.7]{sabbah_cimpa90}.
@@ -1283,15 +1283,13 @@ or Theorem 4.4.1 in Loday-Richaud's Book~\cite{Loday2014}.
     \end{comment}
   \end{s-rem}
 \end{thm}
-\begin{comment}
+\begin{rem}
   \PROBLEM[Think about it?]
   In the language of meromorphic connections is this theorem sometimes called
   \emph{sectorial decomposition} and stated for example
   in~\cite[Thm.II.5.12]{sabbah2007isomonodromic}
-  and~\cite[Sec.II.2.4]{sabbah_cimpa90}.
-\end{comment}
-\begin{comment}
-  \begin{thm}[Sectorial decomposition]
+  and~\cite[Sec.II.2.4]{sabbah_cimpa90}:
+  \begin{s-thm}[Sectorial decomposition]\label{thm:sectorialDecompFromMAET}
     \PROBLEM[needs more defns]
     Let $(\cM,\nabla)$ be a meromorphic connection and let
     $\hat\lambda:\hat\cM\to\hat\cM^{nf}$ be the isomorphism given by
@@ -1307,8 +1305,10 @@ or Theorem 4.4.1 in Loday-Richaud's Book~\cite{Loday2014}.
         \hat\cM^{nf}
     \end{tikzcd} \]
     commutes
-  \end{thm}
-\end{comment}
+  \end{s-thm}
+  This is exactly the solution to the problem stated in
+  Remark~\ref{rem:leveltTurittin}.
+\end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The classifying set}\label{sec:classifyingSet}

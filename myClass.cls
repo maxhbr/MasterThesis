@@ -302,6 +302,7 @@
 
 % Theorems:
   \mdtheorem[style=thick]{thm}{Theorem}[chapter]
+    \mdtheorem[style=thin]{s-thm}{Theorem}[thm]
   \mdtheorem[style=thickk]{tthm}[thm]{Theorem}
   \mdtheorem[style=thick]{lem}[thm]{Lemma}
     \mdtheorem[style=thin]{s-lem}{Lemma}[thm]
