@@ -1,8 +1,8 @@
 \chapter{Stokes Structures}\label{chap:stokes}
 Stokes structures are contain exactly \rewrite{necessary information} to
 classify meromorphic classification, i.e.\ with the Stokes structures we are
-able to construct a \rewrite{space}, which is isomorphic to the classifying
-\rewrite{set}.
+able to construct a \rewrite{space}\PROBLEM[Why space], which is isomorphic to
+the classifying \rewrite{set}.
 
 A great overview of this topic is given by Varadarajan in
 \cite{Varadarajan96linearmeromorphic}. Other resources we will use are for
@@ -12,11 +12,12 @@ For the Sections~\ref{sec:StokesGroup} and~\ref{sec:mainThm2} will
 \rewrite{Loday-Richaud's} paper \cite{Loday1994} and the book
 \cite[Sec.4]{Loday2014} be \rewrite{useful. Also useful} was \rewrite{Boalch's}
 paper \cite{boalch} (resp.\ his thesis \cite{thboalch}) which looks only at the
-single leveled case or the paper\cite[Thm.13]{Martinet1991} from Martinet and
+single leveled case or the paper \cite[Thm.13]{Martinet1991} from Martinet and
 Ramis.
 
 Let $(\cM^{nf},\nabla^{nf})$ be a fixed model with the corresponding normal
 form $A^0$.
+Let us also fix a normal solution $\cY_0$ of $A^0$.
 The purpose of the next section (Section~\ref{sec:mainThm1}) is, to proof the
 Malgrange-Sibuya Theorem.
 It states that the classifying set $\cH(A^0)$ is via an map $\exp$ isomorphic
@@ -938,7 +939,8 @@ define the Stokes group as follows.
     \\\id \in \C^{n_j\times n_l} & \text{,~if~} j=l
     \end{cases}
   \]
-  as a block version of Kronecker's delta.
+  as a block version of Kronecker's delta corresponding to the structure of the
+  normal solution $\cY_0$, which was fixed.
   Define the group
   \begin{align*}
     \SSto_\theta(A^0)= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in\GL_n(\C) \mid
@@ -952,7 +954,8 @@ define the Stokes group as follows.
     \begin{enumerate}
       \item In Boalch's publications~\cite{boalch,thboalch} are our Stokes
         matrices called Stokes factors, since he introduces other objects, he
-        wants to call Stokes matrices.
+        wants to call Stokes matrices
+        (cf.\ Section~\ref{sec:furtherImprovements}).
       \item There is obviously a bijection
         $\vartheta_\theta:
         \prod_{q_j\underset{\theta,\max}{\prec}q_l}\C^{n_j \cdot n_l}
@@ -1519,7 +1522,7 @@ $\prod_{\alpha\in\A}\SSto_\alpha(A^0)\cong\St(A^0)$ as a corollary.
 Let us recall, that $\St(A^0)$ is defined to be $H^1(S^1;\Lambda(A^0))$
 (cf.\ Section~\ref{sec:mainThm1}).
 The elements of $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ define in a canonical way
-cocycles of the sheaf $\Lambda(A^0)$ (cf.\ Remark~\ref{rem:mapStoToCocy}),
+cocycles of the sheaf $\Lambda(A^0)$ (cf.\ Equation (\ref{eq:mapStoToCocy})),
 called Stokes cocycles (cf.\ Definition~\ref{defn:stokesCocycle}).
 In fact, will $h$ map such cocycles to the cohomology class, to which they
 correspond.
@@ -1603,51 +1606,27 @@ clockwise hull from $\dot U_{j-1}$ to $\dot U_j$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The theorem}
-\begin{comment}
-  \begin{lem}
-    Since the sections of the sheaf $\Lambda(A^0)$ are solutions of the system
-    $[A^0,A^0]$ (cf.\ Definition~\ref{defn:StokesSheaf}),
-    the theory of differential equations\PROBLEM[source?] tells us that
-    \rewrite{sections extend uniquely}.
-    Thus we can extend any germ $\phi_\theta\in\Lambda_\theta(A^0)$ uniquely to
-    a section $\phi\in\Gamma(\Omega;\Lambda(A^0))$, where $\Omega$ is the
-    maximal arc of definition around $\theta$.
-
-    \PROBLEM[The flatness property implicitly satisfied?]
-  \end{lem}
-\end{comment}
-\begin{rem}\label{rem:mapStoToCocy}
-  \marginnote{\cite[868]{Loday1994}}
-  Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
-  $\dot\phi=(\dot\phi_{\theta_j})_{j\in J}
-  \in\prod_{j\in J}\Lambda_{\theta_j}(A^0)$ be a finite family of germs.
-  Let $\dot\phi_j$ be the function representing the germ $\dot\phi_{\theta_j}$
-  on its (maximal) arc of definition $\Omega_j$ around $\theta_j$.
-  In the following way, one can associate a cohomology class in $\St(A^0)$ to
-  $\dot\phi$:
-  \begin{einr}
-    for every cyclic covering $\cU=(U_j)_{j\in J}$ which satisfies
-    $\dot U_j\subset\Omega_j$ for all $j\in J$, one can define the $1$-cocycle
-    $(\dot\phi_{j|\dot U_j})_{j\in J}\in\Gamma(\dot\cU;\Lambda(A^0))$.
-  \end{einr}
-  To a different cyclic covering, satisfying the condition above, this
-  construction yields a cohomologous $1$-cocycle, thus the induced map
-  \[
-    \prod_{j\in J}\Lambda_{\theta_j}(A^0)
-    \longrightarrow
-    H^1(S^1;\Lambda(A^0))=\St(A^0)
-  \]
-  is welldefined.
-  \begin{comment}
-    \begin{s-rem}
-      Let $\dot\phi=(\dot\phi_{\theta})\in\Lambda_\theta(A^0)$ be a cocycle
-      consisting only of an single element, which satisfies that the maximal
-      arc of definition $\theta$ has opening less than $2\pi$.
-      There can not exist a covering consisting of a single element $U$
-      satisfying $\dot U\subset\Omega$ and thus no map \dots
-    \end{s-rem}
-  \end{comment}
-\end{rem}
+\marginnote{\cite[868]{Loday1994}}
+Let $\{\theta_j\mid j\in J\}\subset S^1$ be a finite set and
+$\dot\phi=(\dot\phi_{\theta_j})_{j\in J}
+\in\prod_{j\in J}\Lambda_{\theta_j}(A^0)$ be a finite family of germs.
+Let $\dot\phi_j$ be the function representing the germ $\dot\phi_{\theta_j}$
+on its (maximal) arc of definition $\Omega_j$ around $\theta_j$.
+In the following way, one can associate a cohomology class in $\St(A^0)$ to
+$\dot\phi$:
+\begin{einr}
+  for every cyclic covering $\cU=(U_j)_{j\in J}$ which satisfies
+  $\dot U_j\subset\Omega_j$ for all $j\in J$, one can define the $1$-cocycle
+  $(\dot\phi_{j|\dot U_j})_{j\in J}\in\Gamma(\dot\cU;\Lambda(A^0))$.
+\end{einr}
+To a different cyclic covering, satisfying the condition above, this
+construction yields a cohomologous $1$-cocycle, thus the induced map
+\begin{equation}\label{eq:mapStoToCocy}
+  \prod_{j\in J}\Lambda_{\theta_j}(A^0)
+  \longrightarrow
+  H^1(S^1;\Lambda(A^0))=\St(A^0)
+\end{equation}
+is welldefined (cf.\ \cite[868]{Loday1994}).
 \begin{defn}\label{defn:stokesCocycle}
   \marginnote{\cite[Def.II.1.8]{Loday1994}
     \\, \cite[4.3.10]{Loday2014}
@@ -1664,21 +1643,35 @@ clockwise hull from $\dot U_{j-1}$ to $\dot U_j$.
     \item the germ $\phi_{\alpha_j}:=\phi_{j,\alpha_j}$ of $\phi_j$ at
       $\alpha_j$ is an element of $\Sto_{\alpha_j}(A^0)$.
   \end{itemize}
-  \begin{s-rem}
-    Since the sections in $\Gamma(\dot U_j;\Lambda(A^0))$ are uniquely
-    determined as the extension of the germ at $\alpha_j$ have that the set of
-    all Stokes cocycles can be identified with
-    $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$. We will use this fact implicitly and
-    call elements of $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ Stokes cocycles.
+  \begin{s-rem}\label{rem:inclusionGermRemark}
+    \PROBLEM[refactor!]
+    The sections in $\Gamma(\dot U_j;\Lambda(A^0))$ are uniquely
+    determined as the extension of the germ at $\alpha_j$, since the sheaf
+    $\Lambda(A^0)$ defined via the system $[A^0,A^0]$
+    (cf.\ Definition~\ref{defn:StokesSheaf}).
+    We thus have an injective map
+    \[
+      \prod_{j\in\{1,\dots,\nu\}}\Gamma(\dot U_j;\Lambda(A^0))
+      \hookrightarrow
+      \prod_{j\in\{1,\dots,\nu\}}\Sto_{\alpha_j}(A^0) \,,
+    \]
+    which takes an Stokes cocycle and yields the corresponding Stokes germs.
+    For a fine enough covering $\cU$, i.e.\ a covering $\cU$ with a nerve
+    $\dot\cU$ which consists of small enough arcs satisfying the conditions
+    above, is this map a bijection.
+
+    We will use this fact implicitly and assume that the covering is always
+    fine enough to call elements of $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$
+    Stokes cocycles.
   \end{s-rem}
 \end{defn}
-We can use Remark~\ref{rem:mapStoToCocy} to obtain, in the case $J=\A$, a
-mapping
+We can use the Equation (\ref{eq:mapStoToCocy}) to obtain for Stokes cocycles
+a mapping
 \[ \begin{tikzcd}
     h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)
     \rar[hook]&
     \prod_{\alpha\in\A}\Lambda_\alpha(A^0)
-    \rar&
+    \rar{\text{(\ref{eq:mapStoToCocy})}}&
     \St(A^0),
 \end{tikzcd} \]
 which takes a Stokes cocycle to its corresponding cohomology class.
@@ -1702,8 +1695,8 @@ From Theorem~\ref{thm:mainThm2} and Proposition~\ref{prop:representation} we
 get the following corollary.
 \begin{cor}\label{cor:isomToChochN}
   \PROBLEM[mentioned twice]
-  Using the isomorphisms from the Stokes groups to the group of all Stokes
-  matrices (cf.\ Proposition~\ref{prop:representation}) we obtain
+  Using the isomorphisms $\Sto_\theta(A^0)\cong\SSto_\theta(A^0)$ from
+  Proposition~\ref{prop:representation} we obtain
   \[
     \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
   \]
@@ -2097,7 +2090,7 @@ two can be found at \cite[Prop.II.3.1 (iv)]{Loday1994}.
   Let $k\in\cK$, then
   \begin{enumerate}
     \item the coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ are adequate
-      to $\Lambda^k(A^0)$, $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$;
+      to $\Lambda^k(A^0)$, $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$, respectively;
     \item there exists no $0$-cochain in $\Lambda^k(A^0)$ on $\cU^k$;
     \item on $\cU^{\leq k}$ there is no $0$-cochain in $\Lambda^{\leq k}(A^0)$
       of level $k$, i.e.\ all $0$-cochains of $\Lambda^{\leq k}(A^0)$ belong to
@@ -2627,6 +2620,7 @@ proposition.
         H^1(\cU;\Lambda(A^0))}}\,.
   \end{tikzcd} \]
 \end{cor}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Composing functions to obtain $h$}
 We have the ingredients to define the function $h$ from
@@ -2657,7 +2651,7 @@ Theorem~\ref{thm:mainThm2} by composition of already bijective maps.
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Some exemplary calculations}\label{chp:WhichInformationIsNeeded}
+\subsection{Some exemplary calculations}\label{sec:WhichInformationIsNeeded}
 Here we want to discuss, which information is required to describe the Stokes
 cocycle corresponding to a multileveled system in more depth.
 We will look at a sigle-leveled system corresponding to a normal form
@@ -2829,6 +2823,15 @@ $\rho_{\alpha}^{-1}\circ\vartheta_\alpha$.}
 We will replace $c_2'$ by $c_2+c_1c_3$ and $c_3'$ by $c_1c_2+c_3$ to be
 consistent with the decomposition in the next part
 (cf.\ Example~\ref{exmp:decompositionHere}).
+\begin{cor}
+  The morphism $\prod_{\alpha\in\A}\vartheta_\alpha$ is an isomorphism of
+  pointed sets, which maps the element only containing zeros to
+  \[
+    (\id,\id,\dots,\id)\in\prod_{\alpha\in\A}\SSto_\alpha(A^0),
+  \]
+  which gets by $\left(\prod_{\alpha\in\A}\right)^{-1}\circ h$ mapped to the
+  trivial cohomology class in $\St(A^0)$.
+\end{cor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In proposition~\ref{prop:filtrationOfStokesGroup} and especially
@@ -2915,72 +2918,6 @@ The four nontrivial decomposition in our situation, are given by:
   \begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_1c_2+c_3 & c_1 & 1 \end{pmatrix}$
 \end{enumerate}
 
-
-\begin{comment}
-We will use this decompositions to write the isomorphisms
-$\vartheta_\alpha:\C^\star\to \SSto_\alpha(A^0)$ as
-\[ \begin{tikzcd}
-  \C^\star
-  \rar{j_\alpha}
-  \arrow[rr,out=-30,in=-150,"\vartheta_\alpha"]
-  &
-  \SSto_\alpha^{k_1}(A^0)\times\SSto_\alpha^{k_2}(A^0)
-  \rar{i_\alpha^{-1}}
-  &
-  \SSto_\alpha(A^0)
-\end{tikzcd} \]
-where $\star\in\{1,2,3\}$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Let us now look at Stokes cocycles.
-\begin{prop}\label{prop:decompositionDiagram}
-  By taking the product over $\A$ of all
-  $\rho_{\alpha}^{-1}\circ\vartheta_\alpha$ we obtain the isomorphism
-  \[
-    \prod_{\alpha\in\A}\rho_{\alpha}^{-1}\circ\vartheta_\alpha:
-    \C^{k_1+2\cdot k_2}
-    \overset\cong\longrightarrow \prod_{\alpha\in\A}\SSto_\alpha(A^0)
-    \overset\cong\longrightarrow \prod_{\alpha\in\A}\Sto_\alpha(A^0)
-  \]
-  which can be concatenated with $h$ to obtain an element in $\St(A^0)$.
-  We can also define the isomorphism
-  $\C^{2\cdot(k_1+2\cdot k_2)}\textcolor{purple}{\longrightarrow} \St(A^0)$
-  which makes the following diagram commute.
-  \[ \begin{tikzcd}[column sep=1.5cm,row sep=2cm]
-      &\C^{2\cdot(k_1+2\cdot k_2)}
-      \dlar[blue]{\prod_{\alpha\in\A}\rho_{\alpha}^{-1}\circ\vartheta_\alpha}
-      \arrow[dr,purple]
-    \\\prod_{\alpha\in\A}\Sto_\alpha(A^0)
-      \arrow[rr,green!50!black,"h"]
-      &&\St(A^0)
-  \end{tikzcd} \]
-  Using the knowledge, how the morphism were build and the fact that some of
-  the morphism are equal, we can rewrite this diagram as follows
-  \[ \begin{tikzcd}
-      &\C^{2\cdot(k_1+2\cdot k_2)}
-      \dar[xshift=-1pt,blue]
-      \dar[xshift=1pt,purple,"\prod_{\alpha\in\A}j_\alpha"]
-    \\
-      &\prod_{k\in\{k_1,k_2\}}\prod_{\alpha\in\A}\SSto_{\alpha}^{k}(A^0)
-       \arrow[dl,blue,"\prod_{\alpha\in\A}i_\alpha^{-1}"]
-       \arrow[ddr,purple,
-         "\prod_{k\in\{k_1,k_2\}}\prod_{\alpha\in\A}(\rho_{\alpha}^k)^{-1}"]
-    \\ \prod_{\alpha\in\A} \SSto_{\alpha}(A^0)
-        \dar[blue]{\prod_{\alpha\in\A}\rho_{\alpha}^{-1}}
-    \\\prod_{\alpha\in\A} \Sto_{\alpha}(A^0)
-      \arrow[rr,green!50!black,"\prod_{\alpha\in\A}i_\alpha"]
-      &&\prod_{k\in\{k_1,k_2\}}\prod_{\alpha\in\A}\Sto_{\alpha}^{k}(A^0)
-      \dar[xshift=-1pt,green!50!black]
-      \dar[xshift=1pt,purple]{\prod_{k\in\{k_1,k_2\}}i^k}
-    \\
-      && \prod_{k\in\{k_1,k_2\}}\Gamma(\dot\cU^k;\Lambda^k(A^0))
-      \dar[xshift=-1pt,green!50!black]
-      \dar[xshift=1pt,purple]{\cT}
-    \\&& \St(A^0)
-  \end{tikzcd} \]
-\end{prop}
-\end{comment}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Explicit example}
 \def\kOne{1}
@@ -3064,8 +3001,9 @@ Stokes matrices as
 \end{align*}
 Applying the isomorphism $\prod_{\alpha\in\A}\rho_\alpha^{-1}$, i.e.\
 conjugation by the fundamental solution $\cY_0(t)=t^Le^{Q(t^{-1})}$
-(cf.\ \ref{prop:representation}), yields then the corresponding Stokes cocycle
-in $\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$ and thus an element in $\St(A^0)$.
+(cf.\ Proposition~\ref{prop:representation}), yields then the corresponding
+Stokes cocycle in $\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$ and thus an element
+in $\St(A^0)$.
 \begin{comment}
   This element is explicitly given as
   \begin{align*}
@@ -3131,15 +3069,7 @@ The set $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ and thus
 $\prod_{\alpha\in\A}\SSto_\alpha(A^0)$ has some bad properties, when small
 deformations are applied to $[A^0]$, since under arbitrary small changes, one
 Stokes ray can split into two.
-\begin{comment}
-  \begin{rem}\label{rem:boalchRemarkFactorMatrix}
-    Boalch~\cite{boalch,thboalch}\PROBLEM[solution goes back to
-    \cite{BJL1979Birkhoff} or so?] solves this in the single-leveled case by
-    \rewrite{renaming our Stokes matrices as Stokes factors} and introducing
-    new Stokes matrices which are build by the product of consecutive Stokes
-    factors.
-  \end{rem}
-\end{comment}
+
 In the prove of Theorem~\ref{thm:mainThm2} we have seen, \rewrite{that not only
 $\cH(A^0)\cong\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ but} also that
 \begin{align*}
@@ -3160,8 +3090,8 @@ multiple Stokes matrices into one product of these matrices.
 \TODO[move?]
 Boalch, which looks in his publications \cite{boalch,thboalch} only at the
 single-leveled case, uses this extensively to obtain better Stokes matrices,
-which are stable under small deformations
-(cf.\ Remark~\ref{rem:boalchRemarkFactorMatrix}).
+which are stable under small deformations. Our Stokes matrices are in his
+publications called \emph{Stokes factors}.
 
 \begin{defn}
   A subset of $\A^k$ consisting of $\frac{\#\A^k}{2k}$ consecutive anti-Stokes
