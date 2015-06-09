@@ -75,23 +75,18 @@ A (global) meromorphic connection is then defined as follows.
 The word ``global'' used to emphasize that the connection is ``on $M$'', i.e.\
 not only a germ at some point of $M$, \rewrite{like it will be used} later
 (cf.\ Remark~\ref{rem:GlobalNothingGerm}).
+It will occasionally be convenient to omit the $\nabla$ and simply call $\sM$
+the meromorphic connection.
 \begin{rem}
-  \begin{enumerate}
-    \item It will occasionally be convenient to omit the $\nabla$ and simply
-      call $\sM$ the meromorphic connection.
-    \item Here, the variant `holomorphic bundle with meromorphic connection' is
-      chosen, like in Boalch's paper~\cite{boalch}.
-      There is also the transposed description `meromorphic bundle with
-      holomorphic connection' which is for example used in Sabbah's
-      book~\cite{sabbah2007isomonodromic}.
-      \\By choosing a lattice of a meromorphic bundle (cf.\
-      \cite[Def.0.8.3]{sabbah2007isomonodromic}), one gets a holomorphic bundle
-      but if the meromorphic bundle had a holomorphic connection, the induced
-      connection \rewrite{on the lattice} is no longer guaranteed to be
-      holomorphic.
-      Thus we obtain a meromorphic connection on a holomorphic bundle in our
-      sense.
-  \end{enumerate}
+  Here, the variant `holomorphic bundle with meromorphic connection' is chosen,
+  like in Boalch's paper~\cite{boalch}. There is also the transposed description
+  `meromorphic bundle with holomorphic connection' which is for example used in
+  Sabbah's book~\cite{sabbah2007isomonodromic}.
+  \\By choosing a lattice of a meromorphic bundle
+  (cf.\ \cite[Def.0.8.3]{sabbah2007isomonodromic}), one gets a holomorphic bundle
+  but if the meromorphic bundle had a holomorphic connection, the induced
+  connection \rewrite{on the lattice} is no longer guaranteed to be holomorphic.
+  Thus we obtain a meromorphic connection on a holomorphic bundle in our sense.
 \end{rem}
 
 \begin{defn}
@@ -118,7 +113,8 @@ not only a germ at some point of $M$, \rewrite{like it will be used} later
     \end{s-prop}
   \end{comment}
   \begin{s-rem}
-    Here are all connections flat, since only look at Dimension one.
+    Here are all connections flat, since all connections will be of Dimension
+    one.
     \TODO[cf\dots]
   \end{s-rem}
   \begin{comment}
@@ -133,12 +129,13 @@ not only a germ at some point of $M$, \rewrite{like it will be used} later
 \marginnote{\cite[28]{sabbah2007isomonodromic},
   \\\cite[2]{thboalch} and
   \\\cite[11]{babbitt1989local}}
-We will usually\TODO[only?] be interested in local information of meromorphic
-connections.  This means that we look at a connection in a neighbourhood of $0$
-\rewrite{and allow only one singularity at $0$}.
-There are multiple ways of expressing the local information, we will either
-talk about germs of meromorphic connections or systems, which are coordinate-
-and trivialization-dependent.
+We will only be interested in local information of meromorphic connections.
+This means that we look at a connection in a neighbourhood of $0$ which has its
+unique singularity at $0$.
+There are multiple ways of expressing the local information without the need of
+an fixed neigbourhood.
+We will either talk about germs of meromorphic connections or systems, which
+depend on the choice of a trivialization.
 \begin{prop}
   \marginnote{\textbf{\cite[Rem.5.2.4]{hotta2008}}\\\cite[Def.4.2.1]{Loday2014}}
   A germ of a meromorphic connection $(\sM,\nabla)$ is the sheaf-theoretic
@@ -869,10 +866,10 @@ $\frac{d}{dt}(q_j(t^{-1}))=\left(\left(\frac{d}{dt}q_j\right)\circ t^{-1}\right)
 A connection matrix for $\cM^{nf}$ is then obtained by
 \begin{align*}
   A^0&= \bigoplus_{j=1}^s
-  \left(q_j'(t^{-1})\cdot\id_{n_j}+\frac{1}{t}L_j\right)
-  \\&=\bigoplus_{j=1}^sq_j'(t^{-1})\cdot\id_{n_j}
-    +\frac{1}{t}\bigoplus_{j=1}^sL_j
-  \\&=Q'(t^{-1})+\frac{1}{t}L \,,
+       \left(q_j'(t^{-1})\cdot\id_{n_j}+\frac{1}{t}L_j\right)
+  \\ &=\bigoplus_{j=1}^sq_j'(t^{-1})\cdot\id_{n_j}
+       +\frac{1}{t}\bigoplus_{j=1}^sL_j
+  \\ &=Q'(t^{-1})+\frac{1}{t}L \,,
 \end{align*}
 where
 $Q(t^{-1}):=\bigoplus_{j=1}^sq_j(t^{-1})\cdot\id_{n_j}$
@@ -946,14 +943,14 @@ and $L:=\bigoplus_{j=1}^sL_j$.
   $Q=\begin{pmatrix} \phi_1 & 0 \\ 0 & \phi_2 \end{pmatrix}$,
   with
   $\phi_1\neq\phi_2$.
-  The matrix $A$ is then 
+  The matrix $A$ is then
   \begin{align*}
     A&=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
     \\&=
     \begin{pmatrix}
       \phi_1' & (-\phi_1'+\phi_2')\ln(t)
       \\0 & \phi_2'
-    \end{pmatrix} 
+    \end{pmatrix}
     +
     \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
     \notin\gl_n(\C(\!\{t\}\!))
@@ -1037,7 +1034,7 @@ and we will use this fact, to say when a system is something like a model.
   \emph{is a normal form for} $A$ and for $[A]$.
 \end{defn}
 \begin{cor}\label{cor:structuralAssumptions}
-  Since we only look at unramified connections, by the Levelt-Turittin Theorem 
+  Since we only look at unramified connections, by the Levelt-Turittin Theorem
   we are able to assume that $L$ is in Jordan normal form and that it has a
   block structure, which is finer then the structure of
   $Q=\bigoplus_{j=1}^sq_j(t^{-1})\cdot\id_{n_j}$

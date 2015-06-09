@@ -111,62 +111,65 @@
   \today
 \end{comment}
 
-%\ifnum\myDevelopVariable=0
+\ifnum\myDevelopVariable=0
   \input{einleitung.tex}
-%\if
-% \ifnum\myDevelopVariable=1
+\fi
+\ifnum\myDevelopVariable=0
   \input{symbols.tex}
-% \fi
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifnum\myDevelopVariable=0
   \mainmatter
 \fi
 
+\ifnum\myDevelopVariable=0
 \input{asymptotic.tex}
+\fi
 
+% \ifnum\myDevelopVariable=0
 \input{meromZsh.tex}
+% \fi
 
+% \ifnum\myDevelopVariable=0
 \input{stokes.tex}
+% \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\addcontentsline{toc}{chapter}{Schluss}
 %\input{schluss.tex}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\appendix
-\addcontentsline{toc}{chapter}{Appendix}
+\ifnum\myDevelopVariable=0
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \appendix
+    \addcontentsline{toc}{chapter}{Appendix}
 
-% \ifnum\myDevelopVariable=1
-% % \input{introVortrag/notes.tex}
-%   \input{notes.tex}
-% % \input{aufgaben.tex}
-% \fi
+    % \ifnum\myDevelopVariable=1
+    % % \input{introVortrag/notes.tex}
+    %   \input{notes.tex}
+    % % \input{aufgaben.tex}
+    % \fi
 
-\input{moreBasics.tex}
-\ifnum\myDevelopVariable=1
-  \input{landkarte.tex}
+    \input{moreBasics.tex}
+    \ifnum\myDevelopVariable=1
+    \input{landkarte.tex}
+    \fi
+
+    %\bibliographystyle{geralpha}
+    %\def\btxandlong{und}
+    %\bibliography{main}
+
+    % \nocite{*}
+    \makeatletter
+    \@mainmatterfalse
+    \makeatother
+    \addcontentsline{toc}{chapter}{Bibliography}
+    \printbibliography[keyword={prim},title={Bibliography}]
+    \printbibliography[notkeyword={prim},title={Additional references}]
+
+    %\input{github.tex}
 \fi
-\ifnum\myDevelopVariable=1
-  \input{problemDGL.tex}
-\fi
-
-% \input{literatur.tex}
-
-%\bibliographystyle{geralpha}
-%\def\btxandlong{und}
-%\bibliography{main}
-
-% \nocite{*}
-\makeatletter
-\@mainmatterfalse
-\makeatother
-\addcontentsline{toc}{chapter}{Bibliography}
-\printbibliography[keyword={prim},title={Bibliography}]
-\printbibliography[notkeyword={prim},title={Additional references}]
-
-%\input{github.tex}
 
 \end{document}
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:
