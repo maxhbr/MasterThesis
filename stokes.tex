@@ -6,13 +6,13 @@ the classifying \rewrite{set}.
 
 A great overview of this topic is given by Varadarajan in
 \cite{Varadarajan96linearmeromorphic}. Other resources we will use are for
-example \rewrite{Sabbah's} book \cite[section II]{sabbah2007isomonodromic} for
+example \rewrite{Sabbah's} book~\cite[section II]{sabbah2007isomonodromic} for
 Section~\ref{sec:mainThm1}.
 For the Sections~\ref{sec:StokesGroup} and~\ref{sec:mainThm2} will
-\rewrite{Loday-Richaud's} paper \cite{Loday1994} and the book
+\rewrite{Loday-Richaud's} paper~\cite{Loday1994} and the book
 \cite[Sec.4]{Loday2014} be \rewrite{useful. Also useful} was \rewrite{Boalch's}
-paper \cite{boalch} (resp.\ his thesis \cite{thboalch}) which looks only at the
-single leveled case or the paper \cite[Thm.13]{Martinet1991} from Martinet and
+paper~\cite{boalch} (resp.\ his thesis~\cite{thboalch}) which looks only at the
+single leveled case or the paper~\cite[Thm.13]{Martinet1991} from Martinet and
 Ramis.
 
 Let $(\cM^{nf},\nabla^{nf})$ be a fixed model with the corresponding normal
@@ -282,10 +282,10 @@ We will start by proofing the injectivity of the morphism $\exp$.
   Consider the two marked pairs $(A,\hat F)$ and $(A',\hat F')$ in
   $\hat\Syst_m(A^0)$, whose classes in $\cH(A^0)$ get mapped to same element
   \[
-    \exp((A,\hat F))=\lambda=\exp((A',\hat F'))
+    \exp([(A,\hat F)])=\lambda=\exp([(A',\hat F')])
       \in H^1(S^1;\Lambda(A^0)) \,.
   \]
-  By using refined coverings, it is possible to find a finite covering
+  By using refined coverings, it is possible to find a common finite covering
   $\cU=\{U_j;j\in J\}$ of $S^1$ such that $\lambda$ is the class of the
   cocycles $(F_l^{-1}F_j)$ and $(F_l'^{-1}F_j')$, where $F_j$ (resp.\ $F_j'$)
   are lifts of $\hat F$ (resp.\ $\hat F'$) on $U_j\in\cU$.
@@ -308,27 +308,27 @@ We will start by proofing the injectivity of the morphism $\exp$.
       \begin{align*}
         {}^{H_j}A &= {}^{F_j'G_{j}F_j^{-1}}A
         \\&={}^{F_j'G_{j}}A^0
-        & \text{(since $F_j'$ is a lift of $\hat F'$ on $U_j$)}
+                  & \text{(since $F_j'$ is a lift of $\hat F'$ on $U_j$)}
         \\&={}^{F_j'}A^0
-        & \text{(since $G_j$ is a is an isotropy of $A^0$)}
+                  & \text{(since $G_j$ is a is an isotropy of $A^0$)}
         \\&=A'
-        & \text{(since $F_j$ is a lift of $\hat F$ on $U_j$)}
+                  & \text{(since $F_j$ is a lift of $\hat F$ on $U_j$)}
       \end{align*}
       and
     \item which satisfies $\hat F'=\hat H_j\hat F$ on every $U_j$, since
       \begin{align*}
         \hat H_j\hat F&= \widehat{F_j'G_{j}F_j^{-1}} \hat F
-        \\&= \hat{F_j'}
+        \\            &= \hat{F_j'}
         \underset{\id}{%
           \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
             \underbrace{%
-              \hat{G_{j}}
+              \hat{G_j}
             }
           }
         }
         \hat{F_j^{-1}} \hat F
-        & \text{(since $G_j$ is flat, i.e.\ $\hat G_j=\id$)}
-        \\&= \hat{F'}
+                      & \text{(since $G_j$ is flat, i.e.\ $\hat G_j=\id$)}
+        \\            &= \hat{F'}
         \underset{\id}{%
           \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
             \underbrace{%
@@ -336,7 +336,7 @@ We will start by proofing the injectivity of the morphism $\exp$.
             }
           }
         }
-        \\&= \hat{F'}
+        \\            &= \hat{F'}
       \end{align*}
   \end{itemize}
   Therefore are $(A,\hat F)$ and $(A,\hat F')$ equivalent
@@ -349,7 +349,7 @@ We will start by proofing the injectivity of the morphism $\exp$.
       $(\cM',\nabla',\hat f')$ of $\cH(\cM^{nf},\nabla^{nf})$ which map to same
       cohomology class
       \[
-        \exp((\cM,\nabla,\hat f))=\lambda=\exp((\cM',\nabla',\hat f'))
+        \exp([(\cM,\nabla,\hat f)])=\lambda=\exp([(\cM',\nabla',\hat f')])
           \in H^1(S^1;\Lambda(A^0)) \,.
       \]
       Since we can use refined coverings, it is possible to find a finite
@@ -673,8 +673,8 @@ order relations:
         \rewrite{$e^{(q_j-g_l)(t^{-1})}$ is flat at $0$} in a neighbourhood of
         the direction $\tilde\theta$.\PROBLEM[Other flat??]
       \end{einr}
-    \item Let us define another relation
-      $\boldmath q_j \underset{\tilde\theta,\max}{\prec} q_l$ equivalent to
+    \item Let us define another relation $\boldmath q_j\myrel{\tilde\theta}q_l$
+      equivalent to
       \begin{einr}
         $e^{(q_j-g_l)(t^{-1})}$ is of maximal decay in the direction
         $\tilde\theta$.
@@ -684,14 +684,14 @@ order relations:
   \begin{s-rem}
     In the unramified case do these relations not depend on the determination
     $\tilde\theta$ of $\theta$. As a consequence we will only write
-    $\underset{\theta}{\prec}$ and $\underset{\theta,\max}{\prec}$.
+    $\underset{\theta}{\prec}$ and $\myrel{\theta}$.
   \end{s-rem}
 \end{defn}
 We know that
 \begin{enumerate}
   \item the condition $q_j \underset{\theta}{\prec} q_l$ is
     satisfied if and only if $\Re(a_{jl}e^{-ik_{jl}\theta})<0$ and
-  \item the condition $q_j \underset{\theta,\max}{\prec} q_l$ is
+  \item the condition $q_j\myrel{\theta}q_l$ is
     equivalent to
     \begin{einr}
       $a_{jl}e^{-ik_{jl}\theta}$ is a real negative
@@ -781,10 +781,10 @@ part of $f$.
     \end{tikzpicture}
   \end{center}
   \begin{flushright}
-    \tikzmarkc{n3}{blue} here is $q_j \underset{\theta}{\prec} q_l$
+    \tikzmarkc{n3}{blue} here is $q_j\underset{\theta}{\prec}q_l$
   \end{flushright}
   \begin{flushright}
-    \tikzmarkc{n1}{blue} here is $q_j \underset{\theta,\max}{\prec} q_l$
+    \tikzmarkc{n1}{blue} here is $q_j\myrel{\theta}q_l$
   \end{flushright}
   \begin{tikzpicture}[remember picture,overlay]
     \draw[->,blue!50!white,thick] (n3) to[out=150,in=270] (g0);
@@ -816,7 +816,7 @@ thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
   is equivalent to
   \begin{einr}
     there is a $\theta'\in U(\theta,\frac{\pi}{k_{jl}})$ such that
-    $q_j \underset{\theta,\max}{\prec} q_l$.
+    $q_j\myrel{\theta}q_l$.
   \end{einr}
 \end{rem}
 
@@ -825,8 +825,7 @@ thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
   %   \cite[Def.3.2]{boalch}}
   \begin{enumerate}
     \item $\alpha$ is an \emph{anti-Stokes direction} if there is at least one
-      pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies
-      $q_j \underset{\alpha,\max}{\prec} q_l$.
+      pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies $q_j\myrel{\alpha}q_l$.
       \begin{itemize}
         \item Let $\A=\{\alpha_1,\dots,\alpha_{\nu}\}$ denote the set of all
           anti-Stokes directions in a clockwise ordering. For a uniform
@@ -867,14 +866,14 @@ $\alpha\in\A$.
 
 \begin{lem}\label{lem:rotationalSym}%\label{rem:rotationalSymPrime}
   Let $\alpha\in\A$ together with a pair $(q_j-q_l)(t^{-1})\in\cQ(A^0)$ of
-  degree $k_{jl}$, such that $q_j \underset{\alpha,\max}{\prec} q_l$ be given.
+  degree $k_{jl}$, such that $q_j\myrel{\alpha}q_l$ be given.
   We then know for every $m\in\N$ that
   \[
     \underset{=:\alpha'}{\underbrace{\alpha+m\frac{\pi}{k_{jl}}}} \in \A \,.
   \]
-  Especially is either $q_j \underset{\alpha',\max}{\prec} q_l$ (in the
-  case, when $m$ is even) or $q_l \underset{\alpha',\max}{\prec} q_j$
-  (when $m$ is uneven) satisfied (see Figure~\ref{fig:functionF}).
+  Especially is either $q_j\myrel{\alpha'}q_l$ (in the case, when $m$ is even)
+  or $q_l\myrel{\alpha'}q_j$ (when $m$ is uneven) satisfied
+  (see Figure~\ref{fig:functionF}).
   \begin{s-cor}
     It follows that in the case $\cK=\{k\}$, the set $\A$ has
     $\frac{\pi}{k}$-rotational symmetry.
@@ -882,8 +881,7 @@ $\alpha\in\A$.
 \end{lem}
 \begin{proof}
   \marginnote{\cite[8]{thboalch}}
-  Let $(j,l)$ be a pair such that
-  $q_j \underset{\alpha,\max}{\prec} q_l$, i.e.\ such that
+  Let $(j,l)$ be a pair such that $q_j\myrel{\alpha}q_l$, i.e.\ such that
   $a_{jl}e^{-ik_{jl}\alpha}\in\R_{<0}$.
   Hence, for $m\in\N$,
   \begin{align*}
@@ -903,8 +901,8 @@ $\alpha\in\A$.
 
   Thus, for $\alpha':=\alpha+m\frac{\pi}{k_{jl}}$, we have $\alpha'\in\A$ since
   \begin{itemize}
-    \item $q_j \underset{\alpha',\max}{\prec} q_l$ when $m$ is even or
-    \item $q_l \underset{\alpha',\max}{\prec} q_j$ when $m$ is uneven.
+    \item $q_j\myrel{\alpha'}q_l$ when $m$ is even or
+    \item $q_l\myrel{\alpha'}q_j$ when $m$ is uneven.
   \end{itemize}
 \end{proof}
 
@@ -944,8 +942,7 @@ define the Stokes group as follows.
   Define the group
   \begin{align*}
     \SSto_\theta(A^0)= \Big\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in\GL_n(\C) \mid
-      K_{jl}=\bdelta_{jl} \text{~unless~}
-      q_j \underset{\theta,\max}{\prec} q_l \Big\}
+      K_{jl}=\bdelta_{jl} \text{~unless~} q_j\myrel{\theta}q_l \Big\}
   \end{align*}
   of all \emph{Stokes matrices} of $A^0$ in the direction $\theta$.
   They will arise as a faithful representation
@@ -957,8 +954,7 @@ define the Stokes group as follows.
         wants to call Stokes matrices
         (cf.\ Section~\ref{sec:furtherImprovements}).
       \item There is obviously a bijection
-        $\vartheta_\theta:
-        \prod_{q_j\underset{\theta,\max}{\prec}q_l}\C^{n_j \cdot n_l}
+        $\vartheta_\theta: \prod_{q_j\myrel{\theta}q_l}\C^{n_j \cdot n_l}
         \overset{\cong}{\longrightarrow} \SSto_\theta(A^0)$.
     \end{enumerate}
   \end{s-rem}
@@ -1191,17 +1187,18 @@ define the Stokes group as follows.
   matrix, with zeros at the necessary positions, characterizes an unique
   element of $\Sto_\theta(A^0)$:
   \begin{einr}
-    Let $C=1_n + \sum_{(l,j)\mid q_j\underset{\theta,\max}{\prec}q_l}
-    C^{(l,j)}$ be an element of $\SSto_\theta(A^0)$.  Then is a pre-image of
-    $C$ given by $t^L e^{Q(t^{-1})}Ce^{-Q(t^{-1})}t^{-L}$ which lies in
-    $\Sto_\theta(A^0)$, since it satisfies the condition discussed above.
+    Let $C=1_n + \sum_{(l,j)\mid q_j\myrel{\theta}q_l} C^{(l,j)}$ be an element
+    of $\SSto_\theta(A^0)$.
+    Then is a pre-image of $C$ given by
+    $t^Le^{Q(t^{-1})}Ce^{-Q(t^{-1})}t^{-L}$ which lies in $\Sto_\theta(A^0)$,
+    since it satisfies the condition discussed above.
   \end{einr}
 
   The map $\rho_{\tilde\theta}$ is also \textbf{injective}, since it is the
   conjugation by an invertible matrix.
 \end{proof}
 
-In particular, from the proof, we get that
+From the calculations in the proof it is clear that
 \begin{enumerate}
   \item for $j=l$ the (diagonal) blocks $C_{\phi_\theta}^{(l,j)}$ vanish since
     $q_l-q_j=0$ does not have maximal decay and
@@ -1212,7 +1209,7 @@ In particular, from the proof, we get that
 This implies that the matrix $C_{\phi_\theta}$ is unipotent, and \rewrite{hence
 is $\Sto_\theta(A^0)$ is a unipotent Lie group.}
 
-On can use the Stokes matrices to give an alternative characterization of
+One can use the Stokes matrices to give an alternative characterization of
 Stokes germs:
 \begin{einr}
   a germ $\phi_\theta\in\Lambda_\theta(A^0)$ is in $\Sto_\theta(A^0)$ if and
@@ -1226,13 +1223,12 @@ Formulated is this in the following corollary.
   in $\Sto_\theta(A^0)$, if and only if it has a representation
   $C_{\phi_\theta}$ where
   \[
-    C_{\phi_\theta}=1_n +
-    \sum_{(l,j)\mid q_j\underset{\theta,\max}{\prec}q_l}
-    C_{\phi_\theta}^{(l,j)}
+    C_{\phi_\theta}=
+        1_n + \sum_{(l,j)\mid q_j\myrel{\theta}q_l}C_{\phi_\theta}^{(l,j)}
   \]
   and the $C_{\phi_\theta}^{(l,j)}$ have the necessary block structure.
   \begin{s-rem}
-    In Loday-Richaud's book \cite[78]{Loday2014} are the elements of
+    In Loday-Richaud's book~\cite[78]{Loday2014} are the elements of
     $\Sto_\theta(A^0)$ actually characterized as the flat transformations, such
     that Equation (\ref{eq:representation}) is satisfied for some unique
     constant invertible matrix $C\in\SSto_\theta(A^0)$.
@@ -1253,8 +1249,14 @@ Formulated is this in the following corollary.
 \begin{comment}
   \PROBLEM[This would be good]
   \begin{lem}
-    Every $k$-germ in direction $\alpha$ can be extended to the arc
-    $U(\frac{\pi}{\max\cK(\phi_\alpha)},\alpha)$.
+    Every $k$-germ in direction $\alpha$ can be extended to the Stokes arc
+    $U(\frac{\pi}{k},\alpha)$.
+    \begin{cor}
+        Every germ $\phi_\alpha\in\Sto_\alpha(A^0)$ can be extended to the arc
+        $U(\frac{\pi}{\max\cK(\phi_\alpha)},\alpha)$, i.e.\ there is a section
+        $\phi\in\Gamma\left(U(\frac{\pi}{\max\cK(\phi_\alpha)},\alpha),
+        \Lambda(A^0)\right)$ which has $\phi_\alpha$ as its germ at $\alpha$.
+    \end{cor}
   \end{lem}
   \begin{proof}
     Use
@@ -1267,13 +1269,6 @@ Formulated is this in the following corollary.
       \item multisummability als black box??
     \end{itemize}
   \end{proof}
-  \begin{cor}
-    Every germ $\phi_\alpha\in\Sto_\alpha(A^0)$ can be extended to the arc
-    $U(\frac{\pi}{\max\cK(\phi_\alpha)},\alpha)$, i.e.\ there is a section
-    $\phi\in\Gamma\left(U(\frac{\pi}{\max\cK(\phi_\alpha)},\alpha),
-    \Lambda(A^0)\right)$
-    which has $\phi_\alpha$ as its germ at $\alpha$.
-  \end{cor}
 \end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1290,30 +1285,36 @@ Another good resource, which uses similar notations, is for example the
 paper~\cite[362f]{Martinet1991} from Martinet and Ramis.
 \begin{notations}
   \marginnote{\cite[Not.I.4.15]{Loday1994},\\\cite[362]{Martinet1991}}
-  For $k\in\cK$ and $\theta\in S^1$ we set:
+  For every level $k\in\cK$ and direction $\theta\in S^1$ we set
   \begin{itemize}
-    \item $\Lambda^{k}(A^0):=$ the subsheaf of $\Lambda(A^0)$ of all germs,
+    \item $\Lambda^{k}(A^0)$ as the subsheaf of $\Lambda(A^0)$ of all germs,
       which are generated by $k$-germs;
     \item $\Lambda^{\leq k}(A^0)$ (resp. $\Lambda^{<k}(A^0)$ or
       $\Lambda^{\geq k}(A^0)$) as the subsheaf of $\Lambda(A^0)$ generated by
       $k'$-germs for all $k'\leq k$ (resp. $k'<k$ or $k'\geq k$).
   \end{itemize}
   Let $\star\in\{k,<k,\leq k,\dots\}$.
-  The restriction to $\Sto_\theta$ yields the groups
+  The restrictions to $\Sto_\theta$ yield the groups
   \[
     \Sto_\theta^\star(A^0):=\Sto_\theta(A^0)\cap\Lambda_\theta^{\star}(A^0)
   \]
   and let us also define $\SSto^\star_\theta(A^0)$ as the groups of
   representations, which correspond to elements of  $\Sto^\star_\theta(A^0)$.
+  \begin{comment}
+    The corresponding induced isomorphisms are denoted by
+    \[
+        \rho_\theta^\star:\Sto^\star_\theta(A^0) \to \SSto^\star_\theta(A^0) \,.
+    \]
+    \TODO[not all are needed, defined somewher else]
+  \end{comment}
 \end{notations}
 Corresponding to the definitions above, one can define
 $\A^\star:=\left\{\alpha\in\A\mid\Sto_\alpha^\star(A^0)\neq\{\id\}\right\}$
 for $\star\in\{k,<k,\leq k,\dots\}$ and we say that \emph{$\alpha$ is bearing
 the level $k$} if $\alpha\in\A^k$.
 \begin{rem}
-  It is clear that we have the canonical inclusions
-  $\A^k\hookrightarrow\A^{\leq k}$ and
-  $\A^{<k}\hookrightarrow\A^{\leq k}$.
+  It is clear that for every $k\in\cK$ we have the canonical inclusions
+  $\A^k\hookrightarrow\A^{\leq k}$ and $\A^{<k}\hookrightarrow\A^{\leq k}$.
 \end{rem}
 Sometimes it is also useful to talk about the \emph{set of levels beared by an
 direction $\alpha\in\A$}:
@@ -1321,19 +1322,20 @@ direction $\alpha\in\A$}:
   \cK_\alpha:=\left\{k\in\cK\mid\Sto_\alpha^k(A^0)\neq\{\id\}\right\} \,.
 \]
 \begin{cor}
-  The Lemma~\ref{lem:rotationalSym} implies that from $k\in\cK_{\alpha}$
-  follows that $k\in\cK_{\alpha+m\frac{\pi}{k}}$ for $m\in\N$.
+  The Lemma~\ref{lem:rotationalSym} implies that from $k\in\cK_{\alpha}$ follows
+  that $k\in\cK_{\alpha+m\frac{\pi}{k}}$ for $m\in\N$.
 \end{cor}
 Let us now study the sheaves $\Lambda^\star(A^0)$, and discuss how they
-correlate.
+correlate \rewrite{and how they can be composed from the others}.
 
 The following proposition can be found as~\cite[Prop.I.5.1]{Loday1994} and the
 key-statement is also given in~\cite[Prop.4.10]{Martinet1991}.
 \begin{prop}\label{prop:PropertiesOfStokesSheafSplitting}
   \marginnote{\cite[Prop.I.5.1]{Loday1994}}
-  For any level $k\in\cK$ one has that $\Lambda^{k}(A^0)$, $\Lambda^{\leq
-  k}(A^0)$ and $\Lambda^{<k}(A^0)$ are sheaves of subgroups of $\Lambda(A^0)$
-  and the sheaf $\Lambda^k(A^0)$ is normal in $\Lambda^{\leq k}(A^0)$.
+  For any level $k\in\cK$ one has that $\Lambda^{k}(A^0)$,
+  $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$ are sheaves of subgroups of
+  $\Lambda(A^0)$ and the sheaf $\Lambda^k(A^0)$ is normal in
+  $\Lambda^{\leq k}(A^0)$.
   \begin{comment}
     A subgroup $N$ is normal in $G$ ($N\vartriangleleft G$) if it is stable
     under conjugation, i.e.
@@ -1348,8 +1350,8 @@ key-statement is also given in~\cite[Prop.4.10]{Martinet1991}.
   \begin{itemize}
     \item $i:\Lambda^k(A^0)\hookrightarrow\Lambda^{\leq k}(A^0)$ be the
       canonical inclusion and
-    \item $p:\Lambda^{\leq k}(A^0)\twoheadrightarrow\Lambda^{k}(A^0)$ be the truncation to
-      terms of levels $<k$.
+    \item $p:\Lambda^{\leq k}(A^0)\twoheadrightarrow\Lambda^{<k}(A^0)$ be the
+      truncation to terms of levels $<k$.
   \end{itemize}
   Then does the exact sequence of sheaves
   \[
@@ -1368,7 +1370,7 @@ decomposition into a semidirect product.
   $\Lambda^{\leq k}(A^0)$ in a semidirect product:
   \begin{align*}
     \Lambda^{\leq k}(A^0)&\cong \Lambda^{<k}(A^0)\ltimes\Lambda^{k}(A^0)
-  \\                     &\cong \Lambda^{k}(A^0)\ltimes\Lambda^{<k}(A^0)\,.
+  \\                    &\cong \Lambda^{k}(A^0)\ltimes\Lambda^{<k}(A^0)\,.
   \end{align*}
   Thus any germ $f^{\leq k}\in\Lambda^{\leq k}(A^0)$ can be uniquely written as
   \begin{itemize}
@@ -1380,21 +1382,21 @@ decomposition into a semidirect product.
   \begin{s-rem}\label{rem:algFactorization}
     \marginnote{\cite[Cor.I.5.2(ii)]{Loday1994}}
     We can get the factor $f^{<k}$ common to both factorizations by truncation
-    of $f^{\leq k}$ to terms of level $k$.
+    of $f^{\leq k}$ to terms of level $<k$, i.e.\ the map $p$ from
+    Proposition~\ref{prop:PropertiesOfStokesSheafSplitting}.
     This truncation can explicitly be achieved, in terms of Stokes matrices, by
-    keeping in any representation $1+\sum C^{(j,l)}$ of $f^{\leq k}$ only the
+    keeping in representations $1+\sum C^{(j,l)}$ of $f^{\leq k}$ only the
     blocks $C^{(j,l)}$ such that $\deg(q_j-q_l)<k$.
 
     A factorization algorithm could then be:
     \begin{einr}
       get the factor $f^{<k}$ common to both factorizations by truncation of
-      $f^{\leq k}$ to terms of level $k$ and set $g^k:=(f^{<k})^{-1}f^{\leq k}$
+      $f^{\leq k}$ to terms of level $<k$ and set $g^k:=(f^{<k})^{-1}f^{\leq k}$
       and $f^k:=f^{\leq k}(f^{<k})^{-1}$.
     \end{einr}
   \end{s-rem}
-  This decomposition in a semidirect product can be extended to all levels
-  (cf.\ \cite[Cor.I.5.2]{Loday1994}), since
-  $\Lambda^{<k}(A^0)=\Lambda^{\leq\max\{k'\in\cK\mid k' < k\}}$.
+  This decomposition in a semidirect product can be extended to all levels,
+  since $\Lambda^{<k}(A^0)=\Lambda^{\leq\max\{k'\in\cK\mid k' < k\}}$.
   Thus
   \[
     \Lambda(A^0)\cong\underset{k\in\cK}\bigltimes\Lambda^k(A^0) \,,
@@ -1504,11 +1506,11 @@ The important statement, which we will use later, is then the following.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Stokes structures: using Stokes groups}\label{sec:mainThm2}
-\marginnote{\cite{Loday1994}, \cite[Thm.4.3.11]{Loday2014}
-  \\and \cite{boalch,thboalch}
-  \\and \cite{babbitt1989local}
-  \\and \cite{BJL1979Birkhoff}
-  \\and \cite[Chapter 4]{Martinet1991}}
+\marginnote{\cite{Loday1994},~\cite[Thm.4.3.11]{Loday2014}
+  \\and~\cite{boalch,thboalch}
+  \\and~\cite{babbitt1989local}
+  \\and~\cite{BJL1979Birkhoff}
+  \\and~\cite[Chapter 4]{Martinet1991}}
 
 The goal in this section is to prove that there is a bijective and natural map
 \[
@@ -1701,17 +1703,15 @@ get the following corollary.
     \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
   \]
   which endows $\St(A^0)$ with the structure of an unipotent Lie group with the
-  finite complex dimension
-  $N:=\dim_\C\St(A^0)=\sum_{\alpha\in\A}\dim_\C\SSto_\alpha(A^0)$ where
-  $\dim_\C\SSto_\alpha(A^0)=\sum_{q_j\underset{\alpha,\max}{\prec} q_l}
-  n_j\cdot n_l$ (cf.~\cite[Sec.III.1]{Loday1994}).
+  finite complex dimension $N:=\dim_\C\St(A^0)$
+  (cf.~\cite[Sec.III.1]{Loday1994}).
   This can be rewritten in the following way:
-  \begin{align*}
-    N&=\sum_{\alpha\in\A}\sum_{q_j\underset{\alpha,\max}{\prec}q_l}n_j\cdot n_l
-    \\&= \sum_{1\leq j,l\leq n}\deg(q_j-q_l)\cdot n_j\cdot n_l
-    \\&=\sum_{\substack{1\leq j,l\leq n\\j<l}}2\cdot\deg(q_j-q_l)\cdot
-      n_j\cdot n_l \,.
-  \end{align*}
+  \[
+    N=\sum_{\alpha\in\A}\dim_\C\SSto_\alpha(A^0)
+      =\sum_{\alpha\in\A}\sum_{q_j\myrel{\alpha}q_l}n_j\cdot n_l
+      =\sum_{\substack{1\leq j,l\leq n\\j<l}}2\cdot\deg(q_j-q_l)\cdot
+        n_j\cdot n_l \,.
+  \]
   \begin{s-rem}
     This number $N$ is known to be the \emph{irregularity} of $[\End A^0]$.
   \end{s-rem}
@@ -2697,12 +2697,9 @@ $(q_1-q_2)(t^{-1})$ and $(q_1-q_3)(t^{-1})$ equal and thus
   %   $q_2 \underset{\alpha,\max}{\prec} q_1$
   %   \Leftrightarrow{}
   %   $q_3 \underset{\alpha,\max}{\prec} q_1$
-  \item $q_1 \underset{\alpha,\max}{\prec} q_2$
-    (resp.~$q_2 \underset{\alpha,\max}{\prec} q_1$)
-    if and only if
-    $q_1 \underset{\alpha,\max}{\prec} q_3$
-    (resp.~$q_3 \underset{\alpha,\max}{\prec} q_1$)
-    and thus do they determine the same anti-Stokes directions.
+  \item $q_1\myrel{\alpha}q_2$ (resp.~$q_2\myrel{\alpha}q_1$) if and only if
+    $q_1\myrel{\alpha}q_3$ (resp.~$q_3\myrel{\alpha}q_1$) and thus do they
+    determine the same anti-Stokes directions.
 \end{itemize}
 The set of all anti-Stokes directions is then given as
 \[
@@ -2729,7 +2726,7 @@ arise.
   Let $\alpha\in\A$ be an anti-Stokes direction.
   From the definition of $\SSto_\alpha(A^0)$ (cf.\
   Definition~\ref{defn:groupOfFaithfullReps}) we know that, if one has
-  $q_1 \underset{\alpha,\max}{\prec} q_2$, the Stokes matrix has the form
+  $q_1\myrel{\alpha}q_2$, the Stokes matrix has the form
   \[
     \begin{pmatrix}
       1 & \text{\boldmath$c_1$} & \star
@@ -2739,8 +2736,8 @@ arise.
   \]
   where $c_j\in\C$ and $\star\in\C$.
 
-  We have seen that $q_1 \underset{\alpha,\max}{\prec} q_2$ \Rightarrow{}
-  $q_1 \underset{\alpha,\max}{\prec} q_3$ thus the representation has the
+  We have seen that $q_1\myrel{\alpha}q_2$ \Rightarrow{}
+  $q_1\myrel{\alpha}q_3$ thus the representation has the
   \rewrite{form}
   \[
     \begin{pmatrix}
@@ -2749,8 +2746,8 @@ arise.
     \\\text{\boldmath$0$} & \star & 1
     \end{pmatrix}
   \]
-  and if we also know that neither $q_2 \underset{\alpha,\max}{\prec} q_3$ nor
-  $q_3 \underset{\alpha,\max}{\prec} q_2$ it has the \rewrite{form}
+  and if we also know that neither $q_2\myrel{\alpha}q_3$ nor
+  $q_3\myrel{\alpha}q_2$ it has the \rewrite{form}
   \[
     \begin{pmatrix}
       1 & c_1 & c_2
@@ -2778,13 +2775,10 @@ In fact, the following $9$ cases of Stokes matrices can arise:
   \def\arraystretch{1.3}
   \setlength\tabcolsep{4mm}
   \begin{tabular}{r|c|c|c}
-    & $q_2 \underset{\alpha,\max}{\prec} q_3$
-    & $q_3 \underset{\alpha,\max}{\prec} q_2$
-    & else
+    & $q_2\myrel{\alpha}q_3$ & $q_3\myrel{\alpha}q_2$ & else
     \tabularnewline
     \hline
-    $\substack{q_1 \underset{\alpha,\max}{\prec} q_2\\\text{and}
-    \\q_1 \underset{\alpha,\max}{\prec} q_3}$
+    $\substack{q_1\myrel{\alpha}q_2\\\text{and} \\q_1\myrel{\alpha}q_3}$
     & $\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & c_1 \\0 & 0 & 1 \end{pmatrix}$
    \cellcolor{blue!15}
     & $\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & c_1 & 1 \end{pmatrix}$
@@ -2793,8 +2787,7 @@ In fact, the following $9$ cases of Stokes matrices can arise:
    \cellcolor{green!15}
     \tabularnewline
     \hline
-    $\substack{q_2 \underset{\alpha,\max}{\prec} q_1\\\text{and}
-    \\q_3 \underset{\alpha,\max}{\prec} q_1}$
+    $\substack{q_2\myrel{\alpha}q_1\\\text{and} \\q_3\myrel{\alpha}q_1}$
     & $\begin{pmatrix} 1 & 0 & 0 \\c_2' & 1 & c_1 \\c_3 & 0 & 1 \end{pmatrix}$
    \cellcolor{blue!15}
     & $\begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_3' & c_1 & 1 \end{pmatrix}$
@@ -2928,9 +2921,8 @@ The four nontrivial decomposition in our situation, are given by:
 
 Even more explicit, we can fix the levels $k_1=\kOne$ and $k_2=\kTwo$ together
 with $\theta=0$.
-Assume without any restriction that $q_1 \underset{\theta,\max}{\prec} q_2$
-and $q_1 \underset{\theta,\max}{\prec} q_3$ as well as
-$q_2 \underset{\theta,\max}{\prec} q_3$.
+Assume without any restriction that $q_1\myrel{\theta}q_2$ and
+$q_1\myrel{\theta}q_3$ as well as $q_2\myrel{\theta}q_3$.
 Other choices would result \rewrite{in reordering of the tuples below.}
 \comm{Let the matrix $L$ be given as $L=\diag(l_1,l_2,l_3)\in\Gl_n(\C)$.}
 
@@ -3081,7 +3073,7 @@ $\cH(A^0)\cong\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ but} also that
 This representation can be used to achieve further improvements, since one is
 able to multiply some succeeding Stokes matrices (resp. Stokes germs) of the
 same level without loss of information.
-This is based on the Corollary~\ref{cor:composeLevelwise} stated bellow
+This is based on the Corollary~\ref{cor:composeLevelwise} stated bellow.
 
 Let us fix a level $k\in\cK$. We want to rewrite the product
 $\prod_{\alpha\in\A^k}\SSto_\alpha^k(A^0)$ by collecting the information of
@@ -3111,8 +3103,7 @@ since
   exactly one direction $\alpha\in \A^k\cap I$ which satisfies, that
   $\Im(a_{jl}e^{-ik_{jl\alpha}})=0$.
   At such a direction $\alpha$, corresponding to the pair $(q_j,q_l)$, is then
-  either $q_j\underset{\alpha,\max}{\prec}q_l$ or
-  $q_l\underset{\alpha,\max}{\prec}q_j$ satisfied.
+  either $q_j\myrel{\alpha}q_l$ or $q_l\myrel{\alpha}q_j$ satisfied.
 \end{einr}
 This implies that for every $\theta$, which satisfies
 $\theta\pm\frac{\pi}{2k}\notin\A^k$, is $\A^k\cap U(\theta,\frac{\pi}{k})$
@@ -3307,7 +3298,7 @@ theorem.
   \[ \begin{tikzcd}
     \eta_\theta^k:
     \underset{\alpha\in\A^k\cap U(\theta,\frac{\pi}{k})}\prod
-    \underset{S_{\{(j,l)\mid q_j\underset{\alpha,\max}{\prec}q_l\}}}{%
+    \underset{S_{\{(j,l)\mid q_j\myrel{\alpha}q_l\}}}{%
       \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\underbrace{%
           \SSto_\alpha^k(A^0)}}}
     \rar{\cong}&
@@ -3319,14 +3310,14 @@ theorem.
   from Corollary~\ref{cor:composeLevelwise}, since
   \begin{itemize}
     \item for every $\alpha\in\A$ satisfies the set
-      $\{(j,l)\mid q_j\underset{\alpha,\max}{\prec}q_l\}$ the completeness
+      $\{(j,l)\mid q_j\myrel{\alpha}q_l\}$ the completeness
       property, since it is defined via a \rewrite{transitiv relation}, and
-    \item the union of all $\{(j,l)\mid q_j\underset{\alpha,\max}{\prec}q_l\}$
+    \item the union of all $\{(j,l)\mid q_j\myrel{\alpha}q_l\}$
       for $\alpha\in I\cap\A^k$ is then
       \begin{align*}
         \dot\bigcup_{\alpha\in I\cap\A}
-          \{(j,l)\mid q_j\underset{\alpha,\max}{\prec}q_l\}
-          &=\{(j,l) \mid q_j \underset{\alpha,\max}{\prec} q_l
+          \{(j,l)\mid q_j\myrel{\alpha}q_l\}
+          &=\{(j,l) \mid q_j \myrel{\alpha} q_l
             \text{~for some~}\alpha\in\A^k\cap U(\theta,\frac{\pi}{k}) \}
         \\&= \{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}
           \qquad\qquad\text{(cf.\ Remark~\ref{rem:relationDistanceCondition})}
@@ -3410,7 +3401,7 @@ diagram of \textbf{isomorphisms of pointed sets}.\PROBLEM[pointed sets?]
         \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)$};
     \node[red] (SSS3P) at ([yshift={\mdy},xshift={\ldx}]ProdOfSStos)
       {$\displaystyle\prod_{\alpha\in\A}
-        \C^{\sum_{q_j\underset{\alpha,\max}{\prec}q_l}
+        \C^{\sum_{q_j\myrel{\alpha}q_l}
           \deg(q_j-q_l)\cdot n_j\cdot n_l}$};
 
     \draw[->] (cH2) -- (cH)
