@@ -94,6 +94,7 @@
 \addtokomafont{pagenumber}{\sffamily\color{gray!50!black}}
 \addtokomafont{pagehead}{\sffamily\upshape\color{gray!50!black}}
 %\setheadwidth[0pt]{textwithmarginpar}}
+
 \pagestyle{scrheadings}
 \clearscrheadfoot
 \setheadsepline{0pt}
@@ -101,41 +102,40 @@
 \ohead[\myheadcmdempty]{\myheadcmd}
 \ofoot{}
 \def\myheadcmd{\tikz[remember picture]{
-  \node[outer xsep=1pt, outer ysep=3pt, inner ysep=0pt,
+    \node[outer xsep=1pt, outer ysep=3pt, inner ysep=0pt,
     inner xsep=5pt, font=\sffamily] (a) {\pagemark};}%
     \tikz[remember picture, overlay]{
-    \ifthenelse{\isodd{\thepage}}{
-    % \ifthispageodd{
-      \draw[myColor1,line width=1pt]
-        ($(a.north west)+(0pt,0)$) |- ($(a.south east)+(-3pt,-3pt)$);
-      \draw[myColor1] ($(a.south west)+(0pt,0pt)$)  --
-        (a.south west -| current page text area.north west);
-    }{%
-      \draw[myColor1,line width=1pt]
-        ($(a.north east)+(0pt,0)$) |- ($(a.south west)+(3pt,-3pt)$);
-      \draw[myColor1] ($(a.south east)+(0pt,0pt)$)--
-        (a.south east -| current page text area.north east);
+        \ifthispageodd{
+            \draw[myColor1,line width=1pt]
+            ($(a.north west)+(0pt,0)$) |- ($(a.south east)+(-3pt,-3pt)$);
+            \draw[myColor1] ($(a.south west)+(0pt,0pt)$)  --
+            (a.south west -| current page text area.north west);
+        }{%
+            \draw[myColor1,line width=1pt]
+            ($(a.north east)+(0pt,0)$) |- ($(a.south west)+(3pt,-3pt)$);
+            \draw[myColor1] ($(a.south east)+(0pt,0pt)$)--
+            (a.south east -| current page text area.north east);
+        }%
     }%
-  }%
 }
 \makeatletter
 \def\myheadcmdempty{
-  \if@mainmatter
-  \else
+    \if@mainmatter
+    % leave empty
+    \else
     \tikz[remember picture]{
     \node[outer xsep=1pt, outer ysep=3pt, inner ysep=0pt,
-      inner xsep=5pt, font=\sffamily] (a) {\pagemark};}%
-      \tikz[remember picture, overlay]{
-      % \ifthenelse{\isodd{\thepage}}{
-      \ifthispageodd{
-        \draw[myColor1,line width=1pt]
-          ($(a.north west)+(0pt,0)$) |- ($(a.south east)+(-3pt,-3pt)$);
-      }{
-        \draw[myColor1,line width=1pt]
-          ($(a.north east)+(0pt,0)$) |- ($(a.south west)+(3pt,-3pt)$);
-      }
+    inner xsep=5pt, font=\sffamily] (a) {\pagemark};}%
+    \tikz[remember picture, overlay]{
+        \ifthispageodd{
+            \draw[myColor1,line width=1pt]
+            ($(a.north west)+(0pt,0)$) |- ($(a.south east)+(-3pt,-3pt)$);
+        }{
+            \draw[myColor1,line width=1pt]
+            ($(a.north east)+(0pt,0)$) |- ($(a.south west)+(3pt,-3pt)$);
+        }
     }
-  \fi
+    \fi
 }
 % \else
 %   \def\myheadcmdempty{}
@@ -169,7 +169,7 @@
       % \vspace{1cm}
       \color{myheadLineColor}
       % \sectionrule{0pt}{0pt}{-5pt}{2pt}
-      }  
+      }
   \fi
   \sectionfont{%
     \color{myheadLineColor}
@@ -212,11 +212,11 @@
 \iffalse%tikz variante
   \usepackage[explicit]{titlesec}
   \usepackage{hyphenat}
-   
+
   %define colors
   \definecolor{lightgray}{gray}{0.95}
   \definecolor{darkgray}{gray}{0.5}
-   
+
   %define header image
   \newcommand*\chapterlabel{}
   \titleformat{\chapter}

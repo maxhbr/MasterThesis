@@ -314,7 +314,7 @@ theorem.
 \section{The complete Diagram}\label{sec:theCompleteDiagram}
 If we start with the diagram from Page~\pageref{page:ofPreDiagram}, we can add
 all the defined isomorphisms and rewrite into the following commutative
-diagram of \textbf{isomorphisms of pointed sets}.\PROBLEM[pointed sets?]
+diagram of \textbf{isomorphisms of pointed sets}.
 \begin{center}
   \begin{tikzpicture}
     \pgfmathsetmacro{\dx}{4cm}
@@ -323,7 +323,7 @@ diagram of \textbf{isomorphisms of pointed sets}.\PROBLEM[pointed sets?]
     \pgfmathsetmacro{\mdy}{-1.5cm}
 
     \node (cH) at (-6,3.5) {$\cH(A^0)$};
-    \node (cH2) at ([yshift=-2cm,xshift=2cm]cH) {$G(\!\{t\}\!)\backslash\hat G(A^0)$};
+    \node (cH2) at ([yshift=-\dy]cH) {$G(\!\{t\}\!)\backslash\hat G(A^0)$};
     \node (ProdOfStos) at (-6,-4)
       {$\displaystyle\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$};
     \node (S3P) at ([xshift={\dx},yshift={\dy}]ProdOfStos)
@@ -348,8 +348,8 @@ diagram of \textbf{isomorphisms of pointed sets}.\PROBLEM[pointed sets?]
           \deg(q_j-q_l)\cdot n_j\cdot n_l}$};
 
     \draw[->] (cH2) -- (cH)
-      node[midway,above right] {Cor.~\ref{cor:isomorphyOfClassfset}};
-    \draw[->] (cH) -- (ProdOfStos)
+      node[midway,right] {Cor.~\ref{cor:isomorphyOfClassfset}};
+    \draw[->] (cH2) -- (ProdOfStos)
       node[midway,left] {$g$};
     \draw[->] (cH) -- (StA0)
       node[midway,above] {$\exp_{A^0}$};
@@ -377,6 +377,7 @@ diagram of \textbf{isomorphisms of pointed sets}.\PROBLEM[pointed sets?]
 \end{center}
 Where
 \begin{itemize}
+  \item the map $g$, which arises from the theory of summation
   \item the \textcolor{purple}{purple path} is the isomorphism $h$ from
     Theorem~\ref{thm:mainThm2} and
   \item we denote
@@ -391,4 +392,3 @@ Where
         \prod_{k\in\cK}\prod_{\alpha\in\A}\SSto_\alpha^k(A^0)$.
     \end{itemize}
 \end{itemize}
-\PROBLEM[Der unterste respektiert die Struktur nicht]

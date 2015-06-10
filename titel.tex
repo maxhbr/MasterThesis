@@ -1,8 +1,12 @@
 % \newgeometry{left=3cm,right=3cm}
 
+\KOMAoptions{twoside = false}
 \begin{titlepage}
   \thispagestyle{empty}
-  \includegraphics[width=\textwidth]{logo/Uni_Aug_Logo_IFM_RGB-crop.png}
+  \begin{flushright}
+    \includegraphics[width=0.6\textwidth]{logo/Uni_Aug_Logo_IFM_RGB-crop.png}
+  \end{flushright}
+  \vspace{2cm}
   \newcommand{\Rule}{%
     \textcolor{myheadLineColor}{\rule{\textwidth}{0.5mm}}%
   }
@@ -44,5 +48,6 @@
   \vfill
   \vfill
 \end{titlepage}
+\KOMAoptions{twoside}
 
 % \restoregeometry

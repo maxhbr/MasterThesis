@@ -20,9 +20,9 @@ Boalch's paper~\cite{boalch} (resp.\ his thesis~\cite{thboalch}),
 and Loday-Richaud's paper~\cite{Loday1994}.
 
 Although the language of meromorphic connections is often preferred, we will
-use most of the time the language of systems.
+use the language of systems most of the time.
 Systems are, for example, discussed in the book~\cite{hotta2008} from Hotta et
-al, Loday-Richaud's paper~\cite{Loday1994} and his book~\cite{Loday2014} and
+al, Loday-Richaud's paper~\cite{Loday1994} and her book~\cite{Loday2014} and
 Boalch's publications~\cite{boalch,thboalch}. Another resource \rewrite{might}
 Remy's paper~\cite{Remy2014} be.
 
@@ -139,7 +139,7 @@ depend on the choice of a trivialization.
 \begin{prop}
   \marginnote{\textbf{\cite[Rem.5.2.4]{hotta2008}}\\\cite[Def.4.2.1]{Loday2014}}
   A germ of a meromorphic connection $(\sM,\nabla)$ is the sheaf-theoretic
-  germ (at $t=0$), thus is given by a tuple $(\cM,\nabla)$ where
+  germ (at $t=0$) and thus is given by a tuple $(\cM,\nabla)$ where
   \begin{itemize}
     \item $\cM$ is the germ at $0$ of the holomorphic bundle $\sM$ and thus a
       $\C(\!\{t\}\!)$-vectorspace of dimension $n$, since the ring of germs of
@@ -182,12 +182,8 @@ depend on the choice of a trivialization.
 Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
 Let $A=(a_{jk})_{j,k\in\{1,\dots,n\}}$ be a $n\times n$ matrix with entries in
 $\C(\!\{t\}\!)$ such that the it describes the action of $\nabla$, i.e.\ it
-satisfies
-\[
-  \nabla e_k
-  =
-  -\sum_{1\leq j\leq n} a_{jk}(t)e_j \text{, for every $k\in\{1,\dots,n\}$}\,.
-\]
+satisfies $\nabla e_k=-\sum_{1\leq j\leq n} a_{jk}(t)e_j$, for every
+$k\in\{1,\dots,n\}$.
 \begin{defn}
   The matrix $A$ is called a \emph{connection matrix} of $(\cM,\nabla)$.
 \end{defn}
@@ -318,22 +314,20 @@ following way.
 \begin{rem}
   \marginnote{\cite[129f]{hotta2008}}
   Let $(\cM_1,\nabla_1)$ and $(\cM_2,\nabla_2)$ be meromorphic connections.
-  Then
-  \begin{enumerate}
-    \item $\cM_1\otimes\cM_2$ is endowed with the structure of a meromorphic
-      connection by
-      \[
-        \nabla(u_1\otimes u_2)=\nabla_1u_1\otimes u_2+u_1\otimes\nabla_2u_2
-      \]
-      where $u_i\in\cM_i$ and
-    \item $\Hom_{\C(\!\{t\}\!)}(\cM_1,\cM_2)$ is endowed with the structure of
-      a meromorphic
-      connection by
-      \[
-        (\nabla\phi)(u_1)=\nabla_2(\phi(u_1))-\phi(\nabla_1 u_1)
-      \]
-      where $\phi\in\Hom_{\C(\!\{t\}\!)}(\cM_1,\cM_2)$ and $u_i\in\cM_i$.
-  \end{enumerate}
+  Then $\cM_1\otimes\cM_2$ is endowed with the structure of a meromorphic
+  connection by
+  \[
+  \nabla(u_1\otimes u_2)=\nabla_1u_1\otimes u_2+u_1\otimes\nabla_2u_2
+  \]
+  where $u_i\in\cM_i$.
+  \begin{comment}
+    $\Hom_{\C(\!\{t\}\!)}(\cM_1,\cM_2)$ is endowed with the structure of a
+    meromorphic connection by
+    \[
+    (\nabla\phi)(u_1)=\nabla_2(\phi(u_1))-\phi(\nabla_1 u_1)
+    \]
+    where $\phi\in\Hom_{\C(\!\{t\}\!)}(\cM_1,\cM_2)$ and $u_i\in\cM_i$.
+  \end{comment}
 \end{rem}
 
 \begin{comment}
@@ -350,25 +344,6 @@ following way.
       \nabla(u_1\otimes u_2) &=\nabla_1u_1\otimes u_2+u_1\otimes\nabla_2u_2
       \\&=(\nabla_1u_1)\otimes u_2+u_1\otimes\nabla_2u_2
     \end{align*}
-  \end{proof}
-\end{comment}
-
-\begin{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \subsubsection{Local \rightarrow{} global}
-  \TODO[Maybe see: \cite{sibuya1990Linear} Thm.3.3.1: G. D. Birkhoff]
-  \begin{thm}
-    \TODO[Quelle?]
-    If we start with a germ $(\cM,\nabla)$ of a meromorphic connection there is
-    a unique meromorphic connection $(\sM,\nabla)$ such that
-    \begin{itemize}
-      \item $(\sM,\nabla)$ has only singularities at $0$ and $\infty$
-      \item the singularity at $\infty$ is only \TODO{} and
-      \item $(\cM,\nabla)$ is the germ at $0$ of $(\sM,\nabla)$.
-    \end{itemize}
-  \end{thm}
-  \begin{proof}
-    \TODO{}
   \end{proof}
 \end{comment}
 
@@ -585,7 +560,8 @@ i.e.\ the following proposition holds.
   \marginnote{\cite[854]{Loday1994}}
   Two formal transformations $\hat F_1$ and $\hat F_2$ take $A^0$ into
   equivalent matrices ${}^{\hat F_1}\!A^0$ and  ${}^{\hat F_2}\!A^0$ if and
-  only if there exists $f_0\in G_0(A^0)$ such that $\hat F_1=\hat F_2f_0$
+  only if there exists isotropy $f_0\in G_0(A^0)$ such that
+  $\hat F_1=\hat F_2f_0$
   (cf.~\cite[854]{Loday1994}).
 \end{lem}
 \begin{comment}
@@ -720,7 +696,7 @@ context in~\cite[Sec.II.5]{sabbah2007isomonodromic}.
       \]
       This corresponds to the system satisfied by the function $e^\phi$, since
       $(d-\phi')e^\phi=0$.
-      \begin{s-cor}
+      \begin{s-cor}\label{cor:uniqueAmbassadorForPhi}
         $\cE^\phi$ is determined by the class of $\phi$ in
         $\C(\!\{t\}\!)/\C\{t\}\cong t^{-1}\C[t^{-1}]$. In the following, we
         will only consider the unique ambassador $\phi$ in each class which has
@@ -854,15 +830,17 @@ special form and that this property characterizes models.
 
 Let $(\cM,\nabla)$ be an unramified meromorphic connection which is via some
 $\hat\lambda$ formally isomorphic to some model
-$\cM^{nf}=\bigoplus_{j=1}^s\cE^{\phi_j}\otimes\cR_j$.
+$\cM^{nf}=\bigoplus_{j=1}^s\cE^{\phi_j}\otimes\cR_j$, where we assume that
+$\phi_j\in t^{-1}\C[t^{-1}]$ (cf.~Corollary~\ref{cor:uniqueAmbassadorForPhi}).
 For every $j$ is a connection matrix, corresponding to $\cR_j$ given by
 $\frac{1}{t}L_j$, where $L$ is in Jordan normal form.
 A connection matrix to $\cE^{\phi_j}\otimes\cR_j$ is then by
 $q_j'(t^{-1})\cdot\id_{n_j}+\frac{1}{t}L_j$ given\TODO[(cf.~???)], where
-$q_j(t^{-1})=\phi_j(t)$ and $q_j'(t^{-1})=\frac{d}{dt}\phi_j(t)$\footnote{By
-abuse of notation we denote by $q_j'(t^{-1})$ the derivation
-$\frac{d}{dt}(q_j(t^{-1}))=\left(\left(\frac{d}{dt}q_j\right)\circ t^{-1}\right)
-\cdot\frac{d}{dt}t^{-1}$. The same does apply for $Q'(t^{-1})$.}.
+$q_j(t^{-1})=\phi_j(t)$ is a polynomial in $t^{-1}$ without constant term and
+$q_j'(t^{-1})=\frac{d}{dt}\phi_j(t)$\footnote{By abuse of notation we denote by
+  $q_j'(t^{-1})$ the derivation $\frac{d}{dt}(q_j(t^{-1}))=
+  \left(\left(\frac{d}{dt}q_j\right)\circ t^{-1}\right) \cdot\frac{d}{dt}t^{-1}$.
+  The same does apply for $Q'(t^{-1})$.}.
 A connection matrix for $\cM^{nf}$ is then obtained by
 \begin{align*}
   A^0&= \bigoplus_{j=1}^s
@@ -891,12 +869,9 @@ and $L:=\bigoplus_{j=1}^sL_j$.
 \begin{prop}\label{prop:fundSolBuilder}
   Let $L\in \GL_n(\C)$ be constant and
   $Q(t^{-1})=\diag(q_1(t^{-1}),\dots,q_n(t^{-1}))$ a diagonal matrix of
-  polynomials in $t^{-1}$ where
-  \begin{itemize}
-    \item $L$ is in Jordan normal form and
-    \item the block structure of $L$ is finer then the structure of
-      $Q(t^{-1})$.
-  \end{itemize}
+  polynomials in $t^{-1}$ where $L$ is in Jordan normal form and its block
+  structure is finer then the structure of $Q(t^{-1})$.
+
   The matrix $\cY_0:=t^L e^{Q(t^{-1})}$ is then a fundamental solution of the
   system determined by the matrix
   \[
@@ -909,7 +884,7 @@ and $L:=\bigoplus_{j=1}^sL_j$.
     \item the block structure of $t^L$ is finer then the structure of
       $Q'(t^{-1})$ and thus $t^LQ'(t^{-1})t^{-L}=Q'(t^{-1})$, since
       \begin{itemize}
-        \item $t^L=t^{\bigoplus_{j=1}^sL_j}=\bigoplus_{j=1}^st^L_j$ and
+        \item $t^L=t^{\bigoplus_{j=1}^sL_j}=\bigoplus_{j=1}^st^{L_j}$ and
         \item $Q'(t^{-1})=\frac{d}{dt}\bigoplus_{j=1}q_j(t^{-1})\cdot\id_{n_j}=
           \bigoplus_{j=1}q'_j(t^{-1})\cdot\id_{n_j}$ \,,
       \end{itemize}
@@ -935,24 +910,27 @@ and $L:=\bigoplus_{j=1}^sL_j$.
   \[
     A=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
   \]
-  as possible system matrix.
+  as possible system matrix. But the obtained matrix may not define a matrix,
+  since it could contain entrys, which are not in $\C(\!\{t\}\!)$.
 
-  Let us look at the example:
+  A simple example is:
   $L=\begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix}$
   and
   $Q=\begin{pmatrix} \phi_1 & 0 \\ 0 & \phi_2 \end{pmatrix}$,
-  with
-  $\phi_1\neq\phi_2$.
+  with $\phi_1\neq\phi_2$.
   The matrix $A$ is then
   \begin{align*}
-    A&=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
-    \\&=
+    A  &=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
+    \\ &=
     \begin{pmatrix}
       \phi_1' & (-\phi_1'+\phi_2')\ln(t)
-      \\0 & \phi_2'
+      \\0     & \phi_2'
     \end{pmatrix}
     +
-    \begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix} \frac{1}{t}
+    \begin{pmatrix}
+        \alpha & 1
+        \\ 0   & \alpha
+    \end{pmatrix} \frac{1}{t}
     \notin\gl_n(\C(\!\{t\}\!))
     \,.
   \end{align*}
@@ -963,7 +941,7 @@ formal transformation $\hat F$ and thus we have
   \item a fundamental solution $\hat Ft^L e^{Q(t^{-1})}$ and
   \item a connection matrix ${}^{\hat F}\!A^0$
 \end{itemize}
-of $(\cM,\nabla)$ defined at the beginning of this subsection.
+of $(\cM,\nabla)$, which was defined at the beginning of this subsection.
 \begin{cor}
   From the Levelt-Turittin theorem we deduce that every meromorphic connection
   $(\cM,\nabla)$ and thus every system $[A]$ has a fundamental solution of the
@@ -971,8 +949,9 @@ of $(\cM,\nabla)$ defined at the beginning of this subsection.
   \[
     \mathcal{Y}=\hat F t^L e^{Q(t^{-1})}
   \]
-  where $\hat F$ is a formal transformation, solving the equation corresponding
-  to the formal isomorphism $(\cM^{nf},\nabla^{nf})\to(\cM,\nabla)$.
+  where $\hat F$ is a formal transformation, solving the differentia equation
+  corresponding to the formal isomorphism
+  $(\cM^{nf},\nabla^{nf})\to(\cM,\nabla)$.
   In the other way is a system, which has $\cY$ as fundamental solution is
   given by
   \[
@@ -1265,7 +1244,7 @@ expansion.
 \end{defn}
 The following theorem, often called the main asymptotic existence theorem, can
 be for example found in as Theorem A in the paper~\cite{BJL1979Birkhoff} from
-Balser, Jurkat and Lutz, Theorem 3.1 in Boalch's paper~\cite[Thm.3.1]{boalch}
+Balser, Jurkat and Lutz, Theorem 3.1 in Boalch's paper~\cite{boalch}
 or Theorem 4.4.1 in Loday-Richaud's Book~\cite{Loday2014}.
 \begin{thm}[M.A.E.T]\label{thm:maet}
   To every $\hat F\in G(\!(t)\!)$ and to every small enough arc
@@ -1431,8 +1410,8 @@ after formalization\PROBLEM[?].
   \marginnote{\url{http://mathworld.wolfram.com/Stabilizer.html}}
   Since $G_0(A^0)$ is by definition the stabilizer of $A^0$ (cf.\
   definition~\ref{defn:isotropies}) and $\Syst_m(A^0)$ is the corresponding
-  orbit we can use the Proposition~\cite[Prop.3.1]{wielandt1964finite} in the
-  book from Wielandt we deduce
+  orbit we can use the Proposition 3.1 in the
+  book~\cite{wielandt1964finite} from Wielandt and deduce
   \[
     \Syst_m(A^0)\cong \hat G(A^0)/G_0(A^0) \,.
   \]
@@ -1443,14 +1422,14 @@ after formalization\PROBLEM[?].
     \[
       {}^0C(A^0)\cong G(\!\{t\}\!)\backslash\hat G(A^0)/G_0(A^0)
     \]
-    whereas the \emph{set of meromorphic classes of transformations $\cH(A^0)$
+    whereas the \emph{set of meromorphic classes of marked pairs $\cH(A^0)$
     of $[A^0]$} is canonically isomorphic to the left quotient
     $G(\!\{t\}\!)\backslash\hat G(A^0)$ (cf.\ \cite[Lem.1.17]{thboalch}).
   \end{s-cor}
 \end{lem}
 
 The group $G_0(A^0)$ is easy to compute and is often trivial. In fact, the
-elements are block-diagonal\TODO[corresponding to the structure of $Q$],
+elements are block-diagonal corresponding to the structure of $Q$,
 see~\cite[77]{Loday2014}.
 Thus the structure of ${}^0C(A^0)$ is easily deduced from the structure of
 $G(\!\{t\}\!)\backslash\hat G(A^0)$.

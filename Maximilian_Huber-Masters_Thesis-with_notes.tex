@@ -102,6 +102,7 @@
   \frontmatter
   \input{titel.tex}
   \newpage \thispagestyle{empty} \mbox{}
+  \setcounter{page}{0}
 \else
   \mainmatter
 \fi
@@ -127,9 +128,9 @@
 \input{asymptotic.tex}
 \fi
 
-% \ifnum\myDevelopVariable=0
+\ifnum\myDevelopVariable=0
 \input{meromZsh.tex}
-% \fi
+\fi
 
 % \ifnum\myDevelopVariable=0
 \input{stokes.tex}

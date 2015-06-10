@@ -15,7 +15,7 @@ $\cY_0(t)=t^Le^{Q(t^{-1})}$ (cf.\ Proposition~\ref{prop:fundSolBuilder}), where
 Let $\left\{q_1(t^{-1}),\dots,q_s(t^{-1})\right\}$ be the \emph{set of all
 determining polynomials of $[A^0]$} and denote by
 \[
-  \cQ(A^0):=\left\{\left(q_j-q_l\right)(t^{-1})
+  \cQ(A^0):=\left\{q_j-q_l
     \mid
     \text{$q_j$ and $q_l$ determining polynomials of $[A^0]$, } q_j \neq q_l
   \right\}
@@ -100,7 +100,6 @@ order relations:
         $e^{(q_j-g_l)(t^{-1})}$ is of maximal decay in the direction
         $\tilde\theta$.
       \end{einr}
-      \TODO[maybe replace by $\prec\!\!\!\prec$]
   \end{itemize}
   \begin{s-rem}
     In the unramified case do these relations not depend on the determination
@@ -211,7 +210,7 @@ part of $f$.
     \draw[->,blue!50!white,thick] (n3) to[out=150,in=270] (g0);
     \draw[->,purple!50!white,thick] (n2) to[out=240,in=70] (f-1);
     \draw[->,purple!50!white,thick] (n2) to[out=265,in=120] (f0);
-    \draw[->,purple!50!white,thick] (n2) to[out=280,in=70] (f1);
+    \draw[->,purple!50!white,thick] (n2) to[out=270,in=70] (f1);
     \draw[->,blue!50!white,thick] (n1) to[out=180,in=270] (e-1);
     \draw[->,blue!50!white,thick] (n1) to[out=170,in=270] (e0);
     \draw[->,blue!50!white,thick] (n1) to[out=160,in=270] (e1);
@@ -244,35 +243,31 @@ thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
 \begin{defn}\label{defn:antiStokesDir}
   % \marginnote{See \cite[Def.I.4.5]{Loday1994}(for the ramified case)
   %   \cite[Def.3.2]{boalch}}
+  Let $\theta\in S^1$ be an direction.
   \begin{enumerate}
-    \item $\alpha$ is an \emph{anti-Stokes direction} if there is at least one
-      pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies $q_j\myrel{\alpha}q_l$.
-      \begin{itemize}
-        \item Let $\A=\{\alpha_1,\dots,\alpha_{\nu}\}$ denote the set of all
-          anti-Stokes directions in a clockwise ordering. For a uniform
-          notation later, \rewrite{define $\A$ to contain a single, arbitrary
-          direction if $\cK=\{0\}$.}
-          \TODO[Is this used somewhere??]
-          \begin{s-rem}
-            The clockwise ordering is chosen, similar to Loday-Richaud's paper
-            \cite{Loday1994}, since the calculations are then compatible with
-            the calculations, which look at $\infty$ and take a
-            counterclockwise ordering.
-            Boalch uses in \cite{boalch} and \cite{thboalch} the inverse
-            ordering, but looks also at $0$, thus there \rewrite{might be some}
-            incompatibilities.
-            In Loday-Richaud's book \cite{Loday2014} this problem is solved by
-            an additional minus sign for some koefficients\comm{~to $a_{ij}$}.
-            \PROBLEM[mentioned to often?]
-          \end{s-rem}
-      \end{itemize}
+    \item $\theta$ is an \emph{anti-Stokes direction} if there is at least one
+      pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies $q_j\myrel{\theta}q_l$.
+
+      Let $\A=\{\alpha_1,\dots,\alpha_{\nu}\}$ denote the set of all
+      anti-Stokes directions in a clockwise ordering. For a uniform
+      notation later, \rewrite{define $\A$ to contain a single, arbitrary
+        direction if $\cK=\{0\}$.}
+      \begin{s-rem}
+        The clockwise ordering is chosen, similar to Loday-Richaud's paper
+        \cite{Loday1994}, since the calculations are then compatible with
+        the calculations, which look at $\infty$ and take a
+        counterclockwise ordering.
+        Boalch uses in \cite{boalch} and \cite{thboalch} the inverse
+        ordering, but looks also at $0$, thus there \rewrite{might be some}
+        incompatibilities.
+        In Loday-Richaud's book \cite{Loday2014} this problem is solved by
+        an additional minus sign for some koefficients.
+      \end{s-rem}
     \item $\theta$ is a \emph{Stokes direction} if there is at least one pair
       $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies neither
       $q_j\underset{\theta}{\prec} q_l$ nor $q_l\underset{\theta}{\prec} q_j$.
-      \begin{itemize}
-        \item Let $\S=\{\sigma_1<\cdots<\sigma_\mu\}$ be the set of Stokes
-          directions.
-      \end{itemize}
+
+      Let $\S=\{\sigma_1<\cdots<\sigma_\mu\}$ be the set of Stokes directions.
   \end{enumerate}
 \end{defn}
 We will use the greek letter $\alpha$ whenever we want to emphasize that a
@@ -290,7 +285,10 @@ $\alpha\in\A$.
   degree $k_{jl}$, such that $q_j\myrel{\alpha}q_l$ be given.
   We then know for every $m\in\N$ that
   \[
-    \underset{=:\alpha'}{\underbrace{\alpha+m\frac{\pi}{k_{jl}}}} \in \A \,.
+  \underset{\alpha'}{
+    \underset{\text{\rotatebox[origin=c]{-90}{$=:$}}}{%
+      \underbrace{\alpha+m\frac{\pi}{k_{jl}}}}}
+  \in \A \,.
   \]
   Especially is either $q_j\myrel{\alpha'}q_l$ (in the case, when $m$ is even)
   or $q_l\myrel{\alpha'}q_j$ (when $m$ is uneven) satisfied
