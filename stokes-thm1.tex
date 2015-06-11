@@ -243,12 +243,13 @@ We will start by proofing the injectivity of the morphism $\exp$.
     \text{~on~the~arc~} U_j\cap U_l \,,
   \]
   which can be rewritten to
-  \[
-    F_j'G_jF_j^{-1} = F_l'G_lF_l^{-1}
-    \text{~on~the~arc~} U_j\cap U_l \,.
-  \]
+  \begin{equation}\label{eq:inProofOfTHM1Glue}
+    F_j'G_jF_j^{-1} = F_l'G_lF_l^{-1} \text{~on~the~arc~} U_j\cap U_l \,.
+  \end{equation}
   If we set $H_j:=F_j'G_{j}F_j^{-1}$ on $U_{j}$, we get
   \begin{itemize}
+    \item that from equation (\ref{eq:inProofOfTHM1Glue}) that the $H_j$ glue
+      together and yield a meromorphic $H$\PROBLEM[holomorphic??],
     \item that $H_j$ is a solution of $[A,A']$ on every $U_j$, i.e.\ it
       satisfies there ${}^{H_j}A=A'$, since
       \begin{align*}
@@ -387,9 +388,9 @@ It can be verified, that the class $\Theta([\hat F])$ does not depend on
   punctured disc with a small radius) into $\gl_n(\C)$, which will be called
   $G$.
   Since $F_j'G_jF_j^{-1}\sim_{U_j}\id$ for all $j\in J$, we have
-  $G\sim\id$.
-  \PROBLEM[Riemannscher hebbarkeits satz]
-  Thus the defined $G$ satisfies $G=F'^{-1}F$, so that $[F]=[F']$.
+  $G\sim_{S^1}\id$.
+  Thus the defined $G$ meromorphic at $0$ and satisfies $G=F'^{-1}F$, so that
+  $[F]=[F']$.
 \end{proof}
 \begin{thm}[Malgrange-Sibuya]\label{thm:thm1helpMalgSibuy}
   The map $\Theta:G(\!(t)\!)/G(\!\{t\}\!)\to H^1(S^1;\cG)$ is an isomorphism.

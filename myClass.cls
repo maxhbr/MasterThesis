@@ -12,6 +12,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \LoadClassWithOptions{scrbook}
+\KOMAoptions{paper = a4}
+\KOMAoptions{numbers = noenddot} % obsolete
+\KOMAoptions{parskip = half*}
+
+\textheight240mm
+\voffset6mm
+% \textwidth160mm
+% \evensidemargin14pt
+% \oddsidemargin5pt
+
+% \usepackage[scale=0.75]{geometry}
+% \usepackage{geometry}
+% \usepackage[
+% %     % paperwidth=210mm
+% %     % ,paperheight=245mm
+% %     ,top=10mm
+% %     ,bottom=25mm
+% %     ,inner=10mm
+% %     ,outer=80mm
+%      headsep=40pt %21pt
+%     ,evensidemargin=50pt %36pt
+%     ,marginparsep=12pt
+%     ,marginparwidth=81pt
+%     ]{geometry}
+
+\setlength{\unitlength}{1mm}
+%\emergencystretch 2em
+%\usepackage{multicol}
 
 %%%% General
 \clubpenalty = 10000
@@ -108,13 +136,17 @@
         \ifthispageodd{
             \draw[myColor1,line width=1pt]
             ($(a.north west)+(0pt,0)$) |- ($(a.south east)+(-3pt,-3pt)$);
+            \if@mainmatter
             \draw[myColor1] ($(a.south west)+(0pt,0pt)$)  --
             (a.south west -| current page text area.north west);
+            \fi
         }{%
             \draw[myColor1,line width=1pt]
             ($(a.north east)+(0pt,0)$) |- ($(a.south west)+(3pt,-3pt)$);
+            \if@mainmatter
             \draw[myColor1] ($(a.south east)+(0pt,0pt)$)--
             (a.south east -| current page text area.north east);
+            \fi
         }%
     }%
 }
@@ -142,20 +174,15 @@
 \makeatother
 
 %%%%  Layout  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \usepackage[scale=0.75]{geometry}
-% \usepackage{geometry}
-\setlength{\unitlength}{1mm}
-%\emergencystretch 2em
-%\usepackage{multicol}
 \usepackage{lscape} % alt: pdflscape
 
 \allowdisplaybreaks
 
-\ifnum\myDevelopVariable=1
+% \ifnum\myDevelopVariable=1
   \usepackage{sectsty}
   \makeatletter\def\@seccntformat#1{%
     \protect\makebox[0pt][r]{\csname the#1\endcsname\hspace{12pt}}}\makeatother
-\fi
+% \fi
 
 \renewcommand*{\thefootnote}{[\arabic{footnote}]}
 

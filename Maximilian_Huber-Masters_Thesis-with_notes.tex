@@ -2,38 +2,25 @@
 \IfSubStr{\jobname}{\detokenize{with_notes}}{%
   % The case with comments
   \xdef\myDevelopVariable{1}
-  \documentclass[ngerman
+  \xdef\myHideVariable{1}
+  \documentclass[fleqn
     ,fontsize=12pt % TODO
-    ,numbers=noenddot % obsolete
-    %,headsepline
-    ,parskip=half*
+    ,DIV=13
+    ,BCOR=8mm
     ,openany
-    ,DIV=11
-    ,fleqn % mv align to left
-    % ,oneside
-    %,titelpage % unused
-    %,biblography=totoc  % unused
-    %,landscape,twocolumn
-    % ,draft
   ]{./myClass}
 }{%
   \xdef\myDevelopVariable{0}
-  \documentclass[ngerman
+  \xdef\myHideVariable{0}
+  \documentclass[fleqn
     ,fontsize=12pt % TODO
-    ,numbers=noenddot % obsolete
-    %,headsepline
-    ,parskip=half*
+    ,DIV=13
+    ,BCOR=8mm
     ,openany
-    ,DIV=11
-    ,fleqn % mv align to left
-    % ,oneside
-    %,titelpage % unused
-    %,biblography=totoc  % unused
-    %,landscape,twocolumn
-    % ,draft
   ]{./myClass}
-  % \usepackage{showframe}
 }
+% \usepackage{showframe}
+\usepackage{layout}
 
 \bibliography{literatur.bib}
 
@@ -86,14 +73,10 @@
     }{\theta}
   }
 \newcommand{\myrel}[1]{\underset{#1}{%
-    % \mathchoice{\textcolor{red}{\myrelPrimeB{2.41pt}{.62em}}}
     \mathchoice{\myrelPrimeB{1.3125pt}{.70em}}
       {\myrelPrime{1.56pt}{.54em}}
       {\myrelPrime{.975pt}{.45em}}
       {\textcolor{red}{\myrelPrime{3pt}{.54em}}}
-    % \scalerel*{\mathlarger{\mathlarger{\prec}}
-    % \!\!\!\raisebox{1.5pt}{$\mathsmaller{\prec}$}}{\prec}
-    % \mathaccent{+}\prec
 }}
 
 \begin{document}
@@ -112,10 +95,10 @@
   \today
 \end{comment}
 
-\ifnum\myDevelopVariable=0
+\ifnum\myHideVariable=0
   \input{einleitung.tex}
 \fi
-\ifnum\myDevelopVariable=0
+\ifnum\myHideVariable=0
   \input{symbols.tex}
 \fi
 
@@ -124,15 +107,15 @@
   \mainmatter
 \fi
 
-\ifnum\myDevelopVariable=0
+% \ifnum\myHideVariable=0
 \input{asymptotic.tex}
-\fi
+% \fi
 
-\ifnum\myDevelopVariable=0
+% \ifnum\myHideVariable=0
 \input{meromZsh.tex}
-\fi
+% \fi
 
-% \ifnum\myDevelopVariable=0
+% \ifnum\myHideVariable=0
 \input{stokes.tex}
 % \fi
 
@@ -141,7 +124,7 @@
 %\addcontentsline{toc}{chapter}{Schluss}
 %\input{schluss.tex}
 
-\ifnum\myDevelopVariable=0
+\ifnum\myHideVariable=0
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \appendix
     \addcontentsline{toc}{chapter}{Appendix}
@@ -172,5 +155,9 @@
     %\input{github.tex}
 \fi
 
+\ifnum\myDevelopVariable=1
+  \pagebreak
+  \layout
+\fi
 \end{document}
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:

@@ -42,7 +42,8 @@ nerves of such coverings, which are defined as follows.
       $\cU=\left(U_j=U(\theta_j,\epsilon_j)\right)_{j\in J}$ consisting of
       arcs, which satisfies that
       \begin{enumerate}
-        \item $\tilde\theta_j \geq \tilde\theta_{j+1}$ for $j\in\{1,\dots,p-1\}$,
+        \item $\tilde\theta_j \geq \tilde\theta_{j+1}$ for
+          $j\in\{1,\dots,p-1\}$, i.e.\ the center points are ordered and
         \item $\tilde\theta_j+\frac{\epsilon_j}{2}\geq
           \tilde\theta_{j+1}+\frac{\epsilon_{j+1}}{2}$ for
           $j\in\{1,\dots,p-1\}$ and
@@ -655,81 +656,77 @@ This means that
 \end{lem}
 \begin{proof}
   \begin{enumerate}
-    \item The map
-      \[ \begin{tikzcd}
-        i^k: \underset{\alpha\in\A}\prod\Sto_\alpha^k(A^0)
-        \rar &
-        \underset{\Gamma(\dot\cU^k;\Lambda^k(A^0))}{%
-          \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-            \underbrace{%
-              \prod_{\alpha\in\A^k}\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))
-            }
+  \item The map
+    \[ \begin{tikzcd}
+      i^k: \underset{\alpha\in\A}\prod\Sto_\alpha^k(A^0)
+      \rar &
+      \underset{\Gamma(\dot\cU^k;\Lambda^k(A^0))}{%
+        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+          \underbrace{%
+            \prod_{\alpha\in\A^k}\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))
+          }
         }}
-      \end{tikzcd} \]
-      is welldefined, since the sections of $\Lambda^k(A^0)$ are solution of
-      the system $[A^0,A^0]$ and it is very well known from the theory of
-      differential equations\TODO[source?] that an element
-      $f_\alpha\in\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))$ is uniquely
-      determined as the extension of its germ at some point $\alpha$.
+    \end{tikzcd} \]
+    is welldefined, since the sections of $\Lambda^k(A^0)$ are solution of
+    the system $[A^0,A^0]$ and it is very well known from the theory of
+    differential equations\TODO[source?] that an element
+    $f_\alpha\in\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))$ is uniquely
+    determined as the extension of its germ at some point $\alpha$.
 
-      It is also a group isomorphism (cf.~\cite{Loday1994}).
-
-      \PROBLEM[$\Sto_\alpha^k(A^0)\subsetneq\Lambda_\alpha^k(A^0)$ SEE bjl p.72]
-      \begin{comment}
-        It is a group isomorphism, since
-        \\Problems:
-        \begin{itemize}
-          \item Show that a element of $\Lambda_\alpha^k(A^0)$ is extensionable
-            to the arc $U_\alpha\in\dot\cU_\alpha^k$ if and only if it has
-            maximal decay in direction $\alpha$.
-          \item \PROBLEM[$\Sto_\alpha^k(A^0)\subsetneq\Lambda_\alpha^k(A^0)$]
-            and thus
-            \[
-              i^k:
-              \underset{\alpha\in\A}\prod\Sto_\alpha^k(A^0)
-              \subsetneq
-              \underset{\alpha\in\A}\prod\Lambda_\alpha^k(A^0)
-              \to
-              \prod_{\alpha\in\A^k}\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))
-            \]
-        \end{itemize}
-        IDEAS:
-        \begin{itemize}
-          \item Are sections fully determined by there germs at some points?
-          \item $U_\alpha^k$ is the largest arc, to contain no corresponding
-            Stokes ray
-            \begin{itemize}
-              \item Then might \cite[Lemma 1]{BJL1979Birkhoff} on p.\ 73 help
-            \end{itemize}
-          \item Every arc $U\in\dot\cU_\alpha^k$ has the width $\frac{\pi}{k}$
-            and is delimited by Stokes directions.
-          \item \textbf{See \cite{babbitt1989local}}
-          \item See \cite[375]{Martinet1991} and
-            \textbf{\cite[Def.5 on 372]{Martinet1991}}
-          \item \textbf{\textcolor{green}{\cite[72]{babbitt1989local}}}
-          \item or maybe \cite{wasow2002asymptotic}
-        \end{itemize}
-      \end{comment}
-    \item The second map
-      \[ \begin{tikzcd}
-        s^k:
-        \overset{\Gamma(\dot\cU^k;\Lambda^k(A^0))}{%
-          \overset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-            \overbrace{%
-              \prod_{\alpha\in\A^k}\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))
-            }
-        }}
-        \rar &
-        H^1(S^1;\Lambda^k(A^0))
-      \end{tikzcd} \]
-      is a bijection, \rewrite{since} from
-      Proposition~\ref{prop:adequateProperties} we know that it is
+    It is also a isomorphism groups (cf.~\cite{Loday1994}).
+    \begin{comment}
+      Problems:
       \begin{itemize}
-        \item \textbf{surjective}, \rewrite{since} $\cU^k$ is adequate to
-          $\Lambda^k(A^0)$ and
-        \item \textbf{injective}, \rewrite{since} on $\cU^k$ there is no
-          $0$-cochain in $\Lambda^k(A^0)$.
+      \item Show that a element of $\Lambda_\alpha^k(A^0)$ is extensionable
+        to the arc $U_\alpha\in\dot\cU_\alpha^k$ if and only if it has
+        maximal decay in direction $\alpha$.
+      \item \PROBLEM[$\Sto_\alpha^k(A^0)\subsetneq\Lambda_\alpha^k(A^0)$]
+        and thus
+        \[
+        i^k:
+        \underset{\alpha\in\A}\prod\Sto_\alpha^k(A^0)
+        \subsetneq
+        \underset{\alpha\in\A}\prod\Lambda_\alpha^k(A^0)
+        \to
+        \prod_{\alpha\in\A^k}\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))
+        \]
       \end{itemize}
+      Facts:
+      \begin{itemize}
+      \item Every arc $U\in\dot\cU_\alpha^k$ has the width $\frac{\pi}{k}$
+        and is delimited by Stokes directions, i.e.\ is $U_\alpha^k$ the largest
+        arc, to contain no \textbf{corresponding} Stokes ray
+        \begin{einr}
+          Then might \cite[Lemma 1]{BJL1979Birkhoff} on page 72-73 help? \textbf{NO!}
+        \end{einr}
+      \end{itemize}
+      IDEAS:
+      \begin{itemize}
+      \item See \cite[375]{Martinet1991} and
+        \textbf{\cite[Def.5 on 372]{Martinet1991}}
+      \item \textbf{See \cite{babbitt1989local}} and
+        \textbf{\textcolor{green!60!black}{\cite[72]{babbitt1989local}}}
+      \item or maybe \cite{wasow2002asymptotic}
+      \end{itemize}
+    \end{comment}
+  \item The second map
+    \[ \begin{tikzcd}
+      s^k:
+      \overset{\Gamma(\dot\cU^k;\Lambda^k(A^0))}{%
+        \overset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+          \overbrace{%
+            \prod_{\alpha\in\A^k}\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))}}}
+      \rar &
+      H^1(S^1;\Lambda^k(A^0))
+    \end{tikzcd} \]
+    is a bijection, \rewrite{since} from
+    Proposition~\ref{prop:adequateProperties} we know that it is
+    \begin{itemize}
+    \item \textbf{surjective}, \rewrite{since} $\cU^k$ is adequate to
+      $\Lambda^k(A^0)$ and
+    \item \textbf{injective}, \rewrite{since} on $\cU^k$ there is no
+      $0$-cochain in $\Lambda^k(A^0)$.
+    \end{itemize}
   \end{enumerate}
   \PROBLEM[Show that this is the correct $h$]
   \PROBLEM[Naturality?]
