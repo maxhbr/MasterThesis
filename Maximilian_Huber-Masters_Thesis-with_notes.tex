@@ -2,7 +2,7 @@
 \IfSubStr{\jobname}{\detokenize{with_notes}}{%
   % The case with comments
   \xdef\myDevelopVariable{1}
-  \xdef\myHideVariable{1}
+  \xdef\myHideVariable{0}
   \documentclass[fleqn
     ,fontsize=12pt % TODO
     ,DIV=13
@@ -83,7 +83,7 @@
 
 \ifnum\myDevelopVariable=0
   \frontmatter
-  \input{titel.tex}
+  \input{chp0-titel.tex}
   \newpage \thispagestyle{empty} \mbox{}
   \setcounter{page}{0}
 \else
@@ -96,27 +96,48 @@
 \end{comment}
 
 \ifnum\myHideVariable=0
-  \input{einleitung.tex}
+  \input{chp0-introduction.tex}
 \fi
 \ifnum\myHideVariable=0
-  \input{symbols.tex}
+  \input{chp0-symbols.tex}
 \fi
+\KOMAoptions{open=right}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifnum\myDevelopVariable=0
   \mainmatter
 \fi
 
+\ifnum\myHideVariable=0
+\input{chp1-asymptotic_expansions.tex}
+\fi
+
 % \ifnum\myHideVariable=0
-\input{asymptotic.tex}
+\input{chp2-meromorphic_connections.tex}
 % \fi
 
 % \ifnum\myHideVariable=0
-\input{meromZsh.tex}
-% \fi
+\input{chp3-Stokes_structures.tex}
 
-% \ifnum\myHideVariable=0
-\input{stokes.tex}
+    % \ifnum\myHideVariable=0
+    \input{chp3sec1-thm1.tex}
+    % \fi
+
+    \ifnum\myHideVariable=0
+    \input{chp3sec2-Stokes_groups.tex}
+    \fi
+
+    % \ifnum\myHideVariable=0
+    \input{chp3sec3-thm2.tex}
+    % \fi
+
+    % \ifnum\myHideVariable=0
+    \input{chp3sec4-further_improvements.tex}
+    % \fi
+
+    % \ifnum\myHideVariable=0
+    \input{chp3sec5-diagram.tex}
+    % \fi
 % \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -155,9 +176,9 @@
     %\input{github.tex}
 \fi
 
-\ifnum\myDevelopVariable=1
-  \pagebreak
-  \layout
-\fi
+% \ifnum\myDevelopVariable=1
+%   \pagebreak
+%   \layout
+% \fi
 \end{document}
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:

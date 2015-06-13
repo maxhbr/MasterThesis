@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Poincarè asymptotic expansions}
+\chapter{Poincaré asymptotic expansions}
 \begin{comment}
   \begin{multicols}{2}
     ´classical'
@@ -24,8 +24,8 @@
   \end{multicols}
   \TODO[\cite{sibuya1990Linear} Appendix A.3]
 \end{comment}
-In this chapter, we want to look at Poincarè asymptotic expansions (at $t_0$),
-or for short, asymptotic expansions (at $t_0$).
+In this chapter, we want to look at Poincaré asymptotic expansions (at $t_0$),
+or for short, asymptotic expansions.
 There are \rewrite{various literature references} for asymptotic expansions.
 We will mostly refer to Loday-Richaud's book~\cite[chapter 2]{Loday2014},
 \cite[XI-1-13]{hsieh2012basic} from Hsieh and Sibuya and the
@@ -102,7 +102,7 @@ We introduce the following notations:
 \begin{rem}\label{rem:arcsByWidthAndCenter}
   Since the explicit value $r$ of the radius does not matter as long as it is
   small enough, we shall simply speak of an \emph{arc} or \emph{interval} $I$
-  as $\mathfrak{s}_I(r)$ for small enough $r$.
+  as $\mathfrak{s}_I(r)$ for a small enough $r$.
   \\It will be sometimes convenient to talk of arcs
   \[
     U(\theta,\epsilon):=\left(\theta-\frac{\epsilon}{2}
@@ -168,6 +168,21 @@ If $f$ has $\hat f$ as asymptotic expansion on the sector $\mathfrak{s}$ (or on
 the interval $I\subset S^1$, or in the direction $\theta$), we denote that by
 $f\sim_{\mathfrak{s}}\hat f$ (or $f\sim_{I}\hat f$, or
 $f\sim_{\theta}\hat f$).\label{page:notationForAsymptoticExpansion}
+
+The following proposition gives equivalent characterizations of asymptotic
+expansions.
+\begin{prop}
+  Let $f\in\O(\mathfrak{s})$ then are the following statements
+  \begin{enumerate}
+  \item $f\sim_{\mathfrak{s}}\hat f=\sum_{n\geq n_0}a_nt^n$,
+  \item the function $f$ is infinitely often differential at the origin and
+    $f^{(n)}(0)=n!a_n$ for $n\geq0$ and
+  \item all derivatives $f^{(n)}(t)$ are continous at the origin and
+    $\lim_{\substack{t\to0\\t\in\mathfrak{s}}}f^{(n)}(t)=n!a_n$
+  \end{enumerate}
+  equivalent (cf.~\cite[4.4.Prop.8]{balser2000formal}).
+\end{prop}
+
 \begin{defn}
   \begin{enumerate}
     \item Define $\cA(\mathfrak{s})$ as the set of holomorphic functions
@@ -238,56 +253,7 @@ It can easily be seen that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
 \end{exmp}
 For many more extensively discussed examples, like the Euler function or the
 exponential integral, see Loday-Richaud's book \cite[Sec.2.2]{Loday2014}.
-\begin{comment}
-  \begin{exmp}[Fundamental example: the Euler function]
-    \marginnote{\cite[Exmp.2.2.4]{Loday2014}}
-    Consider the Euler equation
-    \begin{equation}
-      x^2\frac{dy}{dx}+y=x \,.
-    \end{equation}
-    \TODO[]
-  \end{exmp}
-  \begin{exmp}[Classical example: the exponential integral]
-    \marginnote{\cite[Exmp.2.2.5]{Loday2014}}
-    Consider the exponential integral
-    \begin{equation}
-      Ei(x)=\int_x^{+\infty}e^{-t}\frac{dt}{t} \,.
-    \end{equation}
-    \TODO[]
-  \end{exmp}
-  \begin{exmp}[A generalized hypergeometric series ${}_3F_0$]
-    \marginnote{\cite[Exmp.2.2.6]{Loday2014}}
-    \TODO[]
-  \end{exmp}
-  \begin{exmp}[A series of a mild difference equation]
-    \marginnote{\cite[Exmp.2.2.7]{Loday2014}}
-    \TODO[]
-  \end{exmp}
-  \begin{exmp}[A series of a wild difference equation]
-    \marginnote{\cite[Exmp.2.2.8]{Loday2014}}
-    \TODO[]
-  \end{exmp}
-\end{comment}
 
-\begin{comment}
-  \begin{prop}
-    \marginnote{\cite[4.5.Prop.9]{Balser2000Formal}}
-    The following statements are equivalent:
-    \begin{enumerate}
-      \item $f\sim_{\mathfrak{s}}\hat f$;
-      \item All derivations $f^{(n)}(t)$ are continuous at the origin, and for
-        every proper sub-sector $\bar{\mathfrak{s}}'\Subset\mathfrak{s}$ there
-        exist constants $c$, $K$ such that
-        \[
-          \frac{1}{n!}\sup_{t\in\bar{\mathfrak{s}}'}
-          \left\Vert f^{(n)}(t) \right\Vert
-          \leq cK^n
-          \Gamma(1+n)
-        \]
-        for every $n\geq 0$.
-    \end{enumerate}
-  \end{prop}
-\end{comment}
 \begin{prop}\label{prop:optionsOfAsymptoticExp}
   \marginnote{\cite[II.2.2.4]{sabbah_cimpa90}i
              ,\cite[XI-1-11]{hsieh2012basic}}

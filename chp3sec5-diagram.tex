@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The complete Diagram}\label{sec:theCompleteDiagram}
+If we start with the diagram from Page~\pageref{page:ofPreDiagram}, we can add
+all the defined isomorphisms and rewrite into the following commutative
+diagram of \textbf{isomorphisms of pointed sets}.
+\begin{center}
+  \begin{tikzpicture}
+    \pgfmathsetmacro{\dx}{4cm}
+    \pgfmathsetmacro{\ldx}{6cm}
+    \pgfmathsetmacro{\dy}{2.5cm}
+    \pgfmathsetmacro{\mdy}{-1.5cm}
+
+    \node (cH) at (-6,3.5) {$\cH(A^0)$};
+    \node (cH2) at ([yshift=-\dy]cH) {$G(\!\{t\}\!)\backslash\hat G(A^0)$};
+    \node (ProdOfStos) at (-6,-4)
+      {$\displaystyle\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$};
+    \node (S3P) at ([xshift={\dx},yshift={\dy}]ProdOfStos)
+      {$\displaystyle\prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_{\alpha}^{k}(A^0)$};
+    \node (S2P) at ([xshift={\dx},yshift={\dy}]S3P)
+      {$\displaystyle\prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))$};
+    \node (StA0) at ([xshift={\dx},yshift={\dy}]S2P)
+      {$\St(A^0)$};
+    \node (ProdOfSStos) at ([yshift=-{\dy}]ProdOfStos)
+      {$\displaystyle\prod_{\alpha\in\A}\SSto_{\alpha}(A^0)$};
+    \node (SS3P) at ([yshift=-{\dy}]S3P)
+      {$\displaystyle\prod_{k\in\cK}\prod_{\alpha\in\A}\SSto_{\alpha}^{k}(A^0)$};
+    \node (SS2P) at ([yshift={\mdy},xshift={\ldx}]S3P)
+      {$\displaystyle\prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
+        \hat\Sto_{\theta+j\frac{\pi}{k}}^k(A^0)$};
+    \node (SSS2P) at ([yshift={\mdy},xshift={\ldx}]SS3P)
+      {$\displaystyle\prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
+        \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)$};
+    \node[] (SSS3P) at ([yshift={\mdy},xshift={\ldx}]ProdOfSStos)
+      {$\displaystyle\prod_{\alpha\in\A}
+        \C^{\sum_{q_j\myrel{\alpha}q_l}
+          \deg(q_j-q_l)\cdot n_j\cdot n_l}$};
+
+    \draw[->] (cH2) -- (cH)
+      node[midway,right] {Cor.~\ref{cor:isomorphyOfClassfset}};
+    \draw[->] (cH2) -- (ProdOfStos)
+      node[midway,left] {$g$};
+    \draw[->] (cH) -- (StA0)
+      node[midway,above] {$\exp_{A^0}$};
+    \draw[->,purple] (ProdOfStos) -- (S3P)
+      node[midway,above left] {\rewrite{$\displaystyle\chi\circ\prod_{\alpha\in\A}i_\alpha$}};
+    \draw[->,purple] (S3P) -- (S2P)
+      node[midway,above left] {$\prod_{k\in\cK}i^k$};
+    \draw[->,purple] (S2P) -- (StA0)
+      node[midway,above left] {$\cT$};
+    \draw[->] (ProdOfStos) -- (ProdOfSStos)
+      node[midway,left] {$\prod_{\alpha\in\A}\rho_\alpha$};
+    \draw[->] (ProdOfSStos) -- (SS3P)
+      node[midway,below right] {\rewrite{$\displaystyle\chi\circ\prod_{\alpha\in\A}i_\alpha$}};
+    \draw[->] (S3P) -- (SS3P)
+      node[midway,right] {$\prod_{k\in\cK}\prod_{\alpha\in\A}\rho_{\alpha}^k$};
+    \draw[->] (S3P) -- (SS2P)
+      node[midway,above] {$\eta$};
+    \draw[->] (SS3P) -- (SSS2P)
+      node[midway,above] {$\eta$};
+    \draw[->] (SS2P) -- (SSS2P)
+      node[midway,right] {(induced by $\rho$)};
+    \draw[->] (SSS3P) -- (ProdOfSStos)
+      node[midway,below left] {$\prod_{\alpha\in\A}\vartheta_\alpha$};
+  \end{tikzpicture}
+\end{center}
+Where
+\begin{itemize}
+  \item the map $g$, which arises from the theory of summation
+  \item the \textcolor{purple}{purple path} is the isomorphism $h$ from
+    Theorem~\ref{thm:mainThm2} and
+  \item we denote
+    \begin{itemize}
+      \item $\chi:\displaystyle \prod_{\alpha\in\A}\prod_{k\in\cK}\Sto_\alpha^k(A^0)
+        \equiv\displaystyle \prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_\alpha^k(A^0)$
+        the reordering and
+      \item by abuse of notation we also denote the Stokes matrix version in
+        the same way
+        $\chi:\displaystyle \prod_{\alpha\in\A}\prod_{k\in\cK}\SSto_\alpha^k(A^0)
+        \equiv\displaystyle
+        \prod_{k\in\cK}\prod_{\alpha\in\A}\SSto_\alpha^k(A^0)$.
+    \end{itemize}
+\end{itemize}

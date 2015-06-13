@@ -417,17 +417,17 @@ entries.
 We denote by $\hat G(A)$ the set of all \emph{(applicable) formal
 transformations}
 \[
-  \hat G(A):=\left\{\hat F\in G(\!(t)\!)
+  \hat G(A):=\bigl\{\hat F\in G(\!(t)\!)
     \mid {}^{\hat F}\!A
     \text{ has convergent entries, i.e.\ ${}^{\hat F}\!A\in G(\!\{t\}\!)$}
-  \right\}\,.
+  \bigr\}\,.
 \]
 Let $\hat{F'}\in\hat G(A^0)$ and $A':={}^{\hat{F'}}\!A$, then are the sets
 $\hat G(A)$ and $\hat G(A')$ related by
 \[
-  \hat G(A')=\hat G(A)\hat{F'}^{-1}=\left\{
+  \hat G(A')=\hat G(A)\hat{F'}^{-1}=\bigl\{
     \hat F\in G(\!\{t\}\!) \mid \hat F\hat{F'}\in\hat G(A)
-  \right\} \,.
+  \bigr\} \,.
 \]
 
 \begin{rem}
@@ -564,14 +564,7 @@ i.e.\ the following proposition holds.
   $\hat F_1=\hat F_2f_0$
   (cf.~\cite[854]{Loday1994}).
 \end{lem}
-\begin{comment}
-  \begin{proof}
-    \TODO[Look at \cite{BJL1979Birkhoff}?]
-  \end{proof}
-\end{comment}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Regular / irregular singularities}
 \marginnote{\cite[Defn.5.1.6]{hotta2008}}
 The meromorphic connections are distinguished into regular and irregular
 meromorphic connections.
@@ -591,9 +584,9 @@ meromorphic connections.
 \begin{thm}
   Let $(\cM,\nabla)$ be a regular singular meromorphic connection and $A$ its
   connection matrix.
-  Then there exists a matrix $F\in G(\!\{t\}\!)$ such that after transformation
-  by $F$ the matrix $B={}^F\!A$ is constant i.e.\ ${}^F\!A\in\Gl_n(\C)$
-  (cf.~\cite[Thm.II.2.8]{sabbah2007isomonodromic}
+  Then there exists a formal matrix $F\in G(\!\{t\}\!)$ such that after
+  transformation by $F$ the matrix $B={}^F\!A$ is constant i.e.\
+  ${}^F\!A\in\Gl_n(\C)$ (cf.~\cite[Thm.II.2.8]{sabbah2007isomonodromic}
   or~\cite[Sec.5.1.2]{hotta2008}).
 \end{thm}
 
@@ -662,8 +655,6 @@ along the path $\gamma$}.
   \PROBLEM[wie passt das zu normal-formen?]
 \end{defn}
 
-\TODO[monodromy representation] \TODO[Riemann hilbert korrespondenz]
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Formal classification}\label{sec:formalClassification}
 \marginnote{\cite[Thm.4.3.1]{Loday2014}}
@@ -678,16 +669,15 @@ The models will be used to classify meromorphic connections up to formal
 isomorphism. Two meromorphic connections are formally isomorphic, if they are
 isomorphic to the (up to convergent isomorphism) same model.
 
-\PROBLEM[rewrite]
-\rewrite{The first part is given by} the Levelt-Turittin Theorem, which says
-that each meromorphic connection is, after potentially needed ramification,
-formally isomorphic to such a model.
-Thus the Levelt-Turittin Theorem solves the \emph{formal classification
-problem}.
+This is essentially given by the Levelt-Turittin Theorem, which states that each
+meromorphic connection is, after potentially needed ramification, formally
+isomorphic to such a model. Thus the Levelt-Turittin Theorem solves the formal
+classification problem.
 
 \subsection{In the language of meromorphic connections: models}
-This approach is discussed in~\cite{sabbah_cimpa90} and in a more general
-context in~\cite[Sec.II.5]{sabbah2007isomonodromic}.
+We will start by defining the models in the language of meromorphic connections.
+This approach is discussed by Sabbah in~\cite{sabbah_cimpa90} and in a more
+general context in~\cite[Sec.II.5]{sabbah2007isomonodromic}.
 \begin{defn}\label{defn:elemnMerConnBausteine}
   \begin{itemize}
     \item For a $\phi\in\C(\!\{t\}\!)$ we use $\cE^{\phi}$ to denote the germ
@@ -696,12 +686,12 @@ context in~\cite[Sec.II.5]{sabbah2007isomonodromic}.
       \]
       This corresponds to the system satisfied by the function $e^\phi$, since
       $(d-\phi')e^\phi=0$.
-      \begin{s-cor}\label{cor:uniqueAmbassadorForPhi}
+      \begin{s-prop}\label{cor:uniqueAmbassadorForPhi}
         $\cE^\phi$ is determined by the class of $\phi$ in
         $\C(\!\{t\}\!)/\C\{t\}\cong t^{-1}\C[t^{-1}]$. In the following, we
         will only consider the unique ambassador $\phi$ in each class which has
         no holomorphic part.
-      \end{s-cor}
+      \end{s-prop}
     \item For $\alpha\in\C$, define the \emph{elementary regular meromorphic
       connection of rank one} $\cN_{\alpha,0}$ as the germ
       \[
@@ -879,19 +869,11 @@ and $L:=\bigoplus_{j=1}^sL_j$.
   \]
 \end{prop}
 \begin{proof}
-  It is easy to see that
-  \begin{itemize}
-    \item the block structure of $t^L$ is finer then the structure of
-      $Q'(t^{-1})$ and thus $t^LQ'(t^{-1})t^{-L}=Q'(t^{-1})$, since
-      \begin{itemize}
-        \item $t^L=t^{\bigoplus_{j=1}^sL_j}=\bigoplus_{j=1}^st^{L_j}$ and
-        \item $Q'(t^{-1})=\frac{d}{dt}\bigoplus_{j=1}q_j(t^{-1})\cdot\id_{n_j}=
-          \bigoplus_{j=1}q'_j(t^{-1})\cdot\id_{n_j}$ \,,
-      \end{itemize}
-    \item $\frac{d}{dt}e^{Q(t^{-1})}=Q'(t^{-1})e^{Q(t^{-1})}$ and
-      $\frac{d}{dt}t^L=L\frac{1}{t}t^L$
-  \end{itemize}
-  thus we can prove that $\cY_0$ is a matrix consisting of solutions:
+  It is easy to see (or cf.~\cite[Appendix C.1]{Balser2000Formal}) that the
+  block structure of $t^L$ is finer then the structure of $Q'(t^{-1})$ and thus
+  $t^LQ'(t^{-1})t^{-L}=Q'(t^{-1})$, since the (block) structure is preserved
+  under the exponential and derivation and thus we can prove that $\cY_0$ is a
+  matrix consisting of solutions:
   \begin{align*}
     \frac{d}{dt}\cY_0
     &=\frac{d}{dt}\left(t^Le^{Q(t^{-1})}\right)
@@ -900,7 +882,6 @@ and $L:=\bigoplus_{j=1}^sL_j$.
   % \\&=L\frac{1}{t}t^Le^{Q(t^{-1})}+Q'(t^{-1})t^Le^{Q(t^{-1})}
   \\&=\left(t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
   \\&=\left(Q'(t^{-1})+L\frac{1}{t}\right)t^Le^{Q(t^{-1})}
-    &\text{(using Remark~\ref{rem:structureComparison})}
   \\&=A^0\cY_0 \,.
   \end{align*}
   The invertability condition is clear.
@@ -1294,7 +1275,7 @@ or Theorem 4.4.1 in Loday-Richaud's Book~\cite{Loday2014}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The classifying set}\label{sec:classifyingSet}
 We want to understand the Set
-$\Big\{\big[(\cM,\nabla)\big]\Big\}$ of the (convergent)
+$\bigl\{\big[(\cM,\nabla)\big]\bigr\}$ of the (convergent)
 isomorphism classes of all meromorphic connections. Since we can use the formal
 classification (cf.\ Section~\ref{sec:formalClassification}) and we know that
 all elements in a convergent isomorphism class lie in the same formal
@@ -1304,13 +1285,13 @@ fixing a model $(\cM^{nf},\nabla^{nf})$ with the corresponding normal form
 $A^0$.
 \rewrite{Thus we can} restrict ourself to the subset
 \begin{multline*}
-  {}^0C(\cM^{nf},\nabla^{nf})=\Big\{
-    \big[(\cM,\nabla)\big]
+  {}^0C(\cM^{nf},\nabla^{nf})=\bigl\{
+    \bigl[(\cM,\nabla)\bigr]
     \mid \text{there exists a formal isomorphism }
   \\\qquad\hat f:(\hat\cM,\hat\nabla)
       \overset{\sim}\longrightarrow
       (\hat\cM^{nf},\hat\nabla^{nf})
-  \Big\}
+  \bigr\}
 \end{multline*}
 of all isomorphism classes of meromorphic connections, which are formally
 isomorphic to $(\cM^{nf},\nabla^{nf})$. This is the set that we will be
@@ -1342,18 +1323,18 @@ also denote it also by ${}^0C(A^0)$, if we are using the language of systems.
 It is convenient to look at the slightly larger space of isomorphism classes of
 \emph{marked (meromorphic) pairs}
 \[
-  \cH(\cM^{nf},\nabla^{nf})=\left\{
-    \left[(\cM,\nabla,\hat f)\right]
+  \cH(\cM^{nf},\nabla^{nf})=\bigl\{
+    \bigl[(\cM,\nabla,\hat f)\bigr]
       \mid
       \hat f:(\hat\cM,\hat\nabla)
         \overset{\sim}\longrightarrow
         (\hat\cM^{nf},\hat\nabla^{nf})
-  \right\}
+  \bigr\}
 \]
 in which we also handle the additional information, of the formal isomorphism,
 by which the meromorphic connection is isomorphic to the model.
 The isomorphisms of marked pairs are defined as follows:
-\begin{defn}
+\begin{defn}\label{defn:isomsOfPairs}
   Two germs $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$ are
   isomorphic if there exists an isomorphism
   $g:(\cM,\nabla)\overset{\sim}\longrightarrow(\cM',\nabla')$ such that
@@ -1366,8 +1347,8 @@ The isomorphisms of marked pairs are defined as follows:
 
 Equivalently, one can talk in terms of systems. We then denote by
 \[
-  \Syst_m(A^0):=\{[A]
-    \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\}
+  \Syst_m(A^0):=\bigl\{[A]
+    \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\bigr\}
 \]
 the set of systems formally meromorphic equivalent to $A^0$.
 Since we use meromorphic equivalences, in contrast to \cite{boalch,thboalch},
@@ -1378,21 +1359,25 @@ are formally equivalent to $A^0$.
 Analogous, $\cH(\cM^{nf},\nabla^{nf})$ corresponds to the set $\cH(A^0)$ of
 equivalence classes, i.e.\ orbits of $G(\!\{t\}\!)$, in
 \[
-  \hat\Syst_m(A^0):=\left\{\left(A,\hat F\right)
-    \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\right\} \,.
+  \hat\Syst_m(A^0):=\bigl\{\bigl(A,\hat F\bigl)
+    \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\bigl\} \,.
 \]
 \label{page:ofDefnOfIsomOfMarkedPairs}
-Especially follows, that two marked pairs $(A,\hat F)$ and $(A',\hat F')$ are
-equivalent, if and only if there is a base change
-$H$\PROBLEM[$\in G(\!\{t\}\!)$? or asymptotic functions?] such that
-\begin{itemize}
+The isomorphisms defined in Definition~\ref{defn:isomsOfPairs} translate into
+the following equivalence relation:
+\begin{einr}
+  two marked pairs $(A,\hat F)$ and $(A',\hat F')$ are equivalent, if and only
+  if there is a base change $H$ such that
+  \PROBLEM[$H\in G(\!\{t\}\!)$? or asymptotic functions?]
+  \begin{itemize}
   \item $A'={}^{H}\!A$, i.e.\ $H$ is a solution of $[A,A']$, and
   \item $\hat F'=\hat H\hat F$ (cf.\ \cite[71]{babbitt1989local}).
-\end{itemize}
-In the following diagram is the first condition equivalent to the commutation
-property of the \textcolor{green!60!black}{green} square. The second property
-corresponds to the commutation property of the top (resp.\ bottom) triangle
-on the level of asymptotic expansions\PROBLEM[?].
+  \end{itemize}
+\end{einr}
+In the following diagram the first condition is equivalent to the commutativity
+of the \textcolor{green!60!black}{green} square. The second property corresponds
+to the commutation property of the top (resp.\ bottom) triangle on the level of
+asymptotic expansions\PROBLEM[?].
 \[ \begin{tikzcd}[column sep=1cm,row sep=.5cm]
   &&&\C(\{t\})^n \arrow[green!60!black, thick]{ddd}{d-A}
     \arrow[green!60!black, thick]{ddr}{H}

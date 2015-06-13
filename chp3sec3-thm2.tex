@@ -25,14 +25,14 @@ correspond.
 Thus the statement, that $h$ is a bijection, is equivalent to the statement
 that
 \begin{einr}
-  in each cohomology class of $\St(A^0)$ is an unique $1$-cocycle, which is a
+  in each cohomology class of $\St(A^0)$ is a unique $1$-cocycle, which is a
   Stokes cocycle.
 \end{einr}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Cyclic coverings}
-To formulate the following theorem, we use the notion of cyclic coverings and
-nerves of such coverings, which are defined as follows.
+To formulate the theorem in the next section, we use the notion of cyclic
+coverings and nerves of such coverings, which are defined as follows.
 
 \begin{defn}
   \marginnote{\cite[Sec.II.1]{Loday1994} and \cite[Sec.II.3.1]{Loday1994}}
@@ -612,7 +612,7 @@ This means that
 \end{itemize}
 \begin{lem}
   Let $k\in\cK$.
-  The morphism $h$ from Theorem~\ref{thm:mainThm2} is in the case of an unique
+  The morphism $h$ from Theorem~\ref{thm:mainThm2} is in the case of a unique
   level build as
   \[ \begin{tikzcd}[row sep=0cm]
     \underset{\alpha\in\A}\prod\Sto_\alpha^k(A^0)
@@ -1046,14 +1046,14 @@ Theorem~\ref{thm:mainThm2} by composition of already bijective maps.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Some exemplary calculations}\label{sec:WhichInformationIsNeeded}
-Here we want to discuss, which information is required to describe the Stokes
+Here we want to discuss which information is required to describe the Stokes
 cocycle corresponding to a multileveled system in more depth.
 We will look at a sigle-leveled system corresponding to a normal form
-$A^0\in \GL_3(\C(\!\{t\}\!))$ with exactly $2$ levels and will apply the
+$A^0\in \GL_3(\C(\!\{t\}\!))$ with exactly two levels and will apply the
 techniques developed in the previous sections in an rather explicit way.
 
 Let $A^0$ be a normal form with dimension $n=3$ and two levels
-$\cK=\{k_1<k_2\}$, which satisfies that there is at least one anti-Stokes
+$\cK=\{k_1<k_2\}$ which satisfies that there is at least one anti-Stokes
 direction $\theta$ which is beared by both levels.
 Let $q_j(t^{-1})$ be the determining polynomials and let $k_{jl}$ be the
 degrees of $(q_j-q_l)(t^{-1})$.
@@ -1091,19 +1091,13 @@ $(q_1-q_2)(t^{-1})$ and $(q_1-q_3)(t^{-1})$ equal and thus
   %   $q_2 \underset{\alpha,\max}{\prec} q_1$
   %   \Leftrightarrow{}
   %   $q_3 \underset{\alpha,\max}{\prec} q_1$
-  \item $q_1\myrel{\alpha}q_2$ (resp.~$q_2\myrel{\alpha}q_1$) if and only if
+  \item $q_0\myrel{\alpha}q_2$ (resp.~$q_2\myrel{\alpha}q_1$) if and only if
     $q_1\myrel{\alpha}q_3$ (resp.~$q_3\myrel{\alpha}q_1$) and thus do they
     determine the same anti-Stokes directions.
 \end{itemize}
 The set of all anti-Stokes directions is then given as
 \[
-  \A=\left\{\theta+\frac{\pi}{k}\cdot j\mid k\in\cK\text{, }j\in\N\right\}
-    % =:\{
-    %   \underset{\theta}{%
-    %     \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-    %       \alpha_1
-    %   }}
-    % ,\dots,\alpha_\nu\}\,.
+  \A=\left\{\theta+\frac{\pi}{k}\cdot j\mid k\in\cK\text{, }j\in\N\right\} \,.
 \]
 Denote by $\cY_0(t)$ a normal solution of $[A^0]$.
 
