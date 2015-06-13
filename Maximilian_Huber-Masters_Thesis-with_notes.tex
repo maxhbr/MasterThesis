@@ -2,7 +2,7 @@
 \IfSubStr{\jobname}{\detokenize{with_notes}}{%
   % The case with comments
   \xdef\myDevelopVariable{1}
-  \xdef\myHideVariable{0}
+  \xdef\myHideVariable{1}
   \documentclass[fleqn
     ,fontsize=12pt % TODO
     ,DIV=13
@@ -116,8 +116,8 @@
 \input{chp2-meromorphic_connections.tex}
 % \fi
 
-% \ifnum\myHideVariable=0
-\input{chp3-Stokes_structures.tex}
+\ifnum\myHideVariable=0
+\input{chp3sec0-Stokes_structures.tex}
 
     % \ifnum\myHideVariable=0
     \input{chp3sec1-thm1.tex}
@@ -138,7 +138,7 @@
     % \ifnum\myHideVariable=0
     \input{chp3sec5-diagram.tex}
     % \fi
-% \fi
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

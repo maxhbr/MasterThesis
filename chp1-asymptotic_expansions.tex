@@ -36,7 +36,7 @@ asymptotic expansions at $t_0\in\C$ reduce to asymptotic expansions at $0$
 after the change of variable $t\mapsto s=t-t_0$ and asymptotic expansions at
 $t_0=\infty$ are obtained by $t\mapsto s=\frac{1}{t}$.
 
-We introduce the following notations:
+We introduce the following terminology:
 \begin{notations} We denote by
   \begin{itemize}
     \item $\mathfrak{s}_{a,b}(r)$, $a,b\in\S^1$ and $r\in\R_{>0}$ the open
@@ -79,8 +79,8 @@ We introduce the following notations:
       \fill[red!60!black] ({cos( -30 )},{sin( -30 )}) circle(.7pt);
       \fill[red!60!black] ({cos( 70 )},{sin( 70 )}) circle(.7pt);
 
-      \node[red!60!black] at ({1.1 * cos(70)},{1.1 * sin(70)}) {$a$};
-      \node[red!60!black] at ({1.1 * cos(-30)},{1.1 * sin(-30)}) {$b$};
+      \node[red!60!black] at ({1.1 * cos(70)},{1.1 * sin(70)}) {$b$};
+      \node[red!60!black] at ({1.1 * cos(-30)},{1.1 * sin(-30)}) {$a$};
 
       \node[red!60!black,right] at (.8,.6) {$I$};
 
@@ -103,12 +103,12 @@ We introduce the following notations:
   Since the explicit value $r$ of the radius does not matter as long as it is
   small enough, we shall simply speak of an \emph{arc} or \emph{interval} $I$
   as $\mathfrak{s}_I(r)$ for a small enough $r$.
-  \\It will be sometimes convenient to talk of arcs
+  It will be sometimes convenient to talk of arcs
   \[
     U(\theta,\epsilon):=\left(\theta-\frac{\epsilon}{2}
     ,\theta+\frac{\epsilon}{2}\right)\subset S^1
   \]
-  defined by the midpoint together with the radius.
+  defined by the midpoint together with the opening.
 \end{rem}
 \begin{defn}
   A sector $\mathfrak{s}_{a',b'}(r')$ is said to be a proper sub-sector of the
@@ -141,15 +141,15 @@ We introduce the following notations:
     \[
       \lim_{z\to0,z\in{\mySect}}
       |t|^{-(\myN-1)}
-      \left|
+      \bigl|
         f(x)-\sum_{n_0\leq n\leq \myN-1}c_nt^n
-      \right|=0
+      \bigr|=0
       \qquad \text{ for all } t\in \mySect \,.
     \]} holds
   \[
-    \left|
+    \bigl|
       f(x)-\sum_{n_0\leq n\leq \myN-1}c_nt^n
-    \right|
+    \bigr|
     \leq \myConst|t|^{\myN} \qquad \text{ for all }t\in \mySect \,.
   \]
   We will use the following notations:
@@ -164,10 +164,16 @@ We introduce the following notations:
       $\hat g$ as asymptotic expansion on the interval $I$.
   \end{enumerate}
 \end{defn}
-If $f$ has $\hat f$ as asymptotic expansion on the sector $\mathfrak{s}$ (or on
+If $f$ has $\hat g$ as asymptotic expansion on the sector $\mathfrak{s}$ (or on
 the interval $I\subset S^1$, or in the direction $\theta$), we denote that by
-$f\sim_{\mathfrak{s}}\hat f$ (or $f\sim_{I}\hat f$, or
-$f\sim_{\theta}\hat f$).\label{page:notationForAsymptoticExpansion}
+$f\sim_{\mathfrak{s}}\hat g$ (or $f\sim_{I}\hat g$, or
+$f\sim_{\theta}\hat g$).\label{page:notationForAsymptoticExpansion}
+
+\begin{thm}
+  For $f\in\O(\mathfrak{s})$, there is at most one formal Laurent series $\hat
+  f$ which satisfies $f\sim_{\mathfrak{s}}\hat f$
+  (cf.\ Theorem~\cite[Thm.XI-1-5]{hsieh2012basic}).
+\end{thm}
 
 The following proposition gives equivalent characterizations of asymptotic
 expansions.
@@ -180,7 +186,7 @@ expansions.
   \item all derivatives $f^{(n)}(t)$ are continous at the origin and
     $\lim_{\substack{t\to0\\t\in\mathfrak{s}}}f^{(n)}(t)=n!a_n$
   \end{enumerate}
-  equivalent (cf.~\cite[4.4.Prop.8]{balser2000formal}).
+  equivalent (cf.~\cite[4.4.Prop.8]{Balser2000Formal}).
 \end{prop}
 
 \begin{defn}
@@ -211,42 +217,43 @@ expansions.
 \end{defn}
 It can easily be seen that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
 
-\TODO[Properties,Examples,\dots]
+One writes
+\begin{align*}
+  T_{I}:\cA(I)&\to\C(\!(t)\!)
+                \qquad\left(\text{resp.}\qquad
+                T_{\mathfrak{s}}:\cA(\mathfrak{s})\to\C(\!(t)\!)\qquad\right)
+  \\f&\mapsto\hat f
+\end{align*}
+for the so-called \emph{Taylor map} which associates to each function
+$f\in\cA(I)$ (resp.\ $f\in\cA(\mathfrak{s})$) its asymptotic expansion and is
+called.
 \begin{defn}
-  \begin{itemize}
-    \item One writes
-      \begin{align*}
-        T_{I}:\cA(I)&\to\C(\!(t)\!)
-        \qquad\left(\text{resp.}\qquad
-        T_{\mathfrak{s}}:\cA(\mathfrak{s})\to\C(\!(t)\!)\qquad\right)
-      \\f&\mapsto\hat f
-      \end{align*}
-      for the mapping, called \emph{Taylor map}, which associates to each
-      function $f\in\cA(I)$ (resp.\ $f\in\cA(\mathfrak{s})$) its asymptotic
-      expansion.
-    \item A function $f$ which is asymptotic to the identity, i.e.\ with
-      $T_{\mathfrak{s}}(f)=\hat f=\id_{\mathfrak{s}}$, is called \emph{flat (on
-      $\mathfrak{s}$)}.
-    \item Denote by $\cA^{<0}(I)$ (resp.\ $\cA^{<0}(\mathfrak{s})$) the set
-      $\ker(T_{I})\subset\cA(I)$ (resp.\
-      $\ker(T_{\mathfrak{s}})\subset\cA(\mathfrak{s})$) of functions asymptotic
-      to zero at $0$.
-      \begin{s-rem}
-        The kernel $\cA^{<0}(I)$ is not zero in general.
-        Let $I=\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, then $\cA^{<0}(I)$
-        contains the element $e^{-\frac{1}{\sqrt{t}}}$ where $\sqrt{t}$ stands
-        for the principal determination of $x^{\frac{1}{2}}$.
-      \end{s-rem}
-  \end{itemize}
+  A function $f$ which is asymptotic to the identity, i.e.\ with
+  $T_{\mathfrak{s}}(f)=\hat f=\id_{\mathfrak{s}}$, is called \emph{flat (on
+    $\mathfrak{s}$)}.
+\end{defn}
+
+The kernel of $T_{I}$ is not zero in general.
+For example is the function $e^{-\frac{1}{\sqrt{t}}}$, where $\sqrt{t}$ stands
+for the principal determination of $x^{\frac{1}{2}}$, asymptotic to zero on every
+$I\subset\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$.
+\begin{defn}
+  Denote by $\cA^{<0}(I)$ (resp.\ $\cA^{<0}(\mathfrak{s})$) the kernel
+  $\ker(T_{I})\subset\cA(I)$ (resp.\
+  $\ker(T_{\mathfrak{s}})\subset\cA(\mathfrak{s})$) of functions asymptotic to
+  zero at $0$.
 \end{defn}
 
 \begin{exmp}[Trivial example]
   \marginnote{\cite[Exmp.2.2.3]{Loday2014}}
-  If $f$ is an analytic function on $D=\{t\mid |t|<r\}$ then $f$ is asymptotic
-  to its Taylor series at $0$ on $D^*=D\backslash\{0\}$.
-  Reciprocally, if $f$ is analytic on $D^*$ and has an asymptotic expansion at
-  $0$ on $D^*$ then, $f$ is bounded near $0$ and according to the removable
-  singularity theorem, $f$ is analytic on $D$.
+  If $f$ is a holomorphic function on $D=\{t\mid |t|<r\}$ then $f$ is asymptotic
+  to its Taylor series at $0$ on every arc
+  $\mathfrak{s}\subset\mathfrak{s}_{S^1}(r)=D\backslash\{0\}$.
+
+  Reciprocally, if $f$ is holomorphic on $\mathfrak{s}_{S^1}(r)$ and has an
+  asymptotic expansion at $0$ on $\mathfrak{s}_{S^1}(r)$ then, $f$ is bounded
+  near $0$ and according to the removable singularity theorem, $f$ is analytic
+  on $D$.
   \begin{s-rem}
     This implies that $\cA(S^1)\cong\C(\!\{t\}\!)$.
   \end{s-rem}
@@ -319,30 +326,28 @@ exponential integral, see Loday-Richaud's book \cite[Sec.2.2]{Loday2014}.
 The most important theorem here is the Borel-Ritt Lemma.
 \begin{thm}[Borel-Ritt]\label{thm:borel-ritt}
   \marginnote{\cite[Thm.2.4.1]{Loday2014}}
-  Let $I\subsetneq S^1$ be an open sub-arc, i.e.\ with a opening less than
-  $2\pi$. Then the Taylor map
-  \[
-    T_{I}:\cA(I)\twoheadrightarrow\C(\!(t)\!)
-  \]
-  is onto.
-  \TODO[Arcs on the universal cover of opening $>2\pi$?]
-  \begin{s-rem}
-    \marginnote{\cite[111]{Loday2014}}
-    This means that to each $\hat f\in\C(\!(t)\!)$ and every arc
-    $I\subsetneq S^1$ there are functions $f$
-    asymptotic to $\hat f$ on $I$.
-    However, when $\hat f$ satisfies an equation, these asymptotic functions do
-    not necessarily satisfy the same equation in general.
-    This gap will be filled in section~\ref{sec:MAET} for small enough sectors.
-  \end{s-rem}
+  Let $I\subsetneq S^1$ be an open sub-arc, i.e.\ an arc with a opening less
+  than $2\pi$, then is the Taylor map
+  $T_{I}:\cA(I)\twoheadrightarrow\C(\!(t)\!)$ onto.
 \end{thm}
-There are multiple approaches to obtain a function $f\in\cA(I)$ asymptotic to a
-given function $\hat f\in\C(\!(t)\!)$ in a canonical way. For example
-(multi-)multisummability which is in depth described in Loday-Richaud's
-book~\cite{Loday2014}.
+\marginnote{\cite[111]{Loday2014}
+  \\,~\cite[XI-1-13]{hsieh2012basic}}
+In other words does this theorem say, that to each formal Laurent series
+ $\hat f\in\C(\!(t)\!)$ and every arc $I\subsetneq S^1$ there are functions $f$
+asymptotic to $\hat f$ on $I$.
+There are multiple approaches to obtain such a function $f\in\cA(I)$ asymptotic
+to a given function $\hat f\in\C(\!(t)\!)$ in a canonical way.
+For example (multi-)multisummability which is in depth described in
+Loday-Richaud's book~\cite{Loday2014}.
 This topic is also discussed in the paper~\cite{Martinet1991} from Martinet and
 Ramis.
-\TODO[we will scratch\dots in section?]
+
+However, when $\hat f$ satisfies an equation, these asymptotic functions do not
+necessarily satisfy the same equation in general.
+This gap will be filled in Section~\ref{sec:MAET} by the main asymptotic
+existence theorem for small enough sectors.
+
+Let us now proof the Borel-Ritt Lemma.
 \begin{proof}[Proof of Theorem~\ref{thm:borel-ritt}]
   Let $I:=(-\pi,\pi)$ and $R\in\R_{>0}$.
   We will prove this for the sector
@@ -367,6 +372,7 @@ Ramis.
       0                 & \text{when~} n=0
       \\\frac{1}{n!}|a_n| & \text{when~} n>0
     \end{cases}
+    \,.
   \]
   Let $\sqrt{t}$ be the branch of the square root function that satisfies
   $|\arg(\sqrt{t})|<\frac{\pi}{2}$\footnote{For $t=re^{i\phi}$ is
@@ -416,50 +422,3 @@ Ramis.
 
   \TODO[The GENERAL CASE: see \cite{Loday2014} page 28]
 \end{proof}
-
-\begin{comment}
-  \section{Gevrey Asymptotics}
-  \marginnote{\cite[Sec.4.5]{Balser2000Formal},\\\cite{van2003galois}}
-  The map $T_I$ is highly surjective, even for large arcs $I$. To obtain an
-  injective map, we introduce Gevrey asymptotic expansions. The associated map
-  will be injective for wide arcs, but it will no longer (for large arcs) be
-  surjective.
-  \begin{defn}[Gevrey asymptotics (of level $k$)]
-    \marginnote{\cite[Defn.2.3.1]{Loday2014}}
-    A series $\sum_{n\geq0}a_nt^n$ is of level $k$\PROBLEM[$k=1/s$?] if there
-    exist constants $C>0$, $A>0$ such that the coefficients $a_n$ satisfy
-    \[
-      |a_n|\leq C(n!)^sA^n \qquad\text{for all $n$.}
-    \]
-  \end{defn}
-  \begin{prop}[Ritt's theorem for Gevrey asymptotics]
-    \marginnote{\cite[Prop.4.10]{Balser2000Formal}}
-  \end{prop}
-\end{comment}
-
-\begin{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \section{Sheaf definition from \cite{sabbah2007isomonodromic}}
-  See \cite[II.5.c]{sabbah2007isomonodromic}.
-  Let
-  \begin{itemize}
-    \item $D$ the open disc with coordinate $t$ centered at the origin and of
-      radius $r^0>0$.
-    \item $\tilde D:=[0,r^0[\times S^1$
-    \item $\pi:\tilde D\to D,~(r,\theta)\mapsto t=re^{i\theta}$
-  \end{itemize}
-  \dots we can define the derivations $t\partial/\partial t$ and
-  $\bar t\partial/\partial\bar t$.
-  \begin{defn}
-    The sheaf of rings $\cA_{\tilde D}$ is defined as the subsheaf of
-    $\sC_{\tilde D}^\infty$ of germs killed by $\bar t\partial/\partial\bar t$.
-  \end{defn}
-  \begin{rem}
-    \cite{sabbah2007isomonodromic}: Remark 5.11
-  \end{rem}
-  \begin{rem}
-    On the sheaf $\cA_{\tilde D}$ is defined the action of the derivation
-    $\partial/\partial t$\dots
-  \end{rem}
-  \dots
-\end{comment}

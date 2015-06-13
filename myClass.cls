@@ -178,223 +178,116 @@
 
 \allowdisplaybreaks
 
-% \ifnum\myDevelopVariable=1
+\ifnum\myDevelopVariable=1
   \usepackage{sectsty}
   \makeatletter\def\@seccntformat#1{%
     \protect\makebox[0pt][r]{\csname the#1\endcsname\hspace{12pt}}}\makeatother
-% \fi
+\fi
 
 \renewcommand*{\thefootnote}{[\arabic{footnote}]}
 
 \iftrue%Horizontale Linien
   \usepackage{sectsty}
 
-  \iffalse
-    \usepackage[Lenny]{fncychap}
-  \else
-    \chapterfont{%
-      % \vspace{1cm}
-      \color{myheadLineColor}
-      % \sectionrule{0pt}{0pt}{-5pt}{2pt}
-      }
+  \chapterfont{%
+    % \vspace{1cm}
+    \color{myheadLineColor}
+    % \sectionrule{0pt}{0pt}{-5pt}{2pt}
+  }
   \fi
   \sectionfont{%
     \color{myheadLineColor}
     % \sectionrule{0pt}{0pt}{-5pt}{0.8pt}
-    }
+  }
   \subsectionfont{%
     \color{myheadLineColor}
     % \sectionrule{0pt}{0pt}{-5pt}{0.6pt}
-    }
+  }
   \subsubsectionfont{%
     \color{myheadLineColor}
     % \sectionrule{0pt}{0pt}{-5pt}{0.4pt}
-    }
-\fi
-
-\iffalse%titlesec varinte
-  \usepackage{titlesec}
-  % \titleformat{\chapter}[display]
-  %   {\bfseries\huge}
-  %   {\filleft\Huge\thechapter}
-  %   {3ex}
-  %   {\titlerule\vspace{1.5ex}\filright}
-  %   [\vspace{1ex}\titlerule]
-    % Style 1
-%\renewcommand{\thechapter}{\Roman{chapter}}
-  \titleformat{\chapter}[display]
-    {\bfseries\Large}
-    {\fontsize{120}{70}\selectfont\color{myColor1}\textbf{\thechapter}}
-    {-2ex}
-    {\fontsize{30}{70}\selectfont\scshape}
-    [\vspace{0ex}]
-  \titleformat{\section}[display]
-    {\bfseries\Large}
-    {}
-    {3ex}
-    {\titlerule\vspace{1.5ex}\filright\Large\thesection~}
-    [\vspace{1ex}\titlerule]
-\fi
-
-\iffalse%tikz variante
-  \usepackage[explicit]{titlesec}
-  \usepackage{hyphenat}
-
-  %define colors
-  \definecolor{lightgray}{gray}{0.95}
-  \definecolor{darkgray}{gray}{0.5}
-
-  %define header image
-  \newcommand*\chapterlabel{}
-  \titleformat{\chapter}
-    {\gdef\chapterlabel{}
-     \normalfont\sffamily\Large\bfseries\scshape}
-    {\gdef\chapterlabel{\thechapter\ }}{0pt}
-    % begin the main image, shifted 5cm down from top
-    {\begin{tikzpicture}[remember picture,overlay]
-      % add grey filled bar, 4cm high, full page wide.
-      \node[yshift=-5cm] at (current page.north west)
-        {\begin{tikzpicture}[remember picture, overlay]
-          \draw[fill=darkgray]
-            (0,0) rectangle (\paperwidth,4cm);
-          % add the title, shifted to be centered in bar
-          \node[anchor=east,yshift=2cm
-               ,xshift=0.9\paperwidth
-               ,text width=1.05\textwidth]
-            {\color{lightgray}\nohyphens{\chapterlabel~\huge{#1}}} ;
-          % add rounded rectangle on top right, contains chapter number
-        \end{tikzpicture}};
-     \end{tikzpicture}
-    }
-  %adjust spacing for correct alignment of following text
-  \titlespacing*{\chapter}{0pt}{50pt}{-10pt}
-\fi
+  }
 
 %%%%  Theoreme Styles  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[framemethod=TikZ]{mdframed}
 \makeatletter
 
 \theoremstyle{plain}% default
-\iffalse
-  \newtheorem{thm}{Satz}[chapter]
-  \newtheorem{tthm}{Satz}[chapter]
-  \newtheorem{lemma}[thm]{Lemma}
-  \newtheorem{lem}[thm]{Lemma}
-  \newtheorem{llem}[thm]{Lemma}
-  \newtheorem{lemdef}[thm]{Lemma/Definition}
-  \newtheorem{lemcor}[thm]{Lemma/Korollar}
-  \newtheorem{defcor}[thm]{Definition/Korollar}
-  \newtheorem{cor}[thm]{Korollar}
-
-  \newtheorem{kor}[thm]{Korollar}
-  \newtheorem{prop}[thm]{Proposition}
-
-  \newtheorem{ex}{Aufgabe}[chapter]
-  \newtheorem*{beh}{Behauptung}
-  \newtheorem*{dazu}{Dazu}
-
-  \theoremstyle{definition}
-  \newtheorem{defn}[thm]{Definition}
-  \newtheorem*{notations}{Notations}
-  \newtheorem{conj}[thm]{Conjecture}
-  \newtheorem{exmp}[thm]{Example}
-  \newtheorem{bsp}[thm]{Example}
-
-  \theoremstyle{remark}
-  \newtheorem{rem}[thm]{Remark}
-
-  %\usepackage{thmbox}
-  \newtheorem{try}{Versuch}
-  \newtheorem{case}{Fall}
-
-  \newenvironment{einr}{}{}
-\else
 % Styles:
-  \mdfdefinestyle{thin}{linewidth=1pt ,linecolor=myColor1
-    ,topline=false, rightline=false, bottomline=false
-    ,leftmargin=\parindent ,innerbottommargin=0pt, innerrightmargin=0pt
-    ,skipabove=\medskipamount, skipbelow=\medskipamount}
-  \mdfdefinestyle{thinn}{linewidth=1pt ,linecolor=myColor1
-    ,leftmargin=\parindent
-    ,skipabove=\medskipamount, skipbelow=\medskipamount}
-  \mdfdefinestyle{thick}{linewidth=2pt ,linecolor=myColor1
-    ,topline=false, rightline=false, bottomline=false
-    ,leftmargin=\parindent ,innerbottommargin=0pt, innerrightmargin=0pt
-    ,skipabove=\medskipamount, skipbelow=\medskipamount}
-  \mdfdefinestyle{thickk}{linewidth=2pt ,linecolor=myColor1
-    ,leftmargin=\parindent
-    ,skipabove=\medskipamount, skipbelow=\medskipamount}
-  \mdfdefinestyle{thiin}{linewidth=1pt ,linecolor=myColor1
-    ,topline=false, rightline=false, bottomline=false}
+\mdfdefinestyle{thin}{linewidth=1pt ,linecolor=myColor1
+  ,topline=false, rightline=false, bottomline=false
+  ,leftmargin=\parindent ,innerbottommargin=0pt, innerrightmargin=0pt
+  ,skipabove=\medskipamount, skipbelow=\medskipamount}
+\mdfdefinestyle{thinn}{linewidth=1pt ,linecolor=myColor1
+  ,leftmargin=\parindent
+  ,skipabove=\medskipamount, skipbelow=\medskipamount}
+\mdfdefinestyle{thick}{linewidth=2pt ,linecolor=myColor1
+  ,topline=false, rightline=false, bottomline=false
+  ,leftmargin=\parindent ,innerbottommargin=0pt, innerrightmargin=0pt
+  ,skipabove=\medskipamount, skipbelow=\medskipamount}
+\mdfdefinestyle{thickk}{linewidth=2pt ,linecolor=myColor1
+  ,leftmargin=\parindent
+  ,skipabove=\medskipamount, skipbelow=\medskipamount}
+\mdfdefinestyle{thiin}{linewidth=1pt ,linecolor=myColor1
+  ,topline=false, rightline=false, bottomline=false}
 
 % Theorems:
-  \mdtheorem[style=thick]{thm}{Theorem}[chapter]
-    \mdtheorem[style=thin]{s-thm}{Theorem}[thm]
-  \mdtheorem[style=thickk]{tthm}[thm]{Theorem}
-  \mdtheorem[style=thick]{lem}[thm]{Lemma}
-    \mdtheorem[style=thin]{s-lem}{Lemma}[thm]
-  \mdtheorem[style=thickk]{llem}[thm]{Lemma}
-  \mdtheorem[style=thick]{lemdef}[thm]{Lemma/Definition}
-  \mdtheorem[style=thick]{lemdef}[thm]{Lemma/Corollary}
-  \mdtheorem[style=thick]{lemdef}[thm]{Definition/Corollary}
-  \mdtheorem[style=thick]{cor}[thm]{Corollary}
-    \mdtheorem[style=thick]{s-cor}{Corollary}[thm]
-  \mdtheorem[style=thick]{kor}[thm]{Corollary}
-    \mdtheorem[style=thick]{s-kor}{Corollary}[thm]
-  \mdtheorem[style=thick]{prop}[thm]{Proposition}
-    \mdtheorem[style=thick]{s-prop}{Proposition}[thm]
+\mdtheorem[style=thick]{thm}{Theorem}[chapter]
+\mdtheorem[style=thin]{s-thm}{Theorem}[thm]
+\mdtheorem[style=thickk]{tthm}[thm]{Theorem}
+\mdtheorem[style=thick]{lem}[thm]{Lemma}
+\mdtheorem[style=thin]{s-lem}{Lemma}[thm]
+\mdtheorem[style=thickk]{llem}[thm]{Lemma}
+\mdtheorem[style=thick]{lemdef}[thm]{Lemma/Definition}
+\mdtheorem[style=thick]{lemdef}[thm]{Lemma/Corollary}
+\mdtheorem[style=thick]{lemdef}[thm]{Definition/Corollary}
+\mdtheorem[style=thick]{cor}[thm]{Corollary}
+\mdtheorem[style=thick]{s-cor}{Corollary}[thm]
+\mdtheorem[style=thick]{kor}[thm]{Corollary}
+\mdtheorem[style=thick]{s-kor}{Corollary}[thm]
+\mdtheorem[style=thick]{prop}[thm]{Proposition}
+\mdtheorem[style=thick]{s-prop}{Proposition}[thm]
 
-  \newtheorem{ex}{Aufgabe}[chapter]
-  \newtheorem*{beh}{Behauptung}
-  \newtheorem*{dazu}{Dazu}
+\newtheorem{ex}{Aufgabe}[chapter]
+\newtheorem*{beh}{Behauptung}
+\newtheorem*{dazu}{Dazu}
 
-  \theoremstyle{definition}
-  \mdtheorem[style=thin]{defn}[thm]{Definition}
-    \mdtheorem[style=thin]{s-defn}{Definition}[thm]
-  \mdtheorem[style=thin]{notations}[thm]{Notations}
-  \mdtheorem[style=thinn]{notations}[conj]{Conjecture}
-  \mdtheorem[style=thinn]{exmp}[thm]{Example}[exmp]
-    \mdtheorem[style=thinn]{s-exmp}{Example}[thm]
-  \newtheorem{bsp}[thm]{Example}
+\theoremstyle{definition}
+\mdtheorem[style=thin]{defn}[thm]{Definition}
+\mdtheorem[style=thin]{s-defn}{Definition}[thm]
+\mdtheorem[style=thin]{notations}[thm]{Notations}
+\mdtheorem[style=thinn]{notations}[conj]{Conjecture}
+\mdtheorem[style=thinn]{exmp}[thm]{Example}[exmp]
+\mdtheorem[style=thinn]{s-exmp}{Example}[thm]
+\newtheorem{bsp}[thm]{Example}
 
-  \theoremstyle{remark}
-  \mdtheorem[style=thin]{rem}[thm]{Remark}
-    \mdtheorem[style=thin]{s-rem}{Remark}[thm]
-  \mdtheorem[style=thin]{bem}[thm]{Remark}
-  \mdtheorem[style=thin]{note}[thm]{Note}
+\theoremstyle{remark}
+\mdtheorem[style=thin]{rem}[thm]{Remark}
+\mdtheorem[style=thin]{s-rem}{Remark}[thm]
+\mdtheorem[style=thin]{bem}[thm]{Remark}
+\mdtheorem[style=thin]{note}[thm]{Note}
 
-  \newtheorem{beo}[thm]{Beobachtung}
+\newtheorem{beo}[thm]{Beobachtung}
 
-  %\usepackage{thmbox}
-  \newtheorem{try}{Versuch}
-  \newtheorem{case}{Fall}
+% \usepackage{thmbox}
+\newtheorem{try}{Versuch}
+\newtheorem{case}{Fall}
 
-  \surroundwithmdframed[style=thin]{proof}
+\surroundwithmdframed[style=thin]{proof}
 
-  \iffalse
-    \newenvironment{einr}{%
-      \begin{flushright}
-        \begin{minipage}{0.94\textwidth}
-      }{%
-        \end{minipage}
-      \end{flushright}
-      }
-  \else
-    % \newenvironment{einrPrime}{}{}
-    % \surroundwithmdframed[style=thiin]{einrPrime}
-    \newenvironment{einr}{%
-        % \vspace{\medskipamount}
-        \begin{itemize}
-          \item[]
-            % \begin{einrPrime}
-            % \begin{mdframed}[style=thick]
-      }{%
-            % \end{mdframed}
-            % \end{einrPrime}
-        \end{itemize}
-      }
-  \fi
-\fi
+% \newenvironment{einrPrime}{}{}
+% \surroundwithmdframed[style=thiin]{einrPrime}
+\newenvironment{einr}{%
+  % \vspace{\medskipamount}
+  \begin{itemize}
+  \item[]
+    % \begin{einrPrime}
+    %   \begin{mdframed}[style=thick]
+  }{%
+    % \end{mdframed}
+    % \end{einrPrime}
+  \end{itemize}
+}
 
 \numberwithin{equation}{chapter}
 \numberwithin{figure}{chapter}

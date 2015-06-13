@@ -1,11 +1,8 @@
 \chapter{Systems and meromorphic connections}
-There are multiple languages, which can be used for talking about meromorphic
-connections.
-\rewrite{Among others there} is the languages of meromorphic connections which
-can be used to talk about global information.
-\comm{Also there is an approach with $\cD$-modules.}
-For local description one can use \textbf{germs of meromorphic connections} or
-the coordinate dependent \textbf{systems} and \textbf{connection matrices}.
+Here we will start with defining (global) meromorphic connetions although we
+will only be interested in local information.
+For local description we will use \textbf{germs of meromorphic connections}, the
+coordinate dependent \textbf{systems} and \textbf{connection matrices}.
 Other coordinate independent approaches arise for example from the theory of
 (localized holonomic) $\cD$-modules.
 
@@ -41,21 +38,17 @@ Let $\sM$ be a holomorphic Bundle over $M$ i.e.\ a locally free $\cO_M$-module
 of rank $n$.
 A (global) meromorphic connection is then defined as follows.
 \begin{defn}\label{defn:mercon}
-  \def\myU{\textcolor{green!30!black}{U}}
-  \def\mys{\textcolor{blue!60!black}{s}}
-  \def\myf{\textcolor{red!60!black}{f}}
   A \emph{meromorphic connection $(\sM,\nabla)$ on $\sM$ with poles on $Z$}
   is defined by a $\C$-linear morphism of sheaves
   \[
     \nabla:\sM\to\Omega_M^1(*Z)\otimes\sM
   \]
-  satisfying, for each $\myU\underset{\text{op.}}{\subset} M$, the
+  satisfying, for each $U\underset{\text{op.}}{\subset} M$, the
   \emph{Leibniz rule}
     \[
-      \nabla(\myf\mys)=\myf\nabla\mys+(d\myf)\otimes\mys
+      \nabla(fs)=f\nabla s+(df)\otimes s
     \]
-  for $\mys\textcolor{blue!60!black}{\in\Gamma(\myU,\sM)}$ and
-  $\myf\textcolor{red!60!black}{\in\cO_M(\myU)}$.
+  for $s\in\Gamma(U,\sM)$ and $f\in\cO_M(U)$.
   The \emph{rank} of the meromorphic connection $(\sM,\nabla)$ is defined to be
   the rank of the Bundle $\sM$.
   \begin{s-rem}
@@ -64,12 +57,11 @@ A (global) meromorphic connection is then defined as follows.
     arbitrary pole orders. Denoted is this by the $*$ in $\Omega_M^1(*Z)$.
     The sheaf $\cO_M(*Z)$ of functions, which are meromorphic along $Z$, is
     defined in Sabbah's book~\cite[Sec.0.8]{sabbah2007isomonodromic} and
-    $\Omega_M^1(*Z)$ is then defined as
     \[
       \Omega_M^1(*Z):=\cO_M(*Z)\underset{\cO_M}\otimes\Omega_M^1
     \]
-    \rewrite{the \emph{sheaf of meromorphic differential $1$-forms}} (cf.\
-    \cite[Sec.0.9.b]{sabbah2007isomonodromic}).
+    is the \emph{sheaf of meromorphic differential $1$-forms}
+    (cf.\ \cite[Sec.0.9.b]{sabbah2007isomonodromic}).
   \end{s-rem}
 \end{defn}
 The word ``global'' used to emphasize that the connection is ``on $M$'', i.e.\
@@ -82,7 +74,8 @@ the meromorphic connection.
   like in Boalch's paper~\cite{boalch}. There is also the transposed description
   `meromorphic bundle with holomorphic connection' which is for example used in
   Sabbah's book~\cite{sabbah2007isomonodromic}.
-  \\By choosing a lattice of a meromorphic bundle
+
+  By choosing a lattice of a meromorphic bundle
   (cf.\ \cite[Def.0.8.3]{sabbah2007isomonodromic}), one gets a holomorphic bundle
   but if the meromorphic bundle had a holomorphic connection, the induced
   connection \rewrite{on the lattice} is no longer guaranteed to be holomorphic.
@@ -92,36 +85,14 @@ the meromorphic connection.
 \begin{defn}
   \marginnote{\cite[0.12.2]{sabbah2007isomonodromic}}
   The connection $\nabla:\cM\to \Omega_M^1\otimes_{\cO_M}\cM$ is said to be
-  \emph{integrable} or \emph{flat}, if
-  \begin{einr}
-    its curvature vanishes, i.e.\ $R_\nabla\equiv0$ where
-    \begin{itemize}
-      \item $R_\nabla:=\nabla\circ\nabla:\cE\to\Omega_M^2\otimes_{\cO_M}\cE$
-        is a $\cO_M$-linear morphism.
-    \end{itemize}
-  \end{einr}
-  \begin{comment}
-    \begin{s-prop}
-      \marginnote{\cite[0.12.4]{sabbah2007isomonodromic}}
-      The connection $\nabla$ is flat if and only if, in any local basis $e$ of
-      $\cM$, the connection matrix $\Omega$ satisfies
-      \[
-        d\Omega + \Omega \wedge \Omega = 0.
-      \]
-      This means that the flatness condition is sufficient to assure the
-      existence of local fundamental solutions.
-    \end{s-prop}
-  \end{comment}
+  \emph{integrable} or \emph{flat}, if its curvature vanishes, i.e.\
+  $R_\nabla\equiv0$
+  where $R_\nabla:=\nabla\circ\nabla:\cE\to\Omega_M^2\otimes_{\cO_M}\cE$ is a
+  $\cO_M$-linear morphism.
   \begin{s-rem}
     Here are all connections flat, since all connections will be of Dimension
     one.
-    \TODO[cf\dots]
   \end{s-rem}
-  \begin{comment}
-    We will say that a connection on a meromorphic bundle is \emph{integrable}
-    or \emph{flat} if its restriction to $M\backslash Z$ is an integrable
-    connection on the holomorphic bundle $\sM_{|M\backslash Z}$.
-  \end{comment}
 \end{defn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -151,12 +122,6 @@ depend on the choice of a trivialization.
       \]
       for all $f\in\C(\!\{t\}\!)$ and $m\in \cM$.
   \end{itemize}
-  \begin{comment}
-      \begin{s-rem}
-      \marginnote{\cite{sabbah2007isomonodromic}}
-      It is a $(\C(\!\{t\}\!),\nabla)$-vectorspace.
-    \end{s-rem}
-  \end{comment}
   \begin{s-rem}
     Loday-Richaud calls the meromorphic connections in her
     book~\cite[Def.4.2.1]{Loday2014} \emph{differential modules}.
@@ -171,26 +136,24 @@ depend on the choice of a trivialization.
 \end{rem}
 \begin{defn}
   \marginnote{\cite[Def.5.2.1]{hotta2008}}
-  A \emph{(iso-)\,morphism of meromorphic connections}
-  $\Phi:(\cM,\nabla)\overset{\sim}\to(\cM',\nabla')$ is a (iso-)\,morphism of
+  A \emph{(iso-)morphism of meromorphic connections}
+  $\Phi:(\cM,\nabla)\overset{\sim}\to(\cM',\nabla')$ is a (iso-)morphism of
   $\C(\!\{t\}\!)$-vectorspaces $\Phi:\cM\overset{\sim}\to\cM'$ which commutes
   with the connections, i.e.\ which satisfies
   $\nabla\circ\phi = (\id\otimes\phi)\circ\nabla$.
-  \TODO[Category of meromorphic connections!]
 \end{defn}
 \marginnote{\cite[65]{Loday2014}, \cite[129]{hotta2008}}
 Choose a $\C(\!\{t\}\!)$-basis $\underline{e}=(e_1,e_2,\dots,e_n)$ of $\cM$.
 Let $A=(a_{jk})_{j,k\in\{1,\dots,n\}}$ be a $n\times n$ matrix with entries in
-$\C(\!\{t\}\!)$ such that the it describes the action of $\nabla$, i.e.\ it
-satisfies $\nabla e_k=-\sum_{1\leq j\leq n} a_{jk}(t)e_j$, for every
-$k\in\{1,\dots,n\}$.
+$\C(\!\{t\}\!)$ such that the it describes the action of $\nabla$ corresponding
+to the chosen basis, i.e.\ satisfies
+ $\nabla e_k=-\sum_{1\leq j\leq n} a_{jk}(t)e_j$ for every $k\in\{1,\dots,n\}$.
 \begin{defn}
   The matrix $A$ is called a \emph{connection matrix} of $(\cM,\nabla)$.
 \end{defn}
 The connection $\nabla$ is fully determined by $A$. Indeed, let
-$x=\sum_{0\leq j\leq n}x_je_j$ be an arbitrary element of $\cM$ which is in
-matrix notation described as $x=\underline{e}\cdot X$ with the column matrix
-$X={}^t\!(x_1,x_2 ,\dots,x_n)$.
+$x=\sum_{0\leq j\leq n}x_je_j=\underline{e}\cdot X$ be an arbitrary element of
+$\cM$, where $X={}^t\!(x_1,x_2 ,\dots,x_n)$ is a column matrix.
 Then, applying $\nabla$ using the Leibniz rule, yields
 \begin{align*}
   \nabla x&=\nabla\left(\underline{e}\cdot X\right)
@@ -209,8 +172,7 @@ $\triangle=d-A$, which has order one and dimension $n$.
   \marginnote{\cite[Sec.4]{Martinet1991}}
   We call (\ref{eq:ode}), determined by the differential operator
   $\triangle=d-A$, a \emph{germ of a meromorphic linear differential
-  system\footnote{Martinet and Ramis call them in~\cite{Martinet1991}
-  \emph{germs of meromorphic differential operators.}}} of rank $n$, or just a
+  system\footnotemark} of rank $n$, or just a
   \emph{system}.
   \begin{s-prop}
     Thus, the set of systems is isomorphic to the set
@@ -222,37 +184,13 @@ $\triangle=d-A$, which has order one and dimension $n$.
   Such a system will be denoted by $[A]=d-A$ and we will call $A$ the
   connection matrix of the system $[A]$.
 \end{defn}
+  \footnotetext{Martinet and Ramis call them in~\cite{Martinet1991}
+  \emph{germs of meromorphic differential operators.}}
 \TODO[possibly multivalued solutions ($\tilde K$)?~\cite{hotta2008} on page
 128]
-% \begin{defn}
-%   \begin{enumerate}
-%     \item This matrix $A$ is called a \emph{connection matrix} of
-%       $(\cM,\nabla)$. It depends on the choice of the $\C(\!\{t\}\!)$-basis.
-%       \begin{comment}
-%         \begin{s-cor}
-%           As we have seen above, \rewrite{is a connection} fully determined by
-%           its connection matrix together with the corresponding base choice.
-%         \end{s-cor}
-%       \end{comment}
-%     \item A \emph{germ of a meromorphic linear differential system} of rank
-%       $n$, or just a \emph{system}, is a germ of a meromorphic connection on
-%       the trivial vector bundle \textbf{with a chosen trivialization}
-%       \rewrite{of the fiber $E\cong\C^n$}.
-%       \begin{s-prop}
-%         Thus, the set of systems is isomorphic to the set
-%         \[
-%           \End(E)\otimes\C(\!\{t\}\!)=\gl_n(\C(\!\{t\}\!))
-%         \]
-%         of all connection matrices.
-%       \end{s-prop}
-%       Such a system will be denoted by $[A]=d-A$ where $A$ is the connection
-%       matrix in the chosen trivialization.
-%       \TODO[Category of systems!]
-%   \end{enumerate}
-% \end{defn}
 
 If we start with a system $[A]$ and we want a meromorphic connection
-$(\cM,\nabla)$, which has $A$ as connection matrix, we can do this in the
+$(\cM,\nabla)$ which has $A$ as connection matrix we can do this in the
 following way.
 \begin{prop}\label{prop:systToMeromConn}
   If we start with either a system $[A]$ of rank $n$, or a connection matrix
@@ -261,18 +199,7 @@ following way.
     (\cM_A,\nabla_A)=(\C(\!\{t\}\!)^n,d-A)
   \]
   which has $A$ as its connection matrix.
-  \TODO[cf??]
-  % \begin{s-rem}
-  %   Since systems are meromorphic connections together with a base choice, we
-  %   could alternatively forget the base choice. This yields clearly an
-  %   isomorphic meromorphic connection.
-  % \end{s-rem}
 \end{prop}
-\begin{comment}
-  \begin{proof}
-    \TODO{}
-  \end{proof}
-\end{comment}
 
 \begin{prop}\label{prop:MatOfSumOfMerCon}
   Let $(\cM_1,\nabla_1)$ and $(\cM_2,\nabla_2)$ be two meromorphic
