@@ -530,19 +530,19 @@ of the same system.
   solutions of the system $[A]$ on $\mathfrak{s}$.
   \begin{comment}
     \begin{s-rem}
-        \begin{itemize}
-        \item Some authors\PROBLEM[?] introduce multi-valued solutions, to avoid
-            the restriction to sectors.
-            \begin{einr}
-              \emph{Multi-valued} are functions, which are not single-valued and
-              \emph{single-valued} is a function $f$, which satisfies
-              \[
-                f(t)=f(t\exp(2\pi i)) \qquad\text{whenever both sides are defined.}
-              \]
-            \end{einr}
-            The function $t\to t^\alpha$, for example, is single-valued whenever
-            $\alpha\in\Z$.
-        \end{itemize}
+      \begin{itemize}
+      \item Some authors\PROBLEM[?] introduce multi-valued solutions, to avoid
+        the restriction to sectors.
+        \begin{einr}
+          \emph{Multi-valued} are functions, which are not single-valued and
+          \emph{single-valued} is a function $f$, which satisfies
+          \[
+            f(t)=f(t\exp(2\pi i)) \qquad\text{whenever both sides are defined.}
+          \]
+        \end{einr}
+        The function $t\to t^\alpha$, for example, is single-valued whenever
+        $\alpha\in\Z$.
+      \end{itemize}
     \end{s-rem}
   \end{comment}
 \end{defn}
@@ -603,7 +603,8 @@ This approach is discussed by Sabbah in~\cite{sabbah_cimpa90} and in a more
 general context in~\cite[Sec.II.5]{sabbah2007isomonodromic}.
 \begin{defn}\label{defn:elemnMerConnBausteine}
   \begin{itemize}
-    \item For a $\phi\in\C(\!\{t\}\!)$ we use $\cE^{\phi}$ to denote the germ
+    \item For a $\phi\in\C(\!\{t\}\!)$ we use $\cE^{\phi}$ to denote the
+      meromorphic connection
       \[
         (\cE^{\phi},\nabla)=(\C(\!\{t\}\!),d-\phi')\,.
       \]
@@ -612,13 +613,13 @@ general context in~\cite[Sec.II.5]{sabbah2007isomonodromic}.
       \begin{s-prop}\label{cor:uniqueAmbassadorForPhi}
         $\cE^\phi$ is determined by the class of $\phi$ in
         $\C(\!\{t\}\!)/\C\{t\}\cong t^{-1}\C[t^{-1}]$. In the following, we
-        will only consider the unique ambassador $\phi$ in each class which has
-        no holomorphic part.
+        will only assume, that $\phi$ is always given by the unique ambassador
+        which has no holomorphic part.
       \end{s-prop}
     \item For $\alpha\in\C$, define the \emph{elementary regular meromorphic
       connection of rank one} $\cN_{\alpha,0}$ as the germ
       \[
-        (\cN_{\alpha,0},\nabla)=\left(\C(\!\{t\}\!),d+\frac{\alpha}{t}\right)
+        (\cN_{\alpha,0},\nabla)\cong\left(\C(\!\{t\}\!),d+\frac{\alpha}{t}\right)
         \,.
       \]
       This corresponds to the system satisfied by $t^{-\alpha}$.
@@ -631,8 +632,8 @@ general context in~\cite[Sec.II.5]{sabbah2007isomonodromic}.
         \frac{1}{t} (\alpha\id+N)
       \]
       where $N\in\gl_{d+1}(\C)$ is a nilpotent matrix.
-      If \rewrite{$\alpha\id + N$} is a single Jordan Block, we denote the
-      corresponding connection by $\cN_{\alpha,d}$.
+      If $\alpha\id + N$ is a single Jordan Block, we denote the corresponding
+      connection by $\cN_{\alpha,d}$.
       \begin{s-rem}
         The Corollary~\cite[Cor.II.2.9]{sabbah2007isomonodromic} states, that
         every germ of a regular meromorphic connection $(\cR,\nabla)$ is
@@ -1325,7 +1326,7 @@ asymptotic expansions\PROBLEM[?].
   \]
   \begin{s-cor}\label{cor:isomorphyOfClassfset}
     \marginnote{\cite[Eq.1.9b]{babbitt1983}}
-    Thus the \emph{set of meromorphic classas of systems formally equivalent
+    Thus the \emph{set of meromorphic classes of systems formally equivalent
     to $A^0$} are just the orbits of $G(\!\{t\}\!)$ in $\Syst_m(A^0)$ that is
     \[
       {}^0C(A^0)\cong G(\!\{t\}\!)\backslash\hat G(A^0)/G_0(A^0)
@@ -1341,3 +1342,7 @@ elements are block-diagonal corresponding to the structure of $Q$,
 see~\cite[77]{Loday2014}.
 Thus the structure of ${}^0C(A^0)$ is easily deduced from the structure of
 $G(\!\{t\}\!)\backslash\hat G(A^0)$.
+
+%%% Local Variables:
+%%% TeX-master: "Maximilian_Huber-Masters_Thesis-with_notes.tex"
+%%% End:
