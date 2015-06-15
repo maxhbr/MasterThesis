@@ -1,6 +1,6 @@
 \chapter{Systems and meromorphic connections}
-Here we will start with defining (global) meromorphic connetions although we
-will only be interested in local information.
+Here we will start with defining meromorphic connetions on holomorphic bundles
+although we will only be interested in local information.
 For local description we will use \textbf{germs of meromorphic connections}, the
 coordinate dependent \textbf{systems} and \textbf{connection matrices}.
 Other coordinate independent approaches arise for example from the theory of
@@ -34,16 +34,17 @@ It is sufficient to think $M=\P^1$ and $0\in|Z|$\footnote{If
 $Z=k_1(a_1)+\cdots+k_m(a_m)$ then $|Z|:=\{a_1,\dots,a_m\}$.}, since we will
 only be interested in local information (at $0$).
 
-Let $\sM$ be a holomorphic Bundle over $M$ i.e.\ a locally free $\cO_M$-module
+Let $\sM$ be a holomorphic bundle over $M$ i.e.\ a locally free $\cO_M$-module
 of rank $n$.
-A (global) meromorphic connection is then defined as follows.
+A global meromorphic connection, i.e.\ a meromorphic connection on $\sM$, is
+then defined as follows.
 \begin{defn}\label{defn:mercon}
-  A \emph{meromorphic connection $(\sM,\nabla)$ on $\sM$ with poles on $Z$}
+  A \emph{meromorphic connection $(\sM,\nabla)$ on $\sM$ with poles on $Z$} is
   is defined by a $\C$-linear morphism of sheaves
   \[
     \nabla:\sM\to\Omega_M^1(*Z)\otimes\sM
   \]
-  satisfying, for each $U\underset{\text{op.}}{\subset} M$, the
+  satisfying, for each open subset $U\underset{\text{op.}}{\subset} M$, the
   \emph{Leibniz rule}
     \[
       \nabla(fs)=f\nabla s+(df)\otimes s
@@ -64,27 +65,25 @@ A (global) meromorphic connection is then defined as follows.
     (cf.\ \cite[Sec.0.9.b]{sabbah2007isomonodromic}).
   \end{s-rem}
 \end{defn}
-The word ``global'' used to emphasize that the connection is ``on $M$'', i.e.\
+The word ``global'' used to emphasize that the connection is ``on $\sM$'', i.e.\
 not only a germ at some point of $M$, \rewrite{like it will be used} later
 (cf.\ Remark~\ref{rem:GlobalNothingGerm}).
-It will occasionally be convenient to omit the $\nabla$ and simply call $\sM$
-the meromorphic connection.
-\begin{rem}
-  Here, the variant `holomorphic bundle with meromorphic connection' is chosen,
-  like in Boalch's paper~\cite{boalch}. There is also the transposed description
-  `meromorphic bundle with holomorphic connection' which is for example used in
-  Sabbah's book~\cite{sabbah2007isomonodromic}.
 
-  By choosing a lattice of a meromorphic bundle
-  (cf.\ \cite[Def.0.8.3]{sabbah2007isomonodromic}), one gets a holomorphic bundle
-  but if the meromorphic bundle had a holomorphic connection, the induced
-  connection \rewrite{on the lattice} is no longer guaranteed to be holomorphic.
-  Thus we obtain a meromorphic connection on a holomorphic bundle in our sense.
-\end{rem}
+In the definition above is the variant `holomorphic bundle with meromorphic
+connection' is chosen, like in Boalch's paper~\cite{boalch}.
+There is also the transposed description `meromorphic bundle with holomorphic
+connection' which is for example used in Sabbah's
+book~\cite{sabbah2007isomonodromic}.
+
+By choosing a lattice of a meromorphic bundle
+(cf.\ \cite[Def.0.8.3]{sabbah2007isomonodromic}), one gets a holomorphic bundle
+but if the meromorphic bundle had a holomorphic connection, the induced
+connection \rewrite{on the lattice} is no longer guaranteed to be holomorphic.
+Thus we obtain a meromorphic connection on a holomorphic bundle in our sense.
 
 \begin{defn}
   \marginnote{\cite[0.12.2]{sabbah2007isomonodromic}}
-  The connection $\nabla:\cM\to \Omega_M^1\otimes_{\cO_M}\cM$ is said to be
+  The connection $\nabla:\sM\to \Omega_M^1\otimes_{\cO_M}\sM$ is said to be
   \emph{integrable} or \emph{flat}, if its curvature vanishes, i.e.\
   $R_\nabla\equiv0$
   where $R_\nabla:=\nabla\circ\nabla:\cE\to\Omega_M^2\otimes_{\cO_M}\cE$ is a
@@ -105,8 +104,8 @@ This means that we look at a connection in a neighbourhood of $0$ which has its
 unique singularity at $0$.
 There are multiple ways of expressing the local information without the need of
 an fixed neigbourhood.
-We will either talk about germs of meromorphic connections or systems, which
-depend on the choice of a trivialization.
+We will either talk about germs (at $0$) of meromorphic connections or systems,
+which depend on the choice of a trivialization.
 \begin{prop}
   \marginnote{\textbf{\cite[Rem.5.2.4]{hotta2008}}\\\cite[Def.4.2.1]{Loday2014}}
   A germ of a meromorphic connection $(\sM,\nabla)$ is the sheaf-theoretic
@@ -123,17 +122,19 @@ depend on the choice of a trivialization.
       for all $f\in\C(\!\{t\}\!)$ and $m\in \cM$.
   \end{itemize}
   \begin{s-rem}
-    Loday-Richaud calls the meromorphic connections in her
+    Loday-Richaud calls the germs of meromorphic connections in her
     book~\cite[Def.4.2.1]{Loday2014} \emph{differential modules}.
   \end{s-rem}
 \end{prop}
 \begin{rem}\label{rem:GlobalNothingGerm}
-  From now on we will mostly talk about \textbf{germs of} meromorphic
+  From now on we will only talk about \textbf{germs of} meromorphic
   connections $(\cM,\nabla)$ and we will call them meromorphic connection. If
   we want to talk about meromorphic connections in the sense of
   Definition~\ref{defn:mercon} we will emphasize this by the word `global' or
   by talking about a meromorphic connection \textbf{on $M$}.
 \end{rem}
+It will occasionally be convenient to omit the $\nabla$ and simply call $\cM$
+the meromorphic connection.
 \begin{defn}
   \marginnote{\cite[Def.5.2.1]{hotta2008}}
   A \emph{(iso-)morphism of meromorphic connections}
@@ -239,14 +240,13 @@ following way.
 \end{proof}
 
 \begin{rem}
-  \marginnote{\cite[129f]{hotta2008}}
   Let $(\cM_1,\nabla_1)$ and $(\cM_2,\nabla_2)$ be meromorphic connections.
   Then $\cM_1\otimes\cM_2$ is endowed with the structure of a meromorphic
   connection by
   \[
   \nabla(u_1\otimes u_2)=\nabla_1u_1\otimes u_2+u_1\otimes\nabla_2u_2
   \]
-  where $u_i\in\cM_i$.
+  where $u_i\in\cM_i$ (cf.\ \cite[129]{hotta2008}).
   \begin{comment}
     $\Hom_{\C(\!\{t\}\!)}(\cM_1,\cM_2)$ is endowed with the structure of a
     meromorphic connection by
@@ -314,33 +314,49 @@ following way.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Transformation of systems}
-\begin{notations}
-  We will use the following notations
-  \begin{itemize}
-    \item $G[t]=\Gl_n(\C[t])$;
-    \item $G\{t\}=\Gl_n(\C\{t\})$ the analytic transformations;
-    \item $G(\!\{t\}\!)=\Gl_n\left(\C\{t\}[t^{-1}]\right)$ the
-      meromorphic\footnote{We use the term meromorphic in the sens of
-      convergent meromorphic. Otherwise we say formal meromorphic.}
-      transformations;
-    \item $G\llbracket t\rrbracket=\Gl_n\left(\C\llbracket t\rrbracket\right)$
-      the maybe not applicable formal transformations;
-    \item $G(\!(t)\!)=\Gl_n\left(\C\llbracket t\rrbracket[t^{-1}]\right)$
-      the maybe not applicable formal meromorphic transformations.
-  \end{itemize}
-\end{notations}
+% \begin{comment}
+%   \begin{notations}
+%     We will use the following notations
+%     \begin{itemize}
+%     \item $G[t]=\Gl_n(\C[t])$;
+%     \item $G\{t\}=\Gl_n(\C\{t\})$ the analytic transformations;
+%     \item $G(\!\{t\}\!)=\Gl_n\left(\C\{t\}[t^{-1}]\right)$ the
+%       meromorphic\footnotemark{} transformations;
+%     \item $G\llbracket t\rrbracket=\Gl_n\left(\C\llbracket t\rrbracket\right)$
+%       the maybe not applicable formal transformations;
+%     \item $G(\!(t)\!)=\Gl_n\left(\C\llbracket t\rrbracket[t^{-1}]\right)$
+%       the maybe not applicable formal meromorphic transformations.
+%     \end{itemize}
+%   \end{notations}
+% \end{comment}
 \marginnote{\cite[Sec.4.3.1]{Loday2014}}
-By \emph{meromorphic transformation}, or just \emph{transformation}, of a
-system we mean a $\C(\!\{t\}\!)$-linear change of the trivialization.
-Such a change is given by a matrix $F\in G(\!\{t\}\!)$ and the transformed
+
+By \emph{meromorphic\footnote{We use the term meromorphic in the sens of
+convergent meromorphic. Otherwise we say formal meromorphic.} transformation},
+or just \emph{transformation}, of a system we mean a $\C(\!\{t\}\!)$-linear
+change of the trivialization.
+Such a change is given by a matrix
+$F\in G(\!\{t\}\!):=\Gl_n\left(\C\{t\}[t^{-1}]\right)$ and the transformed
 connection matrix ${}^F\!A$ is obtained through the Gauge transformation
-\[
+\begin{equation}\label{eq:gaugeTrafo}
   {}^F\!A=(dF)F^{-1} + FAF^{-1} \,.
+\end{equation}
+Let $B:={}^F\!A$ be the transformed matrix and rewrite the equation
+(\ref{eq:gaugeTrafo}) to obtain the linear differential equation
+\[
+    \frac{dF}{dt}=BF-FA
 \]
-If $F$ is formal i.e.\ $F\in G(\!(t)\!)$, it will usually be denoted by
-$\hat F$.
+which will be denoted by $[A,B]$.
+\begin{rem}
+  The system matrix $B$ is obtained from $A$ by transformation $F$ if and only
+  if $F$ solves the linear differential system $[A,B]$.
+\end{rem}
+
+If $F$ is formal i.e.\
+$F\in G(\!(t)\!):=\Gl_n\left(\C\llbracket t\rrbracket[t^{-1}]\right)$, it will
+usually be denoted by $\hat F$.
 The transformation of $A$ by $\hat F$ is not guaranteed to have convergent
-entries.
+entries and thus is no system.
 We denote by $\hat G(A)$ the set of all \emph{(applicable) formal
 transformations}
 \[
@@ -358,57 +374,37 @@ $\hat G(A)$ and $\hat G(A')$ related by
 \]
 
 \begin{rem}
-  The condition
-  \begin{einr}
-    $B$ is obtained from $A$ by transformation $F$
-  \end{einr}
-  is clearly equivalent to
-  \begin{einr}
-    $F$ solves the linear differential system
-    \[
-      \frac{dF}{dt}=BF-FA
-    \]
-    which is denoted by $[A,B]$.
-  \end{einr}
-  \begin{s-rem}
-    If we start with
-    \begin{itemize}
-      \item two base choices $\cM\overset{\sim}\longrightarrow\C(\!\{t\}\!)^n$
-        and $\cM'\overset{\sim}\longrightarrow\C(\!\{t\}\!)^n$ and
-      \item an isomorphism
-        $\Phi:(\cM,\nabla)\overset{\sim}\longrightarrow(\cM',\nabla')$ together
-        with the corresponding base change $F\in G(\!\{t\}\!)$
-    \end{itemize}
-    we have the following commutative diagram:
-    \[ \begin{tikzcd}[column sep=.5cm,row sep=.5cm]
-        \C(\!\{t\}\!)^n
-        \arrow[green!60!black,thick]{rrrrr}{F}
-        \arrow[green!60!black,thick]{dddd}{d-A}&&&&&
-          \C(\!\{t\}\!)^n\arrow[green!60!black,thick]{dddd}{d-B}
-          \\ & \cM \arrow{dd}{\nabla}\arrow{rrr}{\Phi}\ular&&&
-          \cM'\arrow{dd}{\nabla'}\urar
-          \\
-        \\ & \cM \arrow{rrr}{\Phi}\dlar&&& \cM'\drar
-        \\ \C(\!\{t\}\!)^n \arrow[green!60!black,thick]{rrrrr}{F}&&&&&
-          \C(\!\{t\}\!)^n
+  The Gauge transformations arise naturally from an isomorphism of meromorphic
+  connections in the following way.
+  If we start with
+  \begin{itemize}
+  \item two base choices $\cM\overset{\sim}\longrightarrow\C(\!\{t\}\!)^n$
+    and $\cM'\overset{\sim}\longrightarrow\C(\!\{t\}\!)^n$ and
+  \item an isomorphism
+    $\Phi:(\cM,\nabla)\overset{\sim}\longrightarrow(\cM',\nabla')$ together
+    with the corresponding base change $F\in G(\!\{t\}\!)$
+  \end{itemize}
+  we have the following commutative diagram:
+  \[ \begin{tikzcd}[column sep=.5cm,row sep=.5cm]
+      \C(\!\{t\}\!)^n
+      \arrow[green!60!black,thick]{rrrrr}{F}
+      \arrow[green!60!black,thick]{dddd}{d-A}&&&&&
+      \C(\!\{t\}\!)^n\arrow[green!60!black,thick]{dddd}{d-B}
+      \\ & \cM \arrow{dd}{\nabla}\arrow{rrr}{\Phi}\ular&&&
+      \cM'\arrow{dd}{\nabla'}\urar
+      \\
+      \\ & \cM \arrow{rrr}{\Phi}\dlar&&& \cM'\drar
+      \\ \C(\!\{t\}\!)^n \arrow[green!60!black,thick]{rrrrr}{F}&&&&&
+      \C(\!\{t\}\!)^n
     \end{tikzcd} \]
-    \marginnote{\begin{align*}
-          ((d-B)\circ F) x &= (F\circ(d-A)) x
-        \\(d\circ F) x - (B\circ F) x &= F(dx -Ax)
-        \\d(Fx) - B(Fx) &= F(x' - Ax)
-        \\Fx'+F'x - BFx &= Fx' - FAx
-        \\Fx'+F'x - Fx' &= BFx - FAx
-        \\F'x &= (BF - FA)x
-      \end{align*}}
-    Thus the commutation property for the outer rectangle reads
-    \[
-      (d-B)\circ F=F\circ(d-A)
-    \]
-    which is equivalent to
-    \[
-      \frac{dF}{dt}=BF-FA.
-    \]
-  \end{s-rem}
+  Thus the commutation property for the outer rectangle reads
+  \[
+    (d-B)\circ F=F\circ(d-A)
+  \]
+  which is equivalent to
+  \[
+    \frac{dF}{dt}=BF-FA.
+  \]
 \end{rem}
 \begin{rem}\label{rem:distributingTransforamtionRule}
   The simple but useful rule
@@ -436,6 +432,8 @@ $\hat G(A)$ and $\hat G(A')$ related by
   \\&= {}^{F_2}\!\left({}^{F_1}\!A\right) \,.
   \end{align*}
 \end{rem}
+Let us now introduce equivalence relations on systems, which will correspond to
+the isomorphism relations on meromorphic connections.
 \begin{defn}
   We define the \emph{(formal) equivalence relation on the connection matrices
   (resp.\ on the corresponding systems)} as
@@ -453,12 +451,6 @@ $\hat G(A)$ and $\hat G(A')$ related by
     Thus $A$ is (formally) equivalent to $B$ if and only if there is a (formal)
     solution of $[A,B]$.
   \end{s-rem}
-  \begin{comment}
-    \begin{s-rem}
-      This implies also an equivalence relation and a classification on the
-      systems.
-    \end{s-rem}
-  \end{comment}
 \end{defn}
 
 The defined equivalence relations are compatible with the \rewrite{isomorphisms
@@ -479,18 +471,17 @@ i.e.\ the following proposition holds.
   Let $G_0(A^0)$ denote the set of all isotropies of $A^0$.
   \begin{s-rem}
     The isotropies are, a priori, formal transformations.
-    Loday-Richaud mentions in her paper~\cite[853]{Loday1994}, that
-    actually $G_0(A^0)$ is a subgroup of $\Gl_n(\C[1/t,t])$.
+    Loday-Richaud mentions in her paper~\cite[853]{Loday1994}, that $G_0(A^0)$
+    is actually a subgroup of $\Gl_n(\C[1/t,t])$.
   \end{s-rem}
+  \begin{s-lem}
+    \marginnote{\cite[854]{Loday1994}}
+    Two formal transformations $\hat F_1$ and $\hat F_2$ take $A^0$ into
+    equivalent matrices ${}^{\hat F_1}\!A^0$ and  ${}^{\hat F_2}\!A^0$ if and
+    only if there exists isotropy $f_0\in G_0(A^0)$ such that
+    $\hat F_1=\hat F_2f_0$ (cf.~\cite[854]{Loday1994}).
+  \end{s-lem}
 \end{defn}
-\begin{lem}
-  \marginnote{\cite[854]{Loday1994}}
-  Two formal transformations $\hat F_1$ and $\hat F_2$ take $A^0$ into
-  equivalent matrices ${}^{\hat F_1}\!A^0$ and  ${}^{\hat F_2}\!A^0$ if and
-  only if there exists isotropy $f_0\in G_0(A^0)$ such that
-  $\hat F_1=\hat F_2f_0$
-  (cf.~\cite[854]{Loday1994}).
-\end{lem}
 
 \marginnote{\cite[Defn.5.1.6]{hotta2008}}
 The meromorphic connections are distinguished into regular and irregular
@@ -499,7 +490,7 @@ meromorphic connections.
 \begin{defn}
   \marginnote{\cite[86]{sabbah2007isomonodromic}}
   A connection with connection matrix $A$ has \emph{regular singularity} at $0$
-  if there exists a konvergent transformation, by which $A$ is obtained from a
+  if there exists a convergent transformation, by which $A$ is obtained from a
   matrix with at most a simple pole at $t=0$.
   Otherwise, the singularity is called \emph{irregular}.
   \begin{s-rem}
@@ -534,30 +525,34 @@ of the same system.
   fundamental solution} $\cY$ on a sector $\mathfrak{s}$ of the
   system $[A]$ is an invertible $n\times n$ matrix (with formal entries), which
   solves $[0,A]$ on $\mathfrak{s}$.
-  \begin{s-rem}
-    \begin{itemize}
-      \item This means that the columns of $\cY$ are $n$ $\C$-linearly
-        independent solutions of the system $[A]$ on $\mathfrak{s}$.
-      \item Some authors\PROBLEM[?] introduce multi-valued solutions, to avoid
-        the restriction to sectors.
 
-        \begin{einr}
-          \emph{Multi-valued} are functions, which are not single-valued and
-          \emph{single-valued} is a function $f$, which satisfies
-          \[
-            f(t)=f(t\exp(2\pi i)) \qquad\text{whenever both sides are defined.}
-          \]
-        \end{einr}
-        The function $t\to t^\alpha$, for example, is single-valued whenever
-        $\alpha\in\Z$.
-    \end{itemize}
-  \end{s-rem}
+  This means that the columns of $\cY$ have to be $n$ $\C$-linearly independent
+  solutions of the system $[A]$ on $\mathfrak{s}$.
+  \begin{comment}
+    \begin{s-rem}
+        \begin{itemize}
+        \item Some authors\PROBLEM[?] introduce multi-valued solutions, to avoid
+            the restriction to sectors.
+            \begin{einr}
+              \emph{Multi-valued} are functions, which are not single-valued and
+              \emph{single-valued} is a function $f$, which satisfies
+              \[
+                f(t)=f(t\exp(2\pi i)) \qquad\text{whenever both sides are defined.}
+              \]
+            \end{einr}
+            The function $t\to t^\alpha$, for example, is single-valued whenever
+            $\alpha\in\Z$.
+        \end{itemize}
+    \end{s-rem}
+  \end{comment}
 \end{defn}
 The Stokes phenomenon, which will be discussed in the
 chapter~\ref{chap:stokes}, results from the fact that there is always a formal
 fundamental solution, which solves a system on the full arc $S^1$.
 But holomorphic solutions, which are asymptotic to the formal solution, may
-exist only on small sub-sectors of $S^1$.
+exist only on small sub-sectors of $S^1$. The Stokes structures are then
+informations about the relation between the holomorphic solutions on the overlap
+of two sectors.
 \begin{rem}
   \marginnote{\cite[2.1.3]{Zein2009}}
   If the trivialization is changed by $F$ (resp.\ $\hat F$) the fundamental
@@ -594,7 +589,8 @@ our definition.
 
 The models will be used to classify meromorphic connections up to formal
 isomorphism. Two meromorphic connections are formally isomorphic, if they are
-isomorphic to the (up to convergent isomorphism) same model.
+isomorphic to the (up to convergent isomorphism) same model. In the language of
+systems will normal forms be the objects, which correspond to models.
 
 This is essentially given by the Levelt-Turittin Theorem, which states that each
 meromorphic connection is, after potentially needed ramification, formally
