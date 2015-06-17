@@ -80,7 +80,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{tikz}
 \usepackage{tikz-cd}
-\usetikzlibrary{matrix, arrows, calc, decorations.pathmorphing,%
+\usetikzlibrary{matrix, arrows, calc, decorations.pathmorphing, chains,%
   decorations.pathreplacing, fadings, 3d, decorations.markings, positioning}
 \usetikzlibrary{external}
 \usepackage{tikzpagenodes}
@@ -470,4 +470,7 @@
 
 %\setcounter{chapter}{-1}
 
+%%% Local Variables:
+%%% TeX-master: "Maximilian_Huber-Masters_Thesis-with_notes.tex"
+%%% End:
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:

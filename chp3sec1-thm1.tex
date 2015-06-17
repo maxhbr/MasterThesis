@@ -4,8 +4,8 @@
   \\\cite[Thm.4.3.9]{Loday2014},
   \\\cite[Thm.II.6.2]{sabbah2007isomonodromic}}
 Here we will look at the classifying set and we will proof that it is
-isomorphic \TODO[as\dots] to the first non abelian cohomology \rewrite{set}
-$H^1(S^1;\Lambda(A^0))$, which will be denoted as $\St(A^0)$.
+isomorphic \TODO[as\dots] to the first non abelian cohomology set
+$H^1(S^1;\Lambda(A^0))$ which will be denoted as $\St(A^0)$.
 If we talk about cocycles or cochains, we will in the following always mean
 $1$-cocycles or $1$-cochains.
 
@@ -39,40 +39,15 @@ flat isotropies of $[A^0]$.
     for a systems wich is not in normal form. The elements of $\Lambda(A)$ then
     have to be isotropies of a normal form $A^0$ of $A$.
   \end{s-rem}
-  \begin{comment}
-    \begin{s-lem}
-      This is independent of the choice of the normal form.
-    \end{s-lem}
-  \end{comment}
-  \iffalse
-  \begin{comment}
-    \begin{s-rem}
-      \PROBLEM[remove? need more defs!]
-      Sabbah \cite[110]{sabbah2007isomonodromic} talks about (global)
-      meromorphic connections $\sM$ on a small disk $D$ around $0$ instead of
-      germs of meromorphic connections.
-
-      Define on $S^1$ the sheaf $\Aut^{<0}(\tilde\sM^{nf})$ of automorphisms of
-      $\tilde\sM^{nf}:=\cA_D\otimes_{\cO_D}\sM^{nf}$ which
-      \begin{itemize}
-        \item are compatible with the connection and
-        \item are formally equal to the identity, i.e.\ induce the identity on
-          $\hat\sM^{nf}:=\hat\cO_D\otimes_{\cO_D}\sM^{nf}$
-      \end{itemize}
-
-      The sheaf $\Aut^{<0}(\tilde\sM^{nf})$ corresponds to our $\Lambda(A^0)$.
-    \end{s-rem}
-  \end{comment}
-  \fi
 \end{defn}
 
 \subsection{The theorem}
-\rewrite{Here we want to state the Malgrange-Sibuya Theorem. We will first give
-it in the language of meromorphic connections and after that we will give the
-same theorem in the language of systems. The second variant of this theorem
-will be proven in the next section.}
+\rewrite{Let us now state the Malgrange-Sibuya Theorem. We will first give it in
+the language of meromorphic connections and after that we will give the same
+theorem in the language of systems.
+The second variant of this theorem will be proven in the next section.}
 
-In the language of meromorphic connections is the map, in the Malgrange-Sibuya
+In the language of meromorphic connections is the map, of the Malgrange-Sibuya
 Theorem bellow, described as follows.
 
 Let $(\cM,\nabla,\hat f)$ be a marked germ of a  meromorphic connection.
@@ -80,7 +55,7 @@ Let $(\cM,\nabla,\hat f)$ be a marked germ of a  meromorphic connection.
 covering $\cU=(U_j)_{j\in J}$ and for every open set, an isomorphism
 \[
   f_j:(\tilde\cM,\tilde\nabla)_{|U_j}
-  \to(\tilde\cM^{nf},\tilde\nabla^{nf})_{|U_j}
+  \longrightarrow(\tilde\cM^{nf},\tilde\nabla^{nf})_{|U_j}
 \]
 such that $f_j\sim_{U_j}\hat f$.
 By $(f_kf_j^{-1})_{jk}$ is then a cocycle of the sheaf $\St(A^0)$, relative
@@ -141,7 +116,7 @@ This defines a welldefined mapping of pointed sets
   \cH(A^0)\to H^1(S^1;\Lambda(A^0))
 \]
 to the first non abelian cohomology of $\Lambda(A^0)$, which we call $\exp$.
-It maps the class of $(A^0,\hat\id)$ to that of $\id$, i.e.\ the trivial
+It maps the class of $([A^0],\hat\id)$ to that of $\id$, i.e.\ the trivial
 cohomology class.
 
 \begin{center}
@@ -249,7 +224,7 @@ We will start by proofing the injectivity of the morphism $\exp$.
   If we set $H_j:=F_j'G_{j}F_j^{-1}$ on $U_{j}$, we get \PROBLEM[refactor!!!]
   \begin{itemize}
     \item that from equation (\ref{eq:inProofOfTHM1Glue}) that the $H_j$ glue
-      together and yield a meromorphic $H$\PROBLEM[holomorphic??],
+      together\PROBLEM[holomorphic??],
     \item that $H_j$ is a solution of $[A,A']$ on every $U_j$, i.e.\ it
       satisfies there ${}^{H_j}A=A'$, since
       \begin{align*}
@@ -319,17 +294,18 @@ We will start by proofing the injectivity of the morphism $\exp$.
 
 For the proof of the surjectivity we will use another result from Malgrange and
 Sibuya, which is also called the Malgrange-Sibuya Theorem
-(Theorem~\ref{thm:thm1helpMalgSibuy}). It can for example be found in Babbitt
-and Varadarajans's book \cite[65ff]{babbitt1989local} as Theorem 4.2.1.
+(Theorem~\ref{thm:thm1helpMalgSibuy}). It will be stated bellow but one can also
+be found in Babbitt and Varadarajans's book \cite[65ff]{babbitt1989local} as
+Theorem 4.2.1.
 
 Let $\hat F\in G(\!(t)\!)$ be a matrix with formally meromorphic entries. By
 the Borel-Ritt Lemma (cf.\ Theorem~\ref{thm:borel-ritt}) we then know, that
 there exists for every arc $I\subsetneq S^1$ a holomorphic function
-$G:\mathfrak{s_I}\to\GL_n(\C)$ which is asymptotic to $\hat F$.
+$G:\mathfrak{s}_I\to\GL_n(\C)$ which is asymptotic to $\hat F$.
 We will denote the set of all such holomorphic functions, which are on
 the arc $I$ asymptotic to $\id\in G(\!(t)\!)$ by
 \[
-  \cG(I)=\left\{G\in\Gl_n(\cA(I))\mid g\sim_I\id\right\}\,,
+  \cG(I)=\left\{G\in\Gl_n(\cA(I))\mid G\sim_I\id\right\}\,,
 \]
 and this defines a sheaf $\cG$ on $S^1$.
 The statement of the (second) Malgrange-Sibuya Theorem
@@ -358,10 +334,9 @@ It can be verified, that the class $\Theta([\hat F])$ does not depend on
   \item the choise of an ambassador $\hat F$ in
     $[\hat F]\in G(\!(t)\!)/G(\!\{t\}\!)$\PROBLEM[proof!],
   \item the choice of the covering $\cU$\PROBLEM[proof!] nor
-  \item the choice the $F_j$\PROBLEM[proof!].
+  \item the choice the lifts $F_j$\PROBLEM[proof!].
 \end{itemize}
 \begin{lem}
-  \TODO[remove this lemma? is not needed/used]
   The mapping $\Theta$ is injective.
 \end{lem}
 \begin{proof}
@@ -386,17 +361,18 @@ It can be verified, that the class $\Theta([\hat F])$ does not depend on
   Since this tells us, that the functions $F_j'G_jF_j^{-1}$ coincide on
   the overlapping and define a holomorphic map from the arc $S^1$ (i.e.\ a
   punctured disc with a small radius) into $\gl_n(\C)$, which will be called
-  $G$.
+  $H$.
   Since $F_j'G_jF_j^{-1}\sim_{U_j}\id$ for all $j\in J$, we have
-  $G\sim_{S^1}\id$.
-  Thus the defined $G$ meromorphic at $0$ and satisfies $G=F'^{-1}F$, so that
+  $H\sim_{S^1}\id$.
+  Thus the defined $H$ meromorphic at $0$ and satisfies $H=F'^{-1}F$, so that
   $[F]=[F']$.
 \end{proof}
 \begin{thm}[Malgrange-Sibuya]\label{thm:thm1helpMalgSibuy}
   The map $\Theta:G(\!(t)\!)/G(\!\{t\}\!)\to H^1(S^1;\cG)$ is an isomorphism.
 \end{thm}
 This Theorem is proven in Section 4.4 of Babbitt and Varadarajan's book
-\cite{babbitt1989local} or on page 371 of \cite{Martinet1991}.
+\cite{babbitt1989local} or on page 371 of~\cite{Martinet1991} from Martinet and
+Ramis.
 
 We are now able to proof the surjectivity of the map from
 Theorem~\ref{thm:mainThm1}.
@@ -404,16 +380,12 @@ Theorem~\ref{thm:mainThm1}.
   \marginnote{\cite[72]{babbitt1989local}}
   Let the cohomology class $\lambda\in H^1(S^1;\Lambda(A^0))$ be represented by
   a cocycle $(F_{jl})_{j,l\in J}$ associated with some finite covering
-  $\cU=\{U_j;j\in J\}$ of $S^1$. We especially know, that
-  \begin{itemize}
-    \item $F_{jl}$ is on $U_j\cap U_l$ asymptotic to $\id$ and
-    \item it is a isotropy, i.e.\  ${}^{F_{jl}}A^0=A^0$.
-  \end{itemize}
-  The cocycle $(F_{jl})_{j,l\in J}$ also determines an element in
-  $\sigma\in H^1(S^1;\cG)$.
+  $\cU=\{U_j;j\in J\}$ of $S^1$.
+  The sections of $\Lambda(A^0)$ are asymptotic to $\id$ and thus the cocycle
+  $(F_{jl})_{j,l\in J}$ also determines an element $\sigma\in H^1(S^1;\cG)$.
   From the Theorem~\ref{thm:thm1helpMalgSibuy} we know, that there is a
- $\hat F\in G(\!(t)\!)$ whose class $[\hat F]$ gets
-  via $\Theta$ mapped to $\sigma$.
+  $\hat F\in G(\!(t)\!)$ whose class $[\hat F]$ gets via $\Theta$ mapped to
+  $\sigma$.
   Thus there exists holomorphic functions $F_j:\mathfrak{s}_{U_j}\to\gl_n(\C)$
   with $F_j\sim_{U_j}\hat F$ and $F_l^{-1}F_j=F_{jl}$ on
   $\mathfrak{s}_{U_j\cap U_l}$ for all $j,l\in J$.
@@ -433,96 +405,6 @@ Theorem~\ref{thm:mainThm1}.
   We have found an element $(A,\hat F)\in\cH(A^0)$ whose image under $\exp$ is
   $\sigma$.
 \end{proof}
-
-\iffalse
-\begin{comment}
-  \TODO[Define $\tilde\cM$ or find other way!]
-  \begin{proof}[Proof of surjectivity]
-    \begin{multicols}{2}
-      % \textbf{Now look at surjectivity:}
-      Similar to the proof, given by Sabbah \marginnote{Which refers to
-      \cite{Malgrange1983}} in \cite{sabbah2007isomonodromic}, we will start this
-      part of the proof by giving a necessary and sufficient condition for a
-      class $\lambda$ in $H^1(S^1;\Lambda(A^0))$
-      \TODO[$\Lambda(A^0)\sim\Aut^{<0}(\tilde\cM^{nf})$ or $\Aut^{<0}(\cM^{nf})$?]
-      to come from an object
-      $(\cM,\nabla,\hat f)\in\cH(\cM^{nf},\nabla^{nf})$:
-      \begin{einr}
-        This is the case if and only if the image of
-        $\lambda\in\Aut^{<0}(\cM^{nf})$ in the set
-        $H^1(S^1;\Aut_{\cA}(\tilde\cM^{nf}))$ (where $\Aut_{\cA}(\tilde\cM^{nf})$
-        contains only the $\cA$-linear automorphisms) is the identity.
-      \end{einr}
-
-    \columnbreak
-
-      \textcolor{gray}{%
-        \textbf{Now look at surjectivity:}
-        Similar to the proof, given by Sabbah \marginnote{Which refers to
-        \cite{Malgrange1983}} in \cite{sabbah2007isomonodromic}, we will start
-        this part of the proof by giving a necessary and sufficient condition
-        for a class $\lambda$ in $H^1(S^1;\Lambda(A^0))$
-        to come from an object
-        $(A,\hat F)\in\cH(A^0)$:
-        \begin{einr}
-          \rewrite{This is the case if and only if the image of
-            $\lambda\in\Aut^{<0}(\cM^{nf})$ in the set
-            $H^1(S^1;\Aut_{\cA}(\tilde\cM^{nf}))$ (where
-            $\Aut_{\cA}(\tilde\cM^{nf})$ contains only the $\cA$-linear
-            automorphisms) is the identity.}
-        \end{einr}
-      }
-    \end{multicols}
-    \begin{proof}
-      \textbf{``\Rightarrow{}'':}
-      If $\lambda$ is the image of some $(\cM,\nabla,\hat f)$ then there exists
-      \begin{itemize}
-        \item a covering $(I_{j})$ of $S^1$ and
-        \item isomorphisms $f_j:\tilde\cM\overset{\sim}\to\tilde\cM^{nf}$
-          inducing $\hat f$
-      \end{itemize}
-      such that $\lambda$ comes from a cocycle $(\lambda_{j,l})=(f_lf_j^{-1})$
-      on $I_j\cap I_l$.
-      \TODO{} shows that $(\lambda_{jl})$ is a coboundary of
-      $\Aut_\cA(\tilde\cM^{nf})$.
-
-      \textbf{``\Leftarrow{}'':}
-      If for some suitable covering $(I_j)$ the cocycle $(\lambda_{jl})$ is a
-      coboundary with values in $\Aut_\cA(\tilde\cM^{nf})$, i.e.\
-      $\lambda_{jl}=f_lf_j^{-1}$, we define a new connection $\nabla$ on
-      $\tilde\cM^{nf}$ by conjugating $\nabla^{nf}$ by $f_j$ on $U_j$.
-
-      \TODO{}
-
-      Moreover $\hat f_j=\hat f_l$ on $U_j\cap U_l$, so that the formal
-      isomorphisms
-      \[
-        \hat f_j:(\hat \cM^{nf},\nabla)
-        \overset{\sim}{\longrightarrow}
-        (\hat\cM^{nf},\nabla^{nf})
-      \]
-      can be glued in an isomorphism $\hat f:(\hat \cM^{nf},\nabla)
-      \overset{\sim}{\longrightarrow}(\hat\cM^{nf},\nabla^{nf})$.
-    \end{proof}
-
-    Thus, the proof of Theorem~\ref{thm:mainThm1} is a consequence of the
-    following Theorem by Malgrange and Sibuya.
-    \begin{thm}[Malgrange-Sibuya]\label{thm:malgSibuyaHelp}
-      \marginnote{\cite[Thm.II.6.10]{sabbah2007isomonodromic}}
-      The image of the mapping
-      \[
-        H^1(S^1;\Gl_d^{<0}(\cA_{\tilde D}))
-        \to
-        H^1(S^1;\Gl_d(\cA_{\tilde D}))
-      \]
-      is the identity.
-    \end{thm}
-    For the proof of Theorem~\ref{thm:malgSibuyaHelp} which we refer to
-    \cite[Th.A.1]{Malgrange1983}, \cite[Th.6.4.1]{sibuya1990Linear} and
-    \cite{babbitt1989local}.
-  \end{proof}
-\end{comment}
-\fi
 
 %%% Local Variables:
 %%% TeX-master: "Maximilian_Huber-Masters_Thesis-with_notes.tex"

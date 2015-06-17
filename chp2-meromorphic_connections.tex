@@ -1,4 +1,4 @@
-\chapter{Systems and meromorphic connections}
+ther\chapter{Systems and meromorphic connections}
 Here we will start with defining meromorphic connetions on holomorphic bundles
 although we will only be interested in local information.
 For local description we will use \textbf{germs of meromorphic connections}, the
@@ -209,6 +209,13 @@ following way.
   A connection matrix of $(\cM_1,\nabla_1)\oplus(\cM_1,\nabla_1)$ is then
   given
   by the block-diagonal matrix $\diag(A_1,A_2)$.
+  \begin{s-cor}\label{cor:MatOfSumOfMerCon}
+    Let $(\cM,\nabla)$ be an meromorphic connection, whose connection matrix
+    can be written as $\diag(A_1,A_2)$.
+    Then one can decompose the meromorphic connection corresponding to the block
+    structure of $A$, i.e.\ $(\cM,\nabla)$ is then isomorphic to the direct sum
+    $(\cM_{A^1},\nabla_{A^1})\oplus(\cM_{A^2},\nabla_{A^2})$
+  \end{s-cor}
 \end{prop}
 \begin{proof}
   Use Proposition~\ref{prop:systToMeromConn} to write the connection as
@@ -499,7 +506,7 @@ meromorphic connections.
     (resp.\ regular) singularity.
   \end{s-rem}
 \end{defn}
-\begin{thm}
+\begin{thm}\label{thm:regularConnConstMat}
   Let $(\cM,\nabla)$ be a regular singular meromorphic connection and $A$ its
   connection matrix.
   Then there exists a formal matrix $F\in G(\!\{t\}\!)$ such that after
@@ -602,95 +609,79 @@ We will start by defining the models in the language of meromorphic connections.
 This approach is discussed by Sabbah in~\cite{sabbah_cimpa90} and in a more
 general context in~\cite[Sec.II.5]{sabbah2007isomonodromic}.
 \begin{defn}\label{defn:elemnMerConnBausteine}
-  \begin{itemize}
-    \item For a $\phi\in\C(\!\{t\}\!)$ we use $\cE^{\phi}$ to denote the
-      meromorphic connection
-      \[
-        (\cE^{\phi},\nabla)=(\C(\!\{t\}\!),d-\phi')\,.
-      \]
-      This corresponds to the system satisfied by the function $e^\phi$, since
-      $(d-\phi')e^\phi=0$.
-      \begin{s-prop}\label{cor:uniqueAmbassadorForPhi}
-        $\cE^\phi$ is determined by the class of $\phi$ in
-        $\C(\!\{t\}\!)/\C\{t\}\cong t^{-1}\C[t^{-1}]$. In the following, we
-        will only assume, that $\phi$ is always given by the unique ambassador
-        which has no holomorphic part.
-      \end{s-prop}
-    \item For $\alpha\in\C$, define the \emph{elementary regular meromorphic
-      connection of rank one} $\cN_{\alpha,0}$ as the germ
-      \[
-        (\cN_{\alpha,0},\nabla)\cong\left(\C(\!\{t\}\!),d+\frac{\alpha}{t}\right)
-        \,.
-      \]
-      This corresponds to the system satisfied by $t^{-\alpha}$.
+  For $\alpha\in\C$, define the \emph{elementary regular meromorphic
+    connection of rank one} $\cN_{\alpha,0}$ as the germ
+  \[
+    (\cN_{\alpha,0},\nabla):=\left(\C(\!\{t\}\!),d+\frac{\alpha}{t}\right)
+    \,.
+  \]
+  This corresponds to the system satisfied by $t^{-\alpha}$.
 
-      \marginnote{\cite[Defn.II.2.5]{sabbah2007isomonodromic}}
-      An \emph{elementary regular model of arbitrary rank} is a meromorphic
-      connection which has a basis, in which the connection Matrix can be
-      written as
-      \[
-        \frac{1}{t} (\alpha\id+N)
-      \]
-      where $N\in\gl_{d+1}(\C)$ is a nilpotent matrix.
-      If $\alpha\id + N$ is a single Jordan Block, we denote the corresponding
-      connection by $\cN_{\alpha,d}$.
-      \begin{s-rem}
-        The Corollary~\cite[Cor.II.2.9]{sabbah2007isomonodromic} states, that
-        every germ of a regular meromorphic connection $(\cR,\nabla)$ is
-        isomorphic to some direct sum
-        \[
-          (\cR,\nabla)=\bigoplus_{\alpha,d}(\cN_{\alpha,d},\nabla)\,.
-        \]
-        of elementary regular meromorphic connections.
-        This solves the classification problem, for regular meromorphic
-        connections.
-        For a detailed analysis of regular meromorphic connections see Sabbah's
-        book~\cite[Sec.II.2]{sabbah2007isomonodromic} or the
-        book~\cite[Sec.5.2]{hotta2008} from Hotta et al.
-      \end{s-rem}
-  \end{itemize}
+  \marginnote{\cite[Defn.II.2.5]{sabbah2007isomonodromic}}
+  An \emph{elementary regular model of arbitrary rank} is a meromorphic
+  connection which has a basis, in which the connection Matrix can be
+  written as
+  \[
+    \frac{1}{t} (\alpha\id+N)
+  \]
+  where $N\in\gl_{d+1}(\C)$ is a nilpotent matrix.
+  If $\alpha\id + N$ is a single Jordan Block, we denote the corresponding
+  connection by $\cN_{\alpha,d}$.
 \end{defn}
+The Corollary~\cite[Cor.II.2.9]{sabbah2007isomonodromic} in Sabbah's book
+states, that every germ of a regular meromorphic connection $(\cR,\nabla)$ is
+isomorphic to some direct sum
+\[
+  (\cR,\nabla)\cong\bigoplus_{\alpha,d}(\cN_{\alpha,d},\nabla)\,.
+\]
+of elementary regular meromorphic connections.
+The rougth idea to proove this is to use Theorem~\ref{thm:regularConnConstMat}
+and assume that the connection matrix $A$ of $(\cR,\nabla)$ is constant.
+Since the Gauge transformation by a konstant matrix $F\in\Gl(\C)$ is given by
+${}^F\!A=FAF^{-1}$, i.e.\ a similarity transformation, one can find a
+transformation $F$ such that ${}^F\!A$ is in Jordan normal form.
+One can then use Corollary~\ref{cor:MatOfSumOfMerCon} to decompose the
+corresponding to the structure of the Jordan normal form and obtain the result.
+This solves the classification problem, for regular meromorphic connections.
+For a detailed analysis of regular meromorphic connections see Sabbah's
+book~\cite[Sec.II.2]{sabbah2007isomonodromic} or the
+book~\cite[Sec.5.2]{hotta2008} from Hotta et al.
+
+The simplest irregular meromorphic connections will be called elementary and
+are defined bellow.
 \begin{defn}
+  For a $\phi\in\C(\!\{t\}\!)$ we use $\cE^{\phi}$ to denote the meromorphic
+  connection
+  \[
+    (\cE^{\phi},\nabla):=(\C(\!\{t\}\!),d-\phi')\,.
+  \]
+  This corresponds to the system satisfied by the function $e^\phi$, since
+  $(d-\phi')e^\phi=0$.
+  \begin{s-prop}\label{cor:uniqueAmbassadorForPhi}
+    $\cE^\phi$ is determined by the class of $\phi$ in
+    $\C(\!\{t\}\!)/\C\{t\}\cong t^{-1}\C[t^{-1}]$. In the following, we will
+    only assume, that $\phi$ is always given by the unique ambassador which has
+    no holomorphic part.
+  \end{s-prop}
   \marginnote{\cite[Def.II.5.2]{sabbah2007isomonodromic}}
-  A germ $(\cM,\nabla)$ is called \emph{elementary} if it is isomorphic to
-  some germ $(\cE^\phi,\nabla)\otimes(\cR,\nabla)$ where
-  \begin{itemize}
-    \item $(\cE^\phi,\nabla)$ is defined \rewrite{as in}
-      definition~\ref{defn:elemnMerConnBausteine} and
-    \item $(\cR,\nabla)$ has regular singularity at $\{0\}$, i.e.\ is
-      isomorphic to a direct sum of regular elementary meromorphic connections.
-  \end{itemize}
+  A germ $(\cM,\nabla)$ is called \emph{elementary} if it is isomorphic to some
+  germ $(\cE^\phi,\nabla)\otimes(\cR,\nabla)$ where $(\cR,\nabla)$ has regular
+  singularity at $\{0\}$, i.e.\ is isomorphic to a direct sum of regular
+  elementary meromorphic connections.
   \marginnote{\cite[II.2.f]{sabbah2007isomonodromic}}
 \end{defn}
 \begin{defn}\label{defn:model}
   \def\myPhi{\textcolor{red!60!black}{\phi}}
   \def\myE{\textcolor{green!40!black}{\cE^{\myPhi}}}
   A germ $(\cM',\nabla')$ is a \emph{model} if there exists, after ramification
-  $\cM=\pi^*\cM'$ by $\pi$, a isomorphism to a direct sum of elementary
-  meromorphic connections:
-  \begin{multicols}{2}
-    \[
-      \lambda:(\cM,\nabla)
-      \overset{\cong}{\longrightarrow}
-      % \cong
-      \bigoplus_{~\tikzmark{e3}\!\!\myPhi}
-      \overset{\tikzmark{e2}}{\myE}
-      \otimes
-      \overset{\tikzmark{e1}}{\textcolor{blue!40!black}{\cR_{\myPhi}}}
-      \,.
-    \]
-    \columnbreak{}
-    \begin{itemize}
-      \item[\tikzmarkb{n2}{green}] is irregular singular
-      \item[\tikzmarkc{n1}{blue}] has regular singularity at $\{0\}$
-      \item[\tikzmarkc{n3}{red}] $\myPhi\in t^{-1}\C[t^{-1}]$ pairwise distinct
-    \end{itemize}
-    \begin{tikzpicture}[remember picture,overlay]
-      \draw[->,blue!50!white,thick] (n1) to[out=180,in=70] (e1);
-      \draw[->,green!40!black,thick] (n2) to[out=180,in=70] (e2);
-      \draw[->,red!50!white,thick] (n3) to[out=205,in=-30] (e3);
-    \end{tikzpicture}
-  \end{multicols}
+  $\cM=\pi^*\cM'$ by $\pi$, a isomorphism
+  \[
+    \lambda:(\cM,\nabla) \overset{\cong}{\longrightarrow}
+    \bigoplus_{\phi} \cE^\phi \otimes \cR_{\phi}
+  \]
+  to a direct sum of elementary meromorphic connections where the
+  $\phi\in t^{-1}\C[t^{-1}]$ are pairwise distinct and the $\cR_{\phi}$ have
+  regular singularity.
   \begin{s-rem}
     Here it is not necessary to understand ramification, since we restrict to
     the unramified case.
@@ -698,17 +689,13 @@ general context in~\cite[Sec.II.5]{sabbah2007isomonodromic}.
 \end{defn}
 The important theorem here is the Levelt-Turittin Theorem, which solves the
 formal classification problem.
-\begin{thm}[Levelt-Turittin]\label{thm:leveltTurittin}
+\begin{thm}[Levelt-Turittin decomposition]\label{thm:leveltTurittin}
   To each germ $(\cM',\nabla')$ of a meromorphic connection there exists, after
   potentially needed pullback $\pi^{*}\textcolor{black}{\cM'}=:\cM$ by some
-  suitable ramification $t=z^q$ of order $q\geq1$, a
-  \textcolor{green!30!black}{\textbf{formal}} isomorphism
+  suitable ramification $t=z^q$ of order $q\geq1$, a \textbf{formal} isomorphism
   \[
-    \textcolor{green!30!black}{\hat{\textcolor{black}{\lambda}}}:
-    \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}}
-    \overset{\cong}\longrightarrow
-    \textcolor{green!30!black}{\hat{\textcolor{black}{\cM}}^{nf}}
-    :=\textcolor{green!30!black}{\hat\cO_M\otimes}\cM^{nf}
+    \hat{\lambda}:\hat{\cM}\overset{\cong}\longrightarrow
+    \hat{\textcolor{black}{\cM}}^{nf}:=\hat\cO_M\otimes\cM^{nf}
   \]
   to a model $\cM^{nf}$.
   We then call $\cM^{nf}$ a \emph{formal decomposition} or \emph{formal model}
@@ -726,16 +713,15 @@ formal classification problem.
   \end{s-rem}
 \end{thm}
 Proofs of this theorem can be found in multiple places, for example in
-\cite[Thm.5.4.7]{sabbah_cimpa90}.
-
-\TODO[Full set of formal invariants]
+\cite[Thm.5.4.7]{sabbah_cimpa90} or in~\cite{myBa}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{In the language of systems: normal forms}\label{sec:normalForms}
 \marginnote{\cite{Remy2014}
            \\,\cite[146]{sibuya1990Linear}}
 Here we will see, that the fundamental solution of a model can be written in a
-special form and that this property characterizes models.
+special form and that this property characterizes models. This will be used to
+define normal forms which will me models on the level of systems.
 \begin{defn}
   The fundamental solution corresponding to a model (resp.\ a normal form, see
   Definition~\ref{defn:normSol}) will be called a
@@ -750,7 +736,8 @@ For every $j$ is a connection matrix, corresponding to $\cR_j$ given by
 $\frac{1}{t}L_j$, where $L$ is in Jordan normal form.
 A connection matrix to $\cE^{\phi_j}\otimes\cR_j$ is then by
 $q_j'(t^{-1})\cdot\id_{n_j}+\frac{1}{t}L_j$ given\TODO[(cf.~???)], where
-$q_j(t^{-1})=\phi_j(t)$ is a polynomial in $t^{-1}$ without constant term and
+$q_j(t^{-1})=\phi_j(t)$\PROBLEM[repl. all $\phi$ by $q$?] is a polynomial in
+$t^{-1}$ without constant term and
 $q_j'(t^{-1})=\frac{d}{dt}\phi_j(t)$\footnote{By abuse of notation we denote by
   $q_j'(t^{-1})$ the derivation $\frac{d}{dt}(q_j(t^{-1}))=
   \left(\left(\frac{d}{dt}q_j\right)\circ t^{-1}\right) \cdot\frac{d}{dt}t^{-1}$.
@@ -769,14 +756,14 @@ and $L:=\bigoplus_{j=1}^sL_j$.
 \begin{defn}\label{defn:structureComparison}
   Let $L$ be a block diagonal matrix $L=\bigoplus_{j=1}^sL_j$, where the $L_j$
   are of size $n_j\times n_j$ and $Q$ be a diagonal matrix.
-  We will say, that \emph{the block structure of $L$ is finer then the
+  We will say that \emph{the block structure of $L$ is finer then the
   structure of $Q$} if there are $q_j$'s such that
   $Q=\bigoplus_{j=1}q_j\cdot\id_{n_j}$.
   \begin{s-rem}
     \begin{enumerate}\label{rem:structureComparison}
       \item The matrices $Q$ and $L$ defined above clearly satisfy this
         condition.
-      \item When this condition is satisfied, do $L$ and $Q$ commute.
+      \item When this condition is satisfied do $L$ and $Q$ commute.
     \end{enumerate}
   \end{s-rem}
 \end{defn}
@@ -815,13 +802,14 @@ and $L:=\bigoplus_{j=1}^sL_j$.
   \[
     A=t^LQ'(t^{-1})t^{-L}+L\frac{1}{t}
   \]
-  as possible system matrix. But the obtained matrix may not define a matrix,
+  as possible system matrix. But the obtained matrix may not define a system,
   since it could contain entrys, which are not in $\C(\!\{t\}\!)$.
 
-  A simple example is:
-  $L=\begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix}$
-  and
-  $Q=\begin{pmatrix} \phi_1 & 0 \\ 0 & \phi_2 \end{pmatrix}$,
+  A simple example, where this happens, is given by
+  \begin{itemize}
+  \item $L=\begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix}$ and
+  \item $Q=\begin{pmatrix} \phi_1 & 0 \\ 0 & \phi_2 \end{pmatrix}$,
+  \end{itemize}
   with $\phi_1\neq\phi_2$.
   The matrix $A$ is then
   \begin{align*}
@@ -857,8 +845,8 @@ of $(\cM,\nabla)$, which was defined at the beginning of this subsection.
   where $\hat F$ is a formal transformation, solving the differentia equation
   corresponding to the formal isomorphism
   $(\cM^{nf},\nabla^{nf})\to(\cM,\nabla)$.
-  In the other way is a system, which has $\cY$ as fundamental solution is
-  given by
+  In the other way is a system, which has $\cY$ as fundamental solution, given
+  by the connection matrix
   \[
     \bar A={}^{\hat F}\!\left(Q'(t^{-1})+L\frac{1}{t}\right) \,.
   \]
@@ -880,7 +868,8 @@ solution of the form $Ft^L e^{Q(t^{-1})}$, where $F$ is a convergent
 transformation corresponding to $\hat\lambda$.
 In fact are the models uniquely characterized as the meromorphic connections,
 with a fundamental solution which can be written as $\cY_0=Ft^Le^{Q(t^{-1})}$
-and we will use this fact, to say when a system is something like a model.
+and we will use this fact to say when a system is something corresponding to a
+model.
 \begin{defn}\label{defn:normSol}
   Let $[A]$ be a system.
   We call $[A]$ (or $A$) a \emph{normal form} if a fundamental solution of
@@ -1156,12 +1145,11 @@ or Theorem 4.4.1 in Loday-Richaud's Book~\cite{Loday2014}.
   $I\subsetneq S^1$ there exists a lift $F$ on $I$.
   \begin{s-rem}
     \marginnote{\cite[Thm.4.4.1]{Loday2014}}
-    \PROBLEM[Differential operator is $\triangle$]
-    If we write the system $[A^0,A]$ as a differential operator $D$.
-    The theorem then states that $D$ acts linearly and surjectively on the
-    sheaf $\cA^{<0}$, i.e.\ the sequence
+    If we write the system $[A^0,A]$ as a differential operator $\triangle$.
+    The theorem then states that $\triangle$ acts linearly and surjectively on
+    the sheaf $\cA^{<0}$, i.e.\ the sequence
     \[
-      \cA^{<0}\overset{D}\longrightarrow\cA^{<0} \longrightarrow 0
+      \cA^{<0}\overset{\triangle}\longrightarrow\cA^{<0} \longrightarrow 0
     \]
     are exact sequences of sheaves of $\C$-vector spaces.
     \begin{comment}
@@ -1185,10 +1173,10 @@ or Theorem 4.4.1 in Loday-Richaud's Book~\cite{Loday2014}.
     \tilde\cM_{\theta^0}=\cA_{\theta^0}\otimes\cM\to\tilde\cM_{\theta^0}^{nf}$
     lifting $\hat\lambda$ \rewrite{that is, such that} the following diagram
     \[ \begin{tikzcd}
-        \tilde\cM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}} &
-        \tilde\cM^{nf}_{\theta^o} \dar
-        \\\hat\cM \rar{\hat\lambda} &
-        \hat\cM^{nf}
+        \tilde\cM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}}
+        & \tilde\cM^{nf}_{\theta^o} \dar
+        \\\hat\cM \rar{\hat\lambda}
+        & \hat\cM^{nf}
     \end{tikzcd} \]
     commutes
   \end{s-thm}
@@ -1227,7 +1215,7 @@ also denote it also by ${}^0C(A^0)$, if we are using the language of systems.
     meromorphic connections within fixed \textbf{formal meromorphic classes,
     modulo meromorphic equivalence}.
   \end{einr}
-  Whereas for example Boalch in~\cite{boalch} and~\cite{thboalch} classifies
+  Whereas for example Boalch in~\cite{boalch,thboalch} classifies
   \begin{einr}
     meromorphic connections within fixed \textbf{formal analytic classes,
     modulo analytic equivalence}
@@ -1237,7 +1225,8 @@ also denote it also by ${}^0C(A^0)$, if we are using the language of systems.
   (cf.~\cite{thboalch} or~\cite{babbitt1989local}).
 
   This distinction relates to the difference between \textbf{‘regular
-  singular’} connections and \textbf{‘logarithmic’} connections.
+  singular’} connections and \textbf{‘logarithmic’} connections
+  (cf.~\cite[Rem.1.41]{thboalch}).
 \end{rem}
 \marginnote{\cite[6]{thboalch}
   \\\tiny{(\cite[19]{boalch})}
@@ -1255,9 +1244,9 @@ It is convenient to look at the slightly larger space of isomorphism classes of
         (\hat\cM^{nf},\hat\nabla^{nf})
   \bigr\}
 \]
-in which we also handle the additional information, of the formal isomorphism,
-by which the meromorphic connection is isomorphic to the model.
-The isomorphisms of marked pairs are defined as follows:
+in which we also handle the additional information of the formal isomorphism by
+which the meromorphic connection is isomorphic to the model.
+The isomorphisms of marked pairs are defined as expected:
 \begin{defn}\label{defn:isomsOfPairs}
   Two germs $(\cM,\nabla,\hat f)$ and $(\cM',\nabla',\hat f')$ are
   isomorphic if there exists an isomorphism
@@ -1336,9 +1325,8 @@ asymptotic expansions\PROBLEM[?].
     $G(\!\{t\}\!)\backslash\hat G(A^0)$ (cf.\ \cite[Lem.1.17]{thboalch}).
   \end{s-cor}
 \end{lem}
-
-The group $G_0(A^0)$ is easy to compute and is often trivial. In fact, the
-elements are block-diagonal corresponding to the structure of $Q$,
+The group $G_0(A^0)$ is easy to compute and is often trivial. In fact are the
+elements of $G_0(A^0)$ block-diagonal corresponding to the structure of $Q$,
 see~\cite[77]{Loday2014}.
 Thus the structure of ${}^0C(A^0)$ is easily deduced from the structure of
 $G(\!\{t\}\!)\backslash\hat G(A^0)$.

@@ -76,7 +76,7 @@
     \mathchoice{\myrelPrimeB{1.3125pt}{.70em}}
       {\myrelPrime{1.56pt}{.54em}}
       {\myrelPrime{.975pt}{.45em}}
-      {\textcolor{red}{\myrelPrime{3pt}{.54em}}}
+      {\myrelPrime{1pt}{.45em}}
 }}
 
 \begin{document}
@@ -112,33 +112,33 @@
 \input{chp1-asymptotic_expansions.tex}
 \fi
 
-% \ifnum\myHideVariable=0
-\input{chp2-meromorphic_connections.tex}
-% \fi
-
 \ifnum\myHideVariable=0
+\input{chp2-meromorphic_connections.tex}
+\fi
+
+% \ifnum\myHideVariable=0
 \input{chp3sec0-Stokes_structures.tex}
 
-    % \ifnum\myHideVariable=0
+    \ifnum\myHideVariable=0
     \input{chp3sec1-thm1.tex}
-    % \fi
+    \fi
 
     \ifnum\myHideVariable=0
     \input{chp3sec2-Stokes_groups.tex}
     \fi
 
-    % \ifnum\myHideVariable=0
+    \ifnum\myHideVariable=0
     \input{chp3sec3-thm2.tex}
-    % \fi
+    \fi
 
-    % \ifnum\myHideVariable=0
+    \ifnum\myHideVariable=0
     \input{chp3sec4-further_improvements.tex}
-    % \fi
+    \fi
 
     % \ifnum\myHideVariable=0
     \input{chp3sec5-diagram.tex}
     % \fi
-\fi
+% \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -166,6 +166,7 @@
     %\bibliography{main}
 
     % \nocite{*}
+    \KOMAoptions{open=any}
     \makeatletter
     \@mainmatterfalse
     \makeatother
@@ -182,3 +183,8 @@
 % \fi
 \end{document}
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -247,8 +247,9 @@ book~\cite{Loday2014}.
 Let $[A^0]$ be a normal form and $\hat F\in\hat G(A^0)$ a formal
 transformation and denote the transformed system by $A={}^{\hat F}\!A^0$.
 \marginnote{\cite[Sec.III.2.1]{Loday1994}}
-Let $\dot\phi=(\dot\phi_j)_{j\in J}\in\Gamma(\dot{\mathcal{V}};\Lambda(A^0))$
-be a $1$-cocycle in the image of the equivalence class of $\hat F$ by $\exp$.
+Let $\dot\phi=(\dot\phi_j)_{j\in J}\in\Gamma(\dot{\mathcal{V}};\Lambda(A^0))$,
+where $\cV=(V_j)_{j\in J}$ is a cyclic covering, be a $1$-cocycle in the image
+of the equivalence class of $\hat F$ by $\exp$.
 
 The following Proposition can be found in \cite[Prop.III.2.1]{Loday1994},
 \cite[Thm.4.3.13]{Loday2014} and \cite[Thm.1]{BJL1979Birkhoff}.
@@ -257,9 +258,19 @@ The following Proposition can be found in \cite[Prop.III.2.1]{Loday1994},
   $\hat F$ over $\mathcal{V}$, i.e.\ matrices $F_j$ which are analytic on
   $V_j$, satisfy $[A^0,A]$ and are asymptotic to $\hat F$ on $V_j$, such that
   \[
-    \dot\phi_j=F_{j-1}F_j^{-1}
+    \dot\phi_j=F_{j-1}F_j^{-1} \in\Gamma(V_{j-1}\cap V_j;\Lambda(A^0))
   \]
   for every $j\in J$.
+  \begin{s-defn}\label{defn:theMapG}
+    The corresponding map is denoted by
+    \[
+      \tilde g:G(\!\{t\}\!)\backslash\hat G(A^0)
+      \longrightarrow
+      \Gamma(\dot\cV;\Lambda(A^0)) \,.
+    \]
+    The map $g$ mentioned in the beginning of Chapter~\ref{chap:stokes} is build
+    as shown in Section~\ref{sec:theCompleteDiagram}.
+  \end{s-defn}
 \end{prop}
 When $\mathcal{V}$ is the, in section~\ref{sec:proofOfMatrixThm} defined,
 cyclic covering $\cU^{\leq k_r}=:\cU$ and $\dot\phi$ is in its Stokes
