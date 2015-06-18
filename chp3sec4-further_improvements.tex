@@ -229,13 +229,22 @@ theorem.
         of the corresponding Stokes matrices.
       \item By the definition above, it is obvious that
         \[
-          \Sto_{\theta}^k(A^0)=
+          \Sto_{\theta}^k(A^0)\cong
           \bigcap_{\theta'\in \A^k\cap U(\theta,\frac{\pi}{k})}
           \hat\Sto_{\theta'}^k(A^0) \,.
         \]
     \end{enumerate}
   \end{s-rem}
 \end{thm}
+But there is in the multileveled case no obvious way to find a subset $J\in S^1$
+and an isomorphism
+\[
+  \prod_{\theta\in J} \hat\Sto_{\theta}(A^0)
+  ~~\not{\!\!\!\!\longrightarrow}
+  \prod_{k\in\cK}\prod_{j\in\{1,\dots,2k\}}
+  \hat\Sto_{\theta+j\frac{\pi}{k}}^k(A^0)\,,
+\]
+where $\hat\Sto_{\theta}(A^0)$ was defined in Remark~\ref{rem:representation}.
 \begin{proof}
   We have an isomorphism
   \[ \begin{tikzcd}

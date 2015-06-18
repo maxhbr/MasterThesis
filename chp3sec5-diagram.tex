@@ -38,9 +38,10 @@ diagram of \textbf{isomorphisms of pointed sets}.
         \C^{\sum_{q_j\myrel{\alpha}q_l}
           \deg(q_j-q_l)\cdot n_j\cdot n_l}$};
 
-    \draw[->] (cH2) -- (cH)
+    \draw[->] (cH2) edge [->,transform canvas={xshift=2mm}]
       node[midway,right]
-      {\footnotesize(given by Corollary~\ref{cor:isomorphyOfClassfset})};
+      {\footnotesize(given by Corollary~\ref{cor:isomorphyOfClassfset})}
+      (cH);
     \draw[->] (cH) -- (StA0) node[midway,above] {$\exp_{A^0}$};
     \draw[->,purple] (ProdOfStos) to
       node[midway,above,sloped]
@@ -64,7 +65,7 @@ diagram of \textbf{isomorphisms of pointed sets}.
       node[midway,below,sloped] {$\prod_{\alpha\in\A}\vartheta_\alpha$};
 
     % \draw[->] (cH) to[out=220,in=100]  node[midway,left] {$g$} (ProdOfStos);
-    \path[blue] (cH) edge [->,transform canvas={xshift=-1.3mm}] (cH2);
+    \draw[->,blue] (cH) -- (cH2);
     \draw[->,blue] (cH3) -- (ProdOfStos)
       node[midway,left] {\footnotesize(take germs)};
     \draw[->,blue] (cH2) -- (cH3)

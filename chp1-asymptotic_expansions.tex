@@ -117,40 +117,37 @@ We introduce the following terminology:
   $\bar{\mathfrak{s}}_{a',b'}(r')$ is included in $\mathfrak{s}_{a,b}(r)$.
   \begin{s-rem}
     $\mathfrak{s}_{a',b'}(r')\Subset\mathfrak{s}_{a,b}(r)$ if and only if
-    $a<a'<b'<b$ and $r'<r$.
+    $(a',b')$ is a real sub-interval of $(a,b)$ and $r'<r$.
   \end{s-rem}
 \end{defn}
 
 \begin{defn}
   \marginnote{\cite[Defn.7.1]{van2003galois}}
-  \def\myN{\textbf{\textcolor{blue!40!black}{N}}}
-  \def\mySect{\textcolor{red!40!black}{\mathfrak{s}'}}
-  \def\myConst{\textcolor{green!40!black}{C(\myN,\mySect)}}
   A function $f\in\cO(\mathfrak{s})$ is said to have the
   formal\footnote{The term ``formal'' emphasizes that we do not restrict the
   coefficients $a_n\in\C$ in any way.} Laurent series
   $\hat g=\sum_{n\geq n_0}a_nt^n$ as asymptotic expansion (or \emph{to be
   asymptotic to the series}) on the sector $\mathfrak{s}$ if
   \begin{itemize}
-    \item for all proper sub-sectors $\mySect\Subset\mathfrak{s}$ and
-    \item all $\myN\in\N$,
+    \item for all proper sub-sectors $\mathfrak{s}'\Subset\mathfrak{s}$ and
+    \item all $N\in\N$,
   \end{itemize}
-  there exists a constant $\myConst$ such that the following
+  there exists a constant $C(N,\mathfrak{s}')$ such that the following
   estimate\footnote{Sometimes, for example in~\cite{sabbah_cimpa90}, this
     condition is written as
     \[
-      \lim_{z\to0,z\in{\mySect}}
-      |t|^{-(\myN-1)}
+      \lim_{z\to0,z\in{\mathfrak{s}'}}
+      |t|^{-(N-1)}
       \bigl|
-        f(x)-\sum_{n_0\leq n\leq \myN-1}c_nt^n
+        f(x)-\sum_{n_0\leq n\leq N-1}a_nt^n
       \bigr|=0
-      \qquad \text{ for all } t\in \mySect \,.
+      \qquad \text{ for all } t\in \mathfrak{s}' \,.
     \]} holds
   \[
     \bigl|
-      f(x)-\sum_{n_0\leq n\leq \myN-1}c_nt^n
+      f(x)-\sum_{n_0\leq n\leq N-1}a_nt^n
     \bigr|
-    \leq \myConst|t|^{\myN} \qquad \text{ for all }t\in \mySect \,.
+    \leq C(N,\mathfrak{s}')|t|^{N} \qquad \text{ for all }t\in \mathfrak{s}' \,.
   \]
   We will use the following notations:
   \begin{enumerate}
@@ -183,7 +180,7 @@ expansions.
   \item $f\sim_{\mathfrak{s}}\hat f=\sum_{n\geq n_0}a_nt^n$,
   \item the function $f$ is infinitely often differential at the origin and
     $f^{(n)}(0)=n!a_n$ for $n\geq0$ and
-  \item all derivatives $f^{(n)}(t)$ are continous at the origin and
+  \item all derivatives $f^{(n)}(t)$ are continuous at the origin and
     $\lim_{\substack{t\to0\\t\in\mathfrak{s}}}f^{(n)}(t)=n!a_n$
   \end{enumerate}
   equivalent (cf.~\cite[4.4.Prop.8]{Balser2000Formal}).
@@ -208,7 +205,7 @@ expansions.
       For $(a,b)=I$ define $\cA(a,b)=\cA(I)$ as the limit
       $\underset{r\to0}{\underrightarrow{\lim}}
       \cA(\mathfrak{s}_{a,b}(r))$\footnote{In more detail: the
-        elements of $\cA(a,b)$ are pairs $(f,\mathfrak{s}_{a,b}(r))$ mit
+        elements of $\cA(a,b)$ are pairs $(f,\mathfrak{s}_{a,b}(r))$ with
         $f\in\cA(\mathfrak{s}_{a,b}(r))$. The equivalence relation is given by
         $(f_1,\mathfrak{s}_{a,b}(r_1))\sim(f_2,\mathfrak{s}_{a,b}(r_2))$ if
       there is a pair $(f_3,\mathfrak{s}_{a,b}(r_3))$ such that
@@ -234,9 +231,9 @@ called.
 \end{defn}
 
 The kernel of $T_{I}$ is not zero in general.
-For example is the function $e^{-\frac{1}{\sqrt{t}}}$, where $\sqrt{t}$ stands
-for the principal determination of $x^{\frac{1}{2}}$, asymptotic to zero on every
+For example is the function $e^{-\frac{1}{t}}$ asymptotic to zero on every
 $I\subset\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$.
+\TODO[changed from $e^{-\frac{1}{\sqrt{t}}}$ after hint from giovanni]
 \begin{defn}
   Denote by $\cA^{<0}(I)$ (resp.\ $\cA^{<0}(\mathfrak{s})$) the kernel
   $\ker(T_{I})\subset\cA(I)$ (resp.\
@@ -305,7 +302,7 @@ exponential integral, see Loday-Richaud's book \cite[Sec.2.2]{Loday2014}.
   \[
     |R_m'(t)|\leq\frac{1}{\rho}\max_{s\in\C_{x,\rho}}|R(s)| \,.
   \]
-  Let $J$ be a relativly compact open set in $I$, then there exists a positive
+  Let $J$ be a relatively compact open set in $I$, then there exists a positive
   number $\alpha$ such that for all $x\in\mathfrak{s}_I(r)$ one has
   $C_{x,\alpha|x|}\subset\mathfrak{s}_I(r)$.
   \TODO{}
@@ -397,7 +394,7 @@ Let us now proof the Borel-Ritt Lemma.
   $\sum a_n\beta_n(t)t^n$ converges and its sum $f(t)$ is in
   $\cO(\mathfrak{s})$.
 
-  Consider a propper sub-sector $\mathfrak{s}'\Subset\mathfrak{s}$ and
+  Consider a proper sub-sector $\mathfrak{s}'\Subset\mathfrak{s}$ and
   $t\in\mathfrak{s}'$. Then, for every $N>0$
   \begin{align*}
     \left|f(t)-\sum_{n=0}^{N-1} a_nt^n\right|

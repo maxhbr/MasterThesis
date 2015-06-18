@@ -189,6 +189,11 @@ which takes a Stokes cocycle to its corresponding cohomology class.
     \end{tthm}
   \end{minipage}
 \end{center}
+To define the inverse map of $h$, one has to find in each cocycle in $\St(A^0)$
+the Stokes cocycle. Loday-Richaud gives an algorithm in section II.3.4 of her
+paper~\cite{Loday1994}, which takes a cocycle over an arbitrary cyclic covering
+and outputs cohomologous Stokes cocycle and thus solves this problem.
+
 From Theorem~\ref{thm:mainThm2} and Proposition~\ref{prop:representation} we
 get the following corollary.
 \begin{cor}\label{cor:isomToChochN}
@@ -212,34 +217,13 @@ get the following corollary.
     This number $N$ is known to be the \emph{irregularity} of $[\End A^0]$.
   \end{s-rem}
 \end{cor}
-\begin{comment}
-  \marginnote{\cite[880f]{Loday1994}}
-  We have also two structures of a linear affine variety on the set $\St(A^0)$.
-  \begin{rem}
-    Let $\sto_\alpha(A^0)$ be the Lie algebra corresponding to
-    $\Sto_\alpha(A^0)$. The exponential map\footnote{This is not the map $\exp$
-    from Section~\ref{sec:mainThm1}.} induces an homomorphism
-    $\exp:\sto_\alpha(A^0)\to\Sto_\alpha(A^0)$ and denote by $\ln=\exp^{-1}$
-    the inverse map.
-    \begin{enumerate}
-      \item The \emph{tangent linear structure} is defined as \TODO
-      \item Using the map
-        \begin{align*}
-          \sto_{\alpha}(A^0) &\overset{\id+\cdot}\longrightarrow
-          \Sto_{\alpha}(A^0)
-        \\\dot{f}_\alpha & \longmapsto \id+\dot{f}_\alpha \,.
-        \end{align*}
-    \end{enumerate}
-  \end{rem}
-\end{comment}
 
-\begin{rem}
-  To define the inverse map of $h$, one has to find in each cocycle in
-  $\St(A^0)$ the Stokes cocycle. Loday-Richaud gives an algorithm in section
-  II.3.4 of her paper~\cite{Loday1994}, which takes a cocycle over an arbitrary
-  cyclic covering and outputs cohomologous Stokes cocycle and thus solves this
-  problem.
-\end{rem}
+One can also define the structure of a linear affine variety on the set
+$\St(A^0)$. This was for example done in
+Section~\cite[Sec.III.3]{babbitt1989local} or in~\cite[880f]{Loday1994}, where
+actually multiple structures of linear affine varieties on $\St(A^0)$ are
+defined. In \cite[35ff]{Varadarajan96linearmeromorphic} is mentioned that one
+can also define a scheme structure of $\St(A^0)$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Proof of Theorem~\ref{thm:mainThm2}}\label{sec:proofOfMatrixThm}

@@ -47,7 +47,7 @@ $(q_j,q_l)\in\cQ(A^0)$.
         We will prefer the \rewrite{other notion}, which is also used in
         Loday-Richaud's paper \cite{Loday1994}.
       \item In Loday-Richaud's book \cite[Def.4.3.6]{Loday2014} $a_{jl}$ is
-        negated to be consistend with calculations at $\infty$.
+        negated to be consistent with calculations at $\infty$.
         Here this is not necessary, since we use the clockwise orientation on
         $S^1$ (cf.\ Definition~\ref{defn:antiStokesDir}).
     \end{enumerate}
@@ -85,20 +85,27 @@ $(q_j,q_l)\in\cQ(A^0)$.
 On the determining polynomials of $[A^0]$ we define the following (partial)
 order relations:
 \begin{defn}\label{defn:definingRelations}
-  Let $\tilde\theta$ be a determination of $\theta$.
+  Let $\tilde\theta$ be a determination of $\theta\in S^1$.
   \begin{itemize}
     \item We define the relation
       $\boldmath q_j \underset{\tilde\theta}{\prec} q_l$ to be equivalent to
       the condition
       \begin{einr}
         \rewrite{$e^{(q_j-g_l)(t^{-1})}$ is flat at $0$} in a neighbourhood of
-        the direction $\tilde\theta$.\PROBLEM[Other flat??]
+        the direction $\tilde\theta$, i.e.\ if and only if
+        $\Re(a_{jl}e^{-ik_{jl}\tilde\theta})<0$.
       \end{einr}
     \item Let us define another relation $\boldmath q_j\myrel{\tilde\theta}q_l$
       equivalent to
       \begin{einr}
         $e^{(q_j-g_l)(t^{-1})}$ is of maximal decay in the direction
-        $\tilde\theta$.
+        $\tilde\theta$,
+      \end{einr}
+      which by itself is equivalent to
+      \begin{einr}
+        $a_{jl}e^{-ik_{jl}\tilde\theta}$ is a real negative
+        number, i.e.\ $q_j \underset{\tilde\theta}{\prec} q_l$ and
+        $\Im(a_{jl}e^{-ik_{jl}\tilde\theta})=0$.
       \end{einr}
   \end{itemize}
   \begin{s-rem}
@@ -107,22 +114,10 @@ order relations:
     $\underset{\theta}{\prec}$ and $\myrel{\theta}$.
   \end{s-rem}
 \end{defn}
-We know that
-\begin{enumerate}
-  \item the condition $q_j \underset{\theta}{\prec} q_l$ is
-    satisfied if and only if $\Re(a_{jl}e^{-ik_{jl}\theta})<0$ and
-  \item the condition $q_j\myrel{\theta}q_l$ is
-    equivalent to
-    \begin{einr}
-      $a_{jl}e^{-ik_{jl}\theta}$ is a real negative
-      number, i.e.\ $q_j \underset{\theta}{\prec} q_l$ and
-      $\Im(a_{jl}e^{-ik_{jl}\theta})=0$.
-    \end{einr}
-\end{enumerate}
-Thus it is convenient to look closer at functions of the form
-$f:\theta\mapsto ae^{-ik\theta}$, $k\in\Z$, corresponding to some pair
-$(q_j,q_l)$.
-Write $a$ as $a=|a|e^{i\arg(a)}$, thus the function writes as
+To understand the previous definition better, it is convenient to look closer at
+functions of the form $f:\theta\mapsto ae^{-ik\theta}$, $k\in\Z$, corresponding
+to some pair $(q_j,q_l)$.
+Write $a$ as $a=|a|e^{i\arg(a)}$, thus the function $f$ writes as
 \begin{align*}
   f(\theta)&=|a|e^{i(\arg(a)-k\theta)}
   \\&=|a|(\cos(\arg(a)-k\theta) + i\sin(\arg(a)-k\theta)) \,.
@@ -209,8 +204,8 @@ part of $f$.
   \begin{tikzpicture}[remember picture,overlay]
     \draw[->,blue!50!white,thick] (n3) to[out=150,in=270] (g0);
     \draw[->,purple!50!white,thick] (n2) to[out=240,in=70] (f-1);
-    \draw[->,purple!50!white,thick] (n2) to[out=265,in=120] (f0);
-    \draw[->,purple!50!white,thick] (n2) to[out=270,in=70] (f1);
+    \draw[->,purple!50!white,thick] (n2) to[out=253,in=120] (f0);
+    \draw[->,purple!50!white,thick] (n2) to[out=266,in=70] (f1);
     \draw[->,blue!50!white,thick] (n1) to[out=180,in=270] (e-1);
     \draw[->,blue!50!white,thick] (n1) to[out=170,in=270] (e0);
     \draw[->,blue!50!white,thick] (n1) to[out=160,in=270] (e1);
@@ -230,16 +225,14 @@ thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
 \begin{rem}\label{rem:relationDistanceCondition}
   Let $k_{jl}$ be the degree of $q_j-q_l$.
   It is easy to see (cf.\ Figure~\ref{fig:functionF}), that the condition
-  \[
-    q_j \underset{\theta}{\prec} q_l
-  \]
-  is equivalent to
+  $q_j \underset{\theta}{\prec} q_l$ is equivalent to
   \begin{einr}
     there is a $\theta'\in U(\theta,\frac{\pi}{k_{jl}})$ such that
     $q_j\myrel{\theta}q_l$.
   \end{einr}
 \end{rem}
-
+Let us now use the defined relations to say, which are the interesting
+directions of $S^1$.
 \begin{defn}\label{defn:antiStokesDir}
   % \marginnote{See \cite[Def.I.4.5]{Loday1994}(for the ramified case)
   %   \cite[Def.3.2]{boalch}}
@@ -253,24 +246,25 @@ thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
       notation later, \rewrite{define $\A$ to contain a single, arbitrary
         direction if $\cK=\{0\}$.}
       \begin{s-rem}
-        The clockwise ordering is chosen, similar to Loday-Richaud's paper
-        \cite{Loday1994}, since the calculations are then compatible with
+        The clockwise ordering is chosen, similar to Loday-Richaud's
+        paper~\cite{Loday1994}, since the calculations are then compatible with
         the calculations, which look at $\infty$ and take a
         counterclockwise ordering.
-        Boalch uses in \cite{boalch} and \cite{thboalch} the inverse
+        Boalch uses in~\cite{boalch} and~\cite{thboalch} the inverse
         ordering, but looks also at $0$, thus there \rewrite{might be some}
         incompatibilities.
-        In Loday-Richaud's book \cite{Loday2014} this problem is solved by
-        an additional minus sign for some koefficients.
+        In Loday-Richaud's book~\cite{Loday2014} this problem is solved by
+        an additional minus sign for some coefficient.
       \end{s-rem}
-    \item $\theta$ is a \emph{Stokes direction} if there is at least one pair
-      $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies neither
+    \item The direction $\theta$ is a \emph{Stokes direction} if there is at
+      least one pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies neither
       $q_j\underset{\theta}{\prec} q_l$ nor $q_l\underset{\theta}{\prec} q_j$.
-
-      Let $\S=\{\sigma_1<\cdots<\sigma_\mu\}$ be the set of Stokes directions.
+      \begin{comment}
+        Let $\S=\{\sigma_1<\cdots<\sigma_\mu\}$ be the set of Stokes directions.
+      \end{comment}
   \end{enumerate}
 \end{defn}
-We will use the greek letter $\alpha$ whenever we want to emphasize that a
+We will use the Greek letter $\alpha$ whenever we want to emphasize that a
 direction is an anti-Stokes direction.
 For generic directions, we will use $\theta$.
 In fact will most of the following definitions and
@@ -302,7 +296,7 @@ $\alpha\in\A$.
   \marginnote{\cite[8]{thboalch}}
   Let $(j,l)$ be a pair such that $q_j\myrel{\alpha}q_l$, i.e.\ such that
   $a_{jl}e^{-ik_{jl}\alpha}\in\R_{<0}$.
-  Hence, for $m\in\N$,
+  Hence for $m\in\N$
   \begin{align*}
     a_{jl}e^{-ik_{jl}\left(\alpha+m\frac{\pi}{k_{jl}}\right)}
     &=a_{jl}e^{-ik_{jl}\alpha}e^{-im\pi}
@@ -313,8 +307,8 @@ $\alpha\in\A$.
         & \text{, if $m$ is uneven}
     \end{cases}
   \end{align*}
-  is, in the case when $m$ is even, also real and negative. In the other
-  case, when $n$ is uneven, we use that $a_{jl}=-a_{lj}$ and $k_{jl}=k_{lj}$ to
+  is in the case when $m$ is even, also real and negative. In the other case,
+  when $n$ is uneven, we use that $a_{jl}=-a_{lj}$ and $k_{jl}=k_{lj}$ to
   obtain
   $a_{lj}e^{-ik_{lj}\left(\alpha+m\frac{\pi}{k_{lj}}\right)} \in\R_{<0}$.
 
@@ -348,8 +342,8 @@ define the Stokes group as follows.
 \subsection{Stokes matrices}\label{sec:matrixReps}
 \marginnote{\cite[9f]{thboalch}, \cite[??]{Loday1994}}
 Stokes matrices, which Wasow calls in his book~\cite{wasow2002asymptotic}
-Stokes multipliers and Boalch calls them Stokes factors
-in~\cite{boalch,thboalch}, arise either
+Stokes multipliers and Boalch calls Stokes factors in~\cite{boalch,thboalch},
+arise either
 \begin{einr}
   as faithful representations of Stokes germs
 \end{einr}
@@ -379,94 +373,15 @@ or, if one starts by comparing the actual fundamental solutions on arcs, as
   They will arise as a faithful representation
   (cf.\ Section~\ref{sec:faithRepre}) of $\Sto_\theta(A^0)$.
   \begin{s-rem}
-    \begin{enumerate}
-      \item In Boalch's publications~\cite{boalch,thboalch} are our Stokes
-        matrices called Stokes factors, since he introduces other objects, he
-        wants to call Stokes matrices
-        (cf.\ Section~\ref{sec:furtherImprovements}).
-      \item There is obviously a bijection
-        $\vartheta_\theta: \prod_{q_j\myrel{\theta}q_l}\C^{n_j \cdot n_l}
-        \overset{\cong}{\longrightarrow} \SSto_\theta(A^0)$.
-    \end{enumerate}
+    There is obviously a bijection
+    $\vartheta_\theta: \prod_{q_j\myrel{\theta}q_l}\C^{n_j \cdot n_l}
+    \overset{\cong}{\longrightarrow} \SSto_\theta(A^0)$.
   \end{s-rem}
-\iffalse
-  % \begin{s-rem}
-  %   \BIGPROBLEM[needs more assumptions!]
-  %   \begin{comment}
-  %     Loday-Richaud defines Stokes matrices in \cite[Defn.III.3.4]{Loday1994}.
-  %   \end{comment}
-  %   Let
-  %   \begin{itemize}
-  %     \item $q_1 = \frac{2}{t^k} + \frac{2}{t^{k-1}}$,
-  %     \item $q_2 = \frac{1}{t^k} + \frac{1}{t^{k-1}}$ and
-  %     \item $q_3 = \frac{2}{t^k} + \frac{1}{t^{k-1}}$
-  %   \end{itemize}
-  %   be the three diagonal elements of $Q$ of some system $A$.
-  %   Thus the determining polynomials are given by
-  %   \begin{itemize}
-  %     \item $q_{1,2}=q_1-q_2 = \frac{1}{t^k}$,
-  %     \item $q_{1,3}=q_1-q_3 = \frac{1}{t^{k-1}}$ and
-  %     \item $q_{3,2}=q_3-q_2 = \frac{1}{t^k}$.
-  %   \end{itemize}
-  %   Since the leading terms of $q_{1,2}$ and $q_{3,2}$ are equal, they
-  %   determine the same anti-Stokes directions. Let $\theta$ be one of these
-  %   directions, which satisfies neither
-  %   $q_1\underset{\theta,\max}{\prec}q_3$ nor
-  %   $q_3\underset{\theta,\max}{\prec}q_1$ (it is always possible, to find such
-  %   a direction since the level of $q_{1,3}$ is different to the levels of the
-  %   other ones).
-  %   The group of Stokes matrices at $\theta$ is then given by
-  %   \[
-  %     \SSto_\theta(A^0)=\left\{
-  %       K= \begin{pmatrix}
-  %         1 & a & 0
-  %       \\0 & 1 & 0
-  %       \\0 & b  & 1
-  %       \end{pmatrix}
-  %       \mid
-  %       a,b \in\C
-  %     \right\}
-  %   \]
-  %   But $\SSto_\theta(A^0)$ is \textbf{not closed under the product}, i.e.\
-  %   \[
-  %     \begin{pmatrix}
-  %       1 & a & 0
-  %     \\0 & 1 & 0
-  %     \\0 & 0 & 1
-  %     \end{pmatrix}
-  %     \begin{pmatrix}
-  %       1 & 0 & 0
-  %     \\0 & 1 & b
-  %     \\0 & 0 & 1
-  %     \end{pmatrix}
-  %     =
-  %     \begin{pmatrix}
-  %       1 & a & \textcolor{red!60!black}{ab}
-  %     \\0 & 1 & b
-  %     \\0 & 0 & 1
-  %     \end{pmatrix}
-  %     \notin \SSto_\theta(A^0)
-  %     \,.
-  %   \]
-  %   \textcolor{green!40!black}{Maybe define the Stokes matrices as:}
-  %   \[
-  %     \SSto_\theta(A^0)=\left\{
-  %       K= \begin{pmatrix}
-  %         1 & a & ab
-  %       \\0 & 1 & b
-  %       \\0 & 0 & 1
-  %       \end{pmatrix}
-  %       \mid
-  %       a,b \in\C
-  %     \right\}
-  %   \]
-  % \end{s-rem}
-\fi
 \end{defn}
 
 \begin{prop}\label{prop:representation}
   \marginnote{\cite[Def.I.4.7]{Loday1994}\\\cite[78f]{Loday2014}}
-  In this situation,
+  In this situation is
   \begin{align*}
     \rho_{\theta}:\Sto_\theta(A^0)&\longrightarrow\SSto_\theta(A^0)
     \\\phi_\theta
@@ -474,22 +389,21 @@ or, if one starts by comparing the actual fundamental solutions on arcs, as
     C_{\phi_\theta}:=\cY_{0}\phi_\theta\cY_{0}^{-1}
   \end{align*}
   \marginnote{Boalch uses $C_{\phi_\theta}:=\cY_{0}^{-1}\phi_\theta\cY_{0}$}
-  is an isomorphism which maps a germ of $\Sto_\theta(A^0)$ to the corresponding
+  an isomorphism which maps a germ of $\Sto_\theta(A^0)$ to the corresponding
   Stokes matrix $C_{\phi_\theta}$ such that
-  \begin{equation} \label{eq:representation}
+  \begin{equation}\label{eq:representation}
     \phi_\theta(t)\cY_{0}(t)=\cY_{0}(t)C_{\phi_\theta}
   \end{equation}
   near $\theta$.
   The matrix $C_{\phi_\theta}$ is then called a \emph{representation of
   $\phi_\theta$}.
-  \begin{s-rem}
+  \begin{s-rem}\label{rem:representation}
     \begin{enumerate}
-      \item In the unramified case does this morphism depend on the choice of
-        the determination $\tilde\theta$ of $\theta$ and the corresponding
-        choice of a realization of the fundamental solution with that
-        determination of the argument near the direction $\theta$
+      \item In the ramified case does this morphism depend on the choice of the
+        determination $\tilde\theta$ of $\theta$ and the corresponding choice of
+        a realization of the fundamental solution with that determination of the
+        argument near the direction $\theta$
         (cf.~\cite{Loday1994} or~\cite[78f]{Loday2014}).
-        \TODO[Satz zu lang]
       \item \marginnote{\cite[Defn.I.4.7]{Loday1994}}
         This construction defines also a morphism, which takes a germ
         $\phi_\theta\in\Lambda_\theta(A^0)\supset\Sto_\theta(A^0)$ into its
@@ -517,7 +431,7 @@ or, if one starts by comparing the actual fundamental solutions on arcs, as
               q_j \underset{\theta}{\prec} q_l
               \text{ for some } \theta\in I\right\}
           \]
-          and a skyscreaper sheaf
+          and a skyscraper sheaf
           \[
             I\mapsto \SSto_{I}(A^0) \,.
           \]
@@ -613,8 +527,8 @@ or, if one starts by comparing the actual fundamental solutions on arcs, as
   Thus we have seen, that $C_{\phi_\theta}$ is an
   element of $\SSto_\theta(A^0)$.
 
-  The \textbf{surjectivity} can \rewrite{be seen easily} since every constant
-  matrix with zeros at the necessary positions characterizes a unique
+  The \textbf{surjectivity} can \rewrite{now be seen easily} since every
+  constant matrix with zeros at the necessary positions characterizes a unique
   element of $\Sto_\theta(A^0)$:
   \begin{einr}
     Let $C=1_n + \sum_{(l,j)\mid q_j\myrel{\theta}q_l} C^{(l,j)}$ be an element
@@ -656,7 +570,8 @@ Formulated is this in the following corollary.
     C_{\phi_\theta}=
         1_n + \sum_{(l,j)\mid q_j\myrel{\theta}q_l}C_{\phi_\theta}^{(l,j)}
   \]
-  and the $C_{\phi_\theta}^{(l,j)}$ have the necessary block structure.
+  and the $C_{\phi_\theta}^{(l,j)}$ have the necessary block structure, i.e.\ it
+  is in $\SSto_\theta(A^0)$.
   \begin{s-rem}
     In Loday-Richaud's book~\cite[78]{Loday2014} are the elements of
     $\Sto_\theta(A^0)$ actually characterized as the flat transformations, such
@@ -713,7 +628,7 @@ Formulated is this in the following corollary.
   the germ $\phi_\alpha$, does it retain the structure?
   \begin{einr}
     \begin{enumerate}
-    \item Look at a diagonal elemet $\phi^{j,j}$ an $(j,j)$:
+    \item Look at a diagonal element $\phi^{j,j}$ an $(j,j)$:
       \begin{itemize}
       \item it satisfies $\phi_\alpha^{j,j}=1$ and
       \item is satisfies some complicated equation
@@ -722,7 +637,7 @@ Formulated is this in the following corollary.
           hopefully yes
         \end{einr}
       \end{itemize}
-    \item Look at an offdiagonal position at $(j,l)$:
+    \item Look at an off-diagonal position at $(j,l)$:
       \begin{itemize}
       \item[case a:] $\phi_\alpha^{j,l}\neq 0$
       \item[case b:] $\phi_\alpha^{j,l}=0$
@@ -735,9 +650,9 @@ Formulated is this in the following corollary.
 \subsection{Decomposition of the Stokes group by levels}
 \marginnote{\cite{Loday1994}, \cite[362ff]{Martinet1991}}
 \rewrite{The goal of this section is, to introduce a filtration of
-$\Lambda(A^0)$, wich will be restricted to $\Sto_\theta(A^0)$ and defines there
+$\Lambda(A^0)$, which will be restricted to $\Sto_\theta(A^0)$ and defines there
 a filtration.} This leads to a decomposition of $\Sto_\theta(A^0)$ into a
-semidirect product (cf.\ Prpopsition~\ref{prop:filtrationOfStokesGroup}).
+semidirect product (cf.\ Proposition~\ref{prop:filtrationOfStokesGroup}).
 
 Let us introduce a couple of notations and definitions, which coincide with the
 notations used in Loday-Richaud's paper \cite{Loday1994}.
@@ -760,13 +675,6 @@ paper~\cite[362f]{Martinet1991} from Martinet and Ramis.
   \]
   and let us also define $\SSto^\star_\theta(A^0)$ as the groups of
   representations, which correspond to elements of  $\Sto^\star_\theta(A^0)$.
-  \begin{comment}
-    The corresponding induced isomorphisms are denoted by
-    \[
-        \rho_\theta^\star:\Sto^\star_\theta(A^0) \to \SSto^\star_\theta(A^0) \,.
-    \]
-    \TODO[not all are needed, defined somewher else]
-  \end{comment}
 \end{notations}
 Corresponding to the definitions above, one can define
 $\A^\star:=\left\{\alpha\in\A\mid\Sto_\alpha^\star(A^0)\neq\{\id\}\right\}$
@@ -785,7 +693,7 @@ direction $\alpha\in\A$}:
   The Lemma~\ref{lem:rotationalSym} implies that from $k\in\cK_{\alpha}$ follows
   that $k\in\cK_{\alpha+m\frac{\pi}{k}}$ for $m\in\N$.
 \end{cor}
-Let us now study the sheaves $\Lambda^\star(A^0)$, and discuss how they
+Let us now study the sheaves $\Lambda^\star(A^0)$ and discuss how they
 correlate \rewrite{and how they can be composed from the others}.
 
 The following proposition can be found as~\cite[Prop.I.5.1]{Loday1994} and the
@@ -832,7 +740,8 @@ decomposition into a semidirect product.
     \Lambda^{\leq k}(A^0)&\cong \Lambda^{<k}(A^0)\ltimes\Lambda^{k}(A^0)
   \\                    &\cong \Lambda^{k}(A^0)\ltimes\Lambda^{<k}(A^0)\,.
   \end{align*}
-  Thus any germ $f^{\leq k}\in\Lambda^{\leq k}(A^0)$ can be uniquely written as
+  This means that any germ $f^{\leq k}\in\Lambda^{\leq k}(A^0)$ can be uniquely
+  written as
   \begin{itemize}
     \item $f^{\leq k}=f^{<k}g^k$, where $f^{<k}\in\Lambda^{<k}$ and
       $g^k\in\Lambda^k$, or
@@ -842,7 +751,7 @@ decomposition into a semidirect product.
   \begin{s-rem}\label{rem:algFactorization}
     \marginnote{\cite[Cor.I.5.2(ii)]{Loday1994}}
     We can get the factor $f^{<k}$ common to both factorizations by truncation
-    of $f^{\leq k}$ to terms of level $<k$, i.e.\ the map $p$ from
+    of $f^{\leq k}$ to terms of level $<k$, i.e.\ by applying the map $p$ from
     Proposition~\ref{prop:PropertiesOfStokesSheafSplitting}.
     This truncation can explicitly be achieved, in terms of Stokes matrices, by
     keeping in representations $1+\sum C^{(j,l)}$ of $f^{\leq k}$ only the
@@ -874,8 +783,7 @@ decomposition into a semidirect product.
     \begin{enumerate}
       \item the sheaf $\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k'}(A^0)$ is
         normal in $\Lambda^{\leq k}(A^0)$;
-      \item \marginnote{\cite[Proposition 10]{Martinet1991}}
-        the exact sequence of sheaves
+      \item the exact sequence of sheaves
         \[
           1\longrightarrow\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k}(A^0)
           \overset{i}\longrightarrow\Lambda^{\leq k}(A^0)
@@ -918,18 +826,20 @@ decomposition into a semidirect product.
       from Remark~\ref{rem:algFactorization} to an arbitrary order of levels.
   \end{enumerate}
 \end{rem}
-The important statement, which we will use later, is then the following.
+The important statement, which we will use later, is then the following
+Proposition. It is stated by Loday-Richaud in her Paper~\cite{Loday1994} as
+Proposition I.5.5 or in the Paper~\cite[Thm.4.8]{Martinet1991} by Martinet and
+Ramis.
 \begin{prop}\label{prop:filtrationOfStokesGroup}
-  \marginnote{\cite[Prop.I.5.5]{Loday1994}}
-  The results can be restricted to the Stokes groups
-  (cf.\ \cite[Prop.I.5.5]{Loday1994}). Thus, for $\alpha\in\A$, one has
+  The results from above can be restricted to the Stokes groups.
+  Thus, for $\alpha\in\A$, one has
   \[
     \Sto_\alpha(A^0)\cong\underset{k\in\cK_\alpha}\bigltimes\Sto_\alpha^k(A^0)
   \]
   the semidirect product being taken in an arbitrary order\comm{~(we will only
   be interested in the ascending order)}.
   \begin{s-defn}
-    We will denote the map, wich gives the factors of this factorization by
+    We will denote the map which gives the factors of this factorization by
     \[
       i_\alpha:
       \Sto_\alpha(A^0)
@@ -942,7 +852,7 @@ The important statement, which we will use later, is then the following.
     Write $\rho_{\alpha}^k:\Sto^k_\alpha(A^0)\to\SSto^k_\alpha(A^0)$ for
     the \rewrite{restriction} of the map $\rho_{\alpha}$
     (cf.\ Proposition~\ref{prop:representation}) to the level $k$.
-    \rewrite{Then, one can} denote the induced decomposition also by
+    \rewrite{Then, one can} denote, by abuse of notation, the induced decomposition also by
     \[
       i_\alpha:
       \SSto_\alpha(A^0)
