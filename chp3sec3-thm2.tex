@@ -34,17 +34,17 @@ that
 \subsubsection{Cyclic coverings}
 To formulate the theorem in the next section, we use the notion of cyclic
 coverings and nerves of such coverings, which are defined as follows.
-
 \begin{defn}
   \marginnote{\cite[Sec.II.1]{Loday1994} and \cite[Sec.II.3.1]{Loday1994}}
   Let $J$ be a finite set, identified to $\{1,\dots,p\}\subset\Z$.
   \begin{enumerate}
     \item A \emph{cyclic covering} of $S^1$ is a finite covering
-      $\cU=\big(U_j=U(\theta_j,\epsilon_j)\big)_{j\in J}$ consisting of
+      $\cU=\big(U_j:=U(\theta_j,\epsilon_j)\big)_{j\in J}$ consisting of
       arcs, which satisfies that
       \begin{enumerate}
         \item $\tilde\theta_j \geq \tilde\theta_{j+1}$ for
-          $j\in\{1,\dots,p-1\}$, i.e.\ the center points are ordered and
+          $j\in\{1,\dots,p-1\}$, i.e.\ the center points are ordered in
+          ascending order with respect to the clockwise orientation of $S^1$ and
         \item $\tilde\theta_j+\frac{\epsilon_j}{2}\geq
           \tilde\theta_{j+1}+\frac{\epsilon_{j+1}}{2}$ for
           $j\in\{1,\dots,p-1\}$ and
@@ -77,8 +77,8 @@ coverings and nerves of such coverings, which are defined as follows.
         by
         \[
           \dot\cU=\left(
-            \bigl(\theta_{j+1}-\frac{\epsilon_{j+1}}{2},
-            \theta_{j}+\frac{\epsilon_{j}}{2}\bigr)
+            \bigl(\theta_{j}-\frac{\epsilon_{j}}{2},
+            \theta_{j+1}+\frac{\epsilon_{j+1}}{2}\bigr)
           \right)_{j\in J} \,.
         \]
       \end{s-rem}
@@ -86,15 +86,22 @@ coverings and nerves of such coverings, which are defined as follows.
 \end{defn}
 The cyclic coverings correspond one-to-one to nerves of cyclic coverings. If
 one starts with a nerve $\{\dot U_j \mid j\in J\}$, one obtains a cyclic
-covering as $\cU=\{U_j \mid j\in J\}$ where the arc $U_j$ is the connected
-clockwise hull from $\dot U_{j-1}$ to $\dot U_j$.
+covering as $\cU=\{U_j \mid j\in J\}$ where the arc $U_j$ are the connected
+clockwise hulls from $\dot U_{j-1}$ to $\dot U_j$.
 
 \begin{defn}
   A covering $\cV$ is said to \emph{refine} a covering $\cU$ if, to each open
   set $V\in\cV$ there is at least one $U\in\cU$ with $V\subset U$.
 \end{defn}
+Each refined covering of $\cU$ is obtained by successively
+\begin{enumerate}
+\item narrowing an arc $U\in\cU$ to a smaller arc $\tilde U\subset U$ or
+\item splitting an arc $U\in\cU$ into two smaller arcs $U'$ and $U''$
+  satisfying $U=U'\cup U''$.
+\end{enumerate}
+This can be used to see the following proposition
+(cf.\ \cite[Prop.II.1.3]{Loday1994}).
 \begin{prop}
-  \marginnote{\cite[Prop.II.1.3]{Loday1994}}
   The covering $\cV$ refines $\cU$ if and only if the corresponding nerves
   $\dot\cU=\{\dot U_j\}$ and $\dot\cV=\{\dot V_l\}$ satisfy
   \begin{einr}
@@ -113,7 +120,7 @@ on its (maximal) arc of definition $\Omega_j$ around $\theta_j$.
 In the following way, one can associate a cohomology class in $\St(A^0)$ to
 $\dot\phi$:
 \begin{einr}
-  for every cyclic covering $\cU=(U_j)_{j\in J}$ which satisfies
+  for every cyclic covering $\cU=(U_j)_{j\in J}$, which satisfies
   $\dot U_j\subset\Omega_j$ for all $j\in J$, one can define the $1$-cocycle
   $(\dot\phi_{j|\dot U_j})_{j\in J}\in\Gamma(\dot\cU;\Lambda(A^0))$.
 \end{einr}
@@ -125,54 +132,56 @@ construction yields a cohomologous $1$-cocycle, thus the induced map
   H^1(S^1;\Lambda(A^0))=\St(A^0)
 \end{equation}
 is welldefined (cf.\ \cite[868]{Loday1994}).
+
+Recall that $\nu=\#\A$ is the number of all anti-Stokes directions and the set
+of all anti-Stokes directions is denoted by $\A=\{\alpha_1,\dots,\alpha_\nu\}$.
 \begin{defn}\label{defn:stokesCocycle}
   \marginnote{\cite[Def.II.1.8]{Loday1994}
     \\, \cite[4.3.10]{Loday2014}
     \\, \cite[Defn 6 on p 374]{Martinet1991}}
-  Let $\nu=\#\A$ the number of all anti-Stokes directions and write
-  $\A=\{\alpha_1,\dots,\alpha_\nu\}$.
-
   A \emph{Stokes cocycle} is a 1-cocycle $(\phi_j)_{j\in\{1,\dots,\nu\}}\in
   \prod_{j\in\{1,\dots,\nu\}}\Gamma(U_j;\Lambda(A^0))$ corresponding to some
-  cyclic covering with nerve $\dot\cU=(\dot U_j)_{j\in\{1,\dots,\nu\}}$,
-  which satisfies for every $j\in\{1,\dots,\nu\}$
+  cyclic covering with nerve $\dot\cU=(\dot U_j)_{j\in\{1,\dots,\nu\}}$, which
+  satisfies for every $j\in\{1,\dots,\nu\}$
   \begin{itemize}
-    \item $\alpha_j\in\dot U_j$ and
-    \item the germ $\phi_{\alpha_j}:=\phi_{j,\alpha_j}$ of $\phi_j$ at
-      $\alpha_j$ is an element of $\Sto_{\alpha_j}(A^0)$.
+  \item $\alpha_j\in\dot U_j$ and
+  \item the germ $\phi_{\alpha_j}:=\phi_{j,\alpha_j}$ of $\phi_j$ at $\alpha_j$
+    is an element of $\Sto_{\alpha_j}(A^0)$.
   \end{itemize}
-  \begin{s-rem}\label{rem:inclusionGermRemark}
-    \PROBLEM[refactor!]
-    The sections in $\Gamma(\dot U_j;\Lambda(A^0))$ are uniquely
-    determined as the extension of the germ at $\alpha_j$, since the sheaf
-    $\Lambda(A^0)$ defined via the system $[A^0,A^0]$
-    (cf.\ Definition~\ref{defn:StokesSheaf}).
-    We thus have an injective map
-    \[
-      \prod_{j\in\{1,\dots,\nu\}}\Gamma(\dot U_j;\Lambda(A^0))
-      \hookrightarrow
-      \prod_{j\in\{1,\dots,\nu\}}\Sto_{\alpha_j}(A^0) \,,
-    \]
-    which takes an Stokes cocycle and yields the corresponding Stokes germs.
-    For a fine enough covering $\cU$, i.e.\ a covering $\cU$ with a nerve
-    $\dot\cU$ which consists of small enough arcs satisfying the conditions
-    above, is this map a bijection.
+  \begin{comment}
+    \begin{s-rem}\label{rem:inclusionGermRemark}
+      \BIGPROBLEM[refactor!remove?]  The sections
+      $\Gamma(\dot U_j;\Lambda(A^0))$ are uniquely determined as the extension
+      of the germ at $\alpha_j$, since the sheaf $\Lambda(A^0)$ defined via the
+      system $[A^0,A^0]$ (cf.\ Definition~\ref{defn:StokesSheaf}).  We thus have
+      an injective map
+      \[
+        \prod_{j\in\{1,\dots,\nu\}}\Gamma(\dot U_j;\Lambda(A^0))
+        \hookrightarrow
+        \prod_{j\in\{1,\dots,\nu\}}\Sto_{\alpha_j}(A^0) \,,
+      \]
+      which takes an Stokes cocycle and yields the corresponding Stokes germs.
+      For a fine enough covering $\cU$, i.e.\ a covering $\cU$ with a nerve
+      $\dot\cU$ which consists of small enough arcs satisfying the conditions
+      above, is this map a bijection.
 
-    We will use this fact implicitly and assume that the covering is always
-    fine enough to call elements of $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$
-    Stokes cocycles.
-  \end{s-rem}
+      We will use this fact implicitly and assume that the covering is always
+      fine enough to call elements of $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$
+      Stokes cocycles.
+    \end{s-rem}
+  \end{comment}
 \end{defn}
-We can use the Equation (\ref{eq:mapStoToCocy}) to obtain for Stokes cocycles
-a mapping
+We can use the mapping (\ref{eq:mapStoToCocy}), corresponding to the construction
+at the beginning of this section, to obtain a mapping
 \[ \begin{tikzcd}
-    h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)
-    \rar[hook]&
-    \prod_{\alpha\in\A}\Lambda_\alpha(A^0)
-    \rar{\text{(\ref{eq:mapStoToCocy})}}&
-    \St(A^0),
+  h:\prod_{\alpha\in\A}\Sto_\alpha(A^0)
+  \rar[hook]&
+  \prod_{\alpha\in\A}\Lambda_\alpha(A^0)
+  \rar{\text{(\ref{eq:mapStoToCocy})}}&
+  \St(A^0),
 \end{tikzcd} \]
-which takes a Stokes cocycle to its corresponding cohomology class.
+which takes a complete set of Stokes germs to its corresponding cohomology
+class, given by a Stokes cocycle.
 \begin{center}
   \begin{minipage}[t]{0.8\textwidth}
     \begin{tthm}\label{thm:mainThm2}
@@ -190,50 +199,55 @@ which takes a Stokes cocycle to its corresponding cohomology class.
   \end{minipage}
 \end{center}
 To define the inverse map of $h$, one has to find in each cocycle in $\St(A^0)$
-the Stokes cocycle. Loday-Richaud gives an algorithm in section II.3.4 of her
-paper~\cite{Loday1994}, which takes a cocycle over an arbitrary cyclic covering
-and outputs cohomologous Stokes cocycle and thus solves this problem.
+the Stokes cocycle and take the germs. Loday-Richaud gives an algorithm in
+Section II.3.4 of her paper~\cite{Loday1994}, which takes a cocycle over an
+arbitrary cyclic covering and outputs cohomologous Stokes cocycle and thus
+solves this problem. This means, that the inverse of $h$ is constructible.
 
-From Theorem~\ref{thm:mainThm2} and Proposition~\ref{prop:representation} we
-get the following corollary.
-\begin{cor}\label{cor:isomToChochN}
+\begin{cor}
   \PROBLEM[mentioned twice]
+  \BIGPROBLEM[remove?]
   Using the isomorphisms $\Sto_\theta(A^0)\cong\SSto_\theta(A^0)$ from
   Proposition~\ref{prop:representation} we obtain
   \[
-    \St(A^0) \cong \prod_{\alpha\in\A}\SSto_\alpha(A^0)
+    \St(A^0)\cong\prod_{\alpha\in\A}\SSto_\alpha(A^0)
   \]
-  which endows $\St(A^0)$ with the structure of an unipotent Lie group with the
-  finite complex dimension $N:=\dim_\C\St(A^0)$
-  (cf.~\cite[Sec.III.1]{Loday1994}).
-  This can be rewritten in the following way:
+\end{cor}
+Since the product of Lie groups is in an obvious way again a Lie group, this
+endows $\St(A^0)$ with the structure of an unipotent Lie group with the
+finite complex dimension $N:=\dim_\C\St(A^0)$
+(cf.~\cite[Sec.III.1]{Loday1994}).
+\begin{rem}
+  This number $N$ is known to be the \emph{irregularity} of $[\End A^0]$ and
+  can be rewritten in the following way:
   \[
     N=\sum_{\alpha\in\A}\dim_\C\SSto_\alpha(A^0)
-      =\sum_{\alpha\in\A}\sum_{q_j\myrel{\alpha}q_l}n_j\cdot n_l
-      =\sum_{\substack{1\leq j,l\leq n\\j<l}}2\cdot\deg(q_j-q_l)\cdot
-        n_j\cdot n_l \,.
+     =\sum_{\alpha\in\A}\sum_{q_j\myrel{\alpha}q_l}n_j\cdot n_l
+     =\sum_{\substack{1\leq j,l\leq n\\j<l}}2\cdot\deg(q_j-q_l)\cdot
+       n_j\cdot n_l \,.
   \]
-  \begin{s-rem}
-    This number $N$ is known to be the \emph{irregularity} of $[\End A^0]$.
-  \end{s-rem}
-\end{cor}
+\end{rem}
 
 One can also define the structure of a linear affine variety on the set
 $\St(A^0)$. This was for example done in
-Section~\cite[Sec.III.3]{babbitt1989local} or in~\cite[880f]{Loday1994}, where
+Section~\cite[Sec.II.3]{babbitt1989local} or in~\cite[Sec.III.1]{Loday1994}, where
 actually multiple structures of linear affine varieties on $\St(A^0)$ are
-defined. In \cite[35ff]{Varadarajan96linearmeromorphic} is mentioned that one
-can also define a scheme structure of $\St(A^0)$.
+defined. In~\cite[35ff]{Varadarajan96linearmeromorphic} is mentioned that one
+can also define a scheme structure on $\St(A^0)$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Proof of Theorem~\ref{thm:mainThm2}}\label{sec:proofOfMatrixThm}
-We will only look at the unramified case, for which we refer to
-\cite[Sec.II.3]{Loday1994}.
-The proof in the ramified case can be found in \cite[Sec.II.4]{Loday1994}.
-We first have to introduce adequate coverings, which will be used in the proof.
+We will only look at the unramified case, for which we refer
+to~\cite[Sec.II.3]{Loday1994}.
+The proof in the ramified case can be found in Section II.4 of Loday-Richaud's
+Paper~\cite{Loday1994} and a sketch of the complete proof is also in
+\cite{Loday2004}.
+We first have to introduce the notion of adequate coverings, which will be used
+in the proof.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Adequate coverings}
+\TODO[Adequate is acyclic in Loday2004?]
 \begin{defn}
   \marginnote{\cite[371]{Martinet1991} defines adapted coverings}
   Let $\star\in\{k,<k,\leq k,\dots\}$.
@@ -256,7 +270,8 @@ We first have to introduce adequate coverings, which will be used in the proof.
     such that \PROBLEM[the elements are~?? on the refined covering.]
   \end{comment}
 
-  In other words is a covering $\cU$ adequate, if and only if the quotient map
+  In other words is a covering $\cU$ adequate to $\Lambda^\star(A^0)$, if and
+  only if the quotient map
   \[
       \Gamma(\cU;\Lambda^\star(A^0))\longrightarrow H^1(S^1;\Lambda^\star(A^0))
   \]
@@ -280,7 +295,7 @@ to see, that our defined coverings are adequate.
     An arc $U(\alpha,\frac{\pi}{k})$ is called a \emph{Stokes arc of level $k$
     at $\alpha$}.
   \end{s-defn}
-  A cyclic covering $\cU=(U_j)_{j\in J}$, which satisfies
+  A cyclic covering $\cU=(U_j)_{j\in J}$ which satisfies
   \begin{einr}
     for every $\alpha\in\A^k$ contains the Stokes arc $U(\alpha,\frac{\pi}{k})$
     at least one arc $\dot U_j$ from the nerve $\dot\cU$ of $\cU$
@@ -299,31 +314,32 @@ and $\Lambda^{<k}(A^0)$. Furthermore will the coverings be comparable at the
 different levels.
 
 \begin{enumerate}
-  \item The first covering $\cU^{k}=\{\dot U_\alpha^k\mid\alpha\in\A^k\}$
-    is the cyclic covering with nerve
-    \[
-      \dot\cU^k:=
-      \left\{\dot U_\alpha^k=U(\alpha,\frac{\pi}{k})\mid\alpha\in\A^k\right\}
-    \]
-    consisting of all Stokes arcs of level $k$ for anti-Stokes directions
-    bearing the level $k$.
+  \setcounter{enumi}{0}
+\item The first covering $\cU^{k}=\{\dot U_\alpha^k\mid\alpha\in\A^k\}$ is the
+  cyclic covering determined by the nerve
+  \[
+    \dot\cU^k:=
+    \left\{\dot U_\alpha^k=U(\alpha,\frac{\pi}{k})\mid\alpha\in\A^k\right\}
+  \]
+  consisting of all Stokes arcs of level $k$ for anti-Stokes directions bearing
+  the level $k$.
 \end{enumerate}
 
 \begin{rem}\label{rem:superSectors}
-  Boalch introduces in his publications~\cite[19]{boalch}
-  and~\cite[Def.1.23]{thboalch} the notion of \emph{supersectors}, they are in
-  the case of a single level $k$, defined as follows:
+  Boalch, who looks only at the single-leveled case, introduces in his
+  publications~\cite[19]{boalch} and~\cite[Def.1.23]{thboalch} the notion of
+  supersectors, which are defined as follows:
   \begin{einr}
     write the anti-Stokes directions as $\A=\{\alpha_1,\dots,\alpha_\nu\}$
     arranged according to the clockwise ordering, then is the $i$-th
-    supersector defined as the arc
+    \emph{supersector} defined as the arc
     \[
       \hat\Sect^k_i:=
-        \left(\alpha_i-\frac{\pi}{2k},\alpha_{i+1}+\frac{\pi}{2k}\right) \,.
+        \left(\alpha_{i+1}-\frac{\pi}{2k},\alpha_{i}+\frac{\pi}{2k}\right) \,.
     \]
   \end{einr}
   This yields a cyclic covering $(\hat\Sect^k_i)_{i\in\{1,\dots,\nu\}}$ whose
-  nerve is exactly $\dot\cU^k$ defined above.
+  nerve is exactly $\dot\cU^k$, which was defined above.
   \begin{comment}
     \begin{center}
       \begin{tikzpicture}[scale=3]
@@ -376,11 +392,18 @@ different levels.
     \end{center}
   \end{comment}
 \end{rem}
-If we extend to more then one level level, $\#\cK>1$, the set
-$\bigcup_{k\in\cK}\left\{U(\alpha,\frac{\pi}{k})\mid\alpha\in\A^{k}\right\}$ is
-no longer a nerve.
+If we extend to a subset $J$ of $\cK$ containing more then one level level,
+$\#J>1$, the set
+\[
+  \bigcup_{k\in J}\left\{U(\alpha,\frac{\pi}{k})\mid\alpha\in\A^{k}\right\}
+  =\bigcup_{k\in J}\dot\cU^k
+\]
+is no longer guaranteed to be a nerve.
 Hence we have to define the coverings $\cU^{\leq k}$ and $\cU^{<k}$ in a
-different way.
+different way. We will start by adding the arcs corresponding to the largest
+degree first and continue by adding the arcs corresponding to smaller degrees
+successively as described below.
+
 Denote by
 \[
   \left\{K_1<\cdots<K_s=k\right\}
@@ -389,40 +412,39 @@ Denote by
 the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
 \begin{enumerate}
   \setcounter{enumi}{1}
-  \item The cyclic covering
-    $\cU^{\leq k}=\left\{U_\alpha^{\leq k}\mid\alpha\in\A^{\leq k}\right\}$
-    will be defined by induction.
-    Let us assume that
-    \begin{einr}
-      the $\dot U_\alpha^{\leq k}$ are defined for all $\alpha\in\A^{\leq k}$
-      with $k$-maximum level greater than $K_i$ such that their complete family
-      is a nerve.
-    \end{einr}
-    Let
-    \begin{itemize}
-      \item $\alpha$ be a anti-Stokes direction with $k$-maximum level $K_i$
-        and
-      \item $\alpha^-$ (resp.\ $\alpha^+$) be the next anti-Stokes direction
-        with $k$-maximum level greater then $K_i$ on the left (resp.\ on the
-        right) and define $\dot U_{\alpha^-,\alpha^+}$ as the clockwise hull of
-        the arcs $\dot U_{\alpha^-}^{\leq k}$ and $\dot U_{\alpha^+}^{\leq k}$
-        already defined by induction.
-        If there are no anti-Stokes directions with $k$-maximum level greater
-        then $K_i$ we set $\dot U_{\alpha^-,\alpha^+}=S^1$.
-    \end{itemize}
-    We then set
-    \[
-      \dot U_\alpha^{\leq k}
-        :=U\left(\alpha,\frac{\pi}{K_i}\right)\cap\dot U_{\alpha^-,\alpha^+}
-    \]
-    and the family of all $\dot U_\alpha^{\leq k}$ is a nerve.
-    \begin{rem}
-      If $\alpha$ has a $k$-maximum level equal to $k$ then is
-      $\dot U_\alpha^{\leq k}$ equal to the Stokes arc
-      $U\left(\alpha,\frac{\pi}{k}\right)=\dot U_\alpha^k$.
-      \comm{\dots{}and then no $0$-cochain with level $k$ or $\geq k$ can
+\item The cyclic covering
+  $\cU^{\leq k}=\left\{U_\alpha^{\leq k}\mid\alpha\in\A^{\leq k}\right\}$
+  will be defined by induction.
+  Let us assume that
+  \begin{einr}
+    the $\dot U_\alpha^{\leq k}$ are defined for all $\alpha\in\A^{\leq k}$ with
+    $k$-maximum level greater than $K_i$ such that their complete family is a
+    nerve.
+  \end{einr}
+  For every anti-Stokes direction $\alpha$ with $k$-maximum level $K_i$ let
+  $\alpha^-$ (resp.\ $\alpha^+$) be the next anti-Stokes direction with
+  $k$-maximum level greater then $K_i$ on the left (resp.\ on the right).
+
+  Define $\dot U_{\alpha^-,\alpha^+}$ as the clockwise hull of the arcs
+  $\dot U_{\alpha^-}^{\leq k}$ and $\dot U_{\alpha^+}^{\leq k}$ already defined
+  by induction.
+  If there are no anti-Stokes directions with $k$-maximum level greater then
+  $K_i$ we set $\dot U_{\alpha^-,\alpha^+}=S^1$.
+
+  We then add for every anti-Stokes direction $\alpha$ with $k$-maximum level
+  $K_i$ the arc
+  \[
+    \dot U_\alpha^{\leq k}
+    :=U\left(\alpha,\frac{\pi}{K_i}\right)\cap\dot U_{\alpha^-,\alpha^+}
+  \]
+  to $\dot\cU^{\leq k}$ and the received family is still a nerve.
+  \begin{rem}
+    If $\alpha$ has a $k$-maximum level equal to $k$ then is
+    $\dot U_\alpha^{\leq k}$ equal to the Stokes arc
+    $U\left(\alpha,\frac{\pi}{k}\right)=\dot U_\alpha^k$.
+    \comm{\dots{}and then no $0$-cochain with level $k$ or $\geq k$ can
       exists on the covering $\cU^{\leq{k}}$.}
-    \end{rem}
+  \end{rem}
 \end{enumerate}
 
 \begin{enumerate}
@@ -595,6 +617,8 @@ This means that
     \end{itemize}
   \item or we restrict to a given level $k\in\cK$.
 \end{itemize}
+The following lemma, which will also be required for the multileveled case,
+solves the case of a unique level
 \begin{lem}
   Let $k\in\cK$.
   The morphism $h$ from Theorem~\ref{thm:mainThm2} is in the case of a unique
@@ -652,48 +676,20 @@ This means that
           }
         }}
     \end{tikzcd} \]
-    is welldefined, since the sections of $\Lambda^k(A^0)$ are solution of
-    the system $[A^0,A^0]$ and it is very well known from the theory of
-    differential equations\TODO[source?] that an element
-    $f_\alpha\in\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))$ is uniquely
-    determined as the extension of its germ at some point $\alpha$.
+    is welldefined, i.e.\ the germs at $\alpha$ can be uniquely
+    extended to the arc $\dot\cU_\alpha^k$, since
+    \begin{itemize}
+    \item the Proposition~\ref{prop:piecewiseConstant} implies that the sections
+      of $\Lambda(A^0)$ on arcs are uniquely determined by their germs and
+    \item arcs of $\dot\cU_\alpha^k$ are the natural domains of existence of the
+      corresponding Stokes germs.
+    \end{itemize}
+    The second fact can be found in Loday-Richaud's paper~\cite{Loday2004} on
+    page 5269.
 
-    It is also a isomorphism groups (cf.~\cite{Loday1994}).
-    \begin{comment}
-      Problems:
-      \begin{itemize}
-      \item Show that a element of $\Lambda_\alpha^k(A^0)$ is extensionable
-        to the arc $U_\alpha\in\dot\cU_\alpha^k$ if and only if it has
-        maximal decay in direction $\alpha$.
-      \item \PROBLEM[$\Sto_\alpha^k(A^0)\subsetneq\Lambda_\alpha^k(A^0)$]
-        and thus
-        \[
-        i^k:
-        \underset{\alpha\in\A}\prod\Sto_\alpha^k(A^0)
-        \subsetneq
-        \underset{\alpha\in\A}\prod\Lambda_\alpha^k(A^0)
-        \to
-        \prod_{\alpha\in\A^k}\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))
-        \]
-      \end{itemize}
-      Facts:
-      \begin{itemize}
-      \item Every arc $U\in\dot\cU_\alpha^k$ has the width $\frac{\pi}{k}$
-        and is delimited by Stokes directions, i.e.\ is $U_\alpha^k$ the largest
-        arc, to contain no \textbf{corresponding} Stokes ray
-        \begin{einr}
-          Then might \cite[Lemma 1]{BJL1979Birkhoff} on page 72-73 help? \textbf{NO!}
-        \end{einr}
-      \end{itemize}
-      IDEAS:
-      \begin{itemize}
-      \item See \cite[375]{Martinet1991} and
-        \textbf{\cite[Def.5 on 372]{Martinet1991}}
-      \item \textbf{See \cite{babbitt1989local}} and
-        \textbf{\textcolor{green!60!black}{\cite[72]{babbitt1989local}}}
-      \item or maybe \cite{wasow2002asymptotic}
-      \end{itemize}
-    \end{comment}
+    In~\cite[5269]{Loday2004} is also stated, that only the Stokes
+    germs at $\alpha$ are sections of $\Lambda(A^0)$ on $\dot\cU_\alpha^k$ and
+    this implies surjectivity.
   \item The second map
     \[ \begin{tikzcd}
       s^k:
