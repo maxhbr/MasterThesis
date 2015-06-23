@@ -66,7 +66,7 @@ We introduce the following terminology:
       \filldraw[fill=green!20!white
         ,draw=green!60!black
         ,thick
-        ,path fading=west] (0,0)
+        ,path fading=west,fading angle=20] (0,0)
       -- ({cos( -30 )*.65},{sin( -30 )*.65}) arc (-30:70:.65) -- cycle;
       \draw[blue!60!black,thick] (0,0) -- ({cos( -30 )*.65},{sin( -30)*.65});
       \node[green!40!black] at (.4,.3)
@@ -77,7 +77,9 @@ We introduce the following terminology:
       \draw[thick,red!60!black] ({cos( -30 )},{sin( -30 )}) arc (-30:70:1);
 
       \fill[red!60!black] ({cos( -30 )},{sin( -30 )}) circle(.7pt);
+      \fill[white] ({cos( -30 )},{sin( -30 )}) circle (.3pt);
       \fill[red!60!black] ({cos( 70 )},{sin( 70 )}) circle(.7pt);
+      \fill[white] ({cos( 70 )},{sin( 70 )}) circle (.3pt);
 
       \node[red!60!black] at ({1.1 * cos(70)},{1.1 * sin(70)}) {$b$};
       \node[red!60!black] at ({1.1 * cos(-30)},{1.1 * sin(-30)}) {$a$};

@@ -109,6 +109,16 @@ This can be used to see the following proposition
   \end{einr}
 \end{prop}
 
+The cyclic coverings and especially the nerves of such coverings will be
+useful, since we have the following proposition
+(cf.~\cite[Prop.2.6]{Loday2004}).
+\begin{prop}\label{prop:cocycleIsomNerve}
+  The set of $1$-cocycles of $\cU$ is canonically isomorphic to the set of
+  $1$-cochains restricted to $\dot\cU=\bigl(\dot U_j\bigr)_{j\in J}$ without any
+  cocycle condition, i.e.\ the product
+  $\prod_{j\in J}\Gamma(\dot U_j,\Lambda(A^0))$.
+\end{prop}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{The theorem}
 \marginnote{\cite[868]{Loday1994}}
@@ -249,7 +259,16 @@ in the proof.
 \subsubsection{Adequate coverings}
 \TODO[Adequate is acyclic in Loday2004?]
 \begin{defn}
-  \marginnote{\cite[371]{Martinet1991} defines adapted coverings}
+  \begin{comment}
+    \begin{enumerate}
+    \item \cite[371]{Martinet1991} defines adapted coverings
+    \item \cite[5269]{Loday2004} defines acyclic coverings
+      \begin{itemize}
+      \item uses the \textbf{theorem of Leray}
+        \url{https://de.wikipedia.org/wiki/Satz_von_Leray}
+      \end{itemize}
+    \end{enumerate}
+  \end{comment}
   Let $\star\in\{k,<k,\leq k,\dots\}$.
   A covering $\cU$ beyond which the inductive limit
   $\underset{\cU}{\underrightarrow{\lim}}H^1(\cU;\Lambda^\star(A^0))$ is
@@ -292,13 +311,18 @@ to see, that our defined coverings are adequate.
   Let $k\in\cK_\alpha$.
   \begin{s-defn}
     Let $\alpha\in\A^k$.
-    An arc $U(\alpha,\frac{\pi}{k})$ is called a \emph{Stokes arc of level $k$
-    at $\alpha$}.
+    An arc $U\bigl(\alpha,\frac{\pi}{k}\bigr)$ is called a \emph{Stokes arc of
+      level $k$ at $\alpha$}.
+    If $(q_j,q_l)\in\cQ(A^0)$ is a pair, such that $q_j\myrel{\alpha}q_l$, is
+    the arc $U\bigl(\alpha,\frac{\pi}{k}\bigr)$ exactly the arc of decay of the
+    exponential $e^{q_j-q_l}$ (cf.~\cite[5269]{Loday2004} and
+    Remark~\ref{rem:relationDistanceCondition}).
   \end{s-defn}
   A cyclic covering $\cU=(U_j)_{j\in J}$ which satisfies
   \begin{einr}
-    for every $\alpha\in\A^k$ contains the Stokes arc $U(\alpha,\frac{\pi}{k})$
-    at least one arc $\dot U_j$ from the nerve $\dot\cU$ of $\cU$
+    for every $\alpha\in\A^k$ contains the Stokes arc
+    $U\bigl(\alpha,\frac{\pi}{k}\bigr)$ at least one arc $\dot U_j$ from the
+    nerve $\dot\cU$ of $\cU$
   \end{einr}
   is adequate to $\Lambda^k(A^0)$.
 
@@ -306,6 +330,16 @@ to see, that our defined coverings are adequate.
   $\Lambda^{<k}(A^0)$) if it is adequate to $\Lambda^{k'}(A^0)$ for every
   $k'\leq k$ (resp.\ $k'<k$).
 \end{prop}
+\begin{comment}
+  \begin{proof}
+    Show that for every $U_j,U_l\in\cU$ is
+    \[
+      H^1(U_j\cap U_l;\Lambda^k(A^0))=0 \,.
+    \]
+    Then the theorem of Leray implies that
+    $H^1(S^0;\Lambda^k(A^0))=H^1(\cU;\Lambda^k(A^0))$
+  \end{proof}
+\end{comment}
 
 Let $k\in\cK$.
 We want to define the three cyclic coverings $\cU^{k}$, $\cU^{\leq k}$ and
@@ -313,22 +347,24 @@ $\cU^{<k}$ which will be adequate to $\Lambda^k(A^0)$, $\Lambda^{\leq k}(A^0)$
 and $\Lambda^{<k}(A^0)$. Furthermore will the coverings be comparable at the
 different levels.
 
-\begin{enumerate}
-  \setcounter{enumi}{0}
-\item The first covering $\cU^{k}=\{\dot U_\alpha^k\mid\alpha\in\A^k\}$ is the
-  cyclic covering determined by the nerve
+\begin{itemize}
+\item[\textbf{1.}] The first covering
+  $\cU^{k}=\{\dot U_\alpha^k\mid\alpha\in\A^k\}$ is the cyclic covering
+  determined by the nerve
   \[
     \dot\cU^k:=
-    \left\{\dot U_\alpha^k=U(\alpha,\frac{\pi}{k})\mid\alpha\in\A^k\right\}
+    \bigl\{\dot U_\alpha^k=U\bigl(\alpha,\frac{\pi}{k}\bigr)\mid\alpha\in\A^k\bigr\}
   \]
   consisting of all Stokes arcs of level $k$ for anti-Stokes directions bearing
   the level $k$.
-\end{enumerate}
+\end{itemize}
+Since $\dot\cU^k$ consists only of arcs with equal opening is this canonically a
+nerve.
 
 \begin{rem}\label{rem:superSectors}
   Boalch, who looks only at the single-leveled case, introduces in his
   publications~\cite[19]{boalch} and~\cite[Def.1.23]{thboalch} the notion of
-  supersectors, which are defined as follows:
+  supersectors which are defined as follows:
   \begin{einr}
     write the anti-Stokes directions as $\A=\{\alpha_1,\dots,\alpha_\nu\}$
     arranged according to the clockwise ordering, then is the $i$-th
@@ -340,62 +376,66 @@ different levels.
   \end{einr}
   This yields a cyclic covering $(\hat\Sect^k_i)_{i\in\{1,\dots,\nu\}}$ whose
   nerve is exactly $\dot\cU^k$, which was defined above.
-  \begin{comment}
+\end{rem}
+  \begin{figure}[h]
     \begin{center}
       \begin{tikzpicture}[scale=3]
+        \clip (-1.1,-0.2) rectangle (1.3,1.3);
         \node[] (zero) at (0,0) {};
-        \draw[blue] (zero) circle (1cm);
+        \draw[blue,dashed] (zero) circle (1cm);
+        \node[blue] at (-0.9,0) {$S^1$};
 
-        \fill[fill=green!20!white] (0,0) -- ({cos( 15 )},{sin( 15 )}) arc
-          (15:85:1) -- cycle;
+        \draw[thick,red!60!black] ({cos( 15 )},{sin( 15 )}) arc (15:85:1);
 
-        \fill[fill=red!60!black] (0,0) -- ({cos( 15 )*0.5},{sin( 15 )*0.5}) arc
-          (15:45:0.5) -- cycle;
-        \fill[fill=red!60!black] (0,0) -- ({cos( 55 )*0.5},{sin( 55 )*0.5}) arc
-          (55:85:0.5) -- cycle;
+        \filldraw[fill=green!20!white
+          ,draw=green!60!black
+          ,thick
+          ,path fading=west,fading angle=50] (0,0)
+        -- ({cos( 15 )*.65},{sin( 15 )*.65}) arc (15:85:.65) -- cycle;
 
-        \fill[fill=green!20!white] (0,0) -- ({cos( 15 )*0.4},{sin( 15 )*0.4}) arc
-          (15:85:0.4) -- cycle;
-
-        \node[green!40!black] at (1,1) {$\widehat\Sect_i$};
+        \node[green!40!black] at (-0.15,0.34) {$\widehat\Sect_i$};
 
         \node[] (lft) at ({cos( 85 )},{sin( 85 )}) {};
         \node[] (rgt) at ({cos( 15 )},{sin( 15 )}) {};
 
         \draw[->,red!40!black] ({cos( 45 )},{sin( 45 )})
-          to [out=35, in=25] (rgt);
+          to [out=-5, in=25] node[sloped,midway,above] {$-\frac{\pi}{2k}$} (rgt);
 
         \draw[->,red!40!black] ({cos( 55 )},{sin( 55 )})
-          to [out=65, in=75] (lft);
+          to [out=105, in=75] node[sloped,midway,above] {$+\frac{\pi}{2k}$} (lft);
 
-        \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 85 )},{sin( 85 )});
-        \draw[thick,red!40!black,path fading=west] (0,0) -- +({cos( 15 )},{sin( 15 )});
-        \fill[red!40!black] ({cos( 85 )},{sin( 85 )}) circle (1pt);
-        \fill[red!40!black] ({cos( 15 )},{sin( 15 )}) circle (1pt);
+        \draw[thick,red!40!black,path fading=south]
+          ({cos( 85 ) * 0.65},{sin( 85 ) * 0.65}) -- ({cos( 85 )},{sin( 85 )});
+        \draw[thick,red!40!black,path fading=west]
+          ({cos( 15 ) * 0.65},{sin( 15 ) * 0.65}) -- ({cos( 15 )},{sin( 15 )});
+        \fill[red!40!black] ({cos( 85 )},{sin( 85 )}) circle (.7pt);
+        \fill[white] ({cos( 85 )},{sin( 85 )}) circle (.3pt);
+        \fill[red!40!black] ({cos( 15 )},{sin( 15 )}) circle (.7pt);
+        \fill[white] ({cos( 15 )},{sin( 15 )}) circle (.3pt);
 
-        \foreach \w/\str in {10/,
-                             20/,
-                             45/$\alpha_{i+1}$,
-                             55/$\alpha_{i}$}
-        {\draw (0,0) -- +({cos( \w )},{sin( \w )}) node[right] {\str};
-         \fill[blue!20!white] ({cos( \w )},{sin( \w )}) circle (.7pt);
-         \foreach \sep in {60,120,180,240,300}
-         {\draw (0,0) -- +({cos( \w + \sep )},{sin( \w + \sep )});
-          \fill[blue!20!white]
-            ({cos( \w + \sep )},{sin( \w + \sep )}) circle (.7pt);
-         }
-        };
-
+        \draw[path fading=south]
+        ({cos( 45 ) * 0.65},{sin( 45 ) * 0.65})
+        -- ({cos(45)},{sin(45)});
+        \node[above right] at ({cos(45)},{sin(45)}) {$\alpha_{i+1}$};
+        \fill[blue!20!white] ({cos(45)},{sin(45)}) circle (.7pt);
+        \fill[white] ({cos( 45 )},{sin( 45 )}) circle (.3pt);
+        \draw[path fading=south]
+        ({cos( 55 ) * 0.65},{sin( 55 ) * 0.65})
+        -- ({cos(55)},{sin(55)});
+        \node[above right] at ({cos(55)},{sin(55)}) {$\alpha_{i}$};
+        \fill[blue!20!white] ({cos(55)},{sin(55)}) circle (.7pt);
+        \fill[white] ({cos( 55 )},{sin( 55 )}) circle (.3pt);
 
         \fill (zero) circle (1pt);
       \end{tikzpicture}
     \end{center}
-  \end{comment}
-\end{rem}
+    \caption{An exemplary supersector $\widehat\Sect_i$ corresponding to the
+      anti-Stokes directions $\alpha_i$ and $\alpha_{i+1}$.}
+  \end{figure}
 If we extend to a subset $J$ of $\cK$ containing more then one level level,
 $\#J>1$, the set
 \[
-  \bigcup_{k\in J}\left\{U(\alpha,\frac{\pi}{k})\mid\alpha\in\A^{k}\right\}
+  \bigcup_{k\in J}\bigl\{U\bigl(\alpha,\frac{\pi}{k}\bigr)\mid\alpha\in\A^{k}\bigl\}
   =\bigcup_{k\in J}\dot\cU^k
 \]
 is no longer guaranteed to be a nerve.
@@ -409,12 +449,11 @@ Denote by
   \left\{K_1<\cdots<K_s=k\right\}
   =\left\{\max\left(\cK_\alpha\cap[0,k]\right)\mid\alpha\in\A^{\leq k}\right\}
 \]
-the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
-\begin{enumerate}
-  \setcounter{enumi}{1}
-\item The cyclic covering
+the set of all \emph{$k$-maximum levels} for all $\alpha\in\A^{\leq k}$.
+\begin{itemize}
+\item[\textbf{2.}] The cyclic covering
   $\cU^{\leq k}=\left\{U_\alpha^{\leq k}\mid\alpha\in\A^{\leq k}\right\}$
-  will be defined by induction.
+  will be defined by decreasing induction on the levels.
   Let us assume that
   \begin{einr}
     the $\dot U_\alpha^{\leq k}$ are defined for all $\alpha\in\A^{\leq k}$ with
@@ -435,24 +474,68 @@ the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
   $K_i$ the arc
   \[
     \dot U_\alpha^{\leq k}
-    :=U\left(\alpha,\frac{\pi}{K_i}\right)\cap\dot U_{\alpha^-,\alpha^+}
+    :=U\bigl(\alpha,\frac{\pi}{K_i}\bigr)\cap\dot U_{\alpha^-,\alpha^+}
   \]
   to $\dot\cU^{\leq k}$ and the received family is still a nerve.
-  \begin{rem}
-    If $\alpha$ has a $k$-maximum level equal to $k$ then is
-    $\dot U_\alpha^{\leq k}$ equal to the Stokes arc
-    $U\left(\alpha,\frac{\pi}{k}\right)=\dot U_\alpha^k$.
-    \comm{\dots{}and then no $0$-cochain with level $k$ or $\geq k$ can
-      exists on the covering $\cU^{\leq{k}}$.}
-  \end{rem}
-\end{enumerate}
+  \begin{figure}[h]
+    \begin{center}
+      \begin{tikzpicture}[scale=3]
+        \node[green!40!black] at (-0.3,0.4) {$\dot U_{\alpha^-}^{\leq k}$};
+        \node[brown!40!black] at (0.65,0.3) {$\dot U_{\alpha^+}^{\leq k}$};
+        \node[blue] at (0.4,-0.13) {$U\bigl(\alpha,\frac{\pi}{K_i}\bigr)$};
+        \node[red!40!black] at (1.05,0.5) {$\dot U_\alpha^{\leq k}$};
 
-\begin{enumerate}
-  \setcounter{enumi}{2}
-\item The last cyclic covering,
+        \clip (-1.1,-0.2) rectangle (1.3,1.3);
+        \node[] (zero) at (0,0) {};
+        \draw[blue,dashed] (zero) circle (1cm);
+        \node[blue] at (-0.9,0) {$S^1$};
+
+        \draw[thick,red!60!black] ({cos( 15 )},{sin( 15 )}) arc (15:100:1);
+
+        \foreach \n/\nn/\mycol/\w/\txt in {48/108/green/0.65/$\alpha^-$
+                                     ,15/75/brown/0.55/$\alpha^+$
+                                     ,5/100/blue/0.45/$\alpha$}
+        {
+          \pgfmathsetmacro\mid{{(\n + \nn)/2}}
+          \filldraw[fill=\mycol!20!white
+            ,draw=\mycol!60!black
+            ,thick
+            ,path fading=west,fading angle=\mid] (0,0)
+            -- ({cos( \n ) * \w},{sin( \n ) * \w}) arc ({\n}:{\nn}:{\w}) -- cycle;
+          \draw[path fading=west]
+            ({cos( \mid ) * \w},{sin( \mid ) * \w}) -- ({cos( \mid )},{sin( \mid )});
+          \fill[blue!20!white] ({cos(\mid)},{sin(\mid)}) circle (.7pt);
+          \fill[white] ({cos(\mid)},{sin(\mid)}) circle (.3pt);
+          \node[above right] at ({cos(\mid)},{sin(\mid)}) {\txt};
+        }
+
+        \draw[thick,red!40!black,path fading=south]
+          ({cos( 100 ) * 0.45},{sin( 100 ) * 0.45}) -- ({cos( 100 )},{sin( 100 )});
+        \draw[thick,red!40!black,path fading=west]
+          ({cos( 15 ) * 0.55},{sin( 15 ) * 0.55}) -- ({cos( 15 )},{sin( 15 )});
+
+        \fill[red!40!black] ({cos( 100 )},{sin( 100 )}) circle (.7pt);
+        \fill[white] ({cos( 100 )},{sin( 100 )}) circle (.3pt);
+        \fill[red!40!black] ({cos( 15 )},{sin( 15 )}) circle (.7pt);
+        \fill[white] ({cos( 15 )},{sin( 15 )}) circle (.3pt);
+
+        \fill (zero) circle (1pt);
+      \end{tikzpicture}
+    \end{center}
+    \caption{An exemplary construction of an arc $\dot U_\alpha^{\leq k}$
+      corresponding to the anti-Stokes direction $\alpha$.  The
+      \textcolor{green!40!black}{green} arc is $\dot U_{\alpha^-}^{\leq k}$, the
+      \textcolor{brown!70!black}{brown} arc is $\dot U_{\alpha^+}^{\leq k}$ and
+      the \textcolor{blue}{blue} arc is the Stokes arc of level $K_i$ at
+      $\alpha$, where $K_i$ is the $k$-maximum level of $\alpha$.}
+  \end{figure}
+\end{itemize}
+
+\begin{itemize}
+\item[\textbf{3.}] The last cyclic covering,
   $\cU^{<k}=\left\{U_{\alpha}^{<k}\mid\alpha\in\A^{<k}\right\}$, is defined as
   $\cU^{<k}:=\cU^{\leq k'}$ where $k':=\max\{k''\in\cK\mid k''<k\}$.
-\end{enumerate}
+\end{itemize}
 
 \begin{figure} %{{{
   \centering
@@ -480,8 +563,10 @@ the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
         ({cos(#2 + \hwdth) * #1},{sin(#2 + \hwdth) * #1})
         --
         ({cos(#2 + \hwdth)},{sin(#2 + \hwdth)});
-      \filldraw[white] ({cos(#2)},{sin(#2)}) circle (0.5pt);
-      \filldraw[red] ({cos(#2)},{sin(#2)}) circle (0.2pt);
+      % \filldraw[white] ({cos(#2)},{sin(#2)}) circle (0.5pt);
+      % \filldraw[red] ({cos(#2)},{sin(#2)}) circle (0.2pt);
+      \fill[blue!20!white] ({cos(#2)},{sin(#2)}) circle (.5pt);
+      \fill[white] ({cos(#2)},{sin(#2)}) circle (.2pt);
     }%}}}
     \newcommand{\myDrawArcB}[5]{%{{{
       % Parameter: radius , center , start , stop , color
@@ -501,8 +586,10 @@ the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
         ({cos( #4 ) * #1},{sin( #4 ) * #1})
         --
         ({cos( #4 )},{sin( #4 )});
-      \filldraw[white] ({cos(#2)},{sin(#2)}) circle (0.5pt);
-      \filldraw[red] ({cos(#2)},{sin(#2)}) circle (0.2pt);
+      % \filldraw[white] ({cos(#2)},{sin(#2)}) circle (0.5pt);
+      % \filldraw[red] ({cos(#2)},{sin(#2)}) circle (0.2pt);
+      \fill[blue!20!white] ({cos(#2)},{sin(#2)}) circle (.5pt);
+      \fill[white] ({cos(#2)},{sin(#2)}) circle (.2pt);
     }%}}}
 
     \node (zero) at (0,0) {};
@@ -568,7 +655,7 @@ the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
   \end{tikzpicture} %}}}
   \caption{The adequate coverings for an example with $\cK=\{\kOne,\kTwo\}$ and
     $\A=\left\{ \frac{j\cdot\pi}{k}\mid k\in\cK\text{, } j\in\N \right\}$.
-    The anti-Stokes directions are marked by the \textcolor{red}{red} dots.
+    The anti-Stokes directions are marked by the \textcolor{blue}{blue} circles.
     The arcs of $\dot\cU^{\kOne}=\dot\cU^{\leq\kOne}$ are
     \textcolor{orange}{orange}, the arcs of $\dot\cU^{\kTwo}$ are
     \textcolor{purple}{purple} and the arcs of $\dot\cU^{\leq\kTwo}=\dot\cU$
@@ -580,12 +667,17 @@ the set of all \emph{$k$-maximum levels} for $\alpha\in\A^{\leq k}$.
   The coverings $\cU^{k}$, $\cU^{\leq k}$ and $\cU^{<k}$ depend only on
   $\cQ(A^0)$. Hence they depend only on the determining polynomials.
 \end{rem}
-It is obvious, that for every $k\in\cK$ the covering $\cU^{\leq k}$ refines
-$\cU^{k}$ and $\cU^{<k}$.
+For every $k'\leq k\in\cK$ such that $k'\leq k$ and every
+$\alpha\in\A^{k'}\subset\A^{\leq k}$ (resp.\
+$\alpha\in\A^{<k'}\subset\A^{\leq k}$) is
+$\dot U^{\leq k}_\alpha\subset\dot U^{k'}_\alpha$ (resp.\
+$\dot U^{\leq k}_\alpha\subset\dot U^{<k'}_\alpha$), thus the covering
+$\cU^{\leq k}$ refines $\cU^{k'}$ and $\cU^{<k'}$.
+Thus the coverings are comparable on the different levels.
 Furthermore are the coverings defined, such that they satisfy the
-condition in Proposition~\ref{prop:adeqCovCondition}.
-Thus the first property in the following proposition is satisfied. The other
-two can be found at \cite[Prop.II.3.1 (iv)]{Loday1994}.
+condition in Proposition~\ref{prop:adeqCovCondition}, such that the first
+property in the following proposition is satisfied. The other two can be found
+at~\cite[Prop.II.3.1 (iv)]{Loday1994} or on page 5269 of~\cite{Loday2004}.
 \begin{prop}\label{prop:adequateProperties}
   \marginnote{\cite[Prop.II.3.1]{Loday1994}}
   \PROBLEM[Was bedeutet das?]
@@ -603,6 +695,8 @@ To have a shorter notation, we denote the product
 $\prod_{\alpha\in\A^\star}\Gamma(\dot U_\alpha^\star;\Lambda^\star(A^0))$ by
 $\Gamma(\dot U^\star;\Lambda^\star(A^0))$ for every
 $\star\in\{k,<k,\leq k,\dots\}$.
+Let us also denote $\cU:=\cU^k$ where $k$ is the maximal degree, i.e.\
+$k=\max\cK$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{The case of a unique level}
@@ -618,7 +712,7 @@ This means that
   \item or we restrict to a given level $k\in\cK$.
 \end{itemize}
 The following lemma, which will also be required for the multileveled case,
-solves the case of a unique level
+solves the case of a unique level.
 \begin{lem}
   Let $k\in\cK$.
   The morphism $h$ from Theorem~\ref{thm:mainThm2} is in the case of a unique
@@ -679,16 +773,17 @@ solves the case of a unique level
     is welldefined, i.e.\ the germs at $\alpha$ can be uniquely
     extended to the arc $\dot\cU_\alpha^k$, since
     \begin{itemize}
-    \item the Proposition~\ref{prop:piecewiseConstant} implies that the sections
-      of $\Lambda(A^0)$ on arcs are uniquely determined by their germs and
+    \item the sheaf $\Lambda(A^0)$, and thus $\Lambda^k(A^0)$, is a
+      piecewise-constant sheaf, we know that the sections on arcs are uniquely
+      determined by their germs and
     \item arcs of $\dot\cU_\alpha^k$ are the natural domains of existence of the
       corresponding Stokes germs.
     \end{itemize}
     The second fact can be found in Loday-Richaud's paper~\cite{Loday2004} on
     page 5269.
 
-    In~\cite[5269]{Loday2004} is also stated, that only the Stokes
-    germs at $\alpha$ are sections of $\Lambda(A^0)$ on $\dot\cU_\alpha^k$ and
+    In~\cite[5269]{Loday2004} is also stated, that only the extensions of Stokes
+    germs at $\alpha$ are sections of $\Lambda(A^0)$ on $\dot U_\alpha^k$ and
     this implies surjectivity.
   \item The second map
     \[ \begin{tikzcd}
@@ -715,11 +810,12 @@ solves the case of a unique level
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{The case of several levels}
-\rewrite{In the proof of the case of several levels, we will still use}
-Loday-Richaud's paper~\cite{Loday1994} as reference.
+Let us now proof the Theorem~\ref{thm:mainThm2} in the case of several levels,
+We will still use Loday-Richaud's paper~\cite{Loday1994} as reference.
+We will begin by defining some maps, which will be composed to obtain the
+isomorphism $h$ from the theorem.
 \begin{defn}\label{defn:firstSetOfInlusions}
-  Here we want to define a \emph{product map of cocycles}
-  $\mathfrak{S}^{\leq k}$.
+  Begin with the \emph{product map of cocycles} $\mathfrak{S}^{\leq k}$.
   This map will be composed from the following injective maps:
   \begin{enumerate}
     \item The first map is defined as
@@ -787,7 +883,7 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
       $\Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))$
       then $\dot f$ and $\dot f'$ are cohomologous in
       $\Gamma(\dot\cU^{<k};\Lambda^{<k}(A^0))$.
-    \item Any cocycle in $\Gamma(\dot\cU^{\leq k},\Lambda^{\leq k}(A^0))$ is
+    \item Any cocycle in $\Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))$ is
       cohomologous to a cocycle in the range of $\mathfrak{S}^{\leq k}$.
   \end{enumerate}
 \end{lem}
@@ -816,28 +912,29 @@ Loday-Richaud's paper~\cite{Loday1994} as reference.
         (c_{\alpha^+}^{-1}G_\alpha'c_{\alpha^+})
         \,,\qquad\text{~for~} \alpha\in\A^{\leq k} \,.
       \]
-      Since Corollary~\ref{cor:factorStokesGerms} tells us, that the
-      factorization into the factors of the semidirect product are unique, we
-      get for all $\alpha\in\A^k$
+      Since Corollary~\ref{cor:factorStokesGerms} tells us that this
+      factorization corresponds to a semidirect product and thus is unique we
+      obtain
       \[
         \dot F_\alpha=c_\alpha^{-1}\dot F_\alpha'c_{\alpha^+}
         \qquad \text{~and~} \qquad
-        \dot G_\alpha=c_{\alpha^+}^{-1}\dot G_\alpha'c_{\alpha^+}.
+        \dot G_\alpha=c_{\alpha^+}^{-1}\dot G_\alpha'c_{\alpha^+}
       \]
+      for all $\alpha\in\A^{\leq k}$.
       The former relation implies that $(\dot F_\alpha)$ and $(\dot F_\alpha')$
       are cohomologous with values in $\Lambda^{<k}(A^0)$ on $\cU^{\leq k}$.
-      Since $\cU^{<k}$ is already adequate to $\Lambda^{<k}(A^0)$, \rewrite{are
-      $(\dot F_\alpha)$ and $(\dot F_\alpha')$} already on $\cU^{<k}$,
-      i.e.\ in $\Gamma(\dot\cU^{<k};\Lambda^{<k}(A^0))$, cohomologous.
+      Since the coarser covering $\cU^{<k}$ is already adequate to
+      $\Lambda^{<k}(A^0)$ are $(\dot F_\alpha)$ and $(\dot F_\alpha')$ already
+      in $\Gamma(\dot\cU^{<k};\Lambda^{<k}(A^0))$ cohomologous.
     \item The proof of part 2.\ (together with a proof of part 1.) can be
       found in Loday-Richaud's paper \cite[Proof of Lem.II.3.3]{Loday1994}.
   \end{enumerate}
 \end{proof}
-Let $k\in\cK$ and $k'=\max\{k'\in\cK\mid k'<k\}$. We then know by definition
-that $\cU^{<k}=\cU^{\leq k'}$ as well as
+Let $k\in\cK=\{k_1<k_2<\dots<k_r\}$ and $k'=\max\{k'\in\cK\mid k'<k\}$. We then
+know by definition that $\cU^{<k}=\cU^{\leq k'}$ as well as
 $\Lambda^{< k}(A^0)=\Lambda^{\leq k'}(A^0)$ and thus
 $\Gamma(\dot\cU^{< k};\Lambda^{< k}(A^0))=
-\Gamma(\dot\cU^{\leq k'};\Lambda^{\leq k'}(A^0))$ and obtain the following
+\Gamma(\dot\cU^{\leq k'};\Lambda^{\leq k'}(A^0))$ and we obtain the following
 proposition.
 \begin{prop}\label{prop:theMapTau}
   By applying $\mathfrak{S}^{\leq k}$ successively for different $k$'s
@@ -849,8 +946,8 @@ proposition.
       \times
       \Gamma(\dot\cU^{k_r};\Lambda^{k_r}(A^0))
       \rar{\mathfrak{S}^{\leq k_r}}&
-      \overset{\Gamma(\dot\cU;\Lambda(A^0))}{%
-        \overset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+      \overset{\normalsize\Gamma(\dot\cU;\Lambda(A^0))}{%
+        \overset{\normalsize\text{\rotatebox[origin=c]{-90}{$=$}}}{%
           \Gamma(\dot\cU^{\leq k_r};\Lambda^{\leq k_r}(A^0))
       }}
       \\\underset{\tikzmark{e2}}{\underbrace{%i
@@ -878,11 +975,11 @@ proposition.
         \Gamma(\dot\cU^{\leq k_2};\Lambda^{\leq k_2}(A^0))}
   \end{tikzcd} \]
   \begin{tikzpicture}[remember picture,overlay]
-    \draw[<-] (n1) to[out=90,in=270] node[midway,fill=white]{$=$}
+    \draw[<-] (n1) to[out=90,in=270] node[midway,fill=white,sloped]{$\cong$}
       ([yshift=.3em]e1);
-    \draw[<-] (n2) to[out=90,in=270] node[midway,fill=white]{$=$}
+    \draw[<-] (n2) to[out=90,in=270] node[midway,fill=white,sloped]{$\cong$}
       ([yshift=.3em]e2);
-    \draw[<-] (nEND) to[out=90,in=270] node[midway,fill=white]{$=$}
+    \draw[<-] (nEND) to[out=90,in=270] node[midway,fill=white,sloped]{$\cong$}
       ([yshift=.3em]eEND);
   \end{tikzpicture}
   which can be written in the following compact form
@@ -920,67 +1017,8 @@ proposition.
   The defined map $\tau$ is clearly injective and it can be extended to an
   arbitrary order of levels (cf.\ Remark~\cite[Rem.II.3.5]{Loday1994}).
 \end{prop}
-\begin{comment}
-  \begin{defn}\label{defn:theMapTau}
-    Define the injective map
-    \begin{align*}
-      \tau^k:\Gamma(\dot\cU^k;\Lambda^k(A^0))
-      &\longrightarrow \Gamma(\dot\cU;\Lambda(A^0))
-    \\\dot f=(\dot f_\alpha)_{\alpha\in\A^k}
-      &\longmapsto
-      (\dot F_\alpha)_{\alpha\in\A}
-    \end{align*}
-    where
-    \[
-      \dot F_\alpha=\begin{cases}
-        \dot f_\alpha \text{~restricted to } \dot U_\alpha
-        \text{~and seen as being in } \Lambda(A^0)
-        & \text{~when } \alpha\in\A^k
-      \\\id \text{~(the identity on $\dot U_\alpha$) }
-        & \text{~when } \alpha\notin\A^k
-      \end{cases}
-    \]
-    \marginnote{\cite[Prop.II.3.4]{Loday1994}}
-    The \emph{product map of single-leveled cocycles} is then defined as
-    \begin{align*}
-      \tau:\prod_{k\in\cK}\Gamma(\dot \cU^k;\Lambda^k(A^0))
-      &\longrightarrow
-      \Gamma(\dot\cU;\Lambda(A^0))
-    \\(\dot f^k)_{k\in\cK}
-      &\longmapsto
-      \prod_{k\in\cK}\tau^k(\dot f^k)
-    \end{align*}
-    following an ascending order of levels.
-    \begin{s-rem}
-      The map $\tau$
-      \begin{enumerate}
-        \item is injective since it is composed from $\sigma^k$ and the clearly
-          injetive mapping
-          \begin{align*}
-            \Gamma(\dot\cU^{\leq k};\Lambda^{\leq k}(A^0))
-            &\longrightarrow
-            \Gamma(\dot\cU;\Lambda(A^0))
-          \\(\dot F_\alpha)_{\alpha\in\A^{\leq k}}
-            &\longmapsto
-            (\dot F'_\alpha)_{\alpha\in\A}
-          \end{align*}
-          where
-          \[
-            \dot F'_\alpha=\begin{cases}
-              \dot F_\alpha \text{~restricted to } \dot U_\alpha
-              \text{~and seen as being in } \Lambda(A^0)
-              & \text{~when } \alpha\in\A^{\leq k}
-              \\\id \text{~(the identity on $\dot U_\alpha$) }
-              & \text{~when } \alpha\notin\A^{\leq k}
-            \end{cases}
-          \]
-          and
-        \item it can be extended to an arbitrary order of levels
-          (cf.\ Remark~\cite[Rem.II.3.5]{Loday1994}).
-      \end{enumerate}
-    \end{s-rem}
-  \end{defn}
-\end{comment}
+From the previous statements one obtains the following Corollary (cf.\
+\cite[Prop.II.3.4]{Loday1994}).
 \begin{cor}
   The product map of single-leveled cocycles $\tau$ induces on the cohomology
   a bijective and natural map
@@ -1005,18 +1043,17 @@ Theorem~\ref{thm:mainThm2} by composition of already bijective maps.
   map which corresponds to the filtration from
   Proposition~\ref{prop:filtrationOfStokesGroup} and
   denote the composition
-  \[ \begin{tikzcd}[column sep=1.8cm,row sep=0]
+  \[ \begin{tikzcd}[column sep=1.8cm,row sep=-0.2cm]
       \displaystyle \prod_{\alpha\in\A}\Sto_\alpha(A^0)
       \rar{\prod_{\alpha\in\A}i_\alpha}
       \arrow[ddrr, out=270,in=200,"\mathfrak{T}"]
-      &
-      \displaystyle \prod_{\alpha\in\A}\prod_{k\in\cK}\Sto_\alpha^k(A^0)
-    \\&\text{\rotatebox[origin=c]{-90}{$\equiv$}}
-    \\&\displaystyle \prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_\alpha^k(A^0)
-      \rar{\prod_{k\in\cK}i^k}&
-      \displaystyle \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
+      & \displaystyle \prod_{\alpha\in\A}\prod_{k\in\cK}\Sto_\alpha^k(A^0)
+    \\ &\text{\rotatebox[origin=c]{-90}{$\equiv$}}
+    \\ &\displaystyle \prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_\alpha^k(A^0)
+      \rar{\prod_{k\in\cK}i^k}
+      & \displaystyle \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
   \end{tikzcd} \]
-  by $\mathfrak{T}$. The bijection $h$ is then obtained as
+  by $\mathfrak{T}$. The bijection $h$ is then obtained as the composition
   \[
     \cT\circ\mathfrak{T}: \prod_{\alpha\in\A}\Sto_\alpha(A^0)
     \longrightarrow H^1(\cU;\Lambda(A^0)) \,.
@@ -1029,52 +1066,51 @@ Theorem~\ref{thm:mainThm2} by composition of already bijective maps.
 \subsection{Some exemplary calculations}\label{sec:WhichInformationIsNeeded}
 Here we want to discuss which information is required to describe the Stokes
 cocycle corresponding to a multileveled system in more depth.
-We will look at a sigle-leveled system corresponding to a normal form
-$A^0\in \GL_3(\C(\!\{t\}\!))$ with exactly two levels and will apply the
-techniques developed in the previous sections in an rather explicit way.
+We will look at the simplest case of multi-leveled systems, i.e. systems
+corresponding to a normal form in $\GL_3(\C(\!\{t\}\!))$ with exactly two
+levels, and will apply the techniques developed in the previous sections in an
+rather explicit way.
 
-Let $A^0$ be a normal form with dimension $n=3$ and two levels
-$\cK=\{k_1<k_2\}$ which satisfies that there is at least one anti-Stokes
+Let $A^0$ be a normal form in $\GL_3(\C(\!\{t\}\!))$ with two levels
+$\cK=\{k_1<k_2\}$ and assume that there is at least one anti-Stokes
 direction $\theta$ which is beared by both levels.
+\comm{This assumption implies that the set of anti-Stokes directions is uniquely
+  determined by the levels and $\theta$.}
 Let $q_j(t^{-1})$ be the determining polynomials and let $k_{jl}$ be the
 degrees of $(q_j-q_l)(t^{-1})$.
-Up to permutation, we know that in our case are the leading terms of
-$(q_1-q_2)(t^{-1})$ and $(q_1-q_3)(t^{-1})$ equal and thus
+\begin{lem}\label{lem:simpleLemmaOnStructure}
+  Up to permutation we know that the leading coefficients of
+  $(q_1-q_2)(t^{-1})$ and $(q_1-q_3)(t^{-1})$ are equal.
+\end{lem}
+\begin{proof}
+  Let $q_1,q_2,q_3$ be sorted, such that
+  \[
+    \deg(q_1-q_2) =: k_2 > k_1 := \deg(q_2-q_3),
+  \]
+  i.e.\ such that the leading coefficients $\frac{a_{1,2}}{t^{k_2}}$ and
+  $\frac{a_{2,3}}{t^{k_1}}$ are of different degree, seen as polynomials in
+  $t^{-1}$. To find the leading coefficient of $q_1-q_3$ we have to
+  distinguish different cases:
+  \begin{enumerate}
+  \item $\deg(q_1)=\deg(q_2)=k_2$: in this case has
+    $q_3$ to be of degree $k_2$.
+    Even further, $q_2$ and $q_3$ have to have the same leading coefficients,
+    since they have to cancel out.
+  \item $\deg(q_1)<k_2$: then has $q_2$ to be of
+    degree $k_2$ and we can continue similar to the first case.
+  \item $\deg(q_2)<k_2$: then can't $q_3$ be of
+    degree $k_2=\deg(q_1)$.
+  \end{enumerate}
+  Thus we know for both, $q_2$ and $q_3$, that the coefficients of degree $k_2$
+  are either equal or both zero.
+\end{proof}
+From the previous lemma follows that
 \begin{itemize}
-  \item up to permutation is $k_2=k_{1,2}=k_{1,3}$ and $k_1=k_{2,3}$, i.e.\ the
-    larger degree appears twice, and
-    \begin{comment}
-      let $q_1,q_2,q_3$ be polynomials, such that
-      \[
-        \deg(q_1-q_2) =: k_2 > k_1 := \deg(q_2-q_3)
-      \]
-      then is the degree of $q_1-q_3$ given by
-      \begin{itemize}
-        \item[\textbf{case 1}] $\deg(q_1)<k_2$: then is $\deg(q_2)=k_2$ and
-          thus $\deg(q_3)=k_2$.
-        \item[\textbf{case 2}] $\deg(q_2)<k_2$: then is $\deg(q_1)=k_2$ and
-          $\deg(q_3)\leq\deg(q_2)$.
-        \item[\textbf{case 3}] $\deg(q_1)=\deg(q_2)=k_2$: thus follows that the
-          leading term of $q_1$ and $q_2$ are different.
-          \begin{itemize}
-            \item[\textbf{subcase 3.a}] $\deg(q_3)<k_2$: everything is clear
-            \item[\textbf{subcase 3.b}] $\deg(q_3)=k_2$: here has the leading
-              term of $q_3$ be equal to them from $q_1$ to satisfy that
-              $k_2>\deg(q_2-q_3)$.
-          \end{itemize}
-      \end{itemize}
-      From this follows that $\deg(q_1-q_3)=k_2$.
-    \end{comment}
-  % \item $q_1 \underset{\alpha,\max}{\prec} q_2$
-  %   \Leftrightarrow{}
-  %   $q_1 \underset{\alpha,\max}{\prec} q_3$
-  %   \rewrite{respectively}
-  %   $q_2 \underset{\alpha,\max}{\prec} q_1$
-  %   \Leftrightarrow{}
-  %   $q_3 \underset{\alpha,\max}{\prec} q_1$
-  \item $q_0\myrel{\alpha}q_2$ (resp.~$q_2\myrel{\alpha}q_1$) if and only if
-    $q_1\myrel{\alpha}q_3$ (resp.~$q_3\myrel{\alpha}q_1$) and thus do they
-    determine the same anti-Stokes directions.
+\item up to permutation is $k_2=k_{1,2}=k_{1,3}$ and $k_1=k_{2,3}$, i.e.\ the
+  larger degree appears twice, and
+\item $q_1\myrel{\alpha}q_2$ (resp.~$q_2\myrel{\alpha}q_1$) if and only if
+  $q_1\myrel{\alpha}q_3$ (resp.~$q_3\myrel{\alpha}q_1$) and thus do the pairs
+  $(q_1,q_2)$ and $(q_1,q_3)$ determine the same anti-Stokes directions.
 \end{itemize}
 The set of all anti-Stokes directions is then given as
 \[
@@ -1104,10 +1140,9 @@ arise.
     \end{pmatrix}
   \]
   where $c_j\in\C$ and $\star\in\C$.
-
   We have seen that $q_1\myrel{\alpha}q_2$ \Rightarrow{}
-  $q_1\myrel{\alpha}q_3$ thus the representation has the
-  \rewrite{form}
+  $q_1\myrel{\alpha}q_3$ (cf.\ Lemma~\ref{lem:simpleLemmaOnStructure}) thus the
+  representation has the structure
   \[
     \begin{pmatrix}
       1 & c_1 & \text{\boldmath$c_2$}
@@ -1124,22 +1159,20 @@ arise.
     \\0 & \text{\boldmath$0$} & 1
     \end{pmatrix}\,.
   \]
-  \begin{comment}
-    We also know that every matrix of this \rewrite{form} is a representation
-    to some Stokes germ.
-    Thus we have an isomorphism
-    \begin{align*}
-      \vartheta_\alpha:\C^2 &\longrightarrow \SSto_\alpha(A^0)
+  The obvious isomorphism $\vartheta_\alpha$ from
+  Remark~\ref{rem:groupOfFaithfullReps} can explicitly given as
+  \begin{align*}
+    \vartheta_\alpha:\C^2 &\longrightarrow \SSto_\alpha(A^0)
     \\(c_1,c_2)&\longmapsto
-      \begin{pmatrix}
-        1 & c_1 & c_2
-      \\0 & 1 & 0
-      \\0 & 0 & 1
-      \end{pmatrix}
-    \end{align*}
-  \end{comment}
+                 \begin{pmatrix}
+                   1 & c_1 & c_2
+                   \\0 & 1 & 0
+                   \\0 & 0 & 1
+                 \end{pmatrix}
+                             \,.
+  \end{align*}
 \end{exmp}
-In fact, the following $9$ cases of Stokes matrices can arise:
+The following $9$ cases of forms of Stokes matrices can arise:
 \begin{center}
   \def\arraystretch{1.3}
   \setlength\tabcolsep{4mm}
@@ -1180,8 +1213,6 @@ $\C^2\overset{\vartheta_\alpha}{\underset{\cong}{\longrightarrow}}\SSto_\alpha(A
 as well as in the \textcolor{purple!75!black}{purple} cases
 $\cK_\alpha=\{k_1\}$ and
 $\C^1\overset{\vartheta_\alpha}{\underset{\cong}{\longrightarrow}}\SSto_\alpha(A^0)$.
-\comm{Thus, for every $\alpha\in\A$, we have an isomorphism
-$\rho_{\alpha}^{-1}\circ\vartheta_\alpha$.}
 We will replace $c_2'$ by $c_2+c_1c_3$ and $c_3'$ by $c_1c_2+c_3$ to be
 consistent with the decomposition in the next part
 (cf.\ Example~\ref{exmp:decompositionHere}).
@@ -1191,7 +1222,7 @@ consistent with the decomposition in the next part
   \[
     (\id,\id,\dots,\id)\in\prod_{\alpha\in\A}\SSto_\alpha(A^0),
   \]
-  which gets by $\left(\prod_{\alpha\in\A}\right)^{-1}\circ h$ mapped to the
+  which gets by $\prod_{\alpha\in\A}\rho_\alpha^{-1}\circ h$ mapped to the
   trivial cohomology class in $\St(A^0)$.
 \end{cor}
 
@@ -1200,32 +1231,34 @@ In proposition~\ref{prop:filtrationOfStokesGroup} and especially
 Remark~\ref{rem:filtrationOfStokesMats} we have defined a decomposition of the
 Stokes group $\Sto_\alpha(A^0)$ in subgroups generated by $k$-germs for
 $k\in\cK$.
-In our case, we have at most two nontrivial factors. Especially is this
-decomposition given by
+In our case, we have at most two nontrivial factors.
+The map which gives the factors of this factorization in ascending order is
+denoted by $i_\alpha$ and the decomposition is then given by
 \[
   \phi_\alpha=\phi_\alpha^{k_1} \phi_\alpha^{k_2}
   \overset{i_\alpha}\longmapsto
     \left(\phi_\alpha^{k_1},\phi_\alpha^{k_2}\right)
-      \in\Sto_\alpha^{k_1}(A^0)\times\Sto_\alpha^{k_2}(A^0) \,,
+    \in\Sto_\alpha^{k_1}(A^0)\times\Sto_\alpha^{k_2}(A^0) \,.
 \]
-and $i_\alpha$ is the map, wich gives the factors of this factorization in
-ascending order.
-This decomposition, of a germ $\phi_\alpha$, is trivial if
+This decomposition applied to some germ $\phi_\alpha$ is trivial if
 $\#\cK(\phi_\alpha)\leq1$, thus the interesting cases are the
-\textcolor{blue!75!black}{blue} cases.
+\textcolor{blue!75!black}{blue} cases from the table above.
 
 \begin{exmp}\label{exmp:decompositionHere}
-  Look at the example
-  \[
-    \vartheta_\alpha(c_1,c_2,c_3)=
-    \cY_{0}
+  Look at an anti-Stokes direction $\alpha\in\A$ and assume that
+  $q_3\myrel{\alpha}q_2$, $q_2\myrel{\alpha}q_1$ and $q_3\myrel{\alpha}q_1$. We
+  then know that $\phi_\alpha\in \Sto_\alpha(A^0)$ can be written as
+  \begin{align*}
+    \phi_\alpha &= \cY_{0}\vartheta_\alpha(c_1,c_2,c_3) \cY_{0}^{-1}
+    \\&
+    =\cY_{0}
     \begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_1c_2+c_3 & c_1 & 1 \end{pmatrix}
     \cY_{0}^{-1}
-    =\phi_\alpha
     \,.
-  \]
+  \end{align*}
   According to Remark~\ref{rem:algFactorization} the factor
-  $\phi_\alpha^{k_1}\in\Sto_\alpha^{k_1}(A^0)$, is given by
+  $\phi_\alpha^{k_1}\in\Sto_\alpha^{k_1}(A^0)$ is obtained by truncation to
+  terms of level $k_1$, i.e.\ as
   \[
     \phi_\alpha^{k_1}=
     \cY_{0}
@@ -1241,7 +1274,7 @@ $\#\cK(\phi_\alpha)\leq1$, thus the interesting cases are the
   \begin{align*}
     \phi_\alpha^{k_2}&=
     \left(\phi_\alpha^{k_1}\right)^{-1}
-    \phi_\alpha^{k_2}
+    \phi_\alpha
   \\&=\cY_{0}
     \begin{pmatrix}
       1     & 0    & 0
@@ -1264,7 +1297,7 @@ $\#\cK(\phi_\alpha)\leq1$, thus the interesting cases are the
     \,.
   \end{align*}
 \end{exmp}
-The four nontrivial decomposition in our situation, are given by:
+The four nontrivial decomposition in our situation are given by:
 \begin{enumerate}
   \item $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_1 \\0 & 0 & 1 \end{pmatrix}
   \cdot\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}=
@@ -1320,7 +1353,7 @@ gets, via the isomorphism $\prod_{\alpha\in\A}j_\alpha$, mapped to
   \right)
   \right)
 \end{align*}
-in $\prod_{\alpha\in\A^{\kOne}}\SSto_{\alpha}^{\kOne}(A^0) \times
+in $\prod_{\alpha\in\A^{\kOne}}\SSto_c{\alpha}^{\kOne}(A^0) \times
 \prod_{\alpha\in\A^{\kTwo}}\SSto_{\alpha}^{\kTwo}(A^0)$ and thus the element
 \begin{align*}
   &\left(
@@ -1361,10 +1394,9 @@ Stokes matrices as
   \prod_{\alpha\in\A}\SSto_{\alpha}(A^0) \,.
 \end{align*}
 Applying the isomorphism $\prod_{\alpha\in\A}\rho_\alpha^{-1}$, i.e.\
-conjugation by the fundamental solution $\cY_0(t)=t^Le^{Q(t^{-1})}$
-(cf.\ Proposition~\ref{prop:representation}), yields then the corresponding
-Stokes cocycle in $\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$ and thus an element
-in $\St(A^0)$.
+conjugation by the fundamental solution $\cY_0(t)=t^Le^{Q(t^{-1})}$ (cf.\
+Proposition~\ref{prop:representation}), yields then the corresponding element in
+$\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$.
 \begin{comment}
   This element is explicitly given as
   \begin{align*}

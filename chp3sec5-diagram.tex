@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The complete Diagram}\label{sec:theCompleteDiagram}
 If we start with the diagram from Page~\pageref{page:ofPreDiagram}, we can add
-all the defined isomorphisms and rewrite into the following commutative
+all the defined isomorphisms and rewrite it into the following commutative
 diagram of \textbf{isomorphisms of pointed sets}.
 \begin{center}
   \begin{tikzpicture}[scale=0.95,transform shape]
@@ -40,7 +40,7 @@ diagram of \textbf{isomorphisms of pointed sets}.
 
     \draw[->] (cH2) edge [->,transform canvas={xshift=2mm}]
       node[midway,right]
-      {\footnotesize(given by Corollary~\ref{cor:isomorphyOfClassfset})}
+      {\footnotesize(cf.\ Cor.\ref{cor:isomorphyOfClassfset})}
       (cH);
     \draw[->] (cH) -- (StA0) node[midway,above] {$\exp_{A^0}$};
     \draw[->,purple] (ProdOfStos) to
@@ -50,15 +50,15 @@ diagram of \textbf{isomorphisms of pointed sets}.
     \draw[->,purple] (S3P) -- (S2P)
       node[midway,above,sloped] {$\prod_{k\in\cK}i^k$};
     \draw[->,purple] (S2P) -- (StA0)
-      node[midway,above left,sloped] {$\cT$};
+      node[midway,above left] {$\cT$};
     \draw[->] (ProdOfStos) -- (ProdOfSStos)
       node[midway,left] {$\prod_{\alpha\in\A}\rho_\alpha$};
     \draw[->] (ProdOfSStos) -- (SS3P)
       node[midway,below,sloped] {$\chi\circ\prod_{\alpha\in\A}i_\alpha$};
     \draw[->] (S3P) -- (SS3P)
       node[midway,right] {$\prod_{k\in\cK}\prod_{\alpha\in\A}\rho_{\alpha}^k$};
-    \draw[->] (S3P) -- (SS2P) node[midway,above,sloped] {$\eta$};
-    \draw[->] (SS3P) -- (SSS2P) node[midway,above,sloped] {$\eta$};
+    \draw[->] (S3P) -- (SS2P) node[midway,above] {$\eta$};
+    \draw[->] (SS3P) -- (SSS2P) node[midway,above] {$\eta$};
     \draw[->] (SS2P) -- (SSS2P)
       node[midway,right] {\footnotesize(induced by $\rho$)};
     \draw[->] (SSS3P) -- (ProdOfSStos)
@@ -70,7 +70,12 @@ diagram of \textbf{isomorphisms of pointed sets}.
       node[midway,left] {\footnotesize(take germs)};
     \draw[->,blue] (cH2) -- (cH3)
       node[midway,right] {$\tilde g$};
-    \draw[->] (S2P) to[in=45,out=180] node[midway,above,sloped] {$\tau$} (cH3);
+
+    \draw[->,gray] (ProdOfStos) to[out=60,in=185] node[midway,above] {$\mathfrak{T}$} (S2P);
+    \ifnum\myDevelopVariable=1
+        \draw[->,red] (S2P) to[in=39,out=180] node[midway,above] {$\tau$} (cH3);
+        \draw[->,red] (cH3) to[out=52,in=195] node[midway,above,sloped] {(quotient map)} (StA0);
+    \fi
   \end{tikzpicture}
 \end{center}
 Where
