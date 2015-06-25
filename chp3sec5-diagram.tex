@@ -60,7 +60,8 @@ diagram of \textbf{isomorphisms of pointed sets}.
     \draw[->] (S3P) -- (SS2P) node[midway,above] {$\eta$};
     \draw[->] (SS3P) -- (SSS2P) node[midway,above] {$\eta$};
     \draw[->] (SS2P) -- (SSS2P)
-      node[midway,right] {\footnotesize(induced by $\rho$)};
+      node[midway,right]
+      {$\hat\rho$};
     \draw[->] (SSS3P) -- (ProdOfSStos)
       node[midway,below,sloped] {$\prod_{\alpha\in\A}\vartheta_\alpha$};
 
@@ -73,22 +74,23 @@ diagram of \textbf{isomorphisms of pointed sets}.
 
     \draw[->,gray] (ProdOfStos) to[out=60,in=185] node[midway,above] {$\mathfrak{T}$} (S2P);
     \ifnum\myDevelopVariable=1
-        \draw[->,red] (S2P) to[in=39,out=180] node[midway,above] {$\tau$} (cH3);
-        \draw[->,red] (cH3) to[out=52,in=195] node[midway,above,sloped] {(quotient map)} (StA0);
+        \draw[right hook->,dashed,red] (S2P) to[in=39,out=180] node[midway,above] {$\tau$} (cH3);
+        \draw[->>,dashed,red] (cH3) to[out=52,in=195] node[midway,above,sloped] {(quotient map)} (StA0);
     \fi
   \end{tikzpicture}
 \end{center}
 Where
 \begin{itemize}
-  \item the map $g$, which arises from the theory of summation
+  \item the map $g$, which arises from the theory of summation;
   \item the \textcolor{purple}{purple path} is the isomorphism $h$ from
-    Theorem~\ref{thm:mainThm2} and
+    Theorem~\ref{thm:mainThm2} and;
   \item the \textcolor{blue}{blue path} is the isomorphism $g$ from
     Theorem~\ref{thm:mainThm2}, where $\tilde g$ arises from the theory of
     multisummability and is introduced Definition~\ref{defn:theMapG} in the
-    Appendix~\ref{app:multisummability}, and
+    Appendix~\ref{app:multisummability}, and;
   \item we denote
     \begin{itemize}
+      \item $\hat\rho:=\prod_{k\in\cK}\prod_{j\in\{1,\dots,2k\}}\hat\rho_{\theta+j\frac{\pi}{k}}^k$,
       \item $\chi:\displaystyle \prod_{\alpha\in\A}\prod_{k\in\cK}\Sto_\alpha^k(A^0)
         \equiv\displaystyle \prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_\alpha^k(A^0)$
         the reordering and

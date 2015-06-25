@@ -55,6 +55,8 @@
 
 \usepackage{graphicx}
 
+\usepackage[pages=some]{background}
+
 % \newcommand{\myrel}[1]{\underset{#1,\max}{\prec}}
 \newcommand{\myrelPrime}[2]{%
     \scalerel*{%
@@ -131,9 +133,9 @@
     \input{chp3sec3-thm2.tex}
     \fi
 
-    % \ifnum\myHideVariable=0
+    \ifnum\myHideVariable=0
     \input{chp3sec4-further_improvements.tex}
-    % \fi
+    \fi
 
     % \ifnum\myHideVariable=0
     \input{chp3sec5-diagram.tex}
@@ -145,21 +147,22 @@
 %\addcontentsline{toc}{chapter}{Schluss}
 %\input{schluss.tex}
 
-\ifnum\myHideVariable=0
+% \ifnum\myHideVariable=0
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \appendix
+    \KOMAoptions{open=any}
     \addcontentsline{toc}{chapter}{Appendix}
+
+    \input{app-moreBasics.tex}
+    \ifnum\myDevelopVariable=1
+    \input{app-landkarte.tex}
+    \fi
 
     % \ifnum\myDevelopVariable=1
     % % \input{introVortrag/notes.tex}
-    %   \input{notes.tex}
-    % % \input{aufgaben.tex}
+    %   \input{app-notes.tex}
+    % % \input{app-aufgaben.tex}
     % \fi
-
-    \input{moreBasics.tex}
-    \ifnum\myDevelopVariable=1
-    \input{landkarte.tex}
-    \fi
 
     %\bibliographystyle{geralpha}
     %\def\btxandlong{und}
@@ -174,8 +177,8 @@
     \printbibliography[keyword={prim},title={Bibliography}]
     \printbibliography[notkeyword={prim},title={Additional references}]
 
-    %\input{github.tex}
-\fi
+    %\input{app-github.tex}
+% \fi
 
 % \ifnum\myDevelopVariable=1
 %   \pagebreak

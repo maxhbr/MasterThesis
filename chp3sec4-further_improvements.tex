@@ -201,9 +201,9 @@ distinct half-periods of $\A^k$ given.
   Figure~\ref{fig:halfPeriod}).
 \end{cor}
 
-Let $I=U(\theta,\frac{\pi}{k})$ be an arc width $\frac{\pi}{k}$ such that
-$\theta\pm\frac{\pi}{2k}\notin\A^k$.
-\begin{rem}\label{rem:remarkAboutCommonStructure}
+\begin{prop}\label{prop:propAboutCommonStructure}
+  Let $I=U(\theta,\frac{\pi}{k})$ be an arc width $\frac{\pi}{k}$ such that
+  $\theta\pm\frac{\pi}{2k}\notin\A^k$.
   For every $\alpha\in\A^k\cap I$ we can write the Stokes matrix as
   \[
     K^\alpha=(K^\alpha_{jl})_{j,l\in\{1,\dots,s\}}\in\SSto_\alpha^k(A^0)
@@ -211,25 +211,42 @@ $\theta\pm\frac{\pi}{2k}\notin\A^k$.
   where the $K^\alpha_{jl}\in\C^{n_j\times n_l}$ are blocks corresponding to
   the structure of $Q$ (cf.\ Definition~\ref{defn:groupOfFaithfullReps}).
   We then know for $j\neq l$ that, if $K^\alpha_{jl}\neq0$ then
-  \begin{itemize}
-    \item is $K^\alpha_{lj}=0$ and
-    \item for every $\alpha'\in(\A^k\cap I)\backslash\{\alpha\}$ is
-      $K^{\alpha'}_{jl}=0$ as well as $K^{\alpha'}_{lj}=0$.
-  \end{itemize}
-\end{rem}
-\begin{rem}
-  In the situation of Remark~\ref{rem:remarkAboutCommonStructure}
+  \begin{enumerate}
+  \item is $K^\alpha_{lj}=0$ and
+  \item for every $\alpha'\in(\A^k\cap I)\backslash\{\alpha\}$ is
+    $K^{\alpha'}_{jl}=0$ as well as $K^{\alpha'}_{lj}=0$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  The first statement was already discussed
+  page~\pageref{page:firstStatementOnTheStructure}.
+  To see the second statement, look at a pair $(q_j,q_l)\in\cQ(A^0)$ together
+  with an anti-Stokes direction $\alpha$ such that $q_j\myrel{\alpha}q_l$. We
+  then know (cf.\ Lemma~\ref{lem:rotationalSym}) that the next directions
+  $\alpha'$ satisfying $q_j\myrel{\alpha'}q_l$ are $\alpha+\frac{2\pi}{k}$ (on
+  the left) and $\alpha-\frac{2\pi}{k}$ (on the right).
+  The next directions satisfying the flipped relation $q_l\myrel{\alpha'}q_j$
+  are given by $\alpha+\frac{\pi}{k}$ (on the left) and
+  $\alpha-\frac{\pi}{k}$ (on the right).
+
+  Thus there is no other anti-Stokes direction but $\alpha$ for the pairs
+  $(q_j,q_l)$ and $(q_l,q_j)$ in every arc of width $\frac{\pi}{k}$ containing
+  $\alpha$.
+\end{proof}
+\begin{cor}
+  In the situation of Proposition~\ref{prop:propAboutCommonStructure}
   there exists a common (block) permutation matrix $P\in\GL_n(\C)$ given by
   $(P)_{jl}=\bdelta_{\pi(j)l}$ where
   \begin{itemize}
-    \item $\bdelta_{jl}$ is the block version of Kronecker's delta
-      which was introduced in Definition~\ref{defn:groupOfFaithfullReps} and
-    \item $\pi$ is the permutation of $\{1,\dots,s\}$ corresponding to
-      $q_j\underset{\theta}{\prec}q_l$ \Leftrightarrow{} $\pi(j)<\pi(l)$
-      \marginnote{\cite[18]{boalch}}
+  \item $\bdelta_{jl}$ is the block version of Kronecker's delta corresponding
+    to the structure of $Q$ which was introduced in
+    Definition~\ref{defn:groupOfFaithfullReps} and
+  \item $\pi$ is the permutation of $\{1,\dots,s\}$ corresponding to
+    $q_j\underset{\theta}{\prec}q_l$ \Leftrightarrow{} $\pi(j)<\pi(l)$
+    \marginnote{\cite[18]{boalch}}
   \end{itemize}
   such that every matrix $P^{-1}K^{\alpha}P$ is upper triangular and the
-  observation from Remark~\ref{rem:remarkAboutCommonStructure} is still
+  observation from Proposition~\ref{prop:propAboutCommonStructure} is still
   satisfied.
   \begin{s-rem}
     After moving the sector $U(\theta,\frac{\pi}{k})$ to
@@ -243,10 +260,12 @@ $\theta\pm\frac{\pi}{2k}\notin\A^k$.
   \end{s-rem}
   In the single leveled case of this phenomenon is discussed on page 18 of
   Boalch's paper~\cite{boalch}.
-\end{rem}
+\end{cor}
 
 In the paper \cite{BJL1979Birkhoff} from Balser, Jurkat and Lutz is the
-following Lemma stated as Lemma 2 on page 75.
+following Lemma stated as Lemma 2 on page 75.  It is fundamental statement,
+which allows us to collect the information of multiple Stokes matrices into one
+matrix, i.e.\ it states that we will not loose information.
 \begin{lem}\label{lem:UniqueDecompositionWotBlocks}
   Let $T\subset\{1,\dots,n\}\times\{1,\dots,n\}$ be a position set, which
   satisfies the \emph{completeness property}:
@@ -257,41 +276,47 @@ following Lemma stated as Lemma 2 on page 75.
   \underset{\#T}{\underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\mu}}\}
   \overset{\cong}{\to}T$ of the position set and denote by
   $\delta_{jl}\in\C$ the \rewrite{ordinary} Kronecker's delta,
-  then there exists for every
+  then there exists for every matrix
   \[
     K\in \left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in\GL_n(\C)\mid
       K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T \right\}
   \]
-  unique scalars $t_j\in\C$ such that
+  unique scalars $t_1,\dots,t_\mu\in\C$ such that
   \[
     K=(\id + t_1E_{i(1)})\cdots(\id + t_{\mu}E_{i(\mu)}) \,.
   \]
-  \begin{s-rem}
-    The completeness property is reasonable, since for example
-    $S_{\{(2,3),(3,2)\}}$, corresponding to the not complete set
-    $\{(2,3),(3,2)\}$, is not stable under the product:
-    \begin{align*}
-      \begin{pmatrix}
-        1 & a & 0
-      \\0 & 1 & 0
-      \\0 & 0 & 1
-      \end{pmatrix}
-      \begin{pmatrix}
-        1 & 0 & 0
-      \\0 & 1 & b
-      \\0 & 0 & 1
-      \end{pmatrix}
-      =
-      \begin{pmatrix}
-        1 & a & \textcolor{red!60!black}{ab}
-      \\0 & 1 & b
-      \\0 & 0 & 1
-      \end{pmatrix}
-      \notin S_{\{(2,3),(3,2)\}}
-      \,.
-    \end{align*}
-  \end{s-rem}
 \end{lem}
+The completeness property is reasonable, since for example
+$S_{\{(2,3),(3,2)\}}$, corresponding to the not complete set
+$\{(2,3),(3,2)\}$, is not stable under the product:
+\begin{align*}
+  \begin{pmatrix}
+    1 & a & 0
+  \\0 & 1 & 0
+  \\0 & 0 & 1
+  \end{pmatrix}
+  \begin{pmatrix}
+    1 & 0 & 0
+  \\0 & 1 & b
+  \\0 & 0 & 1
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    1 & a & \textcolor{red!60!black}{ab}
+  \\0 & 1 & b
+  \\0 & 0 & 1
+  \end{pmatrix}
+  \notin S_{\{(2,3),(3,2)\}}
+  \,.
+\end{align*}
+The completeness property looks similar to the transitivity condition on
+relations, this yields the following useful proposition.
+\begin{cor}
+  Every position set, defined via an relation $\overset{R}{<}$ as
+  $\{(j,l)\mid j\overset{R}{<} l\}$ is complete, if and only if the relation
+  $\overset{R}{<}$ is transitive.
+\end{cor}
+Another useful fact is given by the following lemma.
 \begin{lem}
   Every position set, corresponding to some block, is complete.
 \end{lem}
@@ -309,13 +334,8 @@ following Lemma stated as Lemma 2 on page 75.
 \begin{cor}
   We can write the Lemma~\ref{lem:UniqueDecompositionWotBlocks} in block form,
   corresponding to the structure of $Q$.
-  Let $T\subset\{1,\dots,s\}\times\{1,\dots,s\}$ be a position set and choose a
-  indexing
-  \[
-    i:\{1,\dots, \underset{\#T}{\underset{%
-      \text{\rotatebox[origin=c]{-90}{$=$}}}{\mu}}\}\overset{\cong}{\to}T
-  \]
-  of $T$.
+  Let $s$ be the number of diagonal blocks of $Q$ and
+  $T\subset\{1,\dots,s\}\times\{1,\dots,s\}$ be a position set.
   \begin{s-defn}
     Define the group of matrices, corresponding by a complete position set, by
     \[
@@ -325,6 +345,12 @@ following Lemma stated as Lemma 2 on page 75.
     where $\bdelta_{jl}$ is the block version of Kronecker's delta,
     corresponding to the structure of $Q$.
   \end{s-defn}
+  Choose an enumeration
+  \[
+    i:\{1,\dots, \underset{\#T}{\underset{%
+      \text{\rotatebox[origin=c]{-90}{$=$}}}{\mu}}\}\overset{\cong}{\to}T
+  \]
+  of $T$.
   From the Lemma~\ref{lem:UniqueDecompositionWotBlocks} then follows that for
   every $K\in S_T$ is the decomposition
   \[
@@ -347,40 +373,58 @@ From the previous corollary we deduce the following corollary.
   \end{align*}
   an isomorphism defined.
 \end{cor}
-We can apply the previous corollary in our situation. This yields the following
-theorem.
+We can apply the previous corollary in our situation, i.e.\ let $\theta\in S^1$
+be a fixed direction which satisfies $\theta\pm\frac{\pi}{2k}\notin\A^k$.
+\begin{defn}
+  Let us define the group
+  \[
+    \hat\SSto_{\theta}^k(A^0):=
+    \underset{S_{\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}}}{
+      \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{
+        \underbrace{
+          \left\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in\GL_n(\C)\mid
+            K_{jl}=\delta_{jl} \text{~unless~}
+            q_j \underset{\theta}{\prec} q_l \text{, } k_{jl}=k\right\}}}}
+  \]
+  which contains the matrices with the collected data. They are representation
+  of the corresponding elements in
+  \[
+    \hat\Sto_{\theta}^k(A^0):=
+    \{\cY_0^{-1}K\cY_0\mid K\in\hat\SSto_{\theta}^k(A^0) \} \,.
+  \]
+  Denote the corresponding isomorphism
+  \begin{align*}
+    \hat\Sto_\theta^k(A^0) &\overset{\cong}{\longrightarrow}
+                             \hat\SSto_\theta^k(A^0)
+    \\
+    \phi &\longmapsto \cY_0\phi\cY_0^{-1}
+  \end{align*}
+  by $\hat\rho_\theta^k$.
+  \begin{s-rem}
+    By the definition above, it is obvious that
+    \[
+      \Sto_{\theta}^k(A^0)\cong
+      \bigcap_{\theta'\in \A^k\cap U(\theta,\frac{\pi}{k})}
+      \hat\Sto_{\theta'}^k(A^0) \,.
+    \]
+  \end{s-rem}
+\end{defn}
+This yields the following theorem.
 \begin{thm}\label{thm:theoremForlargerDecomp}
   Let $\theta\in S^1$ be a fixed direction which satisfies
-  $\theta\pm\frac{\pi}{2k}\notin\A^k$, then
+  $\theta\pm\frac{\pi}{2k}\notin\A^k$, then there is a bijection
   \[
-    \cH(A^0)\cong\prod_{k\in\cK}\prod_{j\in\{1,\dots,2k\}}
-    \hat\Sto_{\theta+j\frac{\pi}{k}}^k(A^0) \,,
-  \]
-  where
-  \begin{align*}
-    \hat\SSto_{\theta}^k(A^0)
-    :\!\!&= \left\{K=(K_{jl})_{j,l\in\{1,\dots,s\}}\in\GL_n(\C)\mid
-        K_{jl}=\delta_{jl} \text{~unless~}
-        q_j \underset{\theta}{\prec} q_l \text{, } k_{jl}=k\right\}
-    \\&=S_{\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}}
-  \end{align*}
-  and
-  \[
-    \hat\Sto_{\theta}^k(A^0):=\{\rho_\theta^{-1}(K)
-      \mid K\in\hat\SSto_{\theta}^k(A^0) \} \,.
+    \underset{\cH(A^0)}{%
+      \underset{\text{\rotatebox[origin=c]{-90}{$\cong$}}}{\underbrace{%
+        \prod_{k\in\cK}\prod_{\alpha\in\A^k}\Sto_\alpha^k(A^0)}}}
+    \cong
+    \prod_{k\in\cK}\prod_{j\in\{1,\dots,2k\}}
+    \hat\Sto_{\theta+j\frac{\pi}{k}}^k(A^0) \,.
   \]
   \begin{s-rem}
-    \begin{enumerate}
-      \item This means that the information of all Stokes-matrices on every
-        level $k\in\cK$ can be grouped into $2k$ matrices, which are products
-        of the corresponding Stokes matrices.
-      \item By the definition above, it is obvious that
-        \[
-          \Sto_{\theta}^k(A^0)\cong
-          \bigcap_{\theta'\in \A^k\cap U(\theta,\frac{\pi}{k})}
-          \hat\Sto_{\theta'}^k(A^0) \,.
-        \]
-    \end{enumerate}
+    This means that the information of all Stokes-matrices on every level
+    $k\in\cK$ can be grouped into $2k$ matrices, which are products of the
+    corresponding Stokes matrices.
   \end{s-rem}
 \end{thm}
 But there is in the multileveled case no obvious way to find a subset $J\in S^1$
@@ -393,77 +437,80 @@ and an isomorphism
 \]
 where $\hat\Sto_{\theta}(A^0)$ was defined in Remark~\ref{rem:representation}.
 \begin{proof}
-  We have an isomorphism
-  \[ \begin{tikzcd}
+  The product map
+  \[
     \eta_\theta^k:
     \underset{\alpha\in\A^k\cap U(\theta,\frac{\pi}{k})}\prod
     \underset{S_{\{(j,l)\mid q_j\myrel{\alpha}q_l\}}}{%
       \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\underbrace{%
           \SSto_\alpha^k(A^0)}}}
-    \rar{\cong}&
+    \overset{\cong}{\longrightarrow}
     \underset{S_{\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}}}{%
       \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\underbrace{%
           \hat\SSto_\theta^k(A^0)}}}
     \,.
-  \end{tikzcd} \]
-  from Corollary~\ref{cor:composeLevelwise}, since
+  \]
+  defined by $\eta_\theta^k(K_1,\dots,K_m) = K_1\cdot K_2\cdots K_m$ is an
+  isomorphism (cf.\ Corollary~\ref{cor:composeLevelwise}), since
   \begin{itemize}
-    \item for every $\alpha\in\A$ satisfies the set
-      $\{(j,l)\mid q_j\myrel{\alpha}q_l\}$ the completeness
-      property, since it is defined via a \rewrite{transitiv relation}, and
-    \item the union of all $\{(j,l)\mid q_j\myrel{\alpha}q_l\}$
-      for $\alpha\in I\cap\A^k$ is then
-      \begin{align*}
-        \dot\bigcup_{\alpha\in I\cap\A}
-          \{(j,l)\mid q_j\myrel{\alpha}q_l\}
-          &=\{(j,l) \mid q_j \myrel{\alpha} q_l
-            \text{~for some~}\alpha\in\A^k\cap U(\theta,\frac{\pi}{k}) \}
-        \\&= \{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}
-          \qquad\qquad\text{(cf.\ Remark~\ref{rem:relationDistanceCondition})}
-      \end{align*}
-      and is also complete, since $\underset{\theta}{\prec}$ is also a
-      \rewrite{transitive relation}.
+  \item the union of all position sets $\{(j,l)\mid q_j\myrel{\alpha}q_l\}$ on
+    the half-period $I\cap\A$ is the position set
+    $\{(j,l) \mid q_j \underset{\theta}{\prec} q_l \}$
+    (cf.\ Remark~\ref{rem:relationDistanceCondition}), i.e.\
+  \begin{align*}
+    \dot\bigcup_{\alpha\in I\cap\A}
+    \{(j,l)\mid q_j\myrel{\alpha}q_l\}
+    &=\bigl\{(j,l) \mid q_j \myrel{\alpha} q_l
+        \text{~for some~}\alpha\in\A^k\cap U\bigl(\theta,\frac{\pi}{k}\bigr)
+      \bigr\}
+    \\&= \{(j,l) \mid q_j \underset{\theta}{\prec} q_l \} \,,
+  \end{align*}
+  \item and all position sets satisfy obviously the completeness property, since
+    they are defined via a transitive relation.
   \end{itemize}
-  The isomorphism of the theorem is then the Stokes germ version of
-  \[ \begin{tikzcd}
-    \underset{\eta}{%
-      \underset{\text{\rotatebox[origin=c]{90}{$:=$}}}{\underbrace{%
-        \underset{k\in\cK}{\prod}\underset{j\in\{1,\dots,2k\}}{\prod}
-        \eta_{\theta+j\frac{\pi}{k}}^k
-    }}}:
-    \underset{\cH(A^0)}{%
-      \underset{\text{\rotatebox[origin=c]{-90}{$\cong$}}}{\underbrace{%
-        \prod_{k\in\cK}\prod_{\alpha\in\A^k}\SSto_\alpha^k(A^0)}}}
-    \rar{\cong}&
+
+
+  Denote the product of the isomorphisms $\eta_\theta^k$ as $\eta=
+  \prod_{k\in\cK}\prod_{j\in\{1,\dots,2k\}}
+  \eta_{\theta+j\frac{\pi}{k}}^k$ and the isomorphism
+  $\prod_{k\in\cK}\prod_{j\in\{1,\dots,2k\}}\hat\rho_{\theta+j\frac{\pi}{k}}^k$ by
+  $\hat\rho$.
+  \[ \begin{tikzcd}[column sep=2cm,row sep=1.5cm]
+    \prod_{k\in\cK}\prod_{\alpha\in\A^k}\Sto_\alpha^k(A^0)
+    \rar[dashed]
+    \dar{\prod_{k\in\cK}\prod_{\alpha\in\A}\rho_{\alpha}^k}&
     \underset{k\in\cK}{\prod}\underset{j\in\{1,\dots,2k\}}{\prod}
-    \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0) \,.
+    \hat\Sto_{\theta+j\frac{\pi}{k}}^k(A^0)
+    \dar{\hat\rho}
+    \\
+    \prod_{k\in\cK}\prod_{\alpha\in\A^k}\SSto_\alpha^k(A^0)
+    \rar{\eta}
+    &
+    \underset{k\in\cK}{\prod}\underset{j\in\{1,\dots,2k\}}{\prod}
+    \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)
   \end{tikzcd} \]
+  The isomorphism, we were looking for, is then given as
+  \[
+    \bigl(\prod_{k\in\cK}\prod_{\alpha\in\A}\rho_{\alpha}^k\bigr)
+    \circ \eta \circ
+    \hat\rho^{-1}
+  \]
+  i.e.\ is the isomorphism making the above diagram commute, and we will also
+  denote it by $\eta$.
 \end{proof}
-\begin{cor}
-  This does also induce an isomorphism
-  \[ \begin{tikzcd}
-    \eta:
-    \displaystyle\prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_{\alpha}^{k}(A^0)
-    \rar{\cong}&
-    \displaystyle\prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
-      \hat\Sto_{\theta+j\frac{\pi}{k}}^k(A^0)
-  \end{tikzcd} \]
-  on the level of Stokes germs instead of Stokes matrices.
-\end{cor}
 \begin{rem}
-  The, in the proof of Theorem~\ref{thm:theoremForlargerDecomp}, obtained
-  isomorphism
+  The in the previous proof obtained isomorphism
   \[
     \eta: \prod_{\alpha\in\A}\SSto_{\alpha}(A^0) \longrightarrow
     \prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
     \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)
   \]
-  is in the single-leveled case with $n=s$, i.e.\ all diagonal elements of
-  $Q$ are different, given in Lemma 3.2 of Boalch's paper
-  \cite[Lem.3.2]{boalch}.
-  In this case is every $\hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)$ isomorphic
-  to some $PU_+P^{-1}$ where $U_+$ is the group of all upper triangular
-  matrices, with ones on the diagonal, and $P$ is a permutation matrix.
+  is in the single-leveled case with $n=s$, i.e.\ all diagonal elements of $Q$
+  are different, given in Lemma 3.2 of Boalch's paper \cite[Lem.3.2]{boalch}.
+  In this case is every $\hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)$ isomorphic to
+  some $PU_+P^{-1}$, where $U_+$ is the upper triangular unipotent subgroup of
+  $\Gl_n(\C)$ and $P$ is a permutation matrix.
+  A similar result is also found in Theorem I of~\cite{BJL1979Birkhoff}.
 \end{rem}
 
 %%% Local Variables:
