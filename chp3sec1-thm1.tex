@@ -3,36 +3,35 @@
 \marginnote{\cite[Thm.I.2.1]{Loday1994},
   \\\cite[Thm.4.3.9]{Loday2014},
   \\\cite[Thm.II.6.2]{sabbah2007isomonodromic}}
-Here we will look at the classifying set and we will proof that it is
-isomorphic \TODO[as\dots] to the first non abelian cohomology set
-$H^1(S^1;\Lambda(A^0))$ which will be denoted as $\St(A^0)$.
-If we talk about cocycles or cochains, we will in the following always mean
+Here we will look at the set $\cH(A^0)$ of isomorphism classes of marked pairs
+and we will proof that it is isomorphic \TODO[as\dots] to the first non abelian
+cohomology set $H^1(S^1;\Lambda(A^0))$ which will be denoted as $\St(A^0)$.  If
+we talk about cocycles or cochains, we will in the following always mean
 $1$-cocycles or $1$-cochains.
 
-Let us first define the Stokes sheaf $\Lambda(A^0)$ on $S^1$, as the sheaf of
+Let us first define the Stokes sheaf $\Lambda(A^0)$ on $S^1$ as the sheaf of
 flat isotropies of $[A^0]$.
 \begin{defn}\label{defn:StokesSheaf}
   \begin{comment}
-    The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is the sheaf of groups defined on
+    The Stokes sheaf $\Lambda(A^0)$ of $A^0$ is the sheaf of groups defined on
     $S^1$ whose stalk at any point $\theta\in S^1$ is the group of germs of
     $f\in\Gl_n(\cO(\mathfrak{s}))$, $\mathfrak{s}$ a sector containing
     $\theta$, satisfying the conditions:
     \begin{enumerate}
-      \item Flatness:
-        $\underset{x\in\mathfrak{s}}{\underset{x\to0}{\lim}}f(x)=1$ and
-        $f\sim_{\mathfrak{s}} 1$;
-        \PROBLEM[Why two condition?]
-      \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
+    \item Flatness:
+      $\underset{x\in\mathfrak{s}}{\underset{x\to0}{\lim}}f(x)=\id$ and
+      $f\sim_{\mathfrak{s}} 1$;
+    \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
     \end{enumerate}
   \end{comment}
-  The Stokes sheaf $\Lambda(A^0)$ of $A^0$, is defined as the subsheaf of
-  $\GL_n(\cA)$, in the following way.
+  The Stokes sheaf $\Lambda(A^0)$ of $A^0$ is defined as the subsheaf of
+  $\GL_n(\cA)$ in the following way.
   For some $\theta\in S^1$ is the stalk at $\theta$ the subgroup of
   $\GL_n(\cA)_\theta$ of elements $f$ which satisfy
   \begin{enumerate}
-    \item Multiplicatively flatness: $f$ is asymptotic to the identity,
-      i.e.\ $f\sim_{\mathfrak{s}} 1$;
-    \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
+  \item Multiplicatively flatness: $f$ is asymptotic to the identity,
+    i.e.\ $f\sim_{\mathfrak{s}} 1$ for some $\mathfrak{s}$ containing $\theta$;
+  \item Isotropy of $A^0$: ${}^f\!A^0=A^0$.
   \end{enumerate}
   \begin{s-rem}
     This definition \rewrite{makes also sense as} $\Lambda(A)$ where $A$ stands
@@ -41,7 +40,7 @@ flat isotropies of $[A^0]$.
   \end{s-rem}
 \end{defn}
 
-Since the sheaf is defined to contain only solutions of the differential
+Since the sheaf by definition only contains solutions of the differential
 equation $[\End A^0]$ we obtain the following proposition.
 \begin{prop}\label{prop:piecewiseConstant}
   The sheaf $\Lambda(A^0)$ is piecewise-constant
@@ -52,7 +51,7 @@ equation $[\End A^0]$ we obtain the following proposition.
 \rewrite{Let us now state the Malgrange-Sibuya Theorem. We will first give it in
 the language of meromorphic connections and after that we will give the same
 theorem in the language of systems.
-The second variant of this theorem will be proven in the next section.}
+The second formulation of this theorem will be proven in the next section.}
 
 In the language of meromorphic connections is the map, of the Malgrange-Sibuya
 Theorem below, described as follows.
@@ -104,11 +103,11 @@ follows.
 \marginnote{\cite[855]{Loday1994}}
 Let $(A,\hat F)$ be a marked pair, thus $\hat F$ solves $[A^0,A]$.
 By the M.A.E.T (Theorem~\ref{thm:maet}) there exists an open covering
-$\cU=(U_j)_{j\in J}$ together with, for every open set $U_j$ a lift
+$\cU=(U_j)_{j\in J}$ together with for every open set $U_j$ a lift
 $F_j\in\Gl_n(\cA(U_j))$ of $\hat F$ (cf.\ Definition~\ref{defn:lift}), which
 solves $[A,A^0]$.
 By the cocycle $(F_l^{-1}F_j)_{jl}\in\Gamma(\dot\cU;\Lambda(A^0))$ is then a
-cohomology class in $\St(A^0)$, relative to the covering $\cU$, determined.
+cohomology class in $\St(A^0)$ relative to the covering $\cU$ determined.
 For other lifts $F_j'$ of $\hat F$ on $U_j$ is $(G_j=F_j^{-1}F_j')$ a
 $0$-cochain of $\Lambda(A^0)$ relative to $\cU$, which satisfies
 \[
@@ -140,7 +139,7 @@ cohomology class.
 \end{center}
 \begin{rem}
   % \TODO[Frage Felix!]
-  The Theorem \cite[Thm.III.1.1.2]{babbitt1989local}, in the book from
+  The Theorem \cite[Thm.III.1.1.2]{babbitt1989local} in the book from
   Babbitt and Varadarajan, states that $\St(A^0)$ is actually a local moduli
   space for marked pairs, which are formally isomorphic to a given system
   $[A^0]$.
@@ -163,7 +162,7 @@ paper is this denoted as $\exp_{\mu_0}$)}.
   \marginnote{\cite{Loday1994} Remark I.2.2}
   To another normal form $A^1={}^\Phi\!A^0$ there correspond cochains, which
   are conjugated via $\Phi\in G(\!\{t\}\!)$.
-  We especially get the following commutative diagram:
+  This is formulated in the following commutative diagram:
   \begin{center}
     \begin{tikzpicture}[scale=2.6]
       \node (tl) at (-1,0.6) {$G\backslash\hat G(A^1)$};
@@ -306,11 +305,12 @@ be found in Babbitt and Varadarajans's book \cite[65ff]{babbitt1989local} as
 Theorem 4.2.1.
 
 Let $\hat F\in G(\!(t)\!)$ be a matrix with formally meromorphic entries. By
-the Borel-Ritt Lemma (cf.\ Theorem~\ref{thm:borel-ritt}) we then know, that
+the Borel-Ritt Lemma (cf.\ Theorem~\ref{thm:borel-ritt}) we then know that
 there exists for every arc $I\subsetneq S^1$ a holomorphic function
 $G:\mathfrak{s}_I\to\GL_n(\C)$ which is asymptotic to $\hat F$.
-We will denote the set of all such holomorphic functions, which are on
-the arc $I$ asymptotic to $\id\in G(\!(t)\!)$ by
+We will denote the set of all such holomorphic functions, which are
+multiplicatively flat on $I$, i.e.\ are on the arc $I$ asymptotic to
+$\id\in G(\!(t)\!)$, by
 \[
   \cG(I)=\left\{G\in\Gl_n(\cA(I))\mid G\sim_I\id\right\}\,,
 \]
@@ -326,7 +326,7 @@ which will turn out to be an isomorphism. It is set up as follows:
 \begin{einr}
   Let $[\hat F]\in G(\!(t)\!)/G(\!\{t\}\!)$ with ambassador $\hat F$ and
   let $\cU=\{U_j\mid j\in J\}$ be a finite covering of $S^1$ by open arcs.
-  The Borel-Ritt Lemma yields for every arc $j\in J\subsetneq S^1$ a
+  The Borel-Ritt Lemma yields for every arc $J\subsetneq S^1$ containing $j$ a
   holomorphic function $F_j$ which satisfies $F_j\sim_{U_j}\hat F$.
   By $(F_lF_j^{-1})_{j,l\in J}$ is then a cocycle for $\cG$ defined,
   and write $\Theta([\hat F])$ for the corresponding cohomology class.

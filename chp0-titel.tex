@@ -12,23 +12,20 @@
                                 ,0.1/0.27
                                 ,0.65/0.23}{
         \begin{scope}
-            % \clip (-0.65,{\abs+0.1}) rectangle (2.63,{-\abs-0.1});
             \pgfmathsetmacro{\s}{{\argA + \x* 2 - 1/2}};
             \draw[blue!40!white] (\s,0)
                 sin ({\s + 1/2},{-\absA})
                 cos ({\s + 2/2},0)
                 sin ({\s + 3/2},\absA)
                 cos ({\s + 4/2},0);
-            \draw[dotted] ({\s + 1/2},{-\absA}) -- ({\s + 1/2},-0.5);
-            \fill[white] ({\s + 1/2},{-\absA}) circle (1pt);
+            % \fill[white] ({\s + 1/2},{-\absA}) circle (1pt);
             \fill[red] ({\s + 1/2},{-\absA}) circle (.4pt);
             \draw[blue!40!black] (\s,0)
                 sin ({\s + 1/2},\absA)
                 cos ({\s + 2/2},0)
                 sin ({\s + 3/2},{-\absA})
                 cos ({\s + 4/2},0);
-            \draw[dotted] ({\s + 3/2},{-\absA}) -- ({\s + 3/2},-0.5);
-            \fill[white] ({\s + 3/2},{-\absA}) circle (1pt);
+            % \fill[white] ({\s + 3/2},{-\absA}) circle (1pt);
             \fill[red] ({\s + 3/2},{-\absA}) circle (.4pt);
         \end{scope}
         }

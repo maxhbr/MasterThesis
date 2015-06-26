@@ -1,41 +1,43 @@
 \chapter{Stokes Structures}\label{chap:stokes}
-Stokes structures contain exactly \rewrite{necessary information} to
-classify meromorphic classification, i.e.\ with the Stokes structures we are
-able to construct a \rewrite{space}\PROBLEM[Why space], which is isomorphic to
-the classifying \rewrite{set}.
-
-A great overview of this topic is given by Varadarajan in
-\cite{Varadarajan96linearmeromorphic}. Other resources we will use are for
-example \rewrite{Sabbah's} book~\cite[section II]{sabbah2007isomonodromic} for
-Section~\ref{sec:mainThm1}.
-In the Sections~\ref{sec:StokesGroup} and~\ref{sec:mainThm2} will
-\rewrite{Loday-Richaud's} paper~\cite{Loday1994} and her book
-\cite[Sec.4]{Loday2014} be useful.
-Stokes groups are also discussed \rewrite{Boalch's} paper~\cite{boalch} (resp.\
-his thesis~\cite{thboalch}) which looks only at the single leveled case or the
-paper~\cite{Martinet1991} from Martinet and Ramis.
-
+\begin{comment}
+  \begin{itemize}
+  \item
+  Characterized completely
+  \end{itemize}
+\end{comment}
 Let $(\cM^{nf},\nabla^{nf})$ be a fixed model with the corresponding normal
 form $A^0$ and let us also fix a normal solution $\cY_0$ of $A^0$.
-The purpose of the next section (Section~\ref{sec:mainThm1}) is, to proof the
-Malgrange-Sibuya Theorem.
+Here we want to introduce the Stokes structures, which will characterize the
+isomorphism classes of meromorphic connections uniquely, i.e.\ an space which is
+isomorphic to the set $\cH(A^0)$ of isomorphism classes of marked pairs.
+A great overview of this topic is given by Varadarajan
+in~\cite{Varadarajan96linearmeromorphic}.
+
+One of the most important theorems, which is fundamental for the whole chapter,
+is the Malgrange-Sibuya Theorem.
 It states that the classifying set $\cH(A^0)$ is via an map $\exp$ isomorphic
-to the first non abelian cohomology $H^1(S^1;\Lambda(A^0))=:\St(A^0)$ of the
-Stokes sheaf $\Lambda(A^0)$.
+to the first non abelian cohomology space $H^1(S^1;\Lambda(A^0))=:\St(A^0)$ of
+the Stokes sheaf $\Lambda(A^0)$ and will be proven in the first section.
 In Section~\ref{sec:mainThm2} we will improve the Malgrange-Sibuya Theorem by
 showing that each $1$-cohomology class in $\St(A^0)$ contains a unique
-$1$-cocycle of a special form called \emph{the Stokes cocycle}
-(cf.\ Section~\ref{sec:StokesGroup}).
-The morphism, which maps each Stokes cocycle to its corresponding $1$-cocycle
-will be denoted by $h$.
-This will be further improved in Section~\ref{sec:furtherImprovements}.
+$1$-cocycle of a special form called \emph{the Stokes cocycle}.
+We will further show that such cocycles can be identified with their germs at
+some special directions, i.e.\ anti-Stokes directions. These germs are called
+Stokes germs and for an anti-Stokes direction $\alpha$ do these germs form the
+Stokes groups $\Sto_\alpha(A^0)$ (cf.\ Section~\ref{sec:StokesGroup}).
+The morphism, which maps each product of Stokes germs to its corresponding
+$1$-cocycle will be denoted by $h$.
+This will be further improved in Section~\ref{sec:furtherImprovements}, where we
+will collect multiple Stokes germs to their product to obtain a more robust
+version of the Stokes space.
 
-If one introduces the map $g$, which arises from the theory of summation and
-takes an equivalence class (resp.\ an ambassador of such a class) and returns a
-corresponding Stokes cocycle in an canonically way
-(cf.\ Appendix~\ref{app:multisummability} where the theory of summation  will
-be roughly discussed), as a black-box one can write the following commutative
-diagram.
+If one introduces the map $g$, which arises from the theory of
+summation\footnote{We will not use the theory of summation and only think of it
+  as a black box, although we will roughly discuss the theory of summation in
+  Appendix~\ref{app:multisummability}.} and takes an equivalence
+class\footnote{resp.\ an ambassador of such a class.} and returns the
+corresponding Stokes cocycle in an canonically way one obtains the following
+commutative diagram.
 \begin{center}
   \begin{tikzpicture}[scale=3]
     % \node[] (modSpcMat) at (0,0.4) {$\cH(\cM^{nf},\nabla^{nf})$};
@@ -56,6 +58,18 @@ diagram.
 \end{center}\label{page:ofPreDiagram}
 This diagram will be enhanced in Section~\ref{sec:theCompleteDiagram} by
 adding a couple of isomorphisms.
+
+In the first section of this chapter we will use
+\rewrite{Sabbah's} book~\cite[section II]{sabbah2007isomonodromic} as its main
+resource together with \cite{babbitt1989local} for the main proof.
+In the Sections~\ref{sec:StokesGroup} and~\ref{sec:mainThm2} will
+\rewrite{Loday-Richaud's} paper~\cite{Loday1994} and her book
+\cite[Sec.4]{Loday2014} be useful.
+Stokes groups are also discussed \rewrite{Boalch's} paper~\cite{boalch} (resp.\
+his thesis~\cite{thboalch}) which looks only at the single leveled case or the
+paper~\cite{Martinet1991} from Martinet and Ramis.
+Another very important paper is~\cite{BJL1979Birkhoff} from Balser, Jurkat and
+Lutz.
 
 %%% Local Variables:
 %%% TeX-master: "Maximilian_Huber-Masters_Thesis-with_notes.tex"

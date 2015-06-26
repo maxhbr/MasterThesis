@@ -2,9 +2,9 @@
 \IfSubStr{\jobname}{\detokenize{with_notes}}{%
   % The case with comments
   \xdef\myDevelopVariable{1}
-  \xdef\myHideVariable{0}
+  \xdef\myHideVariable{1}
   \documentclass[fleqn
-    ,fontsize=12pt % TODO
+    ,fontsize=12pt
     ,DIV=13
     ,BCOR=8mm
     ,openany
@@ -13,13 +13,15 @@
   \xdef\myDevelopVariable{0}
   \xdef\myHideVariable{0}
   \documentclass[fleqn
-    ,fontsize=12pt % TODO
+    ,fontsize=12pt
     ,DIV=13
     ,BCOR=8mm
     ,openany
   ]{./myClass}
+  % \ifnum\myHideVariable=1
+  % \usepackage{showframe}
+  % \fi
 }
-% \usepackage{showframe}
 \usepackage{layout}
 
 \bibliography{literatur.bib}
@@ -121,9 +123,9 @@
 % \ifnum\myHideVariable=0
 \input{chp3sec0-Stokes_structures.tex}
 
-    \ifnum\myHideVariable=0
+    % \ifnum\myHideVariable=0
     \input{chp3sec1-thm1.tex}
-    \fi
+    % \fi
 
     \ifnum\myHideVariable=0
     \input{chp3sec2-Stokes_groups.tex}
@@ -137,17 +139,12 @@
     \input{chp3sec4-further_improvements.tex}
     \fi
 
-    % \ifnum\myHideVariable=0
+    \ifnum\myHideVariable=0
     \input{chp3sec5-diagram.tex}
-    % \fi
+    \fi
 % \fi
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\addcontentsline{toc}{chapter}{Schluss}
-%\input{schluss.tex}
-
-% \ifnum\myHideVariable=0
+\ifnum\myHideVariable=0
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \appendix
     \KOMAoptions{open=any}
@@ -178,7 +175,7 @@
     \printbibliography[notkeyword={prim},title={Additional references}]
 
     %\input{app-github.tex}
-% \fi
+\fi
 
 % \ifnum\myDevelopVariable=1
 %   \pagebreak

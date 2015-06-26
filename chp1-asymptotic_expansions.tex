@@ -37,7 +37,7 @@ after the change of variable $t\mapsto s=t-t_0$ and asymptotic expansions at
 $t_0=\infty$ are obtained by $t\mapsto s=\frac{1}{t}$.
 
 We introduce the following terminology:
-\begin{notations} We denote by
+\begin{defn} We denote by
   \begin{itemize}
     \item $\mathfrak{s}_{a,b}(r)$, $a,b\in\S^1$ and $r\in\R_{>0}$ the open
       sector
@@ -52,55 +52,82 @@ We introduce the following terminology:
   \end{itemize}
   The notion of sectors can easily be extended to sectors on a $q$-sheet cover
   or sectors on the Universal cover of $\C^*$, but we \rewrite{will not use
-  that}.
-  \TODO[Sectors on the Riemann surface of the logarithm]
-\end{notations}
+  them}.
+\end{defn}
 \begin{figure}[h]
   \begin{center}
     \begin{tikzpicture}[scale=4]
+      \clip (-1.1,-0.2) rectangle (1.3,1.3);
       \node (zero) at (0,0) {};
       \node[below left] at (zero) {$0$};
       \draw[blue,dashed] (zero) circle (1cm);
-      \node[blue,right] at (-1,-.7) {$S^1$};
+      \node[blue] at (-0.9,0) {$S^1$};
 
       \filldraw[fill=green!20!white
         ,draw=green!60!black
         ,thick
-        ,path fading=west,fading angle=20] (0,0)
-      -- ({cos( -30 )*.65},{sin( -30 )*.65}) arc (-30:70:.65) -- cycle;
-      \draw[blue!60!black,thick] (0,0) -- ({cos( -30 )*.65},{sin( -30)*.65});
-      \node[green!40!black] at (.4,.3)
-        {$\mathfrak{s}_{\textcolor{red!60!black}{a,b}}
-        (\textcolor{blue!60!black}{r})$};
-      \node[green!40!black] at (.3,-.25) {$\textcolor{blue!60!black}{r}$};
+        ,path fading=west,fading angle=110] (0,0)
+      -- ({cos( 70 )*.55},{sin( 70 )*.55}) arc (70:150:.55) -- cycle;
+      \node[green!60!black] at (-.47,.57) {$\mathfrak{s}_{a,b} (r)$};
 
-      \draw[thick,red!60!black] ({cos( -30 )},{sin( -30 )}) arc (-30:70:1);
+      \draw[thick,red!60!black] ({cos( 70 )},{sin( 70 )}) arc
+        (70:150:1)
+        node[midway,above] {$I$};
 
-      \fill[red!60!black] ({cos( -30 )},{sin( -30 )}) circle(.7pt);
-      \fill[white] ({cos( -30 )},{sin( -30 )}) circle (.3pt);
+      \draw[path fading=west] ({cos( 70 )*.55},{sin( 70 )*.55}) --
+        ({cos( 70 )},{sin( 70 )});
+      \draw[path fading=east] ({cos( 150 )*.55},{sin( 150 )*.55}) --
+        ({cos( 150 )},{sin( 150 )});
+
       \fill[red!60!black] ({cos( 70 )},{sin( 70 )}) circle(.7pt);
       \fill[white] ({cos( 70 )},{sin( 70 )}) circle (.3pt);
+      \fill[red!60!black] ({cos( 150 )},{sin( 150 )}) circle(.7pt);
+      \fill[white] ({cos( 150 )},{sin( 150 )}) circle (.3pt);
 
-      \node[red!60!black] at ({1.1 * cos(70)},{1.1 * sin(70)}) {$b$};
-      \node[red!60!black] at ({1.1 * cos(-30)},{1.1 * sin(-30)}) {$a$};
+      \node at ({1.1 * cos(150)},{1.1 * sin(150)}) {$b$};
+      \node at ({1.1 * cos(70)},{1.1 * sin(70)}) {$a$};
 
-      \node[red!60!black,right] at (.8,.6) {$I$};
+      \filldraw[fill=blue!20!white
+        ,draw=blue!60!black
+        ,thick
+        ,path fading=west,fading angle=52] (0,0)
+      -- ({cos( 10 )*.45},{sin( 10 )*.45}) arc (10:95:.45) -- cycle;
+      \draw[path fading=west] ({cos( 52.25 )*.45},{sin( 52.25 )*.45}) --
+        ({cos( 52.25 )},{sin( 52.25 )}) node[above right] {$\theta$};
+      \fill[red!60!black] ({cos( 52.25 )},{sin( 52.25 )}) circle(.7pt);
+      \fill[white] ({cos( 52.25 )},{sin( 52.25 )}) circle (.3pt);
+      \node[blue!40!black] at (.4,-0.05)
+        {$U(\theta,\epsilon)$};
+      \draw[blue!60!black
+           ,decorate
+           ,decoration={brace,mirror,amplitude=10pt}]
+        ({cos( 10 ) * .45},{sin( 10 ) * .45})
+        to node[midway,above right,xshift=6pt,yshift=-3pt] {$\frac{\epsilon}{2}$}
+        ({cos( 52.25 ) * .45},{sin( 52.25 ) * .45});
 
       \fill[white] (zero) circle (1.5pt);
+
+      \draw[green!60!black
+           ,decorate
+           ,decoration={brace,amplitude=10pt}]
+        (0,0) -- ({cos( 150 )*.55},{sin( 150 )*.55})
+          node[midway,below,xshift=-6.5pt,yshift=-6.5pt]
+          {$r$};
+
       \fill (zero) circle (.7pt);
     \end{tikzpicture}
   \end{center}
   \caption{An exemplary arc $\textcolor{green!40!black}{
-    \mathfrak{s}_{\textcolor{red!60!black}{a,b}}
-  (\textcolor{blue!60!black}{r})}$ spanning from \textcolor{red!60!black}{$a$}
-  to \textcolor{red!60!black}{$b$} with radius \textcolor{blue!60!black}{$r$}.}
+      \mathfrak{s}_{a,b}(\textcolor{blue!60!black}{r})}$ spanning from $a$ to
+    $b$ with radius \textcolor{green!60!black}{$r$} corresponding to the arc
+    \textcolor{red!60!black}{$I$} and an arc
+    \textcolor{blue!60!black}{$U(\theta,\epsilon)$} for some $\theta$ and
+    $\epsilon$.}
 \end{figure}
-\begin{defn}
-  We will say that \emph{a sector $\mathfrak{s}_{I}(r)$ contains $\theta\in
-  S^1$} if $\theta\in I$. In the same way we will say that $\mathfrak{s}_I(r)$
-  contains $U\subset S^1$ if $U\subset I$ or that $U\subset S^1$ contains a
-  sector $\mathfrak{s}_I(r)$ if $I\subset U$.
-\end{defn}
+We will say that \emph{a sector $\mathfrak{s}_{I}(r)$ contains $\theta\in S^1$}
+if $\theta\in I$. In the same way we will say that $\mathfrak{s}_I(r)$ contains
+$U\subset S^1$ if $U\subset I$ or that $U\subset S^1$ contains a sector
+$\mathfrak{s}_I(r)$ if $I\subset U$.
 \begin{rem}\label{rem:arcsByWidthAndCenter}
   Since the explicit value $r$ of the radius does not matter as long as it is
   small enough, we shall simply speak of an \emph{arc} or \emph{interval} $I$
@@ -122,7 +149,9 @@ We introduce the following terminology:
     $(a',b')$ is a real sub-interval of $(a,b)$ and $r'<r$.
   \end{s-rem}
 \end{defn}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Definition and basic properties}
+Let us now give the definition of asymptotic expansions.
 \begin{defn}
   \marginnote{\cite[Defn.7.1]{van2003galois}}
   A function $f\in\cO(\mathfrak{s})$ is said to have the
@@ -151,25 +180,18 @@ We introduce the following terminology:
     \bigr|
     \leq C(N,\mathfrak{s}')|t|^{N} \qquad \text{ for all }t\in \mathfrak{s}' \,.
   \]
-  We will use the following notations:
-  \begin{enumerate}
-    \item We will say that \emph{$f$ has the formal Laurent series $\hat g$ as
-      asymptotic expansion on the interval $I\subset S^1$} if there exists a
-      $r\in\R_{>0}$ such that $f$ has the formal Laurent series $\hat g$ as
-      asymptotic expansion on $\mathfrak{s}_I(r)$.
-    \item We will say that \emph{$f$ has the formal Laurent series $\hat g$ as
-      asymptotic expansion in the direction $\theta$} if there exists an
-      interval $\theta\in I\subset S^1$ such that $f$ has formal Laurent series
-      $\hat g$ as asymptotic expansion on the interval $I$.
-  \end{enumerate}
 \end{defn}
-If $f$ has $\hat g$ as asymptotic expansion on the sector $\mathfrak{s}$ (or on
-the interval $I\subset S^1$, or in the direction $\theta$), we denote that by
-$f\sim_{\mathfrak{s}}\hat g$ (or $f\sim_{I}\hat g$, or
-$f\sim_{\theta}\hat g$).\label{page:notationForAsymptoticExpansion}
+We will say that \emph{$f$ has the formal Laurent series $\hat g$ as asymptotic
+  expansion on the interval $I\subset S^1$} if there exists a radius
+$r\in\R_{>0}$ such that $f$ has the formal Laurent series $\hat g$ as asymptotic
+expansion on $\mathfrak{s}_I(r)$.
+
+If $f$ has $\hat g$ as asymptotic expansion on the sector $\mathfrak{s}$ (resp.\
+on the interval $I\subset S^1$), we denote that by $f\sim_{\mathfrak{s}}\hat g$
+(resp.\ $f\sim_{I}\hat g$).\label{page:notationForAsymptoticExpansion}
 
 \begin{thm}
-  For $f\in\O(\mathfrak{s})$, there is at most one formal Laurent series $\hat
+  For $f\in\cO(\mathfrak{s})$, there is at most one formal Laurent series $\hat
   f$ which satisfies $f\sim_{\mathfrak{s}}\hat f$
   (cf.\ Theorem~\cite[Thm.XI-1-5]{hsieh2012basic}).
 \end{thm}
@@ -177,7 +199,7 @@ $f\sim_{\theta}\hat g$).\label{page:notationForAsymptoticExpansion}
 The following proposition gives equivalent characterizations of asymptotic
 expansions.
 \begin{prop}
-  Let $f\in\O(\mathfrak{s})$ then are the following statements
+  Let $f\in\cO(\mathfrak{s})$ then are the statements
   \begin{enumerate}
   \item $f\sim_{\mathfrak{s}}\hat f=\sum_{n\geq n_0}a_nt^n$,
   \item the function $f$ is infinitely often differential at the origin and
@@ -219,17 +241,15 @@ It can easily be seen that $\cA:U\to\cA(U)$ defines a sheaf on $S^1$.
 One writes
 \begin{align*}
   T_{I}:\cA(I)&\to\C(\!(t)\!)
-                \qquad\left(\text{resp.}\qquad
-                T_{\mathfrak{s}}:\cA(\mathfrak{s})\to\C(\!(t)\!)\qquad\right)
   \\f&\mapsto\hat f
 \end{align*}
 for the so-called \emph{Taylor map} which associates to each function
-$f\in\cA(I)$ (resp.\ $f\in\cA(\mathfrak{s})$) its asymptotic expansion and is
-called.
+$f\in\cA(I)$ its asymptotic expansion.
+If $\hat f$ is not defined to be something else, we write $\hat f$ for the image
+of $f$ under $T_{I}$.
 \begin{defn}
   A function $f$ which is asymptotic to the identity, i.e.\ with
-  $T_{\mathfrak{s}}(f)=\hat f=\id_{\mathfrak{s}}$, is called \emph{flat (on
-    $\mathfrak{s}$)}.
+  $T_{I}(f)=\hat f=\id_{\mathfrak{s}_I}$, is called \emph{flat (on $I$)}.
 \end{defn}
 
 The kernel of $T_{I}$ is not zero in general.
@@ -241,6 +261,7 @@ $I\subset\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$.
   $\ker(T_{I})\subset\cA(I)$ (resp.\
   $\ker(T_{\mathfrak{s}})\subset\cA(\mathfrak{s})$) of functions asymptotic to
   zero at $0$.
+  This does also define a sheaf $\cA^{<0}$.
 \end{defn}
 
 \begin{exmp}[Trivial example]
@@ -251,8 +272,8 @@ $I\subset\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$.
 
   Reciprocally, if $f$ is holomorphic on $\mathfrak{s}_{S^1}(r)$ and has an
   asymptotic expansion at $0$ on $\mathfrak{s}_{S^1}(r)$ then, $f$ is bounded
-  near $0$ and according to the removable singularity theorem, $f$ is analytic
-  on $D$.
+  near $0$ and according to the removable singularity theorem, $f$ is
+  meromorphic on $D$.
   \begin{s-rem}
     This implies that $\cA(S^1)\cong\C(\!\{t\}\!)$.
   \end{s-rem}
@@ -266,29 +287,10 @@ exponential integral, see Loday-Richaud's book \cite[Sec.2.2]{Loday2014}.
   For every arc $I\subset S^1$ is $\cA(I)$ is stable under derivation, i.e.\
   $f'(t)$ is on $I$ asymptotic to $\hat f'(t)$ for every function $f$
   asymptotic to $\hat f$ on $I$.
-  \begin{s-rem}
-    Let $f_1$ and $f_2$ be functions which satisfying $f_1\sim_I\hat f_1$ and
-    $f_2\sim_I\hat f_2$.
-    We have also the rules:
-    \begin{enumerate}
-      \item $f_1(t)+f_2(t)$ is on $I$ asymptotic to $\hat f_1(t)+\hat f_2(t)$
-        (cf.\ Theorem \cite[4.5.Thm.13]{Balser2000Formal}
-        or~\cite[XI-1-6]{hsieh2012basic}).
-      \item $f_1(t)f_2(t)$ is on $I$ asymptotic to $\hat f_1(t)\hat f_2(t)$
-        (cf.\ Theorem \cite[4.5.Thm.14]{Balser2000Formal}
-        or~\cite[XI-1-6]{hsieh2012basic}).
-      \item $\int_0^tf(s)\,ds$ is on $I$ asymptotic to $\int_0^t\hat f(t)\,ds$
-        (cf.\ Theorem \cite[4.5.Thm.20]{Balser2000Formal}).
-      \item If $f\in\cA(I)\backslash\cA^{<0}(I)$ then $f^{-1}(t)$ is on $I$
-        asymptotic to $\hat f^{-1}(t)$
-        (cf.\ Theorem \cite[4.5.Thm.21]{Balser2000Formal}
-        or~\cite[XI-1-9]{hsieh2012basic}).
-    \end{enumerate}
-  \end{s-rem}
 \end{prop}
-\begin{proof}[Proof of Proposition~\ref{prop:optionsOfAsymptoticExp}]
+\begin{proof}
   Let $f\in\cA(I)$ with asymptotic expansion $\hat f=\sum_{-n_0\leq n}a_nx^n$
-  its asymptotic expansion where we assume without restriction that $n_0=0$.
+  its asymptotic expansion.
   One has for each $m\geq0$
   \[
     f(t)=\sum_{n=0}^ma_nt^n+R_m(t)t^m
@@ -311,7 +313,30 @@ exponential integral, see Loday-Richaud's book \cite[Sec.2.2]{Loday2014}.
   This proves that $\hat{f'}$ is an asymptotic expansion for $f'$ in
   $\mathfrak{s}_I(r)$.
 \end{proof}
+Other properties can be found in the books~\cite{Balser2000Formal} from Balser
+and~\cite{hsieh2012basic} from Hsieh and Sibuya. Some are stated in the
+following remark.
+\begin{rem}
+  Let $f_1$ and $f_2$ be functions which satisfying $f_1\sim_I\hat f_1$ and
+  $f_2\sim_I\hat f_2$.
+  We have also the rules:
+  \begin{enumerate}
+    \item $f_1(t)+f_2(t)$ is on $I$ asymptotic to $\hat f_1(t)+\hat f_2(t)$
+      (cf.\ Theorem~\cite[4.5.Thm.13]{Balser2000Formal}
+      or~\cite[XI-1-6]{hsieh2012basic}).
+    \item $f_1(t)f_2(t)$ is on $I$ asymptotic to $\hat f_1(t)\hat f_2(t)$
+      (cf.\ Theorem~\cite[4.5.Thm.14]{Balser2000Formal}
+      or~\cite[XI-1-6]{hsieh2012basic}).
+    \item $\int_0^tf(s)\,ds$ is on $I$ asymptotic to $\int_0^t\hat f(t)\,ds$
+      (cf.\ Theorem~\cite[4.5.Thm.20]{Balser2000Formal}).
+    \item If $f\in\cA(I)\backslash\cA^{<0}(I)$ then $f^{-1}(t)$ is on $I$
+      asymptotic to $\hat f^{-1}(t)$
+      (cf.\ Theorem~\cite[4.5.Thm.21]{Balser2000Formal}
+      or~\cite[XI-1-9]{hsieh2012basic}).
+  \end{enumerate}
+\end{rem}
 
+\pagebreak%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Borel-Ritt Lemma}
 \begin{comment}
   \begin{itemize}
@@ -406,7 +431,7 @@ Let us now proof the Borel-Ritt Lemma.
       +|t|^N\sum_{n\geq N}\left| a_n\beta_n(t)t^{n-N} \right|
   \end{align*}
   The first summand is a finite sum of terms, which are all asymptotic to $0$
-  and then, is majorized by $C'|t|^N$ for a convenient constant $C'$.
+  and thus is majorized by $C'|t|^N$ for a convenient constant $C'$.
   The second summand is majorized by
   \[
     |t|^N\left(2|a_n|+\sum_{n\geq N+1}|a_n|b_nR^{n-\frac{1}{2}-N}\right).

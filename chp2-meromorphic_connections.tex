@@ -1,6 +1,6 @@
 \chapter{Systems and meromorphic connections}
-Here we will start with defining meromorphic connections on holomorphic bundles
-although we will only be interested in local information.
+Here we will start with the definition of meromorphic connections on holomorphic
+bundles although we will only be interested in local information.
 For local description we will use \textbf{germs of meromorphic connections}, the
 coordinate dependent \textbf{systems} and \textbf{connection matrices}.
 Other coordinate independent approaches arise for example from the theory of
@@ -52,17 +52,22 @@ then defined as follows.
   for $s\in\Gamma(U,\sM)$ and $f\in\cO_M(U)$.
   The \emph{rank} of the meromorphic connection $(\sM,\nabla)$ is defined to be
   the rank of the Bundle $\sM$.
+  It will usually denoted by the letter $n$.
   \begin{s-rem}
     Some authors use the factors $k_i$ of the divisor $Z$ to limit the pole
     orders at the points $a_i$. Since we do not need this restriction, we allow
     arbitrary pole orders. Denoted is this by the $*$ in $\Omega_M^1(*Z)$.
-    The sheaf $\cO_M(*Z)$ of functions, which are meromorphic along $Z$, is
-    defined in Sabbah's book~\cite[Sec.0.8]{sabbah2007isomonodromic} and
+
+    The \emph{sheaf of meromorphic differential $1$-forms on $M$}
+    $\Omega_M^1(*Z)$ is defined as
     \[
-      \Omega_M^1(*Z):=\cO_M(*Z)\underset{\cO_M}\otimes\Omega_M^1
+      \Omega_M^1(*Z):=\cO_M(*Z)\underset{\cO_M}\otimes\Omega_M^1 \,,
     \]
-    is the \emph{sheaf of meromorphic differential $1$-forms}
-    (cf.\ \cite[Sec.0.9.b]{sabbah2007isomonodromic}).
+    where $\cO_M(*Z)$ is the sheaf of functions, which are meromorphic along
+    $Z$.
+    A detailed definition of these sheaves can be found in Sabbah's
+    book~\cite{sabbah2007isomonodromic} in
+    Section 0.8 and Section 0.9.b
   \end{s-rem}
 \end{defn}
 The word ``global'' used to emphasize that the connection is ``on $\sM$'', i.e.\
@@ -70,8 +75,8 @@ not only a germ at some point of $M$, \rewrite{like it will be used} later
 (cf.\ Remark~\ref{rem:GlobalNothingGerm}).
 
 In the definition above is the variant `holomorphic bundle with meromorphic
-connection' is chosen, like in Boalch's paper~\cite{boalch}.
-There is also the transposed description `meromorphic bundle with holomorphic
+connection' chosen, like in Boalch's paper~\cite{boalch}.
+There is also the interchanged description `meromorphic bundle with holomorphic
 connection' which is for example used in Sabbah's
 book~\cite{sabbah2007isomonodromic}.
 
@@ -81,18 +86,24 @@ but if the meromorphic bundle had a holomorphic connection, the induced
 connection \rewrite{on the lattice} is no longer guaranteed to be holomorphic.
 Thus we obtain a meromorphic connection on a holomorphic bundle in our sense.
 
-\begin{defn}
-  \marginnote{\cite[0.12.2]{sabbah2007isomonodromic}}
-  The connection $\nabla:\sM\to \Omega_M^1\otimes_{\cO_M}\sM$ is said to be
-  \emph{integrable} or \emph{flat}, if its curvature vanishes, i.e.\
-  $R_\nabla\equiv0$
-  where $R_\nabla:=\nabla\circ\nabla:\cE\to\Omega_M^2\otimes_{\cO_M}\cE$ is a
-  $\cO_M$-linear morphism.
-  \begin{s-rem}
-    Here are all connections flat, since all connections will be of Dimension
-    one.
-  \end{s-rem}
-\end{defn}
+We will only look at unramified connections. Some of the following statements
+are only valid in the unramified case although we will not always mention this
+restriction.
+
+\begin{comment}
+  \begin{defn}
+    \marginnote{\cite[0.12.2]{sabbah2007isomonodromic}}
+    The connection $\nabla:\sM\to \Omega_M^1\otimes_{\cO_M}\sM$ is said to be
+    \emph{integrable} or \emph{flat}, if its curvature vanishes, i.e.\
+    $R_\nabla\equiv0$
+    where $R_\nabla:=\nabla\circ\nabla:\cE\to\Omega_M^2\otimes_{\cO_M}\cE$ is a
+    $\cO_M$-linear morphism.
+    \begin{s-rem}
+      Here are all connections flat, since all connections will be of Dimension
+      one.
+    \end{s-rem}
+  \end{defn}
+\end{comment}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Local expression of meromorphic connections and systems}
@@ -102,7 +113,7 @@ Thus we obtain a meromorphic connection on a holomorphic bundle in our sense.
 We will only be interested in local information of meromorphic connections.
 This means that we look at a connection in a neighbourhood of $0$ which has its
 unique singularity at $0$.
-There are multiple ways of expressing the local information without the need of
+There are several ways of expressing the local information without the need of
 an fixed neighbourhood.
 We will either talk about germs (at $0$) of meromorphic connections or systems,
 which depend on the choice of a trivialization.
@@ -114,7 +125,7 @@ which depend on the choice of a trivialization.
     \item $\cM$ is the germ at $0$ of the holomorphic bundle $\sM$ and thus a
       $\C(\!\{t\}\!)$-vectorspace of dimension $n$, since the ring of germs of
       meromorphic functions with poles at $0$ is the ring $\C(\!\{t\}\!)$, and
-    \item $\nabla:\cM\to \cM$ is a additive map, which
+    \item $\nabla:\cM\to \cM$ is a $\C$-linear map, which
       satisfies the \emph{Leibniz rule}
       \[
         \nabla(fm)=\frac{d}{dt} f\cdot m + f\nabla(m)
@@ -155,7 +166,7 @@ to the chosen basis, i.e.\ satisfies
 The connection $\nabla$ is fully determined by $A$. Indeed, let
 $x=\sum_{0\leq j\leq n}x_je_j=\underline{e}\cdot X$ be an arbitrary element of
 $\cM$, where $X={}^t\!(x_1,x_2 ,\dots,x_n)$ is a column matrix.
-Then, applying $\nabla$ using the Leibniz rule, yields
+Applying $\nabla$ to $x$ using the Leibniz rule, yields
 \begin{align*}
   \nabla x&=\nabla\left(\underline{e}\cdot X\right)
   \\&=\underline{e} \cdot dX + \nabla \underline{e} \cdot X
@@ -166,9 +177,9 @@ $\nabla x=0$, correspond to solutions of
 \begin{equation}\label{eq:ode}
   \frac{d}{dt}x=Ax \,.
 \end{equation}
-Thus, with the connection $\nabla$ and the $\C(\!\{t\}\!)$-basis
-$\underline{e}$ is naturally associate the differential operator
-$\triangle=d-A$, which has order one and dimension $n$.
+Thus, with the connection $\nabla$ and the chosen $\C(\!\{t\}\!)$-basis
+$\underline{e}$, is naturally the differential operator
+$\triangle=d-A$ associated, which has order one and dimension $n$.
 \begin{defn}
   \marginnote{\cite[Sec.4]{Martinet1991}}
   We call (\ref{eq:ode}), determined by the differential operator
@@ -229,7 +240,7 @@ following way.
   \]
   Denote by $A:=\diag(A_1,A_2)$ the block-diagonal matrix build from $A_1$ and
   $A_2$.
-  For every $j\in\{1,2\}$ we have the corresponding inclusion
+  For every $j\in\{1,2\}$ we have the inclusion
   $i_j:\C(\!\{t\}\!)^{n_j}\hookrightarrow\C(\!\{t\}\!)^{n_1+n_2}$ and the
   diagram
   \[ \begin{tikzcd}
@@ -342,9 +353,9 @@ By \emph{meromorphic\footnote{We use the term meromorphic in the sens of
 convergent meromorphic. Otherwise we say formal meromorphic.} transformation},
 or just \emph{transformation}, of a system we mean a $\C(\!\{t\}\!)$-linear
 change of the trivialization.
-Such a change is given by a matrix
-$F\in G(\!\{t\}\!):=\Gl_n\left(\C\{t\}[t^{-1}]\right)$ and the transformed
-connection matrix ${}^F\!A$ is obtained through the Gauge transformation
+Such a change is given by a matrix $F$ in
+$G(\!\{t\}\!):=\Gl_n\left(\C\{t\}[t^{-1}]\right)$ and the transformed connection
+matrix ${}^F\!A$ is obtained through the Gauge transformation
 \begin{equation}\label{eq:gaugeTrafo}
   {}^F\!A=(dF)F^{-1} + FAF^{-1} \,.
 \end{equation}
@@ -359,11 +370,11 @@ which will be denoted by $[A,B]$.
   if $F$ solves the linear differential system $[A,B]$.
 \end{rem}
 
-If $F$ is formal i.e.\
+If $F$ is formal, i.e.\
 $F\in G(\!(t)\!):=\Gl_n\left(\C\llbracket t\rrbracket[t^{-1}]\right)$, it will
 usually be denoted by $\hat F$.
-The transformation of $A$ by $\hat F$ is not guaranteed to have convergent
-entries and thus is no system.
+The transformation of $A$ by $\hat F\in$ G(\!(t)\!) is not guaranteed to have
+convergent entries and thus is no system.
 We denote by $\hat G(A)$ the set of all \emph{(applicable) formal
 transformations}
 \[
@@ -372,7 +383,7 @@ transformations}
     \text{ has convergent entries, i.e.\ ${}^{\hat F}\!A\in G(\!\{t\}\!)$}
   \bigr\}\,.
 \]
-Let $\hat{F'}\in\hat G(A^0)$ and $A':={}^{\hat{F'}}\!A$, then are the sets
+Let $\hat{F'}\in\hat G(A)$ and $A':={}^{\hat{F'}}\!A$, then are the sets
 $\hat G(A)$ and $\hat G(A')$ related by
 \[
   \hat G(A')=\hat G(A)\hat{F'}^{-1}=\bigl\{
@@ -524,8 +535,7 @@ meromorphic connections.
 It is well known in the theory of linear ODEs that the solutions to a system
 like (\ref{eq:ode}) form a vector space of dimension $n$ over $\C$, i.e.\ if
 $x_0(t)$ and $x_{00}(t)$ are two solution of (\ref{eq:ode}) and $c_1$,
-$c_2\in\C$ are two constants, then is also $c_1x_0(t)+c_2x_{00}(t)$ a solution
-of the same system.
+$c_2\in\C$, then is also $c_1x_0(t)+c_2x_{00}(t)$ a solution of the same system.
 \begin{defn}
   \marginnote{\cite[4f]{thboalch}}
   A \emph{fundamental matrix of (formal) solutions} or \emph{(formal)
@@ -554,13 +564,13 @@ of the same system.
   \end{comment}
 \end{defn}
 The Stokes phenomenon, which will be discussed in the
-chapter~\ref{chap:stokes}, results from the fact that there is always a formal
+Chapter~\ref{chap:stokes}, results from the fact that there is always a formal
 fundamental solution, which solves a system on the full arc $S^1$.
 But holomorphic solutions, which are asymptotic to the formal solution, may
 exist only on small sub-sectors of $S^1$. The Stokes structures are then
-informations about the relation between the holomorphic solutions on the overlap
+roughly the information about the relation between the holomorphic solutions on the overlap
 of two sectors.
-\begin{rem}
+\begin{rem}\label{rem:fundChangeOnFund}
   \marginnote{\cite[2.1.3]{Zein2009}}
   If the trivialization is changed by $F$ (resp.\ $\hat F$) the fundamental
   solution $\cY\in G(\!\{t\}\!)$ changes to $F\cY$ (resp.\ $\hat F\cY$).
@@ -569,9 +579,7 @@ of two sectors.
 
 \marginnote{\cite[130]{hotta2008},\\\cite[6]{heu2010}}
 Choose a fundamental solution $\cY$. Then analytic continuation along a closed
-path $\gamma$ in $M\backslash Z$ provides another fundamental solution
-$\cY'=\rho^{-1}(\gamma)\cY$ where $\rho(\gamma)$ is called the \emph{monodromy
-along the path $\gamma$}.
+path $\gamma$ in $M\backslash Z$ provides another fundamental solution.
 \begin{defn}
   Let $[A]$ be a system with fundamental solution $\cY$.
   The analytic continuation of $\cY$ along a small circle around $t=0$ yields
@@ -673,8 +681,8 @@ are defined below.
 \begin{defn}\label{defn:model}
   \def\myPhi{\textcolor{red!60!black}{\phi}}
   \def\myE{\textcolor{green!40!black}{\cE^{\myPhi}}}
-  A germ $(\cM',\nabla')$ is a \emph{model} if there exists, after ramification
-  $\cM=\pi^*\cM'$ by $\pi$, a isomorphism
+  A germ $(\cM',\nabla')$ is a \emph{model} if there exists after ramification
+  $\cM=\pi^*\cM'$ by $\pi$ a isomorphism
   \[
     \lambda:(\cM,\nabla) \overset{\cong}{\longrightarrow}
     \bigoplus_{\phi} \cE^\phi \otimes \cR_{\phi}
@@ -719,9 +727,9 @@ Proofs of this theorem can be found in multiple places, for example in
 \subsection{In the language of systems: normal forms}\label{sec:normalForms}
 \marginnote{\cite{Remy2014}
            \\,\cite[146]{sibuya1990Linear}}
-Here we will see, that the fundamental solution of a model can be written in a
+Here we will see that the fundamental solution of a model can be written in a
 special form and that this property characterizes models. This will be used to
-define normal forms which will me models on the level of systems.
+define normal forms which will be models on the level of systems.
 \begin{defn}
   The fundamental solution corresponding to a model (resp.\ a normal form, see
   Definition~\ref{defn:normSol}) will be called a
@@ -755,7 +763,7 @@ $Q(t^{-1}):=\bigoplus_{j=1}^sq_j(t^{-1})\cdot\id_{n_j}$
 and $L:=\bigoplus_{j=1}^sL_j$.
 \begin{defn}\label{defn:structureComparison}
   Let $L$ be a block diagonal matrix $L=\bigoplus_{j=1}^sL_j$, where the $L_j$
-  are of size $n_j\times n_j$ and $Q$ be a diagonal matrix.
+  are of size $n_j\times n_j$ and let $Q$ be a diagonal matrix.
   We will say that \emph{the block structure of $L$ is finer then the
   structure of $Q$} if there are $q_j$'s such that
   $Q=\bigoplus_{j=1}q_j\cdot\id_{n_j}$.
@@ -771,7 +779,7 @@ and $L:=\bigoplus_{j=1}^sL_j$.
   Let $L\in \GL_n(\C)$ be constant and
   $Q(t^{-1})=\diag(q_1(t^{-1}),\dots,q_n(t^{-1}))$ a diagonal matrix of
   polynomials in $t^{-1}$ where $L$ is in Jordan normal form and its block
-  structure is finer then the structure of $Q(t^{-1})$.
+  structure is finer then the structure of the derivative $Q(t^{-1})$.
 
   The matrix $\cY_0:=t^L e^{Q(t^{-1})}$ is then a fundamental solution of the
   system determined by the matrix
@@ -782,9 +790,9 @@ and $L:=\bigoplus_{j=1}^sL_j$.
 \begin{proof}
   It is easy to see (or cf.~\cite[Appendix C.1]{Balser2000Formal}) that the
   block structure of $t^L$ is finer then the structure of $Q'(t^{-1})$ and thus
-  $t^LQ'(t^{-1})t^{-L}=Q'(t^{-1})$, since the (block) structure is preserved
-  under the exponential and derivation and thus we can prove that $\cY_0$ is a
-  matrix consisting of solutions:
+  $t^LQ'(t^{-1})t^{-L}=Q'(t^{-1})$, since the block structure is preserved under
+  the exponential and derivation.
+  Thus we can prove that $\cY_0$ is a matrix consisting of solutions:
   \begin{align*}
     \frac{d}{dt}\cY_0
     &=\frac{d}{dt}\left(t^Le^{Q(t^{-1})}\right)
@@ -805,7 +813,7 @@ and $L:=\bigoplus_{j=1}^sL_j$.
   as possible system matrix. But the obtained matrix may not define a system,
   since it could contain entries, which are not in $\C(\!\{t\}\!)$.
 
-  A simple example, where this happens, is given by
+  A simple example where this happens is given by
   \begin{itemize}
   \item $L=\begin{pmatrix} \alpha & 1 \\ 0 & \alpha \end{pmatrix}$ and
   \item $Q=\begin{pmatrix} \phi_1 & 0 \\ 0 & \phi_2 \end{pmatrix}$,
@@ -831,10 +839,12 @@ and $L:=\bigoplus_{j=1}^sL_j$.
 To $\hat\lambda$ and the (implicitly) used choices of bases corresponds a
 formal transformation $\hat F$ and thus we have
 \begin{itemize}
-  \item a fundamental solution $\hat Ft^L e^{Q(t^{-1})}$ and
-  \item a connection matrix ${}^{\hat F}\!A^0$
+\item a fundamental solution $\hat Ft^L e^{Q(t^{-1})}$ (cf.\
+  Remark~\ref{rem:fundChangeOnFund}) and
+\item a connection matrix ${}^{\hat F}\!A^0$
 \end{itemize}
-of $(\cM,\nabla)$, which was defined at the beginning of this subsection.
+of the meromorphic connection $(\cM,\nabla)$, which was defined at the beginning
+of this subsection.
 \begin{cor}
   From the Levelt-Turittin theorem we deduce that every meromorphic connection
   $(\cM,\nabla)$ and thus every system $[A]$ has a fundamental solution of the
@@ -845,7 +855,7 @@ of $(\cM,\nabla)$, which was defined at the beginning of this subsection.
   where $\hat F$ is a formal transformation, solving the differential equation
   corresponding to the formal isomorphism
   $(\cM^{nf},\nabla^{nf})\to(\cM,\nabla)$.
-  In the other way is a system, which has $\cY$ as fundamental solution, given
+  On the other hand is a system, which has $\cY$ as fundamental solution, given
   by the connection matrix
   \[
     \bar A={}^{\hat F}\!\left(Q'(t^{-1})+L\frac{1}{t}\right) \,.
@@ -895,9 +905,7 @@ model.
       \begin{s-rem}
         By changing the basis via $F^{-1}$ we obtain from $[A^0]$ the
         equivalent system $[{}^{F^{-1}}\!A^0]$ with the normal solution
-        \[
-          F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})} \,.
-        \]
+        $F^{-1}\mathcal{Y}_0(t)=t^L e^{Q(t^{-1})}$.
         Thus it is always possible to assume that the transformation matrix $F$
         is trivial.
       \end{s-rem}
@@ -907,10 +915,9 @@ model.
   \emph{is a normal form for} $A$ and for $[A]$.
 \end{defn}
 \begin{cor}\label{cor:structuralAssumptions}
-  Since we only look at unramified connections, by the Levelt-Turittin Theorem
-  we are able to assume that $L$ is in Jordan normal form and that it has a
-  block structure, which is finer then the structure of
-  $Q=\bigoplus_{j=1}^sq_j(t^{-1})\cdot\id_{n_j}$
+  Since we only look at unramified connections, we are able to assume that $L$
+  is in Jordan normal form and that it has a block structure, which is finer
+  then the structure of $Q=\bigoplus_{j=1}^sq_j(t^{-1})\cdot\id_{n_j}$
   (cf.~\cite[Sec.1]{Remy2014} or~\cite[Sec.4]{Martinet1991}).
 \end{cor}
 The following corollary enables us to use normal forms in place of models.
@@ -1146,12 +1153,12 @@ or Theorem 4.4.1 in Loday-Richaud's Book~\cite{Loday2014}.
   \begin{s-rem}
     \marginnote{\cite[Thm.4.4.1]{Loday2014}}
     If we write the system $[A^0,A]$ as a differential operator $\triangle$.
-    The theorem then states that $\triangle$ acts linearly and surjectively on
-    the sheaf $\cA^{<0}$, i.e.\ the sequence
+    The theorem then states that $\triangle$ acts surjectively on the sheaf
+    $\cA^{<0}$, i.e.\ the sequence
     \[
       \cA^{<0}\overset{\triangle}\longrightarrow\cA^{<0} \longrightarrow 0
     \]
-    are exact sequences of sheaves of $\C$-vector spaces.
+    is an exact sequences of sheaves of $\C$-vector spaces.
     \begin{comment}
       (cf.~\cite[App.1;Thm.1]{malgrange1991})
     \end{comment}
@@ -1171,7 +1178,7 @@ or Theorem 4.4.1 in Loday-Richaud's Book~\cite{Loday2014}.
     There exists then, for any $e^{i\theta^0}\in S^1$, an isomorphism
     $\tilde\lambda_{\theta^0}:
     \tilde\cM_{\theta^0}=\cA_{\theta^0}\otimes\cM\to\tilde\cM_{\theta^0}^{nf}$
-    lifting $\hat\lambda$ \rewrite{that is, such that} the following diagram
+    lift $\hat\lambda$, \rewrite{that is, such that} the following diagram
     \[ \begin{tikzcd}
         \tilde\cM_{\theta^o} \dar \rar{\tilde\lambda_{\theta^o}}
         & \tilde\cM^{nf}_{\theta^o} \dar
@@ -1180,8 +1187,6 @@ or Theorem 4.4.1 in Loday-Richaud's Book~\cite{Loday2014}.
     \end{tikzcd} \]
     commutes
   \end{s-thm}
-  This is exactly the solution to the problem stated in
-  Remark~\ref{rem:leveltTurittin}.
 \end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1190,12 +1195,10 @@ We want to understand the Set
 $\bigl\{\big[(\cM,\nabla)\big]\bigr\}$ of the (convergent)
 isomorphism classes of all meromorphic connections. Since we can use the formal
 classification (cf.\ Section~\ref{sec:formalClassification}) and we know that
-all elements in a convergent isomorphism class lie in the same formal
-isomorphism class (In other words: the convergent classification is
-\rewrite{finer} than the formal classification) we can reduce the problem by
-fixing a model $(\cM^{nf},\nabla^{nf})$ with the corresponding normal form
-$A^0$.
-\rewrite{Thus we can} restrict ourselves to the subset
+the convergent classification is \rewrite{finer} than the formal classification,
+we can reduce the problem by fixing a model $(\cM^{nf},\nabla^{nf})$ with the
+corresponding normal form $A^0$.
+\rewrite{Thus we can} restrict to the subset
 \begin{multline*}
   {}^0C(\cM^{nf},\nabla^{nf})=\bigl\{
     \bigl[(\cM,\nabla)\bigr]
@@ -1271,44 +1274,44 @@ the set ${}^0C(A^0):=\Syst_m(A^0)/G(\!\{t\}\!)$ of meromorphic classes which
 are formally equivalent to $A^0$.
 Analogous, $\cH(\cM^{nf},\nabla^{nf})$ corresponds to the set $\cH(A^0)$ of
 equivalence classes, i.e.\ orbits of $G(\!\{t\}\!)$, in
+\label{page:ofDefnOfIsomOfMarkedPairs}
 \[
   \hat\Syst_m(A^0):=\bigl\{\bigl(A,\hat F\bigl)
     \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\bigl\} \,.
 \]
-\label{page:ofDefnOfIsomOfMarkedPairs}
 The isomorphisms defined in Definition~\ref{defn:isomsOfPairs} translate into
 the following equivalence relation:
 \begin{einr}
   two marked pairs $(A,\hat F)$ and $(A',\hat F')$ are equivalent, if and only
   if there is a base change $H$ such that
   \PROBLEM[$H\in G(\!\{t\}\!)$? or asymptotic functions?]
-  \begin{itemize}
+  \begin{enumerate}
   \item $A'={}^{H}\!A$, i.e.\ $H$ is a solution of $[A,A']$, and
   \item $\hat F'=\hat H\hat F$ (cf.\ \cite[71]{babbitt1989local}).
-  \end{itemize}
+  \end{enumerate}
 \end{einr}
 In the following diagram the first condition is equivalent to the commutativity
 of the \textcolor{green!60!black}{green} square. The second property corresponds
 to the commutation property of the top (resp.\ bottom) triangle on the level of
-asymptotic expansions\PROBLEM[?].
+asymptotic expansions.
 \[ \begin{tikzcd}[column sep=1cm,row sep=.5cm]
-  &&&\C(\{t\})^n \arrow[green!60!black, thick]{ddd}{d-A}
+  &&&\C(\!\{t\}\!)^n \arrow[green!60!black, thick]{ddd}{d-A}
     \arrow[green!60!black, thick]{ddr}{H}
-\\\C(\{t\})^n \arrow{rrru}{\hat F}
+\\\C(\!\{t\}\!)^n \arrow{rrru}{\hat F}
   \arrow[ultra thick, white]{rrrrd}{\hat F'}
   \arrow{rrrrd}{\hat F'}
   \arrow{ddd}{d-A^0}
-\\&&&&\C(\{t\})^n \arrow[green!60!black, thick]{ddd}{d-A'}
-\\&&&\C(\{t\})^n \arrow[green!60!black, thick]{ddr}{H}
-\\\C(\{t\})^n \arrow{rrru}{\hat F} \arrow{rrrrd}{\hat F'}
-\\&&&&\C(\{t\})^n
+\\&&&&\C(\!\{t\}\!)^n \arrow[green!60!black, thick]{ddd}{d-A'}
+\\&&&\C(\!\{t\}\!)^n \arrow[green!60!black, thick]{ddr}{H}
+\\\C(\!\{t\}\!)^n \arrow{rrru}{\hat F} \arrow{rrrrd}{\hat F'}
+\\&&&&\C(\!\{t\}\!)^n
 \end{tikzcd} \]
 
 \begin{lem}
   \marginnote{\url{http://mathworld.wolfram.com/Stabilizer.html}}
   Since $G_0(A^0)$ is by definition the stabilizer of $A^0$ (cf.\
   definition~\ref{defn:isotropies}) and $\Syst_m(A^0)$ is the corresponding
-  orbit we can use the Proposition 3.1 in the
+  orbit we can use the Proposition 3.1 of the
   book~\cite{wielandt1964finite} from Wielandt and deduce
   \[
     \Syst_m(A^0)\cong \hat G(A^0)/G_0(A^0) \,.
