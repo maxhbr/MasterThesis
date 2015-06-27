@@ -2,7 +2,7 @@
 \IfSubStr{\jobname}{\detokenize{with_notes}}{%
   % The case with comments
   \xdef\myDevelopVariable{1}
-  \xdef\myHideVariable{1}
+  \xdef\myHideVariable{0}
   \documentclass[fleqn
     ,fontsize=12pt
     ,DIV=13
@@ -139,19 +139,19 @@
     \input{chp3sec4-further_improvements.tex}
     \fi
 
-    \ifnum\myHideVariable=0
+    % \ifnum\myHideVariable=0
     \input{chp3sec5-diagram.tex}
-    \fi
+    % \fi
 % \fi
 
+\appendix
+\KOMAoptions{open=any}
 \ifnum\myHideVariable=0
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \appendix
-    \KOMAoptions{open=any}
+    \ifnum\myDevelopVariable=1
     \addcontentsline{toc}{chapter}{Appendix}
 
-    \input{app-moreBasics.tex}
-    \ifnum\myDevelopVariable=1
+    % \input{app-moreBasics.tex}
     \input{app-landkarte.tex}
     \fi
 
@@ -166,7 +166,6 @@
     %\bibliography{main}
 
     % \nocite{*}
-    \KOMAoptions{open=any}
     \makeatletter
     \@mainmatterfalse
     \makeatother

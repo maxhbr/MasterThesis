@@ -1,8 +1,131 @@
+\section{A taste of summability}\label{app:multisummability}
+For the sake of completeness, let us speak a little bit about summability in
+this section. We will only mention some facts to give an rough idea how the map
+$g$ in the diagram on page~\pageref{page:ofPreDiagram} arises.
+The understanding of this section is not necessary for the rest of this
+chapter. It is enough to think of the map $g$ (resp.\ $\tilde g$) as a black box
+which uses some theory to make the asymptotic expansion unique and yields an
+element of $\prod_{\alpha\in\cA}\Sto_\alpha(A^0)$ (resp.\ of
+$\Gamma(\dot\cU;\Lambda(A^0))$) corresponding to some marked pair.
+
+\marginnote{\cite[111]{Loday2014}}
+The aim of a theory of summation is to associate with any series an asymptotic
+function uniquely determined in a way as much natural as possible.
+A useful and extensive resources for this topic are Loday-Richaud's
+book~\cite{Loday2014}.
+A resource which looks only at an special case, which naturally arises from the
+previous sections, is Section III of the paper~\cite{Loday1994} and some of the
+most important statements, i.e.\ exactly those we need, are found in many places
+like Boalch's publications~\cite{boalch,thboalch}, although he looks only at the
+single-leveled case.
+
+The following Proposition can be found in~\cite[Prop.III.2.1]{Loday1994}
+and~\cite[Thm.4.3.13]{Loday2014}.
+\begin{prop}\label{prop:multisummability}
+  \marginnote{\cite[Sec.III.2.1]{Loday1994}}
+  Let $\cV=(V_j)_{j\in J}$ be a cyclic covering,
+  Let $\hat F\in\hat G(A^0)$ be a formal transformation and let
+  $\dot\phi=(\dot\phi_j)_{j\in J}\in\Gamma(\dot{\mathcal{V}};\Lambda(A^0))$,
+  be a $1$-cocycle in the cohomology class $\exp(\hat F)$.
+
+  There exists a \textbf{unique} family of realizations $(F_j)_{j\in J}$ of
+  $\hat F$ over $\mathcal{V}$, i.e.\ matrices $F_j$ which are analytic on
+  $V_j$, satisfy $[A^0,A]$ and are asymptotic to $\hat F$ on $V_j$, such that
+  \[
+    \dot\phi_j=F_{j-1}F_j^{-1} \in\Gamma(V_{j-1}\cap V_j;\Lambda(A^0))
+  \]
+  for every $j\in J$.
+\end{prop}
+When $\mathcal{V}$ is the, in Section~\ref{sec:proofOfMatrixThm} defined,
+cyclic covering $\cU^{\leq k_r}=:\cU$ and $\dot\phi$ is in its Stokes
+form\TODO[~(cf.~??)], we call the realizations $F_{\alpha}$, which were obtained
+by the previous proposition, the \emph{sums of $\hat F$}.
+\begin{defn}\label{defn:sumsLeftRight}
+  \marginnote{\cite[Defn.III.2.2]{Loday1994}}
+  Denote by $\alpha^+$ the next anti-Stokes direction on the right of $\alpha$
+  we can define
+  \begin{itemize}
+  \item $S_\alpha^-(\hat F):=F_\alpha\in\Gl_n(\cA(U_\alpha))$ as the \emph{sum
+      of $\hat F$ on the left of $\alpha$} and
+  \item $S_\alpha^+(\hat F):=F_{\alpha^+}\in\Gl_n(\cA(U_{\alpha^+}))$ as the
+    \emph{sum of $\hat F$ on the right of $\alpha$}.
+  \end{itemize}
+\end{defn}
+\begin{rem}
+  \marginnote{\cite[Defn.3.6]{boalch}}
+  $S^+_\alpha(\hat F)t^Le^{Q(t^{-1})}$ is a solution of $[A]$ on the
+  corresponding sector.
+  \TODO[ or $S^-_\alpha(\hat F)t^Le^{Q(t^{-1})}$?  or
+    $t^Le^{Q(t^{-1})}S^+_\alpha(\hat F)$?  or
+  $t^Le^{Q(t^{-1})}S^-_\alpha(\hat F)$?]
+  Using the equation (\ref{eq:representation}) we can write
+  \[
+    S^+_\alpha(\hat F)
+    \cY_{0,\alpha}(t)
+    =
+    S^-_\alpha(\hat F)
+    \cY_{0,\alpha}(t)C_{\cY_{0,\alpha}}
+  \]
+  thus the Stokes matrix $C_{\cY_{0,\alpha}}$ is a matrix, which
+  describes the \rewrite{blending} between the two adjacent sectors.
+  \TODO[see Loday's remarks on thm.4.3.13 in \cite{Loday2014}]
+\end{rem}
+
+\subsubsection{The map
+  $g:\cH(A^0)\to\prod_{\alpha\in\cA}\Sto_\alpha(A^0)$}\label{sect:multisummmap}
+There are alternative and more constructive definitions, which are equivalent to
+Definition~\ref{defn:sumsLeftRight}.
+Since some of them are more direct and do not use the $1$-cocycle, to which they
+correspond, they can be used to obtain the corresponding
+element in $\prod_{\alpha\in\cA}\Sto_\alpha(A^0)$.
+Many different approaches of (multi-)summation can be found in~\cite{Loday2014}.
+
+Let us fix an ambassador $\hat F$ in $G\backslash\hat G(A^0)$ corresponding to
+equivalence class of marked pairs in $\cH(A^0)$.
+The theory of summation says that there is a map which takes $\hat F$ to a
+unique and natural set of functions
+\[
+  (S_{\alpha_1}^-(\hat F),
+  \underset{S_{\alpha_1}^+(\hat F)}{
+    \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{\underbrace{
+        S_{\alpha_2}^-(\hat F)
+      }}}
+  ,\dots,S_{\alpha_\nu}^-(\hat F))\in
+  \prod_{\alpha\in\A}\Gl_n(\cA(U_\alpha)) \,,
+\]
+which have $\hat F$ as asymptotic functions.
+The corresponding element in $\prod_{\alpha\in\A}\Sto_\alpha(A^0)$ is then found
+as
+\[
+  (\phi_{\alpha_1},\dots,\phi_{\alpha_\nu})
+  \in\Gamma(\cU;\Lambda(A^0))
+\]
+by setting $\phi_\alpha:=
+\left(S^-_\alpha(\hat F)\right)̂^{̀-1}S^+_\alpha(\hat F)\in\Gamma(U_\alpha;\Lambda(A^0))$.
+\begin{defn}\label{defn:theMapG}
+  The corresponding map is denoted by
+  \[
+    \tilde g:G(\!\{t\}\!)\backslash\hat G(A^0)
+    \longrightarrow
+    \Gamma(\dot\cU;\Lambda(A^0)) \,.
+  \]
+  The map $g$ mentioned in the beginning of Chapter~\ref{chap:stokes} is build
+  as shown in Section~\ref{sec:theCompleteDiagram}.
+\end{defn}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{The complete Diagram}\label{sec:theCompleteDiagram}
-If we start with the diagram from Page~\pageref{page:ofPreDiagram}, we can add
-all the defined isomorphisms and rewrite it into the following commutative
-diagram of \textbf{isomorphisms of pointed sets}.
+\section{The complete diagram}\label{sec:theCompleteDiagram}
+In this section we want to write the improved version of the diagram from
+page~\pageref{page:ofPreDiagram} down. It will contain nearly all of the
+isomorphisms which were defined in the previous sections. Additionally will
+isomorphisms like $g$ be decomposed into their building blocks.
+
+In the following diagram of \textbf{isomorphisms of pointed sets} was the
+isomorphism $\exp_{A^0}$ discussed in Section~\ref{sec:mainThm1}. The
+\textcolor{purple}{purple} path together with the lower left part was discussed
+in Section~\ref{sec:mainThm2}. The lower right part was discussed in
+Section~\label{sec:furtherImprovements} and the \textcolor{blue}{blue} part on
+the left was discussed in the previous section.
+
 \begin{center}
   \begin{tikzpicture}[scale=0.95,transform shape]
     \pgfmathsetmacro{\dx}{4.5cm}
@@ -81,13 +204,11 @@ diagram of \textbf{isomorphisms of pointed sets}.
 \end{center}
 Where
 \begin{itemize}
-  \item the map $g$, which arises from the theory of summation;
   \item the \textcolor{purple}{purple path} is the isomorphism $h$ from
-    Theorem~\ref{thm:mainThm2} and;
-  \item the \textcolor{blue}{blue path} is the isomorphism $g$ from
-    Theorem~\ref{thm:mainThm2}, where $\tilde g$ arises from the theory of
-    multisummability and is introduced Definition~\ref{defn:theMapG} in the
-    Appendix~\ref{app:multisummability}, and;
+    Theorem~\ref{thm:mainThm2},
+  \item the \textcolor{blue}{blue path} is the isomorphism $g$, where $\tilde g$
+    arises from the theory of multisummability and is introduced
+    Definition~\ref{defn:theMapG} and
   \item we denote
     \begin{itemize}
       \item $\hat\rho:=\prod_{k\in\cK}\prod_{j\in\{1,\dots,2k\}}\hat\rho_{\theta+j\frac{\pi}{k}}^k$,
