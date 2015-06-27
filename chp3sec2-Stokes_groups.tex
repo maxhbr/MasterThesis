@@ -66,6 +66,7 @@ $(q_j,q_l)\in\cQ(A^0)$.
 \end{defn}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Anti-Stokes directions and the Stokes group}
 \marginnote{\cite[I.4]{Loday1994}}
 \begin{defn}
@@ -86,28 +87,28 @@ On the determining polynomials of $[A^0]$ we define the following (partial)
 order relations:
 \begin{defn}\label{defn:definingRelations}
   Let $\tilde\theta$ be a determination of $\theta\in S^1$.
-  \begin{itemize}
-    \item We define the relation
-      $\boldmath q_j \underset{\tilde\theta}{\prec} q_l$ to be equivalent to
-      the condition
-      \begin{einr}
-        \rewrite{$e^{(q_j-g_l)(t^{-1})}$ is flat at $0$} in a neighbourhood of
-        the direction $\tilde\theta$, i.e.\ if and only if
-        $\Re(a_{jl}e^{-ik_{jl}\tilde\theta})<0$.
-      \end{einr}
-    \item Let us define another relation $\boldmath q_j\myrel{\tilde\theta}q_l$
-      equivalent to
-      \begin{einr}
-        $e^{(q_j-g_l)(t^{-1})}$ is of maximal decay in the direction
-        $\tilde\theta$,
-      \end{einr}
-      which by itself is equivalent to
-      \begin{einr}
-        $a_{jl}e^{-ik_{jl}\tilde\theta}$ is a real negative
-        number, i.e.\ $q_j \underset{\tilde\theta}{\prec} q_l$ and
-        $\Im(a_{jl}e^{-ik_{jl}\tilde\theta})=0$.
-      \end{einr}
-  \end{itemize}
+  \begin{enumerate}
+  \item We define the relation
+    $\boldmath q_j \underset{\tilde\theta}{\prec} q_l$ to be equivalent to
+    the condition
+    \begin{einr}
+      \rewrite{$e^{(q_j-g_l)(t^{-1})}$ is flat at $0$} in a neighbourhood of
+      the direction $\tilde\theta$, i.e.\ if and only if
+      $\Re(a_{jl}e^{-ik_{jl}\tilde\theta})<0$.
+    \end{einr}
+  \item Let us define another relation $\boldmath q_j\myrel{\tilde\theta}q_l$
+    equivalent to
+    \begin{einr}
+      $e^{(q_j-g_l)(t^{-1})}$ is of maximal decay in the direction
+      $\tilde\theta$,
+    \end{einr}
+    which by itself is equivalent to
+    \begin{einr}
+      $a_{jl}e^{-ik_{jl}\tilde\theta}$ is a real negative
+      number, i.e.\ $q_j \underset{\tilde\theta}{\prec} q_l$ and
+      $\Im(a_{jl}e^{-ik_{jl}\tilde\theta})=0$.
+    \end{einr}
+  \end{enumerate}
   \begin{s-rem}
     In the unramified case do these relations not depend on the determination
     $\tilde\theta$ of $\theta$. As a consequence we will only write
@@ -221,7 +222,7 @@ part of $f$.
 The graphs, corresponding to the flipped pair $(q_l,q_j)$ are then obtained by
 the transformation $\arg(a)\to\arg(-a)=\arg(a)+\pi$, i.e.\ the shift by
 $\frac{\pi}{k}$ to the right. This $\frac{\pi}{k}$ is exactly a half period,
-thus the new graphs are obtained by \rewrite{mirroring at the line $t=0$.}
+thus the new graphs are also obtained by \rewrite{mirroring at the line $t=0$.}
 \begin{rem}\label{rem:relationDistanceCondition}
   Let $k_{jl}$ be the degree of $q_j-q_l$.
   It is easy to see (cf.\ Figure~\ref{fig:functionF}), that the condition
@@ -245,17 +246,6 @@ directions of $S^1$.
       anti-Stokes directions in a clockwise ordering. For a uniform
       notation later, \rewrite{define $\A$ to contain a single, arbitrary
         direction if $\cK=\{0\}$.}
-      \begin{s-rem}
-        The clockwise ordering is chosen, similar to Loday-Richaud's
-        paper~\cite{Loday1994}, since the calculations are then compatible with
-        the calculations, which look at $\infty$ and take a
-        counterclockwise ordering.
-        Boalch uses in~\cite{boalch} and~\cite{thboalch} the inverse
-        ordering, but looks also at $0$, thus there \rewrite{might be some}
-        incompatibilities.
-        In Loday-Richaud's book~\cite{Loday2014} this problem is solved by
-        an additional minus sign for some coefficient.
-      \end{s-rem}
     \item The direction $\theta$ is a \emph{Stokes direction} if there is at
       least one pair $(q_j,q_l)$ in $\cQ(A^0)$, which satisfies neither
       $q_j\underset{\theta}{\prec} q_l$ nor $q_l\underset{\theta}{\prec} q_j$.
@@ -264,6 +254,14 @@ directions of $S^1$.
       \end{comment}
   \end{enumerate}
 \end{defn}
+The clockwise ordering is chosen, similar to Loday-Richaud's
+paper~\cite{Loday1994}, since the calculations are then compatible with the
+calculations, which look at $\infty$ and take a counterclockwise ordering.
+Boalch uses in~\cite{boalch} and~\cite{thboalch} the inverse ordering, but looks
+also at $0$, thus there \rewrite{might be some} incompatibilities.
+In Loday-Richaud's book~\cite{Loday2014} this problem is solved by an additional
+minus sign for some coefficient.
+
 We will use the Greek letter $\alpha$ whenever we want to emphasize that a
 direction is an anti-Stokes direction.
 For generic directions, we will use $\theta$.
@@ -406,7 +404,7 @@ or, if one starts by comparing the actual fundamental solutions on arcs, as
         (cf.~\cite{Loday1994} or~\cite[78f]{Loday2014}).
       \item \marginnote{\cite[Defn.I.4.7]{Loday1994}}
         This construction defines also a morphism, which takes a germ
-        $\phi_\theta\in\Lambda_\theta(A^0)\supset\Sto_\theta(A^0)$ into its
+        $\phi_\theta\in\Lambda_\theta(A^0)$ into its
         unique representation matrix
         \[
           C_{\phi_\theta} \in
