@@ -247,6 +247,10 @@
 \mdtheorem[style=thick]{s-kor}{Corollary}[thm]
 \mdtheorem[style=thick]{prop}[thm]{Proposition}
 \mdtheorem[style=thick]{s-prop}{Proposition}[thm]
+\mdtheorem[style=thick,skipbelow=0pt]{s-propSplt}{Proposition}[thm]
+
+\mdtheorem[style=thin,innertopmargin=0pt,skipabove=0pt]{emptyThn}{}
+\mdtheorem[style=thick,innertopmargin=0pt,skipabove=0pt]{emptyTck}{}
 
 \newtheorem{ex}{Aufgabe}[chapter]
 \newtheorem*{beh}{Behauptung}

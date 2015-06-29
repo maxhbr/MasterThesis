@@ -1,0 +1,106 @@
+\pagebreak %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The complete diagram}\label{sec:theCompleteDiagram}
+In this section we want to write the improved version of the diagram from
+page~\pageref{page:ofPreDiagram} down. It will contain nearly all of the
+isomorphisms which were defined in the previous sections. Additionally will
+isomorphisms like $g$ be decomposed into their building blocks.
+
+In the following diagram of \textbf{isomorphisms of pointed sets} was the
+isomorphism $\exp_{A^0}$ discussed in Section~\ref{sec:mainThm1}. The
+\textcolor{purple}{purple} path, which is the isomorphism $h$ from
+Theorem~\ref{thm:mainThm2}, together with the lower left part was discussed
+in Section~\ref{sec:mainThm2}. The lower right part was discussed in
+Section~\label{sec:furtherImprovements} and the \textcolor{blue}{blue} part on
+the left was discussed in the previous section.
+\begin{center}
+  \begin{tikzpicture}[scale=0.95,transform shape]
+    \pgfmathsetmacro{\dx}{4.5cm}
+    \pgfmathsetmacro{\ldx}{6cm}
+    \pgfmathsetmacro{\dy}{2.5cm}
+    \pgfmathsetmacro{\mdy}{-1.5cm}
+
+    \node (cH) at (-6,3.5) {$\cH(A^0)$};
+    \node (cH2) at ([yshift=-\dy]cH)
+      {$G(\!\{t\}\!)\backslash\hat G(A^0)$};
+    \node (cH3) at ([yshift=-\dy]cH2)
+      {$\Gamma(\dot\cU;\Lambda(A^0))$};
+    \node (ProdOfStos) at (-6,-4)
+      {$\displaystyle\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$};
+    \node (S3P) at ([xshift={\dx},yshift={\dy}]ProdOfStos)
+      {$\displaystyle\prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_{\alpha}^{k}(A^0)$};
+    \node (S2P) at ([xshift={\dx},yshift={\dy}]S3P)
+      {$\displaystyle\prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))$};
+    \node (StA0) at ([xshift={\dx},yshift={\dy}]S2P)
+      {$\St(A^0)$};
+    \node (ProdOfSStos) at ([yshift=-{\dy}]ProdOfStos)
+      {$\displaystyle\prod_{\alpha\in\A}\SSto_{\alpha}(A^0)$};
+    \node (SS3P) at ([yshift=-{\dy}]S3P)
+      {$\displaystyle\prod_{k\in\cK}\prod_{\alpha\in\A}\SSto_{\alpha}^{k}(A^0)$};
+    \node (SS2P) at ([yshift={\mdy},xshift={\ldx}]S3P)
+      {$\displaystyle\prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
+        \hat\Sto_{\theta+j\frac{\pi}{k}}^k(A^0)$};
+    \node (SSS2P) at ([yshift={\mdy},xshift={\ldx}]SS3P)
+      {$\displaystyle\prod_{k\in\cK} \prod_{j\in\{1,\dots,2k\}}
+        \hat\SSto_{\theta+j\frac{\pi}{k}}^k(A^0)$};
+    \node[] (SSS3P) at ([yshift={\mdy},xshift={\ldx}]ProdOfSStos)
+      {$\displaystyle\prod_{\alpha\in\A}
+        \C^{\sum_{q_j\myrel{\alpha}q_l}
+          \deg(q_j-q_l)\cdot n_j\cdot n_l}$};
+
+    \draw[->] (cH2) edge [->,transform canvas={xshift=2mm}]
+      node[midway,right]
+      {\footnotesize(cf.\ Cor.\ref{cor:isomorphyOfClassfset})}
+      (cH);
+    \draw[->] (cH) -- (StA0) node[midway,above] {$\exp_{A^0}$};
+    \draw[->,purple] (ProdOfStos) to
+      node[midway,above,sloped]
+      {$\chi\circ\prod_{\alpha\in\A}i_\alpha$}
+      (S3P);
+    \draw[->,purple] (S3P) -- (S2P)
+      node[midway,above,sloped] {$\prod_{k\in\cK}i^k$};
+    \draw[->,purple] (S2P) -- (StA0)
+      node[midway,above left] {$\cT$};
+    \draw[->] (ProdOfStos) -- (ProdOfSStos)
+      node[midway,left] {$\prod_{\alpha\in\A}\rho_\alpha$};
+    \draw[->] (ProdOfSStos) -- (SS3P)
+      node[midway,below,sloped] {$\chi\circ\prod_{\alpha\in\A}i_\alpha$};
+    \draw[->] (S3P) -- (SS3P)
+      node[midway,right] {$\prod_{k\in\cK}\prod_{\alpha\in\A}\rho_{\alpha}^k$};
+    \draw[->] (S3P) -- (SS2P) node[midway,above] {$\eta$};
+    \draw[->] (SS3P) -- (SSS2P) node[midway,above] {$\eta$};
+    \draw[->] (SS2P) -- (SSS2P)
+      node[midway,right]
+      {$\hat\rho$};
+    \draw[->] (SSS3P) -- (ProdOfSStos)
+      node[midway,below,sloped] {$\prod_{\alpha\in\A}\vartheta_\alpha$};
+
+    % \draw[->] (cH) to[out=220,in=100]  node[midway,left] {$g$} (ProdOfStos);
+    \draw[->,blue] (cH) -- (cH2);
+    \draw[->,blue] (cH3) -- (ProdOfStos)
+      node[midway,left] {\footnotesize(take germs)};
+    \draw[->,blue] (cH2) -- (cH3)
+      node[midway,right] {$\tilde g$};
+
+    \draw[->,gray] (ProdOfStos) to[out=60,in=185] node[midway,above] {$\mathfrak{T}$} (S2P);
+    \ifnum\myDevelopVariable=1
+        \draw[right hook->,dashed,red] (S2P) to[in=39,out=180] node[midway,above] {$\tau$} (cH3);
+        \draw[->>,dashed,red] (cH3) to[out=52,in=195] node[midway,above,sloped] {(quotient map)} (StA0);
+    \fi
+  \end{tikzpicture}
+\end{center}
+Where we denote
+\begin{itemize}
+\item $\chi:\displaystyle \prod_{\alpha\in\A}\prod_{k\in\cK}\Sto_\alpha^k(A^0)
+  \equiv\displaystyle \prod_{k\in\cK}\prod_{\alpha\in\A}\Sto_\alpha^k(A^0)$
+  the reordering and
+\item by abuse of notation we also denote the Stokes matrix version in
+  the same way
+  $\chi:\displaystyle \prod_{\alpha\in\A}\prod_{k\in\cK}\SSto_\alpha^k(A^0)
+  \equiv\displaystyle
+  \prod_{k\in\cK}\prod_{\alpha\in\A}\SSto_\alpha^k(A^0)$.
+\end{itemize}
+
+%%% Local Variables:
+%%% TeX-master: "Maximilian_Huber-Masters_Thesis-with_notes.tex"
+%%% End:

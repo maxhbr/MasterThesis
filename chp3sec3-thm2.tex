@@ -30,6 +30,7 @@ that
   Stokes cocycle.
 \end{einr}
 
+\vspace{-2pt}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Cyclic coverings}
 To formulate the theorem in the next section, we use the notion of cyclic
@@ -220,7 +221,7 @@ solves this problem. This means, that the inverse of $h$ is constructible.
   Using the isomorphisms $\Sto_\theta(A^0)\cong\SSto_\theta(A^0)$ from
   Proposition~\ref{prop:representation} we obtain
   \[
-    \St(A^0)\cong\prod_{\alpha\in\A}\SSto_\alpha(A^0)
+    \St(A^0)\cong\prod_{\alpha\in\A}\SSto_\alpha(A^0) \,.
   \]
 \end{cor}
 Since the product of Lie groups is in an obvious way again a Lie group, this
@@ -258,21 +259,23 @@ in the proof.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Adequate coverings}
 \TODO[Adequate is acyclic in Loday2004?]
+\begin{comment}
+  \begin{enumerate}
+  \item \cite[371]{Martinet1991} defines adapted coverings
+  \item \cite[5269]{Loday2004} defines acyclic coverings
+    \begin{itemize}
+    \item uses the \textbf{theorem of Leray}
+      \url{https://de.wikipedia.org/wiki/Satz_von_Leray}
+    \end{itemize}
+  \end{enumerate}
+\end{comment}
 \begin{defn}
-  \begin{comment}
-    \begin{enumerate}
-    \item \cite[371]{Martinet1991} defines adapted coverings
-    \item \cite[5269]{Loday2004} defines acyclic coverings
-      \begin{itemize}
-      \item uses the \textbf{theorem of Leray}
-        \url{https://de.wikipedia.org/wiki/Satz_von_Leray}
-      \end{itemize}
-    \end{enumerate}
-  \end{comment}
   Let $\star\in\{k,<k,\leq k,\dots\}$.
   A covering $\cU$ beyond which the inductive limit
-  $\underset{\cU}{\underrightarrow{\lim}}H^1(\cU;\Lambda^\star(A^0))$ is
-  stationary is said to be \emph{adequate} to describe
+  \[
+    \underset{\cU}{\underrightarrow{\lim}}H^1(\cU;\Lambda^\star(A^0))
+  \]
+  is stationary is said to be \emph{adequate} to describe
   $H^1(S^1;\Lambda^\star(A^0))$ or \emph{adequate} to $\Lambda^\star(A^0)$.
   \begin{comment}
     A covering $\cU$ is said to be \emph{adequate} to describe
@@ -303,6 +306,9 @@ in the proof.
     \end{s-defn}
   \end{comment}
 \end{defn}
+Adequate coverings are sometimes called acyclic, for example
+in~\cite{Loday2004}, or adapted, for example in~\cite{Martinet1991}.
+
 The following proposition is in Loday-Richaud's paper~\cite{Loday1994} given as
 Proposition II.1.7. It contains a simple characterization, which will be used
 to see, that our defined coverings are adequate.
@@ -313,6 +319,7 @@ to see, that our defined coverings are adequate.
     Let $\alpha\in\A^k$.
     An arc $U\bigl(\alpha,\frac{\pi}{k}\bigr)$ is called a \emph{Stokes arc of
       level $k$ at $\alpha$}.
+
     If $(q_j,q_l)\in\cQ(A^0)$ is a pair, such that $q_j\myrel{\alpha}q_l$, is
     the arc $U\bigl(\alpha,\frac{\pi}{k}\bigr)$ exactly the arc of decay of the
     exponential $e^{q_j-q_l}$ (cf.~\cite[5269]{Loday2004} and
@@ -344,8 +351,8 @@ to see, that our defined coverings are adequate.
 Let $k\in\cK$.
 We want to define the three cyclic coverings $\cU^{k}$, $\cU^{\leq k}$ and
 $\cU^{<k}$ which will be adequate to $\Lambda^k(A^0)$, $\Lambda^{\leq k}(A^0)$
-and $\Lambda^{<k}(A^0)$. Furthermore will the coverings be comparable at the
-different levels.
+and $\Lambda^{<k}(A^0)$,respectively . Furthermore will the coverings be
+comparable at the different levels.
 
 \begin{itemize}
 \item[\textbf{1.}] The first covering
@@ -379,7 +386,7 @@ nerve.
 \end{rem}
   \begin{figure}[h]
     \begin{center}
-      \begin{tikzpicture}[scale=3]
+      \begin{tikzpicture}[scale=3.5]
         \clip (-1.1,-0.2) rectangle (1.3,1.3);
         \node[] (zero) at (0,0) {};
         \draw[blue,dashed] (zero) circle (1cm);
@@ -444,11 +451,8 @@ different way. We will start by adding the arcs corresponding to the largest
 degree first and continue by adding the arcs corresponding to smaller degrees
 successively as described below.
 
-Denote by
-\[
-  \left\{K_1<\cdots<K_s=k\right\}
-  =\left\{\max\left(\cK_\alpha\cap[0,k]\right)\mid\alpha\in\A^{\leq k}\right\}
-\]
+Denote by $\left\{K_1<\cdots<K_s=k\right\}
+=\left\{\max\left(\cK_\alpha\cap[0,k]\right)\mid\alpha\in\A^{\leq k}\right\}$
 the set of all \emph{$k$-maximum levels} for all $\alpha\in\A^{\leq k}$.
 \begin{itemize}
 \item[\textbf{2.}] The cyclic covering
@@ -479,7 +483,7 @@ the set of all \emph{$k$-maximum levels} for all $\alpha\in\A^{\leq k}$.
   to $\dot\cU^{\leq k}$ and the received family is still a nerve.
   \begin{figure}[h]
     \begin{center}
-      \begin{tikzpicture}[scale=3]
+      \begin{tikzpicture}[scale=3.5]
         \node[green!40!black] at (-0.3,0.4) {$\dot U_{\alpha^-}^{\leq k}$};
         \node[brown!40!black] at (0.65,0.3) {$\dot U_{\alpha^+}^{\leq k}$};
         \node[blue] at (0.4,-0.13) {$U\bigl(\alpha,\frac{\pi}{K_i}\bigr)$};
@@ -523,11 +527,12 @@ the set of all \emph{$k$-maximum levels} for all $\alpha\in\A^{\leq k}$.
       \end{tikzpicture}
     \end{center}
     \caption{An exemplary construction of an arc $\dot U_\alpha^{\leq k}$
-      corresponding to the anti-Stokes direction $\alpha$.  The
-      \textcolor{green!40!black}{green} arc is $\dot U_{\alpha^-}^{\leq k}$, the
-      \textcolor{brown!70!black}{brown} arc is $\dot U_{\alpha^+}^{\leq k}$ and
-      the \textcolor{blue}{blue} arc is the Stokes arc of level $K_i$ at
-      $\alpha$, where $K_i$ is the $k$-maximum level of $\alpha$.}
+      corresponding (in \textcolor{red!40!black}{red}) to the anti-Stokes
+      direction $\alpha$.  The \textcolor{green!40!black}{green} arc is
+      $\dot U_{\alpha^-}^{\leq k}$, the \textcolor{brown!70!black}{brown} arc is
+      $\dot U_{\alpha^+}^{\leq k}$ and the \textcolor{blue}{blue} arc is the
+      Stokes arc of level $K_i$ at $\alpha$, where $K_i$ is the $k$-maximum
+      level of $\alpha$.}
   \end{figure}
 \end{itemize}
 
@@ -542,7 +547,7 @@ the set of all \emph{$k$-maximum levels} for all $\alpha\in\A^{\leq k}$.
 
   \def\kOne{7}
   \def\kTwo{10}
-  \begin{tikzpicture}[scale=5] %{{{
+  \begin{tikzpicture}[scale=6] %{{{
 
     \newcommand{\myDrawArcA}[4]{%{{{
       % Parameter: radius , center , width , color
@@ -705,15 +710,15 @@ First we will proof Theorem~\ref{thm:mainThm2} in the case of a unique level.
 This means that
 \begin{itemize}
   \item either $\Lambda(A^0)$ has only one level $k$, thus
-    \begin{itemize}
-      \item $\Lambda(A^0)=\Lambda^k(A^0)$ and
-      \item $\Sto_\theta(A^0)=\Sto_\theta^k(A^0)$ for every $\theta$,
-    \end{itemize}
+    \begin{einr}
+      $\Lambda(A^0)=\Lambda^k(A^0)$ and $\Sto_\theta(A^0)=\Sto_\theta^k(A^0)$
+      for every $\theta$,
+    \end{einr}
   \item or we restrict to a given level $k\in\cK$.
 \end{itemize}
 The following lemma, which will also be required for the multileveled case,
 solves the case of a unique level.
-\begin{lem}
+\begin{lem}\label{lem:solutionOfSingleLeveledCase}
   Let $k\in\cK$.
   The morphism $h$ from Theorem~\ref{thm:mainThm2} is in the case of a unique
   level build as
@@ -743,17 +748,9 @@ solves the case of a unique level.
   \end{flushright}
   from
   \begin{itemize}
-    \item the canonical injective map
-      \[ \begin{tikzcd}
-        i^k:\underset{\alpha\in\A}\prod\Sto_\alpha^k(A^0) \rar&
-        \Gamma(\dot\cU^k;\Lambda^k(A^0)) \,,
-      \end{tikzcd} \]
-      i.e.\ the map which is the canonical extension of germs to their natural
-      arc of definition, and
-    \item the quotient map
-      \[ \begin{tikzcd}
-        s^k:\Gamma(\dot\cU^k;\Lambda^k(A^0)) \rar& H^1(S^1;\Lambda^k(A^0))
-      \end{tikzcd} \]
+  \item the canonical injective map $i^k$ i.e.\ the map which is the canonical
+    extension of germs to their natural arc of definition, and
+  \item the quotient map $s^k$
   \end{itemize}
   which are both isomorphisms.
 \end{lem}
@@ -763,35 +760,34 @@ solves the case of a unique level.
     \[ \begin{tikzcd}
       i^k: \underset{\alpha\in\A}\prod\Sto_\alpha^k(A^0)
       \rar &
-      \underset{\Gamma(\dot\cU^k;\Lambda^k(A^0))}{%
-        \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-          \underbrace{%
+      % \underset{\Gamma(\dot\cU^k;\Lambda^k(A^0))}{%
+      %   \underset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+      %     \underbrace{%
             \prod_{\alpha\in\A^k}\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))
-          }
-        }}
+          % }}}
     \end{tikzcd} \]
     is welldefined, i.e.\ the germs at $\alpha$ can be uniquely
     extended to the arc $\dot\cU_\alpha^k$, since
     \begin{itemize}
     \item the sheaf $\Lambda(A^0)$, and thus $\Lambda^k(A^0)$, is a
-      piecewise-constant sheaf, we know that the sections on arcs are uniquely
-      determined by their germs and
+      piecewise-constant sheaf, thus we know that the sections on arcs are
+      uniquely determined by their germs and
     \item arcs of $\dot\cU_\alpha^k$ are the natural domains of existence of the
       corresponding Stokes germs.
     \end{itemize}
     The second fact can be found in Loday-Richaud's paper~\cite{Loday2004} on
     page 5269.
-
     In~\cite[5269]{Loday2004} is also stated, that only the extensions of Stokes
     germs at $\alpha$ are sections of $\Lambda(A^0)$ on $\dot U_\alpha^k$ and
     this implies surjectivity.
   \item The second map
     \[ \begin{tikzcd}
       s^k:
-      \overset{\Gamma(\dot\cU^k;\Lambda^k(A^0))}{%
-        \overset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
-          \overbrace{%
-            \prod_{\alpha\in\A^k}\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))}}}
+      % \overset{\Gamma(\dot\cU^k;\Lambda^k(A^0))}{%
+      %   \overset{\text{\rotatebox[origin=c]{-90}{$=$}}}{%
+      %     \overbrace{%
+            \prod_{\alpha\in\A^k}\Gamma(\dot\cU_\alpha^k;\Lambda^k(A^0))
+          % }}}
       \rar &
       H^1(S^1;\Lambda^k(A^0))
     \end{tikzcd} \]
@@ -811,7 +807,6 @@ solves the case of a unique level.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{The case of several levels}
 Let us now proof the Theorem~\ref{thm:mainThm2} in the case of several levels,
-We will still use Loday-Richaud's paper~\cite{Loday1994} as reference.
 We will begin by defining some maps, which will be composed to obtain the
 isomorphism $h$ from the theorem.
 \begin{defn}\label{defn:firstSetOfInlusions}
@@ -890,7 +885,7 @@ isomorphism $h$ from the theorem.
 \begin{proof}
   \begin{enumerate}
     \item Denote by $\alpha^+$ the nearest anti-Stokes direction in
-      $\A^{\leq k}$ on the right\footnote{In clockwise direction.} of $\alpha$.
+      $\A^{\leq k}$ on the right of $\alpha$.
       The cocycles $\mathfrak{S}^{\leq k}(\dot f,\dot g)$ and
       $\mathfrak{S}^{\leq k}(\dot f',\dot g')$ are cohomologous if and only
       if there is a $0$-cochain $c=(c_\alpha)_{\alpha\in\A^{\leq k}}
@@ -940,7 +935,7 @@ proposition.
   By applying $\mathfrak{S}^{\leq k}$ successively for different $k$'s
   in decending order, one obtains the \emph{product map of single leveled
   cocycles $\tau$} in the following way
-  \[ \begin{tikzcd}[column sep=1.4cm,row sep=.9cm]
+  \[ \begin{tikzcd}[column sep=1.4cm,row sep=.4cm]
       \underset{\tikzmark{e1}}{\underbrace{%
         \Gamma(\dot\cU^{<k_r};\Lambda^{<k_r}(A^0))}}
       \times
@@ -950,14 +945,14 @@ proposition.
         \overset{\normalsize\text{\rotatebox[origin=c]{-90}{$=$}}}{%
           \Gamma(\dot\cU^{\leq k_r};\Lambda^{\leq k_r}(A^0))
       }}
-      \\\underset{\tikzmark{e2}}{\underbrace{%i
+      \\\\\underset{\tikzmark{e2}}{\underbrace{%i
         \Gamma(\dot\cU^{<k_{r-1}};\Lambda^{<k_{r-1}}(A^0))}}
       \times
       \Gamma(\dot\cU^{k_{r-1}};\Lambda^{k_{r-1}}(A^0))
       \rar{\mathfrak{S}^{\leq k_{r-1}}}&
       \overset{\tikzmark{n1}}{%
         \Gamma(\dot\cU^{\leq k_{r-1}};\Lambda^{\leq k_{r-1}}(A^0))}
-      \\\hspace{6cm}\cdots \rar{\mathfrak{S}^{\leq k_{r-2}}}&
+      \\\\\hspace{6cm}\cdots \rar{\mathfrak{S}^{\leq k_{r-2}}}&
       \overset{\tikzmark{n2}}{%
         \Gamma(\dot\cU^{\leq k_{r-2}};\Lambda^{\leq k_{r-2}}(A^0))}
       \\\underset{\tikzmark{eEND}}{\underbrace{%
@@ -966,7 +961,7 @@ proposition.
       \Gamma(\dot\cU^{k_3};\Lambda^{k_3}(A^0))
       \rar{\mathfrak{S}^{\leq k_3}}&
       \cdots\hspace{3cm}
-      \\
+      \\\\
       \Gamma(\dot\cU^{k_1};\Lambda^{k_1}(A^0))
       \times
       \Gamma(\dot\cU^{k_2};\Lambda^{k_2}(A^0))
@@ -975,11 +970,11 @@ proposition.
         \Gamma(\dot\cU^{\leq k_2};\Lambda^{\leq k_2}(A^0))}
   \end{tikzcd} \]
   \begin{tikzpicture}[remember picture,overlay]
-    \draw[<-] (n1) to[out=90,in=270] node[midway,fill=white,sloped]{$\cong$}
+    \draw[<-] (n1) to[out=90,in=270,distance=1.6cm] node[midway,fill=white,sloped]{$\cong$}
       ([yshift=.3em]e1);
-    \draw[<-] (n2) to[out=90,in=270] node[midway,fill=white,sloped]{$\cong$}
+    \draw[<-] (n2) to[out=90,in=270,distance=1.6cm] node[midway,fill=white,sloped]{$\cong$}
       ([yshift=.3em]e2);
-    \draw[<-] (nEND) to[out=90,in=270] node[midway,fill=white,sloped]{$\cong$}
+    \draw[<-] (nEND) to[out=90,in=270,distance=1.6cm] node[midway,fill=white,sloped]{$\cong$}
       ([yshift=.3em]eEND);
   \end{tikzpicture}
   which can be written in the following compact form
@@ -1053,7 +1048,9 @@ Theorem~\ref{thm:mainThm2} by composition of already bijective maps.
       \rar{\prod_{k\in\cK}i^k}
       & \displaystyle \prod_{k\in\cK}\Gamma(\dot\cU^k;\Lambda^k(A^0))
   \end{tikzcd} \]
-  by $\mathfrak{T}$. The bijection $h$ is then obtained as the composition
+  by $\mathfrak{T}$, where $i^k$ was defined in
+  Lemma~\ref{lem:solutionOfSingleLeveledCase}.
+  The bijection $h$ is then obtained as the composition
   \[
     \cT\circ\mathfrak{T}: \prod_{\alpha\in\A}\Sto_\alpha(A^0)
     \longrightarrow H^1(\cU;\Lambda(A^0)) \,.
@@ -1172,7 +1169,10 @@ arise.
                              \,.
   \end{align*}
 \end{exmp}
-The following $9$ cases of forms of Stokes matrices can arise:
+The following table gives an overview of the $9$ possible combinations and the
+corresponding forms of the Stokes matrices which can arise in our situation.
+The case in the lower right occurs when the direction $\alpha$ is not an
+anti-Stokes direction.
 \begin{center}
   \def\arraystretch{1.3}
   \setlength\tabcolsep{4mm}
@@ -1227,10 +1227,9 @@ consistent with the decomposition in the next part
 \end{cor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In proposition~\ref{prop:filtrationOfStokesGroup} and especially
-Remark~\ref{rem:filtrationOfStokesMats} we have defined a decomposition of the
-Stokes group $\Sto_\alpha(A^0)$ in subgroups generated by $k$-germs for
-$k\in\cK$.
+In Proposition~\ref{prop:filtrationOfStokesGroup} we have defined a
+decomposition of the Stokes group $\Sto_\alpha(A^0)$ in subgroups generated by
+$k$-germs for $k\in\cK$.
 In our case, we have at most two nontrivial factors.
 The map which gives the factors of this factorization in ascending order is
 denoted by $i_\alpha$ and the decomposition is then given by
@@ -1244,6 +1243,8 @@ This decomposition applied to some germ $\phi_\alpha$ is trivial if
 $\#\cK(\phi_\alpha)\leq1$, thus the interesting cases are the
 \textcolor{blue!75!black}{blue} cases from the table above.
 
+The lower right blue case will be discussed in the following example in more
+detail.
 \begin{exmp}\label{exmp:decompositionHere}
   Look at an anti-Stokes direction $\alpha\in\A$ and assume that
   $q_3\myrel{\alpha}q_2$, $q_2\myrel{\alpha}q_1$ and $q_3\myrel{\alpha}q_1$. We
@@ -1297,164 +1298,165 @@ $\#\cK(\phi_\alpha)\leq1$, thus the interesting cases are the
     \,.
   \end{align*}
 \end{exmp}
-The four nontrivial decomposition in our situation are given by:
-\begin{enumerate}
+\begin{rem}
+  The four nontrivial decomposition in our situation are given by:
+  \begin{enumerate}
   \item $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_1 \\0 & 0 & 1 \end{pmatrix}
-  \cdot\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}=
-  \begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & c_1 \\0 & 0 & 1 \end{pmatrix}$
+    \cdot\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}=
+    \begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & c_1 \\0 & 0 & 1 \end{pmatrix}$
   \item $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_1 & 1 \end{pmatrix}
-  \cdot\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}=
-  \begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & c_1 & 1 \end{pmatrix}$
+    \cdot\begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix}=
+    \begin{pmatrix} 1 & c_2 & c_3 \\0 & 1 & 0 \\0 & c_1 & 1 \end{pmatrix}$
   \item $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & c_1 \\0 & 0 & 1 \end{pmatrix}
-  \cdot\begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_3 & 0 & 1 \end{pmatrix}=
-  \begin{pmatrix} 1 & 0 & 0 \\c_2+c_1c_3 & 1 & c_1 \\c_3 & 0 & 1 \end{pmatrix}$
+    \cdot\begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_3 & 0 & 1 \end{pmatrix}=
+    \begin{pmatrix} 1 & 0 & 0 \\c_2+c_1c_3 & 1 & c_1 \\c_3 & 0 & 1 \end{pmatrix}$
   \item $\begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & c_1 & 1 \end{pmatrix}
-  \cdot\begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_3 & 0 & 1 \end{pmatrix}=
-  \begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_1c_2+c_3 & c_1 & 1 \end{pmatrix}$
-\end{enumerate}
+    \cdot\begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_3 & 0 & 1 \end{pmatrix}=
+    \begin{pmatrix} 1 & 0 & 0 \\c_2 & 1 & 0 \\c_1c_2+c_3 & c_1 & 1 \end{pmatrix}$
+  \end{enumerate}
+\end{rem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Explicit example}
-\def\kOne{1}
-\def\kTwo{3}
-\def\zkOnepzKtwo{14} % 2\cdot(\kOne+2\cdot\kTwo
-\def\zkOne{2} % 2*\kOne
-\def\zkTwo{6} % 2*\kTwo
+% \subsubsection{Explicit example}
+\begin{exmp}
+    \def\kOne{1}
+    \def\kTwo{3}
+    \def\zkOnepzKtwo{14} % 2\cdot(\kOne+2\cdot\kTwo
+    \def\zkOne{2} % 2*\kOne
+    \def\zkTwo{6} % 2*\kTwo
 
-Even more explicit, we can fix the levels $k_1=\kOne$ and $k_2=\kTwo$ together
-with $\theta=0$.
-Assume without any restriction that $q_1\myrel{\theta}q_2$ and
-$q_1\myrel{\theta}q_3$ as well as $q_2\myrel{\theta}q_3$.
-Other choices would result \rewrite{in reordering of the tuples below.}
-\comm{Let the matrix $L$ be given as $L=\diag(l_1,l_2,l_3)\in\Gl_n(\C)$.}
+    Even more explicit, we can fix the levels $k_1=\kOne$ and $k_2=\kTwo$ together
+    with $\theta=0$.
+    Assume without any restriction that $q_1\myrel{\theta}q_2$ and
+    $q_1\myrel{\theta}q_3$ as well as $q_2\myrel{\theta}q_3$.
+    Other choices would result \rewrite{in reordering of the tuples below.}
+    \comm{Let the matrix $L$ be given as $L=\diag(l_1,l_2,l_3)\in\Gl_n(\C)$.}
 
-The classification space is in this case isomorphic to
-$\C^{2\cdot(\kOne+2\cdot\kTwo)}=\C^{\zkOnepzKtwo}$.
-The element
-\[
-  ({}^1c_1,{}^2c_1,
-  {}^1c_2,{}^1c_3,{}^2c_2,{}^2c_3,\dots,{}^{\zkTwo}c_2,{}^{\zkTwo}c_3)
-  \in\C^{\zkOnepzKtwo}
-\]
-gets, via the isomorphism $\prod_{\alpha\in\A}j_\alpha$, mapped to
-\begin{align*}
-  &\left(
-  \left(
-    \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & {}^1c_1 \\0 & 0 & 1 \end{pmatrix},
-    \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & {}^2c_1 & 1 \end{pmatrix}
-  \right),
-  \right.
-\\&\qquad\left(
-  \left.
-    \begin{pmatrix} 1 & {}^1c_2 & {}^1c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
-    \begin{pmatrix} 1 & 0 & 0 \\{}^2c_2 & 1 & 0 \\{}^2c_3 & 0 & 1 \end{pmatrix},
-    \dots,
-    \begin{pmatrix} 1 & 0 & 0 \\{}^{\zkTwo}c_2 & 1 & 0 \\{}^{\zkTwo}c_3 & 0 & 1 \end{pmatrix}
-  \right)
-  \right)
-\end{align*}
-in $\prod_{\alpha\in\A^{\kOne}}\SSto_c{\alpha}^{\kOne}(A^0) \times
-\prod_{\alpha\in\A^{\kTwo}}\SSto_{\alpha}^{\kTwo}(A^0)$ and thus the element
-\begin{align*}
-  &\left(
-  \left(
-    \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & {}^1c_1 \\0 & 0 & 1 \end{pmatrix},
-    \id,\id,
-    \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & {}^2c_1 & 1 \end{pmatrix},
-    \id,\id
-  \right),
-  \right.
-\\&\qquad\left(
-  \left.
-    \begin{pmatrix} 1 & {}^1c_2 & {}^1c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
-    \begin{pmatrix} 1 & 0 & 0 \\{}^2c_2 & 1 & 0 \\{}^2c_3 & 0 & 1 \end{pmatrix},
-    \dots,
-    \begin{pmatrix} 1 & 0 & 0 \\{}^{\zkTwo}c_2 & 1 & 0 \\{}^{\zkTwo}c_3 & 0 & 1 \end{pmatrix}
-  \right)
-  \right)
-\end{align*}
-in
-$\prod_{\alpha\in\A}\SSto_{\alpha}^{\kOne}(A^0) \times
-\prod_{\alpha\in\A}\SSto_{\alpha}^{\kTwo}(A^0)$.
-Using the morphism $\prod_{\alpha\in\A}i_\alpha^{-1}$ we get a complete set of
-Stokes matrices as
-\begin{align*}
-  &\left(
-    \begin{pmatrix} 1 & {}^1c_2 & {}^1c_3 \\0 & 1 & {}^1c_1 \\0 & 0 & 1 \end{pmatrix},
-    \begin{pmatrix} 1 & 0 & 0 \\{}^2c_2 & 1 & 0 \\{}^2c_3 & 0 & 1 \end{pmatrix},
-    \begin{pmatrix} 1 & {}^3c_2 & {}^3c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
-  \right.
-\\&\qquad
-  \left.
-    \begin{pmatrix} 1 & 0 & 0 \\{}^4c_2 & 1 & 0 \\{}^2c_1{}^4c_2+{}^4c_3 & {}^2c_1 & 1 \end{pmatrix},
-    \begin{pmatrix} 1 & {}^5c_2 & {}^5c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
-    \begin{pmatrix} 1 & 0 & 0 \\{}^{\zkTwo}c_2 & 1 & 0 \\{}^{\zkTwo}c_3 & 0 & 1 \end{pmatrix}
-  \right)
-  \in
-  \prod_{\alpha\in\A}\SSto_{\alpha}(A^0) \,.
-\end{align*}
-Applying the isomorphism $\prod_{\alpha\in\A}\rho_\alpha^{-1}$, i.e.\
-conjugation by the fundamental solution $\cY_0(t)=t^Le^{Q(t^{-1})}$ (cf.\
-Proposition~\ref{prop:representation}), yields then the corresponding element in
-$\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$.
-\begin{comment}
-  This element is explicitly given as
-  \begin{align*}
+    The classification space is in this case isomorphic to
+    $\C^{2\cdot(\kOne+2\cdot\kTwo)}=\C^{\zkOnepzKtwo}$.
+    The element $({}^1c_1,{}^2c_1,
+    {}^1c_2,{}^1c_3,{}^2c_2,{}^2c_3,\dots,{}^{\zkTwo}c_2,{}^{\zkTwo}c_3)
+    \in\C^{\zkOnepzKtwo}$
+    gets\comm{, via the isomorphism $\prod_{\alpha\in\A}j_\alpha$,} mapped to
+    \begin{align*}
     &\left(
-      \begin{pmatrix}
-          1 & {}^1c_2 t^{l_2-l_1}e^{(q_2-q_1)(t^{-1})}
-            & {}^1c_3 t^{l_3-l_1}e^{(q_3-q_1)(t^{-1})}
-        \\0 & 1 & {}^1c_1 t^{l_3-l_2}e^{(q_3-q_2)(t^{-1})}
-        \\0 & 0 & 1
-      \end{pmatrix},
-      \cY_0^{-1}
-      \begin{pmatrix}
-          1 & 0 & 0
-        \\{}^2c_2 & 1 & 0
-        \\{}^2c_3 & 0 & 1
-      \end{pmatrix}
-      \cY_0
-      ,
+    \left(
+        \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & {}^1c_1 \\0 & 0 & 1 \end{pmatrix},
+        \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & {}^2c_1 & 1 \end{pmatrix}
+    \right),
     \right.
-  \\&\qquad
-      \cY_0^{-1}
-      \begin{pmatrix}
-          1 & {}^3c_2 & {}^3c_3
-        \\0 & 1 & 0
-        \\0 & 0 & 1
-      \end{pmatrix}
-      \cY_0
-      ,
-      \cY_0^{-1}
-      \begin{pmatrix}
-          1 & 0 & 0
-        \\{}^4c_2 & 1 & 0
-        \\{}^2c_1{}^4c_2+{}^4c_3 & {}^2c_1 & 1
-      \end{pmatrix}
-      \cY_0
-      ,
-  \\&\qquad\qquad
+    \\&\qquad\left(
     \left.
-      \cY_0^{-1}
-      \begin{pmatrix}
-          1 & {}^5c_2 & {}^5c_3
-        \\0 & 1 & 0
-        \\0 & 0 & 1
-      \end{pmatrix}
-      \cY_0
-      ,
-      \cY_0^{-1}
-      \begin{pmatrix}
-          1 & 0 & 0
-        \\{}^{\zkTwo}c_2 & 1 & 0
-        \\{}^{\zkTwo}c_3 & 0 & 1
-      \end{pmatrix}
-      \cY_0
+        \begin{pmatrix} 1 & {}^1c_2 & {}^1c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
+        \begin{pmatrix} 1 & 0 & 0 \\{}^2c_2 & 1 & 0 \\{}^2c_3 & 0 & 1 \end{pmatrix},
+        \dots,
+        \begin{pmatrix} 1 & 0 & 0 \\{}^{\zkTwo}c_2 & 1 & 0 \\{}^{\zkTwo}c_3 & 0 & 1 \end{pmatrix}
+    \right)
+    \right)
+    \end{align*}
+    in $\prod_{\alpha\in\A^{\kOne}}\SSto_c{\alpha}^{\kOne}(A^0) \times
+    \prod_{\alpha\in\A^{\kTwo}}\SSto_{\alpha}^{\kTwo}(A^0)$ and thus the element
+    \begin{align*}
+    &\left(
+    \left(
+        \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & {}^1c_1 \\0 & 0 & 1 \end{pmatrix},
+        \id,\id,
+        \begin{pmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\0 & {}^2c_1 & 1 \end{pmatrix},
+        \id,\id
+    \right),
+    \right.
+    \\&\qquad\left(
+    \left.
+        \begin{pmatrix} 1 & {}^1c_2 & {}^1c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
+        \begin{pmatrix} 1 & 0 & 0 \\{}^2c_2 & 1 & 0 \\{}^2c_3 & 0 & 1 \end{pmatrix},
+        \dots,
+        \begin{pmatrix} 1 & 0 & 0 \\{}^{\zkTwo}c_2 & 1 & 0 \\{}^{\zkTwo}c_3 & 0 & 1 \end{pmatrix}
+    \right)
+    \right)
+    \end{align*}
+    in
+    $\prod_{\alpha\in\A}\SSto_{\alpha}^{\kOne}(A^0) \times
+    \prod_{\alpha\in\A}\SSto_{\alpha}^{\kTwo}(A^0)$.
+    Using the morphism $\prod_{\alpha\in\A}i_\alpha^{-1}$ we get a complete set of
+    Stokes matrices as
+    \begin{align*}
+    &\left(
+        \begin{pmatrix} 1 & {}^1c_2 & {}^1c_3 \\0 & 1 & {}^1c_1 \\0 & 0 & 1 \end{pmatrix},
+        \begin{pmatrix} 1 & 0 & 0 \\{}^2c_2 & 1 & 0 \\{}^2c_3 & 0 & 1 \end{pmatrix},
+        \begin{pmatrix} 1 & {}^3c_2 & {}^3c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
+    \right.
+    \\&\qquad
+    \left.
+        \begin{pmatrix} 1 & 0 & 0 \\{}^4c_2 & 1 & 0 \\{}^2c_1{}^4c_2+{}^4c_3 & {}^2c_1 & 1 \end{pmatrix},
+        \begin{pmatrix} 1 & {}^5c_2 & {}^5c_3 \\0 & 1 & 0 \\0 & 0 & 1 \end{pmatrix},
+        \begin{pmatrix} 1 & 0 & 0 \\{}^{\zkTwo}c_2 & 1 & 0 \\{}^{\zkTwo}c_3 & 0 & 1 \end{pmatrix}
     \right)
     \in
-    \prod_{\alpha\in\A}\Sto_{\alpha}(A^0) \,.
-  \end{align*}
-\end{comment}
+    \prod_{\alpha\in\A}\SSto_{\alpha}(A^0) \,.
+    \end{align*}
+    Applying the isomorphism $\prod_{\alpha\in\A}\rho_\alpha^{-1}$, i.e.\
+    conjugation by the fundamental solution $\cY_0(t)=t^Le^{Q(t^{-1})}$ (cf.\
+    Proposition~\ref{prop:representation}), yields then the corresponding element in
+    $\prod_{\alpha\in\A}\Sto_{\alpha}(A^0)$.
+\end{exmp}
+% \begin{comment}
+%   This element is explicitly given as
+%   \begin{align*}
+%     &\left(
+%       \begin{pmatrix}
+%           1 & {}^1c_2 t^{l_2-l_1}e^{(q_2-q_1)(t^{-1})}
+%             & {}^1c_3 t^{l_3-l_1}e^{(q_3-q_1)(t^{-1})}
+%         \\0 & 1 & {}^1c_1 t^{l_3-l_2}e^{(q_3-q_2)(t^{-1})}
+%         \\0 & 0 & 1
+%       \end{pmatrix},
+%       \cY_0^{-1}
+%       \begin{pmatrix}
+%           1 & 0 & 0
+%         \\{}^2c_2 & 1 & 0
+%         \\{}^2c_3 & 0 & 1
+%       \end{pmatrix}
+%       \cY_0
+%       ,
+%     \right.
+%   \\&\qquad
+%       \cY_0^{-1}
+%       \begin{pmatrix}
+%           1 & {}^3c_2 & {}^3c_3
+%         \\0 & 1 & 0
+%         \\0 & 0 & 1
+%       \end{pmatrix}
+%       \cY_0
+%       ,
+%       \cY_0^{-1}
+%       \begin{pmatrix}
+%           1 & 0 & 0
+%         \\{}^4c_2 & 1 & 0
+%         \\{}^2c_1{}^4c_2+{}^4c_3 & {}^2c_1 & 1
+%       \end{pmatrix}
+%       \cY_0
+%       ,
+%   \\&\qquad\qquad
+%     \left.
+%       \cY_0^{-1}
+%       \begin{pmatrix}
+%           1 & {}^5c_2 & {}^5c_3
+%         \\0 & 1 & 0
+%         \\0 & 0 & 1
+%       \end{pmatrix}
+%       \cY_0
+%       ,
+%       \cY_0^{-1}
+%       \begin{pmatrix}
+%           1 & 0 & 0
+%         \\{}^{\zkTwo}c_2 & 1 & 0
+%         \\{}^{\zkTwo}c_3 & 0 & 1
+%       \end{pmatrix}
+%       \cY_0
+%     \right)
+%     \in
+%     \prod_{\alpha\in\A}\Sto_{\alpha}(A^0) \,.
+%   \end{align*}
+% \end{comment}
 
 %%% Local Variables:
 %%% TeX-master: "Maximilian_Huber-Masters_Thesis-with_notes.tex"

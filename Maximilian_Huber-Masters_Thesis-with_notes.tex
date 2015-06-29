@@ -122,48 +122,42 @@
 
 % \ifnum\myHideVariable=0
 \input{chp3sec0-Stokes_structures.tex}
-
     % \ifnum\myHideVariable=0
     \input{chp3sec1-thm1.tex}
     % \fi
 
-    \ifnum\myHideVariable=0
+    % \ifnum\myHideVariable=0
     \input{chp3sec2-Stokes_groups.tex}
-    \fi
-
-    \ifnum\myHideVariable=0
-    \input{chp3sec3-thm2.tex}
-    \fi
-
-    \ifnum\myHideVariable=0
-    \input{chp3sec4-further_improvements.tex}
-    \fi
+    % \fi
 
     % \ifnum\myHideVariable=0
-    \input{chp3sec5-diagram.tex}
+    \input{chp3sec3-thm2.tex}
+    % \fi
+
+    % \ifnum\myHideVariable=0
+    \input{chp3sec4-further_improvements.tex}
+    % \fi
+
+    % \ifnum\myHideVariable=0
+    \input{chp3sec5-multisumm.tex}
+    % \fi
+
+    % \ifnum\myHideVariable=0
+    \input{chp3sec6-diagram.tex}
     % \fi
 % \fi
 
+\pagebreak
 \appendix
-\KOMAoptions{open=any}
 \ifnum\myHideVariable=0
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \ifnum\myDevelopVariable=1
-    \addcontentsline{toc}{chapter}{Appendix}
-
-    % \input{app-moreBasics.tex}
-    \input{app-landkarte.tex}
+      \addcontentsline{toc}{chapter}{Appendix}
+      \input{app-landkarte.tex}
+      \input{introVortrag/notes.tex}
+      \input{app-notes.tex}
+      \input{app-aufgaben.tex}
     \fi
-
-    % \ifnum\myDevelopVariable=1
-    % % \input{introVortrag/notes.tex}
-    %   \input{app-notes.tex}
-    % % \input{app-aufgaben.tex}
-    % \fi
-
-    %\bibliographystyle{geralpha}
-    %\def\btxandlong{und}
-    %\bibliography{main}
 
     % \nocite{*}
     \makeatletter
@@ -171,6 +165,7 @@
     \makeatother
     \addcontentsline{toc}{chapter}{Bibliography}
     \printbibliography[keyword={prim},title={Bibliography}]
+    \KOMAoptions{open=any}
     \printbibliography[notkeyword={prim},title={Additional references}]
 
     %\input{app-github.tex}

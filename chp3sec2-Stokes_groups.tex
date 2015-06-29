@@ -160,15 +160,15 @@ part of $f$.
         }
       \end{scope}
       \draw [blue!40!black,dashed]
-        ({\argA+4/\k + 1/2/\k},{-\absA}) -- ({\argA+4/\k + 1/2/\k},0);
+        ({\argA+4/\k + 1/2/\k},{-\absA - 0.2}) -- ({\argA+4/\k + 1/2/\k},0);
       \draw [blue!40!black,dashed]
-        ({\argA+4/\k + 3/2/\k},{-\absA}) -- ({\argA+4/\k + 3/2/\k},0);
+        ({\argA+4/\k + 3/2/\k},{-\absA - 0.2}) -- ({\argA+4/\k + 3/2/\k},0);
       \draw [blue!40!black, thick
             ,decorate
             ,decoration={brace,mirror,amplitude=10pt}
             ,xshift=0pt
             ,yshift=0pt]
-        ({\argA+4/\k + 1/2/\k},{-\absA}) -- ({\argA+4/\k + 3/2/\k},{-\absA})
+        ({\argA+4/\k + 1/2/\k},{-\absA - 0.2}) -- ({\argA+4/\k + 3/2/\k},{-\absA - 0.2})
         node [midway,yshift=-7pt] {$\tikzmark{g0}$};
 
       \node at ({\argA+2 - 3/\k},0) {$\tikzmark{f-1}$};
@@ -232,8 +232,11 @@ thus the new graphs are also obtained by \rewrite{mirroring at the line $t=0$.}
     $q_j\myrel{\theta}q_l$.
   \end{einr}
 \end{rem}
-Let us now use the defined relations to say, which are the interesting
-directions of $S^1$.
+\begin{comment}
+  Let us now use the defined relations from
+  Definition~\ref{defn:definingRelations} to say, which are the interesting
+  directions of $S^1$.
+\end{comment}
 \begin{defn}\label{defn:antiStokesDir}
   % \marginnote{See \cite[Def.I.4.5]{Loday1994}(for the ramified case)
   %   \cite[Def.3.2]{boalch}}
@@ -254,6 +257,11 @@ directions of $S^1$.
       \end{comment}
   \end{enumerate}
 \end{defn}
+If one starts with a fundamental solution on a sector, one is able to extend
+this analytic to an larger sector up to some barrier.
+The Stokes directions are exactly the directions, beyond which some fundamental
+directions can't be extended.
+
 The clockwise ordering is chosen, similar to Loday-Richaud's
 paper~\cite{Loday1994}, since the calculations are then compatible with the
 calculations, which look at $\infty$ and take a counterclockwise ordering.
@@ -376,7 +384,7 @@ or, if one starts by comparing the actual fundamental solutions on arcs, as
     \overset{\cong}{\longrightarrow} \SSto_\theta(A^0)$.
   \end{s-rem}
 \end{defn}
-
+\pagebreak %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{prop}\label{prop:representation}
   \marginnote{\cite[Def.I.4.7]{Loday1994}\\\cite[78f]{Loday2014}}
   In this situation is
@@ -655,8 +663,8 @@ Formulated is this in the following corollary.
 \subsection{Decomposition of the Stokes group by levels}
 \marginnote{\cite{Loday1994}, \cite[362ff]{Martinet1991}}
 \rewrite{The goal of this section is, to introduce a filtration of
-$\Lambda(A^0)$, which will be restricted to $\Sto_\theta(A^0)$ and defines there
-a filtration.} This leads to a decomposition of $\Sto_\theta(A^0)$ into a
+$\Lambda(A^0)$, which will be restricted to $\Sto_\theta(A^0)$.}
+This leads to a decomposition of $\Sto_\theta(A^0)$ into a
 semidirect product (cf.\ Proposition~\ref{prop:filtrationOfStokesGroup}).
 
 Let us introduce a couple of notations and definitions, which coincide with the
@@ -683,14 +691,13 @@ paper~\cite[362f]{Martinet1991} from Martinet and Ramis.
 \end{notations}
 Corresponding to the definitions above, one can define
 $\A^\star:=\left\{\alpha\in\A\mid\Sto_\alpha^\star(A^0)\neq\{\id\}\right\}$
-for $\star\in\{k,<k,\leq k,\dots\}$ and we say that \emph{$\alpha$ is bearing
-the level $k$} if $\alpha\in\A^k$.
+for $\star\in\{k,<k,\leq k,\dots\}$.
 \begin{rem}
   It is clear that for every $k\in\cK$ we have the canonical inclusions
   $\A^k\hookrightarrow\A^{\leq k}$ and $\A^{<k}\hookrightarrow\A^{\leq k}$.
 \end{rem}
-Sometimes it is also useful to talk about the \emph{set of levels beared by an
-direction $\alpha\in\A$}:
+We say that \emph{$\alpha$ is bearing the level $k$} if $\alpha\in\A^k$ and
+denote the \emph{set of levels beared by an direction $\alpha\in\A$} by
 \[
   \cK_\alpha:=\left\{k\in\cK\mid\Sto_\alpha^k(A^0)\neq\{\id\}\right\} \,.
 \]
@@ -698,42 +705,37 @@ direction $\alpha\in\A$}:
   The Lemma~\ref{lem:rotationalSym} implies that from $k\in\cK_{\alpha}$ follows
   that $k\in\cK_{\alpha+m\frac{\pi}{k}}$ for $m\in\N$.
 \end{cor}
+\vspace{-2pt}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Let us now study the sheaves $\Lambda^\star(A^0)$ and discuss how they
 correlate \rewrite{and how they can be composed from the others}.
-
 The following proposition can be found as~\cite[Prop.I.5.1]{Loday1994} and the
 key-statement is also given in~\cite[Prop.4.10]{Martinet1991}.
 \begin{prop}\label{prop:PropertiesOfStokesSheafSplitting}
   \marginnote{\cite[Prop.I.5.1]{Loday1994}}
-  For any level $k\in\cK$ one has that $\Lambda^{k}(A^0)$,
-  $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$ are sheaves of subgroups of
-  $\Lambda(A^0)$ and the sheaf $\Lambda^k(A^0)$ is normal in
-  $\Lambda^{\leq k}(A^0)$.
-  \begin{comment}
-    A subgroup $N$ is normal in $G$ ($N\vartriangleleft G$) if it is stable
-    under conjugation, i.e.
-    \[
-      N\vartriangleleft G \Leftrightarrow \forall n\in N \forall g\in G,
-      gng^{-1}\in N ,.
-    \]
-  \end{comment}
-
-  \marginnote{\cite[Proposition 10]{Martinet1991}}
-  \rewrite{We even know more,} let
-  \begin{itemize}
-    \item $i:\Lambda^k(A^0)\hookrightarrow\Lambda^{\leq k}(A^0)$ be the
+  For any level $k\in\cK$ one has that
+  \begin{enumerate}
+  \item $\Lambda^{k}(A^0)$, $\Lambda^{\leq k}(A^0)$ and $\Lambda^{<k}(A^0)$ are
+    sheaves of subgroups of $\Lambda(A^0)$,
+  \item the sheaf $\Lambda^k(A^0)$ is normal in
+    $\Lambda^{\leq k}(A^0)$ and
+  \item
+    \marginnote{\cite[Proposition 10]{Martinet1991}}
+    if one defines
+    \begin{itemize}
+    \item $i:\Lambda^k(A^0)\hookrightarrow\Lambda^{\leq k}(A^0)$ to be the
       canonical inclusion and
-    \item $p:\Lambda^{\leq k}(A^0)\twoheadrightarrow\Lambda^{<k}(A^0)$ be the
-      truncation to terms of levels $<k$.
-  \end{itemize}
-  Then does the exact sequence of sheaves
-  \[
-    1\longrightarrow\Lambda^k(A^0)
-    \overset{i}\longrightarrow\Lambda^{\leq k}(A^0)
-    \overset{p}\longrightarrow\Lambda^{<k}(A^0)
-    \longrightarrow 1 \,,
-  \]
-  split.
+    \item $p:\Lambda^{\leq k}(A^0)\twoheadrightarrow\Lambda^{<k}(A^0)$ to be the
+      truncation to terms of levels $<k$
+    \end{itemize}
+    does the exact sequence of sheaves
+    \[
+      1\longrightarrow\Lambda^k(A^0)
+      \overset{i}\longrightarrow\Lambda^{\leq k}(A^0)
+      \overset{p}\longrightarrow\Lambda^{<k}(A^0)
+      \longrightarrow 1 \,,
+    \]
+    split.
+  \end{enumerate}
 \end{prop}
 From the splitting of the sequence, we obtain immediately the following
 decomposition into a semidirect product (cf.\ \cite[75]{Robinson2003An}).
@@ -759,7 +761,7 @@ decomposition into a semidirect product (cf.\ \cite[75]{Robinson2003An}).
     of $f^{\leq k}$ to terms of level $<k$, i.e.\ by applying the map $p$ from
     Proposition~\ref{prop:PropertiesOfStokesSheafSplitting}.
     This truncation can explicitly be achieved, in terms of Stokes matrices, by
-    keeping in representations $1+\sum C^{(j,l)}$ of $f^{\leq k}$ only the
+    keeping in the representations $1+\sum C^{(j,l)}$ of $f^{\leq k}$ only the
     blocks $C^{(j,l)}$ such that $\deg(q_j-q_l)<k$.
 
     A factorization algorithm could then be:
@@ -778,59 +780,58 @@ decomposition into a semidirect product (cf.\ \cite[75]{Robinson2003An}).
   where the semidirect product is taken in an ascending or descending order of
   levels.
 \end{cor}
-\begin{rem}
-  Loday-Richaud states in her paper \cite[Prop.I.5.3]{Loday1994} the following
-  proposition, which is a more general version of
-  Proposition~\ref{prop:PropertiesOfStokesSheafSplitting}.
-  \begin{s-prop}
-    \marginnote{\cite[Prop.I.5.3]{Loday1994}}
-    For any levels $k$,$k'\in\cK$ with $k'<k$ one has:
-    \begin{enumerate}
-      \item the sheaf $\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k'}(A^0)$ is
-        normal in $\Lambda^{\leq k}(A^0)$;
-      \item the exact sequence of sheaves
-        \[
-          1\longrightarrow\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k}(A^0)
-          \overset{i}\longrightarrow\Lambda^{\leq k}(A^0)
-          \overset{p}\longrightarrow\Lambda^{<k'}(A^0)
-          \longrightarrow 1 \,,
-        \]
-        where
-        \begin{itemize}
-          \item $i$ is the canonical inclusion and
-          \item $p$ is the truncation to terms of levels $<k'$,
-        \end{itemize}
-        splits.
-    \end{enumerate}
-    \TODO[is $\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k}(A^0)=\Lambda^k(A^0)$
-    and thus the first proposition a corollary of this?]
-  \end{s-prop}
-  We can use this proposition to follow (cf.\ \cite[Cor.I.5.4]{Loday1994}) that
+Loday-Richaud states in her paper~\cite[Prop.I.5.3]{Loday1994} the following
+proposition, which is a more general version of
+Proposition~\ref{prop:PropertiesOfStokesSheafSplitting}.
+\begin{s-prop}
+  \marginnote{\cite[Prop.I.5.3]{Loday1994}}
+  For any levels $k$,$k'\in\cK$ with $k'<k$ one has:
   \begin{enumerate}
-    \item
-      the filtration
-      \[
-        \Lambda^{k_r}(A^0)
-        =
-        \Lambda^{\geq k_r}(A^0)
-        \subset
-        \Lambda^{\geq k_{r-1}}(A^0)
-        \subset
-        \cdots
-        \subset
-        \Lambda^{\geq k_{1}}(A^0)
-        =
-        \Lambda(A^0)
-      \]
-      is normal and
-    \item we can use this to achieve the decomposition
-      \[
-        \Lambda(A^0)\cong\underset{k\in\cK}\bigltimes\Lambda^k(A^0)
-      \]
-      taken in an arbitrary order. In fact, one can also extend the algorithm
-      from Remark~\ref{rem:algFactorization} to an arbitrary order of levels.
+  \item the sheaf $\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k'}(A^0)$ is
+    normal in $\Lambda^{\leq k}(A^0)$;
+  \item the exact sequence of sheaves
+    \[
+      1\longrightarrow\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k}(A^0)
+      \overset{i}\longrightarrow\Lambda^{\leq k}(A^0)
+      \overset{p}\longrightarrow\Lambda^{<k'}(A^0)
+      \longrightarrow 1 \,,
+    \]
+    where
+    \begin{itemize}
+    \item $i$ is the canonical inclusion and
+    \item $p$ is the truncation to terms of levels $<k'$,
+    \end{itemize}
+    splits.
   \end{enumerate}
-\end{rem}
+  \TODO[is $\Lambda^{\geq k'}(A^0)\cap\Lambda^{\leq k}(A^0)=\Lambda^k(A^0)$
+  and thus the first proposition a corollary of this?]
+\end{s-prop}
+We can use this proposition to follow (cf.\ \cite[Cor.I.5.4]{Loday1994}) that
+\begin{enumerate}
+\item
+  the filtration
+  \[
+    \Lambda^{k_r}(A^0)
+    =
+    \Lambda^{\geq k_r}(A^0)
+    \subset
+    \Lambda^{\geq k_{r-1}}(A^0)
+    \subset
+    \cdots
+    \subset
+    \Lambda^{\geq k_{1}}(A^0)
+    =
+    \Lambda(A^0)
+  \]
+  is normal and
+\item we can use this to achieve the decomposition
+  \[
+    \Lambda(A^0)\cong\underset{k\in\cK}\bigltimes\Lambda^k(A^0)
+  \]
+  taken in an arbitrary order. In fact, one can also extend the algorithm
+  from Remark~\ref{rem:algFactorization} to an arbitrary order of levels.
+\end{enumerate}
+
 The important statement, which we will use later, is then the following
 Proposition. It is stated by Loday-Richaud in her Paper~\cite{Loday1994} as
 Proposition I.5.5 or in the Paper~\cite[Thm.4.8]{Martinet1991} by Martinet and
@@ -853,11 +854,12 @@ Ramis.
     \]
     where the factorization is taken in ascending order.
   \end{s-defn}
-  \begin{s-rem}\label{rem:filtrationOfStokesMats}
+\end{prop}
+  % \begin{s-rem}\label{rem:filtrationOfStokesMats}
     Write $\rho_{\alpha}^k:\Sto^k_\alpha(A^0)\to\SSto^k_\alpha(A^0)$ for
     the \rewrite{restriction} of the map $\rho_{\alpha}$
     (cf.\ Proposition~\ref{prop:representation}) to the level $k$.
-    \rewrite{Then, one can} denote, by ab the induced decomposition also by
+    By abuse of notation we denote the induced decomposition also by
     \[
       i_\alpha:
       \SSto_\alpha(A^0)
@@ -876,8 +878,7 @@ Ramis.
         & \prod_{k\in\cK_\alpha}\SSto_\alpha^k(A^0)\,,
     \end{tikzcd} \]
     commutes.
-  \end{s-rem}
-\end{prop}
+  % \end{s-rem}
 
 %%% Local Variables:
 %%% TeX-master: "Maximilian_Huber-Masters_Thesis-with_notes.tex"
