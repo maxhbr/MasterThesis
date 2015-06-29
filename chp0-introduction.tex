@@ -1,24 +1,21 @@
 \chapter{Introduction}
-\PROBLEM[or motivation?]
-
-\PROBLEM[Danksagung? Erwähnen der software?]
-
 \TODO[see~\cite{van2003galois} for better text]
-The basic problem, from which this \rewrite{masters-thesis} arises, is that
-there are differential equations $(\frac{d}{dt}-A)\hat v=w$ with coefficients
-in convergent powers series, which have no solution with converging entries.
-One can use the theory of meromorphic connections, to look at this problem and
-the interesting object is then the classifying set\comm{, which is defined
-as\dots} (cf.\ Section~\ref{sec:classifyingSet}).
+Let $t$ be a local coordinate around $0$ in $\C$.
+The basic problem, from which this master's thesis arises, is that there are
+differential equations $(\frac{d}{dt}-A)\hat v=w$ with coefficients in
+convergent powers series, which have no solution with converging entries.
+By looking at asymptotic solutions on sectors and their relations on overlaps
+one obtains the Stokes phenomenon.
+One can use the language of meromorphic connections or the language of systems,
+to look at this problem and the interesting object is then the classifying
+set\comm{, which is defined as\dots} (cf.\ Section~\ref{sec:classifyingSet}).
+The information contained in the Stokes phenomenon will be exactly the
+information needed to classify meromorphic connections up to convergent
+transformation.
 
-\TODO[Or: want to classify meromorphic connections with singularities.]
-
-\TODO[motivation for meromorphic connections]
-
-We will only be interested in local information and thus only in local
-classification of meromorphic connections.
-This classification can be splitted in the coarse formal classification and the
-fine meromorphic classification.
+We will only be interested in local classification and thus only in local
+information of meromorphic connections. This classification can be splitted in
+the coarse formal classification and the fine meromorphic classification.
 
 The formal classification problem was solved by the Levelt-Turittin Theorem
 (cf.\ Theorem~\ref{thm:leveltTurittin}). It states that in every formal
@@ -30,10 +27,11 @@ meromorphic connections are well understood.
 
 Starting with a formal equivalence class corresponding to some model $A^0$, we
 can apply the meromorphic classification.
-The obtained set of meromorphic classes will be called the classifying set
-$\cH(A^0)$ (cf.\ Section~\ref{sec:classifyingSet}).
-The tool to describe the classifying set will be the Stokes structures which
-turn out to deliver exactly the needed information.
+The obtained set of meromorphic classes will be called the classifying set, but
+we will look at the slightly larger space $\cH(A^0)$ of meromorphic pairs
+(cf.\ Section~\ref{sec:classifyingSet}).
+The tool to describe the set of meromorphic pairs will be the Stokes structures.
+% which turn out to provide exactly the needed information.
 This idea is formulated in the Malgrange-Sibuya Theorem
 (cf.\ Theorem~\ref{thm:mainThm1}), where the Stokes structures appear as the
 first cohomology $H^1(S^1;\Lambda(A^0))$ of the Stokes sheaf
@@ -44,30 +42,20 @@ in the $H^1(S^1;\Lambda(A^0))$ contains a unique cocycle called the Stokes
 cocycle (cf.\ Definition~\ref{defn:stokesCocycle}) of special form.
 These Stokes cocycles are given by the elements in the product over some
 special directions $\theta\in\A\subset S^1$ determined by $A^0$
-(cf.\ Definition~\ref{defn:antiStokesDir}) of groups
+(cf.\ Definition~\ref{defn:antiStokesDir}) of Stokes groups
 $\Sto_\theta(A^0)\subset\Lambda_\theta(A^0)$
 (cf.\ Definition~\ref{defn:stokesGroup}).
-We will see that $\Sto_\theta(A^0)$ has faithful representation
-$\SSto_\theta(A^0)$ (cf.\ Proposition~\ref{prop:representation}).
+We will see that $\Sto_\theta(A^0)$ has the faithful representation
+$\SSto_\theta(A^0)$, which has a rather simple definition
+(cf.\ Proposition~\ref{prop:representation}).
 The elements of $\SSto_\theta(A^0)$ are the so-called Stokes matrices and it is
 easy to see that they are nilpotent.
+Since the Stokes matrices also provide the required information to describe a
+meromorphic class of a meromorphic connection one obtains an isomorphism
+$\C^N\to H^1(S^1;\Lambda(A^0))$, where $N$ is the irregularity of $A^0$
+(cf.\ Section~\ref{sec:WhichInformationIsNeeded}).
 This characteristic can be used to define the structure of a nilpotent Lie
 group on the classifying set $\cH(A^0)$.
-
-Stokes matrices provide exactly the required information in order to describe a
-meromorphic class of a meromorphic connection, and since we know which
-restrictions hold for these matrices, we can explicitly give an isomorphism of
-pointed sets, $\C^n\to H^1(S^1;\Lambda(A^0))$, for a convenient $n$
-(cf.\ Section~\ref{sec:WhichInformationIsNeeded}).
-
-\begin{comment}
-  \begin{enumerate}
-    \item first introduce asymptotic analysis
-    \item then define languages for meromorphic connections or systems
-    \item talk about Stokes structures
-    \item more?
-  \end{enumerate}
-\end{comment}
 
 %%% Local Variables:
 %%% TeX-master: "Maximilian_Huber-Masters_Thesis-with_notes.tex"
