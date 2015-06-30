@@ -7,7 +7,7 @@
     ,fontsize=12pt
     ,DIV=13
     ,BCOR=8mm
-    ,openany
+    % ,openany
   ]{./myClass}
 }{%
   \xdef\myDevelopVariable{0}
@@ -16,13 +16,13 @@
     ,fontsize=12pt
     ,DIV=13
     ,BCOR=8mm
-    ,openany
+    % ,openany
   ]{./myClass}
   % \ifnum\myHideVariable=1
   % \usepackage{showframe}
   % \fi
 }
-\usepackage{layout}
+% \usepackage{layout}
 
 \bibliography{literatur.bib}
 
@@ -88,7 +88,8 @@
 \ifnum\myDevelopVariable=0
   \frontmatter
   \input{chp0-titel.tex}
-  \newpage \thispagestyle{empty} \mbox{}
+  % \newpage \thispagestyle{empty}
+  \input{app-github.tex}
   \setcounter{page}{0}
 \else
   \mainmatter
@@ -105,7 +106,7 @@
 \ifnum\myHideVariable=0
   \input{chp0-symbols.tex}
 \fi
-\KOMAoptions{open=right}
+% \KOMAoptions{open=right}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ifnum\myDevelopVariable=0
@@ -168,11 +169,10 @@
   \KOMAoptions{open=any}
   \printbibliography[notkeyword={prim},title={Additional references}]
 \fi
-\input{app-github.tex}
 
 % \ifnum\myDevelopVariable=1
 %   \pagebreak
-%   \layout
+  % \layout
 % \fi
 \end{document}
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:
