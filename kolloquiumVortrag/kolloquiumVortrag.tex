@@ -1,0 +1,77 @@
+\RequirePackage{xstring}
+\IfSubStr{\jobname}{\detokenize{handout}}{%
+  \xdef\myDevelopVariable{1}
+  \documentclass[ngerman
+                ,10pt
+                ,utf8,notheorems,compress
+                ,handout]{./myBeamerClass}
+  \usepackage{pgfpages}
+  \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+  % \usepackage{fancyhdr}
+  % \pagestyle{fancy}
+  % \fancyhf{}
+  % \fancyhead[R]{\textcolor{red}{\thepage}}
+}{%
+  \xdef\myDevelopVariable{0}
+  \documentclass[ngerman
+                ,10pt
+                ,utf8,notheorems,compress]{./myBeamerClass}
+  \def\emph{\textbf}
+}
+\usepackage{etex}
+\usepackage{paracol}
+
+\bibliography{../literatur.bib}
+
+\input{../commands.sty}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \DeclareMathOperator{\Gl}{GL}
+% \DeclareMathOperator{\GL}{GL}
+% \DeclareMathOperator{\Ad}{Ad}
+% \DeclareMathOperator{\ad}{ad}
+% \DeclareMathOperator{\End}{End}
+% \DeclareMathOperator{\Aut}{Aut}
+% \DeclareMathOperator{\Proj}{Proj}
+% \DeclareMathOperator{\Spec}{Spec}
+% \DeclareMathOperator{\codim}{codim}
+% \DeclareMathOperator{\Lie}{Lie}
+% \DeclareMathOperator{\Res}{Res}
+% \DeclareMathOperator{\Tr}{Tr}
+% \DeclareMathOperator{\diag}{diag}
+% \DeclareMathOperator{\Sect}{Sect}
+% \DeclareMathOperator{\Roots}{Roots}
+% \DeclareMathOperator{\Mult}{Mult}
+
+\let\tilde\widetilde
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  testing                                                    %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{paracol}
+\usepackage{multicol}
+
+\title{Kolloquium zur Master Arbeit}
+\author{\\[0.5em] Maximilian Huber}
+\date{3. Dezember 2014}
+
+\def\sectionname{Abschnitt}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\frame[t]{\frametitle{Outline}\begin{itemize}\item[]\tableofcontents\end{itemize}}
+
+\input{content}
+
+% \printbibliography[keyword={prim},title={Literatur}]
+% \printbibliography[notkeyword={prim},title={Weitere Literatur}]
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

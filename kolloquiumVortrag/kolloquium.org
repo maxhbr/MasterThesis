@@ -1,0 +1,30 @@
+src: file:^vortrag.tex
+* Ziele
+1. Classifying Set
+    - Zusammenhangsmatrizen
+        - zu Meromorphen Zusammenhängen (notwendig? oder direkt Systeme)
+    - Normalform
+2. Anti-Stokes Richtungen
+    - Normallösung und entsprechende Aufteilung
+        - Fundamentallösungen
+            - formal
+            - auf Sektoren
+    - maximal decay
+3. Stokes Matrizen
+    - Stokes Sheaf $\Lambda$
+    - resultieren aus Stokes Keimen
+    - decomposition by levels?
+  a. Bessere Stokes Matrizen
+    - Nur das Theorem
+4. Beispiel Vorrechnen
+    - Finde vlt was besseres?
+5. Struktur einer linearen affinen Varietät auf H^1
+    - beide aus Babbitt+Varadarajan Section 3
+        - Braucht $\exp$ aus der Lie Theorie
+* Notwendig
+- levels
+* Nicht Notwendig / Black-Box
+- Malgrange-Sibuya-Isomorphism
+    - Trotzdem die Abbildung erklären?
+- Asymptotische Analysis?
+- nicht commutative cohomology
