@@ -208,6 +208,7 @@
   \raisebox{.3em}{$#1$\!}\Big/\!\!\!\Big/\raisebox{-.3em}{\!$#2$}}}
 
 \newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+\newcommand{\tikzmarkt}[1]{\tikz[overlay,remember picture,yshift=1em] \node (#1) {};}
 \newcommand{\tikzmarkc}[2]{\raisebox{0.25em}{%
   \tikz[overlay,remember picture] \node (#1) {};%
   \tikz[overlay,remember picture] \draw[fill,#2!50] (#1) circle (2pt);}}

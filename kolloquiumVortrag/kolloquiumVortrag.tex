@@ -25,6 +25,13 @@
 
 \input{../commands.sty}
 
+\renewcommand{\myrel}[1]{\underset{#1}{%
+    \mathchoice{\myrelPrimeB{.12em}{.7em}}
+      {\textcolor{purple}{\myrelPrime{1.56pt}{.54em}}}
+      {\textcolor{blue}{\myrelPrime{.975pt}{.45em}}}
+      {\textcolor{green}{\myrelPrime{1pt}{.45em}}}
+}}
+
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \DeclareMathOperator{\Gl}{GL}
 % \DeclareMathOperator{\GL}{GL}

@@ -35,25 +35,39 @@
     $\theta\in S^1$ welcher
     \begin{enumerate}[<+->]
     \item \emph{multiplikativ flach} ($F$ ist asymptotisch zu $\id$ bei $\theta$),
-    \item eine \emph{isotropie von \boldmath$A^0$} (${}^FA^0=A^0$) und
+    \item eine \emph{Isotropie von \boldmath$A^0$} (${}^FA^0=A^0$) und
     \item von \emph{maximal decay} \TODO[siehe unten]
     \end{enumerate}
     ist. Die Gruppe dieser Keime wird mit $\Sto_\theta(A^0)$ bezeichnet.
   \end{defn}
 \end{frame}
 \begin{frame}[t]{Wann ist $F$ von maximal decay?}
-  Ein Keim $F$ der die ersten zwei Eigenschaften erfüllt, sieht wie folgt aus
-  {
-    \setbeamercovered{transparent}
+  Ein Keim $F$ der die ersten zwei
+  Eigenschaften\only<-2>{\footnote{Multiplikativ flach und Isotropie von
+      $A^0$.}} erfüllt, sieht wie folgt aus
     \begin{align*}
       F  &=t^L e^{Q(t^{-1})}
-           \left(1_n+\sum_{(l,j)}C^{(l,j)}\right)
+           \only<1>{
+             \underset{\tikzmarkt{e1}}{
+               \textcolor{blue!50!white}{\underbrace{\textcolor{black}{
+                     \left(1_n+\sum_{(l,j)}C^{(l,j)}\right)
+           }}}}}
+           \only<2->{
+             \left(1_n+\sum_{(l,j)}C^{(l,j)}\right)
+           }
            e^{-Q(t^{-1})}t^{-L}
-      \\ &=\onslide<2->{
+      \\ &\onslide<2->{=
            t^L\left(
            1_n+\sum_{(l,j)}C^{(l,j)}e^{(q_l-q_j)(t^{-1})}
            \right)t^{-L} \,.}
     \end{align*}
+  \only<1>{
+    \begin{flushright}
+      \tikzmarkc{n1}{blue} konstant, also in $\Gl_n(\C)$
+      \begin{tikzpicture}[remember picture,overlay]
+        \draw[->,blue!50!white,thick] (n1) to[bend left] (e1);
+      \end{tikzpicture}
+    \end{flushright}
   }
   \only<3->{
     \begin{defn}
@@ -72,18 +86,33 @@
 \end{frame}
 \begin{frame}[t]{Die Stokes Matrizen}
   \begin{defn}
-    Definiere die Gruppe der Stokes Matrizen
-    \[
-      \SSto_\theta(A^0):= \left\{
-        C\in\Gl_n(\C)
-        \mid
-        c_{(l,j)}=\delta_{jl} \text{~außer wenn~} q_j\myrel{\theta}q_l
-      \right\} \,.
-    \]
+    Definiere die \emph{Gruppe der Stokes Matrizen} als
+    \begin{align*}
+      \SSto_\theta(A^0)&:= \Big\{
+                         C=(c_{jl})_{j,l\in\{1,\dots,n\}}
+                         \in\Gl_n(\C)
+                         \mathlarger{\mathlarger{\mid}}
+      \\              & \qquad\qquad
+                        c_{(l,j)}=\delta_{jl}
+                        \text{~außer wenn~}
+                        q_j\myrel{\theta}q_l
+                        \Big\} \,.
+    \end{align*}
   \end{defn}
+  \TODO[Beispiel]
+  \only<2->{
+    \begin{defn}
+      Schreibe $C=1_n+\sum_{(l,j)}C^{(l,j)}\in\SSto_\theta(A^0)$, dann sind die
+      \emph{Level} von $C$ definiert als die Grade der Polynome $q_j-q_l$ für
+      die $C^{(j,l)}\neq0$.
+    \end{defn}
+  }
 \end{frame}
 
 \subsection{Die anti-Stokes Richtungen}
+\begin{frame}[t]{Die anti-Stokes Richtungen}
+
+\end{frame}
 
 \subsection{Verbesserung der Stokes Matrizen}
 \begin{frame}[t]{\dots}
