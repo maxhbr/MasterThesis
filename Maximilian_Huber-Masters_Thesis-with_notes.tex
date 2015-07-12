@@ -59,30 +59,6 @@
 
 \usepackage[pages=some]{background}
 
-% \newcommand{\myrel}[1]{\underset{#1,\max}{\prec}}
-\newcommand{\myrelPrime}[2]{%
-    \scalerel*{%
-      \mathlarger{\mathlarger{\prec}}
-      \kern-#2
-      \raisebox{#1}{$\mathsmaller{\prec}$}
-      \,
-    }{\theta}
-  }
-\newcommand{\myrelPrimeB}[2]{%
-    \scalerel*{%
-      \mathlarger{\mathlarger{\prec}}
-      \kern-#2
-      \raisebox{#1}{$\prec$}
-      \,
-    }{\theta}
-  }
-\newcommand{\myrel}[1]{\underset{#1}{%
-    \mathchoice{\myrelPrimeB{1.3125pt}{.70em}}
-      {\myrelPrime{1.56pt}{.54em}}
-      {\myrelPrime{.975pt}{.45em}}
-      {\myrelPrime{1pt}{.45em}}
-}}
-
 \begin{document}
 
 \ifnum\myDevelopVariable=0

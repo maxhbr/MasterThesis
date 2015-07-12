@@ -29,6 +29,19 @@
 
 \AtBeginSection{\frame{\sectionpage}}
 
+\newenvironment{einr}{%
+  % \vspace{\medskipamount}
+  \begin{itemize}
+    \item[]
+      % \begin{einrPrime}
+      %   \begin{mdframed}[style=thick]
+    }{%
+      % \end{mdframed}
+      % \end{einrPrime}
+  \end{itemize}
+}
+
+
 %%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[style=authoryear,natbib=true,backend=biber]{biblatex}
 \usepackage{fontspec}
@@ -169,5 +182,21 @@
 % \setlength{\textwidth}{13cm}
 % \setlength{\textheight}{13cm}
 \beamertemplatenavigationsymbolsempty
+
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{framed}
+
+\definecolor{commentShadeColor}{rgb}{1.0,.9,.6}
+% \definecolor{commentShadeColor}{rgb}{.6,.6,.6}
+\definecolor{commentTextColor}{rgb}{.2,.2,.2}
+\definecolor{CommentFrameColor}{rgb}{.3,.3,.3}%
+\newcommand{\TODO}[1][\empty]{{%
+    \fcolorbox{CommentFrameColor}{commentShadeColor}{%
+      \footnotesize{}
+      \ifthenelse{\equal{#1}{\empty}}
+      {\tiny T\!O\!D\!O}
+      {\tiny T\!O\!D\!O: #1} % {TODO: #1}
+    }}}
 
 % vim:set ft=tex foldmethod=marker foldmarker={{{,}}}:
