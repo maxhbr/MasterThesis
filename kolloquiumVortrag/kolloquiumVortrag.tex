@@ -3,6 +3,7 @@
   \xdef\myDevelopVariable{1}
   \documentclass[ngerman
                 ,10pt
+                ,fleqn
                 ,utf8,notheorems,compress
                 ,handout]{./myBeamerClass}
   \usepackage{pgfpages}
@@ -15,6 +16,8 @@
   \xdef\myDevelopVariable{0}
   \documentclass[ngerman
                 ,10pt
+                ,fleqn
+                % ,handout
                 ,utf8,notheorems,compress]{./myBeamerClass}
   \def\emph{\textbf}
 }
@@ -27,7 +30,7 @@
 
 \renewcommand{\myrel}[1]{\underset{#1}{%
     \mathchoice{\myrelPrimeB{.12em}{.7em}}
-      {\textcolor{purple}{\myrelPrime{1.56pt}{.54em}}}
+      {\myrelPrime{.123em}{.56em}}
       {\textcolor{blue}{\myrelPrime{.975pt}{.45em}}}
       {\textcolor{green}{\myrelPrime{1pt}{.45em}}}
 }}

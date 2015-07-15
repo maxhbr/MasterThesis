@@ -1,30 +1,100 @@
 \section{Von meromorphen Zusammenhängen zu Systemen}
 \begin{frame}[t]{Meromorphe Zusammenhänge}
   \begin{defn}[Meromorphe Zusammenhänge]
-  \end{defn}
-  \begin{defn}[Zusammenhangsmatrix]
+    Ein \emph{(Keim eines) Meromorphen Zusammenhangs} ist ein Tupel
+    $(\cM,\nabla)$\only<2->{, wobei}
+    \begin{itemize}
+    \item<2-> $\cM$ ist ein $\C(\!\{t\}\!)$-Vektorraum von Dimension $n$
+      \only<3->{und}
+    \item<3-> $\nabla:\cM\to \cM$, welcher die \emph{Leibniz Regel}
+      \[
+        \nabla(fm)=\frac{d}{dt} f \cdot m + f \nabla(m)
+      \]
+      für alle $f\in\C(\!\{t\}\!)$ und $m\in\cM$ erfüllt.
+    \end{itemize}
   \end{defn}
 \end{frame}
 \begin{frame}[t]{Systeme und die Gauge Transformation}
+  Wähle eine $\C(\!\{t\}\!)$-Basis $\underline{e}=(e_1,e_2,\dots,e_n)$ von
+  $\cM$.
+  Sei $A=(a_{jk})_{j,k\in\{1,\dots,n\}}\in\Gl_n(\C(\!\{t\}\!))$ so dass
+  \[
+    \nabla e_k=-\!\!\sum_{1\leq j\leq n}\!\! a_{jk}(t)e_j
+    \text{, für alle $k\in\{1,\dots,n\}$.}
+  \]
+  \only<2->{
+    Für ein $x=\underline{e}\cdot X$ erfüllt diese Matrix
+    $\nabla\left(\underline{e}\cdot X\right)=\underline{e}\left(dX-AX\right)$.
+  }
+
+  \only<3->{
+    \begin{defn}
+      \begin{enumerate}
+      \item \textcolor{purple}{The matrix $A$ is called a \emph{connection
+            matrix} of $(\cM,\nabla)$.}
+      \item \dots \emph{das System $[A]$} \dots
+      \end{enumerate}
+    \end{defn}
+    \TODO[Gauge trafo]
+  }
+\end{frame}
+\begin{frame}[t]{Systeme und die Gauge Transformation}
+  \textcolor{purple}{
+    By \emph{meromorphic transformation}, or just \emph{transformation}, of a
+    system we mean a
+    $\C(\!\{t\}\!)$-linear\footnote{$\C(\!\{t\}\!):=\C\{t\}[t^{-1}]$.} change of
+    the trivialization.
+    Such a change is given by a matrix $F$ in $\Gl_n\left(\C(\!\{t\}\!)\right)$
+    and the transformed connection matrix ${}^F\!A$ is obtained through the
+    Gauge transformation
+  }
+  \[
+    {}^F\!A=(dF)F^{-1} + FAF^{-1} \,.
+  \]
+  \textcolor{purple}{
+    Let $B:={}^F\!A$ be the transformed matrix and rewrite the equation
+    to obtain the linear differential equation
+  }
+  \[
+    \frac{dF}{dt}=BF-FA
+  \]
+  \textcolor{purple}{
+    which will be denoted by $[A,B]$.
+  }
+  \begin{rem}
+    \textcolor{purple}{
+      The system matrix $B$ is obtained from $A$ by transformation $F$ if and
+      only if $F$ solves the linear differential system $[A,B]$.
+    }
+  \end{rem}
 \end{frame}
 
 \subsection{Die klassifizierende Menge der Systeme}
-\begin{frame}[t]{\dots}
-  \begin{defn}[Markierte Paare]
+\begin{frame}[t]{Die klassifizierende Menge der Systeme}
+  \begin{defn}
+    Die \emph{klassifizierende Menge}
+    \[
+      \cH(A^0):=\left\{\left[\bigl(A,\hat F\bigl)\right]
+        \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\right\} \,.
+    \]
+    ist die Menge der Äquivalenzklassen der Markierten Paare \TODO[\dots]
   \end{defn}
-  \begin{defn}[Isomorphismen von Markierten Paaren]
-  \end{defn}
-  \[
-    \hat\Syst_m(A^0):=\bigl\{\bigl(A,\hat F\bigl)
-    \mid A={}^{\hat F}\!A^0 \text{ for some } \hat F\in G(\!(t)\!)\bigl\} \,.
-  \]
 \end{frame}
 
 \subsection{Levelt-Turittin und die Normalform}
 
+
+\setbeamercolor{background canvas}{bg=gray}
 \subsection{Fundamentallösungen}
 \begin{frame}[t]{Fundamentallösungen}
+  \TODO[nötig?]
+  \begin{defn}
+    Eine \emph{Fundamentallösung (auf einem Sektor \boldmath$\mathfrak{s}$)}
+    eines Systems $[A]$ ist eine Matrix $\cY$ bestehend aus $n$ linear
+    unabhängigen Lösungen als Spalten.
+  \end{defn}
 \end{frame}
+\setbeamercolor{background canvas}{bg=}
 
 \section{Die Stokes Matrizen}
 \begin{frame}[t]{Die Stokes Keime}
@@ -33,55 +103,71 @@
   \begin{defn}[Stokes Gruppe]
     Ein \emph{Stokes Keim} ist ein Keim $F\in\Gl_n(\cA_\theta)$ in Richtung
     $\theta\in S^1$ welcher
-    \begin{enumerate}[<+->]
-    \item \emph{multiplikativ flach} ($F$ ist asymptotisch zu $\id$ bei $\theta$),
-    \item eine \emph{Isotropie von \boldmath$A^0$} (${}^FA^0=A^0$) und
-    \item von \emph{maximal decay} \TODO[siehe unten]
+    \begin{enumerate}
+    \item<1-> \emph{multiplikativ flach} ($F$ ist asymptotisch zu $\id$ bei $\theta$),
+    \item<2-> eine \emph{Isotropie von \boldmath$A^0$} (${}^FA^0=A^0$) und
+    \item<4-> von \emph{maximal decay} \TODO[siehe unten]
     \end{enumerate}
     ist. Die Gruppe dieser Keime wird mit $\Sto_\theta(A^0)$ bezeichnet.
   \end{defn}
+  \only<3->{
+    \begin{defn}
+      Die \emph{Keime bei \boldmath$\theta\in S^1$ der Stokes Garbe
+        \boldmath$\Lambda_\theta(A^0)$} sind die Keime $F\in\Gl_n(\cA_\theta)$,
+      welche die ersten zwei Bedingungen erfüllen.
+    \end{defn}
+  }
 \end{frame}
-\begin{frame}[t]{Wann ist $F$ von maximal decay?}
-  Ein Keim $F$ der die ersten zwei
+\begin{frame}[t]{Maximal decay?}
+  \begin{defn}
+    \begin{enumerate}
+    \item<1-> Eine Funktion $e^{q(t^{-1})}$, wobei
+      $q(t^{-1})\in\frac{a}{t^{k}}+o(t^{-k})$, hat \emph{maximal decay in
+        Richtung \boldmath$\theta$} genau dann wenn $ae^{-ik\theta}$ reell
+      negativ ist.
+    \item<2-> Definiere die Relation $q_j\myrel{\theta}q_l$ als äquivalent zu
+      \begin{einr}
+        $e^{(q_l-q_j)(t^{-1})}$ ist von maximal decay in Richtung $\theta$.
+      \end{einr}
+    \end{enumerate}
+  \end{defn}
+\end{frame}
+\begin{frame}[t]{Wann ist $F\in\Lambda_\theta(A^0)$ von maximal decay?}
+  Ein Keim $F\in\Lambda_\theta(A^0)$, der die ersten zwei
   Eigenschaften\only<-2>{\footnote{Multiplikativ flach und Isotropie von
       $A^0$.}} erfüllt, sieht wie folgt aus
-    \begin{align*}
-      F  &=t^L e^{Q(t^{-1})}
-           \only<1>{
-             \underset{\tikzmarkt{e1}}{
-               \textcolor{blue!50!white}{\underbrace{\textcolor{black}{
-                     \left(1_n+\sum_{(l,j)}C^{(l,j)}\right)
-           }}}}}
-           \only<2->{
-             \left(1_n+\sum_{(l,j)}C^{(l,j)}\right)
-           }
-           e^{-Q(t^{-1})}t^{-L}
-      \\ &\onslide<2->{=
-           t^L\left(
-           1_n+\sum_{(l,j)}C^{(l,j)}e^{(q_l-q_j)(t^{-1})}
-           \right)t^{-L} \,.}
-    \end{align*}
+  \begin{align*}
+    F  &=t^L e^{Q(t^{-1})}
+         \only<1>{
+         \underset{\tikzmarkt{e1}}{
+         \textcolor{blue!50!white}{\underbrace{\textcolor{black}{
+         \left(1_n+\sum_{(l,j)}C^{(l,j)}\right)
+         }}}}}
+         \only<2->{
+         \left(1_n+\sum_{(l,j)}C^{(l,j)}\right)
+         }
+         e^{-Q(t^{-1})}t^{-L}
+    \\ &\onslide<2->{=
+         t^L\left(
+         1_n+\sum_{(l,j)}C^{(l,j)}e^{(q_l-q_j)(t^{-1})}
+         \right)t^{-L} \,.}
+  \end{align*}
   \only<1>{
     \begin{flushright}
       \tikzmarkc{n1}{blue} konstant, also in $\Gl_n(\C)$
       \begin{tikzpicture}[remember picture,overlay]
-        \draw[->,blue!50!white,thick] (n1) to[bend left] (e1);
+        \draw[->,blue!50!white,thick] (n1) to[out=180,in=270] (e1);
       \end{tikzpicture}
     \end{flushright}
   }
   \only<3->{
-    \begin{defn}
-      \begin{enumerate}
-      \item Eine Funktion $e^{q(t^{-1})}$, wobei
-        $q(t^{-1})\in\frac{a}{t^{k}}+o(t^{-k})$, hat \emph{maximal decay in
-          Richtung \boldmath$\theta$} genau dann wenn $ae^{-ik\theta}$ reell
-        negativ ist.
-      \item<4-> Definiere die Relation $q_j\myrel{\theta}q_l$ als äquivalent zu
-        \begin{einr}
-          $e^{(q_l-q_j)(t^{-1})}$ ist von maximal decay in Richtung $\theta$.
-        \end{einr}
-      \end{enumerate}
-    \end{defn}
+    Also ist $F$
+    \begin{enumerate}
+    \item multiplikativ flach falls falls für jedes $C^{(l,j)}\neq0$ der Faktor
+      $e^{(q_l-q_j)(t^{-1})}$ multiplikativ flach ist\only<4->{, und}
+    \item<4-> von maximal decay falls für jedes $C^{(l,j)}\neq0$ die Relation
+      $q_j\myrel{\theta}q_l$ erfüllt ist.
+    \end{enumerate}
   }
 \end{frame}
 \begin{frame}[t]{Die Stokes Matrizen}
@@ -110,28 +196,119 @@
 \end{frame}
 
 \subsection{Die anti-Stokes Richtungen}
-\begin{frame}[t]{Die anti-Stokes Richtungen}
+\begin{frame}[t,fragile]{Die anti-Stokes Richtungen}
+  \begin{defn}
+    Die \emph{anti-Stokes Richtungen} sind die $\theta\in S^1$ für die
+    \[
+      \Sto_\theta(A^0)\neq\{\id\} \,.
+    \]
+  \end{defn}
+  Das sind genau die $\theta$ für die es $j$ und $l$ gibt so dass
+  $q_j\myrel{\theta}q_l$.
+  \vspace{-1em}
+  \begin{tikzpicture}[scale=3.5]
+    \def\kOne{10}
+    \def\kTwo{14}
+    \clip (-1.1,-0.2) rectangle (1.3,1.3);
+    \node[] (zero) at (0,0) {};
+    \node[blue] at (-0.9,0) {$S^1$};
 
+    {
+      \only<1>{
+        \fill[purple!60!white] ({cos(20)},{sin(20)}) circle (.7pt);
+        \fill[white] ({cos(20)},{sin(20)}) circle (.4pt);
+      }
+      \only<2->{
+      \foreach \i in {1,2,...,\kTwo}{%
+        \pgfmathsetmacro\ang{{20 + \i * 360 / \kTwo}}
+        \fill[purple!60!white] ({cos(\ang)},{sin(\ang)}) circle (.7pt);
+        \fill[white] ({cos(\ang)},{sin(\ang)}) circle (.4pt);
+      }
+      \only<4->{
+        \foreach \i in {1,2,...,\kTwo}{%
+          \pgfmathsetmacro\ang{{15 + \i * 360 / \kTwo}}
+          \fill[purple!60!white] ({cos(\ang)},{sin(\ang)}) circle (.7pt);
+          \fill[white] ({cos(\ang)},{sin(\ang)}) circle (.4pt);
+        }
+        \foreach \i in {1,2,...,\kTwo}{%
+          \pgfmathsetmacro\ang{{1 + \i * 360 / \kTwo}}
+          \fill[purple!60!white] ({cos(\ang)},{sin(\ang)}) circle (.7pt);
+          \fill[white] ({cos(\ang)},{sin(\ang)}) circle (.4pt);
+        }
+      }
+      }
+      \fill[white] (zero) circle (1cm);
+    }
+
+    \only<1-2>{
+      \clip (0,0) circle (1cm);
+      \fill[brown!60!white] ({cos(20)},{sin(20)}) circle (.7pt);
+      \fill[white] ({cos(20)},{sin(20)}) circle (.4pt);
+    }
+    \only<3->{
+      \clip (0,0) circle (1cm);
+      \foreach \i in {1,2,...,\kOne}{%
+        \pgfmathsetmacro\ang{{20 + \i * 360 / \kOne}}
+        \fill[brown!60!white] ({cos(\ang)},{sin(\ang)}) circle (.7pt);
+        \fill[white] ({cos(\ang)},{sin(\ang)}) circle (.4pt);
+      }
+    }
+
+    \only<4->{
+      \clip (0,0) circle (1cm);
+      \foreach \i in {1,2,...,\kOne}{%
+        \pgfmathsetmacro\ang{{8 + \i * 360 / \kOne}}
+        \fill[brown!60!white] ({cos(\ang)},{sin(\ang)}) circle (.7pt);
+        \fill[white] ({cos(\ang)},{sin(\ang)}) circle (.4pt);
+      }
+    }
+
+    \draw[blue] (zero) circle (1cm);
+    \fill (zero) circle (1pt);
+  \end{tikzpicture}
+\end{frame}
+\begin{frame}[t,fragile]{Zerlegung von $\Sto_\theta(A^0)$}
+  \begin{defn}
+    \begin{enumerate}[<+->]
+    \item Die \emph{Level von
+        \boldmath$C=(c_{jl})_{j,l\in\{1,\dots,n\}}\in\SSto_\theta(A^0)$} sind
+      \[
+        \cK(C):= \left\{\deg(q_j-q_l)\mid c_{jl}\neq0\right\} \subset \cK \,.
+      \]
+    \item Ein Keim $F$ ist ein \emph{\boldmath$k$-Keim}, wenn
+      $\cK(F)\subset\{k\}$, die Gruppe all dieser ist $\SSto_\theta^k(A^0)$.
+    \end{enumerate}
+  \end{defn}
+  % \only<3->{
+  \begin{thm}
+    Für alle $\theta\in S^1$ gibt es eine eindeutige Zerlegung
+    \[ \begin{tikzcd}[row sep=0cm]
+        \SSto_\theta(A^0)
+        & \prod_{k\in\cK}\SSto_\theta^k(A^0) \lar
+        \\ C_{k_1}\cdot C_{k_2}\cdots C_{k_s}
+        & \left(C_{k_1}, C_{k_2},\dots, C_{k_s}\right) \lar[maps to]
+      \end{tikzcd} \]
+  \end{thm}
+  % }
 \end{frame}
 
 \subsection{Verbesserung der Stokes Matrizen}
+
 \begin{frame}[t]{\dots}
-  In the paper \cite{BJL1979Birkhoff} from Balser, Jurkat and Lutz is the
-  following Lemma stated as Lemma 2 on page 75.
-  \begin{lem}\label{lem:UniqueDecompositionWotBlocks}
-    Let $T\subset\{1,\dots,n\}\times\{1,\dots,n\}$ be a position set, which
-    satisfies the \emph{completeness property}:
+  Sei $T\subset\{1,\dots,n\}\times\{1,\dots,n\}$ eine Positions Menge, welche
+  die \emph{vollständigkeits Eigenschaft}
     \begin{einr}
-      if $(j,k)$ and $(k,l)\in T$ then is also $(j,l)\in T$.
+      wenn $(j,k),(k,l)\in T$ dann ist auch $(j,l)\in T$
     \end{einr}
-    Choose a indexing $i:\{1,2,\dots,\mu \} \overset{\cong}{\to}T$ of the
-    position set and denote by $\delta_{jl}\in\C$ the ordinary Kronecker's
-    delta, then there exists for every matrix
+    erfüllt zusammen mit einer Bijektion
+    $i:\{1,2,\dots,\mu\} \overset{\cong}{\to}T$.
+  \begin{lem}
+    Zu jeder Matrix
     \[
       K\in \left\{K=(K_{jl})_{j,l\in\{1,\dots,n\}}\in\GL_n(\C)\mid
         K_{jl}=\delta_{jl} \text{~unless~} (j,l)\in T \right\}
     \]
-    unique scalars $t_1,\dots,t_\mu\in\C$ such that
+    gibt es eindeutige $t_1,\dots,t_\mu\in\C$, so dass
     \[
       K=(\id + t_1E_{i(1)})\cdots(\id + t_{\mu}E_{i(\mu)}) \,.
     \]
@@ -141,6 +318,12 @@
 \section*{Fragen?}
 
 \section{Die affine Struktur auf \dots}
+\begin{frame}[t]{Die erste affine Struktur}
+
+\end{frame}
+\begin{frame}[t]{Die zweite affine Struktur}
+
+\end{frame}
 
 %%% Local Variables:
 %%% mode: latex
