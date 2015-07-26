@@ -100,6 +100,7 @@
   topline=false,
   rightline=false,
   bottomline=false,
+  innertopmargin=0pt,skipabove=0pt, innerbottommargin=0pt,
   leftmargin=\parindent,
   skipabove=\medskipamount,
   skipbelow=\medskipamount
@@ -115,6 +116,7 @@
   topline=false,
   rightline=false,
   bottomline=false,
+  innertopmargin=0pt,skipabove=0pt, innerbottommargin=0pt,
   leftmargin=\parindent,
   skipabove=\medskipamount,
   skipbelow=\medskipamount
@@ -130,6 +132,7 @@
   topline=false,
   rightline=false,
   bottomline=false,
+  innertopmargin=0pt,skipabove=0pt, innerbottommargin=0pt,
   leftmargin=\parindent,
   skipabove=\medskipamount,
   skipbelow=\medskipamount
@@ -160,6 +163,7 @@
   topline=false,
   rightline=false,
   bottomline=false,
+  innertopmargin=0pt,skipabove=0pt, innerbottommargin=0pt,
   leftmargin=\parindent,
   skipabove=\medskipamount,
   skipbelow=\medskipamount
