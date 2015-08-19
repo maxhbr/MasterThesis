@@ -64,7 +64,7 @@
 \subsection{Levelt-Turittin und die Normalform}
 \begin{frame}{Die Normalform}
   Aus dem Levelt-Turittin Theorem\TODO[skizze] erhalten wir:
-  \begin{prop}
+  \begin{cor}
     \uncover<2->{%
       Jedes (unverzweigte) System $[A]$ ist formal äquivalent zu einem
       System $[A^0]$ wobei
@@ -83,7 +83,7 @@
         \end{defn}
       }
     }
-  \end{prop}
+  \end{cor}
 \end{frame}
 
 \subsection{Die klassifizierende Menge der Systeme}
@@ -107,10 +107,31 @@
       \]
       ist die Menge der Äquivalenzklassen der \emph{Markierten Paare} zu einem
       Model $A^0$.
-      \TODO[Äquivalenzrelation zwischen markierten Paaren]
     \end{defn}
   }
 \end{frame}
+\setbeamercolor{background canvas}{bg=gray!20}
+\begin{frame}[fragile]{Äquivalenzrelation zwischen markierten Paaren}
+  \[ \begin{tikzcd}[column sep=1cm,row sep=.5cm]
+      &&&\C(\!\{t\}\!)^n
+      % \arrow[green!60!black, thick]{ddd}{d-A}
+      % \arrow[green!60!black, thick]{ddr}{H}
+      \\\C(\!\{t\}\!)^n
+      % \arrow{rrru}{\hat F}
+      % \arrow[ultra thick, white]{rrrrd}{\hat F'}
+      % \arrow{rrrrd}{\hat F'}
+      % \arrow{ddd}{d-A^0}
+      \\&&&&\C(\!\{t\}\!)^n
+      % \arrow[green!60!black, thick]{ddd}{d-A'}
+      \\&&&\C(\!\{t\}\!)^n
+      % \arrow[green!60!black, thick]{ddr}{H}
+      \\\C(\!\{t\}\!)^n
+      % \arrow{rrru}{\hat F}
+      % \arrow{rrrrd}{\hat F'}
+      \\&&&&\C(\!\{t\}\!)^n
+    \end{tikzcd} \]
+\end{frame}
+\setbeamercolor{background canvas}{bg=}
 
 \section{Die Stokes Matrizen}
 \begin{frame}{Die Stokes Keime}
@@ -172,7 +193,8 @@
       \end{enumerate}
       ist, ist $F$ ein \emph{Stokes Keim}.
       \uncover<5->{
-        Die Gruppe dieser Keime wird mit $\Sto_\theta(A^0)$ bezeichnet.
+        Die Gruppe dieser Keime ist die \emph{Stokes Gruppe} und wird mit
+        $\Sto_\theta(A^0)$ bezeichnet.
       }
     \end{itemize}
   \end{defn}
@@ -183,6 +205,7 @@
     }
   \end{tikzpicture}
 \end{frame}
+
 \setbeamercolor{background canvas}{bg=gray!20}
 \begin{frame}{Wann ist $F\in\Lambda_\theta(A^0)$ von \textcolor{purple}{maximal decay}?}
   Ein Keim $F\in\Gl_n(\cA_\theta)$, der Isotropie von $A^0$ ist, sieht wie folgt
@@ -262,35 +285,84 @@
       $e^{(q_l-q_j)(t^{-1})}$ ist von \textcolor{purple}{maximal decay} in
       Richtung $\theta$.
     \end{einr}
+    \uncover<2->{
+      Die anti-Stokes Richtungen sind genau die $\theta\in S^1$, so dass
+      $q_j\myrel{\theta}q_l$ für ein Paar $(q_j,q_l)$.
+    }
   \end{defn}
-  \uncover<2->{%
+  \uncover<3->{%
     \begin{defn}
-      \begin{enumerate}
-      \item<2-> Definiere die \emph{Gruppe der Stokes Matrizen} als
-        \begin{align*}
-          \SSto_\theta(A^0)&:= \Big\{
-                             C=(c_{jl})_{j,l\in\{1,\dots,n\}}
-                             \in\Gl_n(\C)
-                             \mathlarger{\mathlarger{\mid}}
-          \\              & \qquad\qquad
-                            c_{(l,j)}=\delta_{jl}
-                            \text{~außer wenn~}
-                            q_j\myrel{\theta}q_l
-                            \Big\} \,.
-        \end{align*}
-      \item<3-> Die \emph{anti-Stokes Richtungen} sind die $\theta\in S^1$ für
-        die
-        \[
-          \Sto_\theta(A^0)\neq\{\id\} \,.
-        \]
-        \uncover<4->{%
-          Das sind genau die $\theta$ für die es $j$ und $l$ gibt so dass
-          $q_j\myrel{\theta}q_l$.
-        }
-      \end{enumerate}
+      Definiere die \emph{Gruppe der Stokes Matrizen} als
+      \begin{align*}
+        \SSto_\theta(A^0)&:= \Big\{
+                           C=(c_{jl})_{j,l\in\{1,\dots,n\}}
+                           \in\Gl_n(\C)
+                           \mathlarger{\mathlarger{\mid}}
+        \\              & \qquad\qquad\qquad\qquad
+                          c_{(l,j)}=\delta_{jl}
+                          \text{~außer wenn~}
+                          q_j\myrel{\theta}q_l
+                          \Big\} \,.
+      \end{align*}
     \end{defn}
   }
 \end{frame}
+\begin{frame}[fragile]{Malgrange-Sibuya-Isomorphismus}
+  Wähle sektorweise asymptotische Lifts $F_j\in\Lambda(A^0)(U_j)$ der
+  Fundamentallösung $\hat F$.
+  Durch $(F_kF_j^{-1})$ ist dann ein Kozykel in $H^1(S^1;\Lambda(A^0))$
+  definiert.
+  \visible<2->{
+    Dies definiert den folgenden Isomorphismus:
+    \begin{thm}[Malgrange-Sibuya]
+      \begin{tikzpicture}[scale=3]
+        \node (h1) at (0,0) {$\cH(A^0)$};
+        \node (h2) at (1.2,0) {$H^1(S^1;\Lambda(A^0))$};
+        \draw[->] (h1) to  node[fill=white,sloped] {$\cong$}  (h2);
+
+        \visible<3->{
+          \node (h3) at (.6,-.7) {$\prod_{\theta\in\underset{\tikzmarktHLB{e1}}{\A}}\Sto_\theta(A^0)$};
+          \draw[line width=4pt,white] (h3) -- (h2);
+          \draw[->] (h3) to node[fill=white,sloped] {$\cong$} (h2);
+        }
+        \visible<4->{
+          \draw[line width=4pt,white] (h1) -- (h3);
+          \draw[->] (h1) to node{\tikzmarktHLB{e2}} (h3);
+        }
+      \end{tikzpicture}
+      \vspace{-5.5em}
+    \end{thm}
+    \vspace{5.5em}
+    \visible<3->{
+      \begin{minipage}{1.1\textwidth}
+        \begin{flushright}
+          \begin{minipage}{.6\textwidth}
+            ~\tikzmark{n1}
+            \vspace{-2em}
+            \begin{defn}
+              Die \emph{anti-Stokes Richtungen \boldmath$\A$} sind die
+              $\theta\in S^1$ für die
+              $\Sto_\theta(A^0)\neq\{\id\}$.
+            \end{defn}
+          \end{minipage}
+        \end{flushright}
+      \end{minipage}
+      \begin{tikzpicture}[remember picture,overlay]
+        \draw[->,blue!50!white,thick] (n1) to[out=180,in=270] (e1);
+        \visible<4->{
+          \draw[->,green!50!black,thick] (n2) to[out=180,in=230] (e2);
+        }
+      \end{tikzpicture}
+      \visible<4->{
+        \vspace{1em}
+
+        \tikzmarkb{n2}{green} durch \textcolor{purple}{summations-Theorie}
+      }
+    }
+  }
+\end{frame}
+
+\subsection{Aufteilen bezüglich der Level}
 \begin{frame}[fragile]{Level von Stokes Matrizen}
   \begin{defn}
     \begin{enumerate}
@@ -309,6 +381,31 @@
     \end{enumerate}
   \end{defn}
 \end{frame}
+\begin{frame}[fragile]{Zerlegung von $\Sto_\theta(A^0)$}
+  \begin{thm}
+    Für alle $\theta\in S^1$ gibt es eine eindeutige Zerlegung auf dem Level der
+    Stokes Matrizen und auf dem Level der Stokes Gruppen
+    \[ \begin{tikzcd}[row sep=0cm]
+        \Sto_\theta(A^0)
+        \arrow{dddd}
+        & \prod_{k\in\cK}\Sto_\theta^k(A^0) \lar
+        \arrow{dddd}
+        \\
+        \hspace{1em}
+        \\
+        \hspace{1em}
+        \\
+        \hspace{1em}
+        \\
+        \SSto_\theta(A^0)
+        & \prod_{k\in\cK}\SSto_\theta^k(A^0) \lar
+        \\ C_{k_1}\cdot C_{k_2}\cdots C_{k_s}
+        & \left(C_{k_1}, C_{k_2},\dots, C_{k_s}\right) \lar[maps to]
+      \end{tikzcd} \]
+  \end{thm}
+\end{frame}
+
+\subsection{Verbesserung der Stokes Matrizen}
 \begin{frame}[fragile]{\textcolor{purple}{\dots}}
   \uncover<1>{
     Fixiere $(j,l)$ mit $j\neq l$ und damit
@@ -532,46 +629,21 @@
     \end{tikzpicture}
   \end{center}
   \uncover<1>{
-    \begin{flushright}
-      \begin{tikzpicture}[remember picture,overlay]
-        \draw[->,blue!50!white,thick] (n1) to[out=180,in=45] (e1);
-        \draw[->,green!50!black,thick] (n2) to[out=180,in=135] (e2);
-      \end{tikzpicture}
-    \end{flushright}
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[->,blue!50!white,thick] (n1) to[out=180,in=45] (e1);
+      \draw[->,green!50!black,thick] (n2) to[out=180,in=135] (e2);
+    \end{tikzpicture}
   }
 \end{frame}
-\begin{frame}[fragile]{Zerlegung von $\Sto_\theta(A^0)$}
-  \begin{thm}
-    Für alle $\theta\in S^1$ gibt es eine eindeutige Zerlegung
-    \[ \begin{tikzcd}[row sep=0cm]
-        \Sto_\theta(A^0)
-        \arrow{dddd}
-        & \prod_{k\in\cK}\Sto_\theta^k(A^0) \lar
-        \arrow{dddd}
-        \\
-        \hspace{1em}
-        \\
-        \hspace{1em}
-        \\
-        \hspace{1em}
-        \\
-        \SSto_\theta(A^0)
-        & \prod_{k\in\cK}\SSto_\theta^k(A^0) \lar
-        \\ C_{k_1}\cdot C_{k_2}\cdots C_{k_s}
-        & \left(C_{k_1}, C_{k_2},\dots, C_{k_s}\right) \lar[maps to]
-      \end{tikzcd} \]
-  \end{thm}
-\end{frame}
 
-\subsection{Verbesserung der Stokes Matrizen}
 \begin{frame}{Weitere \textcolor{purple}{Verbesserungen}}
-  Sei $T\subset\{1,\dots,n\}\times\{1,\dots,n\}$ eine Positions Menge, welche
-  die Eigenschaft
+  Sei $T\subset\{1,\dots,n\}\times\{1,\dots,n\}$ eine Menge von Positionen in
+  einer Matrix, welche die Eigenschaft
   \begin{einr}
     wenn $(j,k),(k,l)\in T$ dann ist auch $(j,l)\in T$
   \end{einr}
   erfüllt, zusammen mit einer Bijektion
-  $i:\{1,2,\dots,\mu\}\overset{\cong}{\to}T$.
+  $i:\{1,2,\dots,\mu\}\overset{\cong}{\longrightarrow}T$.
   \uncover<2->{
     \begin{lem}
       Zu jeder Matrix
@@ -585,31 +657,196 @@
         K=(\id + t_1E_{i(1)})\cdots(\id + t_{\mu}E_{i(\mu)}) \,.
       \]
     \end{lem}
-    \TODO[Visualisieren / an der Tafel?]
   }
 \end{frame}
-
-\subsection{Beispiel}
-\setbeamercolor{background canvas}{bg=gray}
-\begin{frame}{Beispiel: Situation}
-  Sei $[A]$ ein System so dass \dots
-  \begin{itemize}
-  \item
-    Dimension $3$\footnote{Kleinste Dimension mit $2$ Level}
-  \item
-    fixiere $q_1$, $q_2$ und $q_3$ so dass
-    \begin{itemize}
-    \item $\cK=\{k_1<k_2\}$ und
-    \item $\theta\in S^1$, so dass
-      \begin{einr}
-        $q_1\myrel{\theta}q_2$ und $q_1\myrel{\theta}q_3$
-
-        \Rightarrow{} anti-Stokes Richtungen sind eindeutig bestimmt
-      \end{einr}
-    \end{itemize}
-  \end{itemize}
+\setbeamercolor{background canvas}{bg=gray!20}
+\begin{frame}[fragile]{Beispiel Aufteilung}
+  $i:\{1,2,3\}\overset{\cong}{\longrightarrow}\{(2,1),(2,4),(1,4)\}$.
+  \begin{align*}
+    \begin{pmatrix}
+      1 &  &  & c\\
+      a & 1 &  & b\\
+      &  & 1\\
+      &  &  & 1
+    \end{pmatrix}
+        &=
+    \begin{pmatrix}
+      1\\
+      t_1 & 1\\
+      &  & 1\\
+      &  &  & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1\\
+      & 1 &  & t_2\\
+      &  & 1\\
+      &  &  & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 &  &  & t_3\\
+      & 1\\
+      &  & 1\\
+      &  &  & 1
+    \end{pmatrix}
+    \\ &=
+    \begin{pmatrix}
+      1\\
+      t_1 & 1 &  & t_2\\
+      &  & 1\\
+      &  &  & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+      1 &  &  & t_3\\
+      & 1\\
+      &  & 1\\
+      &  &  & 1
+    \end{pmatrix}
+    \\ &=
+    \begin{pmatrix}
+      1 &  &  & t_3\\
+      t_1 & 1 &  & t_1t_3 + t_2\\
+      &  & 1\\
+      &  &  & 1
+    \end{pmatrix}
+  \end{align*}
+  Dann sind $t_1=a$, $t_2=b-t_1t_3$ und $t_3=c$.
 \end{frame}
 \setbeamercolor{background canvas}{bg=}
+
+\section{Beispiel}
+\begin{frame}[t,fragile]{Beispiel}
+  \begin{tikzpicture}[scale=4,transform canvas={yshift = -4.5cm}, remember picture]
+    \def\t{20}
+    \def\kOne{6}
+    \def\kTwo{9}
+    \node (zero) at (0,0) {};
+
+    \foreach \i in {1,2,...,\kOne}{%
+      \fill[brown] ({cos( \t+180*\i/\kOne )},{sin( \t+180*\i/\kOne )})
+        circle (.8pt);
+      \fill[brown] ({cos( \t+180+180*\i/\kOne )},{sin( \t+180+180*\i/\kOne )})
+        circle (.8pt);
+    }
+    \fill[white] (zero) circle (1cm);
+    \node[blue] at (.7,-0.8) {$S^1$};
+
+    \draw[path fading=east] (zero) -- ({cos( \t )},{sin( \t )});
+    \node[above] at ({cos( \t ) * .2},{sin( \t ) * .2}) {$\theta$};
+
+    {
+      \clip (0,0) circle (1cm);
+      \foreach \i in {1,2,...,\kTwo}{%
+        \fill[green!50!black] ({cos( \t+180*\i/\kTwo )},{sin( \t+180*\i/\kTwo )})
+          circle (.8pt);
+        \fill[green!50!black] ({cos( \t+180+180*\i/\kTwo )},{sin( \t+180+180*\i/\kTwo )})
+          circle (.8pt);
+      }
+    }
+
+    \draw[blue] (zero) circle (1cm);
+    \fill[white] (zero) circle (1.5pt);
+    \fill (zero) circle (.7pt);
+
+    \node at ({cos( \t ) * 1.03},{sin( \t ) * 1.03}) {\tikzmark{e3a}};
+    \node at ({cos( 0 ) * 1.03},{sin( 0 ) * 1.03}) {\tikzmark{e3b}};
+    \node at ({cos( -10 ) * 1.03},{sin( -10 ) * 1.03}) {\tikzmark{e3c}};
+    \node at ({cos( -20 ) * 1.03},{sin( -20 ) * 1.03}) {\tikzmark{e3d}};
+  \end{tikzpicture}
+  \vspace{-1em}
+  \begin{minipage}{.70\textwidth}
+    \vspace{-3em}
+    \begin{flushright}
+      \tikzmarkc{dA}{blue} von Dimension 3
+    \end{flushright}
+  \end{minipage}
+  \\
+  Fixiere $\theta\in S^1$ und $q_1$, $q_2$ und $\overset{\tikzmark{dE}}{q_3}$ so
+  dass
+  \textcolor{green!50!black}{$q_1\myrel{\underset{\tikzmarktHLB{e1a}}{\theta}}q_2$},
+  \textcolor{green!50!black}{$q_1\myrel{\underset{\tikzmarktHLB{e1b}}{\theta}}q_3$} und
+  \textcolor{brown!80!black}{$q_2\myrel{\underset{\tikzmarktHLB{e2}}{\theta}}q_3$}
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[->,blue!50!white,thick] (dA) to[out=180,in=90] (dE);
+  \end{tikzpicture}
+  \begin{flushright}
+    \visible<2->{
+      \vspace{-1em}
+      \begin{minipage}{.55\textwidth}
+        \vspace{2em}
+        mit Level
+        $\cK=\{\overset{\tikzmark{n1}}{k_2}>\overset{\tikzmark{n2}}{k_1}\}$.
+      \end{minipage}
+
+      \begin{tikzpicture}[remember picture,overlay]
+        \draw[->,green!50!black,thick] (n1) to[out=90,in=270] (e1a);
+        \draw[->,green!50!black,thick] (n1) to[out=90,in=270] (e1b);
+        \draw[->,brown!50!white,thick] (n2) to[out=90,in=270] (e2);
+      \end{tikzpicture}
+    }
+
+    \visible<3->{
+      \setbeamercovered{transparent}
+      \begin{minipage}{.50\textwidth}
+        \begin{align*}
+          \onslide<3->{
+          &\tikzmarkc{n3a}{blue}
+            \begin{pmatrix}
+              1 & \textcolor{green!50!black}{\star} & \textcolor{green!50!black}{\star}\\
+              & 1 & \textcolor{brown!80!black}{\star}\\
+              &  & 1
+            \end{pmatrix}
+            \in\SSto_\theta(A^0)
+          \\
+          }
+          \onslide<4->{
+          &\tikzmarkc{n3b}{blue}
+            \begin{pmatrix}
+              1 \\
+              \textcolor{green!50!black}{\star} & 1 \\
+              \textcolor{green!50!black}{\star} & & 1
+            \end{pmatrix}
+            \in\SSto_{\theta - \frac{\pi}{k_2}}(A^0)
+          \\
+          }
+          \onslide<5->{
+          &\tikzmarkc{n3c}{blue}
+            \begin{pmatrix}
+              1 \\
+              & 1 \\
+              & \textcolor{brown!80!black}{\star} & 1
+            \end{pmatrix}
+            \in\SSto_{\theta - \frac{\pi}{k_1}}(A^0)
+          \\
+          }
+          \onslide<6->{
+          &\tikzmarkc{n3d}{blue}
+            \begin{pmatrix}
+              1 & \textcolor{green!50!black}{\star} & \textcolor{green!50!black}{\star}\\
+              & 1\\
+              &  & 1
+            \end{pmatrix}
+            \in\SSto_{\theta - \frac{2\pi}{k_2}}(A^0)
+                   }
+        \end{align*}
+      \end{minipage}
+
+      \begin{tikzpicture}[remember picture,overlay]
+        \onslide<3->{
+          \draw[->,blue!50!white,thick] (n3a) to[out=180,in=20] ([yshift = -4.5cm]e3a);
+        }
+        \onslide<4->{
+          \draw[->,blue!50!white,thick] (n3b) to[out=180,in=0] ([yshift = -4.5cm]e3b);
+        }
+        \onslide<5->{
+          \draw[->,blue!50!white,thick] (n3c) to[out=180,in=-10] ([yshift = -4.5cm]e3c);
+        }
+        \onslide<6->{
+          \draw[->,blue!50!white,thick] (n3d) to[out=180,in=-20] ([yshift = -4.5cm]e3d);
+        }
+      \end{tikzpicture}
+    }
+  \end{flushright}
+\end{frame}
 
 \section*{Fragen?}
 
