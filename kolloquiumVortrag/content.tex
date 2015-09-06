@@ -1,4 +1,5 @@
 \section{Meromorphe Zusammenhängen und Systeme}
+\iffalse
 \begin{frame}{Meromorphe Zusammenhänge}
   \begin{defn}
     Ein \emph{(Keim eines) Meromorphen Zusammenhangs} ist ein Tupel
@@ -60,41 +61,73 @@
     \end{lem}
   }
 \end{frame}
+\fi
+
+\begin{frame}{Systeme und die Gauge Transformation}
+  \begin{defn}
+    Eine \emph{Zusammenhangs-Matrix} $A\in\Gl_n(\C(\!\{t\}\!))$ beschreibt ein
+    System linearer gewöhnlicher komplexer Differentialgleichungen
+    \[
+      dX=AX
+    \]
+    welches als \emph{System \boldmath$[A]$} abgekürzt wird wird.
+  \end{defn}
+  \uncover<2->{%
+    \begin{prop}
+      Durch einen Wechsel $F\in\Gl_n\left(\C(\!\{t\}\!)\right)$ der Basis erhält
+      man
+      das System $\bigl[{}^F\!A\bigr]$, gegeben durch die
+      \emph{Gauge-Transformation}
+      \[
+        {}^F\!A=(dF)F^{-1} + FAF^{-1} \,.
+      \]
+      \uncover<3->{%
+        \vspace{-1.5em}
+        \begin{defn}
+          Die Zusammenhangs-Matrizen $A$ und $B$ sind \emph{(formal)
+            äquivalent}, falls es einen (formalen) Basiswechsel $F$ gibt, so
+          dass ${}^F\!A=B$.
+        \end{defn}
+      }
+    \end{prop}
+  }
+\end{frame}
 
 \subsection{Levelt-Turittin und die Normalform}
 \begin{frame}{Die Normalform}
-  Aus dem Levelt-Turittin Theorem\TODO[skizze] erhalten wir:
-  \begin{cor}
-    \uncover<2->{%
-      Jedes (unverzweigte) System $[A]$ ist formal äquivalent zu einem
-      System $[A^0]$ wobei
-      \[
-        A^0=Q'(t^{-1})+\frac{1}{t}L
-      \]
-      und
-      \begin{itemize}
-      \item $Q(t^{-1}):=\bigoplus_{j=1}^sq_j(t^{-1})\cdot\id_{n_j}$ und
-      \item $L:=\bigoplus_{j=1}^sL_j$ mit $L_j$ in Jordan-Normalform.
-      \end{itemize}
-      \uncover<3->{%
-        \begin{defn}
-          Jedes System $\bigl[B^0\bigr]$, das äquivalent zu einem System
-          $\bigl[A^0\bigr]$ wie oben ist, nennen wir \emph{normal Form}.
-        \end{defn}
-      }
-    }
-  \end{cor}
+  \begin{defn}
+    Eine \emph{Normalform} ist einem System $[A^0]$ der Form
+    \[
+      A^0= \raisebox{1em}{F} \!\!\left(Q'(t^{-1})+\frac{1}{t}L\right)
+    \]
+    wobei
+    \begin{itemize}
+    \item $Q(t^{-1}):=\bigoplus_{j=1}^sq_j(t^{-1})\cdot\id_{n_j}$ mit
+      $q_j(t^{-1})\in\C[t^{-1}]$,
+    \item $L:=\bigoplus_{j=1}^sL_j$ mit $L_j\in\Gl_{n_j}(\C)$ in
+      Jordan-Normalform und
+    \item $F\in\Gl_n(\C(\!\{t\}\!))$ eine Gauge-Transformation.
+    \end{itemize}
+  \end{defn}
+  \uncover<2->{%
+    Aus dem Levelt-Turittin Theorem erhalten wir:
+    \begin{cor}
+      Jedes \textcolor{gray}{(unverzweigte)} System $[A]$ ist formal äquivalent
+      zu einer \emph{Normalform}
+    \end{cor}
+  }
 \end{frame}
 
 \subsection{Die klassifizierende Menge der Systeme}
 \begin{frame}{Die klassifizierende Menge}
+  Fixiere eine Normalform $[A^0]$.
+
   Die \textit{interessante Menge} ist die Menge
   \[
     {}^0\!C(A^0):=\left\{\left[A\right]
       \mid A={}^{\hat F}\!A^0 \text{ für ein } \hat F\in G(\!(t)\!)\right\}
   \]
-  der Äquivalenzklassen vom Zusammenhangs-Matrizen formal äquivalent zu
-  einem Model.
+  der Äquivalenzklassen vom Zusammenhangs-Matrizen formal äquivalent zu $[A^0]$.
 
   \uncover<2->{%
     \vspace{1em}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,8 +138,7 @@
         \cH(A^0):=\left\{\left[\!\bigl(A,\hat F\bigl)\!\right]
           \mid A={}^{\hat F}\!A^0 \text{ mit } \hat F\in G(\!(t)\!)\right\}
       \]
-      ist die Menge der Äquivalenzklassen der \emph{Markierten Paare} zu einem
-      Model $A^0$.
+      ist die Menge der Äquivalenzklassen der \emph{Markierten Paare} zu $[A^0]$.
     \end{defn}
   }
 \end{frame}
@@ -148,17 +180,17 @@
     \begin{flushright}
     \end{flushright}
     \vspace{-2em}
-    Ein Keim $F\in\Gl_n(\overset{\tikzmark{e1}}{\cA_\theta})$ in Richtung
+    Ein Keim $f\in\Gl_n(\overset{\tikzmark{e1}}{\cA_\theta})$ in Richtung
     $\theta\in S^1$ ist
     \begin{itemize}
-    \item ein \emph{Keim der Stokes Garbe \boldmath$\Lambda(A^0)$}, falls er
+    \item ein Keim der \emph{Stokes Garbe \boldmath$\Lambda(A^0)$}, falls er
       \begin{enumerate}
-      \item\emph{multiplikativ flach} ($F$ ist asymptotisch zu $\id$ bei
+      \item\emph{multiplikativ flach} ($f$ ist asymptotisch zu $\id$ bei
         $\theta$) \uncover<2->{und}
-      \item<2-> eine \emph{Isotropie von \boldmath$A^0$} (${}^FA^0=A^0$)
+      \item<2-> eine \emph{Isotropie von \boldmath$A^0$} $\bigl({}^fA^0=A^0\bigr)$
       \end{enumerate}
       ist.
-    \item<3-> Falls für $F$ weiter auch noch \textcolor{purple}{jeder Eintrag}
+    \item<3-> Falls für $f$ weiter auch noch jeder Eintrag
       \begin{enumerate}
         \setcounter{enumi}{2}
       \item von
@@ -181,9 +213,10 @@
                 \vspace{-2em}
                 \begin{defn}
                   % Eine Funktion
-                  $e^{q(t^{-1})}$ mit $q(t^{-1})\in\frac{a}{t^{k}}+o(t^{-k})$
-                  hat \emph{\textcolor{purple}{maximal decay} in Richtung
-                    \boldmath$\theta$} genau dann wenn $ae^{-ik\theta}$ reell
+                  $e^{q(t^{-1})}$ mit
+                  $q\bigl(t^{-1}\bigr)\in\frac{a}{t^{k}}+o\bigl(t^{-k}\bigr)$
+                  hat \emph{maximal decay} in Richtung
+                    \boldmath$\theta$ genau dann wenn $ae^{-ik\theta}$ reell
                   negativ ist.
                 \end{defn}
               \end{minipage}
@@ -191,7 +224,7 @@
           \end{minipage}
         }
       \end{enumerate}
-      ist, ist $F$ ein \emph{Stokes Keim}.
+      ist, ist $f$ ein \emph{Stokes Keim}.
       \uncover<5->{
         Die Gruppe dieser Keime ist die \emph{Stokes Gruppe} und wird mit
         $\Sto_\theta(A^0)$ bezeichnet.
@@ -207,11 +240,11 @@
 \end{frame}
 
 \setbeamercolor{background canvas}{bg=gray!20}
-\begin{frame}{Wann ist $F\in\Lambda_\theta(A^0)$ von \textcolor{purple}{maximal decay}?}
-  Ein Keim $F\in\Gl_n(\cA_\theta)$, der Isotropie von $A^0$ ist, sieht wie folgt
+\begin{frame}{Wann ist $f\in\Lambda_\theta(A^0)$ von maximal decay?}
+  Ein Keim $f\in\Gl_n(\cA_\theta)$, der Isotropie von $A^0$ ist, sieht wie folgt
   aus
   \begin{align*}
-    F  &=
+    f  &=
          \only<1>{
          \underset{\tikzmarkt{e2}}{
          \textcolor{blue!50!white}{\underbrace{\textcolor{black}{
@@ -223,10 +256,10 @@
          \only<1>{
          \underset{\tikzmarkt{e1}}{
          \textcolor{blue!50!white}{\underbrace{\textcolor{black}{
-         \rho_\theta(F)
+         \rho_\theta(f)
          }}}}}
          \only<2->{
-         \rho_\theta(F)
+         \rho_\theta(f)
          }
          \only<1>{
          \underset{\tikzmarkt{e3}}{
@@ -255,7 +288,7 @@
       \tikzmarkc{n1}{blue} konstant, also in $\Gl_n(\C)$
 
       \vspace{1em}
-      \tikzmarkc{n2}{blue} Fundamentallösung von $A^0=(dF)F^{-1} + FA^0F^{-1}$
+      \tikzmarkc{n2}{blue} Fundamentallösung von $A^0=(df)f^{-1} + fA^0f^{-1}$
       \begin{tikzpicture}[remember picture,overlay]
         \draw[->,blue!50!white,thick] (n1) to[out=180,in=270] (e1);
         \draw[->,blue!50!white,thick] (n2) to[out=180,in=270] (e2);
@@ -265,48 +298,18 @@
   }
   \vspace{3.5em}
   \uncover<4->{%
-    Also ist $F$
+    Also ist $f$
     \begin{enumerate}
     \item multiplikativ flach falls falls für jedes $C^{(l,j)}\neq0$ der Faktor
       $e^{(q_l-q_j)(t^{-1})}$ asymptotisch zu $0$ ist \uncover<4->{und}
-    \item<5-> von \textcolor{purple}{maximal decay} falls für jedes
-      $C^{(l,j)}\neq0$ der Faktor $e^{(q_l-q_j)(t^{-1})}$ von \textcolor{purple}{maximal decay} in
+    \item<5-> von maximal decay falls für jedes
+      $C^{(l,j)}\neq0$ der Faktor $e^{(q_l-q_j)(t^{-1})}$ von maximal decay in
       Richtung $\theta$ ist.
     \end{enumerate}
   }
 \end{frame}
 \setbeamercolor{background canvas}{bg=}
 
-\subsection{Die anti-Stokes Richtungen}
-\begin{frame}{Die Stokes Matrizen und die anti-Stokes Richtungen}
-  \begin{defn}
-    Definiere die Relation $q_j\myrel{\theta}q_l$ als äquivalent zu
-    \begin{einr}
-      $e^{(q_l-q_j)(t^{-1})}$ ist von \textcolor{purple}{maximal decay} in
-      Richtung $\theta$.
-    \end{einr}
-    \uncover<2->{
-      Die anti-Stokes Richtungen sind genau die $\theta\in S^1$, so dass
-      $q_j\myrel{\theta}q_l$ für ein Paar $(q_j,q_l)$.
-    }
-  \end{defn}
-  \uncover<3->{%
-    \begin{defn}
-      Definiere die \emph{Gruppe der Stokes Matrizen} als
-      \begin{align*}
-        \SSto_\theta(A^0)&:= \Big\{
-                           C=(c_{jl})_{j,l\in\{1,\dots,n\}}
-                           \in\Gl_n(\C)
-                           \mathlarger{\mathlarger{\mid}}
-        \\              & \qquad\qquad\qquad\qquad
-                          c_{(l,j)}=\delta_{jl}
-                          \text{~außer wenn~}
-                          q_j\myrel{\theta}q_l
-                          \Big\} \,.
-      \end{align*}
-    \end{defn}
-  }
-\end{frame}
 \begin{frame}[fragile]{Malgrange-Sibuya-Isomorphismus}
   Wähle sektorweise asymptotische Lifts $F_j\in\Lambda(A^0)(U_j)$ der
   Fundamentallösung $\hat F$.
@@ -318,7 +321,7 @@
       \begin{tikzpicture}[scale=3]
         \node (h1) at (0,0) {$\cH(A^0)$};
         \node (h2) at (1.2,0) {$H^1(S^1;\Lambda(A^0))$};
-        \draw[->] (h1) to  node[fill=white,sloped] {$\cong$}  (h2);
+        \draw[->] (h1) to  node[fill=white,sloped] {$\cong$} (h2);
 
         \visible<3->{
           \node (h3) at (.6,-.7) {$\prod_{\theta\in\underset{\tikzmarktHLB{e1}}{\A}}\Sto_\theta(A^0)$};
@@ -327,7 +330,7 @@
         }
         \visible<4->{
           \draw[line width=4pt,white] (h1) -- (h3);
-          \draw[->] (h1) to node{\tikzmarktHLB{e2}} (h3);
+          \draw[->] (h1) to node[fill=white,sloped,yshift=-0.3em] {$\underset{\tikzmarktHLB{e2}}{\cong}$} (h3);
         }
       \end{tikzpicture}
       \vspace{-5.5em}
@@ -347,23 +350,58 @@
           \end{minipage}
         \end{flushright}
       \end{minipage}
-      \begin{tikzpicture}[remember picture,overlay]
-        \draw[->,blue!50!white,thick] (n1) to[out=180,in=270] (e1);
-        \visible<4->{
-          \draw[->,green!50!black,thick] (n2) to[out=180,in=230] (e2);
-        }
-      \end{tikzpicture}
       \visible<4->{
         \vspace{1em}
 
-        \tikzmarkb{n2}{green} durch \textcolor{purple}{summations-Theorie}
+        \tikzmarkc{n2}{gray} \textcolor{gray}{durch summations-Theorie}
       }
+      \begin{tikzpicture}[remember picture,overlay]
+        \draw[->,blue!50!white,thick] (n1) to[out=180,in=270] (e1);
+        \visible<4->{
+          \draw[->,gray!50!white,thick] (n2) to[out=180,in=230] (e2);
+        }
+      \end{tikzpicture}
     }
+  }
+\end{frame}
+
+\subsection{Die anti-Stokes Richtungen}
+\begin{frame}{Die Stokes Matrizen und die anti-Stokes Richtungen}
+  \begin{defn}
+    \begin{enumerate}
+    \item Definiere die Relation $q_j\myrel{\theta}q_l$ als äquivalent zu
+      \begin{einr}
+        $e^{(q_l-q_j)(t^{-1})}$ ist von maximal decay in
+        Richtung $\theta$.
+      \end{einr}
+      \uncover<2->{
+        Die anti-Stokes Richtungen sind genau die $\theta\in S^1$, so dass
+        $q_j\myrel{\theta}q_l$ für ein Paar $(q_j,q_l)$.
+      }
+      \item<3-> Der Level eines Paares $(q_j,q_l)$ ist $\deg(q_l-q_j)$.
+    \end{enumerate}
+  \end{defn}
+  \uncover<4->{%
+    \begin{defn}
+      Definiere die \emph{Gruppe der Stokes Matrizen} als
+      \begin{align*}
+        \SSto_\theta(A^0)&:= \Big\{
+                           C=(c_{jl})_{j,l\in\{1,\dots,n\}}
+                           \in\Gl_n(\C)
+                           \mathlarger{\mathlarger{\mid}}
+        \\              & \qquad\qquad\qquad\qquad
+                          c_{(l,j)}=\delta_{jl}
+                          \text{~außer wenn~}
+                          q_j\myrel{\theta}q_l
+                          \Big\} \,.
+      \end{align*}
+    \end{defn}
   }
 \end{frame}
 
 \subsection{Aufteilen bezüglich der Level}
 \begin{frame}[fragile]{Level von Stokes Matrizen}
+  \TODO[needed??]
   \begin{defn}
     \begin{enumerate}
     \item Schreibe
@@ -382,6 +420,17 @@
   \end{defn}
 \end{frame}
 \begin{frame}[fragile]{Zerlegung von $\Sto_\theta(A^0)$}
+  \begin{defn}
+    \begin{enumerate}
+    \item Die \emph{Level} von $F$ sind definiert als $\cK(F):= $
+    \item Ein Keim $F$ ist ein \emph{\boldmath$k$-Keim}, wenn
+      $\cK(F)\subset\{k\}$.
+
+      \uncover<3->{
+        Die Gruppe all dieser ist $\SSto_\theta^k(A^0)$.
+      }
+    \end{enumerate}
+  \end{defn}
   \begin{thm}
     Für alle $\theta\in S^1$ gibt es eine eindeutige Zerlegung auf dem Level der
     Stokes Matrizen und auf dem Level der Stokes Gruppen
@@ -407,14 +456,22 @@
 
 \subsection{Verbesserung der Stokes Matrizen}
 \begin{frame}[fragile]{Was weiß man für fixierten Level $k$?}
-  \uncover<1>{
+  \uncover<1-4>{
     Fixiere $(j,l)$ mit $j\neq l$ und damit
     $(q_l-q_j)(t^{-1})\in\frac{a}{t^{k}}+o(t^{-k})$.
+  }
+  \uncover<1>{
     \begin{flushright}
       \tikzmarkc{n1}{blue} Reeller Teil von $e^{\frac{a}{t^{k}}}$
 
       \vspace{1em}
       \tikzmarkb{n2}{green} Imag.\ Teil von $e^{\frac{a}{t^{k}}}$
+    \end{flushright}
+  }
+  \uncover<3>{
+    \vspace{-2em}
+    \begin{flushright}
+      \tikzmarkc{n3}{blue} gehört zu $(l,j)$
     \end{flushright}
   }
   \vspace{-4em}
@@ -425,6 +482,7 @@
 
        \node at (0.25,0.2) {$\tikzmark{e1}$};
        \node at (1.45,0.2) {$\tikzmark{e2}$};
+       \node at (1.25,0.2) {$\tikzmark{e3}$};
 
       \uncover<7->{
         \draw[thick, dotted, green!50!black] (0.9,0) -- (0.9,\abs)
@@ -632,6 +690,11 @@
     \begin{tikzpicture}[remember picture,overlay]
       \draw[->,blue!50!white,thick] (n1) to[out=180,in=45] (e1);
       \draw[->,green!50!black,thick] (n2) to[out=180,in=135] (e2);
+    \end{tikzpicture}
+  }
+  \uncover<3>{
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[->,blue!50!white,thick] (n3) to[out=180,in=45] (e3);
     \end{tikzpicture}
   }
 \end{frame}
