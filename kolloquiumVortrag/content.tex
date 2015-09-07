@@ -1,4 +1,4 @@
-\section{Meromorphe Zusammenhängen und Systeme}
+\section{Zusammenhangs-Matrizen und die klassifizierende Menge}
 \iffalse
 \begin{frame}{Meromorphe Zusammenhänge}
   \begin{defn}
@@ -73,10 +73,23 @@
     welches als \emph{System \boldmath$[A]$} abgekürzt wird wird.
   \end{defn}
   \uncover<2->{%
+    \vspace{0em}
     \begin{prop}
-      Durch einen Wechsel $F\in\Gl_n\left(\C(\!\{t\}\!)\right)$ der Basis erhält
-      man
-      das System $\bigl[{}^F\!A\bigr]$, gegeben durch die
+      \begin{minipage}{1.1\textwidth}
+        \begin{flushright}
+          \vspace{-3em}
+          \raisebox{.5em}{\tikzmarkc{n1}{blue}}
+          \begin{minipage}{.55\textwidth}
+            $F$ ist \emph{konvergent} $:\Leftrightarrow$
+            $F\in\Gl_n\left(\C(\!\{t\}\!)\right)$
+            \\sonst ist $F$ \emph{formal} \textcolor{gray}{(geschrieben $\hat F$)}.
+          \vspace{-.5em}
+          \end{minipage}
+        \end{flushright}
+      \end{minipage}
+      Durch einen Wechsel
+      $\overset{\tikzmark{e1}}{F}\in\Gl_n\left(\C(\!(t)\!)\right)$ der Basis
+      erhält man das System $\bigl[{}^F\!A\bigr]$, gegeben durch die
       \emph{Gauge-Transformation}
       \[
         {}^F\!A=(dF)F^{-1} + FAF^{-1} \,.
@@ -87,9 +100,10 @@
           Die Zusammenhangs-Matrizen $A$ und $B$ sind \emph{(formal)
             äquivalent}, falls es einen (formalen) Basiswechsel $F$ gibt, so
           dass ${}^F\!A=B$.
-        \end{defn}
-      }
-    \end{prop}
+        \end{defn}}\end{prop}
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[->,blue!50!white,thick] (n1) to[out=180,in=90] (e1);
+    \end{tikzpicture}
   }
 \end{frame}
 
@@ -113,7 +127,8 @@
     Aus dem Levelt-Turittin Theorem erhalten wir:
     \begin{cor}
       Jedes \textcolor{gray}{(unverzweigte)} System $[A]$ ist formal äquivalent
-      zu einer \emph{Normalform}
+      zu einer \emph{Normalform} und Normalformen sind bis auf konvergente
+      Äquivalenz eindeutig.
     \end{cor}
   }
 \end{frame}
@@ -468,7 +483,7 @@
       \tikzmarkb{n2}{green} Imag.\ Teil von $e^{\frac{a}{t^{k}}}$
     \end{flushright}
   }
-  \uncover<3>{
+  \uncover<3-4>{
     \vspace{-2em}
     \begin{flushright}
       \tikzmarkc{n3}{blue} gehört zu $(l,j)$
@@ -692,7 +707,7 @@
       \draw[->,green!50!black,thick] (n2) to[out=180,in=135] (e2);
     \end{tikzpicture}
   }
-  \uncover<3>{
+  \uncover<3-4>{
     \begin{tikzpicture}[remember picture,overlay]
       \draw[->,blue!50!white,thick] (n3) to[out=180,in=45] (e3);
     \end{tikzpicture}
