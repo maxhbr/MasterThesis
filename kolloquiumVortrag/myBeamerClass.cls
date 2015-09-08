@@ -8,6 +8,8 @@
 \usepackage{polyglossia}
 \setdefaultlanguage{german}
 \setotherlanguages{english}
+% \usepackage{german}
+
 
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage{latexsym}
@@ -45,7 +47,9 @@
 %%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[style=authoryear,natbib=true,backend=biber]{biblatex}
 \usepackage{fontspec}
-\usepackage[babel]{csquotes}
+\usepackage[autostyle=true,babel=once,german=quotes]{csquotes}%
+\defineshorthand{"`}{\openautoquote}
+\defineshorthand{"'}{\closeautoquote}
 %\usepackage{filecontents}
 
 \renewcommand*{\thefootnote}{\tiny[\arabic{footnote}]}
@@ -76,8 +80,8 @@
 \newtheorem{bsp}[thm]{Example}
 
 \theoremstyle{remark}
-\newtheorem{rem}[thm]{Remark}
-\newtheorem{bem}[thm]{Remark}
+\newtheorem{rem}[thm]{Bemerkung}
+\newtheorem{bem}[thm]{Bemerkung}
 \newtheorem{beo}[thm]{Beobachtung}
 %\newtheorem{note}[thm]{Notiz}
 \newtheorem{probl}[thm]{Problem}
