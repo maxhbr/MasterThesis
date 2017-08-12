@@ -78,13 +78,15 @@
       \begin{minipage}{1.1\textwidth}
         \vspace{-4em}
         \begin{flushright}
-          \raisebox{.3em}{\tikzmarkc{n1}{blue}}
-          \begin{minipage}{.55\textwidth}
-            $F$ ist \emph{konvergent} $:\Leftrightarrow$
-            $F\in\Gl_n\left(\C(\!\{t\}\!)\right)$
-            \\sonst ist $F$ \emph{formal} \textcolor{gray}{(geschrieben $\hat F$)}.
-          \vspace{-1em}
-          \end{minipage}
+          \uncover<3->{%
+            \raisebox{.3em}{\tikzmarkc{n1}{blue}}
+            \begin{minipage}{.55\textwidth}
+              $F$ ist \emph{konvergent} $:\Leftrightarrow$
+              $F\in\Gl_n\left(\C(\!\{t\}\!)\right)$
+              \\sonst ist $F$ \emph{formal} \textcolor{gray}{(geschrieben $\hat F$)}.
+              \vspace{-1em}
+            \end{minipage}
+          }
         \end{flushright}
       \end{minipage}
       Durch einen Wechsel
@@ -94,7 +96,7 @@
       \[
         {}^F\!A:=(dF)F^{-1} + FAF^{-1} \,.
       \]
-      \uncover<3->{%
+      \uncover<4->{%
         \vspace{-2em}
         \begin{defn}
           Die Zusammenhangs-Matrizen $A$ und $B$ sind \emph{(formal)
@@ -104,29 +106,33 @@
         \vspace{-0.5em}
       }
     \end{prop}
-    \begin{tikzpicture}[remember picture,overlay]
-      \draw[->,blue!50!white,thick] (n1) to[out=180,in=90] (e1);
-    \end{tikzpicture}
+    \uncover<3->{%
+      \begin{tikzpicture}[remember picture,overlay]
+        \draw[->,blue!50!white,thick] (n1) to[out=180,in=90] (e1);
+      \end{tikzpicture}
+    }
   }
 \end{frame}
 
 \subsection{Levelt-Turittin und die Normalform}
 \begin{frame}{Die Normalform und formale Klassifikation}
-  \begin{defn}
-    Eine \emph{Normalform} ist einem System der Form
-    \[
-      A^0= \raisebox{1em}{F} \!\!\left(Q'(t^{-1})+\frac{1}{t}L\right)
-    \]
-    wobei
-    \begin{itemize}
-    \item $Q(t^{-1}):=\bigoplus_{j=1}^sq_j(t^{-1})\cdot\id_{n_j}$ mit
-      $q_j(t^{-1})\in\C[t^{-1}]$,
-    \item $L:=\bigoplus_{j=1}^sL_j$ mit $L_j\in\Gl_{n_j}(\C)$ in
-      Jordan-Normalform und
-    \item $F\in\Gl_n(\C(\!\{t\}\!))$ eine Gauge-Transformation.
-    \end{itemize}
-  \end{defn}
   \uncover<2->{%
+    \begin{defn}
+      Eine \emph{Normalform} ist einem System äquivalent zu einem System der
+      Form
+      \[
+        A^0= Q'(t^{-1})+\frac{1}{t}L
+      \]
+      wobei
+      \begin{itemize}
+      \item $Q(t^{-1}):=\bigoplus_{j=1}^sq_j(t^{-1})\cdot\id_{n_j}$ mit
+        $q_j(t^{-1})\in\C[t^{-1}]$ und
+      \item $L:=\bigoplus_{j=1}^sL_j$ mit $L_j\in\Gl_{n_j}(\C)$ in
+        Jordan-Normalform.
+      \end{itemize}
+    \end{defn}
+  }
+  \uncover<3->{%
     Aus dem Levelt-Turittin Theorem erhalten wir:
     \begin{cor}
       Jedes \textcolor{gray}{(unverzweigte)} System $A$ ist formal äquivalent
@@ -253,7 +259,7 @@
   \begin{defn}
     \begin{itemize}
     \item Die \emph{Stokes Garbe \boldmath$\Lambda(A^0)$} ist die Untergarbe
-      von $Gl_n(\cA)$ bestehend aus den Schnitten, welche
+      von $\Gl_n(\cA)$ bestehend aus den Schnitten $f$, welche
       \begin{enumerate}
       \item\emph{multiplikativ flach} ($f$ ist asymptotisch zu $\id$)
         \uncover<2->{und}
@@ -279,7 +285,7 @@
           }$
         }
         in Richtung $\theta$
-        \uncover<4->{
+        \uncover<4->{%
           \begin{minipage}{\textwidth}
             \begin{flushright}
               \begin{minipage}{.6\textwidth}
@@ -302,7 +308,7 @@
     \end{itemize}
   \end{defn}
   \begin{tikzpicture}[remember picture,overlay]
-    \uncover<4->{
+    \uncover<4->{%
       \draw[->,blue!50!white,thick] (n2) to[out=180,in=270] (e2);
     }
   \end{tikzpicture}
@@ -363,6 +369,11 @@
   }
 \end{frame}
 
+\section*{Fragen?}
+\only<beamer>{\setbeamercolor{background canvas}{bg=black}\begin{frame}
+  \end{frame}\setbeamercolor{background canvas}{bg=}}
+
+\section{Alternative 1}
 \subsection{Die anti-Stokes Richtungen}
 \begin{frame}[t,fragile]{Die anti-Stokes Richtungen}
   \begin{tikzpicture}[scale=4,transform canvas={yshift = -4.5cm}, remember picture]
@@ -371,10 +382,10 @@
     \def\kTwo{9}
     \node (zero) at (0,0) {};
 
-    \uncover<1-2>{
+    \uncover<1-2>{%
       \fill[brown] ({cos( \t )},{sin( \t )}) circle (.8pt);
     }
-    \uncover<3->{
+    \uncover<3->{%
       \foreach \i in {1,2,...,\kOne}{%
         \fill[brown] ({cos( \t+180*\i/\kOne )},{sin( \t+180*\i/\kOne )})
         circle (.8pt);
@@ -396,7 +407,7 @@
       \only<2>{
         \fill[green!50!black] ({cos( 0 )},{sin( 0 )}) circle (.8pt);
       }
-      \uncover<3->{
+      \uncover<3->{%
         \foreach \i in {1,2,...,\kTwo}{%
           \fill[green!50!black] ({cos( \t+180*\i/\kTwo )},{sin( \t+180*\i/\kTwo )})
           circle (.8pt);
@@ -416,10 +427,10 @@
     \node (e3c) at ({cos( -10 ) * 1.03},{sin( -10 ) * 1.03}) {};
     \node (e3d) at ({cos( -20 ) * 1.03},{sin( -20 ) * 1.03}) {};
 
-    \uncover<2>{
+    \uncover<2>{%
       \draw[dotted,->,green!50!black,thick] (e3a) to[out=200,in=180] node[xshift=5pt] {$\frac{\pi}{k}$} ([xshift=-1.8pt]e3b);
     }
-    \uncover<3->{
+    \uncover<3->{%
       \draw[dotted,->,green!50!black,thick] (e3a) to[out=200,in=180] ([xshift=-1.8pt]e3b);
       \draw[dotted,->,green!50!black,thick] (e3a) to[out=200,in=220] ([xshift=-1.4pt,yshift=-1.1pt]e3z);
       \draw[dotted,->,brown,thick] (e3a) to[out=200,in=170] ([xshift=-1.1pt,yshift=.2pt]e3c);
@@ -440,7 +451,7 @@
             \]
           \end{itemize}
         \end{defn}
-        \uncover<4->{
+        \uncover<4->{%
           \begin{lem}
             Gilt für jedes $\theta\in\A$ dass $\cK_\theta=\{k\}$, so haben die
             anti-Stokes Richtungen eine $\frac{\pi}{k}$-drehsymmetrie.
@@ -460,269 +471,54 @@
         \Sto_\theta(A^0) \rar &
         \prod_{k\in\cK}\Sto_\theta^k(A^0)
     \end{tikzcd}\]
-    ist ein Isomorphismus.
+    ist ein Isomorphismus und haben damit den Isomorphismus
+    \[\begin{tikzcd}
+        \cH(A^0) \rar &
+        \prod_{\theta\in\A}\prod_{k\in\cK}\Sto_\theta^k(A^0)
+        \!\!
+        \text{
+          \uncover<2->{%
+            $=\prod_{k\in\cK}\left(\prod_{\theta\in\A}\Sto_\theta^k(A^0)\right)$}.}
+      \end{tikzcd}\]
   \end{lem}
-  % \uncover<2->{
-    \begin{cor}
-      Wir erhalten den Isomorphismus
-      \[\begin{tikzcd}
-          \cH(A^0) \rar &
-          \prod_{\theta\in\A}\prod_{k\in\cK}\Sto_\theta^k(A^0)
-          \!\!
-          \text{
-            \uncover<2->{
-              $=\prod_{k\in\cK}\left(\prod_{\theta\in\A}\Sto_\theta^k(A^0)\right)$}.}
-        \end{tikzcd}\]
-    \end{cor}
-  % }
 \end{frame}
-\begin{frame}[fragile]{Was weiß man für fixierten Level $k$?}
-  \uncover<1-4>{
-    Fixiere $(j,l)$ mit $j\neq l$ und damit
-    $(q_l-q_j)(t^{-1})\in\frac{a}{t^{k}}+o(t^{-k})$.
-  }
-  \uncover<1>{
-    \begin{flushright}
-      \tikzmarkc{n1}{blue} Reeller Teil von $e^{\frac{a}{t^{k}}}$
+\only<beamer>{\setbeamercolor{background canvas}{bg=black}\begin{frame}
+  \end{frame}\setbeamercolor{background canvas}{bg=}}
 
-      \vspace{1em}
-      \tikzmarkb{n2}{green} Imag.\ Teil von $e^{\frac{a}{t^{k}}}$
-    \end{flushright}
-  }
-  \uncover<3-4>{
-    \vspace{-2em}
-    \begin{flushright}
-      \tikzmarkc{n3}{blue} gehört zu $(l,j)$
-    \end{flushright}
-  }
-  \vspace{-4em}
-  \begin{center}
-    \begin{tikzpicture}[scale=3.1]
-      \pgfmathsetmacro{\k}{1}
-      \pgfmathsetmacro{\abs}{0.4}
-
-       \node at (0.25,0.2) {$\tikzmark{e1}$};
-       \node at (1.45,0.2) {$\tikzmark{e2}$};
-       \node at (1.25,0.2) {$\tikzmark{e3}$};
-
-      \uncover<7->{
-        \draw[thick, dotted, green!50!black] (0.9,0) -- (0.9,\abs)
-        node [above,font=\tiny,] {$\theta$};
-      }
-
-      \uncover<4>{
-        \draw ({0.1},{-0.27}) -- ({0.1},{-0.47});
-        \draw ({1.1},{-0.27}) -- ({1.1},{-0.37});
-        \draw ({2.1},{-0.27}) -- ({2.1},{-0.47});
-        \draw[<->] ({0.1},{-0.34}) -- ({1.1},{-0.34})
-        node [midway,above,font=\tiny,] {$\frac{\pi}{k}$};
-        \draw[<->] ({0.1},{-0.44}) -- ({2.1},{-0.44})
-        node [midway,below,font=\tiny,] {$\frac{2\pi}{k}$};
-      }
-
-      \foreach \x in {-2,-1,...,3}{
-        \foreach \argA/\absA in {0.1/0.27}{
-          \begin{scope}
-            \clip (-0.65,{\abs+0.1}) rectangle (2.63,{-\abs-0.1});
-            \pgfmathsetmacro{\s}{{\argA + \x / \k * 2 - 1/2/\k}};
-
-            \uncover<3->{
-              \draw[blue!40!white] (\s,0)
-              sin ({\s + 1/2/\k},{-\absA})
-              cos ({\s + 2/2/\k},0)
-              sin ({\s + 3/2/\k},\absA)
-              cos ({\s + 4/2/\k},0);
-              \uncover<6->{
-                \draw[dotted] ({\s + 1/2/\k},{-\absA}) -- ({\s + 1/2/\k},-0.5);
-              }
-              \fill[white] ({\s + 1/2/\k},{-\absA}) circle (1pt);
-              \fill[red] ({\s + 1/2/\k},{-\absA}) circle (.4pt);
-            }
-
-            \draw[blue!40!black] (\s,0)
-            sin ({\s + 1/2/\k},\absA)
-            cos ({\s + 2/2/\k},0)
-            sin ({\s + 3/2/\k},{-\absA})
-            cos ({\s + 4/2/\k},0);
-            \uncover<6->{
-              \draw[dotted] ({\s + 3/2/\k},{-\absA}) -- ({\s + 3/2/\k},-0.5);
-            }
-            \fill[white] ({\s + 3/2/\k},{-\absA}) circle (1pt);
-            \fill[red] ({\s + 3/2/\k},{-\absA}) circle (.4pt);
-
-            \only<1>{
-              \draw[green!40!black] ({\s          - 1/2/\k},0)
-                                sin ({\s + 1/2/\k - 1/2/\k},\absA)
-                                cos ({\s + 2/2/\k - 1/2/\k},0)
-                                sin ({\s + 3/2/\k - 1/2/\k},{-\absA})
-                                cos ({\s + 4/2/\k - 1/2/\k},0);
-            }
-            \uncover<6->{
-              \draw[dotted] ({\s + 3/2/\k},{-\absA}) -- ({\s + 3/2/\k},-0.5);
-            }
-          \end{scope}
-          \uncover<8->{
-            \begin{scope}[thick]
-              \clip (0.4,{\abs+0.1}) rectangle (1.4,{-\abs-0.1});
-              \pgfmathsetmacro{\s}{{\argA + \x / \k * 2 - 1/2/\k}};
-
-              \draw[blue!40!white] (\s,0)
-              sin ({\s + 1/2/\k},{-\absA})
-              cos ({\s + 2/2/\k},0)
-              sin ({\s + 3/2/\k},\absA)
-              cos ({\s + 4/2/\k},0);
-              \fill[white] ({\s + 1/2/\k},{-\absA}) circle (1pt);
-              % \draw[dotted] ({\s + 1/2/\k},{-\absA}) -- ({\s + 1/2/\k},0.5);
-              \fill[red] ({\s + 1/2/\k},{-\absA}) circle (.4pt);
-
-              \draw[blue!40!black] (\s,0)
-              sin ({\s + 1/2/\k},\absA)
-              cos ({\s + 2/2/\k},0)
-              sin ({\s + 3/2/\k},{-\absA})
-              cos ({\s + 4/2/\k},0);
-              \fill[white] ({\s + 3/2/\k},{-\absA}) circle (1pt);
-              % \draw[dotted] ({\s + 3/2/\k},{-\absA}) -- ({\s + 3/2/\k},0.5);
-              \fill[red] ({\s + 3/2/\k},{-\absA}) circle (.4pt);
-            \end{scope}
-          }
+\section{Alternative 2}
+\begin{frame}{Stokes Matrizen}
+  \uncover<2->{%
+    \begin{defn}
+      \begin{enumerate}
+      \item Definiere die Relation $q_j\myrel{\theta}q_l$ als äquivalent zu
+        \begin{einr}
+          $e^{(q_l-q_j)(t^{-1})}$ ist von maximal decay in
+          Richtung $\theta$.
+        \end{einr}
+        \uncover<3->{%
+          Die anti-Stokes Richtungen sind genau die $\theta\in S^1$, so dass
+          $q_j\myrel{\theta}q_l$ für ein Paar $(q_j,q_l)$.
         }
-        \uncover<5->{
-          \foreach \argA/\absA in {-0.5/0.4
-            ,0.3/0.35
-            ,0.65/0.23}{
-            \begin{scope}
-              \clip (-0.65,{\abs+0.1}) rectangle (2.63,{-\abs-0.1});
-              \pgfmathsetmacro{\s}{{\argA + \x / \k * 2 - 1/2/\k}};
-
-              \draw[blue!40!white] (\s,0)
-              sin ({\s + 1/2/\k},{-\absA})
-              cos ({\s + 2/2/\k},0)
-              sin ({\s + 3/2/\k},\absA)
-              cos ({\s + 4/2/\k},0);
-              \uncover<6->{
-                \draw[dotted] ({\s + 1/2/\k},{-\absA}) -- ({\s + 1/2/\k},-0.5);
-              }
-              \fill[white] ({\s + 1/2/\k},{-\absA}) circle (1pt);
-              \fill[red] ({\s + 1/2/\k},{-\absA}) circle (.4pt);
-
-              \draw[blue!40!black] (\s,0)
-              sin ({\s + 1/2/\k},\absA)
-              cos ({\s + 2/2/\k},0)
-              sin ({\s + 3/2/\k},{-\absA})
-              cos ({\s + 4/2/\k},0);
-              \uncover<6->{
-                \draw[dotted] ({\s + 3/2/\k},{-\absA}) -- ({\s + 3/2/\k},-0.5);
-              }
-              \fill[white] ({\s + 3/2/\k},{-\absA}) circle (1pt);
-              \fill[red] ({\s + 3/2/\k},{-\absA}) circle (.4pt);
-            \end{scope}
-            \uncover<8->{
-              \begin{scope}[thick]
-                \clip (0.4,{\abs+0.1}) rectangle (1.4,{-\abs-0.1});
-                \pgfmathsetmacro{\s}{{\argA + \x / \k * 2 - 1/2/\k}};
-
-                \draw[blue!40!white] (\s,0)
-                sin ({\s + 1/2/\k},{-\absA})
-                cos ({\s + 2/2/\k},0)
-                sin ({\s + 3/2/\k},\absA)
-                cos ({\s + 4/2/\k},0);
-                \fill[white] ({\s + 1/2/\k},{-\absA}) circle (1pt);
-                % \draw[dotted] ({\s + 1/2/\k},{-\absA}) -- ({\s + 1/2/\k},0.5);
-                \fill[red] ({\s + 1/2/\k},{-\absA}) circle (.4pt);
-
-                \draw[blue!40!black] (\s,0)
-                sin ({\s + 1/2/\k},\absA)
-                cos ({\s + 2/2/\k},0)
-                sin ({\s + 3/2/\k},{-\absA})
-                cos ({\s + 4/2/\k},0);
-                \fill[white] ({\s + 3/2/\k},{-\absA}) circle (1pt);
-                % \draw[dotted] ({\s + 3/2/\k},{-\absA}) -- ({\s + 3/2/\k},0.5);
-                \fill[red] ({\s + 3/2/\k},{-\absA}) circle (.4pt);
-              \end{scope}
-            }
-          }
-        }
-      }
-      \uncover<6->{
-        \node[font=\tiny] at (-0.5,{-\abs - 0.15}) {$\alpha_{\nu-1}$};
-        \node[font=\tiny] at (-0.35,{-\abs - 0.15}) {$\alpha_{\nu}$};
-        \node[font=\tiny] at (0.1,{-\abs - 0.15}) {$\alpha_1$};
-        \node[font=\tiny] at (0.3,{-\abs - 0.15}) {$\alpha_2$};
-        \node[font=\tiny] at (0.5,{-\abs - 0.15}) {$\alpha_3$};
-        \node[font=\tiny] at (0.65,{-\abs - 0.15}) {$\alpha_4$};
-        \node[font=\tiny] at (1.1,{-\abs - 0.15}) {$\alpha_5$};
-        \node[font=\tiny] at (1.3,{-\abs - 0.15}) {$\alpha_6$};
-        \node[font=\tiny] at (1.5,{-\abs - 0.15}) {$\alpha_7$};
-        \node[font=\tiny] at (1.65,{-\abs - 0.15}) {$\alpha_8$};
-        \node[font=\tiny] at (2.1,{-\abs - 0.15}) {$\alpha_9$};
-        \node[font=\tiny] at (2.3,{-\abs - 0.15}) {$\alpha_{10}$};
-        \node[font=\tiny] at (2.5,{-\abs - 0.15}) {$\alpha_{11}$};
-      }
-
-      \draw[-latex'] (-0.7,0) -- (2.7,0) node [right] {$S^1$};
-      \draw[-latex'] ({0},{-\abs-0.1}) -- ({0},{\abs + 0.2});
-
-      \uncover<8->{
-        \begin{scope}[dashed]
-          \clip (-0.65,{\abs+0.1}) rectangle (2.6,{-\abs-0.4});
-          \foreach \x in {-2,-1,1,2} {
-            % \draw [purple]
-            % ({0.4 + \x},{-\abs - 0.2}) -- ({0.4 + \x},0);
-            \draw [purple]
-            ({1.4 + \x},{-\abs - 0.2}) -- ({1.4 + \x},0);
-            \draw [purple
-            ,decorate
-            ,decoration={brace,mirror,amplitude=10pt}
-            ,xshift=0pt
-            ,yshift=0pt]
-            ({0.4 + \x},{-\abs - 0.2}) -- ({1.4 + \x},{-\abs - 0.2});
-          }
-        \end{scope}
-        \draw [purple,dashed]
-        (1.4,{-\abs - 0.2}) -- (1.4,0);
-        \draw [purple, thick
-        ,decorate
-        ,decoration={brace,mirror,amplitude=10pt}
-        ,xshift=0pt
-        ,yshift=0pt]
-        (0.4,{-\abs - 0.2}) -- (1.4,{-\abs - 0.2})
-        node [midway,yshift=-7pt] {$\tikzmark{g0}$};
-        \draw [purple,dashed,
-        ,decorate
-        ,decoration={brace,mirror,amplitude=10pt}
-        ,xshift=0pt
-        ,yshift=0pt]
-        (1.4,{-\abs - 0.2}) -- (2.4,{-\abs - 0.2})
-        node [midway,yshift=-7pt] {$\tikzmark{g1}$};
-      }
-
-      % \draw[dotted] (-0.6,\abs)node[left,font=\tiny] {$|a|$} -- (2.6,\abs);
-      % \draw[dotted] (-0.6,{-\abs})node[left,font=\tiny] {$-|a|$} -- (2.6,{-\abs});
-
-      % \draw[dotted] ({-0.5},{-\abs}) -- ({-0.5},{\abs + 0.1})
-      % node [above,font=\tiny,] {-0.5 \pi};
-      % \foreach \x in {0.5,1,...,2.5}{%
-      % \draw[dotted] ({\x},{-\abs}) -- ({\x},{\abs + 0.1})
-      % node [above,font=\tiny,] {\x \pi};
-      % }
-    \end{tikzpicture}
-  \end{center}
-  \uncover<1>{
-    \begin{tikzpicture}[remember picture,overlay]
-      \draw[->,blue!50!white,thick] (n1) to[out=180,in=45] (e1);
-      \draw[->,green!50!black,thick] (n2) to[out=180,in=135] (e2);
-    \end{tikzpicture}
+      \end{enumerate}
+    \end{defn}
   }
-  \uncover<3-4>{
-    \begin{tikzpicture}[remember picture,overlay]
-      \draw[->,blue!50!white,thick] (n3) to[out=180,in=45] (e3);
-    \end{tikzpicture}
+  \uncover<4->{%
+    \begin{defn}
+      Definiere die \emph{Gruppe der Stokes Matrizen} als
+      \begin{align*}
+        \SSto_\theta(A^0)&:= \Big\{
+                           C=(c_{jl})_{j,l\in\{1,\dots,n\}}
+                           \in\Gl_n(\C)
+                           \mathlarger{\mathlarger{\mid}}
+        \\              & \qquad\qquad\qquad\qquad
+                          c_{(l,j)}=\delta_{jl}
+                          \text{~außer wenn~}
+                          q_j\myrel{\theta}q_l
+                          \Big\} \,.
+      \end{align*}
+    \end{defn}
   }
 \end{frame}
-
-\section*{Fragen?}
-
-\section{Beispiel}
 \begin{frame}[t,fragile]{Beispiel}
   \begin{tikzpicture}[scale=4,transform canvas={yshift = -4.5cm}, remember picture]
     \def\t{20}
@@ -860,35 +656,248 @@
 \only<beamer>{\setbeamercolor{background canvas}{bg=black}\begin{frame}
   \end{frame}\setbeamercolor{background canvas}{bg=}}
 
-\begin{frame}{Die Stokes Matrizen und die anti-Stokes Richtungen}
-  \begin{defn}
-    \begin{enumerate}
-    \item Definiere die Relation $q_j\myrel{\theta}q_l$ als äquivalent zu
-      \begin{einr}
-        $e^{(q_l-q_j)(t^{-1})}$ ist von maximal decay in
-        Richtung $\theta$.
-      \end{einr}
-      \uncover<2->{
-        Die anti-Stokes Richtungen sind genau die $\theta\in S^1$, so dass
-        $q_j\myrel{\theta}q_l$ für ein Paar $(q_j,q_l)$.
+\section*{Anhang}
+\begin{frame}[fragile]{Was weiß man für fixierten Level $k$?}
+  \uncover<1-4>{%
+    Fixiere $(j,l)$ mit $j\neq l$ und damit
+    $(q_l-q_j)(t^{-1})\in\frac{a}{t^{k}}+o(t^{-k})$.
+  }
+  \uncover<1>{%
+    \begin{flushright}
+      \tikzmarkc{n1}{blue} Reeller Teil von $e^{\frac{a}{t^{k}}}$
+
+      \vspace{1em}
+      \tikzmarkb{n2}{green} Imag.\ Teil von $e^{\frac{a}{t^{k}}}$
+    \end{flushright}
+  }
+  \uncover<3-4>{%
+    \vspace{-2em}
+    \begin{flushright}
+      \tikzmarkc{n3}{blue} gehört zu $(l,j)$
+    \end{flushright}
+  }
+  \vspace{-4em}
+  \begin{center}
+    \begin{tikzpicture}[scale=3.1]
+      \pgfmathsetmacro{\k}{1}
+      \pgfmathsetmacro{\abs}{0.4}
+
+       \node at (0.25,0.2) {$\tikzmark{e1}$};
+       \node at (1.45,0.2) {$\tikzmark{e2}$};
+       \node at (1.25,0.2) {$\tikzmark{e3}$};
+
+      \uncover<7->{%
+        \draw[thick, dotted, green!50!black] (0.9,0) -- (0.9,\abs)
+        node [above,font=\tiny,] {$\theta$};
       }
-    \end{enumerate}
-  \end{defn}
-  \uncover<3->{%
-    \begin{defn}
-      Definiere die \emph{Gruppe der Stokes Matrizen} als
-      \begin{align*}
-        \SSto_\theta(A^0)&:= \Big\{
-                           C=(c_{jl})_{j,l\in\{1,\dots,n\}}
-                           \in\Gl_n(\C)
-                           \mathlarger{\mathlarger{\mid}}
-        \\              & \qquad\qquad\qquad\qquad
-                          c_{(l,j)}=\delta_{jl}
-                          \text{~außer wenn~}
-                          q_j\myrel{\theta}q_l
-                          \Big\} \,.
-      \end{align*}
-    \end{defn}
+
+      \uncover<4>{%
+        \draw ({0.1},{-0.27}) -- ({0.1},{-0.47});
+        \draw ({1.1},{-0.27}) -- ({1.1},{-0.37});
+        \draw ({2.1},{-0.27}) -- ({2.1},{-0.47});
+        \draw[<->] ({0.1},{-0.34}) -- ({1.1},{-0.34})
+        node [midway,above,font=\tiny,] {$\frac{\pi}{k}$};
+        \draw[<->] ({0.1},{-0.44}) -- ({2.1},{-0.44})
+        node [midway,below,font=\tiny,] {$\frac{2\pi}{k}$};
+      }
+
+      \foreach \x in {-2,-1,...,3}{
+        \foreach \argA/\absA in {0.1/0.27}{
+          \begin{scope}
+            \clip (-0.65,{\abs+0.1}) rectangle (2.63,{-\abs-0.1});
+            \pgfmathsetmacro{\s}{{\argA + \x / \k * 2 - 1/2/\k}};
+
+            \uncover<3->{%
+              \draw[blue!40!white] (\s,0)
+              sin ({\s + 1/2/\k},{-\absA})
+              cos ({\s + 2/2/\k},0)
+              sin ({\s + 3/2/\k},\absA)
+              cos ({\s + 4/2/\k},0);
+              \uncover<6->{%
+                \draw[dotted] ({\s + 1/2/\k},{-\absA}) -- ({\s + 1/2/\k},-0.5);
+              }
+              \fill[white] ({\s + 1/2/\k},{-\absA}) circle (1pt);
+              \fill[red] ({\s + 1/2/\k},{-\absA}) circle (.4pt);
+            }
+
+            \draw[blue!40!black] (\s,0)
+            sin ({\s + 1/2/\k},\absA)
+            cos ({\s + 2/2/\k},0)
+            sin ({\s + 3/2/\k},{-\absA})
+            cos ({\s + 4/2/\k},0);
+            \uncover<6->{%
+              \draw[dotted] ({\s + 3/2/\k},{-\absA}) -- ({\s + 3/2/\k},-0.5);
+            }
+            \fill[white] ({\s + 3/2/\k},{-\absA}) circle (1pt);
+            \fill[red] ({\s + 3/2/\k},{-\absA}) circle (.4pt);
+
+            \only<1>{
+              \draw[green!40!black] ({\s          - 1/2/\k},0)
+                                sin ({\s + 1/2/\k - 1/2/\k},\absA)
+                                cos ({\s + 2/2/\k - 1/2/\k},0)
+                                sin ({\s + 3/2/\k - 1/2/\k},{-\absA})
+                                cos ({\s + 4/2/\k - 1/2/\k},0);
+            }
+            \uncover<6->{%
+              \draw[dotted] ({\s + 3/2/\k},{-\absA}) -- ({\s + 3/2/\k},-0.5);
+            }
+          \end{scope}
+          \uncover<8->{%
+            \begin{scope}[thick]
+              \clip (0.4,{\abs+0.1}) rectangle (1.4,{-\abs-0.1});
+              \pgfmathsetmacro{\s}{{\argA + \x / \k * 2 - 1/2/\k}};
+
+              \draw[blue!40!white] (\s,0)
+              sin ({\s + 1/2/\k},{-\absA})
+              cos ({\s + 2/2/\k},0)
+              sin ({\s + 3/2/\k},\absA)
+              cos ({\s + 4/2/\k},0);
+              \fill[white] ({\s + 1/2/\k},{-\absA}) circle (1pt);
+              % \draw[dotted] ({\s + 1/2/\k},{-\absA}) -- ({\s + 1/2/\k},0.5);
+              \fill[red] ({\s + 1/2/\k},{-\absA}) circle (.4pt);
+
+              \draw[blue!40!black] (\s,0)
+              sin ({\s + 1/2/\k},\absA)
+              cos ({\s + 2/2/\k},0)
+              sin ({\s + 3/2/\k},{-\absA})
+              cos ({\s + 4/2/\k},0);
+              \fill[white] ({\s + 3/2/\k},{-\absA}) circle (1pt);
+              % \draw[dotted] ({\s + 3/2/\k},{-\absA}) -- ({\s + 3/2/\k},0.5);
+              \fill[red] ({\s + 3/2/\k},{-\absA}) circle (.4pt);
+            \end{scope}
+          }
+        }
+        \uncover<5->{%
+          \foreach \argA/\absA in {-0.5/0.4
+            ,0.3/0.35
+            ,0.65/0.23}{
+            \begin{scope}
+              \clip (-0.65,{\abs+0.1}) rectangle (2.63,{-\abs-0.1});
+              \pgfmathsetmacro{\s}{{\argA + \x / \k * 2 - 1/2/\k}};
+
+              \draw[blue!40!white] (\s,0)
+              sin ({\s + 1/2/\k},{-\absA})
+              cos ({\s + 2/2/\k},0)
+              sin ({\s + 3/2/\k},\absA)
+              cos ({\s + 4/2/\k},0);
+              \uncover<6->{%
+                \draw[dotted] ({\s + 1/2/\k},{-\absA}) -- ({\s + 1/2/\k},-0.5);
+              }
+              \fill[white] ({\s + 1/2/\k},{-\absA}) circle (1pt);
+              \fill[red] ({\s + 1/2/\k},{-\absA}) circle (.4pt);
+
+              \draw[blue!40!black] (\s,0)
+              sin ({\s + 1/2/\k},\absA)
+              cos ({\s + 2/2/\k},0)
+              sin ({\s + 3/2/\k},{-\absA})
+              cos ({\s + 4/2/\k},0);
+              \uncover<6->{%
+                \draw[dotted] ({\s + 3/2/\k},{-\absA}) -- ({\s + 3/2/\k},-0.5);
+              }
+              \fill[white] ({\s + 3/2/\k},{-\absA}) circle (1pt);
+              \fill[red] ({\s + 3/2/\k},{-\absA}) circle (.4pt);
+            \end{scope}
+            \uncover<8->{%
+              \begin{scope}[thick]
+                \clip (0.4,{\abs+0.1}) rectangle (1.4,{-\abs-0.1});
+                \pgfmathsetmacro{\s}{{\argA + \x / \k * 2 - 1/2/\k}};
+
+                \draw[blue!40!white] (\s,0)
+                sin ({\s + 1/2/\k},{-\absA})
+                cos ({\s + 2/2/\k},0)
+                sin ({\s + 3/2/\k},\absA)
+                cos ({\s + 4/2/\k},0);
+                \fill[white] ({\s + 1/2/\k},{-\absA}) circle (1pt);
+                % \draw[dotted] ({\s + 1/2/\k},{-\absA}) -- ({\s + 1/2/\k},0.5);
+                \fill[red] ({\s + 1/2/\k},{-\absA}) circle (.4pt);
+
+                \draw[blue!40!black] (\s,0)
+                sin ({\s + 1/2/\k},\absA)
+                cos ({\s + 2/2/\k},0)
+                sin ({\s + 3/2/\k},{-\absA})
+                cos ({\s + 4/2/\k},0);
+                \fill[white] ({\s + 3/2/\k},{-\absA}) circle (1pt);
+                % \draw[dotted] ({\s + 3/2/\k},{-\absA}) -- ({\s + 3/2/\k},0.5);
+                \fill[red] ({\s + 3/2/\k},{-\absA}) circle (.4pt);
+              \end{scope}
+            }
+          }
+        }
+      }
+      \uncover<6->{%
+        \node[font=\tiny] at (-0.5,{-\abs - 0.15}) {$\alpha_{\nu-1}$};
+        \node[font=\tiny] at (-0.35,{-\abs - 0.15}) {$\alpha_{\nu}$};
+        \node[font=\tiny] at (0.1,{-\abs - 0.15}) {$\alpha_1$};
+        \node[font=\tiny] at (0.3,{-\abs - 0.15}) {$\alpha_2$};
+        \node[font=\tiny] at (0.5,{-\abs - 0.15}) {$\alpha_3$};
+        \node[font=\tiny] at (0.65,{-\abs - 0.15}) {$\alpha_4$};
+        \node[font=\tiny] at (1.1,{-\abs - 0.15}) {$\alpha_5$};
+        \node[font=\tiny] at (1.3,{-\abs - 0.15}) {$\alpha_6$};
+        \node[font=\tiny] at (1.5,{-\abs - 0.15}) {$\alpha_7$};
+        \node[font=\tiny] at (1.65,{-\abs - 0.15}) {$\alpha_8$};
+        \node[font=\tiny] at (2.1,{-\abs - 0.15}) {$\alpha_9$};
+        \node[font=\tiny] at (2.3,{-\abs - 0.15}) {$\alpha_{10}$};
+        \node[font=\tiny] at (2.5,{-\abs - 0.15}) {$\alpha_{11}$};
+      }
+
+      \draw[-latex'] (-0.7,0) -- (2.7,0) node [right] {$S^1$};
+      \draw[-latex'] ({0},{-\abs-0.1}) -- ({0},{\abs + 0.2});
+
+      \uncover<8->{%
+        \begin{scope}[dashed]
+          \clip (-0.65,{\abs+0.1}) rectangle (2.6,{-\abs-0.4});
+          \foreach \x in {-2,-1,1,2} {
+            % \draw [purple]
+            % ({0.4 + \x},{-\abs - 0.2}) -- ({0.4 + \x},0);
+            \draw [purple]
+            ({1.4 + \x},{-\abs - 0.2}) -- ({1.4 + \x},0);
+            \draw [purple
+            ,decorate
+            ,decoration={brace,mirror,amplitude=10pt}
+            ,xshift=0pt
+            ,yshift=0pt]
+            ({0.4 + \x},{-\abs - 0.2}) -- ({1.4 + \x},{-\abs - 0.2});
+          }
+        \end{scope}
+        \draw [purple,dashed]
+        (1.4,{-\abs - 0.2}) -- (1.4,0);
+        \draw [purple, thick
+        ,decorate
+        ,decoration={brace,mirror,amplitude=10pt}
+        ,xshift=0pt
+        ,yshift=0pt]
+        (0.4,{-\abs - 0.2}) -- (1.4,{-\abs - 0.2})
+        node [midway,yshift=-7pt] {$\tikzmark{g0}$};
+        \draw [purple,dashed,
+        ,decorate
+        ,decoration={brace,mirror,amplitude=10pt}
+        ,xshift=0pt
+        ,yshift=0pt]
+        (1.4,{-\abs - 0.2}) -- (2.4,{-\abs - 0.2})
+        node [midway,yshift=-7pt] {$\tikzmark{g1}$};
+      }
+
+      % \draw[dotted] (-0.6,\abs)node[left,font=\tiny] {$|a|$} -- (2.6,\abs);
+      % \draw[dotted] (-0.6,{-\abs})node[left,font=\tiny] {$-|a|$} -- (2.6,{-\abs});
+
+      % \draw[dotted] ({-0.5},{-\abs}) -- ({-0.5},{\abs + 0.1})
+      % node [above,font=\tiny,] {-0.5 \pi};
+      % \foreach \x in {0.5,1,...,2.5}{%
+      % \draw[dotted] ({\x},{-\abs}) -- ({\x},{\abs + 0.1})
+      % node [above,font=\tiny,] {\x \pi};
+      % }
+    \end{tikzpicture}
+  \end{center}
+  \uncover<1>{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[->,blue!50!white,thick] (n1) to[out=180,in=45] (e1);
+      \draw[->,green!50!black,thick] (n2) to[out=180,in=135] (e2);
+    \end{tikzpicture}
+  }
+  \uncover<3-4>{%
+    \begin{tikzpicture}[remember picture,overlay]
+      \draw[->,blue!50!white,thick] (n3) to[out=180,in=45] (e3);
+    \end{tikzpicture}
   }
 \end{frame}
 
@@ -907,7 +916,7 @@
 %     \item<2-> Ein Keim $F$ ist ein \emph{\boldmath$k$-Keim}, wenn
 %       $\cK(F)\subset\{k\}$.
 
-%       \uncover<3->{
+%       \uncover<3->{%
 %         Die Gruppe all dieser ist $\SSto_\theta^k(A^0)$.
 %       }
 %     \end{enumerate}
@@ -922,7 +931,7 @@
 %     \item Ein Keim $F$ ist ein \emph{\boldmath$k$-Keim}, wenn
 %       $\cK(F)\subset\{k\}$.
 
-%       \uncover<3->{
+%       \uncover<3->{%
 %         Die Gruppe all dieser ist $\SSto_\theta^k(A^0)$.
 %       }
 %     \end{enumerate}
@@ -960,7 +969,7 @@
 %   \end{einr}
 %   erfüllt, zusammen mit einer Bijektion
 %   $i:\{1,2,\dots,\mu\}\overset{\cong}{\longrightarrow}T$.
-%   \uncover<2->{
+%   \uncover<2->{%
 %     \begin{lem}
 %       Zu jeder Matrix
 %       \[
@@ -977,7 +986,6 @@
 % \end{frame}
 \fi
 
-\setbeamercolor{background canvas}{bg=gray!20}
 \begin{frame}{Wann ist $f\in\Lambda_\theta(A^0)$ von maximal decay?}
   Ein Keim $f\in\Gl_n(\cA_\theta)$, der eine Isotropie von $A^0$ ist, sieht wie
   folgt aus
@@ -1039,7 +1047,7 @@
       \end{flushright}
     }
   }
-  \only<beamer>{
+  \only<beamer>{%
     \vspace{3.5em}
   }
   \uncover<4->{%
@@ -1053,7 +1061,6 @@
     \end{enumerate}
   }
 \end{frame}
-\setbeamercolor{background canvas}{bg=}
 
 %%% Local Variables:
 %%% mode: latex
